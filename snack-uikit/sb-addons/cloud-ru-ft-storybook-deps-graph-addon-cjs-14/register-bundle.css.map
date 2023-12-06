@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../node_modules/@cloud-ru/ft-storybook-deps-graph-addon/dist/cjs/styles.css"],
+  "sourcesContent": [".deps_graph__error{\n    text-align: center;\n    margin-top: 40px;\n    font-size: 16px;\n}\n.deps_graph__info{\n    text-align: center;\n    margin-top: 40px;\n    font-size: 16px;\n}\n.deps_graph__info div:first-of-type{\n    font-weight: 500;\n}\n.deps_graph__wrapper{\n    top: 0;\n    bottom: 0;\n    position: absolute;\n    width: 100%;\n}"],
+  "mappings": "AAAA,qCACI,kBACA,gBACA,eAOJ,oCACI,gBAEJ,qBACI,MACA,SACA,kBACA",
+  "names": []
+}
