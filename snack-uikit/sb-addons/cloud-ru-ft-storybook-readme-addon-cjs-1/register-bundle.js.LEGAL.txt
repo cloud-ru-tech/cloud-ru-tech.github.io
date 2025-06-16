@@ -12,8 +12,6 @@ react/cjs/react-jsx-runtime.production.min.js:
    */
 
 react-syntax-highlighter/dist/cjs/async-syntax-highlighter.js:
-  /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-
 react-syntax-highlighter/dist/cjs/async-languages/create-language-async-loader.js:
   /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
