@@ -1,1 +1,0 @@
-import{I as o,S}from"./constants-9uwKbtvo.js";import{C as t}from"./index-CGBRtoFy.js";import{C as I}from"./index-DrT0s6v0.js";function s({size:r,open:n}){return{ArrowIcon:n?t:I,arrowIconSize:r===S.S?o.Xs:o.S}}export{s as g};
