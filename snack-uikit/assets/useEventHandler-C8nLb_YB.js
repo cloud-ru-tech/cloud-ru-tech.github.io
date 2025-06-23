@@ -1,1 +1,0 @@
-import{r as n}from"./index-CJ_LmFaV.js";import{u as o}from"./useIsomorphicLayoutEffect-BAXQmlEq.js";function l(t){const r=n.useRef(null);return o(()=>{r.current=t}),n.useCallback((...u)=>{const e=r.current;return e===null&&console.warn("The event handler cannot be called during render"),e==null?void 0:e(...u)},[])}export{l as u};
