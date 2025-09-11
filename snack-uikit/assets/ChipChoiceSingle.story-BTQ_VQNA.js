@@ -1,0 +1,26 @@
+import{j as t}from"./jsx-runtime-BTJTZTIL.js";import{c as r,a as S,b as O,s as f}from"./styles.module-Cxw7wDvs.js";import{C as I}from"./ChipChoiceStoryWrap-4ofwulhE.js";import{C as h,a as _,B as i,F as P}from"./constants-lGV6iQac.js";import{C as a}from"./index-LoAtXwmU.js";import"./index-ChsGqxH_.js";import"./index-CJ_LmFaV.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./constants-BIigMBdG.js";import"./constants-BtWJHGHL.js";import"./index-B_WE0pTs.js";import"./Sprite-DoNyyhE0.js";import"./sprite.symbol-DpN2ERsh.js";import"./index-C-NxZ9RO.js";import"./index-Dz039XZe.js";import"./index-HYofs7FJ.js";import"./index-DtRrUciF.js";import"./index-BLj3vrxU.js";import"./index-BKaanG2n.js";import"./index-DLGJiw2b.js";import"./index-C7IVzcIX.js";import"./index-CX1lIXbQ.js";import"./index-BQAaeyfQ.js";import"./index-DLRniMSR.js";import"./index-BJ2Oj32Z.js";import"./index-0zxx_KqD.js";import"./index-NU8U5csw.js";import"./index-I1zimRE2.js";import"./index-BIeLB8C9.js";import"./index-BcKv4fI4.js";import"./index-CIcT2jya.js";import"./index-3XDw48l5.js";import"./index-6PN_JoHT.js";import"./index-C9_U387z.js";import"./index-CwHIobxP.js";import"./index-B9oUDl45.js";import"./index-Baw9oej9.js";import"./index-BJDjEDgt.js";import"./index-Drk0xmYR.js";import"./index-zbp_5bxn.js";import"./Tag-yVyxCmhe.js";import"./index-DUmpqB7p.js";import"./constants-BaREPXw5.js";import"./componentPropsProcessors-UJEZy8aQ.js";import"./Tooltip-DzAF_V2U.js";import"./PopoverPrivate-CnKgsFAm.js";import"./index-Bxu_udwM.js";import"./index-DdXvKv-Q.js";import"./index-JZGyZbA2.js";import"./isBrowser-C2N6XvuH.js";import"./useIsomorphicLayoutEffect-BAXQmlEq.js";import"./FuzzySearch-C8qpdhmO.js";import"./LocaleProvider-CyhbxqE1.js";import"./ButtonFunction-DzSpe7i-.js";import"./utils-Cci-L8Vb.js";import"./Counter-DXWSEFY6.js";import"./Sun-CjKF0Bsh.js";import"./constants-BAH7I9kc.js";import"./ButtonFilled-JFBkeXPj.js";import"./index-B7wZyJkK.js";import"./TruncateString-d_nSHKm-.js";import"./useValueControl-C51frgGe.js";import"./Dropdown-4YXb2YvP.js";import"./hooks-Di7WTYrV.js";import"./Checkbox-BVtBbLUC.js";import"./constants-BObEONKm.js";import"./TogglePrivate-BTSew7b5.js";import"./Switch-D4-td0zO.js";import"./index-Yy_Eh0C8.js";import"./IconPredefined-DVxQYij_.js";import"./Typography-DmSN6cv6.js";import"./ButtonTonal-D7jzMegS.js";import"./Divider-C1X9zrkx.js";import"./Spinner-PYn9r2mo.js";import"./Scroll-CyeY1SIb.js";import"./useButtonNavigation-CVCsehRW.js";import"./useClearButton-CBEN1tav.js";import"./constants-9uwKbtvo.js";import"./InputPrivate-D3npAkF4.js";import"./DropList-27Udmd_D.js";import"./Calendar-_maPmuSl.js";import"./TimePickerBase-DQ-2nEh1.js";import"./List-DKqZ_SRj.js";import"./TimePicker-ViUAa4j9.js";const tt={title:"Components/Chips/ChipChoice",component:a.Single},T=({useDefaultValue:n,useBaseOptions:s,showClickCounter:c,showClearButton:l,defaultValue:d,...C})=>t.jsx(I,{showClickCounter:c,showClearButton:l,defaultValue:n?d||i[0].value:void 0,chipControlled:({increaseCounter:g,...u})=>t.jsx(a.Single,{...C,...u,options:s?i:P,onClick:g,dropDownClassName:f.droplist})}),o={render:T,args:{..._,useBaseOptions:!1,scrollToSelectedItem:!1,autoApply:!0},argTypes:{...h,useBaseOptions:{name:"[Stories]: BaseOptions"}},parameters:{readme:{sidebar:[`Latest version: ${r.version}`,S,O]},packageName:r.name,design:{name:"Figma",type:"figma",url:"https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A148671&mode=design"}}};var m,p,e;o.parameters={...o.parameters,docs:{...(m=o.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  render: Template,
+  args: {
+    ...CHIP_CHOICE_STORY_ARGS,
+    useBaseOptions: false,
+    scrollToSelectedItem: false,
+    autoApply: true
+  },
+  argTypes: {
+    ...CHIP_CHOICE_ARG_TYPES,
+    useBaseOptions: {
+      name: '[Stories]: BaseOptions'
+    }
+  },
+  parameters: {
+    readme: {
+      sidebar: [\`Latest version: \${componentPackage.version}\`, componentReadme, componentChangelog]
+    },
+    packageName: componentPackage.name,
+    design: {
+      name: 'Figma',
+      type: 'figma',
+      url: 'https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A148671&mode=design'
+    }
+  }
+}`,...(e=(p=o.parameters)==null?void 0:p.docs)==null?void 0:e.source}}};export{o as chipChoiceSingle,tt as default};
