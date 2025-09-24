@@ -1,0 +1,18 @@
+import{j as o}from"./jsx-runtime-BTJTZTIL.js";import{r as p}from"./index-CJ_LmFaV.js";import{d as t,c as a,a as g,b as l,s as S,S as f,C as x,D as E}from"./helperComponents-BiWnhRBv.js";import{S as u}from"./constants-BqAt9wbw.js";import"./index-ChsGqxH_.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-DUmpqB7p.js";import"./hooks-C5DVcyBY.js";import"./index-JZGyZbA2.js";import"./constants-BObEONKm.js";import"./componentPropsProcessors-UJEZy8aQ.js";import"./index-D3kvmOHM.js";import"./ButtonFunction-BZ9hDgtu.js";import"./utils-Cu-Lufg1.js";import"./Counter-DXWSEFY6.js";import"./Sun-Bft0ZijA.js";import"./constants-BAH7I9kc.js";import"./index-Bx6tewuM.js";import"./Typography-DmSN6cv6.js";import"./TruncateString-d_nSHKm-.js";import"./useIsomorphicLayoutEffect-BAXQmlEq.js";import"./isBrowser-C2N6XvuH.js";import"./Tooltip-DzAF_V2U.js";import"./PopoverPrivate-CnKgsFAm.js";import"./index-Bxu_udwM.js";import"./index-DdXvKv-Q.js";import"./QuestionTooltip-CJvOZrGy.js";import"./index-B9oUDl45.js";import"./FieldText-vteoh8lu.js";import"./index-B7wZyJkK.js";import"./constants-9uwKbtvo.js";import"./FieldDecorator-C5NteYAG.js";import"./index-C-NxZ9RO.js";import"./DropList-Bm_EuU9R.js";import"./hooks-DRwlTlR6.js";import"./useValueControl-CNLw7ht-.js";import"./Checkbox-BhxF2baR.js";import"./TogglePrivate-BTSew7b5.js";import"./index-3XDw48l5.js";import"./index-DtRrUciF.js";import"./Switch-C1orskjE.js";import"./index-BQAaeyfQ.js";import"./Dropdown-4YXb2YvP.js";import"./index-DLGJiw2b.js";import"./index-Baw9oej9.js";import"./LocaleProvider-CyhbxqE1.js";import"./index-BLN4vTde.js";import"./IconPredefined-DVxQYij_.js";import"./ButtonTonal-22D8fvpM.js";import"./ButtonFilled-DbYFxUtZ.js";import"./Divider-C1X9zrkx.js";import"./Scroll-CyeY1SIb.js";import"./Spinner-BoRMrYYR.js";import"./useButtonNavigation-CVCsehRW.js";import"./useClearButton-CBEN1tav.js";import"./InputPrivate-Bm1hKXpr.js";import"./getArrowIcon-CMCEz6is.js";import"./useValueControl-C51frgGe.js";import"./useCopyButton-BRHrjF_j.js";import"./index-DTH25FFD.js";import"./index-CX1lIXbQ.js";import"./usePrefix-CWfsp2Rm.js";import"./FieldContainerPrivate-FMwqMCEU.js";import"./Avatar-CDor1aXl.js";import"./StatusIndicator-DwCynB3G.js";const Do={title:"Components/Accordion/AccordionSecondary",component:t},k=({selectionMode:m})=>{const[d,i]=p.useState(void 0);return p.useEffect(()=>{i(void 0)},[m]),o.jsx("div",{className:S.wrapper,children:o.jsx(t,{expanded:d,onExpandedChange:i,selectionMode:m,children:Array.from({length:2}).map((h,e)=>o.jsx(t.CollapseBlock,{id:String(e),header:o.jsx(t.CollapseBlockHeader,{...E}),"data-test-id":f[e],children:o.jsx(x,{})},e))})})},r={render:k,args:{selectionMode:u.Single},argTypes:{},parameters:{readme:{sidebar:[`Latest version: ${a.version}`,g,l]},packageName:a.name,design:{name:"Figma",type:"figma",url:"https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A262646&mode=design"}}};var n,s,c;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: Template,
+  args: {
+    selectionMode: SELECTION_MODE.Single
+  },
+  argTypes: {},
+  parameters: {
+    readme: {
+      sidebar: [\`Latest version: \${componentPackage.version}\`, componentReadme, componentChangelog]
+    },
+    packageName: componentPackage.name,
+    design: {
+      name: 'Figma',
+      type: 'figma',
+      url: 'https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A262646&mode=design'
+    }
+  }
+}`,...(c=(s=r.parameters)==null?void 0:s.docs)==null?void 0:c.source}}};export{r as accordionSecondary,Do as default};
