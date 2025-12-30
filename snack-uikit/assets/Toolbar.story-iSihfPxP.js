@@ -1,0 +1,1776 @@
+import{j as t}from"./jsx-runtime-BTJTZTIL.js";import{r as k}from"./index-CJ_LmFaV.js";import{t as e}from"./helpers-BVy9P2Zh.js";import{T as i,a as S}from"./Toolbar-B2pIP6-u.js";import{P as s}from"./index-CTTgWa-s.js";import{C as $}from"./index-Y3TRpJ-L.js";import{C as J}from"./index-DHAmGKAZ.js";import{T as W}from"./index-CGSydWJd.js";import{e as Y}from"./componentPropsProcessors-UJEZy8aQ.js";import{B as L}from"./ButtonFunction-DbnPA0ic.js";import"./index-ChsGqxH_.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-Bxu_udwM.js";import"./index-DdXvKv-Q.js";import"./index-DUmpqB7p.js";import"./index-Chjiymov.js";import"./index-DreyRvUE.js";import"./ProgressBar-TiBN-Oau.js";import"./index-Dn6vuaYJ.js";import"./index-CAfvFIBF.js";import"./index-DbF-M2Rm.js";import"./TruncateString-D54BiV_x.js";import"./useIsomorphicLayoutEffect-BAXQmlEq.js";import"./isBrowser-C2N6XvuH.js";import"./Tooltip-DzAF_V2U.js";import"./PopoverPrivate-CnKgsFAm.js";import"./index-JZGyZbA2.js";import"./Link-D99a5Mz9.js";import"./LocaleProvider-DhC1J63f.js";import"./Scroll-CyeY1SIb.js";import"./Sun-CLMO8Tpr.js";import"./constants-BAH7I9kc.js";import"./ChipChoiceRow-DT8o32nj.js";import"./constants-C4fmyMeh.js";import"./index-WxXf--jV.js";import"./FuzzySearch-C8qpdhmO.js";import"./ButtonFilled-BVIQ21Q6.js";import"./utils-BPr_B-ku.js";import"./Counter-DXWSEFY6.js";import"./index-B7wZyJkK.js";import"./useValueControl-CNLw7ht-.js";import"./Dropdown-4YXb2YvP.js";import"./hooks-DKJmqs6Z.js";import"./Checkbox-PwUu9dU3.js";import"./constants-BObEONKm.js";import"./TogglePrivate-BTSew7b5.js";import"./index-w0WAZL2A.js";import"./Switch-BaiPP0iO.js";import"./index-C3mvkShn.js";import"./index-CXJdfWGn.js";import"./index-DoLi_cbU.js";import"./IconPredefined-DVxQYij_.js";import"./Typography-DmSN6cv6.js";import"./ButtonTonal-BD68Gmas.js";import"./Divider-C1X9zrkx.js";import"./Spinner-DZPrD8kc.js";import"./useButtonNavigation-CVCsehRW.js";import"./useClearButton-31EHK2UD.js";import"./constants-9uwKbtvo.js";import"./InputPrivate-Cu_MB_5a.js";import"./DropList-Cv4lq34N.js";import"./Calendar-DySUXzWB.js";import"./TimePickerBase-J0CV7CHi.js";import"./List-w6jb6jVF.js";import"./TimePicker-CB1NkNtA.js";import"./index-CF_OgQNJ.js";import"./index-B2h5DBoi.js";import"./Tag-BEBGOq3Q.js";import"./constants-BaREPXw5.js";const X=`# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## <small>0.14.15 (2025-12-17)</small>
+
+* fix(FF-7656): date parse issue ([edddd6c](https://github.com/cloud-ru-tech/snack-uikit/commit/edddd6c))
+* fix(FF-7798): update saved filter format ([2c8d6cc](https://github.com/cloud-ru-tech/snack-uikit/commit/2c8d6cc))
+
+
+
+
+
+## <small>0.14.14 (2025-12-06)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.13 (2025-12-01)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.33](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.12 (2025-11-28)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.11 (2025-11-28)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.27.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.32.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.32](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.23](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.10 (2025-11-14)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.9 (2025-11-06)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.8 (2025-10-28)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## <small>0.14.7 (2025-09-25)</small>
+
+* fix(FF-7134): update ft-request-payload-transform ([4f95098](https://github.com/cloud-ru-tech/snack-uikit/commit/4f95098))
+
+
+
+
+
+## <small>0.14.6 (2025-09-24)</small>
+
+* fix(FF-7134): update ft-request-payload-transform to be able to use encode prop in formatTableStateT ([e76b8b3](https://github.com/cloud-ru-tech/snack-uikit/commit/e76b8b3))
+
+
+
+
+
+## <small>0.14.5 (2025-09-22)</small>
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.27.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.32.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.31](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.22](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## 0.14.4 (2025-09-12)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+
+
+
+
+
+## 0.14.3 (2025-09-10)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.30](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+
+
+
+
+## 0.14.2 (2025-09-05)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.29](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+
+
+
+
+## 0.14.1 (2025-09-03)
+
+
+### Bug Fixes
+
+* **FF-6982:** add helpers for formatting state to request payload ([86a9845](https://github.com/cloud-ru-tech/snack-uikit/commit/86a9845a1c92bc3bf13d0d875803a935ebe690c8))
+
+
+
+
+
+# 0.14.0 (2025-09-01)
+
+
+### Features
+
+* **FF-6982:** move persist state functionality from Table to Toolbar ([8fac4f5](https://github.com/cloud-ru-tech/snack-uikit/commit/8fac4f5d5201ce3110be2cc4426548e882b1fe3a))
+
+
+
+
+
+## 0.13.23 (2025-08-26)
+
+### Only dependencies have been changed
+* [@snack-uikit/tag@0.15.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+
+
+
+
+## 0.13.22 (2025-08-01)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.28.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+
+
+
+
+
+## 0.13.21 (2025-07-23)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.20](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.27](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+
+
+
+
+## 0.13.20 (2025-07-17)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.19](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.32.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.19 (2025-07-17)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.18](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.18 (2025-07-16)
+
+### Only dependencies have been changed
+* [@snack-uikit/button@0.19.15](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+* [@snack-uikit/chips@0.27.17](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.26](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.20](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+* [@snack-uikit/utils@3.10.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.13.17 (2025-07-15)
+
+### Only dependencies have been changed
+* [@snack-uikit/button@0.19.14](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+* [@snack-uikit/chips@0.27.16](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.25](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.19](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+* [@snack-uikit/utils@3.10.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.13.16 (2025-07-10)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.15](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.27.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.31.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.24](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.18](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## 0.13.15 (2025-07-10)
+
+### Only dependencies have been changed
+* [@snack-uikit/button@0.19.13](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+* [@snack-uikit/chips@0.27.14](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.14 (2025-07-09)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.13](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.13 (2025-07-07)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.31.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.12 (2025-07-07)
+
+### Only dependencies have been changed
+* [@snack-uikit/button@0.19.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+* [@snack-uikit/chips@0.27.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.27.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.31.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.23](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.17](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.18.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+* [@snack-uikit/utils@3.9.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.13.11 (2025-06-27)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.27.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.30.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.22](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.16](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.17.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## 0.13.10 (2025-06-23)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.30.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+
+
+
+
+## 0.13.9 (2025-06-19)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.29.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.17.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## 0.13.8 (2025-06-16)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/icons@0.26.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+* [@snack-uikit/list@0.29.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.21](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+* [@snack-uikit/tag@0.15.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+* [@snack-uikit/toggles@0.13.15](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+* [@snack-uikit/tooltip@0.17.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+
+
+
+
+## 0.13.7 (2025-06-16)
+
+### Only dependencies have been changed
+* [@snack-uikit/chips@0.27.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+* [@snack-uikit/list@0.29.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+* [@snack-uikit/search-private@0.4.20](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+
+
+
+
+## 0.13.6 (2025-05-29)
+
+### Only dependencies have been changed
+* [@snack-uikit/tag@0.15.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+
+
+
+
+## 0.13.5 (2025-05-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.27.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.29.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.19](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.13.4 (2025-05-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/chips@0.27.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.26.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.29.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.18](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.14.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.14](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.17.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+- [@snack-uikit/utils@3.8.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.13.3 (2025-05-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.27.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.29.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.13.2 (2025-05-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.27.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.29.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.13.1 (2025-05-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/chips@0.27.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.28.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.17](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+# 0.13.0 (2025-04-23)
+
+### Features
+
+- **PDS-2086:** add nonce prop for scrollbars ([9bf1fb6](https://github.com/cloud-ru-tech/snack-uikit/commit/9bf1fb63a43d27fe0190a20c94ef2ee68f67f40f))
+
+## 0.12.13 (2025-04-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/tag@0.13.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.12.12 (2025-03-19)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.26.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.27.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.16](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.13](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.17.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.12.11 (2025-03-17)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.27.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.17.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.12.10 (2025-03-17)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/chips@0.26.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.26.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.27.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.15](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+- [@snack-uikit/utils@3.8.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.12.9 (2025-03-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.26.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.27.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.14](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.12.8 (2025-03-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.27.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.12.7 (2025-03-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.25.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.27.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.13](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.12.6 (2025-03-11)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+
+## 0.12.5 (2025-03-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.27.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.12.4 (2025-03-05)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.27.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.12.3 (2025-03-05)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.26.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.26.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.12.2 (2025-03-04)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.25.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.26.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.12.1 (2025-03-04)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/icons@0.25.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.26.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+# 0.12.0 (2025-03-04)
+
+### Features
+
+- **PDS-681:** add save filter ([1406c6c](https://github.com/cloud-ru-tech/snack-uikit/commit/1406c6c447f337b5140135f8741b52ed1a0dfbf0))
+
+## 0.11.8 (2025-03-03)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+
+## 0.11.7 (2025-02-25)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.26.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.11.6 (2025-02-24)
+
+### Bug Fixes
+
+- **FF-6288:** width of chips droplist ([113b338](https://github.com/cloud-ru-tech/snack-uikit/commit/113b338c81f6e8a6606bb11afd50a5ade5f8aa4a))
+
+## 0.11.5 (2025-02-10)
+
+### Bug Fixes
+
+- **PDS-1081:** make type for filters in generic non required ([136ea97](https://github.com/cloud-ru-tech/snack-uikit/commit/136ea971801290030eb6ad68bfcb8c06b2b3e732))
+
+## 0.11.4 (2025-02-10)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.25.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.11.3 (2025-02-06)
+
+### Bug Fixes
+
+- **PDS-1081:** make type for filters in generic non required ([91371ec](https://github.com/cloud-ru-tech/snack-uikit/commit/91371ec7a78d2cf0f1caf545911cc578b95f2ee9))
+
+## 0.11.2 (2025-02-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/chips@0.25.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/chips/CHANGELOG.md)
+- [@snack-uikit/list@0.24.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.11.1 (2025-02-05)
+
+### Bug Fixes
+
+- **PDS-1081:** allow to show checkbox without bulk actions ([db193d9](https://github.com/cloud-ru-tech/snack-uikit/commit/db193d9fa9f8d679c1855db0f0d975d9f5704551))
+
+# 0.11.0 (2025-02-05)
+
+### Features
+
+- **PDS-1081:** add filter row props ([a818aba](https://github.com/cloud-ru-tech/snack-uikit/commit/a818abadd7cd4aea8f6cdcaac58b09ca19fa3d2c))
+
+## 0.10.3 (2025-02-04)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.24.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tooltip@0.16.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tooltip/CHANGELOG.md)
+
+## 0.10.2 (2025-02-04)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.24.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.10.1 (2025-01-31)
+
+### Bug Fixes
+
+- **PDS-1461:** update after token change ([3324d1d](https://github.com/cloud-ru-tech/snack-uikit/commit/3324d1da07b8d0e26186046d859985774fc06ce6))
+
+# 0.10.0 (2025-01-23)
+
+### BREAKING CHANGES
+
+- **PDS-926:** add bulk actions, remove onDelete and before props ([a871db9](https://github.com/cloud-ru-tech/snack-uikit/commit/a871db9ea3446189852704ee135e8a510d2f7204))
+
+## 0.9.18 (2025-01-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.23.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.17 (2025-01-20)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.22.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.9.16 (2024-12-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.22.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.9.15 (2024-12-25)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.22.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.14 (2024-12-18)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.22.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.9.13 (2024-12-17)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.21.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.9.12 (2024-12-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/icons@0.24.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.21.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.12.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@3.6.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.9.11 (2024-12-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.9.10 (2024-12-04)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/tag@0.12.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.9.9 (2024-11-29)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.8 (2024-11-19)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.9.7 (2024-11-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.6 (2024-11-14)
+
+### Dependencies
+
+- **FF-5678:** up deps classnames/uncontrollable ([8f0d645](https://github.com/cloud-ru-tech/snack-uikit/commit/8f0d645fc7eb8eaf95660cd0ae7d4b550821059b))
+
+## 0.9.5 (2024-11-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.21.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.9.4 (2024-11-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.3 (2024-11-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.9.2 (2024-11-05)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.21.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.13.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.9.1 (2024-10-31)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.19.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.21.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.4.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.11.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+# 0.9.0 (2024-10-28)
+
+### Features
+
+- **FF-5782:** sass use/forward approach ([3e53869](https://github.com/cloud-ru-tech/snack-uikit/commit/3e53869ace864a7718e434b7f410c15dbd911cd5))
+
+# 0.8.0 (2024-10-28)
+
+### Features
+
+- **FF-5502:** add cjs build ([ffada28](https://github.com/cloud-ru-tech/snack-uikit/commit/ffada28bfdc37ea760eb1c8759342e680bdf8dd6))
+
+## 0.7.63 (2024-10-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.18.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.62 (2024-10-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.17.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.61 (2024-10-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.17.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.60 (2024-09-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.17.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.7.59 (2024-09-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.16.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.58 (2024-09-24)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.16.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.57 (2024-09-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/icons@0.22.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.16.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.10.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@3.4.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.7.56 (2024-09-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.16.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.55 (2024-08-21)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.16.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.54 (2024-08-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.15.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.53 (2024-08-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.15.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/toggles@0.10.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.52 (2024-08-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.15.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.51 (2024-08-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.15.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.50 (2024-08-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.14.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.49 (2024-07-29)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.14.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.10.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.48 (2024-07-19)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/icons@0.22.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.14.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.10.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.47 (2024-07-19)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.14.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.46 (2024-07-09)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/tag@0.9.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.45 (2024-06-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.44 (2024-06-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.43 (2024-06-20)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.42 (2024-06-11)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.10.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.41 (2024-06-11)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.13.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.40 (2024-06-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.39 (2024-05-31)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.38 (2024-05-30)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.37 (2024-05-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.36 (2024-05-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.35 (2024-05-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.13.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.34 (2024-05-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.12.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.33 (2024-05-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/icons@0.21.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.11.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.32 (2024-04-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.11.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.31 (2024-04-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.11.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.30 (2024-04-25)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.11.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.29 (2024-04-24)
+
+### Bug Fixes
+
+- **FF-00:** remove unnecessary divider in toolbar in single selection mode ([9ba5f4d](https://github.com/cloud-ru-tech/snack-uikit/commit/9ba5f4dc8259b14b3ac2b59a60c4366f63ad93ce))
+
+## 0.7.28 (2024-04-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.11.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.2.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.9.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@3.3.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.7.27 (2024-04-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/tag@0.9.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.26 (2024-04-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.11.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.25 (2024-04-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.10.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.24 (2024-03-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.9.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.8.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.23 (2024-03-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.9.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.22 (2024-03-19)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.8.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.21 (2024-03-11)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.8.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.20 (2024-03-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.7.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.19 (2024-02-29)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.7.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.18 (2024-02-29)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.7.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.17 (2024-02-28)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.17.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/list@0.6.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.16 (2024-02-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.6.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.8.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.15 (2024-02-27)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.5.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.14 (2024-02-26)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.4.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.13 (2024-02-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.4.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.8.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.12 (2024-02-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.3.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.7.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.11 (2024-02-20)
+
+### Bug Fixes
+
+- **FF-4297:** apply system-layer tokens ([7c8fd4b](https://github.com/cloud-ru-tech/snack-uikit/commit/7c8fd4b5334360b2fc31da92973b6835ffa287af))
+
+## 0.7.10 (2024-02-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.3.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.9 (2024-02-09)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.3.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.7.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.8 (2024-02-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.3.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.1.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+
+## 0.7.7 (2024-02-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.3.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.6 (2024-02-05)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/icons@0.20.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/list@0.2.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/search-private@0.1.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/tag@0.7.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.7.5 (2024-02-05)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.16.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+
+## 0.7.4 (2024-02-02)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.2.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+## 0.7.3 (2024-02-01)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.1.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.7.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.2 (2024-01-31)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.1.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+- [@snack-uikit/tag@0.7.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/tag/CHANGELOG.md)
+
+## 0.7.1 (2024-01-30)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/list@0.1.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/list/CHANGELOG.md)
+
+# 0.7.0 (2024-01-30)
+
+### BREAKING CHANGES
+
+- **FF-4075:** change usage droplist to list package ([4ce6391](https://github.com/cloud-ru-tech/snack-uikit/commit/4ce63915e838a46a3776e8e21393695a37d2fdd3))
+
+## 0.6.2 (2024-01-23)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.12.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/icons@0.20.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/search-private@0.1.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search-private/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.6.1 (2024-01-18)
+
+### Dependencies
+
+- **FF-4075:** change search package to private ([94c9414](https://github.com/cloud-ru-tech/snack-uikit/commit/94c94144a291db75bf1264b678f04068c9b3b069))
+
+# 0.6.0 (2024-01-18)
+
+### BREAKING CHANGES
+
+- **FF-4102:** rename prop 'actions' to 'after', add 'before' prop, composed some props to 'search' ([8178570](https://github.com/cloud-ru-tech/snack-uikit/commit/81785709769bde31e7d11db1af9db6b87568b148))
+
+## 0.5.4 (2023-12-28)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.15.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.12.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.6.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.5.3 (2023-12-25)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.12.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.6.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.5.2 (2023-12-18)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.12.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/icons@0.19.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/search@0.6.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.5.1 (2023-12-14)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.12.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/icons@0.19.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/search@0.6.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.9.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+# 0.5.0 (2023-12-14)
+
+### BREAKING CHANGES
+
+- **FF-3729:** replace enum with unions ([910db4a](https://github.com/cloud-ru-tech/snack-uikit/commit/910db4aa8231ccbc58e538e5c5c1f461b1dec275))
+
+## 0.4.2 (2023-12-07)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.11.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.5.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.4.1 (2023-12-06)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.14.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.11.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.5.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.8.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@3.1.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+# 0.4.0 (2023-12-06)
+
+### Bug Fixes
+
+- **FF-0000:** remove extractDataProps ([9d676b9](https://github.com/cloud-ru-tech/snack-uikit/commit/9d676b9df214167bfd1b7ce9f1590891ca62f9a3))
+- **FF-3643:** onCheck unnecessary prop ([fda26ff](https://github.com/cloud-ru-tech/snack-uikit/commit/fda26ff00ef7f6807622af66f87333bd74a7a812))
+
+### Features
+
+- **FF-2872:** add toolbar ([f87eb38](https://github.com/cloud-ru-tech/snack-uikit/commit/f87eb38e9b54d1eea6a4d9592862486e216bee91))
+- **FF-3309:** add outline prop into Toolbar ([49d4c02](https://github.com/cloud-ru-tech/snack-uikit/commit/49d4c028a41c7927264baa2700617913cacd9db9))
+- **FF-3643:** add selectionMode for hide delete button ([df66297](https://github.com/cloud-ru-tech/snack-uikit/commit/df66297920344ed68f41453f5cd7e6f082a033d6))
+
+### BREAKING CHANGES
+
+- **FF-3823:** move to snack-uikit scope ([ac9e30d](https://github.com/cloud-ru-tech/snack-uikit/commit/ac9e30d574d529b2bf4f5184b70c511c981a6032))
+
+## 0.3.7 (2023-11-29)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.12](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.3.6 (2023-11-22)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.11](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.7.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.3.5 (2023-11-21)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.10](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.3.4 (2023-11-21)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.9](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.6.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.3.3 (2023-11-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.3.2 (2023-11-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.6.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.3.1 (2023-11-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.13.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.10.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.6](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+# 0.3.0 (2023-11-14)
+
+### Features
+
+- **FF-3643:** add selectionMode for hide delete button ([df66297](https://github.com/cloud-ru-tech/snack-uikit/commit/df66297920344ed68f41453f5cd7e6f082a033d6))
+
+## 0.2.4 (2023-11-09)
+
+### Bug Fixes
+
+- **FF-3643:** onCheck unnecessary prop ([fda26ff](https://github.com/cloud-ru-tech/snack-uikit/commit/fda26ff00ef7f6807622af66f87333bd74a7a812))
+
+## 0.2.3 (2023-11-09)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/icons@0.18.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/search@0.4.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.8](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.2.2 (2023-11-08)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.13.5](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.10.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.7](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@2.0.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.2.1 (2023-10-31)
+
+### Bug Fixes
+
+- **FF-0000:** remove extractDataProps ([9d676b9](https://github.com/cloud-ru-tech/snack-uikit/commit/9d676b9df214167bfd1b7ce9f1590891ca62f9a3))
+
+# 0.2.0 (2023-10-26)
+
+### Features
+
+- **FF-3309:** add outline prop into Toolbar ([49d4c02](https://github.com/cloud-ru-tech/snack-uikit/commit/49d4c028a41c7927264baa2700617913cacd9db9))
+
+## 0.1.7 (2023-10-25)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.13.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.10.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+- [@snack-uikit/utils@1.3.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/utils/CHANGELOG.md)
+
+## 0.1.6 (2023-10-18)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.10.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.4.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.1.5 (2023-10-16)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.9.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/icons@0.17.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/icons/CHANGELOG.md)
+- [@snack-uikit/search@0.3.4](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.1.4 (2023-10-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.9.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.3.3](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.1.3 (2023-10-13)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.9.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.3.2](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+## 0.1.2 (2023-10-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/button@0.13.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/button/CHANGELOG.md)
+- [@snack-uikit/droplist@0.9.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.3.1](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+
+## 0.1.1 (2023-10-12)
+
+### Only dependencies have been changed
+
+- [@snack-uikit/droplist@0.9.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/droplist/CHANGELOG.md)
+- [@snack-uikit/search@0.3.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/search/CHANGELOG.md)
+- [@snack-uikit/toggles@0.5.0](https://github.com/cloud-ru-tech/snack-uikit/blob/master/packages/toggles/CHANGELOG.md)
+
+# 0.1.0 (2023-10-11)
+
+### Features
+
+- **FF-2872:** add toolbar ([f87eb38](https://github.com/cloud-ru-tech/snack-uikit/commit/f87eb38e9b54d1eea6a4d9592862486e216bee91))
+
+## CHANGELOG
+
+### v0.0.0
+
+- Initial version
+`,Z="@snack-uikit/toolbar",tt="0.14.15",H={name:Z,version:tt},et=`# Toolbar
+
+## Installation
+\`npm i @snack-uikit/toolbar\`
+
+[Changelog](./CHANGELOG.md)
+
+## Description
+
+- Пакет \`@snack-uikit/toolbar\` предоставляет компонент \`Toolbar\` — универсальную панель инструментов для управления данными в таблицах, списках и других представлениях контента.
+- Компонент объединяет в себе строку поиска, массовые действия для выбранных элементов, кнопку обновления, фильтры и дополнительные действия в единый интерфейс.
+- Поддерживает два режима выбора: \`single\` (одиночный) и \`multiple\` (множественный) с чекбоксом и массовыми действиями (\`bulkActions\`), которые автоматически скрываются при отсутствии выбранных элементов.
+- Включает строку поиска с возможностью загрузки (\`loading\`), обработчиками изменения значения и подтверждения поиска.
+- Интегрирует систему фильтров через \`filterRow\` на базе \`ChipChoiceRow\`, позволяющую добавлять, удалять и управлять активными фильтрами с отображением их количества на кнопке фильтра.
+- Предоставляет слот \`after\` для размещения произвольных React-компонентов в правой части тулбара и выпадающий список дополнительных действий (\`moreActions\`).
+- Поддерживает сохранение состояния фильтров и поиска в \`localStorage\` и \`queryParams\` через конфигурацию \`persist\` для восстановления состояния при перезагрузке страницы.
+- Может отображаться с внешним бордером (\`outline\`) для визуального отделения от контента.
+- Figma: [\`Toolbar\`](https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A224846&mode=design).
+
+## Example
+
+\`\`\`tsx
+import { useState } from 'react';
+import { Toolbar } from '@snack-uikit/toolbar';
+import { ButtonFunction } from '@snack-uikit/button';
+import { PlaceholderSVG } from '@snack-uikit/icons';
+
+function Example() {
+  const [searchValue, setSearchValue] = useState('');
+  const [checked, setChecked] = useState(false);
+  const [filtersValue, setFiltersValue] = useState<Record<string, unknown>>({});
+  const [visibleFilters, setVisibleFilters] = useState<string[]>([]);
+
+  const bulkActions = [
+    {
+      label: 'Confirm',
+      icon: PlaceholderSVG,
+      onClick: () => console.log('Confirm'),
+      'data-test-id': 'confirm-action',
+    },
+    {
+      label: 'Delete',
+      icon: PlaceholderSVG,
+      onClick: () => console.log('Delete'),
+      'data-test-id': 'delete-action',
+    },
+  ];
+
+  const moreActions = [
+    {
+      id: 'export',
+      content: { option: 'Export' },
+      onClick: () => console.log('Export'),
+    },
+    {
+      id: 'import',
+      content: { option: 'Import' },
+      onClick: () => console.log('Import'),
+    },
+  ];
+
+  const filterRow = {
+    showAddButton: true,
+    showClearButton: true,
+    filters: [
+      {
+        id: 'status',
+        label: 'Status',
+        type: 'single',
+        pinned: true,
+        options: [
+          { label: 'Active', value: 'active' },
+          { label: 'Inactive', value: 'inactive' },
+        ],
+      },
+    ],
+    open: visibleFilters.length > 0,
+    value: filtersValue,
+    onChange: setFiltersValue,
+    visibleFilters,
+    onVisibleFiltersChange: setVisibleFilters,
+  };
+
+  return (
+    <Toolbar
+      search={{
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: (value) => console.log('Search:', value),
+        placeholder: 'Search',
+      }}
+      selectionMode="multiple"
+      checked={checked}
+      onCheck={() => setChecked(!checked)}
+      bulkActions={bulkActions}
+      onRefresh={() => console.log('Refresh')}
+      moreActions={moreActions}
+      filterRow={filterRow}
+      after={
+        <>
+          <ButtonFunction icon={<PlaceholderSVG />} size="m" />
+          <ButtonFunction icon={<PlaceholderSVG />} size="m" />
+        </>
+      }
+      persist={{
+        id: 'example-toolbar',
+        filterQueryKey: 'filters',
+        onLoad: ({ filter, search }) => {
+          if (filter) setFiltersValue(filter);
+          if (search) setSearchValue(search);
+        },
+      }}
+    />
+  );
+}
+\`\`\`
+
+[//]: DOCUMENTATION_SECTION_START
+[//]: THIS_SECTION_IS_AUTOGENERATED_PLEASE_DONT_EDIT_IT
+## formatFilterStateToRequestPayload
+Вспомогательная функция для преобразования состояния тулбара к формату RequestPayloadParams
+### Props
+| name | type | default value | description |
+|------|------|---------------|-------------|
+| pagination | \`PaginationParams\` | - |  |
+| ordering | \`FieldSort[]\` | - |  |
+| search | \`string\` | - |  |
+| filter | \`FiltersState\` | - |  |
+## Toolbar
+### Props
+| name | type | default value | description |
+|------|------|---------------|-------------|
+| search | \`{ value: string; onChange(value: string): void; onSubmit?(value: string): void; placeholder?: string; loading?: boolean; }\` | - | Параметры отвечают за строку поиска <br> <strong>value</strong>: Значение строки поиска <br> <strong>onChange</strong>: Колбэк смены значения <br> <strong>onSubmit</strong>: Колбэк на подтверждение поиска по строке <strong>placeholder</strong>: Плейсхолдер <br> <strong>loading</strong>: Состояние загрузки <br> |
+| className | \`string\` | - | Класснейм |
+| outline | \`boolean\` | - | Внешний бордер |
+| onCheck | \`() => void\` | - | Колбек смены значения чекбокса |
+| checked | \`boolean\` | - | Значение чекбокса |
+| indeterminate | \`boolean\` | - | Состояние частичного выбора |
+| selectionMode | enum SelectionMode: \`"single"\`, \`"multiple"\` | 'multiple' | Режим выбора |
+| bulkActions | \`BulkAction[]\` | - | Список массовых действий |
+| onRefresh | \`() => void\` | - | Колбек обновления |
+| after | \`ReactNode\` | - | Дополнительный слот в конце тулбара |
+| moreActions | \`Action[]\` | - | Элементы выпадающего списка кнопки с действиями |
+| filterRow | \`FilterRow<TState>\` | - |  |
+| persist | \`ToolbarPersistConfig<TState>\` | - | Конфиг для сохранения состояния в localStorage и queryParams. <br> Поле id должно быть уникальным для каждого инстанса компонента. <br> |
+
+
+[//]: DOCUMENTATION_SECTION_END
+`,n={submit:"submit-toaster",delete:"delete-toaster",deactivate:"deactivate-toaster",disabled:"disabled-toaster",confirm:"confirm-toaster",reject:"reject-toaster",refresh:"refresh-toaster",option:"option-toaster"},l={pinnedSingleFilter:"pinned-single-filter",pinnedMultiFilter:"pinned-multi-filter",singleFilter:"single-filter",dateFilter:"date-filter"};function m(c){return Array.from({length:Number(c)||3}).map((a,u)=>({content:{option:`Option ${u+1}`},onClick:()=>e.userAction.neutral({label:`Option ${u+1} clicked`,"data-test-id":n.option}),icon:t.jsx(s,{})}))}function v({outline:c,selectionMode:a}){return{outline:c,selectionMode:a}}try{m.displayName="generateOptions",m.__docgenInfo={description:"",displayName:"generateOptions",props:{}}}catch{}try{v.displayName="extractToolbarArgs",v.__docgenInfo={description:"",displayName:"extractToolbarArgs",props:{"data-test-id":{defaultValue:null,description:"",name:"data-test-id",required:!1,type:{name:"string"}},search:{defaultValue:null,description:`Параметры отвечают за строку поиска <br>
+<strong>value</strong>: Значение строки поиска <br>
+<strong>onChange</strong>: Колбэк смены значения <br>
+<strong>onSubmit</strong>: Колбэк на подтверждение поиска по строке
+<strong>placeholder</strong>: Плейсхолдер <br>
+<strong>loading</strong>: Состояние загрузки <br>`,name:"search",required:!1,type:{name:"{ value: string; onChange(value: string): void; onSubmit?(value: string): void; placeholder?: string; loading?: boolean; } | undefined"}},className:{defaultValue:null,description:"Класснейм",name:"className",required:!1,type:{name:"string"}},outline:{defaultValue:null,description:"Внешний бордер",name:"outline",required:!1,type:{name:"boolean"}},selectionMode:{defaultValue:{value:"'multiple'"},description:"Режим выбора",name:"selectionMode",required:!1,type:{name:"enum",value:[{value:'"single"'},{value:'"multiple"'}]}},checked:{defaultValue:null,description:"Значение чекбокса",name:"checked",required:!1,type:{name:"boolean"}},onCheck:{defaultValue:null,description:"Колбек смены значения чекбокса",name:"onCheck",required:!1,type:{name:"(() => void)"}},indeterminate:{defaultValue:null,description:"Состояние частичного выбора",name:"indeterminate",required:!1,type:{name:"boolean"}},bulkActions:{defaultValue:null,description:"Список массовых действий",name:"bulkActions",required:!1,type:{name:"BulkAction[]"}},after:{defaultValue:null,description:"Дополнительный слот в конце тулбара",name:"after",required:!1,type:{name:"ReactNode"}},onRefresh:{defaultValue:null,description:"Колбек обновления",name:"onRefresh",required:!1,type:{name:"(() => void)"}},moreActions:{defaultValue:null,description:"Элементы выпадающего списка кнопки с действиями",name:"moreActions",required:!1,type:{name:"Action[]"}},filterRow:{defaultValue:null,description:"",name:"filterRow",required:!1,type:{name:"FilterRow<TState>"}},persist:{defaultValue:null,description:`Конфиг для сохранения состояния в localStorage и queryParams. <br>
+Поле id должно быть уникальным для каждого инстанса компонента. <br>`,name:"persist",required:!1,type:{name:"ToolbarPersistConfig<TState>"}}}}}catch{}const nt=3,w=m(nt),ct=[{label:"Confirm",icon:$,onClick:()=>e.userAction.warning({label:"Confirm","data-test-id":n.confirm}),"data-test-id":i.confirmAction},{label:"Remove confirmation",icon:J,onClick:()=>e.userAction.warning({label:"Reject","data-test-id":n.reject}),"data-test-id":i.rejectAction},{label:"Delete",icon:W,onClick:()=>e.userAction.warning({label:"Delete","data-test-id":n.delete}),disabled:!0,tooltip:"One of the selected objects cannot be deleted in bulk","data-test-id":i.deleteAction},{label:"Deactivate",icon:s,onClick:()=>e.userAction.warning({label:"Deactivate","data-test-id":n.deactivate}),"data-test-id":i.deactivateAction},{label:"Disabled Action",icon:s,onClick:()=>e.userAction.warning({label:"Disabled","data-test-id":n.disabled}),disabled:!0,tooltip:"Example of disabled action in the list","data-test-id":i.disabledAction}],it={showAddButton:!0,showClearButton:!0,filters:[{id:"multi1",label:"Multi",type:"multiple",pinned:!0,options:[{label:"Option 1",value:1},{label:"Option 2",value:2},{label:"Option 3",value:3}],"data-test-id":l.pinnedMultiFilter},{id:"multi2",label:"Multi with apply button",type:"multiple",options:[{label:"Option 1",value:1},{label:"Option 2",value:2},{label:"Option 3",value:3}],autoApply:!1},{id:"single3",label:"Single",type:"single",pinned:!0,options:[{label:"Option 1",value:1},{label:"Option 2",value:2},{label:"Option 3",value:3}],"data-test-id":l.pinnedSingleFilter},{id:"single4",label:"Single with apply button",type:"single",options:[{label:"Option 1",value:1},{label:"Option 2",value:2},{label:"Option 3",value:3}],autoApply:!1,"data-test-id":l.singleFilter},{id:"date5",label:"Date",type:"date","data-test-id":l.dateFilter},{id:"time6",label:"Time",type:"time"}]},st="_wrapper_1bq79_1",at={wrapper:st},{useArgs:ut}=__STORYBOOK_MODULE_PREVIEW_API__,Le={title:"Components/Toolbar",component:S},ot=({showOnRefresh:c,showBulkActions:a,showManyBulkActions:u,showFilters:D,filterRowOpened:B,showAfterActions:T,showSearch:R,showMoreActions:_,outline:V,selectionMode:p,filterRow:g,enablePersist:x,...r})=>{var E;const P=u?r.bulkActions:(E=r.bulkActions)==null?void 0:E.slice(0,3),[{checked:o,indeterminate:q},d]=ut(),[I,G]=k.useState({}),[M,O]=k.useState([]),[j,A]=k.useState(""),K=()=>{d({checked:!o})};k.useEffect(()=>{o&&(b=>{d({indeterminate:b})})(!1)},[o,d]);const U=()=>e.userAction.neutral({label:"Refresh","data-test-id":n.refresh}),Q=()=>e.userAction.success({label:"Submit","data-test-id":n.submit}),z=t.jsxs(t.Fragment,{children:[t.jsx(L,{icon:t.jsx(s,{}),size:"m"}),t.jsx(L,{icon:t.jsx(s,{}),size:"m"})]});return t.jsx("div",{className:at.wrapper,children:t.jsx(S,{...Y(r),outline:V,selectionMode:p,...p==="multiple"?{checked:o,onCheck:K,bulkActions:a?P:void 0,indeterminate:q}:{},search:R?{value:j,onChange:A,onSubmit:Q}:void 0,onRefresh:c?U:void 0,after:T?z:void 0,moreActions:_?w:void 0,filterRow:D&&g?{...g,open:B,value:I,onChange:G,visibleFilters:M,onVisibleFiltersChange:O}:void 0,persist:x?{id:"toolbar_filters_story",filterQueryKey:"filters",onLoad:({filter:C,search:b})=>{const N=C||{};G(N),O(Object.keys(N)),A(b||"")}}:void 0})})},h={render:ot,args:{outline:!1,selectionMode:"multiple",checked:!1,indeterminate:!1,showBulkActions:!0,showManyBulkActions:!0,bulkActions:ct,showSearch:!0,search:{value:"",placeholder:"Search",loading:!1,onChange(){}},showFilters:!0,filterRow:it,filterRowOpened:void 0,showMoreActions:!0,moreActions:w,showOnRefresh:!0,showAfterActions:!0,"data-test-id":"toolbar"},argTypes:{checked:{if:{arg:"selectionMode",eq:"multiple"}},indeterminate:{if:{arg:"selectionMode",eq:"multiple"}},showBulkActions:{name:"[Story]: Show bulk actions",type:"boolean"},showManyBulkActions:{name:"[Story]: Show many bulk actions to display droplist",type:"boolean",if:{arg:"showBulkActions",eq:!0}},bulkActions:{if:{arg:"showBulkActions",eq:!0}},showFilters:{name:"[Story]: Show filters",type:"boolean"},filterRowOpened:{name:"[Story]: Filter row open",type:"boolean",if:{arg:"showFilters",eq:!0}},filterRow:{if:{arg:"showFilters",eq:!0}},showOnRefresh:{name:"[Story]: Apply onRefresh callback",type:"boolean"},showSearch:{name:"[Story]: Apply search props",type:"boolean"},search:{table:{disable:!0}},showAfterActions:{name:'[Story]: Show custom ReactNode "after" (on the right side)',type:"boolean"},showMoreActions:{name:"[Story]: Show moreActions",type:"boolean"},enablePersist:{name:"[Story]: Enable filters persist",type:"boolean"},moreActions:{if:{arg:"showMoreActions",eq:!0}},after:{table:{disable:!0}},onCheck:{table:{disable:!0}},onRefresh:{table:{disable:!0}}},parameters:{readme:{sidebar:[`Latest version: ${H.version}`,et,X]},packageName:H.name,design:{name:"Figma",type:"figma",url:"https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A224846&mode=design"}}};var f,y,F;h.parameters={...h.parameters,docs:{...(f=h.parameters)==null?void 0:f.docs,source:{originalSource:`{
+  render: Template,
+  args: {
+    outline: false,
+    selectionMode: 'multiple',
+    checked: false,
+    indeterminate: false,
+    showBulkActions: true,
+    showManyBulkActions: true,
+    bulkActions: BULK_ACTIONS,
+    showSearch: true,
+    search: {
+      value: '',
+      placeholder: 'Search',
+      loading: false,
+      onChange() {}
+    },
+    showFilters: true,
+    filterRow: FILTER_ROW,
+    filterRowOpened: undefined,
+    showMoreActions: true,
+    moreActions: OPTIONS,
+    showOnRefresh: true,
+    showAfterActions: true,
+    'data-test-id': 'toolbar'
+  },
+  argTypes: {
+    checked: {
+      if: {
+        arg: 'selectionMode',
+        eq: 'multiple'
+      }
+    },
+    indeterminate: {
+      if: {
+        arg: 'selectionMode',
+        eq: 'multiple'
+      }
+    },
+    showBulkActions: {
+      name: '[Story]: Show bulk actions',
+      type: 'boolean'
+    },
+    showManyBulkActions: {
+      name: '[Story]: Show many bulk actions to display droplist',
+      type: 'boolean',
+      if: {
+        arg: 'showBulkActions',
+        eq: true
+      }
+    },
+    bulkActions: {
+      if: {
+        arg: 'showBulkActions',
+        eq: true
+      }
+    },
+    showFilters: {
+      name: '[Story]: Show filters',
+      type: 'boolean'
+    },
+    filterRowOpened: {
+      name: '[Story]: Filter row open',
+      type: 'boolean',
+      if: {
+        arg: 'showFilters',
+        eq: true
+      }
+    },
+    filterRow: {
+      if: {
+        arg: 'showFilters',
+        eq: true
+      }
+    },
+    showOnRefresh: {
+      name: '[Story]: Apply onRefresh callback',
+      type: 'boolean'
+    },
+    showSearch: {
+      name: '[Story]: Apply search props',
+      type: 'boolean'
+    },
+    search: {
+      table: {
+        disable: true
+      }
+    },
+    showAfterActions: {
+      name: '[Story]: Show custom ReactNode "after" (on the right side)',
+      type: 'boolean'
+    },
+    showMoreActions: {
+      name: '[Story]: Show moreActions',
+      type: 'boolean'
+    },
+    enablePersist: {
+      name: '[Story]: Enable filters persist',
+      type: 'boolean'
+    },
+    moreActions: {
+      if: {
+        arg: 'showMoreActions',
+        eq: true
+      }
+    },
+    after: {
+      table: {
+        disable: true
+      }
+    },
+    onCheck: {
+      table: {
+        disable: true
+      }
+    },
+    onRefresh: {
+      table: {
+        disable: true
+      }
+    }
+  },
+  parameters: {
+    readme: {
+      sidebar: [\`Latest version: \${componentPackage.version}\`, componentReadme, componentChangelog]
+    },
+    packageName: componentPackage.name,
+    design: {
+      name: 'Figma',
+      type: 'figma',
+      url: 'https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A224846&mode=design'
+    }
+  }
+}`,...(F=(y=h.parameters)==null?void 0:y.docs)==null?void 0:F.source}}};export{Le as default,h as toolbar};
