@@ -1,0 +1,150 @@
+"use strict";(()=>{(self.webpackChunkuikit_product=self.webpackChunkuikit_product||[]).push([[5069],{"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/stories/styles.module.scss":((_,d,e)=>{e.d(d,{A:()=>t});var n=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),a=e.n(n),r=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),i=e.n(r),s=i()(a());s.push([_.id,".whiteWrapper--X4qGK{max-width:1216px;height:auto;padding:1rem;background-color:var(--sys-neutral-background1-level, #fdfdfd)}",""]),s.locals={whiteWrapper:"whiteWrapper--X4qGK"};const t=s}),"./packages/icons/src/components/interface-icons-product/Link.tsx":((_,d,e)=>{e.d(d,{A:()=>i});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/index.js"),i=a.forwardRef(({size:s=24,...t},c)=>{t.width=void 0,t.height=void 0;const l="icon-link",o={};return typeof s=="number"&&(o.width=s+"px",o.height=s+"px",t.style||(t.style={}),t.style.width=s+"px",t.style.height=s+"px"),(0,n.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,fill:"currentColor",viewBox:"0 0 24 24","data-test-id":l,ref:c,...t,children:(0,n.jsx)("path",{fill:"inherit",fillRule:"evenodd",d:"M13.98 4.44 12.021 6.4l.539.54.539.54 1.701-1.7 1.7-1.7 1.71 1.71 1.71 1.71-3.41 3.408-3.41 3.407-.899-.858c-.495-.471-.911-.853-.925-.847a13 13 0 0 0-.528.532l-.502.523 1.182 1.127 1.183 1.128h1.049l3.93-3.93 3.93-3.93V6.94l-2.23-2.23-2.23-2.23h-1.12zm-3.645 3.669c-.105.013-.739.637-3.98 3.921L2.5 15.935l-.011.561-.011.561 2.231 2.232L6.94 21.52h1.12l1.96-1.96 1.959-1.96-.519-.52c-.285-.286-.537-.52-.559-.52s-.797.756-1.721 1.68L7.5 19.92l-1.718-1.718-1.717-1.717 2.478-2.507c1.362-1.379 2.873-2.912 3.357-3.407l.88-.898.895.853c.492.47.907.859.923.865s.257-.23.536-.525l.505-.536-1.176-1.125-1.177-1.125-.413.006a8 8 0 0 0-.538.023"})})});try{Link.displayName="Link",Link.__docgenInfo={description:"",displayName:"Link",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},size:{defaultValue:{value:"24"},description:"",name:"size",required:!1,type:{name:"number"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/icons/src/components/interface-icons-product/Link.tsx#Link"]={docgenInfo:Link.__docgenInfo,name:"Link",path:"packages/icons/src/components/interface-icons-product/Link.tsx#Link"})}catch(s){}}),"./packages/icons/src/components/interface-icons-product/Share.tsx":((_,d,e)=>{e.d(d,{A:()=>i});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/index.js"),i=a.forwardRef(({size:s=24,...t},c)=>{t.width=void 0,t.height=void 0;const l="icon-share",o={};return typeof s=="number"&&(o.width=s+"px",o.height=s+"px",t.style||(t.style={}),t.style.width=s+"px",t.style.height=s+"px"),(0,n.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,fill:"currentColor",viewBox:"0 0 24 24","data-test-id":l,ref:c,...t,children:(0,n.jsx)("path",{fill:"inherit",fillRule:"evenodd",d:"M11.24 5.287v3.107l-1.77.018c-1.415.014-1.838.031-2.11.083-1.979.38-3.312 1.626-3.838 3.585-.255.95-.282 1.428-.282 4.994v3.023l2.09-2.083c1.15-1.145 2.234-2.196 2.41-2.335s.433-.303.57-.366c.47-.214.66-.241 1.84-.262l1.09-.019v6.788l4.91-4.91L21.06 12l-4.91-4.91-4.91-4.91zm4.61 9.803-3.09 3.09v-4.625l-1.99.014-1.99.014-.397.11a4.5 4.5 0 0 0-1.483.734c-.198.149-.762.668-1.254 1.152l-.894.881.018-1.58c.015-1.261.032-1.652.087-1.935.275-1.442.956-2.356 2.067-2.773.667-.25.768-.259 3.426-.28l2.41-.02V5.82l3.09 3.09L18.94 12z"})})});try{Share.displayName="Share",Share.__docgenInfo={description:"",displayName:"Share",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},size:{defaultValue:{value:"24"},description:"",name:"size",required:!1,type:{name:"number"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/icons/src/components/interface-icons-product/Share.tsx#Share"]={docgenInfo:Share.__docgenInfo,name:"Share",path:"packages/icons/src/components/interface-icons-product/Share.tsx#Share"})}catch(s){}}),"./packages/icons/src/components/interface-icons-product/Telegram.tsx":((_,d,e)=>{e.d(d,{A:()=>i});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/index.js"),i=a.forwardRef(({size:s=24,...t},c)=>{t.width=void 0,t.height=void 0;const l="icon-telegram",o={};return typeof s=="number"&&(o.width=s+"px",o.height=s+"px",t.style||(t.style={}),t.style.width=s+"px",t.style.height=s+"px"),(0,n.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,fill:"currentColor",viewBox:"0 0 24 24","data-test-id":l,ref:c,...t,children:(0,n.jsx)("path",{d:"M18.44 5.988c-.124.025-12.687 4.59-13.172 4.785-.716.289-1.143.604-1.087.8.069.241.435.411 1.652.771a47 47 0 0 1 1.366.428l.619.208.172.52c.095.286.363 1.114.596 1.84.6 1.866.674 2.007 1.006 1.907.086-.026.516-.33 1.028-.729.484-.377.959-.732 1.055-.788.22-.13.444-.134.685-.011.099.05.882.572 1.74 1.161 1.835 1.259 1.805 1.24 1.962 1.24.257 0 .405-.259.539-.94.047-.242.606-2.784 1.242-5.65C18.48 8.665 19 6.278 19 6.226c0-.185-.267-.299-.56-.238m-1.6 2.288c0 .066-.555.531-2.38 1.992-2.569 2.057-3.594 2.959-3.94 3.47-.126.185-.136.226-.167.66-.084 1.213-.228 1.796-.407 1.647-.092-.077-.216-.402-.385-1.014a43 43 0 0 0-.321-1.09c-.271-.862-.26-1.109.061-1.44.33-.339 1.062-.768 4.659-2.73 3.043-1.66 2.88-1.575 2.88-1.495"})})});try{Telegram.displayName="Telegram",Telegram.__docgenInfo={description:"",displayName:"Telegram",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},size:{defaultValue:{value:"24"},description:"",name:"size",required:!1,type:{name:"number"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/icons/src/components/interface-icons-product/Telegram.tsx#Telegram"]={docgenInfo:Telegram.__docgenInfo,name:"Telegram",path:"packages/icons/src/components/interface-icons-product/Telegram.tsx#Telegram"})}catch(s){}}),"./packages/icons/src/components/interface-icons-product/Vk.tsx":((_,d,e)=>{e.d(d,{A:()=>i});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/index.js"),i=a.forwardRef(({size:s=24,...t},c)=>{t.width=void 0,t.height=void 0;const l="icon-vk",o={};return typeof s=="number"&&(o.width=s+"px",o.height=s+"px",t.style||(t.style={}),t.style.width=s+"px",t.style.height=s+"px"),(0,n.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,fill:"currentColor",viewBox:"0 0 24 24","data-test-id":l,ref:c,...t,children:(0,n.jsx)("path",{d:"M10.096 7.058c-.134.03-.341.104-.46.164-.23.116-.556.364-.556.423 0 .019.086.035.192.035.258 0 .567.156.706.357.196.283.216.428.243 1.812.025 1.23.022 1.298-.052 1.43-.098.175-.365.321-.589.321-.276 0-.463-.135-.804-.58a17.4 17.4 0 0 1-1.753-2.811c-.255-.504-.33-.62-.454-.697L6.42 7.42H4.86c-1.436 0-1.568.006-1.666.072-.162.11-.216.276-.156.477.08.268.769 1.601 1.182 2.287 1.805 3 3.904 5.078 5.82 5.763.652.233.893.267 2.1.289 1.217.023 1.366.006 1.584-.177.203-.172.236-.301.236-.94 0-.502.01-.587.081-.703.155-.254.596-.363.881-.217.076.04.624.474 1.218.966.594.493 1.161.933 1.26.979.174.081.239.084 1.82.084 1.473 0 1.664-.007 1.876-.073.26-.08.444-.235.488-.41.041-.16-.048-.448-.194-.636-.069-.089-.674-.665-1.344-1.281-.671-.616-1.273-1.187-1.339-1.27a.75.75 0 0 1-.096-.711c.033-.077.571-.733 1.196-1.459 1.16-1.347 1.375-1.624 1.593-2.053.232-.458.203-.756-.09-.916-.119-.065-.282-.071-1.91-.071h-1.78l-.147.091c-.12.075-.32.375-1.1 1.655-.524.86-1.052 1.682-1.174 1.828-.378.452-.781.623-1 .425s-.217-.188-.239-2.019c-.019-1.644-.023-1.705-.106-1.86-.113-.209-.231-.316-.474-.428-.196-.09-.231-.092-1.62-.1-1.069-.006-1.48.006-1.664.046"})})});try{Vk.displayName="Vk",Vk.__docgenInfo={description:"",displayName:"Vk",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},size:{defaultValue:{value:"24"},description:"",name:"size",required:!1,type:{name:"number"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/icons/src/components/interface-icons-product/Vk.tsx#Vk"]={docgenInfo:Vk.__docgenInfo,name:"Vk",path:"packages/icons/src/components/interface-icons-product/Vk.tsx#Vk"})}catch(s){}}),"./packages/site-article/CHANGELOG.md":(_=>{_.exports=`# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.1.4 (2026-02-16)
+
+
+### Bug Fixes
+
+* **FF-8052:** fix homepage link ([dffd09c](https://github.com/cloud-ru-tech/uikit-product/commit/dffd09c642edf4842eee02ccc4ec3e5894f4a29e))
+
+
+
+
+
+## 1.1.3 (2026-02-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.2]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.2 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7841:** update repo links ([1893c4a](https://github.com/cloud-ru-tech/uikit-product/commit/1893c4a3e600069f98ab37c728e167937faa3440))
+
+
+
+
+
+## 1.1.1 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7861:** deps version mismatch ([cc4fe9c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/cc4fe9cb87656feecfb35c822eed100024c07458))
+
+
+
+
+
+# 1.1.0 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7846:** replace tokens usage ([b690050](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b6900500e2f2c73e184f8b67f689f4a42571a154))
+* **FF-7861:** massive scope update ([b93fa9f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b93fa9fed13a579f5f02efc16ea43d8bedbd5aca))
+* **FF-7861:** update all 0 versions to 1 ([737c2b4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/737c2b494d48be5132554ae9f03c960a8cbe3a34))
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+### Features
+
+* **SITE-10019:** add event param in article product click handler ([06f1e33](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/06f1e3325f019f31e6683abf6969017b5e9ec2c2))
+* **SITE-10394:** add border radius ([5e950bc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5e950bce806fab0a3213eef811a7ebcb411f1860))
+* **SITE-9857:** add site-article ([5ee444b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5ee444b9e90de7ed37ca537c5532053a2744a643))
+
+
+
+
+
+# 0.3.0 (2025-12-15)
+
+
+### Features
+
+* **SITE-10394:** add border radius ([5e950bc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5e950bce806fab0a3213eef811a7ebcb411f1860))
+
+
+
+
+
+## 0.2.4 (2025-11-13)
+
+
+### Bug Fixes
+
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+
+
+
+## 0.2.3 (2025-11-12)
+
+
+### Bug Fixes
+
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+
+
+
+
+
+## 0.2.2 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@7.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.2.1 (2025-11-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+# 0.2.0 (2025-10-14)
+
+
+### Features
+
+* **SITE-10019:** add event param in article product click handler ([06f1e33](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/06f1e3325f019f31e6683abf6969017b5e9ec2c2))
+
+
+
+
+
+# 0.1.0 (2025-10-03)
+
+
+### Features
+
+* **SITE-9857:** add site-article ([5ee444b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5ee444b9e90de7ed37ca537c5532053a2744a643))
+
+
+
+
+
+## CHANGELOG
+
+### v0.0.0
+
+- Initial version
+`}),"./packages/site-article/README.md":(_=>{_.exports='# Site Article\n\n## Installation\n`npm i @cloud-ru/uikit-product-site-article`\n\n[Changelog](./CHANGELOG.md)\n\n\n\n[//]: DOCUMENTATION_SECTION_START\n[//]: THIS_SECTION_IS_AUTOGENERATED_PLEASE_DONT_EDIT_IT\n## Highlight\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| richText* | `string` | - |  |\n## Quote\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| text* | `string` | - |  |\n| image | `string` | - |  |\n| name | `string` | - |  |\n| position | `string` | - |  |\n## ImageArticle\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| image* | `{ src: string; alt?: string; }` | - |  |\n| description | `string` | - |  |\n## ArticleLinks\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| links* | `ArticleLink[]` | - |  |\n## Products\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| products | `ArticleProduct[]` | - |  |\n| solutions | `ArticleProduct[]` | - |  |\n## ArticleRichText\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| richText* | `string` | - |  |\n## ArticleTypography\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| type* | "body" \\| "bodyBold" \\| "bodyLink" | - |  |\n| tag* | "span" \\| "div" \\| "p" | - |  |\n| className | `string` | - | CSS-\u043A\u043B\u0430\u0441\u0441 |\n## DropdownShare\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| options* | `DropdownShareOption[]` | - |  |\n| hideLabel | `boolean` | - |  |\n## FooterArticle\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| dropdownOptions* | `DropdownShareOption[]` | - |  |\n| releaseDate* | `string` | - |  |\n\n\n[//]: DOCUMENTATION_SECTION_END\n'}),"./packages/site-article/package.json":(_=>{_.exports=JSON.parse('{"UU":"@cloud-ru/uikit-product-site-article","rE":"1.1.4"}')}),"./packages/site-article/src/components/DropdownShare/DropdownShare.tsx":((_,d,e)=>{e.d(d,{F:()=>o});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./packages/icons/src/components/interface-icons-product/Telegram.tsx"),r=e("./packages/icons/src/components/interface-icons-product/Vk.tsx"),i=e("./packages/icons/src/components/interface-icons-product/Link.tsx"),s=e("./packages/icons/src/components/interface-icons-product/Share.tsx"),t=e("./node_modules/.pnpm/@snack-uikit+button@0.19.16_react@18.2.0/node_modules/@snack-uikit/button/dist/esm/components/ButtonFunction/ButtonFunction.js"),c=e("./node_modules/.pnpm/@snack-uikit+list@0.32.5_@snack-uikit+locale@0.15.5_@types+react@18.2.79_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/list/dist/esm/components/Lists/Droplist/DropList.js");const l={Telegram:"telegram",VK:"vk",Copy:"copy"};function o(u){const{hideLabel:M,options:y}=u,m=y.map(({type:p,onClick:g})=>{switch(p){case l.Telegram:return{id:"telegram",content:{option:"Telegram"},beforeContent:(0,n.jsx)(a.A,{}),onClick:g};case l.VK:return{id:"vk",content:{option:"VK"},beforeContent:(0,n.jsx)(r.A,{}),onClick:g};case l.Copy:return{id:"copy",content:{option:"\u041A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u0441\u044B\u043B\u043A\u0443"},beforeContent:(0,n.jsx)(i.A,{}),onClick:g};default:return{}}});return(0,n.jsx)(c.i,{items:m,size:"l",closeDroplistOnItemClick:!0,children:(0,n.jsx)(t.b,{size:"m",label:M?void 0:"\u041F\u043E\u0434\u0435\u043B\u0438\u0442\u044C\u0441\u044F",icon:(0,n.jsx)(s.A,{}),"data-test-id":"dropdown-share-button"})})}try{o.displayName="DropdownShare",o.__docgenInfo={description:"",displayName:"DropdownShare",props:{hideLabel:{defaultValue:null,description:"",name:"hideLabel",required:!1,type:{name:"boolean"}},options:{defaultValue:null,description:"",name:"options",required:!0,type:{name:"DropdownShareOption[]"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/site-article/src/components/DropdownShare/DropdownShare.tsx#DropdownShare"]={docgenInfo:o.__docgenInfo,name:"DropdownShare",path:"packages/site-article/src/components/DropdownShare/DropdownShare.tsx#DropdownShare"})}catch(u){}}),"./packages/site-article/stories/DropdownShare.story.tsx":((_,d,e)=>{e.r(d),e.d(d,{default:()=>l,dropdownShare:()=>M});var n=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),a=e("./packages/site-article/CHANGELOG.md"),r=e("./packages/site-article/package.json"),i=e("./packages/site-article/README.md"),s=e("./packages/site-article/src/components/DropdownShare/DropdownShare.tsx"),t=e("./packages/site-article/stories/styles.module.scss"),l={title:"Site/Article/DropdownShare",component:s.F};const o=({...y})=>(0,n.jsx)("div",{className:t.A.whiteWrapper,children:(0,n.jsx)(s.F,{...y})}),u=()=>{},M={render:o,args:{hideLabel:!1,options:[{type:"telegram",onClick:u},{type:"vk",onClick:u},{type:"copy",onClick:u}]},argTypes:{},parameters:{readme:{sidebar:[`Latest version: ${r.rE}`,i,a]},packageName:r.UU,design:{name:"Figma",type:"figma",url:"https://www.figma.com/design/pCLrU1Wg1VsoMQGLmH1J8t/-LIB--SITE--Product-UI-Kit?node-id=17239-4445&t=NR1mOGmYhZpy2gru-0"}}}}),"./packages/site-article/stories/styles.module.scss":((_,d,e)=>{e.d(d,{A:()=>E});var n=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),a=e.n(n),r=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),i=e.n(r),s=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),t=e.n(s),c=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),l=e.n(c),o=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),u=e.n(o),M=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),y=e.n(M),m=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/stories/styles.module.scss"),p={};p.styleTagTransform=y(),p.setAttributes=l(),p.insert=t().bind(null,"head"),p.domAPI=i(),p.insertStyleElement=u();var g=a()(m.A,p);const E=m.A&&m.A.locals?m.A.locals:void 0}),"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iYmxhY2siIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNTMwMyAzLjQ2OTY3QzEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDQuMjM3NDQgMTMuNTMwMyA0LjUzMDMzTDQuNTMwMzMgMTMuNTMwM0M0LjIzNzQ0IDEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDMuNDY5NjcgMTMuNTMwM0MzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMi43NjI2IDMuNDY5NjcgMTIuNDY5N0wxMi40Njk3IDMuNDY5NjdDMTIuNzYyNiAzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMy41MzAzIDMuNDY5NjdaTTEzLjUzMDMgNy40Njk2N0MxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA4LjIzNzQ0IDEzLjUzMDMgOC41MzAzM0w4LjUzMDMzIDEzLjUzMDNDOC4yMzc0NCAxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA3LjQ2OTY3IDEzLjUzMDNDNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTIuNzYyNiA3LjQ2OTY3IDEyLjQ2OTdMMTIuNDY5NyA3LjQ2OTY3QzEyLjc2MjYgNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTMuNTMwMyA3LjQ2OTY3Wk0xMy41MzAzIDEyLjUzMDNDMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTEuNzYyNiAxMy41MzAzIDExLjQ2OTdDMTMuMjM3NCAxMS4xNzY4IDEyLjc2MjYgMTEuMTc2OCAxMi40Njk3IDExLjQ2OTdMMTEuNDY5NyAxMi40Njk3QzExLjE3NjggMTIuNzYyNiAxMS4xNzY4IDEzLjIzNzQgMTEuNDY5NyAxMy41MzAzQzExLjc2MjYgMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTIuNTMwMyAxMy41MzAzTDEzLjUzMDMgMTIuNTMwM1oiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=":(_=>{_.exports="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iYmxhY2siIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNTMwMyAzLjQ2OTY3QzEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDQuMjM3NDQgMTMuNTMwMyA0LjUzMDMzTDQuNTMwMzMgMTMuNTMwM0M0LjIzNzQ0IDEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDMuNDY5NjcgMTMuNTMwM0MzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMi43NjI2IDMuNDY5NjcgMTIuNDY5N0wxMi40Njk3IDMuNDY5NjdDMTIuNzYyNiAzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMy41MzAzIDMuNDY5NjdaTTEzLjUzMDMgNy40Njk2N0MxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA4LjIzNzQ0IDEzLjUzMDMgOC41MzAzM0w4LjUzMDMzIDEzLjUzMDNDOC4yMzc0NCAxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA3LjQ2OTY3IDEzLjUzMDNDNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTIuNzYyNiA3LjQ2OTY3IDEyLjQ2OTdMMTIuNDY5NyA3LjQ2OTY3QzEyLjc2MjYgNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTMuNTMwMyA3LjQ2OTY3Wk0xMy41MzAzIDEyLjUzMDNDMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTEuNzYyNiAxMy41MzAzIDExLjQ2OTdDMTMuMjM3NCAxMS4xNzY4IDEyLjc2MjYgMTEuMTc2OCAxMi40Njk3IDExLjQ2OTdMMTEuNDY5NyAxMi40Njk3QzExLjE3NjggMTIuNzYyNiAxMS4xNzY4IDEzLjIzNzQgMTEuNDY5NyAxMy41MzAzQzExLjc2MjYgMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTIuNTMwMyAxMy41MzAzTDEzLjUzMDMgMTIuNTMwM1oiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo="})}]);})();

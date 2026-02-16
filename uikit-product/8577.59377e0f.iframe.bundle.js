@@ -1,0 +1,1056 @@
+"use strict";(()=>{(self.webpackChunkuikit_product=self.webpackChunkuikit_product||[]).push([[8577],{"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/card-predefined/stories/styles.module.scss":((n,u,e)=>{e.d(u,{A:()=>a});var s=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),i=e.n(s),r=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),o=e.n(r),d=o()(i());d.push([n.id,".cardServiceSmall--Rpxwm{resize:horizontal;overflow:auto;display:flex;flex-direction:column;min-width:204px;padding:20px;background-color:var(--sys-neutral-background, #eeeff3);border:1px solid var(--sys-neutral-decor-default, #dde0ea);border-radius:var(--dimension-050m, 4px);width:334px}.wrapper--LHkCE{resize:horizontal;overflow:auto;display:flex;flex-direction:column;min-width:204px;padding:20px;background-color:var(--sys-neutral-background, #eeeff3);border:1px solid var(--sys-neutral-decor-default, #dde0ea);border-radius:var(--dimension-050m, 4px);width:344px}.cardBanner--u2X9n{resize:horizontal;overflow:auto;display:flex;flex-direction:column;min-width:204px;padding:20px;background-color:var(--sys-neutral-background, #eeeff3);border:1px solid var(--sys-neutral-decor-default, #dde0ea);border-radius:var(--dimension-050m, 4px);width:684px}",""]),d.locals={cardServiceSmall:"cardServiceSmall--Rpxwm",wrapper:"wrapper--LHkCE",cardBanner:"cardBanner--u2X9n"};const a=d}),"./packages/card-predefined/CHANGELOG.md":(n=>{n.exports=`# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.1.3 (2026-02-16)
+
+
+### Bug Fixes
+
+* **FF-8052:** fix homepage link ([dffd09c](https://github.com/cloud-ru-tech/uikit-product/commit/dffd09c642edf4842eee02ccc4ec3e5894f4a29e))
+
+
+
+
+
+## 1.1.2 (2026-02-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.2]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.1 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7841:** update repo links ([1893c4a](https://github.com/cloud-ru-tech/uikit-product/commit/1893c4a3e600069f98ab37c728e167937faa3440))
+
+
+
+
+
+# 1.1.0 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-4183:** bump card version ([68926ca](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/68926ca571f449072bcf1ccc0f8b21b56cb61b48))
+* **FF-4490:** add checked property for CardServiceSmall ([fbd85fd](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/fbd85fd4618928f5308f5775980fd7e298a8e753))
+* **FF-5383:** update snack packages versions ([3fc6a2f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3fc6a2f940db810e5c514c7fb3d30350b291c61b))
+* **FF-7846:** replace tokens usage ([b690050](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b6900500e2f2c73e184f8b67f689f4a42571a154))
+* **FF-7861:** massive scope update ([b93fa9f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b93fa9fed13a579f5f02efc16ea43d8bedbd5aca))
+* **FF-7861:** update all 0 versions to 1 ([737c2b4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/737c2b494d48be5132554ae9f03c960a8cbe3a34))
+* **LK-3391:** card banner image size ([3c30b1f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3c30b1f1e76f0e2e274fcba96fe48879280bac22))
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+* **PD-3377:** updated deps for card-predefined ([898f0e4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/898f0e4e00f96d225d38d5c73d8d6952e0daff6d))
+* **PDS-92:** add stopPropagation on onClose; add event to onClose ([f3c243b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/f3c243bc78f4e86b5cd5c9032602cdfdbd499284))
+* **PDS-955:** allow to click on favorite when link is provided ([05461d8](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/05461d8ff857cda2ac1d3170a7b7e170eb6609fb))
+
+
+### Dependencies
+
+* **FF-00:** up card version ([2919160](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/2919160de0c7c28480e38c1f64475dbd470d1410))
+* **FF-4704:** up deps ([7da95ef](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7da95ef6551ced9a63c75970f43b047cc564cedc))
+* **FF-5678:** up deps classnames/uncontrollable ([17b3e6e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/17b3e6e7d705fd0f013e7027c4fab244522866e4))
+* **FF-5830:** up snack-uikit & some common deps ([03aefe0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/03aefe0681240d2cffdbbdbbbc026da74d723dfd))
+* **PDS-611:** up deps ([c30ac4c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/c30ac4c2adb7c00e84fbe557d85314add6b6977a))
+* **PDS-83:** update deps ([491b47d](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/491b47d42acd8cb179b0d66c616033d61fe95d7e))
+
+
+### Features
+
+* **FF-4133:** add card-predefined package ([55282c0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/55282c0718b18862ed73e765afbfaae6e39bf51a))
+* **FF-4473:** add href prop to cards, cardSuggest promoBadge ([47470e9](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/47470e9ee3fe2f03d45557807825db06084873fa))
+* **FF-4478:** add disable props ([66c2097](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/66c2097c715b393ea8c1cf6a92f461a3aed6498c))
+* **FF-4478:** set promoBadge absolute position in CardServiceSmall; add outline prop ([f607b84](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/f607b849704d0779cea29451dcc59ef189ab8626))
+* **FF-4578:** add size prop ([1373c4d](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/1373c4df3a77979fd33b423597fc6174d3da2c83))
+* **FF-5782:** dart v3 use/forward approach ([eb0c4b3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/eb0c4b30a008aa82ad7555ecc9d8420c21b1c7a4))
+* **FF-5836:** support cjs syntax ([d44abd0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d44abd0ddbbea0cd2bf0e1b99442cdb83b87df48))
+* **PDS-2672:** add ability to pass predefined promo tag to card-service-small ([efeb1c3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/efeb1c318289fb1ea2587a044c035890e200763d))
+* **PDS-955:** add favorite toggle to card-service-small ([46521e1](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/46521e19f9e35233f5f85f8033e24f97932efa3b))
+* **PSD-15:** add disabled/truncate prop to CardServiceSmall; add onClose cb to CardBanner ([a23979c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/a23979c9a137a6632c9f3c15200d3da5fc87c36b))
+
+
+
+
+
+## 0.8.22 (2026-01-29)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@16.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.21 (2025-12-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@16.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.20 (2025-12-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@16.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.19 (2025-12-08)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@16.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.18 (2025-11-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@16.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.17 (2025-11-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.16 (2025-11-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.15 (2025-11-13)
+
+
+### Bug Fixes
+
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+
+
+
+## 0.8.14 (2025-11-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.13 (2025-11-12)
+
+
+### Bug Fixes
+
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+
+
+
+
+
+## 0.8.12 (2025-11-12)
+
+
+### Bug Fixes
+
+* **PD-3377:** updated deps for card-predefined ([898f0e4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/898f0e4e00f96d225d38d5c73d8d6952e0daff6d))
+
+
+
+
+
+## 0.8.11 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.10 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.9 (2025-11-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.8 (2025-10-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.7 (2025-10-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.6 (2025-10-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.5 (2025-09-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.8.4 (2025-09-26)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.3 (2025-09-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.2 (2025-09-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.8.1 (2025-09-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-promo-tag-predefined@0.2.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/promo-tag-predefined/CHANGELOG.md)
+
+
+
+
+
+# 0.8.0 (2025-09-16)
+
+
+### Features
+
+* **PDS-2672:** add ability to pass predefined promo tag to card-service-small ([efeb1c3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/efeb1c318289fb1ea2587a044c035890e200763d))
+
+
+
+
+
+## 0.7.53 (2025-09-11)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.3.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.52 (2025-09-02)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.51 (2025-09-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.50 (2025-08-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.1.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.49 (2025-08-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.48 (2025-08-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.47 (2025-08-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.46 (2025-08-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.45 (2025-07-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@14.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.44 (2025-07-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.43 (2025-07-16)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.42 (2025-07-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.41 (2025-07-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.40 (2025-06-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.39 (2025-06-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.38 (2025-06-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@13.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.37 (2025-06-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@12.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.36 (2025-06-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@12.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.35 (2025-06-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.9.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.34 (2025-05-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.8.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.33 (2025-05-16)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.32 (2025-05-14)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.31 (2025-04-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.30 (2025-04-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.29 (2025-04-09)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.28 (2025-04-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.27 (2025-03-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.26 (2025-03-21)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.25 (2025-03-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@11.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.24 (2025-03-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.23 (2025-03-14)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.22 (2025-03-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.5.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.21 (2025-03-05)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.20 (2025-03-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.19 (2025-02-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.7.18 (2025-02-10)
+
+
+### Dependencies
+
+* **FF-4704:** up deps ([7da95ef](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7da95ef6551ced9a63c75970f43b047cc564cedc))
+
+
+
+
+
+## <small>0.7.17 (2025-02-05)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.16 (2025-02-05)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.15 (2025-01-09)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.14 (2024-12-27)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.13 (2024-12-26)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.12 (2024-12-26)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.11 (2024-12-17)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.10 (2024-12-16)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.9 (2024-12-11)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.8 (2024-12-04)</small>
+
+* chore(FF-5944): fixed stories paths for tests ([4319822](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/4319822))
+* chore(FF-5944): renamed snack uikit category to console ([411a818](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/411a818))
+
+
+
+
+
+## <small>0.7.7 (2024-11-25)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.6 (2024-11-21)</small>
+
+* fix(PDS-955): allow to click on favorite when link is provided ([05461d8](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/05461d8))
+
+
+
+
+
+## <small>0.7.5 (2024-11-14)</small>
+
+* deps(FF-5678): up deps classnames/uncontrollable ([17b3e6e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/17b3e6e))
+
+
+
+
+
+## <small>0.7.4 (2024-11-07)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.7.3 (2024-11-06)</small>
+
+* feat(PDS-955): add favorite toggle to card-service-small ([46521e1](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/46521e1))
+
+
+
+
+
+## <small>0.7.2 (2024-11-05)</small>
+
+* deps(FF-5830): up snack-uikit & some common deps ([03aefe0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/03aefe0))
+
+
+
+
+
+## 0.7.1 (2024-11-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+# 0.7.0 (2024-10-30)
+
+
+### Features
+
+* **FF-5836:** support cjs syntax ([d44abd0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d44abd0ddbbea0cd2bf0e1b99442cdb83b87df48))
+
+
+
+
+
+## 0.6.1 (2024-10-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@10.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+# 0.6.0 (2024-10-29)
+
+
+### Features
+
+* **FF-5782:** dart v3 use/forward approach ([eb0c4b3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/eb0c4b30a008aa82ad7555ecc9d8420c21b1c7a4))
+
+
+
+
+
+## 0.5.10 (2024-10-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@9.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.9 (2024-10-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@9.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.8 (2024-10-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@9.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.7 (2024-09-26)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@9.3.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.6 (2024-09-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@9.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.5 (2024-09-25)
+
+
+### Dependencies
+
+* **PDS-611:** up deps ([c30ac4c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/c30ac4c2adb7c00e84fbe557d85314add6b6977a))
+
+
+
+
+
+## 0.5.4 (2024-09-07)
+
+
+### Bug Fixes
+
+* **FF-5383:** update snack packages versions ([3fc6a2f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3fc6a2f940db810e5c514c7fb3d30350b291c61b))
+
+
+
+
+
+## 0.5.3 (2024-06-12)
+
+
+### Dependencies
+
+* **PDS-83:** update deps ([491b47d](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/491b47d42acd8cb179b0d66c616033d61fe95d7e))
+
+
+
+
+
+## 0.5.2 (2024-04-18)
+
+
+### Dependencies
+
+* **FF-00:** up card version ([2919160](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/2919160de0c7c28480e38c1f64475dbd470d1410))
+
+
+
+
+
+## 0.5.1 (2024-04-04)
+
+
+### Bug Fixes
+
+* **PDS-92:** add stopPropagation on onClose; add event to onClose ([f3c243b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/f3c243bc78f4e86b5cd5c9032602cdfdbd499284))
+
+
+
+
+
+# 0.5.0 (2024-03-22)
+
+
+### Features
+
+* **FF-4578:** add size prop ([1373c4d](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/1373c4df3a77979fd33b423597fc6174d3da2c83))
+
+
+
+
+
+## 0.4.1 (2024-03-19)
+
+
+### Bug Fixes
+
+* **FF-4490:** add checked property for CardServiceSmall ([fbd85fd](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/fbd85fd4618928f5308f5775980fd7e298a8e753))
+
+
+
+
+
+# 0.4.0 (2024-03-07)
+
+
+### Features
+
+* **FF-4473:** add href prop to cards, cardSuggest promoBadge ([47470e9](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/47470e9ee3fe2f03d45557807825db06084873fa))
+
+
+
+
+
+# 0.3.0 (2024-03-07)
+
+
+### Features
+
+* **FF-4478:** add disable props ([66c2097](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/66c2097c715b393ea8c1cf6a92f461a3aed6498c))
+* **FF-4478:** set promoBadge absolute position in CardServiceSmall; add outline prop ([f607b84](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/f607b849704d0779cea29451dcc59ef189ab8626))
+
+
+
+
+
+# 0.2.0 (2024-02-29)
+
+
+### Features
+
+* **PSD-15:** add disabled/truncate prop to CardServiceSmall; add onClose cb to CardBanner ([a23979c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/a23979c9a137a6632c9f3c15200d3da5fc87c36b))
+
+
+
+
+
+## 0.1.2 (2024-02-26)
+
+
+### Bug Fixes
+
+* **LK-3391:** card banner image size ([3c30b1f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3c30b1f1e76f0e2e274fcba96fe48879280bac22))
+
+
+
+
+
+## 0.1.1 (2024-02-02)
+
+
+### Bug Fixes
+
+* **FF-4183:** bump card version ([68926ca](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/68926ca571f449072bcf1ccc0f8b21b56cb61b48))
+
+
+
+
+
+# 0.1.0 (2024-01-24)
+
+
+### Features
+
+* **FF-4133:** add card-predefined package ([55282c0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/55282c0718b18862ed73e765afbfaae6e39bf51a))
+
+
+
+
+
+## CHANGELOG
+
+### v0.0.0
+
+- Initial version
+`}),"./packages/card-predefined/README.md":(n=>{n.exports=`# Card Predefined
+
+## Installation
+\`npm i @cloud-ru/uikit-product-card-predefined\`
+
+
+## Props
+
+\`\`\`ts
+type CardBannerProps = WithSupportProps<
+  Pick<CardProps, 'onClick' | 'className'> &
+    Required<Pick<Card.HeaderProps, 'title' | 'emblem'>> & {
+      description: string;
+      actionLabel: string;
+      image: {
+        src: string;
+        alt: string;
+      };
+    }
+>;
+
+type CardServiceProps = WithSupportProps<
+  Pick<CardProps, 'onClick' | 'className'> &
+    Required<Pick<Card.HeaderProps, 'title' | 'emblem'>> & {
+      description: string;
+      actionLabel: string;
+  }
+>;
+
+type CardServiceSmallProps = WithSupportProps<
+  Pick<CardProps, 'promoBadge' | 'onClick' | 'className'> & Required<Pick<Card.HeaderProps, 'title' | 'emblem'>>
+>;
+
+export type CardSuggestProps = WithSupportProps<
+  Pick<CardProps, 'promoBadge' | 'onClick' | 'className'> & {
+    title: string;
+    description: string;
+    truncate?: {
+      title?: number;
+      description?: number;
+    };
+  }
+>;
+
+\`\`\`
+
+[Changelog](./CHANGELOG.md)
+
+
+`}),"./packages/card-predefined/package.json":(n=>{n.exports=JSON.parse('{"UU":"@cloud-ru/uikit-product-card-predefined","rE":"1.1.3"}')}),"./packages/card-predefined/stories/styles.module.scss":((n,u,e)=>{e.d(u,{A:()=>g});var s=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),i=e.n(s),r=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),o=e.n(r),d=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),a=e.n(d),p=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),l=e.n(p),_=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),m=e.n(_),b=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),h=e.n(b),c=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/card-predefined/stories/styles.module.scss"),t={};t.styleTagTransform=h(),t.setAttributes=l(),t.insert=a().bind(null,"head"),t.domAPI=o(),t.insertStyleElement=m();var k=i()(c.A,t);const g=c.A&&c.A.locals?c.A.locals:void 0}),"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iYmxhY2siIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNTMwMyAzLjQ2OTY3QzEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDQuMjM3NDQgMTMuNTMwMyA0LjUzMDMzTDQuNTMwMzMgMTMuNTMwM0M0LjIzNzQ0IDEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDMuNDY5NjcgMTMuNTMwM0MzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMi43NjI2IDMuNDY5NjcgMTIuNDY5N0wxMi40Njk3IDMuNDY5NjdDMTIuNzYyNiAzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMy41MzAzIDMuNDY5NjdaTTEzLjUzMDMgNy40Njk2N0MxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA4LjIzNzQ0IDEzLjUzMDMgOC41MzAzM0w4LjUzMDMzIDEzLjUzMDNDOC4yMzc0NCAxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA3LjQ2OTY3IDEzLjUzMDNDNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTIuNzYyNiA3LjQ2OTY3IDEyLjQ2OTdMMTIuNDY5NyA3LjQ2OTY3QzEyLjc2MjYgNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTMuNTMwMyA3LjQ2OTY3Wk0xMy41MzAzIDEyLjUzMDNDMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTEuNzYyNiAxMy41MzAzIDExLjQ2OTdDMTMuMjM3NCAxMS4xNzY4IDEyLjc2MjYgMTEuMTc2OCAxMi40Njk3IDExLjQ2OTdMMTEuNDY5NyAxMi40Njk3QzExLjE3NjggMTIuNzYyNiAxMS4xNzY4IDEzLjIzNzQgMTEuNDY5NyAxMy41MzAzQzExLjc2MjYgMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTIuNTMwMyAxMy41MzAzTDEzLjUzMDMgMTIuNTMwM1oiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=":(n=>{n.exports="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iYmxhY2siIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNTMwMyAzLjQ2OTY3QzEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDQuMjM3NDQgMTMuNTMwMyA0LjUzMDMzTDQuNTMwMzMgMTMuNTMwM0M0LjIzNzQ0IDEzLjgyMzIgMy43NjI1NiAxMy44MjMyIDMuNDY5NjcgMTMuNTMwM0MzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMi43NjI2IDMuNDY5NjcgMTIuNDY5N0wxMi40Njk3IDMuNDY5NjdDMTIuNzYyNiAzLjE3Njc4IDEzLjIzNzQgMy4xNzY3OCAxMy41MzAzIDMuNDY5NjdaTTEzLjUzMDMgNy40Njk2N0MxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA4LjIzNzQ0IDEzLjUzMDMgOC41MzAzM0w4LjUzMDMzIDEzLjUzMDNDOC4yMzc0NCAxMy44MjMyIDcuNzYyNTYgMTMuODIzMiA3LjQ2OTY3IDEzLjUzMDNDNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTIuNzYyNiA3LjQ2OTY3IDEyLjQ2OTdMMTIuNDY5NyA3LjQ2OTY3QzEyLjc2MjYgNy4xNzY3OCAxMy4yMzc0IDcuMTc2NzggMTMuNTMwMyA3LjQ2OTY3Wk0xMy41MzAzIDEyLjUzMDNDMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTEuNzYyNiAxMy41MzAzIDExLjQ2OTdDMTMuMjM3NCAxMS4xNzY4IDEyLjc2MjYgMTEuMTc2OCAxMi40Njk3IDExLjQ2OTdMMTEuNDY5NyAxMi40Njk3QzExLjE3NjggMTIuNzYyNiAxMS4xNzY4IDEzLjIzNzQgMTEuNDY5NyAxMy41MzAzQzExLjc2MjYgMTMuODIzMiAxMi4yMzc0IDEzLjgyMzIgMTIuNTMwMyAxMy41MzAzTDEzLjUzMDMgMTIuNTMwM1oiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo="})}]);})();
