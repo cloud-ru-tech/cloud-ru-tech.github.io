@@ -1,0 +1,32 @@
+import{j as e}from"./jsx-runtime-BTJTZTIL.js";import{c as g}from"./index-DUmpqB7p.js";import{r as f}from"./index-CJ_LmFaV.js";import{c as i,a as k,b as C,s as t}from"./styles.module-CJqcKJRv.js";import{T as h,t as m,a as T}from"./helpers-DYkURdBT.js";import{B as c}from"./ButtonFilled-DAUgT6tj.js";import"./index-ChsGqxH_.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-Bxu_udwM.js";import"./index-DdXvKv-Q.js";import"./index-Chjiymov.js";import"./index-DreyRvUE.js";import"./index-DHAmGKAZ.js";import"./ProgressBar-WLa2PlTA.js";import"./componentPropsProcessors-UJEZy8aQ.js";import"./index-Dn6vuaYJ.js";import"./index-CAfvFIBF.js";import"./index-DbF-M2Rm.js";import"./TruncateString-D54BiV_x.js";import"./useIsomorphicLayoutEffect-BAXQmlEq.js";import"./isBrowser-C2N6XvuH.js";import"./Tooltip-DzAF_V2U.js";import"./PopoverPrivate-CnKgsFAm.js";import"./index-JZGyZbA2.js";import"./Link-DMlnAGbL.js";import"./LocaleProvider-DhC1J63f.js";import"./Scroll-CyeY1SIb.js";import"./Sun-CjKF0Bsh.js";import"./constants-BAH7I9kc.js";import"./utils-DoFi9RcI.js";import"./Counter-DXWSEFY6.js";const te={title:"Components/Toaster/Toast SystemEvent",component:h},a=g(t.cell,t.headerCell),j=Object.values(T),p=[{label:"Primary",onClick:()=>{}},{label:"Secondary",onClick:()=>{}}];function w({...v}){const{appearance:x="neutral",showAction:o,...r}=v;return e.jsxs(e.Fragment,{children:[e.jsxs("div",{className:t.wrapper,children:[e.jsx(c,{label:"Open toast controlled","data-test-id":"toast-trigger",onClick:()=>m.systemEvent[x]({action:o?p:void 0,...r})}),e.jsx(c,{label:"Dismiss Toasters","data-test-id":"toast-dismiss",onClick:()=>m.systemEvent.dismiss()})]}),e.jsxs("div",{className:t.table,style:{"--columns":2},children:[e.jsx("div",{className:a}),e.jsx("div",{className:a,children:"Appearance"}),j.map(s=>e.jsxs(f.Fragment,{children:[e.jsx("div",{className:a,children:s}),e.jsx("div",{className:g(t.cell,t.toastContainer),children:e.jsx(h,{...r,appearance:s,className:t.systemEvent,"data-test-id":"",action:o?p:void 0})})]},s))]})]})}const n={render:w,args:{appearance:"neutral",title:"Title truncate two line",description:"Description truncate four line",progressBar:!0,closable:!0,link:{text:"Link text",href:"#"},onCloseClick:void 0,showAction:!0},argTypes:{showAction:{name:"[story] show action buttons"}},parameters:{readme:{sidebar:[`Latest version: ${i.version}`,k,C]},packageName:i.name,design:{name:"Figma",type:"figma",url:"https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A196736&mode=design"}}};var l,d,u;n.parameters={...n.parameters,docs:{...(l=n.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: Template,
+  args: {
+    appearance: 'neutral',
+    title: 'Title truncate two line',
+    description: 'Description truncate four line',
+    progressBar: true,
+    closable: true,
+    link: {
+      text: 'Link text',
+      href: '#'
+    },
+    onCloseClick: undefined,
+    showAction: true
+  },
+  argTypes: {
+    showAction: {
+      name: '[story] show action buttons'
+    }
+  },
+  parameters: {
+    readme: {
+      sidebar: [\`Latest version: \${componentPackage.version}\`, componentReadme, componentChangelog]
+    },
+    packageName: componentPackage.name,
+    design: {
+      name: 'Figma',
+      type: 'figma',
+      url: 'https://www.figma.com/file/jtGxAPvFJOMir7V0eQFukN/Snack-UI-Kit-1.1.0?node-id=41%3A196736&mode=design'
+    }
+  }
+}`,...(u=(d=n.parameters)==null?void 0:d.docs)==null?void 0:u.source}}};export{te as default,n as toastSystemEvent};
