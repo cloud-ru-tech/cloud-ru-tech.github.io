@@ -1,0 +1,44 @@
+"use strict";(()=>{(self.webpackChunkuikit_product=self.webpackChunkuikit_product||[]).push([[2511],{"./node_modules/.pnpm/@snack-uikit+progress-bar@0.1.3_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/progress-bar/dist/esm/components/ProgressBar/ProgressBar.js":((m,d,e)=>{e.d(d,{z:()=>k});var o=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),r=e("./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"),a=e.n(r),l=e("./node_modules/.pnpm/@snack-uikit+utils@3.7.0_react@18.2.0/node_modules/@snack-uikit/utils/dist/esm/utils/componentPropsProcessors.js");const s={Neutral:"neutral",Primary:"primary",Red:"red",Orange:"orange",Yellow:"yellow",Green:"green",Blue:"blue",Violet:"violet",Pink:"pink"},n={S:"s",XS:"xs"};var y=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),v=e.n(y),g=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),E=e.n(g),b=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),A=e.n(b),p=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),u=e.n(p),f=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),M=e.n(f),C=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),B=e.n(C),j=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./node_modules/.pnpm/@snack-uikit+progress-bar@0.1.3_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/progress-bar/dist/esm/components/ProgressBar/styles.module.css"),c={};c.styleTagTransform=B(),c.setAttributes=u(),c.insert=A().bind(null,"head"),c.domAPI=E(),c.insertStyleElement=M();var I=v()(j.A,c);const D=j.A&&j.A.locals?j.A.locals:void 0;var T=function(t,O){var P={};for(var _ in t)Object.prototype.hasOwnProperty.call(t,_)&&O.indexOf(_)<0&&(P[_]=t[_]);if(t!=null&&typeof Object.getOwnPropertySymbols=="function")for(var i=0,_=Object.getOwnPropertySymbols(t);i<_.length;i++)O.indexOf(_[i])<0&&Object.prototype.propertyIsEnumerable.call(t,_[i])&&(P[_[i]]=t[_[i]]);return P};function k(t){var{progress:O,size:P,className:_,appearance:i=s.Primary}=t,W=T(t,["progress","size","className","appearance"]);const S=Math.max(Math.min(O,100),0);return(0,o.jsx)("div",Object.assign({className:a()(D.progressBarContainer,_)},(0,l.z7)(W),{"data-size":P,children:(0,o.jsx)("div",{className:D.progressBarFiller,"data-test-id":"progress-bar-filler","data-appearance":i,style:{"--progress":`${S}%`}})}))}}),"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./node_modules/.pnpm/@snack-uikit+progress-bar@0.1.3_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/progress-bar/dist/esm/components/ProgressBar/styles.module.css":((m,d,e)=>{e.d(d,{A:()=>n});var o=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),r=e.n(o),a=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),l=e.n(a),s=l()(r());s.push([m.id,`.progressBarContainer--ipkFu{
+  overflow:hidden;
+  background-color:var(--sys-neutral-decor-default, #dde0ea);
+}
+.progressBarContainer--ipkFu[data-size=s]{
+  height:var(--size-progress-bar-progress-bar-height-s, 4px);
+  border-radius:var(--radius-progress-bar-s, 2px);
+}
+.progressBarContainer--ipkFu[data-size=xs]{
+  height:var(--size-progress-bar-progress-bar-height-xs, 2px);
+  border-radius:var(--radius-progress-bar-xs, 2px);
+}
+
+.progressBarFiller--tZACM{
+  width:var(--progress);
+  height:100%;
+}
+.progressBarFiller--tZACM[data-appearance=neutral]{
+  background-color:var(--sys-neutral-accent-default, #787b8a);
+}
+.progressBarFiller--tZACM[data-appearance=primary]{
+  background-color:var(--sys-primary-accent-default, #794ed3);
+}
+.progressBarFiller--tZACM[data-appearance=red]{
+  background-color:var(--sys-red-accent-default, #cb3f3e);
+}
+.progressBarFiller--tZACM[data-appearance=orange]{
+  background-color:var(--sys-orange-accent-default, #fb8e42);
+}
+.progressBarFiller--tZACM[data-appearance=yellow]{
+  background-color:var(--sys-yellow-accent-default, #e2b134);
+}
+.progressBarFiller--tZACM[data-appearance=green]{
+  background-color:var(--sys-green-accent-default, #57b762);
+}
+.progressBarFiller--tZACM[data-appearance=blue]{
+  background-color:var(--sys-blue-accent-default, #5388d1);
+}
+.progressBarFiller--tZACM[data-appearance=violet]{
+  background-color:var(--sys-violet-accent-default, #aa6cc1);
+}
+.progressBarFiller--tZACM[data-appearance=pink]{
+  background-color:var(--sys-pink-accent-default, #d1668e);
+}`,""]),s.locals={progressBarContainer:"progressBarContainer--ipkFu",progressBarFiller:"progressBarFiller--tZACM"};const n=s}),"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/stories/styles.module.scss":((m,d,e)=>{e.d(d,{A:()=>n});var o=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),r=e.n(o),a=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),l=e.n(a),s=l()(r());s.push([m.id,".wrapper--CCN_1{display:flex;justify-content:flex-end;padding:8px}.resizeWrapper--g8rAb{resize:both;overflow:auto;width:400px;background-color:var(--sys-neutral-background, #eeeff3);border:1px solid var(--sys-neutral-decor-default, #dde0ea);padding:16px;box-sizing:border-box}.resizeWrapper--g8rAb[data-card]{background-color:var(--sys-neutral-background1-level, #fdfdfd)}",""]),s.locals={wrapper:"wrapper--CCN_1",resizeWrapper:"resizeWrapper--g8rAb"};const n=s}),"./packages/quota/stories/QuotaWidgetCard.story.tsx":((m,d,e)=>{e.r(d),e.d(d,{default:()=>g,quotaWidgetCard:()=>b});var o=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),r=e("./packages/quota/CHANGELOG.md"),a=e("./packages/quota/package.json"),l=e("./packages/quota/README.md"),s=e("./packages/quota/src/components/QuotaWidgetCard/QuotaWidgetCard.tsx"),n=e("./packages/quota/stories/constants.ts"),y=e("./packages/quota/stories/styles.module.scss"),g={title:"Console/Quota/Quota Widget Card",component:s.n};function E({quota:A}){return(0,o.jsx)("div",{className:y.A.resizeWrapper,"data-card":!0,children:(0,o.jsx)(s.n,{quota:A})})}const b={render:E,args:{quota:{...n.U}},argTypes:{quota:{control:"object",name:"\u041A\u0432\u043E\u0442\u0430"}},parameters:{readme:{sidebar:[`Latest version: ${a.rE}`,l,r]},packageName:a.UU,design:{name:"Figma",type:"figma",url:"https://www.figma.com/design/SZjPEs7Ac3a2wS0HapamrE/Product-UI-Kit?node-id=47113-1661&t=8Wuu64WOAOidjZuH-0"}}}}),"./packages/quota/stories/styles.module.scss":((m,d,e)=>{e.d(d,{A:()=>M});var o=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),r=e.n(o),a=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),l=e.n(a),s=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),n=e.n(s),y=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),v=e.n(y),g=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),E=e.n(g),b=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),A=e.n(b),p=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/stories/styles.module.scss"),u={};u.styleTagTransform=A(),u.setAttributes=v(),u.insert=n().bind(null,"head"),u.domAPI=l(),u.insertStyleElement=E();var f=r()(p.A,u);const M=p.A&&p.A.locals?p.A.locals:void 0})}]);})();
