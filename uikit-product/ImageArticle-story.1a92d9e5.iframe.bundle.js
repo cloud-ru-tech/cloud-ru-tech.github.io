@@ -1,0 +1,254 @@
+"use strict";(()=>{(self.webpackChunkuikit_product=self.webpackChunkuikit_product||[]).push([[6684],{"./node_modules/.pnpm/@snack-uikit+utils@4.0.0_react@18.2.0/node_modules/@snack-uikit/utils/dist/esm/utils/componentPropsProcessors.js":((n,o,e)=>{e.d(o,{gn:()=>r,z7:()=>g});const t=/^data-test-/,_=/^(data|aria)-/;function l(s,m){return Object.keys(s).filter(i=>!i.match(m)).reduce((i,u)=>Object.assign(Object.assign({},i),{[u]:s[u]}),{})}function a(s,m){return Object.keys(s).reduce((i,u)=>(u.match(m)&&(i[u]=s[u]),i),{})}function d(s){return l(s,_)}function r(s){return a(s,t)}function g(s){return a(s,_)}}),"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/src/components/ImageArticle/styles.module.scss":((n,o,e)=>{e.d(o,{A:()=>r});var t=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),_=e.n(t),l=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),a=e.n(l),d=a()(_());d.push([n.id,".imageArticle--eVjQj{box-sizing:border-box;display:flex;flex-direction:column;gap:12px}.imageArticle--eVjQj img{border-radius:4px}.description--yvb9i{color:var(--sys-neutral-text-support, #656774)}",""]),d.locals={imageArticle:"imageArticle--eVjQj",description:"description--yvb9i"};const r=d}),"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/stories/styles.module.scss":((n,o,e)=>{e.d(o,{A:()=>r});var t=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),_=e.n(t),l=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),a=e.n(l),d=a()(_());d.push([n.id,".whiteWrapper--X4qGK{max-width:1216px;height:auto;padding:1rem;background-color:var(--sys-neutral-background1-level, #fdfdfd)}",""]),d.locals={whiteWrapper:"whiteWrapper--X4qGK"};const r=d}),"./packages/site-article/CHANGELOG.md":(n=>{n.exports=`# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.2.5 (2026-04-28)
+
+
+### Bug Fixes
+
+* **SITE-11206:** fix article links padding on mobile devices ([c3507f2](https://github.com/cloud-ru-tech/uikit-product/commit/c3507f2ec5b4b9d5e3cb92bcd7da493f1cb6ff5e))
+
+
+
+
+
+## 1.2.4 (2026-04-27)
+
+
+### Bug Fixes
+
+* **SITE-10017:** fix site-article components styles ([4b351f9](https://github.com/cloud-ru-tech/uikit-product/commit/4b351f901a985ccc683e685d49ae347e399bae09))
+
+
+
+
+
+## 1.2.3 (2026-04-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.3.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.2.2 (2026-04-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.2.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.2.1 (2026-03-31)
+
+
+### Bug Fixes
+
+* **FF-8103:** dedupe onOpenChange from Floating UI in PopoverPrivate ([3ce49f4](https://github.com/cloud-ru-tech/uikit-product/commit/3ce49f4f993d48a97b97dc7cecc1402079cb41ff))
+
+
+
+
+
+# 1.2.0 (2026-03-16)
+
+
+### Bug Fixes
+
+* **DOCDEV-2969:** fixed next js build issues ([a9bdab5](https://github.com/cloud-ru-tech/uikit-product/commit/a9bdab58a9f9a625dc05ce5d74f431d68f6245bc))
+
+
+### Features
+
+* **DOCDEV-2969:** added mobileModalBodyClassName prop for site-selector-platform-drop-list ([515c2e4](https://github.com/cloud-ru-tech/uikit-product/commit/515c2e4100dc9825616bbd0210eeb9f520d647ff))
+
+
+
+
+
+## 1.1.8 (2026-03-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.1.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.7 (2026-03-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.6]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@9.1.0]($PUBLIC_PROJECT_URL/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 1.1.6 (2026-02-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.5]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.5 (2026-02-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.4]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.4 (2026-02-16)
+
+
+### Bug Fixes
+
+* **FF-8052:** fix homepage link ([dffd09c](https://github.com/cloud-ru-tech/uikit-product/commit/dffd09c642edf4842eee02ccc4ec3e5894f4a29e))
+
+
+
+
+
+## 1.1.3 (2026-02-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.0.2]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 1.1.2 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7841:** update repo links ([1893c4a](https://github.com/cloud-ru-tech/uikit-product/commit/1893c4a3e600069f98ab37c728e167937faa3440))
+
+
+
+
+
+## 1.1.1 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7861:** deps version mismatch ([cc4fe9c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/cc4fe9cb87656feecfb35c822eed100024c07458))
+
+
+
+
+
+# 1.1.0 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7846:** replace tokens usage ([b690050](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b6900500e2f2c73e184f8b67f689f4a42571a154))
+* **FF-7861:** massive scope update ([b93fa9f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b93fa9fed13a579f5f02efc16ea43d8bedbd5aca))
+* **FF-7861:** update all 0 versions to 1 ([737c2b4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/737c2b494d48be5132554ae9f03c960a8cbe3a34))
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+### Features
+
+* **SITE-10019:** add event param in article product click handler ([06f1e33](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/06f1e3325f019f31e6683abf6969017b5e9ec2c2))
+* **SITE-10394:** add border radius ([5e950bc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5e950bce806fab0a3213eef811a7ebcb411f1860))
+* **SITE-9857:** add site-article ([5ee444b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5ee444b9e90de7ed37ca537c5532053a2744a643))
+
+
+
+
+
+# 0.3.0 (2025-12-15)
+
+
+### Features
+
+* **SITE-10394:** add border radius ([5e950bc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5e950bce806fab0a3213eef811a7ebcb411f1860))
+
+
+
+
+
+## 0.2.4 (2025-11-13)
+
+
+### Bug Fixes
+
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+
+
+
+## 0.2.3 (2025-11-12)
+
+
+### Bug Fixes
+
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+
+
+
+
+
+## 0.2.2 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@7.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.2.1 (2025-11-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@15.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+# 0.2.0 (2025-10-14)
+
+
+### Features
+
+* **SITE-10019:** add event param in article product click handler ([06f1e33](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/06f1e3325f019f31e6683abf6969017b5e9ec2c2))
+
+
+
+
+
+# 0.1.0 (2025-10-03)
+
+
+### Features
+
+* **SITE-9857:** add site-article ([5ee444b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/5ee444b9e90de7ed37ca537c5532053a2744a643))
+
+
+
+
+
+## CHANGELOG
+
+### v0.0.0
+
+- Initial version
+`}),"./packages/site-article/README.md":(n=>{n.exports='# Site Article\n\n## Installation\n`npm i @cloud-ru/uikit-product-site-article`\n\n[Changelog](./CHANGELOG.md)\n\n\n\n[//]: DOCUMENTATION_SECTION_START\n[//]: THIS_SECTION_IS_AUTOGENERATED_PLEASE_DONT_EDIT_IT\n## Highlight\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| richText* | `string` | - |  |\n## Quote\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| text* | `string` | - |  |\n| image | `string` | - |  |\n| name | `string` | - |  |\n| position | `string` | - |  |\n## ImageArticle\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| image* | `{ src: string; alt?: string; }` | - |  |\n| description | `string` | - |  |\n## ArticleLinks\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| links* | `ArticleLink[]` | - |  |\n## Products\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| products | `ArticleProduct[]` | - |  |\n| solutions | `ArticleProduct[]` | - |  |\n## ArticleRichText\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| richText* | `string` | - |  |\n## ArticleTypography\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| type* | "body" \\| "bodyBold" \\| "bodyLink" | - |  |\n| tag* | "span" \\| "div" \\| "p" | - |  |\n| className | `string` | - | CSS-\u043A\u043B\u0430\u0441\u0441 |\n## DropdownShare\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| options* | `DropdownShareOption[]` | - |  |\n| hideLabel | `boolean` | - |  |\n## FooterArticle\n### Props\n| name | type | default value | description |\n|------|------|---------------|-------------|\n| layoutType* | enum LayoutType: `"mobile"`, `"tablet"`, `"desktop"`, `"desktopSmall"` | - |  |\n| dropdownOptions* | `DropdownShareOption[]` | - |  |\n| releaseDate* | `string` | - |  |\n\n\n[//]: DOCUMENTATION_SECTION_END\n'}),"./packages/site-article/package.json":(n=>{n.exports=JSON.parse('{"UU":"@cloud-ru/uikit-product-site-article","rE":"1.2.5"}')}),"./packages/site-article/stories/ImageArticle.story.tsx":((n,o,e)=>{e.r(o),e.d(o,{default:()=>j,imageArticle:()=>C});var t=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),_=e("./packages/site-article/CHANGELOG.md"),l=e("./packages/site-article/package.json"),a=e("./packages/site-article/README.md"),d=e("./node_modules/.pnpm/@snack-uikit+typography@0.8.11_react@18.2.0/node_modules/@snack-uikit/typography/dist/esm/components/Typography.js"),r=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),g=e.n(r),s=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),m=e.n(s),i=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),u=e.n(i),A=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),p=e.n(A),c=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),k=e.n(c),h=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),v=e.n(h),E=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/src/components/ImageArticle/styles.module.scss"),b={};b.styleTagTransform=v(),b.setAttributes=p(),b.insert=u().bind(null,"head"),b.domAPI=m(),b.insertStyleElement=k();var D=g()(E.A,b);const T=E.A&&E.A.locals?E.A.locals:void 0,P="Blog image";function y(f){const{image:O,description:L}=f;return(0,t.jsxs)("div",{className:T.imageArticle,"data-test-id":"image-article",children:[(0,t.jsx)("img",{src:O.src,alt:O.alt||P}),(0,t.jsx)(d.o.SansBodyL,{className:T.description,children:L})]})}try{y.displayName="ImageArticle",y.__docgenInfo={description:"",displayName:"ImageArticle",props:{image:{defaultValue:null,description:"",name:"image",required:!0,type:{name:"{ src: string; alt?: string | undefined; }"}},description:{defaultValue:null,description:"",name:"description",required:!1,type:{name:"string"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/site-article/src/components/ImageArticle/ImageArticle.tsx#ImageArticle"]={docgenInfo:y.__docgenInfo,name:"ImageArticle",path:"packages/site-article/src/components/ImageArticle/ImageArticle.tsx#ImageArticle"})}catch(f){}const S=e.p+"static/media/image.f03db7b8.webp";var I=e("./packages/site-article/stories/styles.module.scss"),j={title:"Site/Article/ImageArticle",component:y};const C={render:({...f})=>(0,t.jsx)("div",{className:I.A.whiteWrapper,children:(0,t.jsx)(y,{...f})}),args:{image:{src:S,alt:"image"},description:"\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u043A \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0438"},argTypes:{},parameters:{readme:{sidebar:[`Latest version: ${l.rE}`,a,_]},packageName:l.UU,design:{name:"Figma",type:"figma",url:"https://www.figma.com/design/pCLrU1Wg1VsoMQGLmH1J8t/-LIB--SITE--Product-UI-Kit?node-id=17239-4512"}}}}),"./packages/site-article/stories/styles.module.scss":((n,o,e)=>{e.d(o,{A:()=>h});var t=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),_=e.n(t),l=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),a=e.n(l),d=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),r=e.n(d),g=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),s=e.n(g),m=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),i=e.n(m),u=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),A=e.n(u),p=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/site-article/stories/styles.module.scss"),c={};c.styleTagTransform=A(),c.setAttributes=s(),c.insert=r().bind(null,"head"),c.domAPI=a(),c.insertStyleElement=i();var k=_()(p.A,c);const h=p.A&&p.A.locals?p.A.locals:void 0})}]);})();
