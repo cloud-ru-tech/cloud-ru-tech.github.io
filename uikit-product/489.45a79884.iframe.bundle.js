@@ -1,0 +1,1462 @@
+"use strict";(()=>{(self.webpackChunkuikit_product=self.webpackChunkuikit_product||[]).push([[489],{"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/src/components/QuotaWidgetCard/components/QuotaTooltip/styles.module.scss":((d,o,e)=>{e.d(o,{A:()=>c});var t=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),u=e.n(t),b=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),m=e.n(b),i=m()(u());i.push([d.id,".content--MNXKR{display:flex;flex-direction:column;gap:4px;width:216px}.row--wtnbL{display:flex;justify-content:space-between;column-gap:8px}.exhausted--nZRQZ{margin-top:8px;padding-top:8px;border-top:1px solid var(--sys-neutral-decor-default, #dde0ea)}",""]),i.locals={content:"content--MNXKR",row:"row--wtnbL",exhausted:"exhausted--nZRQZ"};const c=i}),"./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/src/components/QuotaWidgetCard/styles.module.scss":((d,o,e)=>{e.d(o,{A:()=>c});var t=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/noSourceMaps.js"),u=e.n(t),b=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/runtime/api.js"),m=e.n(b),i=m()(u());i.push([d.id,".tooltip--svRwc{display:block}.card--0xeKC{display:flex;flex-direction:column;row-gap:4px;padding:8px;background-color:var(--sys-neutral-background-opacity, rgba(238, 239, 243, 0.5019607843));border-radius:4px;height:stretch}.card--0xeKC[data-exhausted=true]{background-color:var(--sys-red-background, #fdf1ef)}.header--jIlqH{display:flex;align-items:flex-end;justify-content:space-between;column-gap:4px;flex:1}.title--Ut2mf{color:var(--sys-neutral-text-main, #41424e);align-self:flex-start}.percent--ofxXC[data-family=sans][data-purpose=label][data-size=m]{font-weight:400;color:var(--sys-neutral-text-light, #8b8e9b)}.info--LO7yR{display:flex;flex-direction:column;row-gap:2px}.row--A5a8u{display:flex;align-items:center;justify-content:space-between;column-gap:8px}.label--jdrC4[data-family=sans][data-purpose=label][data-size=m]{color:var(--sys-neutral-text-light, #8b8e9b);font-weight:400}.value--JNWRD[data-family=sans][data-purpose=label][data-size=l]{color:var(--sys-neutral-text-main, #41424e);white-space:nowrap;font-weight:400}.unit--ge0mf{color:var(--sys-neutral-text-light, #8b8e9b)}",""]),i.locals={tooltip:"tooltip--svRwc",card:"card--0xeKC",header:"header--jIlqH",title:"title--Ut2mf",percent:"percent--ofxXC",info:"info--LO7yR",row:"row--A5a8u",label:"label--jdrC4",value:"value--JNWRD",unit:"unit--ge0mf"};const c=i}),"./packages/quota/CHANGELOG.md":(d=>{d.exports=`# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2.1.2 (2026-04-28)
+
+
+### Bug Fixes
+
+* **LK-7501:** fixed quota widget mini height ([1f7621e](https://github.com/cloud-ru-tech/uikit-product/commit/1f7621eb5dbf6c1bd28119c3b1e2bb57edd62995))
+
+
+
+
+
+## 2.1.1 (2026-04-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-icons@17.3.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-mobile-modal@2.1.3]($PUBLIC_PROJECT_URL/blob/master/packages/mobile-modal/CHANGELOG.md)
+* [@cloud-ru/uikit-product-title-clickable@1.2.10]($PUBLIC_PROJECT_URL/blob/master/packages/title-clickable/CHANGELOG.md)
+
+
+
+
+
+# 2.1.0 (2026-04-14)
+
+
+### Features
+
+* **LK-7542:** added quota widget ([40191bf](https://github.com/cloud-ru-tech/uikit-product/commit/40191bf2c69ce76ca8c67a3d6b61bfb7a7f318e7))
+
+
+
+
+
+## 2.0.14 (2026-04-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.14]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.2.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 2.0.13 (2026-03-31)
+
+
+### Bug Fixes
+
+* **FF-8103:** dedupe onOpenChange from Floating UI in PopoverPrivate ([3ce49f4](https://github.com/cloud-ru-tech/uikit-product/commit/3ce49f4f993d48a97b97dc7cecc1402079cb41ff))
+
+
+
+
+
+## 2.0.12 (2026-03-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.12]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 2.0.11 (2026-03-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.11]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 2.0.10 (2026-03-16)
+
+
+### Bug Fixes
+
+* **DOCDEV-2969:** fixed next js build issues ([a9bdab5](https://github.com/cloud-ru-tech/uikit-product/commit/a9bdab58a9f9a625dc05ce5d74f431d68f6245bc))
+
+
+
+
+
+## 2.0.9 (2026-03-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.9]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.1.0]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 2.0.8 (2026-03-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.8]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.0.6]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@9.1.0]($PUBLIC_PROJECT_URL/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 2.0.7 (2026-02-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.7]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.0.5]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 2.0.6 (2026-02-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.6]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.0.4]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 2.0.5 (2026-02-16)
+
+
+### Bug Fixes
+
+* **FF-8052:** fix homepage link ([dffd09c](https://github.com/cloud-ru-tech/uikit-product/commit/dffd09c642edf4842eee02ccc4ec3e5894f4a29e))
+
+
+
+
+
+## 2.0.4 (2026-02-10)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.4]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@17.0.2]($PUBLIC_PROJECT_URL/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 2.0.3 (2026-02-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.3]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 2.0.2 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-7841:** update repo links ([1893c4a](https://github.com/cloud-ru-tech/uikit-product/commit/1893c4a3e600069f98ab37c728e167937faa3440))
+
+
+
+
+
+## 2.0.1 (2026-02-02)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@1.1.1]($PUBLIC_PROJECT_URL/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+# 2.0.0 (2026-02-02)
+
+
+### Bug Fixes
+
+* **FF-6326:** changed translation flow ([b3b6bb4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b3b6bb4349103a63ce328f6f77d36daed0a7fc6b))
+* **FF-6958:** update props quota dropdown ([ab39dc6](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/ab39dc6f8e4b8a4e1029f39f36822f45146546c3))
+* **FF-7846:** replace tokens usage ([b690050](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b6900500e2f2c73e184f8b67f689f4a42571a154))
+* **FF-7861:** massive scope update ([b93fa9f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b93fa9fed13a579f5f02efc16ea43d8bedbd5aca))
+* **FF-7861:** update all 0 versions to 1 ([737c2b4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/737c2b494d48be5132554ae9f03c960a8cbe3a34))
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+* **PDS-2121:** proper package for icons, remove unused ([70ab7f2](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/70ab7f2ccf209831da9417c04f9e7f87ecd9a215))
+* **PDS-876:** quota card limit error ([d12d663](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d12d663111336c5d9f38d912f323b09230e2a3c4))
+
+
+### Dependencies
+
+* **FF-00:** up deps ([9e2378c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/9e2378cef18622b7cbe30fdd43cfa80b1a2eb485))
+* **FF-00:** up deps ([7622f81](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7622f81c02e726a758eb8cc49f54967b9e1288e4))
+* **FF-4704:** up deps ([7da95ef](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7da95ef6551ced9a63c75970f43b047cc564cedc))
+* **FF-5678:** up deps classnames/uncontrollable ([17b3e6e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/17b3e6e7d705fd0f013e7027c4fab244522866e4))
+* **FF-5830:** up snack-uikit & some common deps ([03aefe0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/03aefe0681240d2cffdbbdbbbc026da74d723dfd))
+* **PDS-611:** up deps ([c30ac4c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/c30ac4c2adb7c00e84fbe557d85314add6b6977a))
+
+
+### Features
+
+* **AICJOBS-3074:** add custom type to QuotaUnitType ([934e71b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/934e71b46ff0e04b4123e4ac9ace67be7d3b3520))
+* **AICJOBS-3074:** add custom type to QuotaUnitType ([3d4c2cc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3d4c2cc4e3081451f76d5a500c6f8f75c64f17fe))
+* **FF-5782:** dart v3 use/forward approach ([eb0c4b3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/eb0c4b30a008aa82ad7555ecc9d8420c21b1c7a4))
+* **FF-5836:** support cjs syntax ([d44abd0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d44abd0ddbbea0cd2bf0e1b99442cdb83b87df48))
+* **PDS-1095:** update quota component ([a19c746](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/a19c7468fbdd5f8dd82042ba2c2ff97c8ba3eede))
+* **PDS-32:** add quota ([4ed2d70](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/4ed2d70caea792ca5dbad8dd8ccd0a63df119e1d))
+
+
+### BREAKING CHANGES
+
+
+* **FF-6958:** add layoutType; add export utils & QuotaContent ([045e306](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/045e306495f7c7bdd46ab279b87f7121880b2cfb))
+
+
+
+
+## 0.6.16 (2026-01-29)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.16](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@16.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.6.15 (2025-12-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.15](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@16.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@8.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.14 (2025-12-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@16.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.6.13 (2025-12-08)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@16.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@8.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.12 (2025-11-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@16.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.6.11 (2025-11-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.6.10 (2025-11-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.1.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@8.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.9 (2025-11-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.1.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@8.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.8 (2025-11-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.6.7 (2025-11-13)
+
+
+### Bug Fixes
+
+* **PD-3377:** removed contributors ([121640f](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/121640f7b88b20a728a6ad2c39de8841532bb308))
+
+
+
+
+
+## 0.6.6 (2025-11-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.1.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@7.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.5 (2025-11-12)
+
+
+### Bug Fixes
+
+* **PD-3377:** contributors update to publish all packages ([719fd3e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/719fd3e1249e247443b125c47ea408d92c8395c3))
+
+
+
+
+
+## 0.6.4 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.6.3 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@7.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.6.2 (2025-11-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.6.1 (2025-11-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+# 0.6.0 (2025-10-24)
+
+
+### Features
+
+* **AICJOBS-3074:** add custom type to QuotaUnitType ([934e71b](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/934e71b46ff0e04b4123e4ac9ace67be7d3b3520))
+* **AICJOBS-3074:** add custom type to QuotaUnitType ([3d4c2cc](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/3d4c2cc4e3081451f76d5a500c6f8f75c64f17fe))
+
+
+
+
+
+## 0.5.13 (2025-10-23)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.5.12 (2025-10-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.18](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.11 (2025-10-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.17](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.10 (2025-10-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.16](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.9 (2025-09-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.15](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.2.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.5.8 (2025-09-26)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@15.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.7 (2025-09-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.6 (2025-09-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.5 (2025-09-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.5.4 (2025-09-16)
+
+
+### Bug Fixes
+
+* **FF-6958:** update props quota dropdown ([ab39dc6](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/ab39dc6f8e4b8a4e1029f39f36822f45146546c3))
+
+
+
+
+
+## 0.5.3 (2025-09-11)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.3.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.2 (2025-09-02)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.5.1 (2025-09-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+# 0.5.0 (2025-09-01)
+
+
+### BREAKING CHANGES
+
+
+* **FF-6958:** add layoutType; add export utils & QuotaContent ([045e306](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/045e306495f7c7bdd46ab279b87f7121880b2cfb))
+
+
+
+
+## 0.4.8 (2025-08-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.1.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.4.7 (2025-08-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.4.6 (2025-08-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.4.5 (2025-08-14)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.4.4 (2025-08-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.4.3 (2025-08-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.4.2 (2025-08-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@6.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.4.1 (2025-07-30)
+
+
+### Bug Fixes
+
+* **PDS-2121:** proper package for icons, remove unused ([70ab7f2](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/70ab7f2ccf209831da9417c04f9e7f87ecd9a215))
+
+
+
+
+
+# 0.4.0 (2025-07-29)
+
+
+### Features
+
+* **PDS-1095:** update quota component ([a19c746](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/a19c7468fbdd5f8dd82042ba2c2ff97c8ba3eede))
+
+
+
+
+
+## 0.3.52 (2025-07-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.3.51 (2025-07-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@14.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.50 (2025-07-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@5.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.3.49 (2025-07-16)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@5.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.3.48 (2025-07-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.47 (2025-07-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.46 (2025-06-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.45 (2025-06-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@4.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.3.44 (2025-06-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.3.43 (2025-06-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@13.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.42 (2025-06-24)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.3.41 (2025-06-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.20](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@12.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.40 (2025-06-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.19](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@12.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.39 (2025-06-06)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.18](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.9.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.38 (2025-05-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.17](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.8.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.37 (2025-05-16)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.16](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.36 (2025-05-14)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.15](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.35 (2025-05-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.3.34 (2025-04-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.33 (2025-04-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.32 (2025-04-09)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.31 (2025-04-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.30 (2025-03-27)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.29 (2025-03-21)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.28 (2025-03-20)
+
+
+### Bug Fixes
+
+* **FF-6326:** changed translation flow ([b3b6bb4](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/b3b6bb4349103a63ce328f6f77d36daed0a7fc6b))
+
+
+
+
+
+## 0.3.27 (2025-03-20)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@11.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.26 (2025-03-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.25 (2025-03-14)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.24 (2025-03-13)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.5.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.23 (2025-03-05)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.22 (2025-03-04)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.21 (2025-02-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.3.20 (2025-02-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.3.19 (2025-02-10)
+
+
+### Dependencies
+
+* **FF-4704:** up deps ([7da95ef](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7da95ef6551ced9a63c75970f43b047cc564cedc))
+
+
+
+
+
+## <small>0.3.18 (2025-02-05)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.18](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.17 (2025-02-05)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.17](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.16 (2025-01-09)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.16](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.15 (2024-12-27)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.15](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.14 (2024-12-26)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.13 (2024-12-26)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.12 (2024-12-17)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.11 (2024-12-16)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.10 (2024-12-11)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.9 (2024-12-04)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.8 (2024-11-28)</small>
+
+* chore(FF-5944): renamed snack uikit category to console ([411a818](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/411a818))
+
+
+
+
+
+## <small>0.3.7 (2024-11-25)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.6 (2024-11-17)</small>
+
+* deps(FF-00): up deps ([9e2378c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/9e2378c))
+
+
+
+
+
+## <small>0.3.5 (2024-11-14)</small>
+
+* deps(FF-5678): up deps classnames/uncontrollable ([17b3e6e](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/17b3e6e))
+
+
+
+
+
+## <small>0.3.4 (2024-11-07)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.8.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.3 (2024-11-06)</small>
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## <small>0.3.2 (2024-11-05)</small>
+
+* deps(FF-5830): up snack-uikit & some common deps ([03aefe0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/03aefe0))
+
+
+
+
+
+## 0.3.1 (2024-11-01)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.3.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+# 0.3.0 (2024-10-30)
+
+
+### Features
+
+* **FF-5836:** support cjs syntax ([d44abd0](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d44abd0ddbbea0cd2bf0e1b99442cdb83b87df48))
+
+
+
+
+
+## 0.2.1 (2024-10-30)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.2.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@10.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+# 0.2.0 (2024-10-29)
+
+
+### Features
+
+* **FF-5782:** dart v3 use/forward approach ([eb0c4b3](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/eb0c4b30a008aa82ad7555ecc9d8420c21b1c7a4))
+
+
+
+
+
+## 0.1.24 (2024-10-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.23](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.23 (2024-10-15)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.22](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.22 (2024-10-08)
+
+
+### Bug Fixes
+
+* **PDS-876:** quota card limit error ([d12d663](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/d12d663111336c5d9f38d912f323b09230e2a3c4))
+
+
+
+
+
+## 0.1.21 (2024-10-03)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.21](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.20 (2024-09-26)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.20](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.3.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.19 (2024-09-25)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.19](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.3.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.18 (2024-09-25)
+
+
+### Dependencies
+
+* **PDS-611:** up deps ([c30ac4c](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/c30ac4c2adb7c00e84fbe557d85314add6b6977a))
+
+
+
+
+
+## 0.1.17 (2024-09-16)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.17](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.2.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.1.16 (2024-09-07)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.16](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+
+
+
+
+
+## 0.1.15 (2024-08-28)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.15](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.2.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.14 (2024-08-23)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.14](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.5.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.1.13 (2024-07-31)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.13](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.12 (2024-07-31)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.12](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.0.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.11 (2024-07-31)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.11](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.4.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.1.10 (2024-07-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.10](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+* [@cloud-ru/uikit-product-utils@3.4.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/utils/CHANGELOG.md)
+
+
+
+
+
+## 0.1.9 (2024-07-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.9](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@9.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.8 (2024-07-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.8](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@8.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.7 (2024-07-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.7](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@8.1.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.6 (2024-06-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.6](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@8.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.5 (2024-06-19)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.5](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@7.0.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.4 (2024-06-18)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.4](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@7.0.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.3 (2024-06-17)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.3](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@7.0.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.2 (2024-06-12)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.2](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@6.7.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+## 0.1.1 (2024-05-31)
+
+### Only dependencies have been changed
+* [@cloud-ru/uikit-product-button-predefined@0.1.1](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/button-predefined/CHANGELOG.md)
+* [@cloud-ru/uikit-product-icons@6.6.0](https://gitverse.ru/cloud-ru-tech/uikit-product/-/blob/master/packages/icons/CHANGELOG.md)
+
+
+
+
+
+# 0.1.0 (2024-05-30)
+
+
+### Dependencies
+
+* **FF-00:** up deps ([7622f81](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/7622f81c02e726a758eb8cc49f54967b9e1288e4))
+
+
+### Features
+
+* **PDS-32:** add quota ([4ed2d70](https://gitverse.ru/cloud-ru-tech/uikit-product/commits/4ed2d70caea792ca5dbad8dd8ccd0a63df119e1d))
+
+
+
+
+
+## CHANGELOG
+
+### v0.0.0
+
+- Initial version
+`}),"./packages/quota/README.md":(d=>{d.exports=`# Quota
+
+## Installation
+\`npm i @cloud-ru/uikit-product-quota\`
+
+[Changelog](./CHANGELOG.md)
+
+
+`}),"./packages/quota/package.json":(d=>{d.exports=JSON.parse('{"UU":"@cloud-ru/uikit-product-quota","rE":"2.1.2"}')}),"./packages/quota/src/components/QuotaWidgetCard/QuotaWidgetCard.tsx":((d,o,e)=>{e.d(o,{n:()=>G});var t=e("./node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js"),u=e("./packages/locale/src/components/Locale.tsx"),b=e("./node_modules/.pnpm/@snack-uikit+progress-bar@0.1.3_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/progress-bar/dist/esm/components/ProgressBar/ProgressBar.js"),m=e("./node_modules/.pnpm/@snack-uikit+tooltip@0.18.12_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/tooltip/dist/esm/components/Tooltip/Tooltip.js"),i=e("./node_modules/.pnpm/@snack-uikit+truncate-string@0.7.11_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/@snack-uikit/truncate-string/dist/esm/components/TruncateString.js"),c=e("./node_modules/.pnpm/@snack-uikit+typography@0.8.4_react@18.2.0/node_modules/@snack-uikit/typography/dist/esm/components/Typography.js");function f(n){return n.toLocaleString(void 0,{maximumFractionDigits:2})}var x=e("./packages/quota/src/utils/getPercent.ts"),P=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"),C=e.n(P),S=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleDomAPI.js"),E=e.n(S),T=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertBySelector.js"),L=e.n(T),F=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"),A=e.n(F),R=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/insertStyleElement.js"),N=e.n(R),j=e("./node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9_esbuild@0.25.12_/node_modules/style-loader/dist/runtime/styleTagTransform.js"),H=e.n(j),h=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/src/components/QuotaWidgetCard/components/QuotaTooltip/styles.module.scss"),p={};p.styleTagTransform=H(),p.setAttributes=A(),p.insert=L().bind(null,"head"),p.domAPI=E(),p.insertStyleElement=N();var I=C()(h.A,p);const O=h.A&&h.A.locals?h.A.locals:void 0;function k({quota:n}){const{t:s}=(0,u.F)("Quota"),v=[{label:s("tooltipAvailable"),value:n.limit},{label:s("tooltipUsed"),value:n.usage},{label:s("tooltipRemaining"),value:n.remains}];return(0,t.jsxs)("div",{className:O.content,children:[v.map(a=>(0,t.jsxs)("div",{className:O.row,children:[(0,t.jsx)(c.o.SansBodyS,{children:a.label}),(0,t.jsxs)(c.o.SansBodyS,{children:[f(a.value)," ",n.unitDisplayName]})]},a.label)),n.remains===0&&(0,t.jsxs)("div",{className:O.exhausted,children:[(0,t.jsx)(c.o.SansBodyS,{tag:"div",children:s("tooltipExhaustedHint.first")}),(0,t.jsx)(c.o.SansBodyS,{tag:"div",children:s("tooltipExhaustedHint.second")})]})]})}try{k.displayName="QuotaTooltip",k.__docgenInfo={description:"",displayName:"QuotaTooltip",props:{quota:{defaultValue:null,description:"",name:"quota",required:!0,type:{name:"QuotaItem"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/quota/src/components/QuotaWidgetCard/components/QuotaTooltip/QuotaTooltip.tsx#QuotaTooltip"]={docgenInfo:k.__docgenInfo,name:"QuotaTooltip",path:"packages/quota/src/components/QuotaWidgetCard/components/QuotaTooltip/QuotaTooltip.tsx#QuotaTooltip"})}catch(n){}var g=e("./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9_esbuild@0.25.12_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[14].use[1]!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.99.9_esbuild@0.25.12_/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[14].use[2]!./packages/quota/src/components/QuotaWidgetCard/styles.module.scss"),l={};l.styleTagTransform=H(),l.setAttributes=A(),l.insert=L().bind(null,"head"),l.domAPI=E(),l.insertStyleElement=N();var D=C()(g.A,l);const r=g.A&&g.A.locals?g.A.locals:void 0,y={HIGH:90,MEDIUM:70};function U(n){return n>=y.HIGH?"red":n>=y.MEDIUM?"orange":"green"}function G({quota:n,...s}){const{t:v}=(0,u.F)("Quota"),a=(0,x.O)(n),B=[{label:v("cardAvailable"),value:n.limit},{label:v("cardRemaining"),value:n.remains}];return(0,t.jsx)(m.m,{triggerClassName:r.tooltip,hoverDelayOpen:500,tip:(0,t.jsx)(k,{quota:n}),children:(0,t.jsxs)("div",{className:r.card,"data-exhausted":n.remains===0,...s,children:[(0,t.jsxs)("div",{className:r.header,children:[(0,t.jsx)(c.o.SansBodyM,{className:r.title,children:(0,t.jsx)(i.m,{maxLines:2,text:n.name})}),(0,t.jsxs)(c.o.SansLabelM,{className:r.percent,children:[f(a),"%"]})]}),(0,t.jsx)(b.z,{progress:a,size:"xs",appearance:U(a)}),(0,t.jsx)("div",{className:r.info,children:B.map(_=>(0,t.jsxs)("div",{className:r.row,children:[(0,t.jsx)(c.o.SansLabelM,{className:r.label,children:_.label}),(0,t.jsxs)(c.o.SansLabelL,{className:r.value,children:[f(_.value)," ",(0,t.jsx)("span",{className:r.unit,children:n.unitDisplayName})]})]},_.label))})]})})}try{G.displayName="QuotaWidgetCard",G.__docgenInfo={description:"",displayName:"QuotaWidgetCard",props:{"data-test-id":{defaultValue:null,description:"",name:"data-test-id",required:!1,type:{name:"string"}},quota:{defaultValue:null,description:"\u041E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u0430\u044F \u043A\u0432\u043E\u0442\u0430",name:"quota",required:!0,type:{name:"QuotaItem"}}}},typeof STORYBOOK_REACT_CLASSES!="undefined"&&(STORYBOOK_REACT_CLASSES["packages/quota/src/components/QuotaWidgetCard/QuotaWidgetCard.tsx#QuotaWidgetCard"]={docgenInfo:G.__docgenInfo,name:"QuotaWidgetCard",path:"packages/quota/src/components/QuotaWidgetCard/QuotaWidgetCard.tsx#QuotaWidgetCard"})}catch(n){}}),"./packages/quota/src/utils/getPercent.ts":((d,o,e)=>{e.d(o,{O:()=>t});function t(u){return u.usage===0?u.limit===0?100:0:u.usage/u.limit*100}}),"./packages/quota/stories/constants.ts":((d,o,e)=>{e.d(o,{U:()=>t,f:()=>u});const t={name:"vCPU",limit:100,usage:42,remains:58,unitDisplayName:"cores"},u=[{name:"vCPU",limit:100,usage:42,remains:58,unitDisplayName:"cores"},{name:"RAM",limit:256,usage:230,remains:26,unitDisplayName:"GB"},{name:"SSD",limit:1e3,usage:1e3,remains:0,unitDisplayName:"GB"},{name:"GPU A100",limit:8,usage:5,remains:3,unitDisplayName:"pcs"},{name:"Public IP",limit:10,usage:9,remains:1,unitDisplayName:"pcs"},{name:"S3 Storage",limit:5e3,usage:2500,remains:2500,unitDisplayName:"GB"}]})}]);})();
