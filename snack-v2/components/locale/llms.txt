@@ -1,0 +1,91 @@
+﻿# @ds/locale
+
+> Рантайм локализации — строки живут в самих пакетах (defineLocale/defineMessages), провайдер несёт только язык.
+
+Docs: /snack-v2/components/locale/
+
+## Установка
+
+```sh
+pnpm add @ds/locale
+```
+
+## Когда использовать
+
+- Компонент-пакет объявляет свои тексты: `defineMessages({ 'en-GB', 'ru-RU' })` + `defineLocale('NS', …)`.
+- Хост-приложение задаёт язык: `LocaleProvider lang={…}` (или `store` для MFE через `getGlobalLocaleStore`).
+- Сервис переопределяет строки или **добавляет язык** (например `de-DE`) через `<locale>.extend(lang, …)` либо тип `LocaleOverride`.
+
+## API
+
+### LocaleProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | yes |  |
+| `fallbackLang` | `string` | — | no | Язык, на который откатываемся при отсутствии перевода. По умолчанию `en-GB`. |
+| `lang` | `string` | — | no | Статический язык (одно-корневой app/SSR). Игнорируется, если задан `store`. |
+| `overrides` | `OverrideEntry[]` | — | no | Оверрайды/новые языки — собираются через `<locale>.extend(lang, ...)`, app-static. |
+| `store` | `LangStore` | — | no | Реактивный источник языка для MFE: `getGlobalLocaleStore().store`. |
+
+#### Related types
+- `Lang` (alias)
+- `LangStore` (interface)
+- `MessageTree` (alias)
+- `OverrideEntry` (interface)
+- `PartialDeep` (alias)
+- `PartialObjectDeep` (alias)
+
+## Примеры
+
+### LanguageToggle
+
+```tsx
+import { Button } from '@ds/button';
+import { defineLocale, defineMessages, LocaleProvider } from '@ds/locale';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { Typography } from '@ds/typography';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+// Словарь компонента co-located: defineMessages требует одинаковый набор ключей во всех языках.
+const DEMO_MESSAGES = defineMessages({
+  'en-GB': { action: 'Save', status: 'Ready', greeting: 'Hello' },
+  'ru-RU': { action: 'Сохранить', status: 'Готово', greeting: 'Привет' },
+});
+
+const demoLocale = defineLocale('LocaleDemo', DEMO_MESSAGES);
+
+// Консьюмер читает строки из ближайшего LocaleProvider — текст компонентов меняется вслед за языком.
+function LocalizedSurface() {
+  const { t, lang } = demoLocale.useTranslations();
+
+  return (
+    <Flex gap='2m' align='center' wrap>
+      <Button appearance='primary' label={t('action')} />
+      <Tag appearance='green' label={t('status')} />
+      <Typography variant='body' size='s'>
+        {t('greeting')} · {lang}
+      </Typography>
+    </Flex>
+  );
+}
+
+const LANG_ITEMS = [
+  { value: 'ru-RU', label: 'Русский' },
+  { value: 'en-GB', label: 'English' },
+];
+
+export function LanguageToggle() {
+  const [lang, setLang] = useState('ru-RU');
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl items={LANG_ITEMS} value={lang} onChange={value => setLang(String(value))} />
+      <LocaleProvider lang={lang} fallbackLang='en-GB'>
+        <LocalizedSurface />
+      </LocaleProvider>
+    </Flex>
+  );
+}
+```

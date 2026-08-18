@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./CardVacancy.BirWfPPv.js";var r=e();function i(){return(0,r.jsx)(n,{href:`#mobile`,mobile:!0,appearance:t.Primary,title:`Backend Engineer`,content:`Remote · Contract`})}export{i as Mobile};

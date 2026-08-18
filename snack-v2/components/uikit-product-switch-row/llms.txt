@@ -1,0 +1,149 @@
+﻿# @ds/uikit-product-switch-row
+
+> Кликабельная строка настройки с заголовком, описанием и Switch — целиком кликабельна, поддерживает клавиатуру и tooltip-подсказки.
+
+Docs: /snack-v2/components/uikit-product-switch-row/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-switch-row
+```
+
+## Когда использовать
+
+- В формах настроек, где каждая строка — одна бинарная опция с моментальным применением.
+- Когда у опции нужен поясняющий текст под заголовком и/или подсказка-вопрос рядом с ним.
+- Когда хочется увеличить hit-area переключателя на всю ширину карточки/строки.
+
+Когда **не** нужен `SwitchRow`:
+
+- Одиночный inline-переключатель без описания:
+  - используйте [`Switch`](/components/toggles/switch).
+- Опция, требующая отдельного «Сохранить»:
+  - используйте `Checkbox` в форме.
+
+## API
+
+### SwitchRow
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | — | no | Состояние переключателя (controlled) |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `defaultChecked` | `boolean` | — | no | Начальное состояние переключателя (uncontrolled) |
+| `description` | `string` | — | no | Дополнительное описание под заголовком |
+| `disableTitleTruncate` | `boolean` | `false` | no | Отключить truncation заголовка |
+| `disabled` | `boolean` | — | no | Отключённое состояние |
+| `disabledToggleTip` | `ReactNode` | — | no | Тултип поверх переключателя, когда он disabled |
+| `loading` | `boolean` | — | no | Состояние загрузки — переключатель крутит Sun |
+| `name` | `string` | — | no | Атрибут `name` для нативного `<input>` внутри Switch |
+| `onChange` | `((checked: boolean) => void)` | — | no | Колбэк при переключении |
+| `tip` | `ReactNode` | — | no | Подсказка рядом с заголовком (иконка «?») |
+| `title` | `string` | — | yes | Заголовок переключателя |
+| `type` | `block \| line` | `block` | no | Тип лейаута: `block` (карточка с отступами) или `line` (inline без паддингов) |
+
+#### Related types
+- `SwitchRowType` = `block | line`
+
+### Title
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disableTitleTruncate` | `boolean` | — | no |  |
+| `tip` | `ReactNode` | — | no |  |
+| `title` | `string` | — | yes |  |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { SwitchRow } from '@ds/uikit-product-switch-row';
+
+export function Basic() {
+  return (
+    <SwitchRow title='Включить уведомления' description='Раз в сутки будет приходить дайджест событий' defaultChecked />
+  );
+}
+```
+
+### Controlled
+
+```tsx
+import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { useState } from 'react';
+
+export function Controlled() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <SwitchRow
+      title='Контролируемый переключатель'
+      description={checked ? 'Включено' : 'Выключено'}
+      checked={checked}
+      onChange={setChecked}
+    />
+  );
+}
+```
+
+### Disabled
+
+```tsx
+import { SwitchRow } from '@ds/uikit-product-switch-row';
+
+export function Disabled() {
+  return (
+    <SwitchRow
+      title='Push-уведомления'
+      description='Доступно после подтверждения email'
+      disabled
+      disabledToggleTip='Подтвердите email, чтобы включить'
+    />
+  );
+}
+```
+
+### Line
+
+```tsx
+import { SWITCH_ROW_TYPES, SwitchRow } from '@ds/uikit-product-switch-row';
+
+export function Line() {
+  return (
+    <SwitchRow
+      type={SWITCH_ROW_TYPES.Line}
+      title='Тёмная тема'
+      description='Применяется ко всему интерфейсу'
+      defaultChecked
+    />
+  );
+}
+```
+
+### Loading
+
+```tsx
+import { SwitchRow } from '@ds/uikit-product-switch-row';
+
+export function Loading() {
+  return <SwitchRow title='Синхронизация данных' description='Применяем изменение на сервере' defaultChecked loading />;
+}
+```
+
+### WithTip
+
+```tsx
+import { SwitchRow } from '@ds/uikit-product-switch-row';
+
+export function WithTip() {
+  return (
+    <SwitchRow
+      title='Двухфакторная аутентификация'
+      description='Подтверждение входа кодом из приложения'
+      tip='Защищает аккаунт, даже если кто-то узнает пароль'
+      defaultChecked
+    />
+  );
+}
+```

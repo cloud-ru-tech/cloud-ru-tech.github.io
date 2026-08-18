@@ -1,0 +1,220 @@
+﻿# @ds/markdown
+
+> Просмотр и редактирование markdown — рендер GFM и WYSIWYG-редактор на TipTap.
+
+Docs: /snack-v2/components/markdown/
+
+## Установка
+
+```sh
+pnpm add @ds/markdown
+```
+
+## API
+
+### ButtonHeading
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `api` | `ToolbarApi` | — | yes | Бэкенд команд тулбара (WYSIWYG либо raw markdown). |
+
+### Buttons
+_Нет публичных пропсов._
+
+### ButtonsGroup
+_Нет публичных пропсов._
+
+### CodeBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | `<code>`-элемент с подсветкой, который react-markdown передаёт внутрь `pre`. |
+| `onCopyClick` | `((code: string) => void)` | — | no | Колбэк на копирование. Получает сырой код блока. |
+
+### CustomizeTableModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onClose` | `() => void` | — | yes |  |
+| `onSubmit` | `(rows: number, cols: number) => void` | — | yes | Вставить таблицу заданного размера. |
+| `open` | `boolean` | — | yes |  |
+
+### ImageModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onClose` | `() => void` | — | yes |  |
+| `onSubmit` | `(url: string, alt: string) => void` | — | yes |  |
+| `open` | `boolean` | — | yes |  |
+
+### LinkModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `initial` | `LinkProps` | — | no | Текущий href (для редактирования существующей ссылки). |
+| `onClose` | `() => void` | — | yes |  |
+| `onSubmit` | `(props: LinkProps) => void` | — | yes |  |
+| `open` | `boolean` | — | yes |  |
+
+### Markdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `components` | `Components` | — | no | Override рендера элементов |
+| `data-test-id` | `string` | `markdown` | no |  |
+| `onCodeCopyClick` | `((code: string) => void)` | — | no | Колбэк кнопки Copy на code-блоке |
+| `rehypePlugins` | `PluggableList` | — | no | Доп. rehype-плагины |
+| `remarkPlugins` | `PluggableList` | — | no | Доп. remark-плагины |
+| `skipHtml` | `boolean` | `true` | no | По умолчанию true — сырой HTML вырезается |
+| `value` | `string` | — | yes | Markdown-исходник |
+
+### MarkdownEditor
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `data-test-id` | `string` | `markdown-editor` | no |  |
+| `defaultPreview` | `boolean` | — | no | Uncontrolled |
+| `defaultValue` | `string` | — | no | Uncontrolled |
+| `hideHeader` | `boolean` | `false` | no | Скрыть шапку с тоглом Preview и подписью |
+| `label` | `string \| false` | `Markdown field` | no | Подпись в шапке справа. По умолчанию — `Markdown field`. `false` — без подписи. |
+| `onChange` | `((markdown: string) => void)` | — | no | Колбэк изменения markdown. Вызывается с дебаунсом `ON_CHANGE_DEBOUNCE_MS` после остановки ввода. |
+| `onPreviewChange` | `((preview: boolean) => void)` | — | no | Колбэк переключения Preview-тогла в шапке |
+| `placeholder` | `string` | — | no | Placeholder пустого редактора. |
+| `preview` | `boolean` | — | no | Controlled preview-режим: показывает форматированный WYSIWYG с активным тулбаром. Выключен — редактирование «сырого» markdown-текста в textarea |
+| `previewLabel` | `string` | `Preview` | no | Текст тогла Preview в шапке. По умолчанию `Preview`. |
+| `resizable` | `boolean` | `true` | no | Может ли пользователь менять размеры поля перетаскиванием уголка. По умолчанию `true`. |
+| `spellCheck` | `boolean` | `true` | no | Нативная проверка орфографии (`spellcheck`). По умолчанию `true`. |
+| `toolbar` | `false \| ToolbarItemId[]` | — | no | Какие кнопки тулбара показать. false — без тулбара |
+| `value` | `string` | — | no | Controlled markdown |
+
+#### Related types
+- `ToolbarItemId` = `block-code | block-quote | bold | bullet-list | heading | image | inline-code | italic | link | ordered-list | strikethrough | table`
+
+### PrivateButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | `false` | no | active/selected состояние |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `ReactNode` | — | yes |  |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Внешний ref, без forwardRef (см. component-api-surface.md). |
+| `tip` | `TipContentProps` | — | no |  |
+| `withChevron` | `boolean` | `false` | no |  |
+
+### TableSelectItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `aria-label` | `string` | — | no |  |
+| `checked` | `boolean` | `false` | no | Будет ли ячейка попадать в выбранный диапазон. |
+| `data-test-id` | `string` | — | no |  |
+| `hovered` | `boolean` | `false` | no | Hover-состояние (управляется родителем по mouseEnter). |
+| `onClick` | `(() => void)` | — | no |  |
+| `onMouseEnter` | `(() => void)` | — | no |  |
+
+### TableSelectSettingsGrid
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onPick` | `(rows: number, cols: number) => void` | — | yes |  |
+
+### Toolbar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `api` | `ToolbarApi` | — | yes | Бэкенд команд: WYSIWYG (TipTap) в preview-режиме либо markdown-исходник (textarea) в raw-режиме. |
+| `items` | `ToolbarItemId[]` | — | yes |  |
+
+## Примеры
+
+### EditorControlled
+
+```tsx
+import { MarkdownEditor } from '@ds/markdown';
+import { useState } from 'react';
+
+export function EditorControlled() {
+  const [value, setValue] = useState('# Controlled\n\nЗначение хранится во внешнем `useState`.');
+  const [preview, setPreview] = useState(false);
+
+  return (
+    <MarkdownEditor value={value} onChange={setValue} preview={preview} onPreviewChange={setPreview} label='Описание' />
+  );
+}
+```
+
+### EditorCustomToolbar
+
+```tsx
+import { MarkdownEditor, TOOLBAR_ITEM } from '@ds/markdown';
+
+const INITIAL = `Оставьте в тулбаре только нужные кнопки через \`toolbar\`.
+`;
+
+export function EditorCustomToolbar() {
+  return (
+    <MarkdownEditor
+      defaultValue={INITIAL}
+      label='Комментарий'
+      toolbar={[TOOLBAR_ITEM.Bold, TOOLBAR_ITEM.Italic, TOOLBAR_ITEM.Link, TOOLBAR_ITEM.BulletList]}
+    />
+  );
+}
+```
+
+### EditorUncontrolled
+
+```tsx
+import { MarkdownEditor } from '@ds/markdown';
+
+const INITIAL = `# Заметка
+
+Печатайте текст и форматируйте его через тулбар. Поддерживается **markdown**.
+`;
+
+export function EditorUncontrolled() {
+  return <MarkdownEditor defaultValue={INITIAL} placeholder='Начните писать…' />;
+}
+```
+
+### Viewer
+
+```tsx
+import { Markdown } from '@ds/markdown';
+
+const SOURCE = `# Релиз 2.0
+
+Поддерживается **GFM**: таблицы, ~~зачёркивание~~, списки задач и подсветка кода.
+
+| Сервис   | Статус   |
+|----------|----------|
+| API      | стабилен |
+| Realtime | beta     |
+
+\`\`\`ts
+export function greet(name: string) {
+  return \`Hello, \${name}!\`
+}
+\`\`\`
+`;
+
+export function Viewer() {
+  return <Markdown value={SOURCE} />;
+}
+```
+
+### ViewerCodeCopy
+
+```tsx
+import { Markdown } from '@ds/markdown';
+import { useState } from 'react';
+
+const SOURCE = `Нажмите Copy на блоке кода — \`onCodeCopyClick\` получит сырой текст.
+
+\`\`\`bash
+pnpm add @ds/markdown
+\`\`\`
+`;
+
+export function ViewerCodeCopy() {
+  const [copied, setCopied] = useState<string | null>(null);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Markdown value={SOURCE} onCodeCopyClick={setCopied} />
+      {copied !== null && <span>Скопировано: {copied}</span>}
+    </div>
+  );
+}
+```

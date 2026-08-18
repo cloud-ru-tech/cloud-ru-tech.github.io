@@ -1,0 +1,138 @@
+﻿# @ds/button-combo
+
+> Кнопка с основным действием и выпадающим списком дополнительных действий.
+
+Docs: /snack-v2/components/button-combo/
+
+## Установка
+
+```sh
+pnpm add @ds/button-combo
+```
+
+## Когда использовать
+
+- Когда у действия есть основной сценарий и несколько родственных вариантов: Сохранить / Сохранить копию / Сохранить как шаблон.
+- Когда нужно сэкономить место: вместо ряда кнопок — одна с выпадающим списком.
+
+Когда **не** нужен:
+
+- Для единственного действия — обычный `Button` из `@ds/button`.
+- Для выбора значения (а не запуска действия) — `@ds/segment-control` или select.
+- Для равнозначных несвязанных действий — `ButtonGroup` из `@ds/button`.
+
+## API
+
+### ButtonCombo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `critical \| neutral \| primary` | `primary` | no | Цветовое назначение обеих кнопок |
+| `className` | `string` | — | no | CSS-класс корневого контейнера |
+| `data-test-id` | `string` | — | no |  |
+| `defaultLabel` | `string` | — | no | Начальный label основной кнопки, пока ничего не выбрано |
+| `defaultValue` | `ItemId` | — | no | Начальный выбранный элемент (uncontrolled) |
+| `disabled` | `boolean` | — | no | Отключена |
+| `dropdownClassName` | `string` | — | no | CSS-класс выпадающего списка |
+| `dropdownTriggerClassName` | `string` | — | no | CSS-класс кнопки-триггера выпадающего списка |
+| `fullWidth` | `boolean` | — | no | Растянуть на всю ширину родителя |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `items` | `Item[]` | — | yes | Основные элементы списка (действия) |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `onChange` | `((value: ItemId) => void)` | — | no | Controlled: обработчик смены выбранного элемента |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Обработчик изменения видимости выпадающего списка |
+| `open` | `boolean` | — | no | Управляет видимостью выпадающего списка |
+| `optionClassName` | `string` | — | no | CSS-класс основной (option) кнопки |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `tabIndex` | `number` | — | no | HTML-атрибут tab-index корневого контейнера |
+| `value` | `ItemId` | — | no | Controlled: выбранный элемент |
+| `view` | `elevated \| filled \| function \| outline \| simple \| tonal` | `filled` | no | Вариант оформления обеих кнопок |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Item` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `Size` = `s | xs`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { ButtonCombo, Item } from '@ds/button-combo';
+
+const items: Item[] = [
+  { id: 'save', label: 'Сохранить', onClick: () => console.info('Сохранить') },
+  { id: 'save-copy', label: 'Сохранить копию', onClick: () => console.info('Сохранить копию') },
+  { id: 'save-template', label: 'Сохранить как шаблон', onClick: () => console.info('Сохранить как шаблон') },
+];
+
+export function Basic() {
+  return <ButtonCombo items={items} defaultValue='save' />;
+}
+```
+
+### Controlled
+
+```tsx
+import { ButtonCombo, Item } from '@ds/button-combo';
+import { ItemId } from '@ds/list';
+import { useState } from 'react';
+
+const items: Item[] = [
+  { id: 'publish', label: 'Опубликовать', onClick: () => console.info('Опубликовать') },
+  { id: 'draft', label: 'Сохранить черновик', onClick: () => console.info('Сохранить черновик') },
+  { id: 'schedule', label: 'Запланировать', onClick: () => console.info('Запланировать') },
+];
+
+export function Controlled() {
+  const [value, setValue] = useState<ItemId>('publish');
+  const [open, setOpen] = useState(false);
+
+  return <ButtonCombo items={items} value={value} onChange={setValue} open={open} onOpenChange={setOpen} />;
+}
+```
+
+### FullWidth
+
+```tsx
+import { ButtonCombo, Item } from '@ds/button-combo';
+
+import styles from './styles.module.scss';
+
+const items: Item[] = [
+  { id: 'confirm', label: 'Подтвердить', onClick: () => console.info('Подтвердить') },
+  { id: 'confirm-notify', label: 'Подтвердить и уведомить', onClick: () => console.info('Подтвердить и уведомить') },
+];
+
+export function FullWidth() {
+  return (
+    <div className={styles.narrow}>
+      <ButtonCombo fullWidth items={items} defaultValue='confirm' />
+    </div>
+  );
+}
+```
+
+### Views
+
+```tsx
+import { ButtonCombo, Item, VIEW } from '@ds/button-combo';
+
+const items: Item[] = [
+  { id: 'run', label: 'Запустить', onClick: () => console.info('Запустить') },
+  { id: 'run-debug', label: 'Запустить с отладкой', onClick: () => console.info('Запустить с отладкой') },
+];
+
+export function Views() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ButtonCombo view={VIEW.Filled} items={items} defaultValue='run' />
+      <ButtonCombo view={VIEW.Tonal} items={items} defaultValue='run' />
+      <ButtonCombo view={VIEW.Outline} items={items} defaultValue='run' />
+      <ButtonCombo view={VIEW.Function} items={items} defaultValue='run' />
+    </div>
+  );
+}
+```

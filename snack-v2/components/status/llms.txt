@@ -1,0 +1,85 @@
+﻿# @ds/status
+
+> Пакет статус-индикаторов — компоненты Status (подпись + маркер) и StatusIndicator (только маркер). Цветовая семантика состояний и поддержка loading/progress.
+
+Docs: /snack-v2/components/status/
+
+## Установка
+
+```sh
+pnpm add @ds/status
+```
+
+## API
+
+### Status
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | `neutral` | no | Внешний вид (цветовая схема) |
+| `background` | `boolean` | `false` | no | Наличие фона |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `label` | `string` | — | yes | Подпись к индикатору (точка с текстом). Если не передано — только точка |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `progress` | `number` | — | no | Прогресс загрузки (от 0 до 100) |
+| `size` | `s \| xs` | `s` | no | Размер индикатора и подписи |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `StatusSize` = `s | xs`
+
+### StatusIndicator
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | `neutral` | no | Внешний вид |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `size` | `2xs \| 3xs \| 4xs \| s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `StatusIndicatorSize` = `2xs | 3xs | 4xs | s | xs`
+
+## Примеры
+
+### Active
+
+```tsx
+import { Status } from '@ds/status';
+
+export function Active() {
+  return <Status label='Active' appearance='green' />;
+}
+```
+
+### BasicIndicator
+
+```tsx
+import { StatusIndicator } from '@ds/status';
+
+export function BasicIndicator() {
+  return <StatusIndicator size='xs' appearance='green' />;
+}
+```
+
+### Loading
+
+```tsx
+import { Status } from '@ds/status';
+
+export function Loading() {
+  return <Status label='Processing' loading />;
+}
+```
+
+### WithBackground
+
+```tsx
+import { Status } from '@ds/status';
+
+export function WithBackground() {
+  return <Status label='Error' appearance='red' background />;
+}
+```

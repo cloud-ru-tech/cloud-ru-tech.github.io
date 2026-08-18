@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ProgressBar.V0gFsdGX.js";var n=e();function r(){return(0,n.jsx)(t,{progress:40})}export{r as Static};

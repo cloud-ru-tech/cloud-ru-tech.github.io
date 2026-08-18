@@ -1,0 +1,1 @@
+var e=Symbol.for(`@ds/supports-inner-ref`);function t(t){return Object.defineProperty(t,e,{value:!0}),t}function n(t){return(typeof t==`function`||typeof t==`object`&&!!t)&&!!t[e]}export{t as n,n as t};

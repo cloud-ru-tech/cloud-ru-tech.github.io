@@ -1,0 +1,255 @@
+﻿# @ds/dropzone
+
+> Пакет загрузки файлов — видимая зона Dropzone, триггер FileUpload и скрытая оверлей-зона HiddenDropZone над произвольным контентом.
+
+Docs: /snack-v2/components/dropzone/
+
+## Установка
+
+```sh
+pnpm add @ds/dropzone
+```
+
+## API
+
+### Dropzone
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `AcceptInput` | — | no | Разрешённые типы: MIME-тип (`image/png`), шаблон (`image/*`) или расширение (`.pdf`). Строка или массив. |
+| `capture` | `boolean \| "user" \| "environment"` | — | no | Нативный `capture` скрытого input — источник захвата на мобильных (камера/микрофон). |
+| `children` | `ReactNode` | — | no | Контент dropzone |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Деактивирован ли компонент |
+| `form` | `string` | — | no | Нативный `form` скрытого input — привязка к форме по `id`. |
+| `id` | `string` | — | no | Нативный `id` скрытого input — для связи с `<label htmlFor>`. |
+| `innerRef` | `Ref<HTMLInputElement>` | — | no | Ссылка на нативный `<input type="file">` — для интеграции с формами (react-hook-form `ref`). |
+| `maxSize` | `number` | — | no | Максимальный размер одного файла в байтах. Превысившие уходят в `onFilesReject`. |
+| `mode` | `multiple \| single` | `multiple` | no | Режим загрузки |
+| `name` | `string` | — | no | Нативный `name` скрытого input — для отправки формы и интеграции с form-библиотеками. |
+| `onChange` | `ChangeEventHandler<HTMLInputElement>` | — | no | Нативный `onChange` скрытого input. Вызывается до валидации с исходным событием. |
+| `onFilesReject` | `((rejections: FileRejection[]) => void)` | — | no | Колбек с отклонёнными файлами и причиной (`maxSize` / `mime`). |
+| `onFilesUpload` | `(files: File[]) => void` | — | yes | Колбек с принятыми файлами (прошедшими проверку `maxSize` и `accept`). |
+| `required` | `boolean` | — | no | Нативный `required` скрытого input. |
+| `size` | `l \| m \| s` | `m` | no | Размер компонента |
+
+#### Related types
+- `AcceptInput` (alias)
+- `Size` = `l | m | s`
+- `UploadMode` = `multiple | single`
+
+### FileUpload
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `AcceptInput` | — | no | Разрешённые типы файлов: MIME-тип (`image/png`), шаблон (`image/*`) или расширение (`.pdf`). Строка (через запятую, как нативный `accept`) или массив. Задаёт нативный `accept` и валидацию. |
+| `children` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | yes | Триггер открытия диалога выбора файлов (кнопка / лейбл). Клонируется, к нему добавляется `onClick`. |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Деактивирует триггер и input. |
+| `innerRef` | `Ref<HTMLInputElement>` | — | no | Ссылка на нативный `<input type="file">` — для интеграции с формами (react-hook-form `ref`). |
+| `maxSize` | `number` | — | no | Максимальный размер одного файла в байтах. Превысившие уходят в `onFilesReject`. |
+| `mode` | `multiple \| single` | `multiple` | no | Режим выбора файлов |
+| `onChange` | `ChangeEventHandler<HTMLInputElement>` | — | no | Нативный `onChange` скрытого input. Вызывается до валидации с исходным событием — точка интеграции с react-hook-form и другими form-библиотеками. |
+| `onFilesReject` | `((rejections: FileRejection[]) => void)` | — | no | Колбек с отклонёнными файлами и причиной отказа (`maxSize` / `mime`). Вызывается только когда задан `maxSize` и/или `accept` и есть отклонённые файлы. |
+| `onFilesUpload` | `(files: File[]) => void` | — | yes | Колбек с принятыми файлами (прошедшими проверку `maxSize` и `accept`). |
+
+#### Related types
+- `AcceptInput` (alias)
+- `UploadMode` = `multiple | single`
+
+### HiddenDropZone
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `AcceptInput` | — | no | Разрешённые типы: MIME-тип (`image/png`), шаблон (`image/*`) или расширение (`.pdf`). Строка или массив. |
+| `capture` | `boolean \| "user" \| "environment"` | — | no | Нативный `capture` скрытого input — источник захвата на мобильных (камера/микрофон). |
+| `children` | `ReactNode` | — | yes | Дочерний контент, поверх которого отображается dropzone при drag |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode` | — | no | Контент dropzone при drag (overlay) |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Деактивирован ли компонент |
+| `form` | `string` | — | no | Нативный `form` скрытого input — привязка к форме по `id`. |
+| `id` | `string` | — | no | Нативный `id` скрытого input — для связи с `<label htmlFor>`. |
+| `innerRef` | `Ref<HTMLInputElement>` | — | no | Ссылка на нативный `<input type="file">` — для интеграции с формами (react-hook-form `ref`). |
+| `maxSize` | `number` | — | no | Максимальный размер одного файла в байтах. Превысившие уходят в `onFilesReject`. |
+| `mode` | `multiple \| single` | `multiple` | no | Режим загрузки |
+| `name` | `string` | — | no | Нативный `name` скрытого input — для отправки формы и интеграции с form-библиотеками. |
+| `onChange` | `ChangeEventHandler<HTMLInputElement>` | — | no | Нативный `onChange` скрытого input. Вызывается до валидации с исходным событием. |
+| `onFilesReject` | `((rejections: FileRejection[]) => void)` | — | no | Колбек с отклонёнными файлами и причиной (`maxSize` / `mime`). |
+| `onFilesUpload` | `(files: File[]) => void` | — | yes | Колбек с принятыми файлами (прошедшими проверку `maxSize` и `accept`). |
+| `required` | `boolean` | — | no | Нативный `required` скрытого input. |
+| `size` | `l \| m \| s` | `m` | no | Размер компонента |
+
+#### Related types
+- `AcceptInput` (alias)
+- `Size` = `l | m | s`
+- `UploadMode` = `multiple | single`
+
+### PrivateDropZone
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `AcceptInput` | — | no | Разрешённые типы: MIME-тип (`image/png`), шаблон (`image/*`) или расширение (`.pdf`). Строка или массив. |
+| `capture` | `boolean \| "user" \| "environment"` | — | no | Нативный `capture` скрытого input — источник захвата на мобильных (камера/микрофон). |
+| `children` | `ReactNode` | — | no | Контент dropzone |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Деактивирован ли компонент |
+| `form` | `string` | — | no | Нативный `form` скрытого input — привязка к форме по `id`. |
+| `id` | `string` | — | no | Нативный `id` скрытого input — для связи с `<label htmlFor>`. |
+| `innerRef` | `Ref<HTMLInputElement>` | — | no | Ссылка на нативный `<input type="file">` — для интеграции с формами (react-hook-form `ref`). |
+| `isOver` | `boolean` | — | yes |  |
+| `maxSize` | `number` | — | no | Максимальный размер одного файла в байтах. Превысившие уходят в `onFilesReject`. |
+| `mode` | `multiple \| single` | `multiple` | no | Режим |
+| `name` | `string` | — | no | Нативный `name` скрытого input — для отправки формы и интеграции с form-библиотеками. |
+| `onChange` | `ChangeEventHandler<HTMLInputElement>` | — | no | Нативный `onChange` скрытого input. Вызывается до валидации с исходным событием. |
+| `onFilesReject` | `((rejections: FileRejection[]) => void)` | — | no | Колбек с отклонёнными файлами и причиной (`maxSize` / `mime`). |
+| `onFilesUpload` | `(files: File[]) => void` | — | yes | Колбек с принятыми файлами (прошедшими проверку `maxSize` и `accept`). |
+| `required` | `boolean` | — | no | Нативный `required` скрытого input. |
+| `size` | `l \| m \| s` | `m` | no | Размер компонента |
+
+## Примеры
+
+### DropzoneBasic
+
+```tsx
+import { Dropzone } from '@ds/dropzone';
+import { useState } from 'react';
+
+export function DropzoneBasic() {
+  const [files, setFiles] = useState<File[]>([]);
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <Dropzone onFilesUpload={uploaded => setFiles(prev => [...prev, ...uploaded])}>
+        <span>Перетащите файлы или нажмите, чтобы выбрать</span>
+      </Dropzone>
+      {files.length > 0 && (
+        <ul>
+          {files.map((f, i) => (
+            <li key={`${f.name}-${i}`}>
+              {f.name} — {Math.ceil(f.size / 1024)} KB
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+```
+
+### DropzoneDisabled
+
+```tsx
+import { Dropzone } from '@ds/dropzone';
+import { useState } from 'react';
+
+export function DropzoneDisabled() {
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <Dropzone disabled onFilesUpload={setFiles}>
+      <span>Загрузка недоступна{files.length ? ` (выбрано: ${files.length})` : ''}</span>
+    </Dropzone>
+  );
+}
+```
+
+### DropzoneSingleImage
+
+```tsx
+import { Dropzone } from '@ds/dropzone';
+import { useState } from 'react';
+
+export function DropzoneSingleImage() {
+  const [file, setFile] = useState<File | null>(null);
+
+  return (
+    <Dropzone mode='single' accept='image/*' onFilesUpload={files => setFile(files[0] ?? null)}>
+      <span>{file ? file.name : 'Только одно изображение'}</span>
+    </Dropzone>
+  );
+}
+```
+
+### FileUploadBasic
+
+```tsx
+import { Button } from '@ds/button';
+import { FileUpload } from '@ds/dropzone';
+import { useState } from 'react';
+
+export function FileUploadBasic() {
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileUpload onFilesUpload={setFiles}>
+        <Button type='button' label='Загрузить файлы' />
+      </FileUpload>
+      {files.length > 0 && <span>Выбрано: {files.map(f => f.name).join(', ')}</span>}
+    </div>
+  );
+}
+```
+
+### FileUploadFormField
+
+```tsx
+import { Button } from '@ds/button';
+import { FileRejection, FileUpload } from '@ds/dropzone';
+import { useState } from 'react';
+
+const MAX_SIZE = 5 * 1024 * 1024;
+
+export function FileUploadFormField() {
+  const [file, setFile] = useState<File | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleReject = (rejections: FileRejection[]) => {
+    const [first] = rejections;
+    setError(first?.reason === 'maxSize' ? 'Файл больше 5 МБ' : 'Недопустимый тип файла');
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileUpload
+        name='resume'
+        id='resume'
+        required
+        mode='single'
+        accept={['.pdf', '.doc', '.docx']}
+        maxSize={MAX_SIZE}
+        onFilesReject={handleReject}
+        onFilesUpload={files => {
+          if (!files.length) return;
+          setError(null);
+          setFile(files[0]);
+        }}
+      >
+        <Button type='button' label='Прикрепить резюме' />
+      </FileUpload>
+      {file && <span>{file.name}</span>}
+      {error && <span>{error}</span>}
+    </div>
+  );
+}
+```
+
+### HiddenDropZoneBasic
+
+```tsx
+import { HiddenDropZone } from '@ds/dropzone';
+import { useState } from 'react';
+
+export function HiddenDropZoneBasic() {
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <HiddenDropZone onFilesUpload={setFiles} content={<span>Отпустите, чтобы прикрепить файлы</span>}>
+      <form>
+        <label>
+          Имя <input type='text' />
+        </label>
+        {files.length > 0 && <p>Прикреплено: {files.map(f => f.name).join(', ')}</p>}
+      </form>
+    </HiddenDropZone>
+  );
+}
+```

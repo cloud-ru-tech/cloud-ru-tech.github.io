@@ -1,0 +1,76 @@
+﻿# @ds/ai-button-chevron
+
+> Кнопка-шеврон 16×16 для раскрытия и сворачивания в составных AI-компонентах стриминга.
+
+Docs: /snack-v2/components/ai-button-chevron/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-button-chevron
+```
+
+## Когда использовать
+
+- Раскрытие / сворачивание блока в AI-сценариях (превью генерации, цепочка рассуждений, вложенные подсказки).
+- Управляющий шеврон в заголовке секции, где состояние хранит родитель.
+
+### Когда не нужен
+
+- Полноценная кнопка с текстом или иконкой действия:
+  - используйте `@ds/button`.
+- Самостоятельный переключатель с собственным состоянием выбора:
+  - используйте `@ds/ai-card` либо `SegmentControl`.
+
+## API
+
+### AiButtonChevron
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Disabled-состояние: opacity, нативная блокировка кликов и клавиатуры. |
+| `interactive` | `boolean` | `true` | no | Интерактивный режим: `true` — рендерится как `button`, `false` — как декоративный `span`. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нативный обработчик клика. Не вызывается для disabled-кнопки. |
+| `opened` | `boolean` | `false` | no | Раскрытое состояние: `true` — шеврон смотрит вверх, `false` — вниз. По умолчанию `false`. |
+
+## Примеры
+
+### Default
+
+```tsx
+import { AiButtonChevron } from '@ds/ai-button-chevron';
+import { useState } from 'react';
+
+export function Default() {
+  const [opened, setOpened] = useState(false);
+  return <AiButtonChevron opened={opened} onClick={() => setOpened(prev => !prev)} />;
+}
+```
+
+### Disabled
+
+```tsx
+import { AiButtonChevron } from '@ds/ai-button-chevron';
+
+export function Disabled() {
+  return <AiButtonChevron disabled />;
+}
+```
+
+### Expandable
+
+```tsx
+import { AiButtonChevron } from '@ds/ai-button-chevron';
+import { useState } from 'react';
+
+export function Expandable() {
+  const [opened, setOpened] = useState(true);
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiButtonChevron opened={opened} onClick={() => setOpened(prev => !prev)} />
+      {opened && <span>Раскрытый контент</span>}
+    </div>
+  );
+}
+```

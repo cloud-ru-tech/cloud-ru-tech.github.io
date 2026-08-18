@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-YdnfE1kI.js","names":[],"sources":["../../../../packages/ai-shimmer/stories/AiShimmer/styles.module.scss"],"sourcesContent":[".preview {\n  display: grid;\n  gap: 12px;\n  width: 100%;\n  min-width: 0;\n}\n\n.matrixCell {\n  width: 400px;\n}\n\n.matrixCellNarrow {\n  width: 120px;\n}\n"],"mappings":""}

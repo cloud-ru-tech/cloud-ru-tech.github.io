@@ -1,0 +1,151 @@
+﻿# @ds/ai-field-notice
+
+> Композиция AiFieldBanner и AiQueue для контекстных уведомлений над AI-полем.
+
+Docs: /snack-v2/components/ai-field-notice/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-field-notice
+```
+
+## Когда использовать
+
+- Контекстное уведомление над AI-полем ввода — password, SSH, управление ВМ, поддержка или очередь задач.
+- Нужен готовый сценарий из Figma Field Notice без ручной сборки `AiFieldBanner`.
+
+### Когда не нужен
+
+- Универсальный баннер с произвольным текстом и типом:
+  - используйте `@ds/ai-field-banner` напрямую.
+- Inline-alert в контенте страницы:
+  - используйте `@ds/alert`.
+
+## API
+
+### AiFieldNotice
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `onActionClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Обработчик клика по кнопке действия. Не используется при `variant='queue'`. |
+| `queue` | `AiQueueProps` | — | yes | Пропсы `AiQueue`. Только при `variant='queue'`. |
+| `size` | `m \| s` | — | no | Размер баннера. |
+| `variant` | `password \| queue \| ssh \| support \| vmAgent` | — | yes | Предзашитый сценарий: password, ssh, vmAgent, support или queue. Набор пропсов зависит от значения. |
+| `vmIp` | `string` | — | yes | IP-адрес виртуальной машины для второго кадра описания. Только при `variant='vmAgent'`. |
+| `vmName` | `string` | — | yes | Имя виртуальной машины для второго кадра описания. Только при `variant='vmAgent'`. |
+
+#### Related types
+- `AiFieldBannerProps` (interface)
+- `Size` = `s | xs`
+- `Type` = `agentic | critical | help | information | security | warning`
+
+### AiFieldNoticeAnimatedDescription
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `items` | `readonly AiFieldNoticeDescriptionListItem[]` | — | yes |  |
+| `size` | `m \| s \| undefined` | — | yes |  |
+
+### AiFieldNoticeDescription
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `hoverIndex` | `number` | — | no | Индекс кадра при hover. По умолчанию — `1` или последний для коротких списков. |
+| `messages` | `readonly string[]` | — | yes | Сообщения ротирующего описания. |
+| `restingIndex` | `number` | — | no | Индекс кадра после авто-цикла. По умолчанию — последний элемент `messages`. |
+| `size` | `m \| s \| undefined` | — | yes |  |
+| `state` | `defaultMessage \| firstMessage \| hoverMessage \| secondMessage` | — | yes | Видимое состояние для visual matrix и тестов. |
+
+### AiFieldNoticeVmInfo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `size` | `m \| s \| undefined` | — | yes |  |
+| `vmIp` | `string` | — | yes | IP-адрес виртуальной машины. |
+| `vmName` | `string` | — | yes | Имя виртуальной машины. |
+
+### AnimatedItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `content` | `ReactNode` | — | yes |  |
+| `currentIndex` | `number` | — | yes |  |
+| `itemIndex` | `number` | — | yes |  |
+
+## Примеры
+
+### Password
+
+```tsx
+import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+
+export function Password() {
+  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Password} onActionClick={() => undefined} />;
+}
+```
+
+### Queue
+
+```tsx
+import { AI_QUEUE_STEP_STATE, AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+
+const steps = [
+  { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Done },
+  { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Error },
+  { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Done },
+  { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Progress },
+  { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Planned },
+];
+
+export function Queue() {
+  return (
+    <AiFieldNotice
+      size={SIZE.S}
+      variant={VARIANT.Queue}
+      queue={{
+        steps,
+        defaultOpen: true,
+      }}
+    />
+  );
+}
+```
+
+### Ssh
+
+```tsx
+import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+
+export function Ssh() {
+  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Ssh} onActionClick={() => undefined} />;
+}
+```
+
+### Support
+
+```tsx
+import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+
+export function Support() {
+  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Support} onActionClick={() => undefined} />;
+}
+```
+
+### VmAgent
+
+```tsx
+import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+
+export function VmAgent() {
+  return (
+    <AiFieldNotice
+      size={SIZE.S}
+      variant={VARIANT.VmAgent}
+      vmName='my-lovely-vm'
+      vmIp='93.7.94.11'
+      onActionClick={() => undefined}
+    />
+  );
+}
+```

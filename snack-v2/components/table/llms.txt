@@ -1,0 +1,1082 @@
+﻿# @ds/table
+
+> Таблица данных: клиентская Table, серверная ServerTable и preset-обёртки с упрощённым API.
+
+Docs: /snack-v2/components/table/
+
+## Установка
+
+```sh
+pnpm add @ds/table
+```
+
+## API
+
+### AdminTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columns` | `SimpleColumnDef<TData>[]` | — | yes |  |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data` | `TData[]` | — | yes |  |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `filters` | `FilterRow<TFilters>` | — | no |  |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `(row: TData) => string` | — | yes |  |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `number` | — | no | Кол-во страниц (для внешнего управления) |
+| `pageSize` | `number` | `10` | no | Максимальное кол-во строк на страницу |
+| `pagination` | `{ state?: PaginationState; options?: number[]; optionsLabel?: string \| undefined; onChange?(state: PaginationState): void; optionsRender?(value: string \| number, idx: number): string \| number; } \| undefined` | — | no | Параметры пагинации: `state`, `options`, `optionsLabel`, `onChange`, `optionsRender`. |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowActions` | `RowActionsConfig<TData>` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<TFilters>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `boolean \| AdminTableSearchConfig` | — | no |  |
+| `selection` | `AdminTableSelectionConfig` | — | no |  |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `statusColumn` | `StatusColumnConfig<TData>` | — | no |  |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `allRows \| pageRows` | — | no | Охват мастер-чекбокса выбора: текущая страница или все строки `data` (только клиентская таблица) |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `ActionsGenerator` (alias)
+- `BaseChipProps` (interface)
+- `ChipChoiceDateWithSeconds` (interface)
+- `ColumnDefinition` (alias)
+- `DropdownBridgeProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `MapStatusToAppearanceFnType` (alias)
+- `PublicListContextType` (interface)
+- `RenderCardContext` (interface)
+- `RowActionsConfig` (interface)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `SimpleColumnDef` (interface)
+- `StatusColumnConfig` (interface)
+- `View` = `cards | table`
+
+### BodyCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `cell` | `Cell<TData, unknown>` | — | yes |  |
+| `className` | `string` | — | no |  |
+| `isDraggable` | `boolean` | — | no |  |
+| `onClick` | `MouseEventHandler` | — | no |  |
+| `onMouseUp` | `MouseEventHandler` | — | no |  |
+| `role` | `cell \| columnheader` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+
+### BodyRow
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `columnOrder` | `ColumnOrder` | — | yes |  |
+| `disabledRowAppearance` | `disabled \| hide-toggler` | `disabled` | no |  |
+| `enableColumnsOrderSortByDrag` | `boolean` | — | no |  |
+| `onRowClick` | `RowClickHandler<TData>` | — | no |  |
+| `row` | `Row<TData>` | — | yes |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+
+### Cell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `onClick` | `MouseEventHandler` | — | no |  |
+| `onMouseUp` | `MouseEventHandler` | — | no |  |
+| `role` | `cell \| columnheader` | `cell` | no |  |
+| `style` | `CSSProperties` | — | no |  |
+
+### ControlsChrome
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `acrylic` | `ControlsAcrylicAttrs` | — | yes | Пара data-acrylic-* для acrylic-подложки (см. `getControlsAcrylicAttrs`) |
+| `className` | `string` | — | no |  |
+
+### CopyCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `value` | `string \| number` | — | no |  |
+
+### EntitiesTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnDefinitions` | `ColumnDefinition<T>[]` | — | yes | Определение внешнего вида и функционала колонок |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<P>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data-test-id` | `string` | — | no |  |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultLimit` | `number` | — | no |  |
+| `defaultOffset` | `number` | — | no |  |
+| `defaultSearch` | `string` | — | no |  |
+| `defaultSort` | `SortingState` | — | no |  |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: T) => T[]; expandingColumnDefinition: TreeColumnDefinitionProps<T>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: T) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((originalRow: T, index: number, parent?: Row<T>) => string)` | — | no | Функция получения уникального идентификатора строки |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineId` | `string` | — | no | Id колонки, чей рендер используется как заголовок карточки в режиме `view='cards'`. Имеет смысл только при `view='cards'`. |
+| `id` | `string` | — | yes |  |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onPaginationOrDataChange` | `((data: T[]) => void)` | — | no |  |
+| `onQuerySuccess` | `(() => void)` | — | no |  |
+| `onRowClick` | `RowClickHandler<T>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `((view: View) => void)` | — | no | Колбэк на смену режима отображения |
+| `queryFn` | `EntityQueryFn<P, T>` | — | yes |  |
+| `queryProps` | `Omit<P, "params">` | — | no |  |
+| `ref` | `Ref<EntitiesTableHandle<T>>` | — | no |  |
+| `renderCard` | `((context: RenderCardContext<T>) => ReactNode)` | — | no | Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<T>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `searchPlaceholder` | `string` | — | no |  |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+### HeaderCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `header` | `Header<TData, unknown>` | — | yes |  |
+| `isDraggable` | `boolean` | — | no |  |
+| `onMouseUp` | `MouseEventHandler` | — | no |  |
+| `pinPosition` | `left \| right` | — | no |  |
+| `role` | `cell \| columnheader` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+
+### HeaderRow
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `columnOrder` | `ColumnOrder` | — | yes |  |
+| `enableColumnsOrderSortByDrag` | `boolean` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `suppressSticky` | `boolean` | — | no | Внешний sticky-host (stickyControls): не дублировать position: sticky на строке |
+
+### InfiniteTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `undefined` | — | no |  |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<Record<string, unknown>>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columns` | `SimpleColumnDef<TData>[]` | — | yes |  |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data` | `TData[]` | — | yes |  |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((row: TData) => string)` | — | no |  |
+| `hasMore` | `boolean` | — | no | Есть ли ещё данные для загрузки. Управляет видимостью кнопки / активностью observer-а. |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `button \| scroll` | — | no | Механизм подгрузки следующей порции данных. - `'scroll'` (по умолчанию) — IntersectionObserver на scroll-stub в конце списка. - `'button'` — кнопка «Загрузить ещё» под таблицей. |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `undefined` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `(() => void)` | — | no | Колбэк дозагрузки следующей порции данных. В режиме `loadMoreTrigger='scroll'` вызывается автоматически при достижении конца списка; в режиме `loadMoreTrigger='button'` — по нажатию кнопки «Загрузить ещё». |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `undefined` | — | no |  |
+| `pageSize` | `number` | `10` | no | Максимальное кол-во строк на страницу |
+| `pagination` | `undefined` | — | no |  |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<Record<string, unknown>>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `search` | `{ initialState?: string; state?: string; placeholder?: string \| undefined; loading?: boolean \| undefined; onChange?(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `undefined` | — | no |  |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `undefined` | — | no |  |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ColumnDefinition` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `RenderCardContext` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionState` (interface)
+- `SimpleColumnDef` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `TreeColumnDefinitionProps` (alias)
+- `View` = `cards | table`
+
+### LoadMoreButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `hasMore` | `boolean` | `false` | no |  |
+| `loading` | `boolean` | `false` | no |  |
+| `onClick` | `(() => void)` | — | no |  |
+
+### PinnedCells
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `position` | `left \| right` | — | yes |  |
+
+### ResizeHandle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `cellRef` | `RefObject<HTMLDivElement>` | — | yes |  |
+| `header` | `Header<TData, unknown>` | — | yes |  |
+
+### Row
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `clickable` | `boolean` | — | no | Строка интерактивна (есть onRowClick) — получает фокус с клавиатуры и активацию Enter/Space. |
+| `onClick` | `((e: MouseEvent<HTMLDivElement, MouseEvent>) => void)` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `style` | `CSSProperties` | — | no |  |
+
+### RowActionsButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `variant` | `cell \| placeholder` | `cell` | no | `cell` — интерактивная кнопка; `placeholder` — невидимый якорь ширины колонки (header, loading). |
+
+### ServerAdminTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<TFilters>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columns` | `SimpleColumnDef<TData>[]` | — | yes |  |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `filters` | `FilterRow<TFilters>` | — | no |  |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `(row: TData) => string` | — | yes |  |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `items` | `TData[]` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `limit` | `number` | — | no |  |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `offset` | `number` | `0` | no | Смещение |
+| `onChangePage` | `(offset: number, limit: number) => void` | — | yes |  |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `number` | — | no | Кол-во страниц (для внешнего управления) |
+| `pageSize` | `number` | `10` | no | Максимальное кол-во строк на страницу |
+| `pagination` | `({ state?: PaginationState; options?: number[]; optionsLabel?: string \| undefined; onChange?(state: PaginationState): void; optionsRender?(value: string \| number, idx: number): string \| number; } & { ...; }) \| undefined` | — | no | Параметры пагинации: `state`, `options`, `optionsLabel`, `onChange`, `optionsRender`. Параметры пагинации: `options`, `optionsLabel` |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowActions` | `RowActionsConfig<TData>` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<TFilters>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string \| undefined; state: string; placeholder?: string \| undefined; loading?: boolean \| undefined; onChange(value: string): void; }` | — | yes |  |
+| `selection` | `AdminTableSelectionConfig` | — | no |  |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `statusColumn` | `StatusColumnConfig<TData>` | — | no |  |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `allRows \| pageRows` | — | no | Охват мастер-чекбокса выбора: текущая страница или все строки `data` (только клиентская таблица) |
+| `total` | `number` | `10` | no | Общее кол-во строк |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `AdminTableSelectionConfig` (interface)
+- `BaseChipProps` (interface)
+- `ChipChoiceDateWithSeconds` (interface)
+- `ChipChoiceRowFilter` (alias)
+- `ClientTableProps` (interface)
+- `DropdownBridgeProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `View` = `cards | table`
+
+### ServerSimpleTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<Record<string, unknown>>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columns` | `SimpleColumnDef<TData>[]` | — | yes |  |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((row: TData) => string)` | — | no |  |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `items` | `TData[]` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `limit` | `number` | — | no |  |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `offset` | `number` | `0` | no | Смещение |
+| `onChangePage` | `((offset: number, limit: number) => void) & ((offset: number, limit: number) => void)` | — | yes |  |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageSize` | `number` | — | no |  |
+| `pagination` | `{ options?: number[]; optionsLabel?: string; } \| undefined` | — | no | Параметры пагинации: `options`, `optionsLabel` |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<Record<string, unknown>>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string; state: string; placeholder?: string; loading?: boolean \| undefined; onChange(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `total` | `number` | `10` | no | Общее кол-во строк |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ColumnDefinition` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `RenderCardContext` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionState` (interface)
+- `SimpleColumnDef` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `TreeColumnDefinitionProps` (alias)
+- `View` = `cards | table`
+
+### ServerTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnDefinitions` | `ColumnDefinition<TData>[]` | — | yes | Определение внешнего вида и функционала колонок |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<TFilters>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((originalRow: TData, index: number, parent?: Row<TData>) => string)` | — | no | Функция получения уникального идентификатора строки |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineId` | `string` | — | no | Id колонки, чей рендер используется как заголовок карточки в режиме `view='cards'`. Имеет смысл только при `view='cards'`. |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `items` | `TData[]` | — | no | Данные для отрисовки |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `limit` | `number` | `10` | no | Кол-во строк на страницу |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | `true` | no |  |
+| `manualPagination` | `boolean` | `true` | no |  |
+| `manualSorting` | `boolean` | `true` | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `offset` | `number` | `0` | no | Смещение |
+| `onChangePage` | `(offset: number, limit: number) => void` | — | yes |  |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `((view: View) => void)` | — | no | Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pagination` | `{ options?: number[]; optionsLabel?: string; } \| undefined` | — | no | Параметры пагинации: `options`, `optionsLabel` |
+| `renderCard` | `((context: RenderCardContext<TData>) => ReactNode)` | — | no | Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<TFilters>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string; state: string; placeholder?: string; loading?: boolean \| undefined; onChange(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `total` | `number` | `10` | no | Общее кол-во строк |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ChipChoiceDateWithSeconds` (interface)
+- `ColumnDefinition` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `TreeColumnDefinitionProps` (alias)
+- `View` = `cards | table`
+
+### SimpleTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<Record<string, unknown>>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columns` | `SimpleColumnDef<TData>[]` | — | yes | Декларативное описание колонок |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data` | `TData[]` | — | yes | Данные для отрисовки |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((row: TData) => string)` | — | no | Стабильный идентификатор строки |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `number` | — | no | Кол-во страниц (для внешнего управления) |
+| `pageSize` | `number` | `10 10` | no | Количество строк на страницу Максимальное кол-во строк на страницу |
+| `pagination` | `{ state?: PaginationState; options?: number[]; optionsLabel?: string \| undefined; onChange?(state: PaginationState): void; optionsRender?(value: string \| number, idx: number): string \| number; } \| undefined` | — | no | Параметры пагинации: `state`, `options`, `optionsLabel`, `onChange`, `optionsRender`. |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | — | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<Record<string, unknown>>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string; state?: string; placeholder?: string \| undefined; loading?: boolean \| undefined; onChange?(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `allRows \| pageRows` | — | no | Охват мастер-чекбокса выбора: текущая страница или все строки `data` (только клиентская таблица) |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ColumnDefinition` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `RenderCardContext` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionState` (interface)
+- `SimpleColumnDef` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `TreeColumnDefinitionProps` (alias)
+- `View` = `cards | table`
+
+### Table
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | `false` | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnDefinitions` | `ColumnDefinition<TData>[]` | — | yes | Определение внешнего вида и функционала колонок |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<TFilters>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data` | `TData[]` | — | yes | Данные для отрисовки |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | `false` | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expanding` | `{ getSubRows: (element: TData) => TData[]; expandingColumnDefinition: TreeColumnDefinitionProps<TData>; initialState?: ExpandedState; state?: ExpandedState \| undefined; onChange?(state: ExpandedState): void; } \| undefined` | — | no | Общие настройки раскрывающихся (tree) строк: `getSubRows`, `expandingColumnDefinition`, `initialState`, `state`, `onChange`. |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `((originalRow: TData, index: number, parent?: Row<TData>) => string)` | — | no | Функция получения уникального идентификатора строки |
+| `hasMore` | `boolean` | — | no | Есть ли ещё данные для загрузки. Управляет видимостью кнопки / активностью observer-а. |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineId` | `string` | — | no | Id колонки, чей рендер используется как заголовок карточки в режиме `view='cards'`. Имеет смысл только при `view='cards'`. |
+| `infiniteLoading` | `boolean` | `false` | no | Режим работы "бесконечной" загрузки |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `button \| scroll` | `scroll` | no | Механизм подгрузки следующей порции данных. - `'scroll'` (по умолчанию) — IntersectionObserver на scroll-stub в конце списка. - `'button'` — кнопка «Загрузить ещё» под таблицей. |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | `false` | no |  |
+| `manualPagination` | `boolean` | `false` | no |  |
+| `manualSorting` | `boolean` | `false` | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `(() => void)` | — | no | Колбэк дозагрузки следующей порции данных. В режиме `loadMoreTrigger='scroll'` вызывается автоматически при достижении конца списка; в режиме `loadMoreTrigger='button'` — по нажатию кнопки «Загрузить ещё». |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `((view: View) => void)` | — | no | Колбэк на смену режима отображения |
+| `outline` | `boolean` | `false` | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `number` | — | no | Кол-во страниц (для внешнего управления) |
+| `pageSize` | `number` | `10` | no | Максимальное кол-во строк на страницу |
+| `pagination` | `{ state?: PaginationState; options?: number[]; optionsLabel?: string \| undefined; onChange?(state: PaginationState): void; optionsRender?(value: string \| number, idx: number): string \| number; } \| undefined` | — | no | Параметры пагинации: `state`, `options`, `optionsLabel`, `onChange`, `optionsRender`. |
+| `renderCard` | `((context: RenderCardContext<TData>) => ReactNode)` | — | no | Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowPinning` | `Pick<RowPinningState, "top">` | `{     top: [],   }` | no | Определение, какие строки должны быть закреплены в таблице |
+| `rowSelection` | `{ initialState?: RowSelectionState; state?: RowSelectionState; enable?: boolean \| ((row: Row<TData>) => boolean) \| undefined; multiRow?: boolean \| undefined; onChange?(state: RowSelectionState): void; appearance?: RowAppearance \| undefined; } \| undefined` | — | no | Параметры выбора строк: `initialState`, `state`, `enable`, `appearance`, `multiRow`, `onChange`. |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<TFilters>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string; state?: string; placeholder?: string \| undefined; loading?: boolean \| undefined; onChange?(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | `false` | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressPagination` | `boolean` | `false` | no | Отключение пагинации |
+| `suppressSearch` | `boolean` | `false` | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | `false` | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `allRows \| pageRows` | — | no | Охват мастер-чекбокса выбора: текущая страница или все строки `data` (только клиентская таблица) |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ChipChoiceDateWithSeconds` (interface)
+- `ChipChoiceRowFilter` (alias)
+- `ColumnDefinition` (alias)
+- `DropdownBridgeProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `PublicListContextType` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `TreeColumnDefinitionProps` (alias)
+- `View` = `cards | table`
+
+### TABLE_LAYOUT_PRESETS
+_Нет публичных пропсов._
+
+### TableCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `headlineId` | `string` | — | no | Id колонки, чей рендер используется как заголовок карточки |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Обработчик клика по карточке (аналог клика по строке в режиме `view='table'`) |
+| `row` | `Row<TData>` | — | yes | Строка tanstack-таблицы, отрисовываемая как карточка |
+| `selection` | `multiple \| none \| single` | — | yes | Режим выбора |
+| `selectionAppearance` | `disabled \| hide-toggler` | `disabled` | no | Внешний вид недоступной для выбора строки |
+| `suppressHeader` | `boolean` | `false` | no | Скрыть подписи-заголовки полей карточки |
+| `table` | `Table<TData>` | — | yes | Инстанс tanstack-таблицы |
+
+#### Related types
+- `CardSelection` = `multiple | none | single`
+- `RowClickHandler` (alias)
+
+### TableCardsBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `cardSelection` | `multiple \| none \| single` | — | yes |  |
+| `cardsListProps` | `{ className: string; style?: CSSProperties \| undefined; 'data-fixed-columns'?: boolean \| undefined; }` | — | yes |  |
+| `centerRows` | `Row<TData>[]` | — | yes |  |
+| `emptyState` | `ReactNode` | — | yes |  |
+| `filteredTopRows` | `Row<TData>[]` | — | yes |  |
+| `headlineId` | `string` | — | no |  |
+| `loadMoreButton` | `ReactNode` | — | no |  |
+| `loadingTable` | `Table<TData>` | — | yes |  |
+| `loadingTableRows` | `Row<TData>[]` | — | yes |  |
+| `onRowClick` | `RowClickHandler<TData>` | — | no |  |
+| `renderCard` | `((context: RenderCardContext<TData>) => ReactNode)` | — | no |  |
+| `rowSelectionAppearance` | `disabled \| hide-toggler` | — | no |  |
+| `showInfiniteLoadingTail` | `boolean` | — | yes |  |
+| `suppressHeader` | `boolean` | — | yes |  |
+| `table` | `Table<TData>` | — | yes |  |
+
+### TableChrome
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `acrylic` | `ControlsAcrylicAttrs \| null` | — | no |  |
+| `variant` | `footer \| header` | — | yes |  |
+
+### TableEmptyState
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dataError` | `boolean` | — | no |  |
+| `dataFiltered` | `boolean` | — | no |  |
+| `emptyStates` | `{ noDataState: EmptyStateProps; noResultsState: EmptyStateProps; errorDataState: EmptyStateProps; }` | — | yes |  |
+| `tableRowsLength` | `number` | — | yes |  |
+
+### TablePagination
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `options` | `number[]` | — | no |  |
+| `optionsLabel` | `string` | — | no |  |
+| `optionsRender` | `((value: number, idx: number) => string \| number)` | — | no |  |
+| `pageCount` | `number` | — | no |  |
+| `table` | `Table<TData>` | — | yes |  |
+
+### TableRowsBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `centerRows` | `Row<TData>[]` | — | yes |  |
+| `columnOrder` | `string[]` | — | yes |  |
+| `emptyState` | `ReactNode` | — | yes |  |
+| `enableColumnsOrderSortByDrag` | `boolean` | — | no |  |
+| `filteredTopRows` | `Row<TData>[]` | — | yes |  |
+| `loadMoreButton` | `ReactNode` | — | no |  |
+| `loadingTableRows` | `Row<TData>[]` | — | yes |  |
+| `onRowClick` | `RowClickHandler<TData>` | — | no |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowSelectionAppearance` | `disabled \| hide-toggler` | — | no |  |
+| `rowVirtualizer` | `Virtualizer<HTMLElement, Element> \| null` | — | yes |  |
+| `showInfiniteLoadingTail` | `boolean` | — | yes |  |
+
+### TableScrollHost
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `columnSizeVars` | `CSSProperties` | — | yes |  |
+| `handleScrollInitialized` | `() => void` | — | yes |  |
+| `internalScrollRef` | `RefObject<HTMLElement \| null>` | — | yes |  |
+| `isCardsView` | `boolean` | — | yes |  |
+| `isMobile` | `boolean` | — | yes |  |
+| `scrollContainerRef` | `RefObject<HTMLDivElement>` | — | no |  |
+| `scrollOverflow` | `{ x?: "hidden" \| "scroll" \| "visible" \| "visible-hidden" \| "visible-scroll"; y?: "hidden" \| "scroll" \| "visible" \| "visible-hidden" \| "visible-scroll"; } \| undefined` | — | no |  |
+| `scrollPaddingAbsolute` | `boolean` | — | no |  |
+| `scrollRef` | `Ref<HTMLDivElement>` | — | no |  |
+| `syncHeaderHorizontalScroll` | `(() => void)` | — | no |  |
+| `tableHeaderElement` | `ReactNode` | — | no |  |
+| `usePageStickyHeader` | `boolean` | — | yes |  |
+| `view` | `cards \| table` | — | yes |  |
+
+### TableSkeletonBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `cardsListProps` | `{ className: string; style?: CSSProperties \| undefined; 'data-fixed-columns'?: boolean \| undefined; }` | — | yes |  |
+| `columnOrder` | `string[]` | — | yes |  |
+| `headlineId` | `string` | — | no |  |
+| `loadingTable` | `Table<TData>` | — | yes |  |
+| `loadingTableRows` | `Row<TData>[]` | — | yes |  |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowSelectionAppearance` | `disabled \| hide-toggler` | — | no |  |
+| `showHeader` | `boolean` | — | yes |  |
+| `suppressHeader` | `boolean` | — | yes |  |
+| `tableScrollRowsOnly` | `boolean` | `false` | no |  |
+| `usePageStickyHeader` | `boolean` | — | yes |  |
+| `variant` | `cards \| table` | — | yes |  |
+
+### TableToolbar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `after` | `ReactNode` | — | no |  |
+| `bulkActions` | `BulkAction[]` | — | no | Список массовых действий |
+| `checked` | `boolean` | — | no | Значение чекбокса |
+| `dataView` | `{ show: boolean; value: "list" \| "compact"; onChange: (value: "list" \| "compact") => void; }` | — | no |  |
+| `filterRow` | `(Omit<ChipChoiceRowProps<Record<string, unknown>>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no |  |
+| `indeterminate` | `boolean` | — | no | Состояние частичного выбора |
+| `moreActions` | `Action[]` | — | no |  |
+| `onCheck` | `(() => void)` | — | no | Колбек смены значения чекбокса |
+| `onRefresh` | `(() => void)` | — | no |  |
+| `outline` | `boolean` | — | no |  |
+| `persist` | `ToolbarPersistConfig<TFilters>` | — | no |  |
+| `search` | `{ value: string; onChange: (value: string) => void; loading?: boolean; placeholder?: string; } \| undefined` | — | no |  |
+| `selectedCount` | `number` | — | no | Количество выбранных элементов (для подписи Selected: N) |
+| `showBulkCheckbox` | `boolean` | `true` | no | Показывать чекбокс слева (Figma: showBulkCheckbox) |
+| `totalCount` | `number` | — | no | Общее количество элементов (для подписи Selected: N of M) |
+
+### TreeLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `extended` | `boolean` | — | no | У листа без chevron: отвод через слот chevron с gap до cellToggles |
+| `halfHeight` | `boolean` | — | no |  |
+| `horizontal` | `boolean` | — | no |  |
+| `visible` | `boolean` | — | no |  |
+
+### TreeTable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoResetPageIndex` | `boolean` | — | no | Автоматический сброс пагинации к первой странице при изменении данных/фильтров/сортировки |
+| `bulkActions` | `BulkAction[]` | — | no | Список действий для массовых операций |
+| `cardColumns` | `number` | — | no | Желаемое число колонок карточного вида (`view='cards'`). На широком контейнере рисуется ровно столько колонок; при сужении сетка схлопывается до меньшего числа (порог — `cardMinWidth`). Без пропа число колонок определяется только шириной контейнера и `cardMinWidth` (auto-fill). |
+| `cardMinWidth` | `number` | `320` | no | Минимальная ширина карточки в `view='cards'`, px. Порог, ниже которого колонки схлопываются. Карточка ужимается до ширины контейнера, если он уже. |
+| `className` | `string` | — | no | CSS-класс |
+| `columnFilters` | `(Omit<ChipChoiceRowProps<Record<string, unknown>>, "data-test-id" \| "size"> & { open?: boolean; initialOpen?: boolean; onOpenChange?(isOpen: boolean): void; } & { ...; }) \| undefined` | — | no | Фильтры |
+| `columnVirtualizerInstanceRef` | `MutableRefObject<ColumnVirtualizer>` | — | no | Ref на инстанс column-virtualizer'а для управления прокруткой снаружи |
+| `columnVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры column-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=3). |
+| `columnsSettings` | `{ enableDrag?: boolean; enableSettingsMenu?: boolean; } \| undefined` | — | no | Настройки колонок: `enableDrag` — переупорядочивание (заголовки таблицы и строки в меню настроек); `enableSettingsMenu` — меню показа колонок. |
+| `copyPinnedRows` | `boolean` | `false` | no | Параметр отвечает за сохранение закрепленных строк в теле таблицы |
+| `data` | `TData[]` | — | yes |  |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Флаг, показывающий что произошла ошибка запроса при пустых данных |
+| `dataFiltered` | `boolean` | — | no | Флаг, показывающий что данные были отфильтрованы при пустых данных |
+| `defaultView` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Начальный режим отображения Начальный режим отображения (uncontrolled). Если не задан — дефолт по раскладке: `table` на desktop, `cards` на mobile (`TABLE_LAYOUT_PRESETS`). |
+| `enableColumnVirtualization` | `boolean` | `false` | no | Включает виртуализацию колонок (windowing по горизонтали). Рекомендуется при > 30 видимых колонок. Несовместимо с `view='cards'`. Pinned-колонки (left/right) всегда отрисовываются вне зависимости от настройки. |
+| `enableFuzzySearch` | `boolean` | — | no | Включить нечеткий поиск |
+| `enableRowVirtualization` | `boolean` | `false` | no | Включает виртуализацию строк (windowing по вертикали). Рекомендуется при > 200 строк. Несовместимо с `view='cards'` — при картах игнорируется. |
+| `enableSelectPinned` | `boolean` | — | no | Параметр отвечает за чекбокс выбора закрепленных строк |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `expandingInitialState` | `ExpandedState` | — | no |  |
+| `expandingState` | `ExpandedState` | — | no |  |
+| `fullWidth` | `boolean` | `true` | no | Растягивать таблицу на всю ширину контейнера. При `false` ширина определяется суммой колонок (лучше всего, когда у всех колонок задан `size` / `width`). Явный проп = desktop-значение; на mobile всегда `true` (`TABLE_LAYOUT_PRESETS`). |
+| `getChildren` | `(row: TData) => TData[] \| undefined` | — | yes |  |
+| `getRowBackgroundColor` | `((data: TData) => TableRowColor)` | — | no | Функция определения цвета фона строки по её данным. Работает только в `view='table'` — карточки (`view='cards'`) не тонируются. @param data данные строки @returns цвет фона строки или `undefined` |
+| `getRowId` | `(row: TData) => string` | — | yes |  |
+| `hasMore` | `undefined` | — | no |  |
+| `headerRowBackgroundColor` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Accent-тон фона строки заголовков колонок (`tableHeadLine`). Работает только в `view='table'`. |
+| `headlineKey` | `string` | — | no | Ключ поля строки — заголовок карточки в режиме cards (маппится в `headlineId`) |
+| `infiniteLoading` | `undefined` | — | no |  |
+| `keepPinnedRows` | `boolean` | `false` | no | Параметр отвечает за отображение закрепленных строк на всех страницах таблицы |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<TableLayoutDefaults>>>` | — | no | Override дефолтов адаптива для этого инстанса (`mergePresets` поверх `TABLE_LAYOUT_PRESETS`). `stickyControls` в пресете tier'а заменяет DS-объект целиком — указывайте все нужные поля. Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `loadMoreTrigger` | `undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `manualFiltering` | `boolean` | — | no |  |
+| `manualPagination` | `boolean` | — | no |  |
+| `manualSorting` | `boolean` | — | no |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onExpandingChange` | `((state: ExpandedState) => void)` | — | no |  |
+| `onExport` | `(() => void)` | — | no | Колбэк экспорта данных. Рендерит иконку в тулбаре перед настройками колонок. |
+| `onLoadMore` | `undefined` | — | no |  |
+| `onRefresh` | `(() => void)` | — | no | Колбэк обновления данных |
+| `onRowClick` | `RowClickHandler<TData>` | — | no | Колбэк клика по строке |
+| `onViewChange` | `(((view: View) => void) & ((view: View) => void))` | — | no | Колбэк смены режима Колбэк на смену режима отображения |
+| `outline` | `boolean` | — | no | Внешний бордер для тулбара и таблицы |
+| `pageCount` | `number` | — | no | Кол-во страниц (для внешнего управления) |
+| `pageSize` | `number` | `10` | no | Максимальное кол-во строк на страницу |
+| `pagination` | `{ state?: PaginationState; options?: number[]; optionsLabel?: string \| undefined; onChange?(state: PaginationState): void; optionsRender?(value: string \| number, idx: number): string \| number; } \| undefined` | — | no | Параметры пагинации: `state`, `options`, `optionsLabel`, `onChange`, `optionsRender`. |
+| `primaryColumn` | `TreeTablePrimaryColumn<TData>` | — | yes |  |
+| `renderCard` | `(((context: RenderCardContext<TData>) => ReactNode) & ((context: RenderCardContext<TData>) => ReactNode))` | — | no | Кастомный рендер карточки Кастомный рендер карточки в `view='cards'`. Получает контекст с tanstack `row` / `table` и `defaultRender` (готовый элемент дефолтной карточки — можно обернуть). Возврат заменяет дефолтную карточку. |
+| `rowAutoHeight` | `boolean` | — | no |  |
+| `rowVirtualizerInstanceRef` | `MutableRefObject<RowVirtualizer>` | — | no | Ref на инстанс row-virtualizer'а для управления прокруткой снаружи |
+| `rowVirtualizerOptions` | `Partial<VirtualizerOptions<HTMLElement, Element>>` | — | no | Дополнительные параметры row-virtualizer'а (`@tanstack/react-virtual`). Переопределяют дефолты (overscan=10, estimateSize=40). |
+| `savedState` | `(Pick<ToolbarPersistConfig<Record<string, unknown>>, "serializer" \| "parser"> & { id: string; filterQueryKey?: string; resize?: boolean; columnSettings?: boolean \| undefined; }) \| undefined` | — | no | Конфиг сохранения состояния в localStorage и queryParams. `id` должен быть уникальным для разных таблиц в рамках приложения. |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `search` | `{ initialState?: string; state?: string; placeholder?: string \| undefined; loading?: boolean \| undefined; onChange?(value: string): void; } \| undefined` | — | no | Параметры глобального поиска: `initialState`, `state`, `placeholder`, `loading`, `onChange`. |
+| `secondaryColumns` | `SimpleColumnDef<TData>[]` | — | no |  |
+| `selection` | `TreeTableSelectionConfig<TData>` | — | no |  |
+| `showDataView` | `boolean` | `false` | no | Показывать переключатель вида (таблица/карточки) в тулбаре. Управляет только видимостью тоггла; сам вид задаётся `view` / `defaultView`. По умолчанию тоггла нет — таблица показывает один вид (`defaultView` либо адаптивный дефолт). Включите `showDataView`, чтобы дать пользователю переключать table/cards. |
+| `sorting` | `{ initialState?: SortingState; state?: SortingState; onChange?(state: SortingState): void; } \| undefined` | — | no | Параметры отвечают за возможность сортировки: `initialState` — начальное состояние; `state` — управляемое снаружи; `onChange` — колбэк на изменение. |
+| `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
+| `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
+| `suppressSearch` | `boolean` | — | no | Отключение поиска |
+| `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
+| `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
+| `toolbarCheckBoxMode` | `allRows \| pageRows` | — | no | Охват мастер-чекбокса выбора: текущая страница или все строки `data` (только клиентская таблица) |
+| `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
+
+#### Related types
+- `BaseChipProps` (interface)
+- `ColumnDefinition` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `Except` (alias)
+- `FilterRow` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `PublicListContextType` (interface)
+- `RenderCardContext` (interface)
+- `RowClickHandler` (alias)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `SimpleColumnDef` (interface)
+- `StickyControlsLayoutDefaults` (interface)
+- `TableLayoutDefaults` (interface)
+- `TreeTablePrimaryColumn` (interface)
+- `TreeTableSelectionConfig` (interface)
+- `View` = `cards | table`

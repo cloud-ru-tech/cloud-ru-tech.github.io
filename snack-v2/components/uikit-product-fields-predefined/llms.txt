@@ -1,0 +1,1029 @@
+﻿# @ds/uikit-product-fields-predefined
+
+> Набор предопределённых полей формы поверх @ds/fields — телефон, маски, имя, описание, код и другие готовые сценарии ввода.
+
+Docs: /snack-v2/components/uikit-product-fields-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-fields-predefined
+```
+
+## API
+
+### Attachments
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `files` | `AttachmentSquareProps[]` | — | yes | Прикреплённые файлы |
+| `isMobile` | `boolean` | — | no | Мобильная раскладка: карточки `Attachment` вместо квадратных `AttachmentSquare`, той же строкой под скролл. |
+
+### Cell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `className` | `string` | — | no | CSS-класс ячейки кода |
+| `disabled` | `boolean` | `false` | no | Поле выключено Является ли поле деактивированным |
+| `onChange` | `((value: string) => void)` | — | no | Колбек смены значения |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `stretchCells` | `boolean` | — | no | Растягивать ячейку на всю доступную ширину |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение поля (controlled-режим) |
+
+### FieldChat
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allowMoreThanMaxLength` | `boolean` | `true` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `attachment` | `(Pick<FileUploadProps, "accept" \| "onFilesUpload"> & { files?: File[]; onFileDelete: ((file?: File) => void) \| undefined; }) \| undefined` | — | no | Прикрепление файлов |
+| `autoFocus` | `boolean` | — | no | Автофокус. На mobile выключается адаптивно (см. `layoutPresets`) |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `caption` | `string` | — | no | Вторичная подпись справа |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля |
+| `handleSubmit` | `(value: string) => void` | — | yes | Колбек действия при отправке |
+| `header` | `ReactNode` | — | no | Нода над textarea — ряд элементов до контента (Figma `elementWrapperBefore` / `slotBeforeContent`): тулбар с кнопками, чипами и т.п. |
+| `id` | `string` | — | no | HTML id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `inputMode` | `decimal \| email \| none \| numeric \| search \| tel \| text \| url` | — | no | Режим виртуальной клавиатуры (`inputmode` нативного `<textarea>`) |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `maxLength` | `number` | — | no | Максимальное количество символов |
+| `name` | `string` | — | no | HTML name |
+| `onBlur` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек блюра |
+| `onChange` | `((value: string, event?: ChangeEvent<HTMLTextAreaElement>) => void)` | — | no | Колбек смены значения |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования |
+| `onFocus` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек фокуса |
+| `readonly` | `boolean` | — | no | Только для чтения |
+| `resizable` | `boolean` | `false` | no | Можно ли менять высоту мышкой за нижний угол. Игнорируется при `disabled` или `readonly`. |
+| `showClearButton` | `boolean` | `true` | no | Кнопка очистки (видна при value && !readonly) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение (controlled-режим) |
+
+#### Related types
+- `AcceptInput` (alias)
+- `AttachmentSquareProps` (interface)
+- `ChildrenFunction` (alias)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `FileUploadProps` (interface)
+- `IconPredefinedProps` (interface)
+- `NativeInputProps` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `TruncateStringProps` (alias)
+- `UploadMode` = `multiple | single`
+- `ValidationState` = `default | error | success | warning`
+
+### FieldCode
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `cellClassName` | `string` | — | no | CSS-класс ячейки кода |
+| `className` | `string` | — | no | CSS-класс компонента |
+| `codeLength` | `number` | — | yes | Количество цифр в коде (целое ≥ 1) |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `invalidCode` | `string` | — | no | Сообщение при неверном коде, если не передан свой `error` |
+| `label` | `string` | — | no | Заголовок |
+| `onChange` | `((code: string) => void)` | — | no | Колбек изменения значения |
+| `onComplete` | `((code: string) => void)` | — | no | Колбек ввода всех символов кода |
+| `resendCode` | `ResendCodeProps` | — | no | Компонент отправки нового кода |
+| `showEmptyChars` | `boolean` | — | no | Подсветить пустые символы кода |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `spacing` | `number[]` | — | no | Позиции, после которых нужно вставить пробел (индексы символов, после которых будет разрыв) |
+| `stretchCells` | `boolean` | — | no | Растягивать ячейки на всю доступную ширину; иначе фиксированная ширина по `size` |
+| `value` | `string` | — | no | Значение кода |
+
+#### Related types
+- `ResendCodeProps` (interface)
+- `Size` = `s | xs`
+
+### FieldDescription
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `addButton` | `boolean` | — | no | Поле появляется по кнопке «Добавить описание» (только для опционального поля) |
+| `allowMoreThanMaxLength` | `boolean` | `true` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `autoFocus` | `boolean` | — | no | Автофокус. На mobile выключается адаптивно (см. `layoutPresets`) |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `customSchema` | `StringSchema<string, AnyObject, undefined, "">` | — | no | Дополнительная yup-схема, которая конкатенируется к встроенной |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля |
+| `header` | `ReactNode` | — | no | Нода над textarea — ряд элементов до контента (Figma `elementWrapperBefore` / `slotBeforeContent`): тулбар с кнопками, чипами и т.п. |
+| `id` | `string` | — | no | HTML id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `maxLength` | `number` | `255` | no | Максимальное количество символов |
+| `maxRows` | `number` | `1000` | no | Максимальное количество строк (после — появляется скролл) |
+| `minRows` | `number` | `3` | no | Минимальное количество строк |
+| `onBlur` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек блюра |
+| `onChange` | `((value: string, event?: ChangeEvent<HTMLTextAreaElement>) => void)` | — | no | Колбек смены значения |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования |
+| `onFocus` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек фокуса |
+| `onKeyDown` | `((event: KeyboardEvent<HTMLTextAreaElement>) => void)` | — | no | Колбек нажатия клавиши |
+| `onValidationError` | `((error: ValidationError \| null) => void)` | — | no | Колбэк, вызываемый при изменении ошибки валидации (только в standalone-режиме) |
+| `readonly` | `boolean` | — | no | Только для чтения |
+| `required` | `boolean` | `false` | no | Показать знак обязательности `*` |
+| `resizable` | `boolean` | `true` | no | Можно ли менять высоту мышкой за нижний угол. Игнорируется при `disabled` или `readonly`. |
+| `showClearButton` | `boolean` | `true` | no | Кнопка очистки (видна при value && !readonly) |
+| `showCopyButton` | `boolean` | `true` | no | Кнопка копирования (видна при value && !disabled, независимо от readonly) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `spellCheck` | `boolean` | — | no | Проверка орфографии |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение (controlled-режим) |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `ValidationState` = `default | error | success | warning`
+
+### FieldDescriptionRHF
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `addButton` | `boolean` | — | no | Поле появляется по кнопке «Добавить описание» (только для опционального поля) |
+| `allowMoreThanMaxLength` | `boolean` | `true` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `autoFocus` | `boolean` | — | no | Автофокус. На mobile выключается адаптивно (см. `layoutPresets`) |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `controllerProps` | `Omit<ControllerProps<FieldValues>, "disabled" \| "rules" \| "render">` | — | yes | Режим контроллера с использованием react-hook-form |
+| `customSchema` | `StringSchema<string, AnyObject, undefined, "">` | — | no | Дополнительная yup-схема, которая конкатенируется к встроенной |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля |
+| `header` | `ReactNode` | — | no | Нода над textarea — ряд элементов до контента (Figma `elementWrapperBefore` / `slotBeforeContent`): тулбар с кнопками, чипами и т.п. |
+| `id` | `string` | — | no | HTML id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `maxLength` | `number` | `255` | no | Максимальное количество символов |
+| `maxRows` | `number` | `1000` | no | Максимальное количество строк (после — появляется скролл) |
+| `minRows` | `number` | `3` | no | Минимальное количество строк |
+| `onBlur` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек блюра |
+| `onChange` | `((value: string, event?: ChangeEvent<HTMLTextAreaElement>) => void)` | — | no | Колбек смены значения |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования |
+| `onFocus` | `((event: FocusEvent<HTMLTextAreaElement, Element>) => void)` | — | no | Колбек фокуса |
+| `onKeyDown` | `((event: KeyboardEvent<HTMLTextAreaElement>) => void)` | — | no | Колбек нажатия клавиши |
+| `readonly` | `boolean` | — | no | Только для чтения |
+| `required` | `boolean` | `false` | no | Показать знак обязательности `*` |
+| `resizable` | `boolean` | `true` | no | Можно ли менять высоту мышкой за нижний угол. Игнорируется при `disabled` или `readonly`. |
+| `showClearButton` | `boolean` | `true` | no | Кнопка очистки (видна при value && !readonly) |
+| `showCopyButton` | `boolean` | `true` | no | Кнопка копирования (видна при value && !disabled, независимо от readonly) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `spellCheck` | `boolean` | — | no | Проверка орфографии |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение (controlled-режим) |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `ValidationState` = `default | error | success | warning`
+
+### FieldMask
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allowMoreThanMaxLength` | `boolean` | `false` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `autoFocus` | `boolean` | `false` | no | Включен ли авто-фокус для поля |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `caption` | `string` | — | no | Вторичная подпись справа |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | `false` | no | Поле выключено Является ли поле деактивированным |
+| `elementAfter` | `FieldElementSlot` | — | no | Слот справа (кнопка / селект с опциональным выпадающим списком) |
+| `elementBefore` | `FieldElementSlot` | — | no | Слот слева (кнопка / селект с опциональным выпадающим списком) |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля ввода |
+| `hint` | `string` | — | no | Подсказка |
+| `iconAfter` | `ReactNode` | — | no | Иконка справа от строки ввода |
+| `iconBefore` | `ReactNode` | — | no | Иконка слева от строки ввода |
+| `id` | `string` | — | no | Значение html-атрибута id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `innerTestIds` | `{ shell?: string; input?: string; } \| undefined` | — | no | Идентификаторы внутренних слотов — оболочки и строки ввода. Нужны компонентам, которые рендерят `FieldCombo` под собственным именем (`FieldText`): их e2e адресует свои слоты, а не слоты `FieldCombo`. |
+| `label` | `string` | — | no | Заголовок |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `mask` | `code \| ip-v4-address \| ip-v4-address-with-mask \| passport \| snils \| uuid` | — | yes | Предустановленная маска поля |
+| `max` | `number` | — | no | Максимальное значение поля |
+| `maxLength` | `number` | — | no | Максимальная длина вводимого значения |
+| `min` | `number` | — | no | Минимальное значение поля |
+| `name` | `string` | — | no | Значение html-атрибута name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string, mask: InputMask<Record<string, unknown>>) => void)` | — | no | Колбек смены значения; вторым аргументом — экземпляр маски imask |
+| `onClearButtonClick` | `(() => void)` | — | no | Колбек клика по кнопке очистки |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки клика |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования значения в буфер |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `outline` | `boolean` | `true` | no | Разделитель между основным полем и слотами `elementBefore` / `elementAfter` |
+| `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
+| `placeholder` | `string` | — | no | Значение плейсхолдера |
+| `postfix` | `ReactNode` | — | no | Постфикс (текст или нода) |
+| `prefix` | `ReactNode` | — | no | Префикс (текст или нода) |
+| `prefixIcon` | `ReactNode` | — | no | Ведущая иконка. @deprecated Используйте `iconBefore` — он приоритетнее, если заданы оба. |
+| `readonly` | `boolean` | `false` | no | Только для чтения Является ли поле доступным только для чтения |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `showClearButton` | `boolean` | `true` | no | Показывать кнопку очистки значения (как в Search) |
+| `showCopyButton` | `boolean` | `true` | no | Показывать кнопку копирования значения (только при `readonly = true` и непустом `value`) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `spellCheck` | `boolean` | `true` | no | Значение атрибута spellcheck (проверка орфографии) |
+| `step` | `string \| number` | — | no | Максимальное значение поля |
+| `tabIndex` | `number` | `0` | no | Значение атрибута tab-index |
+| `type` | `email \| number \| password \| tel \| text \| url` | — | no | Тип инпута |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение поля (controlled-режим) |
+
+#### Related types
+- `ButtonSize` = `m | s`
+- `ChildrenFunction` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `FieldElementButtonProps` (interface)
+- `FieldElementDroplistProps` (interface)
+- `FieldElementSlot` (interface)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuestionTooltipProps` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `Type` = `agentic | critical | help | information | security | warning`
+- `ValidationState` = `default | error | success | warning`
+- `Variant` = `count | count-k | count-plus`
+
+### FieldName
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allowMoreThanMaxLength` | `boolean` | `false` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `autoFocus` | `boolean` | `false` | no | Включен ли авто-фокус для поля |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `customSchema` | `StringSchema<string, AnyObject, undefined, "">` | — | no | Дополнительная yup-схема, конкатенируется к встроенной (обязательность, длина, допустимые символы). Через неё подключают data-зависимые проверки, которые компонент не может выполнить сам — например, проверку уникальности имени по данным потребителя. Текст ошибки можно взять из локали пакета: `fieldsPredefinedLocale.useTranslations().t('FieldName.errorDuplicate')`. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | `false` | no | Поле выключено Является ли поле деактивированным |
+| `elementAfter` | `FieldElementSlot` | — | no | Слот справа (кнопка / селект с опциональным выпадающим списком) |
+| `elementBefore` | `FieldElementSlot` | — | no | Слот слева (кнопка / селект с опциональным выпадающим списком) |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля ввода |
+| `iconAfter` | `ReactNode` | — | no | Иконка справа от строки ввода |
+| `iconBefore` | `ReactNode` | — | no | Иконка слева от строки ввода |
+| `id` | `string` | — | no | Значение html-атрибута id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `innerTestIds` | `{ shell?: string; input?: string; } \| undefined` | — | no | Идентификаторы внутренних слотов — оболочки и строки ввода. Нужны компонентам, которые рендерят `FieldCombo` под собственным именем (`FieldText`): их e2e адресует свои слоты, а не слоты `FieldCombo`. |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `max` | `number` | — | no | Максимальное значение поля |
+| `maxLength` | `number` | — | no | Максимальная длина вводимого значения |
+| `min` | `number` | — | no | Минимальное значение поля |
+| `name` | `string` | — | no | Значение html-атрибута name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string) => void)` | — | no | Колбек смены значения |
+| `onClearButtonClick` | `(() => void)` | — | no | Колбек клика по кнопке очистки |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки клика |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования значения в буфер |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `onValidationError` | `((error: ValidationError \| null) => void)` | — | no | Колбэк, вызываемый при изменении ошибки валидации |
+| `outline` | `boolean` | `true` | no | Разделитель между основным полем и слотами `elementBefore` / `elementAfter` |
+| `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
+| `postfix` | `ReactNode` | — | no | Постфикс (текст или нода) |
+| `prefix` | `ReactNode` | — | no | Префикс (текст или нода) |
+| `prefixIcon` | `ReactNode` | — | no | Ведущая иконка. @deprecated Используйте `iconBefore` — он приоритетнее, если заданы оба. |
+| `readonly` | `boolean` | `false` | no | Только для чтения Является ли поле доступным только для чтения |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `showClearButton` | `boolean` | `true` | no | Показывать кнопку очистки значения (как в Search) |
+| `showCopyButton` | `boolean` | `true` | no | Показывать кнопку копирования значения (только при `readonly = true` и непустом `value`) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `showLabel` | `boolean` | — | no | Показывать предустановленный лейбл «Имя» |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `spellCheck` | `boolean` | `true` | no | Значение атрибута spellcheck (проверка орфографии) |
+| `step` | `string \| number` | — | no | Максимальное значение поля |
+| `tabIndex` | `number` | `0` | no | Значение атрибута tab-index |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение поля (controlled-режим) |
+
+#### Related types
+- `ButtonSize` = `m | s`
+- `ChildrenFunction` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `FieldElementButtonProps` (interface)
+- `FieldElementDroplistProps` (interface)
+- `FieldElementSlot` (interface)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuestionTooltipProps` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `ValidationState` = `default | error | success | warning`
+- `Variant` = `count | count-k | count-plus`
+
+### FieldNameRHF
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allowMoreThanMaxLength` | `boolean` | `false` | no | Разрешить ввод свыше `maxLength` символов (счётчик продолжит расти). |
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `autoFocus` | `boolean` | `false` | no | Включен ли авто-фокус для поля |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `controllerProps` | `Omit<ControllerProps<FieldValues>, "disabled" \| "rules" \| "render">` | — | yes | Режим контроллера с использованием react-hook-form |
+| `customSchema` | `StringSchema<string, AnyObject, undefined, "">` | — | no | Дополнительная yup-схема, конкатенируется к встроенной (обязательность, длина, допустимые символы). Через неё подключают data-зависимые проверки, которые компонент не может выполнить сам — например, проверку уникальности имени по данным потребителя. Текст ошибки можно взять из локали пакета: `fieldsPredefinedLocale.useTranslations().t('FieldName.errorDuplicate')`. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | `false` | no | Поле выключено Является ли поле деактивированным |
+| `elementAfter` | `FieldElementSlot` | — | no | Слот справа (кнопка / селект с опциональным выпадающим списком) |
+| `elementBefore` | `FieldElementSlot` | — | no | Слот слева (кнопка / селект с опциональным выпадающим списком) |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля ввода |
+| `iconAfter` | `ReactNode` | — | no | Иконка справа от строки ввода |
+| `iconBefore` | `ReactNode` | — | no | Иконка слева от строки ввода |
+| `id` | `string` | — | no | Значение html-атрибута id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `innerTestIds` | `{ shell?: string; input?: string; } \| undefined` | — | no | Идентификаторы внутренних слотов — оболочки и строки ввода. Нужны компонентам, которые рендерят `FieldCombo` под собственным именем (`FieldText`): их e2e адресует свои слоты, а не слоты `FieldCombo`. |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `max` | `number` | — | no | Максимальное значение поля |
+| `maxLength` | `number` | — | no | Максимальная длина вводимого значения |
+| `min` | `number` | — | no | Минимальное значение поля |
+| `name` | `string` | — | no | Значение html-атрибута name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string) => void)` | — | no | Колбек смены значения |
+| `onClearButtonClick` | `(() => void)` | — | no | Колбек клика по кнопке очистки |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки клика |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования значения в буфер |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `outline` | `boolean` | `true` | no | Разделитель между основным полем и слотами `elementBefore` / `elementAfter` |
+| `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
+| `postfix` | `ReactNode` | — | no | Постфикс (текст или нода) |
+| `prefix` | `ReactNode` | — | no | Префикс (текст или нода) |
+| `prefixIcon` | `ReactNode` | — | no | Ведущая иконка. @deprecated Используйте `iconBefore` — он приоритетнее, если заданы оба. |
+| `readonly` | `boolean` | `false` | no | Только для чтения Является ли поле доступным только для чтения |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `showClearButton` | `boolean` | `true` | no | Показывать кнопку очистки значения (как в Search) |
+| `showCopyButton` | `boolean` | `true` | no | Показывать кнопку копирования значения (только при `readonly = true` и непустом `value`) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `showLabel` | `boolean` | — | no | Показывать предустановленный лейбл «Имя» |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `spellCheck` | `boolean` | `true` | no | Значение атрибута spellcheck (проверка орфографии) |
+| `step` | `string \| number` | — | no | Максимальное значение поля |
+| `tabIndex` | `number` | `0` | no | Значение атрибута tab-index |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение поля (controlled-режим) |
+
+#### Related types
+- `ButtonSize` = `m | s`
+- `ChildrenFunction` (alias)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `FieldElementButtonProps` (interface)
+- `FieldElementDroplistProps` (interface)
+- `FieldElementSlot` (interface)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuestionTooltipProps` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `ValidationState` = `default | error | success | warning`
+- `Variant` = `count | count-k | count-plus`
+
+### FieldPhone
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `autoFocus` | `boolean` | `false` | no | Включен ли авто-фокус для поля |
+| `background` | `boolean` | `true` | no | Фон поля (acrylic) |
+| `caption` | `string` | — | no | Вторичная подпись справа |
+| `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Начальное значение (uncontrolled-режим) |
+| `disabled` | `boolean` | `false` | no | Поле выключено Является ли поле деактивированным |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `fieldClassName` | `string` | — | no | CSS-класс оболочки поля ввода |
+| `hint` | `string` | — | no | Подсказка |
+| `iconAfter` | `ReactNode` | — | no | Иконка справа от строки ввода |
+| `iconBefore` | `ReactNode` | — | no | Иконка слева от строки ввода |
+| `id` | `string` | — | no | Значение html-атрибута id |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `innerTestIds` | `{ shell?: string; input?: string; } \| undefined` | — | no | Идентификаторы внутренних слотов — оболочки и строки ввода. Нужны компонентам, которые рендерят `FieldCombo` под собственным именем (`FieldText`): их e2e адресует свои слоты, а не слоты `FieldCombo`. |
+| `label` | `string` | — | no | Заголовок |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<{ autoFocus: boolean; }>>>` | — | no | Переопределение адаптивных дефолтов по раскладке. Участвует `autoFocus`: на mobile он выключен (открывает клавиатуру без действия). Вернуть на mobile — `layoutPresets={{ mobile: { autoFocus: true } }}`. |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `max` | `number` | — | no | Максимальное значение поля |
+| `maxLength` | `number` | — | no | Максимальная длина вводимого значения |
+| `min` | `number` | — | no | Минимальное значение поля |
+| `name` | `string` | — | no | Значение html-атрибута name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `(((value: string) => void) & ((value: string) => void))` | — | no | Колбек смены значения |
+| `onChangeCountry` | `((country: FieldPhoneOptionsProps) => void)` | — | no |  |
+| `onClearButtonClick` | `(() => void)` | — | no | Колбек клика по кнопке очистки |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки клика |
+| `onCopyButtonClick` | `(() => void)` | — | no | Колбек после копирования значения в буфер |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `options` | `CountrySettings` | — | no | Конфигурация для изменения стандартного списка стран |
+| `outline` | `boolean` | `true` | no | Разделитель между основным полем и слотами `elementBefore` / `elementAfter` |
+| `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
+| `readonly` | `boolean` | `false` | no | Только для чтения Является ли поле доступным только для чтения |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `scrollList` | `boolean` | — | no | Скролл с ограничением высоты для списка стран. По умолчанию включён. |
+| `searchPlaceholder` | `string` | — | no | Плейсхолдер поля поиска в выпадающем списке стран |
+| `showClearButton` | `boolean` | `true` | no | Показывать кнопку очистки значения (как в Search) |
+| `showCopyButton` | `boolean` | `true` | no | Показывать кнопку копирования значения (только при `readonly = true` и непустом `value`) |
+| `showHintIcon` | `boolean` | — | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `spellCheck` | `boolean` | `true` | no | Значение атрибута spellcheck (проверка орфографии) |
+| `step` | `string \| number` | — | no | Максимальное значение поля |
+| `tabIndex` | `number` | `0` | no | Значение атрибута tab-index |
+| `type` | `email \| number \| password \| tel \| text \| url` | — | no | Тип инпута |
+| `validationState` | `default \| error \| success \| warning` | — | no | Состояние валидации |
+| `value` | `string` | — | no | Значение поля (controlled-режим) |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `CountrySettings` (alias)
+- `FieldLayoutPresets` (interface)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `Type` = `agentic | critical | help | information | security | warning`
+- `ValidationState` = `default | error | success | warning`
+
+### FieldSelectCreate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterClose` | `(() => void)` | — | no | Колбэк после закрытия модалки/дровера создания. |
+| `className` | `string` | — | no | CSS-класс корневой обёртки. |
+| `createLayoutProps` | `Omit<ModalProps, ManagedLayoutKeys> \| (Omit<DrawerProps, "position" \| ManagedLayoutKeys> & { ...; })` | — | yes | Пропсы модалки создания (`content` — форма создания опции). Пропсы дровера создания (`content` — форма создания опции); `position` по умолчанию `right`. |
+| `createLayoutType` | `drawer \| modal` | `drawer` | no | По клику на «Создать» открывается модальное окно. По клику на «Создать» открывается дровер (по умолчанию). |
+| `data-test-id` | `string` | — | no |  |
+| `entityIcon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка пустого состояния `noData` (по умолчанию — иконка поиска). |
+| `entityName` | `EntityName` | — | yes | Название сущности в единственном и множественном числе — для кнопок и пустых состояний. |
+| `onRefetch` | `(() => void)` | — | no | Повтор загрузки в состоянии ошибки (кнопка «Обновить» в футере `errorDataState`). |
+| `permission` | `canCreate \| canRead \| none` | `canCreate` | no | Права пользователя: - `canCreate` (по умолчанию) — доступны и выбор, и создание; - `canRead` — поле активно, но создание недоступно (кнопки «Создать» с tooltip); - `none` — поле недоступно (с tooltip). |
+| `selectProps` | `SelectFieldProps` | — | yes | Пропсы, прокидываемые в `FieldSelect` (`@ds/fields`). |
+| `submitHandler` | `() => Promise<string \| void>` | — | yes | Действие создания опции: возвращает `value` новой опции, которая выбирается в поле (single-режим). |
+
+#### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `BottomSheetActionButton` (alias)
+- `DroplistListProps` (alias)
+- `EntityName` (interface)
+- `FieldLength` (interface)
+- `FieldSelectDecoratorProps` (interface)
+- `FooterActionsOrientation` = `horizontal | vertical`
+- `ManagedLayoutKeys` = `approveButton | cancelButton | onClose | open`
+- `ModalContainer` (alias)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalProps` (interface)
+- `ModalWidth` = `l | m | s`
+- `PublicListContextType` (interface)
+- `QuestionTooltipProps` (interface)
+- `Resize` = `both | horizontal | none | vertical`
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+
+### FieldSubmitButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `active` | `boolean` | — | yes | Активна ли отправка (есть валидное значение или прикреплённые файлы) |
+| `className` | `string` | — | no | Дополнительный класс |
+| `data-test-id` | `string` | — | no | Идентификатор для тестов |
+| `fullWidth` | `boolean` | — | no | Растянуть на всю ширину |
+| `handleClick` | `() => void` | — | yes | Колбек клика по кнопке отправки |
+| `showTooltip` | `boolean` | `true` | no | Показывать тултип над активной кнопкой |
+
+### FieldWithAddButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoFocusRef` | `RefObject<HTMLTextAreaElement \| null>` | — | yes |  |
+| `size` | `l \| m \| s` | `m` | no |  |
+
+### ResendCode
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disabled` | `boolean` | — | no | Отключена |
+| `onResend` | `() => void` | — | yes | Колбек отправки нового кода |
+| `secondsToNextResend` | `number` | — | yes | Количество секунд до следующей отправки кода |
+| `size` | `l \| m \| s` | — | no | Размер |
+
+#### Related types
+- `Size` = `s | xs`
+
+### SelectFooter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `canCreate` | `boolean` | — | yes |  |
+| `createButtonLabel` | `string` | — | yes |  |
+| `onClick` | `() => void` | — | yes |  |
+
+### TextAreaActionsFooter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `left` | `ReactNode` | — | no | Контент слева (например, счётчик символов) |
+| `right` | `ReactNode` | — | no | Контент справа (кнопки действий) |
+
+## Примеры
+
+### FieldChatBasic
+
+```tsx
+import { FieldChat } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldChatBasic() {
+  const [value, setValue] = useState('');
+
+  return <FieldChat value={value} onChange={setValue} handleSubmit={() => setValue('')} />;
+}
+```
+
+### FieldChatWithAttachments
+
+```tsx
+import { FieldChat } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldChatWithAttachments() {
+  const [value, setValue] = useState('');
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <FieldChat
+      value={value}
+      onChange={setValue}
+      handleSubmit={() => {
+        setValue('');
+        setFiles([]);
+      }}
+      attachment={{
+        files,
+        accept: 'image/*,.pdf',
+        onFilesUpload: uploaded => setFiles(prev => [...prev, ...uploaded]),
+        onFileDelete: file => setFiles(prev => prev.filter(item => item !== file)),
+      }}
+    />
+  );
+}
+```
+
+### FieldCodeBasic
+
+```tsx
+import { FieldCode } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldCodeBasic() {
+  const [value, setValue] = useState('');
+  const [completed, setCompleted] = useState('');
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
+      <FieldCode codeLength={6} label='Код подтверждения' value={value} onChange={setValue} onComplete={setCompleted} />
+      <span>{completed ? `Код введён: ${completed}` : 'Введите 6 цифр'}</span>
+    </div>
+  );
+}
+```
+
+### FieldCodeResend
+
+```tsx
+import { FieldCode } from '@ds/uikit-product-fields-predefined';
+import { useEffect, useState } from 'react';
+
+const RESEND_COUNTDOWN_SECONDS = 10;
+
+export function FieldCodeResend() {
+  const [value, setValue] = useState('');
+  const [secondsToNextResend, setSecondsToNextResend] = useState(RESEND_COUNTDOWN_SECONDS);
+
+  useEffect(() => {
+    if (secondsToNextResend <= 0) {
+      return;
+    }
+
+    const timerId = window.setTimeout(() => setSecondsToNextResend(seconds => seconds - 1), 1000);
+
+    return () => window.clearTimeout(timerId);
+  }, [secondsToNextResend]);
+
+  const handleResend = () => {
+    setValue('');
+    setSecondsToNextResend(RESEND_COUNTDOWN_SECONDS);
+  };
+
+  return (
+    <FieldCode
+      codeLength={6}
+      label='Код подтверждения'
+      value={value}
+      onChange={setValue}
+      resendCode={{ onResend: handleResend, secondsToNextResend }}
+    />
+  );
+}
+```
+
+### FieldCodeValidation
+
+```tsx
+import { FieldCode, useFieldCodeValidate } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+const CODE_LENGTH = 6;
+
+export function FieldCodeValidation() {
+  const [value, setValue] = useState('');
+  const [touched, setTouched] = useState(false);
+  const validateCode = useFieldCodeValidate({ codeLength: CODE_LENGTH });
+
+  const handleChange = (next: string) => {
+    setValue(next);
+    setTouched(true);
+  };
+
+  return (
+    <FieldCode
+      codeLength={CODE_LENGTH}
+      label='Код подтверждения'
+      value={value}
+      onChange={handleChange}
+      error={touched ? validateCode(value) : undefined}
+      showEmptyChars={touched}
+    />
+  );
+}
+```
+
+### FieldDescriptionBasic
+
+```tsx
+import { FieldDescription } from '@ds/uikit-product-fields-predefined';
+
+export function FieldDescriptionBasic() {
+  return <FieldDescription />;
+}
+```
+
+### FieldDescriptionRHF
+
+```tsx
+import { Button } from '@ds/button';
+import { FieldDescriptionRHF } from '@ds/uikit-product-fields-predefined';
+import { FormProvider, useForm } from 'react-hook-form';
+
+type FormValues = { description: string };
+
+export function FieldDescriptionRHFExample() {
+  const methods = useForm<FormValues>({ defaultValues: { description: '' }, mode: 'onBlur' });
+
+  return (
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(values => alert(`description: ${values.description}`))}
+        style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 360 }}
+      >
+        <FieldDescriptionRHF controllerProps={{ name: 'description' }} />
+        <Button type='submit' label='Отправить' />
+      </form>
+    </FormProvider>
+  );
+}
+```
+
+### FieldDescriptionWithAddButton
+
+```tsx
+import { FieldDescription } from '@ds/uikit-product-fields-predefined';
+
+export function FieldDescriptionWithAddButton() {
+  return <FieldDescription addButton />;
+}
+```
+
+### FieldMaskControlled
+
+```tsx
+import { FieldMask, MASK } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldMaskControlled() {
+  const [value, setValue] = useState('');
+
+  return (
+    <FieldMask
+      label='Код'
+      mask={MASK.Code}
+      value={value}
+      onChange={next => setValue(next)}
+      caption={`value: ${value || '—'}`}
+    />
+  );
+}
+```
+
+### FieldMaskMasks
+
+```tsx
+import { FieldMask, MASK } from '@ds/uikit-product-fields-predefined';
+
+export function FieldMaskMasks() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+      <FieldMask label='UUID' mask={MASK.Uuid} />
+      <FieldMask label='СНИЛС' mask={MASK.Snils} />
+      <FieldMask label='IPv4' mask={MASK.IpV4Address} />
+    </div>
+  );
+}
+```
+
+### FieldNameBasic
+
+```tsx
+import { FieldName } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldNameBasic() {
+  const [value, setValue] = useState('');
+
+  return <FieldName value={value} onChange={setValue} />;
+}
+```
+
+### FieldNameRHF
+
+```tsx
+import { Button } from '@ds/button';
+import { FieldNameRHF } from '@ds/uikit-product-fields-predefined';
+import { FormProvider, useForm } from 'react-hook-form';
+
+type FormValues = { serviceName: string };
+
+export function FieldNameRHFExample() {
+  const methods = useForm<FormValues>({ defaultValues: { serviceName: '' }, mode: 'onBlur' });
+
+  return (
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(values => alert(`name: ${values.serviceName}`))}
+        style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 320 }}
+      >
+        <FieldNameRHF controllerProps={{ name: 'serviceName' }} />
+        <Button type='submit' label='Отправить' />
+      </form>
+    </FormProvider>
+  );
+}
+```
+
+### FieldPhoneBasic
+
+```tsx
+import { PortalContextProvider } from '@ds/portal-context';
+import { FieldPhone } from '@ds/uikit-product-fields-predefined';
+import { useRef, useState } from 'react';
+
+export function FieldPhoneBasic() {
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [value, setValue] = useState('');
+
+  return (
+    <PortalContextProvider root={hostRef}>
+      <div ref={hostRef} style={{ position: 'relative', width: 320 }}>
+        <FieldPhone label='Телефон' value={value} onChange={setValue} searchPlaceholder='Поиск страны' />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### FieldPhoneCountrySettings
+
+```tsx
+import { PortalContextProvider } from '@ds/portal-context';
+import {
+  ARMENIA_COUNTRY_CODE,
+  BELARUS_COUNTRY_CODE,
+  FieldPhone,
+  KAZAKHSTAN_COUNTRY_CODE,
+  RUSSIA_COUNTRY_CODE,
+} from '@ds/uikit-product-fields-predefined';
+import { useRef, useState } from 'react';
+
+export function FieldPhoneCountrySettings() {
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [value, setValue] = useState('');
+
+  return (
+    <PortalContextProvider root={hostRef}>
+      <div ref={hostRef} style={{ position: 'relative', width: 320 }}>
+        <FieldPhone
+          label='Телефон (СНГ)'
+          value={value}
+          onChange={setValue}
+          options={{
+            includedCountries: [
+              RUSSIA_COUNTRY_CODE,
+              BELARUS_COUNTRY_CODE,
+              KAZAKHSTAN_COUNTRY_CODE,
+              ARMENIA_COUNTRY_CODE,
+            ],
+          }}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### FieldSelectCreateAsync
+
+```tsx
+import { ItemId } from '@ds/list';
+import { FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldSelectCreateAsync() {
+  const [value, setValue] = useState<ItemId>();
+  const [loading, setLoading] = useState(false);
+  const [dataError, setDataError] = useState(true);
+
+  const load = () => {
+    setDataError(false);
+    setLoading(true);
+    setTimeout(() => setLoading(false), 800);
+  };
+
+  return (
+    <div style={{ width: 320 }}>
+      <FieldSelectCreate
+        entityName={{ single: 'Окружение', plural: 'Окружения' }}
+        selectProps={{
+          label: 'Окружение',
+          items: [{ id: '1', content: { label: 'Production' } }],
+          value,
+          onChange: setValue,
+          loading,
+          dataError,
+        }}
+        onRefetch={load}
+        createLayoutProps={{ title: 'Создание окружения', content: 'Форма создания' }}
+        submitHandler={() => Promise.resolve('1')}
+      />
+    </div>
+  );
+}
+```
+
+### FieldSelectCreateBasic
+
+```tsx
+import { FieldText } from '@ds/fields';
+import { ItemId } from '@ds/list';
+import { FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldSelectCreateBasic() {
+  const [items, setItems] = useState([
+    { id: '1', content: { label: 'Production' } },
+    { id: '2', content: { label: 'Staging' } },
+  ]);
+  const [value, setValue] = useState<ItemId>();
+  const [name, setName] = useState('');
+
+  const submitHandler = () => {
+    const id = String(items.length + 1);
+    setItems(prev => [...prev, { id, content: { label: name.trim() || `Окружение ${id}` } }]);
+    setName('');
+    return Promise.resolve(id);
+  };
+
+  return (
+    <div style={{ width: 320 }}>
+      <FieldSelectCreate
+        entityName={{ single: 'Окружение', plural: 'Окружения' }}
+        selectProps={{ label: 'Окружение', items, value, onChange: setValue }}
+        createLayoutProps={{
+          title: 'Создание окружения',
+          content: <FieldText label='Название' value={name} onChange={setName} />,
+        }}
+        submitHandler={submitHandler}
+      />
+    </div>
+  );
+}
+```
+
+### FieldSelectCreateModal
+
+```tsx
+import { FieldText } from '@ds/fields';
+import { ItemId } from '@ds/list';
+import { CREATE_LAYOUT_TYPE, FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { useState } from 'react';
+
+export function FieldSelectCreateModal() {
+  const [items, setItems] = useState([
+    { id: '1', content: { label: 'Production' } },
+    { id: '2', content: { label: 'Staging' } },
+  ]);
+  const [value, setValue] = useState<ItemId>();
+  const [name, setName] = useState('');
+
+  const submitHandler = () => {
+    const id = String(items.length + 1);
+    setItems(prev => [...prev, { id, content: { label: name.trim() || `Окружение ${id}` } }]);
+    setName('');
+    return Promise.resolve(id);
+  };
+
+  return (
+    <div style={{ width: 320 }}>
+      <FieldSelectCreate
+        entityName={{ single: 'Окружение', plural: 'Окружения' }}
+        selectProps={{ label: 'Окружение', items, value, onChange: setValue }}
+        createLayoutType={CREATE_LAYOUT_TYPE.Modal}
+        createLayoutProps={{
+          title: 'Создание окружения',
+          content: <FieldText label='Название' value={name} onChange={setName} />,
+        }}
+        submitHandler={submitHandler}
+      />
+    </div>
+  );
+}
+```

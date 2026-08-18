@@ -1,0 +1,1 @@
+import{n as e}from"./appearanceContext.D8UzYX4D.js";import{n as t}from"./getThemeClassnames.BZQ0FsSi.js";function n(n){let{appearance:r}=e();return t({...r,...n})}export{n as t};

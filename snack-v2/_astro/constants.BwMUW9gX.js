@@ -1,0 +1,1 @@
+import{o as e}from"./defineMessages.Ehz7vb4T.js";function t(){return e().lang}var n=new Intl.Locale(`ru-RU`);export{t as n,n as t};

@@ -1,0 +1,85 @@
+﻿# @ds/rating
+
+> Звёздный рейтинг — интерактивный ввод и отображение оценки. Поддерживает половинные звёзды, цветовые схемы и readonly-режим.
+
+Docs: /snack-v2/components/rating/
+
+## Установка
+
+```sh
+pnpm add @ds/rating
+```
+
+## Когда использовать
+
+- Оценка сущности пользователем: отзыв о товаре, качестве услуги, контента.
+- Отображение агрегированного рейтинга в readonly-режиме (карточка товара, профиль исполнителя).
+
+Когда **не** нужен: многокритериальная оценка (несколько факторов) — стройте форму с несколькими `Rating` или отдельным UI. NPS-шкала 0–10 — используйте другой компонент.
+
+## API
+
+### Rating
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allowClear` | `boolean` | `false` | no | Разрещает сброс рейтинга при повторном нажатии на звезду |
+| `allowHalf` | `boolean` | `false` | no | Показывать или нет рейтинг в виде половины звезды |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `yellow` | no | Внешний вид (цветовая схема) |
+| `className` | `string` | — | no | CSS-класс |
+| `count` | `number` | `5` | no | Общее количество звезд |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `number` | `0` | no | Количество звезд, заполненных по умолчанию |
+| `onChange` | `((value: number) => void)` | — | no | Колбек, вызываемый на смену состояния |
+| `readonly` | `boolean` | `false` | no | Является ли поле доступным на изменение |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `value` | `number` | — | no | Значение количества звезд в случае необходимости управления |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Size` = `s | xs`
+
+### RatingStar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `yellow` | no | Внешний вид (цветовая схема) |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e |
+| `handleClick` | `((value: Value) => void)` | — | no | Действие при клике части звезды мышью |
+| `handleKeyDown` | `KeyboardEventHandler<HTMLDivElement>` | — | no | Действие при нажатии на клавишу клавиатуры |
+| `handleMouseEnter` | `((value: Value) => void)` | — | no | Действие при наведении мыши |
+| `handleMouseLeave` | `(() => void)` | — | no | Действие при уведении мыши |
+| `readonly` | `boolean` | `false` | no | Является ли поле доступным на изменение |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `value` | `0% \| 100% \| 50%` | `0%` | no | Значение |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Rating } from '@ds/rating';
+
+export function Basic() {
+  return <Rating count={5} defaultValue={3} allowHalf={false} allowClear={false} readonly={false} />;
+}
+```
+
+### HalfStars
+
+```tsx
+import { Rating } from '@ds/rating';
+
+export function HalfStars() {
+  return <Rating count={5} defaultValue={3.5} allowHalf allowClear={false} readonly={false} />;
+}
+```
+
+### Readonly
+
+```tsx
+import { Rating } from '@ds/rating';
+
+export function Readonly() {
+  return <Rating count={5} defaultValue={4} readonly allowHalf={false} allowClear={false} />;
+}
+```

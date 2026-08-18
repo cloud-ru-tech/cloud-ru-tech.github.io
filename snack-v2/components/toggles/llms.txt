@@ -1,0 +1,377 @@
+﻿# @ds/toggles
+
+> Пакет компонентов выбора и переключения — Checkbox, Radio, Switch, Favourite и контейнер ToggleGroup с общими токенами размеров и состояний.
+
+Docs: /snack-v2/components/toggles/
+
+## Установка
+
+```sh
+pnpm add @ds/toggles
+```
+
+## API
+
+### Checkbox
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autofocus` | `boolean` | — | no | HTML-аттрибут autofocus |
+| `checked` | `boolean` | — | no | HTML-аттрибут checked |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `defaultChecked` | `boolean` | — | no | HTML-аттрибут checked по-умолчанию |
+| `disabled` | `boolean` | `false` | no | HTML-аттрибут disabled |
+| `id` | `string` | — | no | HTML-аттрибут id |
+| `indeterminate` | `boolean` | — | no | Состояние частичного выбора |
+| `indeterminateDefault` | `boolean` | — | no | Состояние частичного выбора по-умолчанию |
+| `inputRef` | `RefObject<HTMLInputElement>` | — | no |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `name` | `string` | — | no | HTML-аттрибут name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек потери фокуса |
+| `onChange` | `((checked: boolean) => void)` | — | no | Колбек смены значения |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек клика |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек приобретения фокуса |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `tabIndex` | `number` | — | no | HTML-аттрибут tab-index |
+| `value` | `string` | — | no | HTML-аттрибут value |
+
+#### Related types
+- `Size` = `s | xs`
+
+### Favourite
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autofocus` | `boolean` | — | no | HTML-аттрибут autofocus |
+| `checked` | `boolean` | — | no | HTML-аттрибут checked |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `defaultChecked` | `boolean` | — | no | HTML-аттрибут checked по-умолчанию |
+| `disabled` | `boolean` | `false` | no | HTML-аттрибут disabled |
+| `icon` | `heart \| star` | `heart` | no | Вариант иконки: звезда или сердце |
+| `id` | `string` | — | no | HTML-аттрибут id |
+| `inputRef` | `RefObject<HTMLInputElement>` | — | no |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `name` | `string` | — | no | HTML-аттрибут name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек потери фокуса |
+| `onChange` | `((checked: boolean) => void)` | — | no | Колбек смены значения |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек клика |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек приобретения фокуса |
+| `onKeyUp` | `KeyboardEventHandler<HTMLSpanElement>` | — | no | Обработчик keyup |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `tabIndex` | `number` | — | no | HTML-аттрибут tab-index |
+| `value` | `string` | — | no | HTML-аттрибут value |
+
+#### Related types
+- `FavouriteIcon` = `heart | star`
+- `Size` = `s | xs`
+
+### Radio
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autofocus` | `boolean` | — | no | HTML-аттрибут autofocus |
+| `checked` | `boolean` | — | no | HTML-аттрибут checked |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `defaultChecked` | `boolean` | — | no | HTML-аттрибут checked по-умолчанию |
+| `disabled` | `boolean` | `false` | no | HTML-аттрибут disabled |
+| `id` | `string` | — | no | HTML-аттрибут id |
+| `inputRef` | `RefObject<HTMLInputElement>` | — | no |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `name` | `string` | — | no | HTML-аттрибут name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек потери фокуса |
+| `onChange` | `((checked: boolean) => void)` | — | no | Колбек смены значения |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек клика |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек приобретения фокуса |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `tabIndex` | `number` | — | no | HTML-аттрибут tab-index |
+| `value` | `string` | — | no | HTML-аттрибут value |
+
+#### Related types
+- `Size` = `s | xs`
+
+### Switch
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autofocus` | `boolean` | — | no | HTML-аттрибут autofocus |
+| `checked` | `boolean` | — | no | HTML-аттрибут checked |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `defaultChecked` | `boolean` | — | no | HTML-аттрибут checked по-умолчанию |
+| `disabled` | `boolean` | `false` | no | HTML-аттрибут disabled |
+| `id` | `string` | — | no | HTML-аттрибут id |
+| `inputRef` | `RefObject<HTMLInputElement>` | — | no |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `name` | `string` | — | no | HTML-аттрибут name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек потери фокуса |
+| `onChange` | `((checked: boolean) => void)` | — | no | Колбек смены значения |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек клика |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек приобретения фокуса |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `tabIndex` | `number` | — | no | HTML-аттрибут tab-index |
+| `value` | `string` | — | no | HTML-аттрибут value |
+
+#### Related types
+- `Size` = `s | xs`
+
+### ToggleGroup
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `defaultValue` | `string \| string[]` | — | no | Начальное состояние |
+| `onChange` | `((value: string) => void) \| ((value: string[]) => void) \| undefined` | — | no | Controlled обработчик измения состояния |
+| `selectionMode` | `multiple \| single` | `single` | no | Режим выбора |
+| `value` | `string \| string[]` | — | no | Controlled состояние |
+
+## Примеры
+
+### CheckboxBasic
+
+```tsx
+import { Checkbox } from '@ds/toggles';
+
+export function CheckboxBasic() {
+  return <Checkbox defaultChecked />;
+}
+```
+
+### CheckboxIndeterminate
+
+```tsx
+import { Checkbox } from '@ds/toggles';
+
+export function CheckboxIndeterminate() {
+  return <Checkbox indeterminateDefault />;
+}
+```
+
+### CheckboxStates
+
+```tsx
+import { Checkbox } from '@ds/toggles';
+
+export function CheckboxStates() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Checkbox />
+      <Checkbox defaultChecked />
+      <Checkbox disabled />
+      <Checkbox disabled defaultChecked />
+      <Checkbox loading />
+    </div>
+  );
+}
+```
+
+### FavouriteHeart
+
+```tsx
+import { Favourite } from '@ds/toggles';
+
+export function FavouriteHeart() {
+  return <Favourite icon='heart' defaultChecked />;
+}
+```
+
+### FavouriteStar
+
+```tsx
+import { Favourite } from '@ds/toggles';
+
+export function FavouriteStar() {
+  return <Favourite icon='star' defaultChecked />;
+}
+```
+
+### FavouriteStates
+
+```tsx
+import { Favourite } from '@ds/toggles';
+
+export function FavouriteStates() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Favourite icon='star' />
+      <Favourite icon='star' defaultChecked />
+      <Favourite icon='heart' disabled />
+      <Favourite icon='heart' loading />
+    </div>
+  );
+}
+```
+
+### RadioBasic
+
+```tsx
+import { Radio } from '@ds/toggles';
+
+export function RadioBasic() {
+  return <Radio defaultChecked />;
+}
+```
+
+### RadioGroup
+
+```tsx
+import { Radio } from '@ds/toggles';
+
+export function RadioGroup() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <label htmlFor='delivery-courier'>
+        <Radio id='delivery-courier' name='delivery' value='courier' defaultChecked /> Курьер
+      </label>
+      <label htmlFor='delivery-pickup'>
+        <Radio id='delivery-pickup' name='delivery' value='pickup' /> Самовывоз
+      </label>
+      <label htmlFor='delivery-post'>
+        <Radio id='delivery-post' name='delivery' value='post' /> Почта
+      </label>
+    </div>
+  );
+}
+```
+
+### RadioStates
+
+```tsx
+import { Radio } from '@ds/toggles';
+
+export function RadioStates() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Radio />
+      <Radio defaultChecked />
+      <Radio disabled />
+      <Radio disabled defaultChecked />
+      <Radio loading />
+    </div>
+  );
+}
+```
+
+### SwitchBasic
+
+```tsx
+import { Switch } from '@ds/toggles';
+
+export function SwitchBasic() {
+  return <Switch defaultChecked />;
+}
+```
+
+### SwitchSizes
+
+```tsx
+import { Switch } from '@ds/toggles';
+
+export function SwitchSizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Switch size='xs' defaultChecked />
+      <Switch size='s' defaultChecked />
+    </div>
+  );
+}
+```
+
+### SwitchStates
+
+```tsx
+import { Switch } from '@ds/toggles';
+
+export function SwitchStates() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Switch />
+      <Switch defaultChecked />
+      <Switch disabled />
+      <Switch disabled defaultChecked />
+      <Switch loading />
+    </div>
+  );
+}
+```
+
+### ToggleGroupControlled
+
+```tsx
+import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { useState } from 'react';
+
+function Option({ id, label }: { id: string; label: string }) {
+  const { isChecked, handleClick } = useToggleGroup({ value: id });
+  return (
+    <button onClick={handleClick} aria-pressed={isChecked}>
+      {label}
+    </button>
+  );
+}
+
+export function ToggleGroupControlled() {
+  const [value, setValue] = useState<string | undefined>();
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ToggleGroup selectionMode='single' value={value} onChange={setValue}>
+        <Option id='s' label='S' />
+        <Option id='m' label='M' />
+        <Option id='l' label='L' />
+      </ToggleGroup>
+      <p>Selected: {value ?? '—'}</p>
+    </div>
+  );
+}
+```
+
+### ToggleGroupMultiple
+
+```tsx
+import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { useState } from 'react';
+
+function Chip({ id, label }: { id: string; label: string }) {
+  const { isChecked, handleClick } = useToggleGroup({ value: id });
+  return (
+    <button onClick={handleClick} aria-pressed={isChecked}>
+      {label}
+    </button>
+  );
+}
+
+export function ToggleGroupMultiple() {
+  const [value, setValue] = useState<string[]>(['a']);
+  return (
+    <ToggleGroup selectionMode='multiple' value={value} onChange={next => setValue(next ?? [])}>
+      <Chip id='a' label='A' />
+      <Chip id='b' label='B' />
+      <Chip id='c' label='C' />
+    </ToggleGroup>
+  );
+}
+```
+
+### ToggleGroupSingle
+
+```tsx
+import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { useState } from 'react';
+
+function Chip({ id, label }: { id: string; label: string }) {
+  const { isChecked, handleClick } = useToggleGroup({ value: id });
+  return (
+    <button onClick={handleClick} aria-pressed={isChecked}>
+      {label}
+    </button>
+  );
+}
+
+export function ToggleGroupSingle() {
+  const [value, setValue] = useState<string | undefined>('a');
+  return (
+    <ToggleGroup selectionMode='single' value={value} onChange={setValue}>
+      <Chip id='a' label='A' />
+      <Chip id='b' label='B' />
+      <Chip id='c' label='C' />
+    </ToggleGroup>
+  );
+}
+```

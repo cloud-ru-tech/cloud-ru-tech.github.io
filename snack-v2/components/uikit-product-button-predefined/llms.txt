@@ -1,0 +1,166 @@
+﻿# @ds/uikit-product-button-predefined
+
+> Function-кнопка с выпадающим списком (desktop) или modal (mobile).
+
+Docs: /snack-v2/components/uikit-product-button-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-button-predefined
+```
+
+## Когда использовать
+
+- Нужен выбор одного значения из короткого списка (период, валюта, режим) без отдельного поля формы.
+- На desktop достаточно выпадающего списка у триггера; на mobile — полноэкранный modal со списком.
+
+Когда **не** нужен `ButtonDropdown`:
+
+- Произвольный контент в overlay без списка — [`Dropdown`](/components/dropdown).
+- Одиночное действие без меню — [`Button`](/components/button/button) `view='function'`.
+
+## API
+
+### ButtonDropdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `critical \| neutral \| primary` | `neutral` | no | Вариант оформления |
+| `as` | `button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс Класс триггерной кнопки. |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `counter` | `Omit<CounterProps, "size">` | — | no | Пропсы для counter. `appearance` можно задать явно (по умолчанию наследуется от appearance кнопки). |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Отключена |
+| `fullWidth` | `boolean` | — | no | На всю ширину |
+| `innerRef` | `((instance: HTMLButtonElement \| null) => void) \| RefObject<HTMLButtonElement> \| null` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `items` | `Item[]` | — | yes | Основные элементы списка |
+| `label` | `string` | — | no | Текст кнопки |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `minWidth` | `boolean` | — | no | Минимальная ширина контейнера (`min-width` из токена размера). По умолчанию `true`. `false` — кнопка сжимается по контенту вместо фиксированного минимума. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Колбэк изменения раскрытия. |
+| `open` | `boolean` | — | no | Контролируемое состояние раскрытия. |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `size` | `l \| m \| s \| xs` | `s` | no | Размер триггера; для `xs` применяется кнопка `s`. |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `BaseItemWithoutNonGroup` (interface)
+- `ButtonDropdownSize` = `l | m | s | xs`
+- `CommonGroupItem` (interface)
+- `CounterProps` (interface)
+- `Item` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `Resize` = `both | horizontal | none | vertical`
+- `RoleAppearance` = `accent | decor`
+- `ScrollProps` (interface)
+- `Size` = `s | xs`
+- `TruncateStringProps` (alias)
+- `Variant` = `count | count-k | count-plus`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { ButtonDropdown, type ButtonDropdownProps } from '@ds/uikit-product-button-predefined';
+
+export function Basic(props: ButtonDropdownProps) {
+  return <ButtonDropdown {...props} />;
+}
+```
+
+### DesktopBasic
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { useState } from 'react';
+
+const periods = [
+  { id: 'month', label: 'Month' },
+  { id: 'year', label: 'Year' },
+];
+
+export function DesktopBasic() {
+  const [period, setPeriod] = useState(periods[0]);
+
+  const items = periods.map(option => ({
+    id: option.id,
+    content: { label: option.label },
+    onClick: () => setPeriod(option),
+  }));
+
+  return (
+    <AdaptiveProvider layoutType={LAYOUT_TYPE.Desktop}>
+      <ButtonDropdown label={period.label} size='s' items={items} closeDroplistOnItemClick />
+    </AdaptiveProvider>
+  );
+}
+```
+
+### DesktopOpen
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { useState } from 'react';
+
+const periods = [
+  { id: 'month', label: 'Month' },
+  { id: 'year', label: 'Year' },
+];
+
+export function DesktopOpen() {
+  const [period, setPeriod] = useState(periods[0]);
+
+  const items = periods.map(option => ({
+    id: option.id,
+    content: { label: option.label },
+    onClick: () => setPeriod(option),
+  }));
+
+  return (
+    <AdaptiveProvider layoutType={LAYOUT_TYPE.Desktop}>
+      <ButtonDropdown label={period.label} size='m' open items={items} />
+    </AdaptiveProvider>
+  );
+}
+```
+
+### MobileLayout
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { useState } from 'react';
+
+const periods = [
+  { id: 'month', label: 'Month' },
+  { id: 'year', label: 'Year' },
+];
+
+export function MobileLayout() {
+  const [period, setPeriod] = useState(periods[0]);
+
+  const items = periods.map(option => ({
+    id: option.id,
+    content: { label: option.label },
+    onClick: () => setPeriod(option),
+  }));
+
+  return (
+    <AdaptiveProvider layoutType={LAYOUT_TYPE.Mobile}>
+      <ButtonDropdown label={period.label} size='s' closeDroplistOnItemClick items={items} />
+    </AdaptiveProvider>
+  );
+}
+```

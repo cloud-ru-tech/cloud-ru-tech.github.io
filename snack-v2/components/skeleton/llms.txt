@@ -1,0 +1,114 @@
+﻿# @ds/skeleton
+
+> Пакет скелетонов дизайн-системы — компоненты Skeleton, SkeletonText и WithSkeleton для индикации состояния загрузки.
+
+Docs: /snack-v2/components/skeleton/
+
+## Установка
+
+```sh
+pnpm add @ds/skeleton
+```
+
+## Когда использовать
+
+- Когда данные подгружаются асинхронно и отображение контента задерживается более 200 мс.
+- Чтобы зарезервировать место под контент и избежать layout shift при появлении данных.
+- Для списков, карточек и текстовых блоков — как визуальная подсказка «идёт загрузка».
+
+Когда **не** нужен скелетон: для мгновенных переходов (< 200 мс), для обычных спиннеров поверх модальных окон (используйте `Loader`), для пустых состояний (используйте `EmptyState`).
+
+Секция описывает семантику и поведение скелетонов в макетах.
+
+## API
+
+### Skeleton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `borderRadius` | `BorderRadius<string \| number>` | — | no | Радиус скругления. Можно указать значение допустимое для CSSProperty.borderRadius (пример `'10px'`, `'50%'` и т.д) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `height` | `Height<string \| number>` | — | no | Высота блока. Можно указать значение допустимое для CSSProperty.height (пример `'60%'`, `'400px'` и т.д) |
+| `loading` | `boolean` | — | no | Флаг состояния загрузки. Если значение true, будет отрисован блок скелетона, если false - children. |
+| `width` | `Width<string \| number>` | — | no | Ширина блока. Можно указать значение допустимое для CSSProperty.width (пример `'60%'`, `'400px'` и т.д) |
+
+### SkeletonContextProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `loading` | `boolean` | — | yes | Флаг состояния загрузки. Если значение true, будут отрисованы блоки скелетона. |
+
+### SkeletonText
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `align` | `left \| right` | `left` | no | Выравнивание: left, right |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `lineClassName` | `string` | — | no | CSS-класс линии |
+| `lines` | `number` | `3` | no | Количество строк. |
+| `loading` | `boolean` | — | no | Флаг состояния загрузки. Если значение true, будет отрисован блок скелетона, если false - children. |
+| `rowClassName` | `string` | — | no | CSS-класс строки |
+| `size` | `l \| m \| s` | `m` | no | Масштаб: s, m, l |
+| `variant` | `body \| display \| headline \| label \| title` | `body` | no | Роль типографики (размер по anatomy) |
+| `width` | `Width<string \| number>` | — | no | Ширина блока. Можно указать значение допустимое для CSSProperty.width (пример `'60%'`, `'400px'` и т.д) |
+
+#### Related types
+- `Align` = `left | right`
+- `Size` = `l | m | s`
+- `Variant` = `body | display | headline | label | title`
+
+### WithSkeleton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `loading` | `boolean` | — | no | Флаг состояния загрузки. Если значение true, будет отрисован блок скелетона, если false - children. |
+| `skeleton` | `ReactNode` | — | yes | JSX скелетон |
+
+## Примеры
+
+### Block
+
+```tsx
+import { Skeleton } from '@ds/skeleton';
+
+export function Block() {
+  return <Skeleton loading width={240} height={24} borderRadius={4} />;
+}
+```
+
+### Circle
+
+```tsx
+import { Skeleton } from '@ds/skeleton';
+
+export function Circle() {
+  return <Skeleton loading width={48} height={48} borderRadius='50%' />;
+}
+```
+
+### TextLines
+
+```tsx
+import { SkeletonText } from '@ds/skeleton';
+
+export function TextLines() {
+  return <SkeletonText loading lines={3} variant='body' size='m' />;
+}
+```
+
+### WithToggle
+
+```tsx
+import { SkeletonText, WithSkeleton } from '@ds/skeleton';
+
+export function WithToggle() {
+  const loading = true;
+  return (
+    <WithSkeleton loading={loading} skeleton={<SkeletonText loading lines={2} variant='body' size='m' />}>
+      <p>Реальный контент после загрузки.</p>
+    </WithSkeleton>
+  );
+}
+```

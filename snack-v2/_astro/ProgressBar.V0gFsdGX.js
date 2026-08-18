@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{a as t}from"./utils.CxREtkS2.js";import{t as n}from"./ProgressBarPrivate.CmQxd8iY.js";var r=e();function i({size:e=t.S,...i}){return(0,r.jsx)(n,{...i,size:e,animationDuration:0})}export{i as t};

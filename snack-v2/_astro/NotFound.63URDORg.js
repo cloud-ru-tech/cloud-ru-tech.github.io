@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,r as n,t as r}from"./ErrorPage.CQJ7bpiW.js";var i=e();function a(){return(0,i.jsx)(r,{errorType:t.PageNotFound,logoVariant:n.Cloud,mainPageUrl:`/`,onSupportCenterClick:()=>window.open(`https://cloud.ru/support`,`_blank`)})}export{a as NotFound};

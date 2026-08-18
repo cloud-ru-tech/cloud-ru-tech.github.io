@@ -1,0 +1,111 @@
+﻿# @ds/uikit-product-load-status
+
+> Строка статуса загрузки с линейным progress bar, заголовком и подсказкой — по макету Figma loadStatus.
+
+Docs: /snack-v2/components/uikit-product-load-status/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-load-status
+```
+
+## Когда использовать
+
+- В карточках и формах, где нужно показать прогресс операции с поясняющим текстом.
+- Когда нужны пороги заполнения или фиксированный цвет полосы (`appearanceByProgress`).
+- Когда операция завершилась с ошибкой (`showError`).
+
+Когда **не** нужен `LoadStatus`:
+
+- Только индикатор без подписей — используйте [`ProgressBar`](/components/progress-bar/progress-bar).
+- Неопределённая загрузка страницы — [`ProgressBarPage`](/components/progress-bar/progress-bar-page).
+
+## API
+
+### LoadStatus
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearanceByProgress` | `ProgressLimitList` | `[   { appearance: 'green', condition: PROGRESS_LIMIT_CONDITION.Lte, limit: 70 },   { appearance: 'yellow', condition: PROGRESS_LIMIT_CONDITION.Lte, limit: 90 },   { appearance: 'red', condition: PROGRESS_LIMIT_CONDITION.Lte, limit: 100 }, ] satisfies ProgressLimitList` | no | Правила смены цвета полосы в зависимости от `progress`; при `showError` игнорируются |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `hint` | `string` | — | no | Подсказка под полосой прогресса |
+| `label` | `string` | — | no | Заголовок строки загрузки |
+| `progress` | `number` | — | yes | Процент загрузки от 0 до 100 |
+| `showError` | `boolean` | — | no | Ошибка: полоса `red` |
+| `showErrorIcon` | `boolean` | — | no | Иконка в hint; показывается при `hint` и вместе с `showError` |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `value` | `string` | — | no | Дополнительный текст в заголовке (рядом с label) |
+| `valueType` | `none \| percent` | `none` | no | Формат значения в заголовке: без процента (`none`) или с процентом (`percent`) |
+
+#### Related types
+- `LoadValueType` = `none | percent`
+- `ProgressBarSize` = `s | xs`
+- `ProgressLimitList` (alias)
+
+## Примеры
+
+### Thresholds
+
+```tsx
+import { LoadStatus } from '@ds/uikit-product-load-status';
+
+export function Thresholds() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 360 }}>
+      <LoadStatus label='Низкий' progress={40} valueType='percent' />
+      <LoadStatus label='Средний' progress={75} valueType='percent' />
+      <LoadStatus label='Высокий' progress={95} valueType='percent' />
+    </div>
+  );
+}
+```
+
+### WithAppearance
+
+```tsx
+import { APPEARANCE } from '@ds/progress-bar';
+import { LoadStatus, PROGRESS_LIMIT_CONDITION } from '@ds/uikit-product-load-status';
+
+export function WithAppearance() {
+  return (
+    <LoadStatus
+      label='Загрузка'
+      progress={65}
+      valueType='percent'
+      hint='Статичный цвет полосы'
+      appearanceByProgress={[{ condition: PROGRESS_LIMIT_CONDITION.Lte, limit: 100, appearance: APPEARANCE.Green }]}
+    />
+  );
+}
+```
+
+### WithHintError
+
+```tsx
+import { LoadStatus } from '@ds/uikit-product-load-status';
+
+export function WithHintError() {
+  return (
+    <LoadStatus
+      label='Загрузка'
+      value='Ошибка'
+      progress={35}
+      valueType='percent'
+      hint='Не удалось завершить операцию'
+      showError
+      showErrorIcon
+    />
+  );
+}
+```
+
+### WithPercent
+
+```tsx
+import { LoadStatus } from '@ds/uikit-product-load-status';
+
+export function WithPercent() {
+  return <LoadStatus label='Загрузка' progress={72} valueType='percent' />;
+}
+```

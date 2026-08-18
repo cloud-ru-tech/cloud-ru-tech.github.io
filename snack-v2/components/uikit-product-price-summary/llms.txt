@@ -1,0 +1,275 @@
+﻿# @ds/uikit-product-price-summary
+
+> Блоки итоговой цены для checkout и конфигураторов — полный PriceSummary и компактный PriceSummarySmall.
+
+Docs: /snack-v2/components/uikit-product-price-summary/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-price-summary
+```
+
+## API
+
+### ContentBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dataError` | `boolean` | — | no |  |
+| `loading` | `boolean` | — | no |  |
+| `onRetry` | `(() => void)` | — | no |  |
+
+### CoveredByGrantLabel
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `covered` | `boolean` | — | yes |  |
+
+### DiscountBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `value` | `DiscountDetails` | — | yes |  |
+
+### DiscountPercentCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `discount` | `DiscountItem` | — | yes |  |
+
+### HeaderBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onPeriodChanged` | `((period: PricePeriod) => void)` | — | no |  |
+| `period` | `day \| hour \| minute \| month \| year` | — | yes |  |
+| `periodOptions` | `PricePeriod[]` | — | yes |  |
+| `promoBadge` | `string \| Pick<PromoTagProps, "label" \| "appearance">` | — | no |  |
+| `vatType` | `excluding \| including` | `including` | no |  |
+
+### InvoiceBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `invoice` | `InvoiceDetails[]` | — | yes |  |
+| `invoiceExpandedDefault` | `boolean` | — | no |  |
+
+### InvoiceDetailsBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `invoice` | `InvoiceDetails` | — | yes |  |
+
+### InvoiceItemBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `index` | `number` | — | yes |  |
+| `item` | `InvoiceItem` | — | yes |  |
+| `showCoveredByGrantLabel` | `boolean` | — | no |  |
+
+### InvoiceItemLabelCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `item` | `InvoiceItem` | — | yes |  |
+
+### PeriodDropdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onPeriodChanged` | `((period: PricePeriod) => void)` | `() => {}` | no |  |
+| `period` | `day \| hour \| minute \| month \| year` | — | yes |  |
+| `periodOptions` | `PricePeriod[]` | — | yes |  |
+
+### PriceSummary
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no |  |
+| `discount` | `DiscountDetails` | — | no | Блок базовой цены и скидок. |
+| `docsLink` | `{ href?: string; label?: string; } \| undefined` | — | no | Ссылка «Подробнее о расчёте». |
+| `hint` | `string` | — | no |  |
+| `hintAppearance` | `default \| systemError \| userError \| warning` | — | no |  |
+| `hintLink` | `{ href?: string; label: string; }` | — | no |  |
+| `hintTooltipText` | `ReactNode` | — | no |  |
+| `invoice` | `InvoiceDetails[]` | — | no | Секции детализации заказа в аккордеоне. |
+| `invoiceExpandedDefault` | `boolean` | `true` | no | Начальное состояние раскрытия аккордеона invoice. |
+| `loading` | `boolean` | — | no |  |
+| `onPeriodChanged` | `((period: PricePeriod) => void)` | — | no |  |
+| `onRetry` | `(() => void)` | — | no |  |
+| `period` | `day \| hour \| minute \| month \| year` | — | yes |  |
+| `periodOptions` | `PricePeriod[]` | — | yes |  |
+| `promoBadge` | `string \| Pick<PromoTagProps, "label" \| "appearance">` | — | no |  |
+| `showHintLink` | `boolean` | — | no |  |
+| `showHintTooltip` | `boolean` | `false` | no |  |
+| `totalSumType` | `equal \| from` | — | no |  |
+| `value` | `number` | — | no |  |
+| `valueDelta` | `PriceDeltaDetails` | — | no |  |
+| `vatType` | `excluding \| including` | — | no |  |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `AppearanceState` = `default | systemError | userError | warning`
+- `DiscountDetails` (interface)
+- `DiscountInvoiceItem` (interface)
+- `DiscountItem` (interface)
+- `InvoiceDetails` (interface)
+- `InvoiceItem` (alias)
+- `LinkProps` (interface)
+- `PolymorphicRef` (alias)
+- `PriceDeltaDetails` (interface)
+- `PriceInvoiceItem` (interface)
+- `PricePeriod` = `day | hour | minute | month | year`
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+- `TotalSumType` = `equal | from`
+- `VatType` = `excluding | including`
+
+### PriceSummarySmall
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no |  |
+| `docsLink` | `{ href?: string; label?: string; } \| undefined` | — | no | Function-ссылка внизу блока. |
+| `hintTooltipText` | `ReactNode` | — | no | Контент подсказки для иконки рядом с итоговой суммой. |
+| `loading` | `boolean` | — | no |  |
+| `onRetry` | `(() => void)` | — | no |  |
+| `value` | `number` | `0` | no | Итоговая сумма. |
+
+#### Related types
+- `LinkProps` (interface)
+
+### TotalValueBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `hint` | `string` | — | no |  |
+| `hintAppearance` | `default \| systemError \| userError \| warning` | `default` | no |  |
+| `hintLink` | `{ href?: string; label: string; }` | — | no |  |
+| `hintTooltipText` | `ReactNode` | — | no |  |
+| `showHintLink` | `boolean` | — | no |  |
+| `showHintTooltip` | `boolean` | — | no |  |
+| `totalSumType` | `equal \| from` | `equal` | no |  |
+| `value` | `number` | — | no |  |
+| `valueDelta` | `PriceDeltaDetails` | — | no |  |
+
+## Примеры
+
+### MobileLayout
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { PRICE_PERIOD, PriceSummary } from '@ds/uikit-product-price-summary';
+
+export function MobileLayout() {
+  return (
+    <div style={{ maxWidth: 360 }}>
+      <AdaptiveProvider layoutType={LAYOUT_TYPE.Mobile}>
+        <PriceSummary
+          value={10800}
+          period={PRICE_PERIOD.Month}
+          periodOptions={[PRICE_PERIOD.Month, PRICE_PERIOD.Year]}
+          discount={{
+            price: 12000,
+            discounts: [{ value: 1200, percent: 10 }],
+          }}
+          hint='Дополнительная информация'
+          hintTooltipText='Итоговая сумма с учётом скидки за выбранный период.'
+        />
+      </AdaptiveProvider>
+    </div>
+  );
+}
+```
+
+### SmallError
+
+```tsx
+import { PriceSummarySmall } from '@ds/uikit-product-price-summary';
+import { useState } from 'react';
+
+import styles from '../demoSurface.module.scss';
+
+export function SmallError() {
+  const [loading, setLoading] = useState(false);
+  const [dataError, setDataError] = useState(true);
+
+  const handleRetry = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      setDataError(false);
+    }, 800);
+  };
+
+  return (
+    <div className={styles.surface}>
+      <PriceSummarySmall value={10800} loading={loading} dataError={dataError} onRetry={handleRetry} />
+    </div>
+  );
+}
+```
+
+### SmallLoading
+
+```tsx
+import { PriceSummarySmall } from '@ds/uikit-product-price-summary';
+
+import styles from '../demoSurface.module.scss';
+
+export function SmallLoading() {
+  return (
+    <div className={styles.surface}>
+      <PriceSummarySmall value={undefined} loading />
+    </div>
+  );
+}
+```
+
+### WithDiscount
+
+```tsx
+import { PRICE_PERIOD, PriceSummary } from '@ds/uikit-product-price-summary';
+
+import styles from '../demoSurface.module.scss';
+
+export function WithDiscount() {
+  return (
+    <div className={styles.surface}>
+      <PriceSummary
+        value={10800}
+        period={PRICE_PERIOD.Month}
+        periodOptions={[PRICE_PERIOD.Month]}
+        discount={{
+          price: 12000,
+          discounts: [{ value: 1200, percent: 10 }],
+        }}
+      />
+    </div>
+  );
+}
+```
+
+### WithInvoice
+
+```tsx
+import { PRICE_PERIOD } from '@ds/uikit-product-price-summary';
+
+import styles from '../demoSurface.module.scss';
+import { PriceSummaryControlled } from '../PriceSummaryControlled';
+
+export function WithInvoice() {
+  return (
+    <div className={styles.surface}>
+      <PriceSummaryControlled
+        value={10800}
+        period={PRICE_PERIOD.Month}
+        periodOptions={[PRICE_PERIOD.Month, PRICE_PERIOD.Year]}
+        invoice={[
+          {
+            title: 'Compute',
+            items: [{ label: 'vCPU', price: 8000, primary: true }],
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```

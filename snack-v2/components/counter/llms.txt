@@ -1,0 +1,82 @@
+﻿# @ds/counter
+
+> Компактный счётчик для отображения числовых меток, бейджей и состояний.
+
+Docs: /snack-v2/components/counter/
+
+## Установка
+
+```sh
+pnpm add @ds/counter
+```
+
+## Когда использовать
+
+- Количество непрочитанных уведомлений у иконки колокольчика.
+- Количество элементов в корзине или списке.
+- Бейдж на табе / пункте меню.
+
+Когда **не** нужен `Counter`: для крупных числовых метрик используйте `Typography`, для статусов — `Tag`.
+
+## API
+
+### Counter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `primary` | no | Внешний вид |
+| `className` | `string` | — | no | Дополнительный CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `plusLimit` | `number` | `10` | no | Порог сокращения значения для варианта `count-plus` |
+| `roleAppearance` | `accent \| decor` | `accent` | no | Роль, в которой применяется `appearance`: акцентная заливка или декоративная |
+| `size` | `s \| xs` | `s` | no | Размер |
+| `value` | `number` | — | yes | Значение |
+| `variant` | `count \| count-k \| count-plus` | `count` | no | Вариант форматирования |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+- `Variant` = `count | count-k | count-plus`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Counter } from '@ds/counter';
+
+export function Basic() {
+  return <Counter value={9} />;
+}
+```
+
+### PlusThreshold
+
+```tsx
+import { Counter } from '@ds/counter';
+
+export function PlusThreshold() {
+  return <Counter value={42} variant='count-plus' plusLimit={10} />;
+}
+```
+
+### Red
+
+```tsx
+import { Counter } from '@ds/counter';
+
+export function Red() {
+  return <Counter value={3} appearance='red' />;
+}
+```
+
+### ThousandsK
+
+```tsx
+import { Counter } from '@ds/counter';
+
+export function ThousandsK() {
+  return <Counter value={2500} variant='count-k' />;
+}
+```

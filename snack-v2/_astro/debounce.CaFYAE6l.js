@@ -1,0 +1,1 @@
+function e(e,t=0){let n,r=()=>{n!==void 0&&(clearTimeout(n),n=void 0)};return Object.assign((...i)=>{r(),n=setTimeout(()=>{n=void 0,e(...i)},t)},{cancel:r})}export{e as t};

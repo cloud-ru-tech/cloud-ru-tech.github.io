@@ -1,0 +1,72 @@
+﻿# @ds/loader
+
+> Индикаторы загрузки — Spinner (круговой прогресс) и Sun (лучевой индикатор).
+
+Docs: /snack-v2/components/loader/
+
+## Установка
+
+```sh
+pnpm add @ds/loader
+```
+
+## Когда использовать
+
+- **Spinner** — когда нужно показать неопределённый прогресс (загрузка данных, фоновая операция). Отдельный индикатор в центре области контента, inline рядом с текстом или внутри кнопки/контрола.
+- **Sun** — когда индикатор встраивается в интерактивный элемент: `loading`-состояние кнопки, переключателя, input'а. Имеет фиксированную иконку-подобную форму без «вращения края», что читается спокойнее внутри плотных контролов.
+
+Когда **не** нужен `Loader`: для детерминированного прогресса (скачивание файла, заполнение формы) используйте прогресс-бар. Для skeleton-состояний списка или карточки — скелетоны.
+
+## API
+
+### Spinner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `2xs \| l \| m \| s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `LoaderSize` = `2xs | l | m | s | xs`
+
+### Sun
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `l \| m \| s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `SunSize` = `l | m | s | xs`
+
+## Примеры
+
+### SpinnerDefault
+
+```tsx
+import { Spinner } from '@ds/loader';
+
+export function SpinnerDefault() {
+  return <Spinner />;
+}
+```
+
+### SpinnerLarge
+
+```tsx
+import { Spinner } from '@ds/loader';
+
+export function SpinnerLarge() {
+  return <Spinner size='l' />;
+}
+```
+
+### SunMedium
+
+```tsx
+import { Sun } from '@ds/loader';
+
+export function SunMedium() {
+  return <Sun size='m' />;
+}
+```

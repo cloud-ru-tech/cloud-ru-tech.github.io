@@ -1,0 +1,1468 @@
+﻿# @ds/list
+
+> Списочный UI — компонент List для плоских/вложенных списков с выбором, группами и поиском и Droplist — тот же список в поповере.
+
+Docs: /snack-v2/components/list/
+
+## Установка
+
+```sh
+pnpm add @ds/list
+```
+
+## Когда использовать
+
+| Задача | Как решить |
+|--------|------------|
+| Навигация/меню/settings sidebar | `List` с `items` |
+| Выбор из коллекции (радио-группа/чекбоксы) | `List` + `selection={{ mode: 'single' \| 'multiple', ... }}` |
+| Выпадашка-селектор у кнопки/поля | `Droplist` с `children`-триггером |
+| Группы с раскрытием (inbox/starred/folders) | `items` типа `{ type: 'collapse', items: [...] }` + `collapse` |
+| Длинный список (1k+) | `virtualized` на `List` |
+| Закреплённые действия сверху/снизу | `pinTop` / `pinBottom` |
+
+Когда **не** нужен `List`:
+
+- Простой набор из 2–4 кнопок — используйте [`Button`](/components/button/button) + layout.
+- Табличные данные с сортировкой/фильтрацией — используйте `Table`.
+- Многошаговая форма — используйте `Stepper`.
+
+## API
+
+### AccordionItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `allChildIds` | `ItemId[]` | — | yes |  |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | — | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Флаг неактивности элемента |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
+| `items` | `ItemId[]` | — | yes |  |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
+
+### BaseItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | — | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Флаг неактивности элемента |
+| `dragHandle` | `ReactNode` | — | no | Слот ручки drag&drop (Figma `centeredWrapper`) — рендерится первым в строке, перед маркером/чекбоксом. Интерактивность (обработчики `@dnd-kit`) и содержимое (иконка) приходят снаружи — `BaseItem` только позиционирует слот, ничего не знает про DnD. |
+| `expandIcon` | `ReactNode` | — | no |  |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `indeterminate` | `boolean` | — | no |  |
+| `isParentNode` | `boolean` | — | no |  |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onExpandIconClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Клик по явной кнопке-триггеру `groupIndicator` (шеврон справа), открывающей/закрывающей вложенный список. Если передан — шеврон рендерится как отдельная интерактивная кнопка со своим state-layer'ом, а клик по телу строки больше не переключает раскрытие. |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onOpenNestedList` | `((e?: KeyboardEvent<HTMLElement>) => void)` | — | no |  |
+| `onSelect` | `(() => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
+| `switch` | `boolean` | — | no | Флаг отображения состояния выбранного элемента через switch |
+
+### CollapseBlockPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | yes |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `expanded` | `boolean` | — | yes |  |
+| `header` | `ReactNode` | — | yes |  |
+
+### DesktopDroplist
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
+| `className` | `string` | — | no | CSS-класс |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `collapse` | `CollapseState` | `{}` | no | Настройки раскрытия элементов |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого дроплиста (по аналогии с `container` у Modal/Drawer). По умолчанию — из `PortalContextProvider`. |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `Item[] \| ReorderItem[]` | — | yes |  |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | `true` | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onItemsReorder` | `((items: ReorderItem[]) => void)` | — | no |  |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `pinBottom` | `Item[]` | `[]` | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | `[]` | no | Элементы списка, закрепленные сверху |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | `m` | no | Размер списка |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerElemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент-триггер для дроплиста |
+| `untouchableScrollbars` | `boolean` | `false` | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `virtualized` | `boolean` | `false` | no |  |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+### DragHandle
+_Нет публичных пропсов._
+
+### Droplist
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
+| `className` | `string` | — | no | CSS-класс |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `collapse` | `CollapseState` | — | no | Настройки раскрытия элементов |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого дроплиста (по аналогии с `container` у Modal/Drawer). По умолчанию — из `PortalContextProvider`. |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `Item[]` | — | yes | Основные элементы списка |
+| `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onBackButtonClick` | `(() => void)` | — | no | Только mobile (`BottomSheet`): callback back-кнопки. |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `pinBottom` | `Item[]` | — | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | — | no | Элементы списка, закрепленные сверху |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | — | no | Размер списка |
+| `slotAfterTitle` | `ReactNode` | — | no | Только mobile (`BottomSheet`): slot справа от заголовка. |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerElemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент-триггер для дроплиста |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `virtualized` | `boolean` | — | no | Включить виртуализацию элементов списка. Рекомендуется при количестве элементов от 1000. |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `EmptyStateProps` (interface)
+- `IconPredefinedProps` (interface)
+- `Item` (alias)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `OnChangeHandler` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PopoverWidthStrategy` = `auto | eq | gte`
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `Size` = `l | m | s`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `TruncateStringProps` (alias)
+
+### GroupSelectItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allChildIds` | `ItemId[]` | — | yes |  |
+| `beforeContent` | `ReactNode` | — | no | Слот иконки слева от label. |
+| `divider` | `boolean` | — | no | Показать разделитель над группой |
+| `groupVariant` | `subtitle \| subtitleTertiary` | — | no | Визуальный стиль заголовка группы |
+| `hidden` | `boolean` | — | no | Скрыть группу из списка |
+| `id` | `ItemId` | — | no |  |
+| `itemRef` | `RefObject<HTMLElement>` | — | no |  |
+| `items` | `ItemId[]` | — | yes |  |
+| `label` | `string` | — | no | Заголовок группы |
+| `selectButtonLabel` | `string` | — | no |  |
+| `truncate` | `{ variant?: "end" \| "middle"; }` | — | no | Настройки усечения длинного заголовка группы |
+
+### HiddenTabButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `listRef` | `RefObject<HTMLElement>` | — | yes |  |
+| `tabIndex` | `number` | — | no |  |
+
+### ItemContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `caption` | `string` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `label` | `string \| number` | — | yes |  |
+| `truncate` | `TruncateProps` | — | no |  |
+
+#### Related types
+- `TruncateProps` (interface)
+- `TruncateStringProps` (alias)
+
+### List
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `className` | `string` | — | no | CSS-класс |
+| `collapse` | `CollapseState` | `{}` | no | Настройки раскрытия элементов |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `hasListInFocusChain` | `boolean` | `true` | no | Флаг, отвечающий за включение самого родительского контейнера листа в цепочку фокусирующихся элементов |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `Item[]` | `[]` | no | Основные элементы списка |
+| `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | `true` | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Обработчик события по нажатию клавиш |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `pinBottom` | `Item[]` | `[]` | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | `[]` | no | Элементы списка, закрепленные сверху |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | `m` | no | Размер списка |
+| `tabIndex` | `number` | `0` | no | `tabIndex` корневого элемента списка (для управления порядком фокуса) |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `virtualized` | `boolean` | — | no | Включить виртуализацию элементов списка. Рекомендуется при количестве элементов от 1000. |
+
+### ListEmptyState
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dataError` | `boolean` | — | no |  |
+| `dataFiltered` | `boolean` | — | no |  |
+| `emptyStates` | `{ noDataState: EmptyStateProps; noResultsState: EmptyStateProps; errorDataState: EmptyStateProps; }` | — | yes |  |
+| `hasNoItems` | `boolean` | — | yes |  |
+| `loading` | `boolean` | — | no |  |
+| `size` | `l \| m \| s \| undefined` | — | yes |  |
+
+### ListPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `active` | `boolean` | — | no |  |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | `never` | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `className` | `string` | — | no | CSS-класс |
+| `collapse` | `CollapseState` | — | no | Настройки раскрытия элементов |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `ItemId[]` | — | yes |  |
+| `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
+| `nested` | `boolean` | — | no |  |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no |  |
+| `onDragEnd` | `((event: DragEndEvent) => void)` | — | no | @internal Обработчик завершения drag&drop-переупорядочивания (см. публичный `onItemsReorder` у `List`/`Droplist`) — вычисляется в `useListItemsModel` и оперирует исходным (не плоским) деревом `items`. Наличие принудительно включает невиртуализированный рендер и оборачивает айтемы в `DndContext`/`SortableContext`. |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no |  |
+| `onKeyDown` | `(((e: KeyboardEvent<HTMLElement>) => void) & ((e: KeyboardEvent<HTMLElement>) => void))` | — | no | Обработчик события по нажатию клавиш |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `pinBottom` | `ItemId[]` | — | no |  |
+| `pinTop` | `ItemId[]` | — | no |  |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | `false` | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `searchItem` | `FlattenBaseItem` | — | no |  |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | — | no | Размер списка |
+| `sortableIds` | `ItemId[]` | — | no | @internal Плоский список id всех сортируемых элементов (все уровни) для `SortableContext` |
+| `tabIndex` | `number` | — | no | `tabIndex` корневого элемента списка (для управления порядком фокуса) |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `virtualized` | `boolean` | `false` | no |  |
+
+### MobileDroplist
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
+| `className` | `string` | — | no | CSS-класс |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `collapse` | `CollapseState` | — | no | Настройки раскрытия элементов |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого дроплиста (по аналогии с `container` у Modal/Drawer). По умолчанию — из `PortalContextProvider`. |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `Item[] \| ReorderItem[]` | — | yes |  |
+| `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onBackButtonClick` | `(() => void)` | — | no | Только mobile (`BottomSheet`): callback back-кнопки. |
+| `onItemsReorder` | `((items: ReorderItem[]) => void)` | — | no |  |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `pinBottom` | `Item[]` | — | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | — | no | Элементы списка, закрепленные сверху |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | — | no | Размер списка |
+| `slotAfterTitle` | `ReactNode` | — | no | Только mobile (`BottomSheet`): slot справа от заголовка. |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `virtualized` | `boolean` | — | no |  |
+
+### NewListContextProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `firstItemId` | `ItemId` | — | no |  |
+| `flattenItems` | `Record<string, FlattenItem>` | — | yes |  |
+| `focusFlattenItems` | `Record<string, FocusFlattenItem>` | — | yes |  |
+| `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
+| `size` | `l \| m \| s` | — | no | Размер списка |
+| `virtualized` | `boolean` | — | no |  |
+
+### NextListItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `allChildIds` | `ItemId[]` | — | yes |  |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | — | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | `false` | no | Загрузка вложенного списка завершилась ошибкой — показывается `errorDataState` |
+| `dataFiltered` | `boolean` | `false` | no | Вложенный список отфильтрован — пустой результат показывает `noResultsState`, а не `noDataState` |
+| `disabled` | `boolean` | — | no | Флаг неактивности элемента |
+| `focusId` | `ItemId` | — | no |  |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
+| `items` | `ItemId[]` | — | yes |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки вложенного списка — показывается спиннер вместо элементов |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `onSublistOpenChanged` | `((open: boolean, id?: ItemId) => void)` | — | no | Колбек смены состояния вложенного списка (открыт/закрыт) |
+| `placement` | `left \| left-end \| left-start \| right \| right-end \| right-start` | `right-start` | no | Сторона, с которой раскрывается вложенный список относительно элемента |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
+| `untouchableScrollbars` | `boolean` | `false` | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+
+### OverlayDragHandle
+_Нет публичных пропсов._
+
+### PinBottomGroupItem
+_Нет публичных пропсов._
+
+### PinTopGroupItem
+_Нет публичных пропсов._
+
+### ReorderableDroplist
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
+| `className` | `string` | — | no | CSS-класс |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `collapse` | `CollapseState` | — | no | Настройки раскрытия элементов |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого дроплиста (по аналогии с `container` у Modal/Drawer). По умолчанию — из `PortalContextProvider`. |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `ReorderItem[]` | — | yes | Основные элементы списка: строки `SimpleItem` и/или группы с заголовком `SimpleGroupItem` (`type: 'group'` + `label` + сортируемые `items`). |
+| `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onBackButtonClick` | `(() => void)` | — | no | Только mobile (`BottomSheet`): callback back-кнопки. |
+| `onItemsReorder` | `(items: ReorderItem[]) => void` | — | yes | Колбек по завершению drag&drop-переупорядочивания элементов списка. Список остаётся управляемым: сам не хранит порядок, а отдаёт наружу целиком обновлённое дерево `items` — потребитель обновляет свой стейт этим значением. Переупорядочивание работает только среди «братьев» одного уровня (строки без группы либо строки внутри одной группы; перенос между группами не поддерживается). |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `pinBottom` | `Item[]` | — | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | — | no | Элементы списка, закрепленные сверху |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | — | no | Размер списка |
+| `slotAfterTitle` | `ReactNode` | — | no | Только mobile (`BottomSheet`): slot справа от заголовка. |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerElemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент-триггер для дроплиста |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `EmptyStateProps` (interface)
+- `IconPredefinedProps` (interface)
+- `Item` (alias)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `OnChangeHandler` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PopoverWidthStrategy` = `auto | eq | gte`
+- `ReorderItem` (alias)
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `Size` = `l | m | s`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `TruncateStringProps` (alias)
+
+### ReorderableList
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
+| `className` | `string` | — | no | CSS-класс |
+| `collapse` | `CollapseState` | `{}` | no | Настройки раскрытия элементов |
+| `contentRender` | `((props: ContentRenderProps) => ReactNode)` | — | no | Рендер функция основного контента айтема |
+| `data-test-id` | `string` | — | no |  |
+| `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
+| `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
+| `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
+| `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `hasListInFocusChain` | `boolean` | `true` | no | Флаг, отвечающий за включение самого родительского контейнера листа в цепочку фокусирующихся элементов |
+| `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
+| `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `items` | `ReorderItem[]` | `[]` | no | Основные элементы списка: строки `SimpleItem` и/или группы с заголовком `SimpleGroupItem` (`type: 'group'` + `label` + сортируемые `items`). |
+| `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
+| `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
+| `marker` | `boolean` | `true` | no | Отображать ли маркер у выбранного элемента списка |
+| `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
+| `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
+| `onItemsReorder` | `(items: ReorderItem[]) => void` | — | yes | Колбек по завершению drag&drop-переупорядочивания элементов списка. Список остаётся управляемым: сам не хранит порядок, а отдаёт наружу целиком обновлённое дерево `items` — потребитель обновляет свой стейт этим значением. Переупорядочивание работает только среди «братьев» одного уровня (строки без группы либо строки внутри одной группы; перенос между группами не поддерживается). |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Обработчик события по нажатию клавиш |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек на скролл прокручиваемого списка |
+| `pinBottom` | `Item[]` | `[]` | no | Элементы списка, закрепленные снизу |
+| `pinTop` | `Item[]` | `[]` | no | Элементы списка, закрепленные сверху |
+| `scroll` | `boolean` | — | no | Включить ли скролл для основной части списка |
+| `scrollContainerClassName` | `string` | — | no | CSS-класс для scroll обертки основного списка айтемов |
+| `scrollContainerRef` | `Ref<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollRef` | `Ref<HTMLElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
+| `search` | `SearchState` | — | no | Настройки поисковой строки |
+| `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
+| `size` | `l \| m \| s` | `m` | no | Размер списка |
+| `tabIndex` | `number` | `0` | no | `tabIndex` корневого элемента списка (для управления порядком фокуса) |
+| `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+
+### SearchItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `inTopBar` | `boolean` | — | no | Рендер для шапки dropdown — без `.listItem`-обёртки. |
+| `itemRef` | `RefObject<HTMLElement>` | — | no |  |
+| `onFocus` | `((e: FocusEvent<HTMLInputElement, Element>) => void)` | — | no | onFocus поля (синхронизация активного item, когда search вне `<ul>`). |
+| `onNavKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Доп. обработчик клавиш навигации по списку. Нужен, когда поле поиска вынесено из `<ul>` в шапку dropdown (topBar) и события клавиатуры больше не всплывают на `<ul>`-onKeyDown — DropList передаёт сюда `handleListKeyDown` (factory). |
+| `search` | `SearchState` | — | no |  |
+
+#### Related types
+- `SearchState` (interface)
+
+### SelectionProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `defaultValue` | `ItemId \| ItemId[]` | — | no | Начальное состояние |
+| `mode` | `multiple \| none \| single` | — | no | Режим выбора |
+| `onChange` | `OnChangeHandler<ItemId[]> \| OnChangeHandler<ItemId>` | — | no | Controlled обработчик изменения состояния — получает массив выбранных `ItemId[]` Controlled обработчик изменения состояния — получает выбранный `ItemId` |
+| `value` | `ItemId \| ItemId[]` | — | no | Controlled состояние |
+
+### Separator
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `beforeContent` | `ReactNode` | — | no | Слот иконки слева от label. |
+| `divider` | `boolean` | — | no |  |
+| `groupVariant` | `subtitle \| subtitleTertiary` | `subtitleTertiary` | no |  |
+| `label` | `string` | — | no |  |
+| `selectButton` | `{ onClick?(e: MouseEvent<HTMLElement, MouseEvent>): void; indeterminate?: boolean; checked?: boolean; itemRef?: ForwardedRef<...> \| undefined; label?: string \| undefined; } \| undefined` | — | no |  |
+| `truncate` | `{ variant?: "end" \| "middle"; }` | — | no |  |
+
+#### Related types
+- `TruncateStringProps` (alias)
+
+### SimpleGroupBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `beforeContent` | `ReactNode` | — | no | Слот иконки слева от label. |
+| `children` | `ReactNode` | — | yes | Отрисованные строки группы (`SimpleItem`). |
+| `divider` | `boolean` | — | no |  |
+| `groupVariant` | `subtitle \| subtitleTertiary` | — | no |  |
+| `id` | `ItemId` | — | yes | Идентификатор группы — sortable identity для перестановки групп между собой. |
+| `label` | `string` | — | no |  |
+| `rowIds` | `ItemId[]` | — | yes | Id сортируемых строк группы для вложенного `SortableContext` (переупорядочивание строк внутри группы). |
+| `truncate` | `{ variant?: "end" \| "middle"; }` | — | no |  |
+
+### SimpleGroupBlockOverlay
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `beforeContent` | `ReactNode` | — | no | Слот иконки слева от label. |
+| `divider` | `boolean` | — | no |  |
+| `groupVariant` | `subtitle \| subtitleTertiary` | — | no |  |
+| `label` | `string` | — | no |  |
+| `rows` | `FlattenSimpleItem[]` | — | yes | Строки группы: копия блока рендерится целиком, вместе с ними. |
+| `size` | `l \| m \| s` | — | no | Размер списка — заголовок повторяет левую раскладку строки (`padding-left` + ручка + `gap`). |
+| `truncate` | `{ variant?: "end" \| "middle"; }` | — | no |  |
+
+### SimpleItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `allChildIds` | `ItemId[]` | — | yes |  |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | — | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Флаг неактивности элемента |
+| `groupId` | `ItemId` | — | no | Id группы-родителя (если строка внутри группы) — уходит в `data` `useSortable` (kind=row). |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
+| `items` | `ItemId[]` | — | yes |  |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
+| `switch` | `boolean` | — | no | Флаг отображения состояния выбранного элемента через switch |
+
+### SimpleItemOverlay
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `allChildIds` | `ItemId[]` | — | yes |  |
+| `bare` | `boolean` | — | no | Строка внутри копии блока группы (`SimpleGroupBlockOverlay`): поверхность и тень несёт сам блок, поэтому у строки их не дублируем. |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | — | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Флаг неактивности элемента |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
+| `items` | `ItemId[]` | — | yes |  |
+| `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
+| `switch` | `boolean` | — | no | Флаг отображения состояния выбранного элемента через switch |
+
+## Примеры
+
+### BasicDroplist
+
+```tsx
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function BasicDroplist() {
+  const [value, setValue] = useState<string | number | undefined>('rub');
+
+  return (
+    <div className={styles.wrapper}>
+      <Droplist
+        trigger='click'
+        placement='bottom-start'
+        closeDroplistOnItemClick
+        selection={{ mode: 'single', value, onChange: setValue }}
+        items={[
+          { id: 'usd', content: { label: 'USD — Доллар США' } },
+          { id: 'eur', content: { label: 'EUR — Евро' } },
+          { id: 'rub', content: { label: 'RUB — Российский рубль' } },
+          { id: 'cny', content: { label: 'CNY — Китайский юань' } },
+        ]}
+      >
+        <Button size='s' appearance='neutral' view='outline' label={`Валюта: ${String(value).toUpperCase()}`} />
+      </Droplist>
+    </div>
+  );
+}
+```
+
+### BasicList
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function BasicList() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        items={[
+          { id: 'inbox', content: { label: 'Входящие', caption: '12' } },
+          { id: 'sent', content: { label: 'Отправленные' } },
+          { id: 'archive', content: { label: 'Архив', caption: '238' } },
+          { id: 'trash', content: { label: 'Корзина', description: 'Удаляется через 30 дней' } },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### DroplistAsFormSelect
+
+```tsx
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function DroplistAsFormSelect() {
+  const [value, setValue] = useState<string | number | undefined>('m');
+
+  const options = [
+    { id: 's', content: { label: 'Small (1 vCPU, 2 GB RAM)' } },
+    { id: 'm', content: { label: 'Medium (2 vCPU, 4 GB RAM)' } },
+    { id: 'l', content: { label: 'Large (4 vCPU, 8 GB RAM)' } },
+    { id: 'xl', content: { label: 'X-Large (8 vCPU, 16 GB RAM)' } },
+  ];
+  const label = options.find(o => o.id === value)?.content.label ?? 'Выбрать';
+
+  return (
+    <div className={styles.formSelect}>
+      <Droplist
+        trigger='click'
+        placement='bottom-start'
+        closeDroplistOnItemClick
+        widthStrategy='eq'
+        selection={{ mode: 'single', value, onChange: setValue }}
+        items={options}
+      >
+        <Button size='s' appearance='neutral' view='outline' label={label} fullWidth />
+      </Droplist>
+    </div>
+  );
+}
+```
+
+### DroplistMultiple
+
+```tsx
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function DroplistMultiple() {
+  const [value, setValue] = useState<(string | number)[]>(['email']);
+
+  return (
+    <div className={styles.wrapper}>
+      <Droplist
+        trigger='click'
+        placement='bottom-start'
+        selection={{ mode: 'multiple', value, onChange: setValue }}
+        items={[
+          { id: 'email', content: { label: 'Email' } },
+          { id: 'push', content: { label: 'Push-уведомления' } },
+          { id: 'sms', content: { label: 'SMS' } },
+          { id: 'telegram', content: { label: 'Telegram' } },
+        ]}
+      >
+        <Button size='s' appearance='neutral' view='outline' label={`Каналы: ${value.length}`} />
+      </Droplist>
+    </div>
+  );
+}
+```
+
+### DroplistWithHeader
+
+```tsx
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function DroplistWithHeader() {
+  const [value, setValue] = useState<string | number | undefined>('relevance');
+
+  return (
+    <div className={styles.wrapper}>
+      <Droplist
+        trigger='click'
+        placement='bottom-start'
+        closeDroplistOnItemClick
+        selection={{ mode: 'single', value, onChange: setValue }}
+        header='Сортировать по'
+        headerDivider
+        footer='4 варианта сортировки'
+        footerDivider
+        items={[
+          { id: 'relevance', content: { label: 'Релевантности' } },
+          { id: 'date', content: { label: 'Дате создания' } },
+          { id: 'name', content: { label: 'Имени' } },
+          { id: 'size', content: { label: 'Размеру' } },
+        ]}
+      >
+        <Button size='s' appearance='neutral' view='outline' label='Сортировка' />
+      </Droplist>
+    </div>
+  );
+}
+```
+
+### DroplistWithSearch
+
+```tsx
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useMemo, useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const COUNTRIES = [
+  'Австрия',
+  'Армения',
+  'Беларусь',
+  'Бразилия',
+  'Германия',
+  'Грузия',
+  'Индия',
+  'Казахстан',
+  'Китай',
+  'Россия',
+  'США',
+  'Турция',
+];
+
+export function DroplistWithSearch() {
+  const [value, setValue] = useState<string | number | undefined>('Россия');
+  const [query, setQuery] = useState('');
+
+  const items = useMemo(
+    () =>
+      COUNTRIES.filter(name => name.toLowerCase().includes(query.toLowerCase())).map(name => ({
+        id: name,
+        content: { label: name },
+      })),
+    [query],
+  );
+
+  return (
+    <div className={styles.wrapper}>
+      <Droplist
+        trigger='click'
+        placement='bottom-start'
+        closeDroplistOnItemClick
+        selection={{ mode: 'single', value, onChange: setValue }}
+        search={{ value: query, onChange: setQuery, placeholder: 'Поиск страны' }}
+        items={items}
+      >
+        <Button size='s' appearance='neutral' view='outline' label={`Страна: ${value}`} />
+      </Droplist>
+    </div>
+  );
+}
+```
+
+### EmptyState
+
+```tsx
+import { List } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function EmptyState() {
+  const [query, setQuery] = useState('qwerty');
+
+  const items = query.length > 3 ? [] : [{ id: 'a', content: { label: 'Пример результата' } }];
+
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        search={{ value: query, onChange: setQuery, placeholder: 'Поиск' }}
+        items={items}
+        dataFiltered
+        noResultsState={{
+          content: 'Ничего не нашли. Проверьте раскладку или измените запрос.',
+        }}
+      />
+    </div>
+  );
+}
+```
+
+### GroupsCollapsible
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function GroupsCollapsible() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        collapse={{ defaultValue: ['projects'] }}
+        items={[
+          {
+            type: 'collapse',
+            id: 'projects',
+            content: { label: 'Проекты' },
+            items: [
+              { id: 'p-web', content: { label: 'Web-портал' } },
+              { id: 'p-mobile', content: { label: 'Mobile' } },
+              { id: 'p-admin', content: { label: 'Admin' } },
+            ],
+          },
+          {
+            type: 'collapse',
+            id: 'settings',
+            content: { label: 'Настройки' },
+            items: [
+              { id: 's-profile', content: { label: 'Профиль' } },
+              { id: 's-team', content: { label: 'Команда' } },
+              { id: 's-billing', content: { label: 'Оплата' } },
+            ],
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### ItemContentDescription
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function ItemContentDescription() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='l'
+        items={[
+          {
+            id: 'eu-west',
+            content: {
+              label: 'eu-west-1',
+              caption: 'Доступно',
+              description: 'Ирландия — основной регион размещения',
+            },
+          },
+          {
+            id: 'us-east',
+            content: {
+              label: 'us-east-1',
+              caption: 'Деградация',
+              description: 'Северная Виргиния — повышенная задержка отклика',
+            },
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### ItemContentSlots
+
+```tsx
+import { FileSVG, FolderSVG, StarSVG } from '@ds/icons/interface/system';
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function ItemContentSlots() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='m'
+        items={[
+          {
+            id: 'reports',
+            beforeContent: <FolderSVG />,
+            content: { label: 'Отчёты', caption: '24' },
+            afterContent: <StarSVG />,
+          },
+          {
+            id: 'invoice',
+            beforeContent: <FileSVG />,
+            content: { label: 'invoice-2024.pdf', caption: '1.2 МБ' },
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### ItemContentTruncate
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function ItemContentTruncate() {
+  return (
+    <div className={styles.narrowBox}>
+      <List
+        size='m'
+        items={[
+          {
+            id: 'truncated',
+            content: {
+              label: 'very-long-instance-name-that-overflows.example.internal',
+              caption: '8',
+              description:
+                'Длинное описание ресурса, которое не помещается в одну строку и обрезается по заданному числу строк',
+              truncate: { label: 1, description: 2, variant: 'middle' },
+            },
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### LinkItems
+
+```tsx
+import { List } from '@ds/list';
+import { ReactNode } from 'react';
+
+import styles from './styles.module.scss';
+
+const asLink = (href: string) =>
+  function (item: ReactNode) {
+    return (
+      <a href={href} className={styles.link}>
+        {item}
+      </a>
+    );
+  };
+
+export function LinkItems() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        items={[
+          {
+            id: 'docs',
+            content: { label: 'Документация', caption: '↗' },
+            itemWrapRender: asLink('https://cloud.ru/docs'),
+          },
+          { id: 'blog', content: { label: 'Блог', caption: '↗' }, itemWrapRender: asLink('https://cloud.ru/blog') },
+          {
+            id: 'status',
+            content: { label: 'Статус', caption: '↗' },
+            itemWrapRender: asLink('https://cloud.ru/status'),
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### ListItemWrap
+
+```tsx
+import { List } from '@ds/list';
+import { ReactNode } from 'react';
+
+import styles from './styles.module.scss';
+
+const asExternalLink = (href: string) =>
+  function (item: ReactNode) {
+    return (
+      <a href={href} target='_blank' rel='noreferrer' className={styles.link}>
+        {item}
+      </a>
+    );
+  };
+
+export function ListItemWrap() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        items={[
+          {
+            id: 'prod',
+            content: { label: 'Production', caption: 'open' },
+            itemWrapRender: asExternalLink('https://console.cloud.ru/prod'),
+          },
+          {
+            id: 'staging',
+            content: { label: 'Staging', caption: 'open' },
+            itemWrapRender: asExternalLink('https://console.cloud.ru/staging'),
+          },
+          {
+            id: 'legacy',
+            content: { label: 'Legacy', description: 'Среда выведена из эксплуатации — недоступна для перехода' },
+            inactive: true,
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### ListReorder
+
+```tsx
+import { ReorderableList, SimpleItem } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const INITIAL_ITEMS: SimpleItem[] = [
+  { id: 'inbox', content: { label: 'Входящие', caption: '12' } },
+  { id: 'sent', content: { label: 'Отправленные' } },
+  { id: 'archive', content: { label: 'Архив', caption: '238' } },
+  { id: 'trash', content: { label: 'Корзина', description: 'Удаляется через 30 дней' } },
+];
+
+export function ListReorder() {
+  const [items, setItems] = useState(INITIAL_ITEMS);
+
+  return (
+    <div className={styles.box}>
+      <ReorderableList size='s' items={items} onItemsReorder={setItems} />
+    </div>
+  );
+}
+```
+
+### ListReorderGroups
+
+```tsx
+import { ReorderableList, ReorderItem } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const INITIAL_ITEMS: ReorderItem[] = [
+  {
+    id: 'group-1',
+    type: 'group',
+    label: 'Избранное',
+    items: [
+      { id: 'catalog', content: { label: 'Каталог' } },
+      { id: 'orders', content: { label: 'Заказы' } },
+      { id: 'favorites', content: { label: 'Избранное' } },
+    ],
+  },
+  {
+    id: 'group-2',
+    type: 'group',
+    label: 'Система',
+    items: [
+      { id: 'settings', content: { label: 'Настройки' } },
+      { id: 'trash', content: { label: 'Корзина' } },
+    ],
+  },
+];
+
+export function ListReorderGroups() {
+  const [items, setItems] = useState<ReorderItem[]>(INITIAL_ITEMS);
+
+  return (
+    <div className={styles.box}>
+      <ReorderableList size='s' items={items} onItemsReorder={setItems} />
+    </div>
+  );
+}
+```
+
+### MobileDroplist
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { Button } from '@ds/button';
+import { Droplist } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function MobileDroplist() {
+  const [value, setValue] = useState<string | number | undefined>('rub');
+
+  return (
+    <AdaptiveProvider layoutType={LAYOUT_TYPE.Mobile}>
+      <div className={styles.wrapper}>
+        <Droplist
+          label='Валюта'
+          closeDroplistOnItemClick
+          selection={{ mode: 'single', value, onChange: setValue }}
+          items={[
+            { id: 'usd', content: { label: 'USD — Доллар США' } },
+            { id: 'eur', content: { label: 'EUR — Евро' } },
+            { id: 'rub', content: { label: 'RUB — Российский рубль' } },
+            { id: 'cny', content: { label: 'CNY — Китайский юань' } },
+          ]}
+        >
+          <Button size='s' appearance='neutral' view='outline' label={`Валюта: ${String(value).toUpperCase()}`} />
+        </Droplist>
+      </div>
+    </AdaptiveProvider>
+  );
+}
+```
+
+### MultipleSelection
+
+```tsx
+import { List } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function MultipleSelection() {
+  const [value, setValue] = useState<(string | number)[]>(['email', 'push']);
+
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        selection={{ mode: 'multiple', value, onChange: setValue }}
+        items={[
+          { id: 'email', content: { label: 'Email' } },
+          { id: 'push', content: { label: 'Push-уведомления' } },
+          { id: 'sms', content: { label: 'SMS' } },
+          { id: 'telegram', content: { label: 'Telegram', description: 'Требует привязки аккаунта' } },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### NestedLevels
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function NestedLevels() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        collapse={{ defaultValue: ['catalog', 'catalog/books'] }}
+        items={[
+          {
+            type: 'collapse',
+            id: 'catalog',
+            content: { label: 'Каталог' },
+            items: [
+              {
+                type: 'collapse',
+                id: 'catalog/books',
+                content: { label: 'Книги' },
+                items: [
+                  { id: 'catalog/books/fiction', content: { label: 'Художественные' } },
+                  { id: 'catalog/books/science', content: { label: 'Научные' } },
+                ],
+              },
+              {
+                type: 'collapse',
+                id: 'catalog/music',
+                content: { label: 'Музыка' },
+                items: [
+                  { id: 'catalog/music/rock', content: { label: 'Рок' } },
+                  { id: 'catalog/music/jazz', content: { label: 'Джаз' } },
+                ],
+              },
+            ],
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### PinnedItems
+
+```tsx
+import { List } from '@ds/list';
+
+import styles from './styles.module.scss';
+
+export function PinnedItems() {
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        pinTop={[
+          { id: 'all', content: { label: 'Все задачи', caption: '128' } },
+          { id: 'mine', content: { label: 'Мои задачи', caption: '14' } },
+        ]}
+        items={[
+          { id: 'design', content: { label: 'Дизайн' } },
+          { id: 'backend', content: { label: 'Бэкенд' } },
+          { id: 'frontend', content: { label: 'Фронтенд' } },
+          { id: 'qa', content: { label: 'QA' } },
+        ]}
+        pinBottom={[{ id: 'archive', content: { label: 'Архив', description: 'Завершённые задачи' } }]}
+      />
+    </div>
+  );
+}
+```
+
+### SingleSelection
+
+```tsx
+import { List } from '@ds/list';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+export function SingleSelection() {
+  const [value, setValue] = useState<string | number | undefined>('usd');
+
+  return (
+    <div className={styles.box}>
+      <List
+        size='s'
+        marker
+        selection={{ mode: 'single', value, onChange: setValue }}
+        items={[
+          { id: 'usd', content: { label: 'Доллар США', caption: 'USD' } },
+          { id: 'eur', content: { label: 'Евро', caption: 'EUR' } },
+          { id: 'rub', content: { label: 'Российский рубль', caption: 'RUB' } },
+          { id: 'cny', content: { label: 'Китайский юань', caption: 'CNY' } },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### Virtualized
+
+```tsx
+import { Button } from '@ds/button';
+import { List } from '@ds/list';
+import { useMemo, useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const TOTAL = 10_000;
+
+export function Virtualized() {
+  const items = useMemo(
+    () =>
+      Array.from({ length: TOTAL }, (_, i) => ({
+        id: `row-${i}`,
+        content: { label: `Запись #${i + 1}`, caption: i % 5 === 0 ? 'new' : undefined },
+      })),
+    [],
+  );
+
+  const [value, setValue] = useState<string | number | undefined>('row-0');
+
+  return (
+    <div className={styles.wrapper}>
+      <Button
+        size='s'
+        appearance='neutral'
+        view='outline'
+        label='Прыгнуть к случайной записи'
+        onClick={() => setValue(`row-${Math.floor(Math.random() * TOTAL)}`)}
+      />
+      <List
+        size='s'
+        virtualized
+        scroll
+        limitedScrollHeight
+        scrollToSelectedItem
+        selection={{ mode: 'single', value, onChange: setValue }}
+        items={items}
+      />
+    </div>
+  );
+}
+```
+
+### WithSearch
+
+```tsx
+import { List } from '@ds/list';
+import { useMemo, useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const ALL = [
+  'Антон',
+  'Борис',
+  'Виктор',
+  'Галина',
+  'Дарья',
+  'Евгений',
+  'Жанна',
+  'Зоя',
+  'Игорь',
+  'Ксения',
+  'Лев',
+  'Мария',
+];
+
+export function WithSearch() {
+  const [query, setQuery] = useState('');
+
+  const items = useMemo(
+    () =>
+      ALL.filter(name => name.toLowerCase().includes(query.toLowerCase())).map(name => ({
+        id: name,
+        content: { label: name },
+      })),
+    [query],
+  );
+
+  return (
+    <div className={styles.box}>
+      <List size='s' search={{ value: query, onChange: setQuery, placeholder: 'Поиск по имени' }} items={items} />
+    </div>
+  );
+}
+```

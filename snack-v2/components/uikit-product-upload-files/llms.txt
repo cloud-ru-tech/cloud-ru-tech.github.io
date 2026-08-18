@@ -1,0 +1,195 @@
+﻿# @ds/uikit-product-upload-files
+
+> Поле загрузки файлов с drag-and-drop, валидацией по формату/размеру/количеству и кастомной функцией upload.
+
+Docs: /snack-v2/components/uikit-product-upload-files/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-upload-files
+```
+
+## Когда использовать
+
+- Загрузка вложений в форме (договоры, изображения, отчёты) с превью и удалением.
+- Когда нужна валидация формата/размера/количества файлов на клиенте до отправки.
+- Когда загрузка идёт на ваш бэкенд через кастомный запрос — он передаётся в `upload`.
+
+Когда **не** нужен:
+
+- Для одиночного триггера-кнопки без зоны перетаскивания — используйте `FileUpload` из [@ds/dropzone](/components/dropzone/file-upload).
+- Для скрытой оверлей-зоны над произвольным контентом — `HiddenDropZone` из [@ds/dropzone](/components/dropzone/hidden-drop-zone).
+
+## API
+
+### Attachments
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `UploadFilesAcceptItem[]` | — | yes |  |
+| `className` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `items` | `UploadFileItem<TResult>[]` | — | yes |  |
+| `onDelete` | `(id: string) => void` | — | yes |  |
+| `units` | `FileSizeUnits` | — | yes |  |
+
+### UploadFiles
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `accept` | `UploadFilesAcceptItem[]` | `[{ extention: '*' }]` | no | Допустимые типы файлов с иконкой для каждого расширения |
+| `attachmentClassname` | `string` | — | no | CSS-класс прикрепленного файла |
+| `className` | `string` | — | no | CSS-класс корня |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `UploadFileItem<unknown>[]` | — | no | Начальное значение |
+| `disabled` | `boolean` | `false` | no | Заблокировано |
+| `error` | `string` | — | no | Ошибка формы (например required из RHF) |
+| `hint` | `ReactNode` | — | no | Подсказка question tooltip у метки |
+| `label` | `string` | — | no | Текст метки поля |
+| `maxFiles` | `number` | `3` | no | Максимальное количество файлов |
+| `maxSize` | `number` | `5 * 1024 * 1024` | no | Максимальный размер файла в байтах |
+| `name` | `string` | — | no | Имя поля формы |
+| `onBlur` | `FocusEventHandler<HTMLDivElement>` | — | no |  |
+| `onChange` | `((items: UploadFileItem<unknown>[]) => void)` | — | no | Колбэк изменения значения |
+| `optional` | `boolean` | `true` | no | Показывает «Опционально» справа от метки |
+| `upload` | `UploadFn<unknown>` | — | yes | Обязательная кастомная функция загрузки |
+| `value` | `UploadFileItem<unknown>[]` | — | no | Контролируемое значение |
+
+#### Related types
+- `IconPredefinedProps` (interface)
+- `UploadFileItem` (interface)
+- `UploadFilesAcceptItem` (interface)
+- `UploadFn` (alias)
+- `UploadStatus` = `error | success | uploading`
+
+### UploadFilesDropZone
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `buttonLabel` | `string` | — | no |  |
+| `description` | `ReactNode` | — | no |  |
+| `title` | `string` | — | no |  |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { LocaleProvider } from '@ds/locale';
+import { UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+import { useState } from 'react';
+
+async function upload(file: File) {
+  await new Promise(resolve => setTimeout(resolve, 600));
+
+  return { url: `https://example.com/${file.name}` };
+}
+
+export function Basic() {
+  const [files, setFiles] = useState<UploadFileItem[]>([]);
+
+  return (
+    <LocaleProvider lang='ru-RU'>
+      <UploadFiles label='Документы' value={files} onChange={setFiles} upload={upload} />
+    </LocaleProvider>
+  );
+}
+```
+
+### CustomFormats
+
+```tsx
+import { LocaleProvider } from '@ds/locale';
+import { UploadFileItem, UploadFiles, UploadFilesAcceptItem } from '@ds/uikit-product-upload-files';
+import { useState } from 'react';
+
+async function upload(file: File) {
+  await new Promise(resolve => setTimeout(resolve, 600));
+
+  return { url: `https://example.com/${file.name}` };
+}
+
+const accept: UploadFilesAcceptItem[] = [
+  { extention: '.png', displayExtension: 'PNG' },
+  { extention: '.jpg', displayExtension: 'JPG' },
+];
+
+export function CustomFormats() {
+  const [files, setFiles] = useState<UploadFileItem[]>([]);
+
+  return (
+    <LocaleProvider lang='ru-RU'>
+      <UploadFiles
+        label='Изображения'
+        hint='До 5 файлов, каждый не больше 2 МБ'
+        accept={accept}
+        maxFiles={5}
+        maxSize={2 * 1024 * 1024}
+        value={files}
+        onChange={setFiles}
+        upload={upload}
+      />
+    </LocaleProvider>
+  );
+}
+```
+
+### Disabled
+
+```tsx
+import { LocaleProvider } from '@ds/locale';
+import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+
+async function upload(file: File) {
+  return { url: `https://example.com/${file.name}` };
+}
+
+function buildValue(): UploadFileItem[] {
+  return [
+    {
+      id: 'demo-1',
+      file: new File([new Uint8Array(1024)], 'договор.pdf', { type: 'application/pdf' }),
+      status: UPLOAD_STATUS.Success,
+      result: { url: 'https://example.com/договор.pdf' },
+    },
+  ];
+}
+
+export function Disabled() {
+  return (
+    <LocaleProvider lang='ru-RU'>
+      <UploadFiles label='Документы' disabled value={buildValue()} upload={upload} />
+    </LocaleProvider>
+  );
+}
+```
+
+### FormField
+
+```tsx
+import { LocaleProvider } from '@ds/locale';
+import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+import { useState } from 'react';
+
+async function upload(file: File) {
+  await new Promise(resolve => setTimeout(resolve, 600));
+
+  return { url: `https://example.com/${file.name}` };
+}
+
+export function FormField() {
+  const [files, setFiles] = useState<UploadFileItem[]>([]);
+  const hasUploaded = files.some(item => item.status === UPLOAD_STATUS.Success);
+
+  return (
+    <LocaleProvider lang='ru-RU'>
+      <UploadFiles
+        label='Договор'
+        optional={false}
+        value={files}
+        onChange={setFiles}
+        upload={upload}
+        error={hasUploaded ? undefined : 'Обязательное поле'}
+      />
+    </LocaleProvider>
+  );
+}
+```

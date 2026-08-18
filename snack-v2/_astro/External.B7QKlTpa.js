@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CardVacancy.BirWfPPv.js";var n=e();function r(){return(0,n.jsx)(t,{href:`https://example.com/careers/devops`,target:`_blank`,title:`DevOps Engineer`,description:`Remote · Full-time`})}export{r as External};

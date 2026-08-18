@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SegmentControl.BTCbkunh.js";var n=e();function r(){return(0,n.jsx)(t,{defaultValue:`overview`,items:[{value:`overview`,label:`Overview`},{value:`analytics`,label:`Analytics`},{value:`reports`,label:`Reports`}]})}export{r as Basic};

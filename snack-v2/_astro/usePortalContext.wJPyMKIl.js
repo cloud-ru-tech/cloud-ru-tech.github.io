@@ -1,0 +1,1 @@
+import{t as e}from"./createSharedContext.BOZPPfpd.js";import{n as t,t as n}from"./globalStore.BoHsxCI0.js";var{Provider:r,useValue:i}=e({key:t.context,defaultValue:n()});function a(){return i()}export{r as n,a as t};

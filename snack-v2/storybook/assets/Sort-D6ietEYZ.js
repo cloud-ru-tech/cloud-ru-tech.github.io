@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3%2012L7%208L11%2012M21%2012L17%2016L13%2012M7%209V17M17%207V15'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=Sort-D6ietEYZ.js.map

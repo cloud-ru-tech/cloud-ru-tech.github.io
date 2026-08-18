@@ -1,0 +1,337 @@
+﻿# @ds/modal
+
+> Пакет модальных окон — компоненты Modal и ModalCustom с едиными токенами ширины и режимов закрытия.
+
+Docs: /snack-v2/components/modal/
+
+## Установка
+
+```sh
+pnpm add @ds/modal
+```
+
+## API
+
+### DesktopModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `className` | `string` | — | no | CSS-класс для окна |
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | `true` | no | Растягивать по высоте в пределах контейнера |
+| `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
+| `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
+| `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
+| `width` | `l \| m \| s` | `s` | no | Размер окна |
+
+### DialogBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Горизонтальные паддинги body. При `false` контент идёт во всю ширину sheet'а (edge-to-edge) — для карт, изображений, списков без отступов. Соответствует Figma-оси `padding=false`. |
+| `className` | `string` | — | no | CSS-класс контейнера body. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+
+### DialogFooter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс контейнера footer'а. |
+| `data-test-id` | `string` | — | no |  |
+
+### DialogHeader
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionButton` | `ReactNode` | — | no | Slot справа от headline-строки (любой `ReactNode`, обычно `Button` с иконкой). |
+| `className` | `string` | — | no | CSS-класс контейнера header'а. |
+| `data-test-id` | `string` | — | no |  |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
+| `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `titleId` | `string` | — | no | `id` заголовка — для связи с `aria-labelledby` dialog'а (accessible name). |
+| `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
+
+### MobileModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `className` | `string` | — | no | CSS-класс для окна |
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
+| `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
+| `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
+| `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
+| `width` | `l \| m \| s` | — | no | Размер окна |
+
+### Modal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `className` | `string` | — | no | CSS-класс для окна |
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
+| `loading` | `boolean` | — | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
+| `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
+| `width` | `l \| m \| s` | — | no | Размер окна |
+
+#### Related types
+- `BottomSheetActionButton` (alias)
+- `FooterActionsOrientation` = `horizontal | vertical`
+- `ModalContainer` (alias)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalWidth` = `l | m | s`
+
+### ModalBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Горизонтальные паддинги body. При `false` контент идёт во всю ширину sheet'а (edge-to-edge) — для карт, изображений, списков без отступов. Соответствует Figma-оси `padding=false`. |
+| `className` | `string` | — | no | CSS-класс контейнера body. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+
+### ModalCustom
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | Содержимое окна (композиция Header/Body/Footer) |
+| `className` | `string` | — | no | CSS-класс окна |
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
+| `data-test-id` | `string` | — | no |  |
+| `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
+| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `showBackdrop` | `boolean` | `true` | no | Отображение тёмной подложки за sheet'ом. При `false` фон не затемняется и click-outside не закрывает sheet (нет backdrop-узла, по которому ловится клик). |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `width` | `l \| m \| s` | — | no | Размер окна |
+
+#### Related types
+- `ModalContainer` (alias)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalWidth` = `l | m | s`
+- `SnapPoint` (alias)
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Button, ButtonGroup } from '@ds/button';
+import { Modal } from '@ds/modal';
+import { useState } from 'react';
+
+export function Basic() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Modal
+        open={open}
+        onClose={close}
+        title='Заголовок'
+        subtitle='Короткое пояснение действия'
+        content='Основной контент тела модалки. Сюда помещается форма, предупреждение или подробный текст.'
+        footer={
+          <ButtonGroup
+            primaryAction={{ label: 'Продолжить', view: 'filled', onClick: close }}
+            secondaryAction={{ label: 'Отмена', appearance: 'neutral', view: 'outline', onClick: close }}
+          />
+        }
+      />
+    </>
+  );
+}
+```
+
+### CustomComposition
+
+```tsx
+import { Button } from '@ds/button';
+import { ModalCustom } from '@ds/modal';
+import { useState } from 'react';
+
+export function CustomComposition() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <ModalCustom open={open} onClose={close} width='m'>
+        <ModalCustom.Header title='Ручная композиция' subtitle='Header, Body и Footer собираются вручную.' />
+        <ModalCustom.Body
+          content={
+            <div style={{ padding: 24 }}>
+              <p>В теле может быть любая разметка — скролл включается автоматически.</p>
+              <p>Это нужно, когда пресетной структуры Modal недостаточно.</p>
+            </div>
+          }
+        />
+        <ModalCustom.Footer>
+          <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+            <Button label='Закрыть' appearance='neutral' view='outline' onClick={close} />
+            <Button label='Подтвердить' appearance='primary' view='filled' onClick={close} />
+          </div>
+        </ModalCustom.Footer>
+      </ModalCustom>
+    </>
+  );
+}
+```
+
+### Forced
+
+```tsx
+import { Button, ButtonGroup } from '@ds/button';
+import { Modal, MODE } from '@ds/modal';
+import { useState } from 'react';
+
+export function Forced() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Принять условия' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Modal
+        open={open}
+        onClose={close}
+        mode={MODE.Forced}
+        title='Требуется действие'
+        subtitle='Без кнопки закрытия и Esc — закрыть можно только через футер.'
+        content='Закрытие по клику по overlay и по Escape отключено.'
+        footer={
+          <ButtonGroup
+            primaryAction={{ label: 'Принять', view: 'filled', onClick: close }}
+            secondaryAction={{ label: 'Отклонить', appearance: 'neutral', view: 'outline', onClick: close }}
+          />
+        }
+      />
+    </>
+  );
+}
+```
+
+### Loading
+
+```tsx
+import { Button } from '@ds/button';
+import { Modal } from '@ds/modal';
+import { useState } from 'react';
+
+export function Loading() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Запустить сохранение' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title='Сохранение изменений'
+        subtitle='Пожалуйста, подождите'
+        content='Основной контент'
+        loading
+      />
+    </>
+  );
+}
+```
+
+### WithFooter
+
+```tsx
+import { Button, ButtonGroup } from '@ds/button';
+import { Modal } from '@ds/modal';
+import { useState } from 'react';
+
+export function WithFooter() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Удалить…' appearance='critical' view='outline' onClick={() => setOpen(true)} />
+      <Modal
+        open={open}
+        onClose={close}
+        title='Удалить запись'
+        subtitle='Действие необратимо.'
+        content='После подтверждения запись и все её ссылки исчезнут из списка.'
+        footer={
+          <ButtonGroup
+            primaryAction={{
+              label: 'Удалить',
+              appearance: 'critical',
+              view: 'filled',
+              onClick: close,
+            }}
+            secondaryAction={{
+              label: 'Отмена',
+              appearance: 'neutral',
+              view: 'outline',
+              onClick: close,
+            }}
+          />
+        }
+      />
+    </>
+  );
+}
+```

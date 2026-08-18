@@ -1,0 +1,217 @@
+﻿# @ds/code-editor
+
+> Обёртка над monaco-editor с темизацией на токенах дизайн-системы, шапкой с языком и кнопкой копирования, async/lazy-загрузкой и JSON/YAML-валидацией по schema.
+
+Docs: /snack-v2/components/code-editor/
+
+## Установка
+
+```sh
+pnpm add @ds/code-editor
+```
+
+## Когда использовать
+
+- Просмотр и редактирование JSON/YAML конфигов прямо в продукте.
+- Inline-редакторы с подсветкой синтаксиса.
+- Просмотр логов/манифестов с кнопкой копирования всего содержимого.
+
+Когда **не** нужен `CodeEditor`:
+
+- Большие IDE-сценарии (мульти-файлы, расширения, дебаггер):
+  - используйте полноценный monaco-host или web-IDE.
+- Однострочный ввод без подсветки:
+  - используйте `Input` / `Textarea` из соответствующих пакетов.
+
+## API
+
+### AsyncCodeEditor
+_Нет публичных пропсов._
+
+### CodeEditor
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `background` | `boolean` | — | no | Включение/отключение псевдобекграунда. |
+| `beforeMount` | `BeforeMount` | — | no | Signature: function(monaco: Monaco) => void An event is emitted before the editor is mounted It gets the monaco instance as a first argument Defaults to "noop" |
+| `className` | `string` | — | no | Class name for the editor container |
+| `data-test-id` | `string` | — | no |  |
+| `defaultLanguage` | `string` | — | no | Default language of the current model |
+| `defaultPath` | `string` | — | no | Default path of the current model Will be passed as the third argument to `.createModel` method `monaco.editor.createModel(..., ..., monaco.Uri.parse(defaultPath))` |
+| `defaultValue` | `string` | — | no | Default value of the current model |
+| `hasHeader` | `boolean` | — | no | Включение/отключение шапки. |
+| `height` | `string \| number` | `100%` | no | Height of the editor wrapper |
+| `jsonSchema` | `JsonSchema` | — | no | Конфигурация JSON-Schema, по которой monaco валидирует контент. |
+| `keepCurrentModel` | `boolean` | `false` | no | Indicator whether to dispose the current model when the Editor is unmounted or not |
+| `language` | `string` | — | no | Language of the current model Язык контента редактора. Schema-режим работает только для `json` и `yaml`. |
+| `line` | `number` | — | no | The line to jump on it |
+| `loading` | `ReactNode` | `Loading...` | no | The loading screen before the editor will be mounted |
+| `onChange` | `OnChange` | — | no | Signature: function(value: string \| undefined, ev: monaco.editor.IModelContentChangedEvent) => void An event is emitted when the content of the current model is changed |
+| `onCopyClick` | `(() => void)` | — | no | Клик по кнопке копирования. |
+| `onMount` | `OnMount` | — | no | Signature: function(editor: monaco.editor.IStandaloneCodeEditor, monaco: Monaco) => void An event is emitted when the editor is mounted It gets the editor instance as a first argument and the monaco instance as a second Defaults to "noop" |
+| `onValidate` | `OnValidate` | — | no | Signature: function(markers: monaco.editor.IMarker[]) => void An event is emitted when the content of the current model is changed and the current model markers are ready Defaults to "noop" |
+| `options` | `IStandaloneEditorConstructionOptions` | — | no | IStandaloneEditorConstructionOptions |
+| `overrideServices` | `IEditorOverrideServices` | — | no | IEditorOverrideServices |
+| `path` | `string` | — | no | Path of the current model Will be passed as the third argument to `.createModel` method `monaco.editor.createModel(..., ..., monaco.Uri.parse(defaultPath))` В schema-режиме путь модели управляется внутренне (нужен стабильный `path`, совпадающий с `fileMatch`), снаружи задать его нельзя. `never` запрещает передачу `path` на уровне типа — попытка приводит к compile-time ошибке. |
+| `saveViewState` | `boolean` | — | no | Indicator whether to save the models' view states between model changes or not Defaults to true |
+| `showRowNumber` | `boolean` | — | no | Включение/отключение колонки с номерами строк. |
+| `theme` | `string` | — | no | Имя зарегистрированной monaco-темы из глобального реестра (`monaco.editor.defineTheme(name, …)`). По умолчанию подбирается автоматически по DS-теме провайдера: `'snack'` для светлой, `'snackDark'` для тёмной. Передавай вручную только если регистрируешь свою кастомную тему — иначе оставляй `undefined`. |
+| `themeName` | `string` | — | no | Используется как trigger в effect deps для перепересчёта theme tokens при смене темы. Уникальное значение на каждую тему. |
+| `value` | `string` | — | no | Value of the current model |
+| `width` | `string \| number` | `100%` | no | Width of the editor wrapper |
+| `wrapperProps` | `object` | — | no | Props applied to the wrapper element |
+
+#### Related types
+- `JsonSchema` (interface)
+
+### LazyCodeEditor
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `background` | `boolean` | — | no | Включение/отключение псевдобекграунда. |
+| `beforeMount` | `BeforeMount` | — | no | Signature: function(monaco: Monaco) => void An event is emitted before the editor is mounted It gets the monaco instance as a first argument Defaults to "noop" |
+| `className` | `string` | — | no | Class name for the editor container |
+| `data-test-id` | `string` | — | no |  |
+| `defaultLanguage` | `string` | — | no | Default language of the current model |
+| `defaultPath` | `string` | — | no | Default path of the current model Will be passed as the third argument to `.createModel` method `monaco.editor.createModel(..., ..., monaco.Uri.parse(defaultPath))` |
+| `defaultValue` | `string` | — | no | Default value of the current model |
+| `hasHeader` | `boolean` | — | no | Включение/отключение шапки. |
+| `height` | `string \| number` | `100%` | no | Height of the editor wrapper |
+| `jsonSchema` | `JsonSchema` | — | no | Конфигурация JSON-Schema, по которой monaco валидирует контент. |
+| `keepCurrentModel` | `boolean` | `false` | no | Indicator whether to dispose the current model when the Editor is unmounted or not |
+| `language` | `string` | — | no | Language of the current model Язык контента редактора. Schema-режим работает только для `json` и `yaml`. |
+| `line` | `number` | — | no | The line to jump on it |
+| `loading` | `ReactNode` | `Loading...` | no | The loading screen before the editor will be mounted |
+| `onChange` | `OnChange` | — | no | Signature: function(value: string \| undefined, ev: monaco.editor.IModelContentChangedEvent) => void An event is emitted when the content of the current model is changed |
+| `onCopyClick` | `(() => void)` | — | no | Клик по кнопке копирования. |
+| `onMount` | `OnMount` | — | no | Signature: function(editor: monaco.editor.IStandaloneCodeEditor, monaco: Monaco) => void An event is emitted when the editor is mounted It gets the editor instance as a first argument and the monaco instance as a second Defaults to "noop" |
+| `onValidate` | `OnValidate` | — | no | Signature: function(markers: monaco.editor.IMarker[]) => void An event is emitted when the content of the current model is changed and the current model markers are ready Defaults to "noop" |
+| `options` | `IStandaloneEditorConstructionOptions` | — | no | IStandaloneEditorConstructionOptions |
+| `overrideServices` | `IEditorOverrideServices` | — | no | IEditorOverrideServices |
+| `path` | `string` | — | no | Path of the current model Will be passed as the third argument to `.createModel` method `monaco.editor.createModel(..., ..., monaco.Uri.parse(defaultPath))` В schema-режиме путь модели управляется внутренне (нужен стабильный `path`, совпадающий с `fileMatch`), снаружи задать его нельзя. `never` запрещает передачу `path` на уровне типа — попытка приводит к compile-time ошибке. |
+| `saveViewState` | `boolean` | — | no | Indicator whether to save the models' view states between model changes or not Defaults to true |
+| `showRowNumber` | `boolean` | — | no | Включение/отключение колонки с номерами строк. |
+| `theme` | `string` | — | no | Имя зарегистрированной monaco-темы из глобального реестра (`monaco.editor.defineTheme(name, …)`). По умолчанию подбирается автоматически по DS-теме провайдера: `'snack'` для светлой, `'snackDark'` для тёмной. Передавай вручную только если регистрируешь свою кастомную тему — иначе оставляй `undefined`. |
+| `themeName` | `string` | — | no | Используется как trigger в effect deps для перепересчёта theme tokens при смене темы. Уникальное значение на каждую тему. |
+| `value` | `string` | — | no | Value of the current model |
+| `width` | `string \| number` | `100%` | no | Width of the editor wrapper |
+| `wrapperProps` | `object` | — | no | Props applied to the wrapper element |
+
+#### Related types
+- `JsonSchema` (interface)
+
+## Примеры
+
+### Json
+
+```tsx
+import { CodeEditor } from '@ds/code-editor';
+import { useState } from 'react';
+
+const INITIAL = `{
+  "name": "@ds/code-editor",
+  "version": "0.0.0",
+  "language": "json"
+}
+`;
+
+export function Json() {
+  const [value, setValue] = useState(INITIAL);
+
+  return <CodeEditor language='json' value={value} height={220} onChange={v => setValue(v ?? '')} />;
+}
+```
+
+### LazyLoaded
+
+```tsx
+import { LazyCodeEditor } from '@ds/code-editor';
+import { useState } from 'react';
+
+const INITIAL = `{
+  "loaded": "lazily"
+}
+`;
+
+export function LazyLoaded() {
+  const [value, setValue] = useState(INITIAL);
+
+  return <LazyCodeEditor language='json' value={value} hasHeader height={220} onChange={v => setValue(v ?? '')} />;
+}
+```
+
+### NoBackground
+
+```tsx
+import { CodeEditor } from '@ds/code-editor';
+import { useState } from 'react';
+
+import styles from './NoBackground.module.scss';
+
+const INITIAL = `// transparent background, embedded into a card
+const config = { mode: 'inline' }
+`;
+
+export function NoBackground() {
+  const [value, setValue] = useState(INITIAL);
+
+  return (
+    <div className={styles.surface}>
+      <CodeEditor
+        language='javascript'
+        value={value}
+        background={false}
+        height={220}
+        onChange={v => setValue(v ?? '')}
+      />
+    </div>
+  );
+}
+```
+
+### WithHeader
+
+```tsx
+import { CodeEditor } from '@ds/code-editor';
+import { useState } from 'react';
+
+const INITIAL = `{
+  "copy": "me"
+}
+`;
+
+export function WithHeader() {
+  const [value, setValue] = useState(INITIAL);
+  const [copiedAt, setCopiedAt] = useState<string | null>(null);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <CodeEditor
+        language='json'
+        value={value}
+        hasHeader
+        height={200}
+        onChange={v => setValue(v ?? '')}
+        onCopyClick={() => setCopiedAt(new Date().toLocaleTimeString())}
+      />
+      <span>Last copy: {copiedAt ?? '—'}</span>
+    </div>
+  );
+}
+```
+
+### Yaml
+
+```tsx
+import { CodeEditor } from '@ds/code-editor';
+import { useState } from 'react';
+
+const INITIAL = `name: '@ds/code-editor'
+version: 0.0.0
+language: yaml
+`;
+
+export function Yaml() {
+  const [value, setValue] = useState(INITIAL);
+
+  return <CodeEditor language='yaml' value={value} hasHeader height={220} onChange={v => setValue(v ?? '')} />;
+}
+```

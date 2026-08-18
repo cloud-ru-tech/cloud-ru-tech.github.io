@@ -1,0 +1,90 @@
+﻿# @ds/typography
+
+> Универсальный текстовый компонент с едиными токенами стиля — variant / size / weight — и автовыбором семантического тега.
+
+Docs: /snack-v2/components/typography/
+
+## Установка
+
+```sh
+pnpm add @ds/typography
+```
+
+## Когда использовать
+
+- Любой текст в интерфейсе — заголовки, параграфы, подписи, метки.
+- Вместо точечных CSS-классов на `font-size`/`font-weight`.
+
+Когда **не** нужен `Typography`: для чистых UI-примитивов, где текст входит в состав компонента (например, `Button` label), — используйте встроенные пропсы компонента.
+
+## API
+
+### Typography
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | HTML тег для рендеринга |
+| `children` | `ReactNode` | — | no | Дочерние элементы |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests |
+| `size` | `l \| m \| s` | `SIZE.m` | no | Размер типографики |
+| `variant` | `body \| display \| headline \| label \| title` | `VARIANT.body` | no | Вариант типографики |
+| `weight` | `mono \| regular \| thin` | `WEIGHT.regular` | no | Начертание шрифта |
+
+#### Related types
+- `TypographySize` = `l | m | s`
+- `TypographyVariant` = `body | display | headline | label | title`
+- `TypographyWeight` = `mono | regular | thin`
+
+## Примеры
+
+### TypographyBasic
+
+```tsx
+import { Typography } from '@ds/typography';
+
+export function TypographyBasic() {
+  return <Typography>Обычный body-текст по умолчанию</Typography>;
+}
+```
+
+### TypographyHeadline
+
+```tsx
+import { Typography } from '@ds/typography';
+
+export function TypographyHeadline() {
+  return (
+    <Typography variant='headline' size='l'>
+      Заголовок страницы
+    </Typography>
+  );
+}
+```
+
+### TypographyMono
+
+```tsx
+import { Typography } from '@ds/typography';
+
+export function TypographyMono() {
+  return (
+    <Typography variant='body' weight='mono'>
+      const answer = 42
+    </Typography>
+  );
+}
+```
+
+### TypographyPolymorphic
+
+```tsx
+import { Typography } from '@ds/typography';
+
+export function TypographyPolymorphic() {
+  return (
+    <Typography as='span' variant='body'>
+      Body внутри inline-потока
+    </Typography>
+  );
+}
+```

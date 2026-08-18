@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15%2017C17.7614%2017%2020%2014.7614%2020%2012C20%209.23858%2017.7614%207%2015%207M15%2014C16.1046%2014%2017%2013.1046%2017%2012C17%2010.8954%2016.1046%2010%2015%2010M8%208.5L12%205V19L8%2015.5H5V8.5H8Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=SoundOn-bxN4TtdQ.js.map

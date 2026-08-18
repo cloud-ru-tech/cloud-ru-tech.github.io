@@ -1,0 +1,291 @@
+﻿# @ds/theme
+
+> Провайдер оформления — оси (цветовая схема, бренд, плотность, акрил) живут в контексте, полный набор sn-* классов эмитится на DOM-границе.
+
+Docs: /snack-v2/components/theme/
+
+## Установка
+
+```sh
+pnpm add @ds/theme
+```
+
+## Когда использовать
+
+- Хост-приложение задаёт оформление в корне: `RootThemeProvider value={{ colorScheme, brand, density }}` (или `store` для multi-root / MFE через `getGlobalThemeStore().store`).
+- Цветовая схема light/dark берётся из `useColorScheme` (`prefers-color-scheme` + опциональный персист-адаптер) и передаётся в `value.colorScheme`.
+- Часть дерева должна иметь другой бренд / плотность / схему — `ChildThemeProvider` сливает partial-переопределение с ближайшим контекстом.
+- Компонент локально фиксирует ось (мобильная обёртка с `density: 'comfort'`) — `useThemeClassnames({ density })` подмешивает текущие colorScheme/brand из контекста.
+- Нужен бренд-цвет вне предустановленного набора (white-label под клиента) — `RootThemeProvider brandColor='#RRGGBB'` (декларативно) либо хук `useApplyCustomTheme({ color })` (императивно).
+
+> Полный набор `sn-*` обязателен на каждой границе: классы токенов не переопределяются по одной оси через CSS-каскад. Никогда не ставьте одиночный `sn-comfort` руками — для этого есть провайдеры и хук. Старый `ThemeProvider` / `useThemeConfig` (произвольные темы по `themeMap`) — отдельный legacy-механизм, не путать с `RootThemeProvider`.
+
+## API
+
+### ChildThemeProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | yes |  |
+| `className` | `string` | — | no | Дополнительный класс на wrapper-`<div>` (паддинги/фон). Только в wrapper-режиме (без `rootRef`). |
+| `rootRef` | `RefObject<HTMLElement \| null>` | — | no | Внешний элемент для полного слитого набора `sn-*`. Если не задан — провайдер оборачивает children в `<div>` с этим набором. |
+| `value` | `Partial<ThemeAppearance>` | — | yes | Оси, переопределяемые в поддереве. Остальные наследуются от ближайшего родителя (слияние). |
+
+#### Related types
+- `Brand` = `brandA | brandB | brandC | brandD | brandE`
+- `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
+- `ColorScheme` = `dark | light`
+- `Density` = `comfort | compact | spacious`
+- `ThemeAppearance` (interface)
+
+### RootThemeProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `brandColor` | `string` | — | no | Кастомный бренд-цвет потребителя (hex `#rrggbb`) для white-label. Генерирует бренд-палитру из seed-цвета и инжектит scoped `<style>` на бренд-классы этого поддерева. Правило на бренд-классе (а не inline на одном элементе) переживает переэмиты `sn-*` вложенными компонентами (Table и т.п.), поэтому кастомный цвет доходит до всей вложенности. Невалидный hex игнорируется. Глобальная (app-root) альтернатива для порталов — хук `useApplyCustomTheme`. |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | yes |  |
+| `className` | `string` | — | no | Дополнительный класс на wrapper-`<div>` (паддинги/фон). Только в wrapper-режиме (без `rootRef`). |
+| `nonce` | `string` | — | no | CSP-`nonce` для инжектируемого `<style>` кастомного бренд-цвета. |
+| `rootRef` | `RefObject<HTMLElement \| null>` | — | no | Внешний элемент для полного набора `sn-*` (обычно `<html>`/`<body>`). Если не задан — провайдер оборачивает children в `<div>` с этим набором. |
+| `store` | `ThemeAppearanceStore` | — | no | Внешний реактивный стор оформления (`getGlobalThemeStore().store`). Если задан — приоритетнее `value`; подписанные провайдеры обновляются при смене темы без перерендера провайдера. Так один глобальный стор охватывает все микрофронты. Сеттер для shell — `getGlobalThemeStore().setAppearance`. |
+| `value` | `ThemeAppearance` | — | no | Оформление приложения. Используется в static-режиме (один React-корень: SSR — одно значение на запрос, либо CSR с собственным state, напр. `colorScheme` из `useColorScheme`). Для multi-root (single-spa) — см. `store`. |
+
+#### Related types
+- `Brand` = `brandA | brandB | brandC | brandD | brandE`
+- `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
+- `ColorScheme` = `dark | light`
+- `Density` = `comfort | compact | spacious`
+- `ThemeAppearance` (interface)
+- `ThemeAppearanceStore` (interface)
+
+### StoreProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `store` | `ExternalStore<ThemeAppearanceContextValue>` | — | yes |  |
+
+### ThemeProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | Дети, которые будут обёрнуты в провайдер |
+| `defaultTheme` | `string` | — | yes | Значение темы по умолчанию |
+| `themeMap` | `Record<string, string>` | — | yes | Объект с указанием соответсвия темы и css-класса |
+
+### ThemeScope
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `brandColor` | `string` | — | no | Кастомный бренд-цвет (hex). Инжектит scoped `<style>`, переопределяющий бренд-палитру на бренд-классах поддерева. В отличие от inline-переменных, правило на бренд-классе переживает переэмиты `sn-*` внутри (Table/Stepper и т.п.), поэтому кастомный цвет доходит до вложенных компонентов. |
+| `className` | `string` | — | no | Дополнительный класс на wrapper-`<div>` (паддинги/фон вокруг темы). Действует только в wrapper-режиме; при `rootRef` игнорируется (внешним элементом владеет потребитель). |
+| `nonce` | `string` | — | no | CSP-`nonce` для инжектируемого `<style>`. |
+| `rootRef` | `RefObject<HTMLElement \| null>` | — | no | Внешний элемент, на который ставится полный набор `sn-*` (обычно `<html>`/`<body>` для корня). Если не задан — `ThemeScope` рендерит собственный wrapper `<div>` с этим набором. |
+
+## Примеры
+
+### BrandSwitch
+
+```tsx
+import { Block } from '@ds/block';
+import { Button } from '@ds/button';
+import { Counter } from '@ds/counter';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { BRAND, Brand, ChildThemeProvider } from '@ds/theme';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const BRAND_ITEMS = Object.values(BRAND).map(value => ({ value, label: value }));
+
+export function BrandSwitch() {
+  const [brand, setBrand] = useState<Brand>(BRAND.A);
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl items={BRAND_ITEMS} value={brand} onChange={value => setBrand(value as Brand)} />
+
+      {/* ChildThemeProvider сливает ось `brand` с ближайшим контекстом и реэмитит полный набор
+          sn-* на своей границе — акцентные цвета компонентов ниже меняются вслед за брендом. */}
+      <ChildThemeProvider value={{ brand }}>
+        <Block>
+          <Flex gap='2m' align='center' wrap>
+            <Button appearance='primary' label='Действие' />
+            <Tag appearance='primary' label='Бренд' />
+            <Counter value={8} appearance='primary' />
+          </Flex>
+        </Block>
+      </ChildThemeProvider>
+    </Flex>
+  );
+}
+```
+
+### ColorSchemeToggle
+
+```tsx
+import { Block } from '@ds/block';
+import { Button } from '@ds/button';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { ChildThemeProvider, COLOR_SCHEME, ColorScheme } from '@ds/theme';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const SCHEME_ITEMS = [
+  { value: COLOR_SCHEME.Light, label: 'Светлая' },
+  { value: COLOR_SCHEME.Dark, label: 'Тёмная' },
+];
+
+export function ColorSchemeToggle() {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(COLOR_SCHEME.Light);
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl
+        items={SCHEME_ITEMS}
+        value={colorScheme}
+        onChange={value => setColorScheme(value as ColorScheme)}
+      />
+
+      {/* В приложении colorScheme — источник истины `useColorScheme` (cookie + prefers-color-scheme),
+          а корень держит RootThemeProvider. Здесь ChildThemeProvider переключает схему для поддерева:
+          материал-подложка Block и компоненты на ней перекрашиваются вслед за схемой. */}
+      <ChildThemeProvider value={{ colorScheme }}>
+        <Block>
+          <Flex gap='2m' align='center' wrap>
+            <Button appearance='primary' label='Действие' />
+            <Button appearance='neutral' view='outline' label='Отмена' />
+            <Tag appearance='blue' label='Метка' />
+          </Flex>
+        </Block>
+      </ChildThemeProvider>
+    </Flex>
+  );
+}
+```
+
+### CustomBrandColor
+
+```tsx
+import { Block } from '@ds/block';
+import { Button } from '@ds/button';
+import { Counter } from '@ds/counter';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { RootThemeProvider } from '@ds/theme';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const COLOR_ITEMS = [
+  { value: '#ff7a00', label: 'Оранжевый' },
+  { value: '#8a2be2', label: 'Фиолетовый' },
+  { value: '#0077ff', label: 'Синий' },
+  { value: '#e5006e', label: 'Розовый' },
+];
+
+export function CustomBrandColor() {
+  const [color, setColor] = useState('#ff7a00');
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl items={COLOR_ITEMS} value={color} onChange={value => setColor(String(value))} />
+
+      {/* brandColor генерирует палитру `--sn-brand-color-primary-*` из одного seed-цвета — акцент
+          компонентов ниже перекрашивается вслед за выбором. */}
+      <RootThemeProvider value={{ colorScheme: 'light', brand: 'brandA', brandRole: 'main' }} brandColor={color}>
+        <Block>
+          <Flex gap='2m' align='center' wrap>
+            <Button appearance='primary' label='Действие' />
+            <Tag appearance='primary' label='Бренд' />
+            <Counter value={8} appearance='primary' />
+          </Flex>
+        </Block>
+      </RootThemeProvider>
+    </Flex>
+  );
+}
+```
+
+### CustomBrandColorHook
+
+```tsx
+import { Block } from '@ds/block';
+import { Button } from '@ds/button';
+import { Counter } from '@ds/counter';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { RootThemeProvider, useApplyCustomTheme } from '@ds/theme';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const COLOR_ITEMS = [
+  { value: '#8a2be2', label: 'Фиолетовый' },
+  { value: '#ff7a00', label: 'Оранжевый' },
+  { value: '#0077ff', label: 'Синий' },
+];
+
+// `scope` — CSS-селектор корня поддерева. Здесь правило скоуплено на `#brand-hook-scope`, поэтому
+// бренд-акцент перекрашивается только внутри этого блока (и во всех компонентах ниже по дереву — Button,
+// Tag, Counter). Без `scope` правило было бы глобальным и перекрасило бы всю страницу, включая порталы.
+const SCOPE_ID = 'brand-hook-scope';
+
+export function CustomBrandColorHook() {
+  const [color, setColor] = useState('#8a2be2');
+
+  useApplyCustomTheme({ color, scope: `#${SCOPE_ID}` });
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl items={COLOR_ITEMS} value={color} onChange={value => setColor(String(value))} />
+
+      <div id={SCOPE_ID}>
+        <RootThemeProvider value={{ colorScheme: 'light', brand: 'brandA', brandRole: 'main' }}>
+          <Block>
+            <Flex gap='2m' align='center' wrap>
+              <Button appearance='primary' label='Внутри scope' />
+              <Tag appearance='primary' label='Бренд' />
+              <Counter value={8} appearance='primary' />
+            </Flex>
+          </Block>
+        </RootThemeProvider>
+      </div>
+    </Flex>
+  );
+}
+```
+
+### LocalDensity
+
+```tsx
+import { Button } from '@ds/button';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { DENSITY, Density, useThemeClassnames } from '@ds/theme';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const DENSITY_ITEMS = Object.values(DENSITY).map(value => ({ value, label: value }));
+
+function DensitySurface({ density }: { density: Density }) {
+  // useThemeClassnames({ density }) подмешивает текущие colorScheme/brand из контекста и навешивает
+  // ПОЛНЫЙ набор sn-* (а не одиночный sn-comfort) — внутренние отступы компонентов меняются вслед
+  // за плотностью, а тёмная тема при этом не ломается.
+  const className = useThemeClassnames({ density });
+
+  return (
+    <div className={className}>
+      <Flex gap='2m' align='center' wrap>
+        <Button appearance='primary' label='Кнопка' />
+        <Button appearance='neutral' view='outline' label='Ещё' />
+        <Tag appearance='primary' label='Тег' />
+      </Flex>
+    </div>
+  );
+}
+
+export function LocalDensity() {
+  const [density, setDensity] = useState<Density>(DENSITY.Compact);
+
+  return (
+    <Flex direction='column' gap='2m' align='flex-start'>
+      <SegmentControl items={DENSITY_ITEMS} value={density} onChange={value => setDensity(value as Density)} />
+      <DensitySurface density={density} />
+    </Flex>
+  );
+}
+```

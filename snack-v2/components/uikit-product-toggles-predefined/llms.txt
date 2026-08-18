@@ -1,0 +1,180 @@
+﻿# @ds/uikit-product-toggles-predefined
+
+> Кликабельные карточки выбора (ToggleCard) и группа выбора (ToggleGroup) — предзаготовленный паттерн single/multiple-выбора на базе @ds/card.
+
+Docs: /snack-v2/components/uikit-product-toggles-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-toggles-predefined
+```
+
+## Когда использовать
+
+- Выбор тарифа, конфигурации, плана — когда варианты крупные и им нужны иконка + заголовок + описание.
+- Single-выбор (один вариант из набора) или multiple-выбор (несколько опций-аддонов).
+- Когда нужна увеличенная hit-area: вся карточка кликабельна и операбельна с клавиатуры.
+
+Когда **не** нужен `TogglesPredefined`:
+
+- Компактный список бинарных опций со Switch:
+  - используйте [`SwitchRow`](/components/uikit-product-switch-row).
+- Один inline-чекбокс или радио без описания:
+  - используйте [`Checkbox` / `Radio`](/components/toggles/checkbox).
+
+## API
+
+### ToggleCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Основной текст под заголовком |
+| `disabled` | `boolean` | `false` | no | Заблокированное состояние: интерактив отключён |
+| `emblem` | `Emblem` | — | no | Ведущая эмблема. Передаются только параметры — сам `IconPredefined` встроен в компонент; `size` эмблемы выводится из `size` карточки. |
+| `promoBadge` | `string \| Pick<PromoTagProps, "label" \| "appearance">` | — | no | Промо-бейдж в правом верхнем углу карточки |
+| `size` | `l \| m \| s` | `m` | no | Размер карточки — масштабирует padding, gap, типографику и `radius` контейнера `@ds/card` |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `truncate` | `{ title?: number; description?: number; } \| undefined` | `'{ title: 1; description: 2; }'` | no | Максимальное число строк до обрезки. |
+| `value` | `string` | — | yes | Значение карточки в контексте `ToggleGroup` |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Emblem` (alias)
+- `EmblemIcon` (interface)
+- `EmblemPicture` (interface)
+- `PolymorphicRef` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `l | m | s`
+
+### ToggleGroup
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `breakpoint` | `number` | — | no | Минимальная ширина карточки для горизонтальной раскладки (px) |
+| `children` | `ReactNode` | — | no | Дочерние карточки `ToggleCard` |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string \| string[]` | — | no | Начальное состояние |
+| `gap` | `l \| m \| s` | — | no | Расстояние между карточками |
+| `onChange` | `((value: string) => void) \| ((value: string[]) => void) \| undefined` | — | no | Controlled обработчик измения состояния |
+| `orientation` | `horizontal \| vertical` | — | no | Направление раскладки |
+| `selectionMode` | `multiple \| single` | — | no | Режим выбора |
+| `value` | `string \| string[]` | — | no | Controlled состояние |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+
+export function Basic() {
+  return (
+    <ToggleGroup defaultValue='pro'>
+      <ToggleCard value='start' title='Тариф Start' description='10 ГБ хранилища' />
+      <ToggleCard value='pro' title='Тариф Pro' description='100 ГБ хранилища, приоритетная поддержка' />
+      <ToggleCard value='enterprise' title='Тариф Enterprise' description='Безлимит и выделенный менеджер' />
+    </ToggleGroup>
+  );
+}
+```
+
+### Controlled
+
+```tsx
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { useState } from 'react';
+
+export function Controlled() {
+  const [plan, setPlan] = useState<string | undefined>('pro');
+
+  return (
+    <ToggleGroup value={plan} onChange={(next: string | undefined) => setPlan(next)}>
+      <ToggleCard value='start' title='Тариф Start' description={plan === 'start' ? 'Выбран' : '10 ГБ хранилища'} />
+      <ToggleCard value='pro' title='Тариф Pro' description={plan === 'pro' ? 'Выбран' : '100 ГБ хранилища'} />
+    </ToggleGroup>
+  );
+}
+```
+
+### Horizontal
+
+```tsx
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+
+export function Horizontal() {
+  return (
+    <ToggleGroup orientation='horizontal' gap='m' breakpoint={200} defaultValue='month'>
+      <ToggleCard value='month' title='Помесячно' description='Гибкая оплата' />
+      <ToggleCard value='year' title='Годовая' description='Скидка 20%' />
+    </ToggleGroup>
+  );
+}
+```
+
+### Multiple
+
+```tsx
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { useState } from 'react';
+
+export function Multiple() {
+  const [value, setValue] = useState<string[]>(['backup']);
+
+  return (
+    <ToggleGroup selectionMode='multiple' value={value} onChange={next => setValue(next ?? [])} gap='m'>
+      <ToggleCard value='backup' title='Резервное копирование' description='Ежедневные снапшоты' />
+      <ToggleCard value='monitoring' title='Мониторинг' description='Алерты и метрики 24/7' />
+      <ToggleCard value='cdn' title='CDN' description='Раздача статики по миру' />
+    </ToggleGroup>
+  );
+}
+```
+
+### WithIcon
+
+```tsx
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+
+export function WithIcon() {
+  return (
+    <ToggleGroup defaultValue='cpu'>
+      <ToggleCard value='cpu' emblem={{ icon: PlaceholderSVG }} title='CPU' description='4 vCPU, 8 ГБ RAM' />
+      <ToggleCard value='gpu' emblem={{ icon: PlaceholderSVG }} title='GPU' description='1× A100, 80 ГБ' />
+    </ToggleGroup>
+  );
+}
+```
+
+### WithPromoBadge
+
+```tsx
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+
+export function WithPromoBadge() {
+  return (
+    <ToggleGroup defaultValue='pro'>
+      <ToggleCard value='basic' emblem={{ icon: PlaceholderSVG }} title='Basic' description='Для старта' />
+      <ToggleCard
+        value='pro'
+        emblem={{ icon: PlaceholderSVG }}
+        title='Pro'
+        description='Популярный тариф'
+        promoBadge='−20%'
+      />
+      <ToggleCard
+        value='enterprise'
+        emblem={{ icon: PlaceholderSVG }}
+        title='Enterprise'
+        description='Для команд'
+        promoBadge={{ label: 'New', appearance: 'blue' }}
+      />
+    </ToggleGroup>
+  );
+}
+```

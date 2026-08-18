@@ -1,0 +1,162 @@
+﻿# @ds/uikit-product-promo-tag-predefined
+
+> Предопределённый промо-тег продукта с локализованным текстом и tooltip — пресеты product-статусов Cloud.ru.
+
+Docs: /snack-v2/components/uikit-product-promo-tag-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-promo-tag-predefined
+```
+
+## Когда использовать
+
+- Нужен стандартный product-тег (Preview, Connecting, Partner, Free tier и др.) без ручной сборки текста и внешнего вида.
+- В карточках сервисов, виджетах и списках продуктов Cloud.ru.
+
+Когда **не** нужен `PromoTagPredefined`:
+
+- Произвольный текст и цвет — используйте [`PromoTag`](/components/promo-tag/promo-tag) напрямую.
+
+## API
+
+### PromoTagPredefined
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `context` | `functional \| service` | — | no | Контекст тега с вариантом "preview" |
+| `data-test-id` | `string` | — | no |  |
+| `tooltip` | `TooltipSettings \| (TooltipSettings & { onSupportClick(e: MouseEvent<Element, MouseEvent>): void; }) \| (TooltipSettings & { ...; })` | — | no | Настройки тултипа Настройки тултипа; если передан — `tip` обязателен. Без `tooltip` тултип не рендерится |
+| `variant` | `connecting \| default \| freeTier \| latest \| partner \| preview \| private \| public \| soon` | — | yes | Вариант промо-тега |
+
+#### Related types
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TooltipSettings` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+## Примеры
+
+### Connecting
+
+```tsx
+import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { MouseEvent } from 'react';
+
+function handleSupportClick(e: MouseEvent) {
+  e.preventDefault();
+}
+
+export function Connecting() {
+  return <PromoTagPredefined variant={VARIANTS.Connecting} tooltip={{ onSupportClick: handleSupportClick }} />;
+}
+```
+
+### CustomTip
+
+```tsx
+import { Link } from '@ds/link';
+import { Typography } from '@ds/typography';
+import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { Fragment, MouseEvent } from 'react';
+
+const CUSTOM_TOOLTIP_CONTENT = `Demo content, for replacement, use the property: ◆Slot...
+Connect your local component with unique content to this property`;
+
+const customTipVariants = [VARIANTS.Soon, VARIANTS.Latest, VARIANTS.Private, VARIANTS.Public] as const;
+
+function handleLinkClick(e: MouseEvent) {
+  e.preventDefault();
+}
+
+function CustomTooltipTip() {
+  return (
+    <>
+      <Typography variant='body' size='s' style={{ whiteSpace: 'pre-line' }}>
+        {CUSTOM_TOOLTIP_CONTENT}
+      </Typography>
+      <Link underlined insideText appearance='invertNeutral' label='Link text' onClick={handleLinkClick} />
+    </>
+  );
+}
+
+export function CustomTip() {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'auto auto',
+        gap: 12,
+        alignItems: 'center',
+        justifyContent: 'start',
+      }}
+    >
+      <Typography variant='body' size='s'>
+        Без тултипа
+      </Typography>
+      <Typography variant='body' size='s'>
+        С тултипом
+      </Typography>
+      {customTipVariants.map(variant => (
+        <Fragment key={variant}>
+          <div>
+            <PromoTagPredefined variant={variant} />
+          </div>
+          <div>
+            <PromoTagPredefined variant={variant} tooltip={{ tip: <CustomTooltipTip /> }} />
+          </div>
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+```
+
+### Default
+
+```tsx
+import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+
+export function Default() {
+  return <PromoTagPredefined variant={VARIANTS.Default} />;
+}
+```
+
+### FreeTier
+
+```tsx
+import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+
+export function FreeTier() {
+  return <PromoTagPredefined variant={VARIANTS.FreeTier} />;
+}
+```
+
+### Partner
+
+```tsx
+import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+
+export function Partner() {
+  return <PromoTagPredefined variant={VARIANTS.Partner} />;
+}
+```
+
+### PreviewFunctional
+
+```tsx
+import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+
+export function PreviewFunctional() {
+  return <PromoTagPredefined variant={VARIANTS.Preview} context={PREVIEW_CONTEXT.Functional} />;
+}
+```
+
+### PreviewService
+
+```tsx
+import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+
+export function PreviewService() {
+  return <PromoTagPredefined variant={VARIANTS.Preview} context={PREVIEW_CONTEXT.Service} />;
+}
+```

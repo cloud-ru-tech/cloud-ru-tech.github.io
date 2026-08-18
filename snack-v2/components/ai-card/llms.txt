@@ -1,0 +1,109 @@
+﻿# @ds/ai-card
+
+> Selectable AI-карточка с независимым boolean toggle, single-line заголовком и опциональным контентом.
+
+Docs: /snack-v2/components/ai-card/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-card
+```
+
+## Когда использовать
+
+- Карточки выбора в AI-сценариях (карточки-пресеты, генеративные варианты).
+- Настройки, где каждая опция — самостоятельный переключатель.
+- Выделенные блоки с состоянием «выделено / не выделено».
+
+### Когда не нужен
+
+- Один из группы (radio-семантика):
+  - используйте `SegmentControl` либо обёртку с собственным состоянием.
+- Статичный контейнер без выбора:
+  - используйте `@ds/card`.
+- Действие-кнопка:
+  - используйте `@ds/button`.
+
+## API
+
+### AiCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | `false` | no | Selected-состояние карточки. Controlled — источник истины в родителе. По умолчанию `false`. |
+| `children` | `ReactNode` | — | no | Контент карточки. Не рендерится, если не задан. |
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-card` | no |  |
+| `disabled` | `boolean` | `false` | no | Disabled-состояние: opacity 0.4, нативная блокировка кликов и клавиатуры. |
+| `onChange` | `((checked: boolean) => void)` | — | no | Срабатывает при toggle (клик / Enter / Space). Получает новое значение `checked`. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нативный обработчик клика. Срабатывает после `onChange` (toggle первичен). Не вызывается для disabled-карточки — браузер сам не дёргает onClick на disabled button. |
+| `title` | `string` | — | no | Заголовок карточки. Semibold, single-line с ellipsis. Не рендерится, если не задан. |
+
+## Примеры
+
+### Controlled
+
+```tsx
+import { AiCard } from '@ds/ai-card';
+import { useState } from 'react';
+
+export function Controlled() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <AiCard title={`Controlled (${checked ? 'on' : 'off'})`} checked={checked} onChange={setChecked}>
+      Состояние хранится в родителе.
+    </AiCard>
+  );
+}
+```
+
+### Default
+
+```tsx
+import { AiCard } from '@ds/ai-card';
+import { useState } from 'react';
+
+export function Default() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <AiCard title='Card title' checked={checked} onChange={setChecked}>
+      Default content
+    </AiCard>
+  );
+}
+```
+
+### Disabled
+
+```tsx
+import { AiCard } from '@ds/ai-card';
+
+export function Disabled() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiCard title='Disabled' disabled>
+        Не реагирует на клики
+      </AiCard>
+      <AiCard title='Disabled + selected' disabled checked>
+        Заблокирован в selected-состоянии
+      </AiCard>
+    </div>
+  );
+}
+```
+
+### Selected
+
+```tsx
+import { AiCard } from '@ds/ai-card';
+import { useState } from 'react';
+
+export function Selected() {
+  const [checked, setChecked] = useState(true);
+  return (
+    <AiCard title='Selected card' checked={checked} onChange={setChecked}>
+      Card content in selected state
+    </AiCard>
+  );
+}
+```

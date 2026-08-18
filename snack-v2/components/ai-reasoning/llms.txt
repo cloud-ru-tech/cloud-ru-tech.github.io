@@ -1,0 +1,40 @@
+﻿# @ds/ai-reasoning
+
+> Строка reasoning в AI-цепочке со степпер-линией, иконкой и текстовым описанием шага.
+
+Docs: /snack-v2/components/ai-reasoning/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-reasoning
+```
+
+## Когда использовать
+
+- В timeline/chain-of-thought интерфейсах, где нужно компактно показать служебный reasoning-шаг.
+- Перед или между блоками выполнения tool-вызовов.
+
+## API
+
+### AiReasoning
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | no | Дополнительный контент под описанием (например, карточка с деталями). |
+| `className` | `string` | — | no | Дополнительный CSS-класс корневого контейнера. |
+| `connector` | `boolean` | — | no | Явно управляет нижним коннектором. Если не передан, совпадает с `stepperLine`. |
+| `data-test-id` | `string` | `ai-reasoning` | no |  |
+| `description` | `ReactNode` | — | no | Текстовый контент блока reasoning. |
+| `stepperLine` | `boolean` | `true` | no | Показывает продолжение степпера вниз (для промежуточного шага). |
+
+## Примеры
+
+### Default
+
+```tsx
+import { AiReasoning } from '@ds/ai-reasoning';
+
+export function Default() {
+  return <AiReasoning description='Tool is reasoning about the next action' />;
+}
+```

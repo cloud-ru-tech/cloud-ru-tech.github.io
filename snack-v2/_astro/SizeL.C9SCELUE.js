@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{r as t,t as n}from"./Tabs.D2vqjIqs.js";var r=e();function i(){return(0,r.jsx)(n,{defaultValue:`a`,children:(0,r.jsxs)(n.TabBar,{size:t.L,children:[(0,r.jsx)(n.Tab,{value:`a`,label:`Первая`}),(0,r.jsx)(n.Tab,{value:`b`,label:`Вторая`})]})})}export{i as SizeL};

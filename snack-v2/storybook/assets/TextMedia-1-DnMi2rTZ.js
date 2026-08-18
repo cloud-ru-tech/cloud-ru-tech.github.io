@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%205.20755L4%204V17.8868L12%2020M12%205.20755L20%204V17.8868L12%2020M12%205.20755V20M6%207.9731L10%208.9731M6%2011.4758L10%2012.4758M6%2014.9785L10%2015.9785M18%208L14%209M18%2011.5027L14%2012.5027M18%2015.0054L14%2016.0054'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=TextMedia-1-DnMi2rTZ.js.map

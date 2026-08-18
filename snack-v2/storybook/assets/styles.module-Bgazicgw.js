@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a=e((()=>{t=`_panel_jdl4g_1`,n=`_form_jdl4g_6`,r=`_grid_jdl4g_14`,i={panel:t,form:n,grid:r}}));export{i as n,a as t};
+//# sourceMappingURL=styles.module-Bgazicgw.js.map

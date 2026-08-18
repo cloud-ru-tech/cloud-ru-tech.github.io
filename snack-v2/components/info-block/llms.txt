@@ -1,0 +1,102 @@
+﻿# @ds/info-block
+
+> Информационный блок — заголовок, описание, опциональные иконка и футер. Базовый строительный элемент для пустых состояний, подсказок и карточек.
+
+Docs: /snack-v2/components/info-block/
+
+## Установка
+
+```sh
+pnpm add @ds/info-block
+```
+
+## Когда использовать
+
+- Пустое состояние списка/таблицы («Нет данных», «Ничего не найдено»).
+- Подсказка внутри формы или карточки.
+- Заголовок раздела с подзаголовком и кнопками действия.
+- Информационная вставка над списком — например, объяснение статуса.
+
+Когда **не** нужен: если нужен только заголовок без описания — возьмите `Typography`. Если нужна полноценная карточка с рамкой — возьмите компонент-карточку.
+
+## API
+
+### InfoBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `align` | `horizontal \| vertical` | `vertical` | no | Расположение элементов |
+| `className` | `string` | — | no | Дополнительный класс |
+| `content` | `ReactNode` | — | no | Подзаголовок |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `ReactNode` | — | no | Вложенный контент (например ButtonGroup) |
+| `icon` | `IconPredefinedProps` | — | no | Иконка |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `title` | `string` | — | no | Заголовок |
+
+#### Related types
+- `Align` = `horizontal | vertical`
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `IconPredefinedProps` (interface)
+- `Size` = `l | m | s`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { InfoBlock } from '@ds/info-block';
+
+export function Basic() {
+  return <InfoBlock title='Заголовок' content='Короткое описание под заголовком.' />;
+}
+```
+
+### Horizontal
+
+```tsx
+import { InfoBlock } from '@ds/info-block';
+
+export function Horizontal() {
+  return (
+    <InfoBlock
+      align='horizontal'
+      size='m'
+      title='Горизонтальный вариант'
+      content='Иконка (если есть) и текст располагаются в строку.'
+    />
+  );
+}
+```
+
+### Sizes
+
+```tsx
+import { InfoBlock } from '@ds/info-block';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <InfoBlock size='s' title='Size S' content='Компактный блок' />
+      <InfoBlock size='m' title='Size M' content='Средний блок' />
+      <InfoBlock size='l' title='Size L' content='Крупный блок для пустых состояний' />
+    </div>
+  );
+}
+```
+
+### WithIcon
+
+```tsx
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { InfoBlock } from '@ds/info-block';
+
+export function WithIcon() {
+  return (
+    <InfoBlock
+      title='С иконкой'
+      content='Иконка передаётся через проп icon как IconPredefinedProps.'
+      icon={{ icon: PlaceholderSVG, appearance: 'primary', background: true }}
+    />
+  );
+}
+```

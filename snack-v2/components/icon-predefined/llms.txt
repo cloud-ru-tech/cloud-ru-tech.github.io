@@ -1,0 +1,93 @@
+﻿# @ds/icon-predefined
+
+> SVG-иконка с предустановленным оформлением — цветной подложкой, размером и формой контейнера.
+
+Docs: /snack-v2/components/icon-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/icon-predefined
+```
+
+## Когда использовать
+
+- Иконка-маркер рядом с заголовком раздела или в карточке.
+- Empty-state и info-плашки, где нужен крупный визуальный акцент.
+- Иконки в `Status`, `Alert`, `InfoBlock` — там IconPredefined даёт согласованный фон и размер.
+
+Когда **не** нужен: декоративные иконки внутри текста, иконки внутри `Button` (там собственный слот), функциональные иконки в тулбарах (используйте сырой SVG).
+
+## API
+
+### IconPredefined
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `primary` | no | Внешний вид |
+| `background` | `boolean` | `true` | no | Наличие цветной подложки |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `JSXElementConstructor<{ size?: number \| undefined; className?: string \| undefined; }>` | — | yes | JSX иконки |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `shape` | `rounded \| squared` | `rounded` | no | Форма: круглая или квадратная |
+| `size` | `3xl \| 5xl \| l \| m \| s` | `m` | no | Размер |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Size` = `3xl | 5xl | l | m | s`
+
+## Примеры
+
+### Appearances
+
+```tsx
+import { IconPredefined } from '@ds/icon-predefined';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Appearances() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <IconPredefined icon={PlaceholderSVG} appearance='primary' />
+      <IconPredefined icon={PlaceholderSVG} appearance='neutral' />
+      <IconPredefined icon={PlaceholderSVG} appearance='red' />
+      <IconPredefined icon={PlaceholderSVG} appearance='green' />
+      <IconPredefined icon={PlaceholderSVG} appearance='blue' />
+      <IconPredefined icon={PlaceholderSVG} appearance='violet' />
+    </div>
+  );
+}
+```
+
+### Shapes
+
+```tsx
+import { IconPredefined } from '@ds/icon-predefined';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Shapes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <IconPredefined icon={PlaceholderSVG} shape='rounded' />
+      <IconPredefined icon={PlaceholderSVG} shape='squared' />
+      <IconPredefined icon={PlaceholderSVG} shape='rounded' background={false} />
+    </div>
+  );
+}
+```
+
+### Sizes
+
+```tsx
+import { IconPredefined } from '@ds/icon-predefined';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <IconPredefined icon={PlaceholderSVG} size='m' />
+      <IconPredefined icon={PlaceholderSVG} size='l' />
+      <IconPredefined icon={PlaceholderSVG} size='5xl' />
+    </div>
+  );
+}
+```

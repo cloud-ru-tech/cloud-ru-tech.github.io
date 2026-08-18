@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s,c=e((()=>{t=`_scrollArea_15srg_1`,n=`_pageScrollDemo_15srg_11`,r=`_mockAppHeader_15srg_16`,i=`_mockTabBar_15srg_17`,a=`_fullWidthDemo_15srg_41`,o=`_fullWidthDemoRow_15srg_49`,s={scrollArea:t,pageScrollDemo:n,mockAppHeader:r,mockTabBar:i,fullWidthDemo:a,fullWidthDemoRow:o}}));export{s as n,c as t};
+//# sourceMappingURL=styles.module-s2CWiWjM.js.map

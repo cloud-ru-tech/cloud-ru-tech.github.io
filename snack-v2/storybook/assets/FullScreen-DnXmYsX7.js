@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%206V5.25H3.25V6H4ZM20%206H20.75V5.25H20V6ZM20%2018V18.75H20.75V18H20ZM4%2018H3.25V18.75H4V18ZM4%206V6.75H20V6V5.25H4V6ZM20%206H19.25V18H20H20.75V6H20ZM20%2018V17.25H4V18V18.75H20V18ZM4%2018H4.75V6H4H3.25V18H4Z'%20fill='black'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=FullScreen-DnXmYsX7.js.map

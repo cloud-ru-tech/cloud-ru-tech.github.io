@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Rating.C_Cl3JGM.js";var n=e();function r(){return(0,n.jsx)(t,{count:5,defaultValue:4,readonly:!0,allowHalf:!1,allowClear:!1})}export{r as Readonly};

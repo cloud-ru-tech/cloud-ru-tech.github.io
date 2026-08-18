@@ -1,0 +1,180 @@
+﻿# @ds/adaptive
+
+> React Context текущей раскладки (layoutType) — переключает компоненты дизайн-системы между mobile и desktop поверхностями.
+
+Docs: /snack-v2/components/adaptive/
+
+## Установка
+
+```sh
+pnpm add @ds/adaptive
+```
+
+## Когда использовать
+
+- Приложение использует адаптивные компоненты дизайн-системы и должно переключать их между mobile и desktop поверхностями. Провайдер ставится один раз в корне.
+- Раскладка считается в корне через `useAdaptiveBootstrap()` (user-agent + media-query) и раздаётся вложенным компонентам без проброса пропа.
+- Микрофронт получает раскладку из реактивного стора хост-приложения — провайдер подключается через `store` (адаптер собирается `createAdaptiveStore`).
+- Серверный рендеринг: раскладка вычисляется из user-agent запроса через подпуть `@ds/adaptive/ssr` (чистые функции без React Context).
+
+Точечно зафиксировать платформу для поддерева можно вложенным `<AdaptiveProvider layoutType=…>` или HOC `withLayoutType(Component, …)` — он затеняет внешний контекст. Пропа `layoutType` у самих компонентов нет: форс идёт только через контекст.
+
+## API
+
+### AdaptiveProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | yes |  |
+| `layoutType` | `desktop \| desktopSmall \| mobile \| tablet` | — | no | Статичная раскладка (SSR — значение на запрос, либо `useAdaptiveBootstrap()` в корне CSR). Реактивный источник — через `store`. |
+| `store` | `AdaptiveStore` | — | no | Внешний реактивный стор раскладки; приоритетнее `layoutType`, обновляет подписчиков без перерендера провайдера. |
+
+#### Related types
+- `AdaptiveStore` (interface)
+- `LayoutType` = `desktop | desktopSmall | mobile | tablet`
+
+## Примеры
+
+### CustomBreakpoints
+
+```tsx
+import { AdaptiveProvider, isMobileLayout, useAdaptiveBootstrap, useAdaptiveLayout } from '@ds/adaptive';
+import { Tag } from '@ds/tag';
+import { Typography } from '@ds/typography';
+import { Flex } from '@ds/uikit-product-flex';
+
+// Раскладка приходит из контекста; Tag перекрашивается, когда ширина окна пересекает порог.
+function LayoutSurface() {
+  const { layoutType } = useAdaptiveLayout();
+  const mobile = isMobileLayout(layoutType);
+
+  return <Tag appearance={mobile ? 'blue' : 'green'} label={`layoutType: ${layoutType}`} />;
+}
+
+export function CustomBreakpoints() {
+  // Брейкпоинты переопределяются на уровне приложения: mobile-порог опущен с 767 до 480 px.
+  // useAdaptiveBootstrap() читает ширину окна в корне приложения и передаёт результат в AdaptiveProvider.
+  const { layoutType } = useAdaptiveBootstrap({ breakpoints: { mobile: 480 } });
+
+  return (
+    <AdaptiveProvider layoutType={layoutType}>
+      <Flex direction='column' gap='2m' align='flex-start'>
+        <Typography variant='body' size='s'>
+          Порог mobile опущен до 480 px. Сузьте окно до этой ширины, чтобы раскладка стала мобильной.
+        </Typography>
+        <LayoutSurface />
+      </Flex>
+    </AdaptiveProvider>
+  );
+}
+```
+
+### LayoutTypeOverride
+
+```tsx
+import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@ds/adaptive';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { Typography } from '@ds/typography';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const CONTEXT_ITEMS = [
+  { value: LAYOUT_TYPE.Mobile, label: 'mobile' },
+  { value: LAYOUT_TYPE.Desktop, label: 'desktop' },
+];
+
+// Раскладка из общего контекста (AdaptiveProvider выше) — следует за переключателем.
+function FromContext() {
+  const { layoutType } = useAdaptiveLayout();
+
+  return (
+    <Flex gap='1m' align='center'>
+      <Typography variant='body' size='s'>
+        из контекста:
+      </Typography>
+      <Tag appearance={isMobileLayout(layoutType) ? 'blue' : 'green'} label={layoutType} />
+    </Flex>
+  );
+}
+
+// Форс раскладки в поддереве — вложенный `<AdaptiveProvider layoutType='desktop'>` затеняет внешний
+// контекст (то же делает HOC `withLayoutType(Component, 'desktop')` на module-scope). Эта ветка
+// остаётся desktop при любом значении переключателя — пропа `layoutType` у компонента нет.
+function ForcedDesktop() {
+  const { layoutType } = useAdaptiveLayout();
+
+  return (
+    <Flex gap='1m' align='center'>
+      <Typography variant='body' size='s'>
+        форс поддерева на desktop:
+      </Typography>
+      <Tag appearance='green' label={layoutType} />
+    </Flex>
+  );
+}
+
+export function LayoutTypeOverride() {
+  const [context, setContext] = useState<LayoutType>(LAYOUT_TYPE.Mobile);
+
+  return (
+    <AdaptiveProvider layoutType={context}>
+      <Flex direction='column' gap='2m' align='flex-start'>
+        <SegmentControl items={CONTEXT_ITEMS} value={context} onChange={value => setContext(value as LayoutType)} />
+        <FromContext />
+        <AdaptiveProvider layoutType={LAYOUT_TYPE.Desktop}>
+          <ForcedDesktop />
+        </AdaptiveProvider>
+      </Flex>
+    </AdaptiveProvider>
+  );
+}
+```
+
+### ProviderBasic
+
+```tsx
+import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@ds/adaptive';
+import { SegmentControl } from '@ds/segment-control';
+import { Tag } from '@ds/tag';
+import { Typography } from '@ds/typography';
+import { Flex } from '@ds/uikit-product-flex';
+import { useState } from 'react';
+
+const LAYOUT_ITEMS = Object.values(LAYOUT_TYPE).map(value => ({ value, label: value }));
+
+// Потребитель берёт раскладку из AdaptiveProvider через useAdaptiveLayout() — без пропа и обёрток.
+// Так же ведут себя Adaptive*-компоненты внутри (на mobile уходят в BottomSheet).
+function LayoutSurface() {
+  const { layoutType } = useAdaptiveLayout();
+  const mobile = isMobileLayout(layoutType);
+
+  return (
+    <Flex gap='2m' align='center' wrap>
+      <Tag
+        appearance={mobile ? 'blue' : 'green'}
+        label={mobile ? 'Мобильная ветка → BottomSheet' : 'Десктопная ветка'}
+      />
+      <Typography variant='body' size='s'>
+        useAdaptiveLayout(): {layoutType}
+      </Typography>
+    </Flex>
+  );
+}
+
+export function ProviderBasic() {
+  const [layoutType, setLayoutType] = useState<LayoutType>(LAYOUT_TYPE.Desktop);
+
+  return (
+    <AdaptiveProvider layoutType={layoutType}>
+      <Flex direction='column' gap='2m' align='flex-start'>
+        <SegmentControl
+          items={LAYOUT_ITEMS}
+          value={layoutType}
+          onChange={value => setLayoutType(value as LayoutType)}
+        />
+        <LayoutSurface />
+      </Flex>
+    </AdaptiveProvider>
+  );
+}
+```

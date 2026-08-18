@@ -1,0 +1,200 @@
+﻿# @ds/ai-suggestion
+
+> AI-подсказки — простой чип и раскрывающаяся группа с вложенными подсказками.
+
+Docs: /snack-v2/components/ai-suggestion/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-suggestion
+```
+
+## Когда использовать
+
+- Подсказки в AI-чате или поиске с генерацией.
+- Быстрые действия рядом с полем ввода (suggested prompts).
+
+## API
+
+### AiSuggestionParent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `defaultExpanded` | `boolean` | `false` | no | Uncontrolled — initial expanded |
+| `disabled` | `boolean` | `false` | no | Блокирует взаимодействие |
+| `expanded` | `boolean` | — | no | Controlled — раскрыт (Figma: Activated=On) |
+| `icon` | `ReactNode` | — | no | Иконка слева от текста |
+| `items` | `AiSuggestionParentItem[]` | `[]` | no | Вложенные подсказки и группы |
+| `label` | `string` | `Label text` | no | Текст на триггере |
+| `onExpandedChange` | `((expanded: boolean) => void)` | — | no | Колбэк toggle (controlled и uncontrolled) |
+| `onItemClick` | `((index: number, event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбэк клика по вложенной подсказке |
+| `shown` | `boolean` | `true` | no | Родительская группа раскрыта — управляет видимостью вложенной ветки |
+| `size` | `m \| s` | `s` | no | Размер (Figma: Mobile Off → `s`, Mobile On → `m`) |
+
+#### Related types
+- `AiSuggestionParentItem` (alias)
+- `AiSuggestionParentNestedItem` (interface)
+- `AiSuggestionParentSuggestionItem` (interface)
+- `Size` = `m | s`
+
+### AiSuggestionParentChip
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `chevron` | `ReactNode` | — | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no |  |
+| `expanded` | `boolean` | `false` | no |  |
+| `icon` | `ReactNode` | — | no |  |
+| `label` | `string` | `Label text` | no |  |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no |  |
+| `onExpandedChange` | `((expanded: boolean) => void)` | — | no |  |
+| `size` | `m \| s` | `s` | no |  |
+
+#### Related types
+- `Size` = `m | s`
+
+### AiSuggestionParentGroupProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `initialExpandedKey` | `string \| null` | `null` | no |  |
+
+### AiSuggestionSimple
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `neutral \| primary` | `neutral` | no | Внешний вид (Figma: Primary On/Off) |
+| `className` | `string` | — | no | Дополнительный CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Блокирует взаимодействие |
+| `icon` | `ReactNode` | — | no | Иконка слева от текста |
+| `label` | `string` | `Label text` | no | Текст подсказки |
+| `size` | `m \| s` | `s` | no | Размер (Figma: Mobile Off → `s`, Mobile On → `m`) |
+
+#### Related types
+- `Appearance` = `neutral | primary`
+- `Size` = `m | s`
+
+### AnimatedExpandableItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `index` | `number` | — | yes |  |
+| `shown` | `boolean` | — | yes |  |
+| `total` | `number` | — | yes |  |
+
+### AnimatedTriggerWrap
+_Нет публичных пропсов._
+
+## Примеры
+
+### Basic
+
+```tsx
+import { AiSuggestionSimple, APPEARANCE, SIZE } from '@ds/ai-suggestion';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Basic() {
+  return (
+    <AiSuggestionSimple label='Label text' icon={<PlaceholderSVG />} appearance={APPEARANCE.Primary} size={SIZE.M} />
+  );
+}
+```
+
+### ControlledParent
+
+```tsx
+import { AiSuggestionParent, SIZE } from '@ds/ai-suggestion';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { useState } from 'react';
+
+export function ControlledParent() {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <AiSuggestionParent
+      label='Suggested actions'
+      icon={<PlaceholderSVG />}
+      size={SIZE.S}
+      expanded={expanded}
+      onExpandedChange={setExpanded}
+      items={[{ label: 'Summarize this thread' }, { label: 'Write follow-up email' }, { label: 'Create TODO list' }]}
+    />
+  );
+}
+```
+
+### NestedParent
+
+```tsx
+import { AiSuggestionParent, CHILD_TYPE, SIZE } from '@ds/ai-suggestion';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function NestedParent() {
+  return (
+    <AiSuggestionParent
+      label='Label text'
+      icon={<PlaceholderSVG />}
+      size={SIZE.S}
+      items={[
+        { label: 'Simple suggestion A' },
+        {
+          type: CHILD_TYPE.Parent,
+          key: 'group-a',
+          label: 'Group A',
+          icon: <PlaceholderSVG />,
+          items: [{ label: 'A 1' }, { label: 'A 2' }],
+        },
+        {
+          type: CHILD_TYPE.Parent,
+          key: 'group-b',
+          label: 'Group B',
+          icon: <PlaceholderSVG />,
+          items: [
+            { label: 'B 1' },
+            {
+              type: CHILD_TYPE.Parent,
+              key: 'group-b-2',
+              label: 'Group B.2',
+              icon: <PlaceholderSVG />,
+              items: [{ label: 'B 2.1' }],
+            },
+          ],
+        },
+      ]}
+    />
+  );
+}
+```
+
+### ParentExpandable
+
+```tsx
+import { AiSuggestionParent, CHILD_TYPE } from '@ds/ai-suggestion';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function ParentExpandable() {
+  return (
+    <AiSuggestionParent
+      label='Label text'
+      icon={<PlaceholderSVG />}
+      items={[
+        { label: 'Suggestion 1', icon: <PlaceholderSVG /> },
+        { label: 'Suggestion 2' },
+        {
+          type: CHILD_TYPE.Parent,
+          label: 'More',
+          icon: <PlaceholderSVG />,
+          items: [
+            { label: 'Nested A' },
+            {
+              label: 'More nested',
+              items: [{ label: 'Nested B' }, { label: 'Nested C' }],
+            },
+          ],
+        },
+      ]}
+    />
+  );
+}
+```

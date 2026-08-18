@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Timeline.CjH9vEct.js";var n=e(),r=[{content:`Заявка создана`,opposite:`10:00`},{content:`Обработка`,opposite:`10:15`},{content:`Выполнено`,opposite:`10:40`,dotAppearance:`green`}];function i(){return(0,n.jsx)(t,{items:r})}export{i as WithOpposite};

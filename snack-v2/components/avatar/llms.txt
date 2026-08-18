@@ -1,0 +1,132 @@
+﻿# @ds/avatar
+
+> Аватар пользователя с фото, инициалами, размерами и цветовыми схемами.
+
+Docs: /snack-v2/components/avatar/
+
+## Установка
+
+```sh
+pnpm add @ds/avatar
+```
+
+## Когда использовать
+
+- Идентификатор пользователя в хедере, меню, списке участников.
+- Автор комментария, сообщения, коммита.
+- Плейсхолдер для отсутствующего фото — инициалы из имени.
+
+Когда **не** нужен `Avatar`: если требуется декоративная иконка или логотип бренда — используйте обычный `<img>` или иконку.
+
+## API
+
+### Avatar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | `neutral` | no | Внешний вид (цвет) |
+| `badge` | `ReactNode` | — | no | Произвольный нод в слот значка (правый-нижний угол). Перекрывает `status`. |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `name` | `string` | — | yes | Имя пользователя для генерации аббревиатуры |
+| `shape` | `rounded \| squared` | `rounded` | no | Форма: круглая или квадратная |
+| `showTwoSymbols` | `boolean` | `false` | no | Отображение двух заглавных символов имени вместо одного |
+| `size` | `3xl \| 6xl \| 9xl \| l \| m \| s \| xs` | `m` | no | Размер |
+| `src` | `string` | — | no | URL изображения аватара |
+| `status` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Appearance дефолтного `StatusIndicator` в правом-нижнем углу. Размер индикатора подбирается из `size` аватара автоматически. Полностью настроить значок можно через слот `badge`, который перекрывает `status`. |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `Shape` = `rounded | squared`
+- `Size` = `3xl | 6xl | 9xl | l | m | s | xs`
+- `StatusAppearance` = `blue | green | loading | neutral | orange | pink | primary | red | violet | yellow`
+
+## Примеры
+
+### CustomBadge
+
+```tsx
+import { Avatar, AVATAR_TO_STATUS_INDICATOR_SIZE, SIZE } from '@ds/avatar';
+import { Counter, SIZE as COUNTER_SIZE } from '@ds/counter';
+import { CheckSVG } from '@ds/icons/interface/system';
+import { APPEARANCE as STATUS_APPEARANCE, StatusIndicator } from '@ds/status';
+
+import styles from './CustomBadge.module.scss';
+
+export function CustomBadge() {
+  return (
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Avatar
+        name='John Doe'
+        size={SIZE['6Xl']}
+        src='https://i.pravatar.cc/120?img=12'
+        badge={<Counter value={5} size={COUNTER_SIZE.S} />}
+      />
+
+      <Avatar
+        name='Jane Roe'
+        size={SIZE['6Xl']}
+        src='https://i.pravatar.cc/120?img=47'
+        badge={
+          <span className={styles.verified}>
+            <CheckSVG size={16} />
+          </span>
+        }
+      />
+
+      <Avatar
+        name='Alex Roe'
+        size={SIZE['6Xl']}
+        src='https://i.pravatar.cc/120?img=8'
+        status={STATUS_APPEARANCE.Green}
+      />
+
+      <Avatar
+        name='Mia Roe'
+        size={SIZE['6Xl']}
+        src='https://i.pravatar.cc/120?img=20'
+        badge={
+          <StatusIndicator size={AVATAR_TO_STATUS_INDICATOR_SIZE[SIZE['6Xl']]} appearance={STATUS_APPEARANCE.Red} />
+        }
+      />
+    </div>
+  );
+}
+```
+
+### Initials
+
+```tsx
+import { Avatar } from '@ds/avatar';
+
+export function Initials() {
+  return <Avatar name='Иван Петров' />;
+}
+```
+
+### Sizes
+
+```tsx
+import { Avatar } from '@ds/avatar';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Avatar size='s' name='АС' />
+      <Avatar size='m' name='АС' />
+      <Avatar size='l' name='АС' />
+    </div>
+  );
+}
+```
+
+### WithImage
+
+```tsx
+import { Avatar } from '@ds/avatar';
+
+export function WithImage() {
+  return <Avatar src='https://i.pravatar.cc/80?img=12' name='Анна Смирнова' />;
+}
+```

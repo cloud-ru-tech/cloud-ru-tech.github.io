@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldSecure.D_vrKfV2.js";var n=e();function r(){return(0,n.jsx)(t,{label:`API Token`,readonly:!0,defaultValue:`sk-XXXXXXXXXXXXXXXXXXXXXXXX`})}export{r as SecureReadonly};

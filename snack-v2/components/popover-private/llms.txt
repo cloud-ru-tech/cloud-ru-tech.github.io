@@ -1,0 +1,69 @@
+﻿# @ds/popover-private
+
+> Низкоуровневый popover на @floating-ui — позиционирование, стрелка, триггеры. Используется как фундамент для Tooltip, Popover, Dropdown.
+
+Docs: /snack-v2/components/popover-private/
+
+## Установка
+
+```sh
+pnpm add @ds/popover-private
+```
+
+## Когда использовать
+
+- Реализация нового публичного компонента, которому нужно всплывающее окно (например, контекстное меню новой формы).
+- Очень специфический сценарий, который не покрыт `Tooltip`/`Popover`/`Dropdown`.
+
+В обычной разработке — берите публичный компонент.
+
+## API
+
+### Arrow
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `arrowContainerClassName` | `string` | — | no |  |
+| `arrowElementClassName` | `string` | — | no |  |
+| `arrowRef` | `RefObject<HTMLDivElement \| null>` | — | yes |  |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | — | yes |  |
+| `x` | `number` | — | no |  |
+| `y` | `number` | — | no |  |
+
+### PopoverPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `arrowContainerClassName` | `string` | — | no | CSS-класс контейнера стрелки поповера |
+| `arrowElementClassName` | `string` | — | no | CSS-класс стрелки поповера |
+| `children` | `ReactNode \| ChildrenFunction` | — | no | Триггер поповера (подробнее читайте ниже) |
+| `className` | `string` | — | no |  |
+| `closeOnEscapeKey` | `boolean` | `true` | no | Закрывать ли по нажатию на кнопку `Esc` |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
+| `data-test-id` | `string` | — | no |  |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
+| `hasArrow` | `boolean` | — | no | Параметр наличия стрелки у поповера. В размеры стрелки встроен отступ. Дополнительный отступ может быть задан параметром `offset`. У элемента стрелки нет цвета, необходимо задавать его через параметр `arrowClassName`. |
+| `heightStrategy` | `auto \| eq \| lte` | `auto` | no | Стратегия управления высотой контейнера поповера <br/> - `auto` - соответствует высоте контента, <br/> - `lte` - Less Than or Equal, равен высоте таргета или меньше ее, если контент в поповере меньше, <br/> - `eq` - Equal, строго равен высоте таргета. |
+| `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
+| `hoverDelayOpen` | `number` | — | no | Задержка открытия по ховеру |
+| `offset` | `number` | `0` | no | Отступ поповера от его триггер-элемента (в пикселях). |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `outsideClick` | `boolean \| OutsideClickHandler` | — | no | Закрывать ли при клике вне поповера |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | yes | Положение поповера относительно своего триггера (children). |
+| `popoverContent` | `ReactNode \| ReactNode[]` | — | yes | Контент поповера |
+| `stopPropagation` | `StopPropagationHandlers` | `{ onClick: true, onMouseDown: true, onMouseUp: true, onTouchStart: true, onTouchEnd: true, onTouchMove: true }` | no | Гасить всплытие pointer/touch-событий с floating-контейнера (`stopPropagation`). По умолчанию все хендлеры включены. Для drag&drop внутри поповера отключите `onMouseUp` / `onTouchEnd`, чтобы они дошли до `document`. |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | yes | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerClickByKeys` | `boolean` | `true` | no | Вызывается ли попоповер по нажатию клавиш Enter/Space (при trigger = `click`) |
+| `triggerRef` | `ForwardedRef<HTMLElement \| ReferenceType \| null>` | — | no | Ref ссылка на триггер |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `OutsideClickHandler` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PopoverHeightStrategy` = `auto | eq | lte`
+- `PopoverWidthStrategy` = `auto | eq | gte`
+- `StopPropagationHandlers` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`

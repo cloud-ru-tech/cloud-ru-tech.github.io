@@ -1,0 +1,66 @@
+﻿# @ds/search-private
+
+> Базовый input для поиска без иконок и плейсхолдеров — фундамент для публичного `@ds/search` и доменных search-компонентов.
+
+Docs: /snack-v2/components/search-private/
+
+## Установка
+
+```sh
+pnpm add @ds/search-private
+```
+
+## Когда использовать
+
+- Реализация кастомного поиска с иной разметкой (например, без иконки или со встроенным фильтром), который нельзя выразить пропсами `@ds/search`.
+
+В большинстве случаев — берите публичный `@ds/search`.
+
+## API
+
+### SearchPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactNode` | — | no | Слот справа от строки ввода — после кнопки очистки, внутри поля.  Типовое наполнение — иконочная кнопка того же размера, что поле: `<Button size={size} view='function' appearance='neutral' icon={…} />`. |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Деактивирован ли компонент |
+| `inputMode` | `decimal \| email \| none \| numeric \| search \| tel \| text \| url` | `search` | no | Режим работы экранной клавиатуры |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string, e?: ChangeEvent<HTMLInputElement>) => void)` | — | no | Колбек смены значения |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onSubmit` | `((value: string) => void)` | — | no | Колбек на подтверждение поиска по строке |
+| `placeholder` | `string` | — | no | Значение плейсхолдера |
+| `showClearButton` | `boolean` | `true` | no | Отображение кнопки Очистки поля |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `tabIndex` | `number` | — | no |  |
+| `value` | `string` | — | no | Значение input |
+
+#### Related types
+- `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
+- `Size` = `l | m | s`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { SearchPrivate } from '@ds/search-private';
+import { useState } from 'react';
+
+export function Basic() {
+  const [value, setValue] = useState('');
+  const [submitted, setSubmitted] = useState('');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexDirection: 'column' }}>
+      <SearchPrivate value={value} onChange={setValue} onSubmit={setSubmitted} />
+      <span>
+        Значение: {value || '—'} · Отправлено: {submitted || '—'}
+      </span>
+    </div>
+  );
+}
+```

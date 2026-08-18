@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s=e((()=>{t=`_listM_qth82_4`,n=`_listS_qth82_10`,r=`_story_qth82_16`,i=`_paragraph_qth82_25`,a=`_content_qth82_35`,o={listM:t,listS:n,story:r,paragraph:i,content:a}}));export{o as n,s as t};
+//# sourceMappingURL=styles.module-BSJOTdPD.js.map

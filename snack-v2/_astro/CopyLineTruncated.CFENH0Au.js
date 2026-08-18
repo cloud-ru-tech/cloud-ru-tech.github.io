@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CopyLine.CltsfLqg.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:280},children:(0,n.jsx)(t,{content:`very-long-identifier-1234567890-abcdefghijklmnop`})})}export{r as CopyLineTruncated};

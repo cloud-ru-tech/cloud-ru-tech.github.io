@@ -1,0 +1,111 @@
+﻿# @ds/truncate-string
+
+> Обрезает длинный текст и показывает полный текст в тултипе — варианты `end` и `middle`, поддержка многострочного обрезания.
+
+Docs: /snack-v2/components/truncate-string/
+
+## Установка
+
+```sh
+pnpm add @ds/truncate-string
+```
+
+## Когда использовать
+
+- В списках, таблицах и карточках, где ширина ячейки зафиксирована.
+- Для имён файлов, идентификаторов и коммитов — чтобы сохранить начало и конец строки (`middle`).
+- Для заголовков и описаний, длина которых непредсказуема.
+
+Когда **не** нужен: если контейнер может расти по содержимому (например, body статьи) — проще обернуть текст в абзац без обрезания.
+
+## API
+
+### TruncateString
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `hideTooltip` | `boolean` | — | no | Скрывать ли тултип с полным текстом |
+| `maxLines` | `number` | — | no | Максимальное кол-во строк, до которого может сворачиваться текст. |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | — | no | Положение тултипа относительно обрезанного текста. |
+| `text` | `string` | — | yes | Текст, который будет обрезаться |
+| `tooltipClassName` | `string` | — | no | Стиль для тултипа |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения тултипа |
+| `variant` | `end \| middle` | `end` | no | Вариант обрезания строки: `End` - с конца `Middle` - по середине |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+### TruncateStringEnd
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `hideTooltip` | `boolean` | — | no | Скрывать ли тултип с полным текстом |
+| `maxLines` | `number` | `1` | no | Максимальное кол-во строк, до которого может сворачиваться текст. |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение тултипа относительно обрезанного текста. |
+| `text` | `string` | — | yes | Текст, который будет обрезаться |
+| `tooltipClassName` | `string` | — | no | Стиль для тултипа |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | `hoverAndFocusVisible` | no | Условие отображения тултипа |
+
+### TruncateStringMiddle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `hideTooltip` | `boolean` | — | no |  |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no |  |
+| `text` | `string` | — | yes |  |
+| `tooltipClassName` | `string` | — | no | Стиль для тултипа |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | `hoverAndFocusVisible` | no |  |
+
+## Примеры
+
+### TruncateEnd
+
+```tsx
+import { TruncateString } from '@ds/truncate-string';
+
+export function TruncateEnd() {
+  return (
+    <div style={{ width: 220 }}>
+      <TruncateString variant='end' text='Очень длинный заголовок, который не помещается' maxLines={1} />
+    </div>
+  );
+}
+```
+
+### TruncateMiddle
+
+```tsx
+import { TruncateString } from '@ds/truncate-string';
+
+export function TruncateMiddle() {
+  return (
+    <div style={{ width: 220 }}>
+      <TruncateString variant='middle' text='2024-quarterly-report-final-v3.pdf' />
+    </div>
+  );
+}
+```
+
+### TruncateMultiline
+
+```tsx
+import { TruncateString } from '@ds/truncate-string';
+
+export function TruncateMultiline() {
+  return (
+    <div style={{ width: 260 }}>
+      <TruncateString
+        variant='end'
+        maxLines={3}
+        text='Длинное описание, которое укладывается в три строки, а затем обрезается с троеточием в конце.'
+      />
+    </div>
+  );
+}
+```

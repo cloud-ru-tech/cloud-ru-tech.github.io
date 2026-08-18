@@ -1,0 +1,100 @@
+﻿# @ds/uikit-product-avatar-detail
+
+> Типовой пользовательский блок из продуктового UI Kit: аватар с необязательным статус индикатором, имя, контактные данные для копирования и вторичное описание.
+
+Docs: /snack-v2/components/uikit-product-avatar-detail/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-avatar-detail
+```
+
+## Когда использовать
+
+- В профильных карточках, где нужно компактно показать аватар, имя и email/логин для копирования.
+- В списках участников, владельцев ресурсов или ответственных, где важна быстрая идентификация пользователя.
+
+## API
+
+### AvatarDetail
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `avatar` | `Omit<AvatarProps, "data-test-id" \| "name">` | — | no | Аватар пропсы |
+| `className` | `string` | — | no | CSS-класс |
+| `contactData` | `string` | — | no | Контактные данные для отображения и копирования |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Дополнительное описание под основной строкой |
+| `name` | `string` | — | yes | Имя пользователя |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `AvatarProps` (interface)
+- `Shape` = `rounded | squared`
+- `Size` = `s | xs`
+- `StatusAppearance` = `blue | green | loading | neutral | orange | pink | primary | red | violet | yellow`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { AvatarDetail } from '@ds/uikit-product-avatar-detail';
+
+export function Basic() {
+  return <AvatarDetail name='Иванов Иван' />;
+}
+```
+
+### Full
+
+```tsx
+import { AvatarDetail } from '@ds/uikit-product-avatar-detail';
+
+export function Full() {
+  return (
+    <AvatarDetail
+      name='Новиков Дмитрий'
+      contactData='novikov@example.com'
+      description='DevOps-инженер, Cloud Platform'
+      avatar={{ appearance: 'green', status: 'green' }}
+    />
+  );
+}
+```
+
+### WithContactData
+
+```tsx
+import { AvatarDetail } from '@ds/uikit-product-avatar-detail';
+
+export function WithContactData() {
+  return <AvatarDetail name='Петрова Мария' contactData='petrova@example.com' />;
+}
+```
+
+### WithCustomAvatar
+
+```tsx
+import { AvatarDetail } from '@ds/uikit-product-avatar-detail';
+
+export function WithCustomAvatar() {
+  return (
+    <AvatarDetail
+      name='Козлова Анна'
+      contactData='kozlova@example.com'
+      avatar={{ appearance: 'violet', status: 'green' }}
+    />
+  );
+}
+```
+
+### WithDescription
+
+```tsx
+import { AvatarDetail } from '@ds/uikit-product-avatar-detail';
+
+export function WithDescription() {
+  return <AvatarDetail name='Сидоров Алексей' description='Тимлид платформенной команды' />;
+}
+```

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t}from"./backgroundPredefinedFills.Dfb-VXGK.js";import{t as n}from"./Block.BaqdNDn5.js";var r=e();function i(){return(0,r.jsx)(n,{backgroundPredefined:t.DecorTransparent,size:`m`,children:(0,r.jsx)(`span`,{children:`Transparent`})})}export{i as Transparent};

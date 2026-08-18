@@ -1,0 +1,330 @@
+﻿# @ds/toolbar
+
+> Панель инструментов списков и таблиц — поиск, фильтры, массовые действия, меню «Ещё».
+
+Docs: /snack-v2/components/toolbar/
+
+## Установка
+
+```sh
+pnpm add @ds/toolbar
+```
+
+## Когда использовать
+
+- Над таблицей или списком с поиском, фильтрами и действиями над выбранными строками.
+- Когда нужно сохранять состояние фильтров и поиска в URL или `localStorage` (`persist`).
+
+Когда **не** нужен:
+
+- Для одиночного поля поиска без остальных слотов — [`Search`](/components/search) или [`SearchPrivate`](/components/search-private).
+- Для переключения вкладок раздела — [`Tabs`](/components/tabs).
+- Для произвольного меню действий без контекста списка — [`Dropdown`](/components/dropdown).
+
+### Рекомендации
+
+- ✅ Один `Toolbar` на экран над данными.
+- ❌ Дублировать поиск и фильтры в header и в теле страницы.
+- ✅ Controlled `search` через `value` + `onChange`.
+- ❌ No-op `onChange` — строка поиска не реагирует на ввод.
+- ✅ Один `<AdaptiveProvider>` в корне приложения — mobile-перестроение включается само.
+- ❌ Ручное ветвление desktop/mobile-вёрстки тулбара в обход контекста раскладки.
+- ✅ Уникальный `persist.id` на каждый инстанс.
+- ❌ Один `id` на несколько тулбаров — состояние фильтров смешается.
+
+## API
+
+### BulkActions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `BulkAction[]` | `[]` | no | Список массовых действий |
+| `checked` | `boolean` | — | no | Значение чекбокса |
+| `data-test-id` | `string` | — | no |  |
+| `indeterminate` | `boolean` | — | no | Состояние частичного выбора |
+| `onCheck` | `(() => void)` | — | no | Колбек смены значения чекбокса |
+| `resizingContainerRef` | `RefObject<HTMLDivElement>` | — | no |  |
+| `selectedCount` | `number` | `0` | no | Количество выбранных элементов (для подписи Selected: N) |
+| `showBulkCheckbox` | `boolean` | `true` | no | Показывать чекбокс слева (Figma: showBulkCheckbox) |
+| `totalCount` | `number` | — | no | Общее количество элементов (для подписи Selected: N of M) |
+
+### BulkActionsCheckbox
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | — | no |  |
+| `className` | `string` | — | no |  |
+| `indeterminate` | `boolean` | — | no |  |
+| `onCheck` | `(() => void)` | — | no |  |
+
+### BulkActionsControls
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `BulkAction[]` | — | yes |  |
+| `checked` | `boolean` | — | no |  |
+| `hasSelection` | `boolean` | `false` | no |  |
+| `indeterminate` | `boolean` | — | no |  |
+| `onCheck` | `(() => void)` | — | no |  |
+| `resizingContainerRef` | `RefObject<HTMLDivElement>` | — | no |  |
+| `selectedCount` | `number` | `0` | no |  |
+| `showCheckbox` | `boolean` | `false` | no |  |
+| `totalCount` | `number` | — | no |  |
+| `variant` | `sheet \| toolbar` | — | yes |  |
+
+### DataView
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `compact \| list` | `list` | no |  |
+| `items` | `Segment<DataViewValue>[]` | `[   { value: DATA_VIEW_VALUE.List, label: '', icon: <ViewTableSVG /> },   { value: DATA_VIEW_VALUE.Compact, label: '', icon: <ViewCardSVG /> }, ]` | no |  |
+| `onChange` | `((value: DataViewValue) => void)` | — | no |  |
+| `value` | `compact \| list` | — | no |  |
+
+### FilterButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `numberOfFilters` | `number` | — | no | Количество активных фильтров для отображения в counter |
+| `onOpenChange` | `(open: boolean) => void` | — | yes | Колбек смены состояния открытия строки фильтров |
+| `open` | `boolean` | — | yes | Открыта ли строка фильтров |
+
+### MobileBulkActionsSheet
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `BulkAction[]` | — | yes |  |
+| `checked` | `boolean` | — | no |  |
+| `hasSelection` | `boolean` | — | yes |  |
+| `indeterminate` | `boolean` | — | no |  |
+| `onCheck` | `(() => void)` | — | no |  |
+| `open` | `boolean` | — | yes |  |
+| `selectedCount` | `number` | — | yes |  |
+| `showBulkCheckbox` | `boolean` | — | no |  |
+| `totalCount` | `number` | — | no |  |
+
+### MoreActions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `moreActions` | `Action[]` | — | yes | Элементы выпадающего списка кнопки с действиями |
+
+### Search
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `loading` | `boolean` | — | no |  |
+| `onChange` | `(value: string) => void` | — | yes |  |
+| `onSubmit` | `((value: string) => void)` | — | no |  |
+| `placeholder` | `string` | — | no |  |
+| `value` | `string` | — | yes |  |
+
+### SelectionLabel
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `hasSelection` | `boolean` | — | yes |  |
+| `placement` | `headline \| inline` | `inline` | no |  |
+| `selectedCount` | `number` | — | yes |  |
+| `totalCount` | `number` | — | no |  |
+
+### Toolbar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `after` | `ReactNode` | — | no | Дополнительный слот между поиском и переключателем вида (+ slotExtraButton в Figma). <br> На mobile-раскладке (из `AdaptiveProvider`) не рендерится в строке — кнопки переносятся в меню «⋯» (`Button` с `onClick` и `label` / `icon` / `aria-label`, одна обёртка вокруг кнопки или элемент с `data-toolbar-after-overflow`). Иначе — в `moreActions`. |
+| `api` | `{ mode: "wysiwyg" \| "raw"; focus(): void; isActive(id: ToolbarItemId): boolean; isHeadingActive(level: HeadingLevel): boolean; toggle(id: ToolbarItemId): void; toggleHeading(level: HeadingLevel): void; setParagraph(): void; getLinkHref(): string \| undefined; getLinkTitle(): string \| undefined; setLink(props: LinkProps): void; insertImage(src: string, alt: string): void; insertTable(rows: number, cols: number): void; subscribe(callback: () => void): () => void; }` | — | yes | Бэкенд команд: WYSIWYG (TipTap) в preview-режиме либо markdown-исходник (textarea) в raw-режиме. |
+| `bulkActions` | `BulkAction[]` | — | no | Список массовых действий |
+| `checked` | `boolean` | — | no | Значение чекбокса |
+| `className` | `string` | — | no | Класснейм |
+| `data-test-id` | `string` | — | no |  |
+| `dataView` | `ToolbarDataViewProps` | — | no | Переключатель вида данных — SegmentControl (showDataView в Figma) |
+| `filterRow` | `FilterRow<TState>` | — | no |  |
+| `indeterminate` | `boolean` | — | no | Состояние частичного выбора |
+| `items` | `ToolbarItemId[]` | — | yes |  |
+| `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
+| `onCheck` | `(() => void)` | — | no | Колбек смены значения чекбокса |
+| `onRefresh` | `(() => void)` | — | no | Колбек обновления |
+| `outline` | `boolean` | `true` | no | Внешний бордер |
+| `persist` | `ToolbarPersistConfig<TState>` | — | no | Конфиг для сохранения состояния в localStorage и queryParams. <br> Поле id должно быть уникальным для каждого инстанса компонента. <br> |
+| `search` | `SearchProps` | — | no | Параметры отвечают за строку поиска <br> <strong>value</strong>: Значение строки поиска <br> <strong>onChange</strong>: Колбэк смены значения <br> <strong>onSubmit</strong>: Колбэк на подтверждение поиска по строке <strong>placeholder</strong>: Плейсхолдер <br> <strong>loading</strong>: Состояние загрузки <br> |
+| `selectedCount` | `number` | — | no | Количество выбранных элементов (для подписи Selected: N) |
+| `showBulkCheckbox` | `boolean` | `true` | no | Показывать чекбокс слева (Figma: showBulkCheckbox) |
+| `totalCount` | `number` | — | no | Общее количество элементов (для подписи Selected: N of M) |
+
+#### Related types
+- `ToolbarApi` (interface)
+- `ToolbarItemId` = `block-code | block-quote | bold | bullet-list | heading | image | inline-code | italic | link | ordered-list | strikethrough | table`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Toolbar } from '@ds/toolbar';
+import { useState } from 'react';
+
+export function Basic() {
+  const [search, setSearch] = useState('');
+
+  return (
+    <div style={{ width: '100%', maxWidth: 720 }}>
+      <Toolbar
+        search={{ value: search, onChange: setSearch, placeholder: 'Поиск' }}
+        onRefresh={() => setSearch('')}
+        moreActions={[
+          { content: { label: 'Экспорт' }, onClick: () => undefined },
+          { content: { label: 'Настройки' }, onClick: () => undefined },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### BulkActions
+
+```tsx
+import { CheckSVG, CopySVG, CrossSVG } from '@ds/icons/interface/system';
+import { Toolbar } from '@ds/toolbar';
+import { useState } from 'react';
+
+export function BulkActions() {
+  const [search, setSearch] = useState('');
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <div style={{ width: '100%', maxWidth: 720 }}>
+      <Toolbar
+        search={{ value: search, onChange: setSearch, placeholder: 'Поиск' }}
+        checked={checked}
+        indeterminate={false}
+        selectedCount={checked ? 5 : 0}
+        totalCount={100}
+        onCheck={() => setChecked(value => !value)}
+        bulkActions={[
+          { label: 'Подтвердить', icon: CheckSVG, onClick: () => undefined },
+          { label: 'Отклонить', icon: CrossSVG, onClick: () => undefined },
+          { label: 'Копировать', icon: CopySVG, onClick: () => undefined },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### MobileLayout
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { CheckSVG, CrossSVG } from '@ds/icons/interface/system';
+import { Checkbox } from '@ds/toggles';
+import { Toolbar } from '@ds/toolbar';
+import { useId, useState } from 'react';
+
+import { MobilePreview } from '../MobilePreview';
+
+export function MobileLayout() {
+  const selectionToggleId = useId();
+  const [search, setSearch] = useState('');
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
+      <label
+        htmlFor={selectionToggleId}
+        style={{ display: 'inline-flex', gap: 8, alignItems: 'center', cursor: 'pointer' }}
+      >
+        <Checkbox id={selectionToggleId} size='s' checked={checked} onChange={setChecked} />
+        <span>Есть выбранные строки таблицы</span>
+      </label>
+      <MobilePreview>
+        <AdaptiveProvider layoutType={LAYOUT_TYPE.Mobile}>
+          <Toolbar
+            search={{ value: search, onChange: setSearch, placeholder: 'Поиск' }}
+            onRefresh={() => setSearch('')}
+            moreActions={[{ content: { label: 'Действие' }, onClick: () => undefined }]}
+            checked={checked}
+            onCheck={() => setChecked(value => !value)}
+            selectedCount={checked ? 12 : 0}
+            totalCount={100}
+            bulkActions={[
+              { label: 'Подтвердить', icon: CheckSVG, onClick: () => undefined },
+              { label: 'Отклонить', icon: CrossSVG, onClick: () => undefined },
+            ]}
+          />
+        </AdaptiveProvider>
+      </MobilePreview>
+    </div>
+  );
+}
+```
+
+### WithDataView
+
+```tsx
+import { Button } from '@ds/button';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { Toolbar } from '@ds/toolbar';
+import { useState } from 'react';
+
+export function WithDataView() {
+  const [search, setSearch] = useState('');
+
+  return (
+    <div style={{ width: '100%', maxWidth: 720 }}>
+      <Toolbar
+        search={{ value: search, onChange: setSearch, placeholder: 'Поиск' }}
+        onRefresh={() => setSearch('')}
+        after={
+          <Button
+            view='function'
+            appearance='neutral'
+            icon={<PlaceholderSVG />}
+            size='m'
+            aria-label='Дополнительное действие'
+            onClick={() => undefined}
+          />
+        }
+        dataView={{ show: true }}
+        moreActions={[{ content: { label: 'Ещё' }, onClick: () => undefined }]}
+      />
+    </div>
+  );
+}
+```
+
+### WithFilters
+
+```tsx
+import { Toolbar } from '@ds/toolbar';
+import { useState } from 'react';
+
+export function WithFilters() {
+  const [search, setSearch] = useState('');
+  const [filtersOpen, setFiltersOpen] = useState(true);
+  const [filterValue, setFilterValue] = useState<Record<string, unknown>>({});
+
+  return (
+    <div style={{ width: '100%', maxWidth: 720 }}>
+      <Toolbar
+        search={{ value: search, onChange: setSearch, placeholder: 'Поиск' }}
+        onRefresh={() => setSearch('')}
+        filterRow={{
+          open: filtersOpen,
+          onOpenChange: setFiltersOpen,
+          value: filterValue,
+          onChange: setFilterValue,
+          filters: [
+            {
+              id: 'status',
+              type: 'single',
+              label: 'Статус',
+              options: [
+                { value: 'active', label: 'Активные' },
+                { value: 'archived', label: 'Архив' },
+              ],
+            },
+          ],
+          defaultValue: {},
+        }}
+      />
+    </div>
+  );
+}
+```

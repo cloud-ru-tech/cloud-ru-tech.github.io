@@ -1,0 +1,589 @@
+﻿# @ds/uikit-product-page-layout
+
+> Набор страничных раскладок продуктового кабинета — каталог, детальная страница сервиса, форма, дерево-навигация, сайдбар и общие слоты — с адаптацией desktop/mobile через AdaptiveProvider.
+
+Docs: /snack-v2/components/uikit-product-page-layout/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-page-layout
+```
+
+## Когда использовать
+
+- Страницы продуктового кабинета, которым нужна единая адаптивная раскладка шапки, действий и сайдбара.
+- Одно и то же дерево разделов и набор действий нужны и на desktop, и на mobile без ручного дублирования вёрстки.
+
+Когда **не** нужен пакет:
+
+- Отдельная карточка или виджет внутри страницы:
+  - используйте [`@ds/uikit-product-widget`](/components/uikit-product-widget) или [`@ds/card`](/components/card).
+- Только панель действий без страничной обёртки:
+  - соберите `Button` / kebab напрямую.
+
+## API
+
+### ActionView
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `critical \| neutral \| primary` | — | no | Вариант оформления |
+| `as` | `button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `button` | `Omit<ButtonProps, "view" \| "label" \| "icon"> \| (Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled"; }) \| (Omit<...> & { ...; })` | — | no |  |
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `className` | `string` | — | no | Дополнительный класс Класс триггерной кнопки. |
+| `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `commonProps` | `CommonProps` | — | yes |  |
+| `counter` | `Omit<CounterProps, "size">` | — | no | Пропсы для counter. `appearance` можно задать явно (по умолчанию наследуется от appearance кнопки). |
+| `data-test-id` | `string` | — | no |  |
+| `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
+| `disabled` | `boolean` | — | no | Отключена |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `fullWidth` | `boolean` | — | no | На всю ширину |
+| `hidden` | `boolean` | `false` | no |  |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `iconPosition` | `after \| before` | — | no | Позиция иконки относительно текста |
+| `innerRef` | `((instance: HTMLButtonElement \| null) => void) \| RefObject<HTMLButtonElement> \| null` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `items` | `Item[]` | — | yes | Основные элементы списка |
+| `label` | `string` | — | no | Текст кнопки |
+| `list` | `Pick<DroplistProps, "className" \| "open" \| "onOpenChange" \| "items" \| "closeDroplistOnItemClick">` | — | yes |  |
+| `loading` | `boolean` | — | no | Состояние загрузки Флаг загрузки квот |
+| `minWidth` | `boolean` | — | no | Минимальная ширина контейнера (`min-width` из токена размера). По умолчанию `true`. `false` — кнопка сжимается по контенту вместо фиксированного минимума. |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Колбэк изменения раскрытия. |
+| `onQuotasUrlClick` | `(() => void)` | — | no | Колбек клика по ссылке на страницу квот по проекту |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
+| `open` | `boolean` | — | no | Контролируемое состояние раскрытия. |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+| `size` | `l \| m \| s \| xs` | — | no | Размер Размер триггера; для `xs` применяется кнопка `s`. |
+| `tooltip` | `TooltipProps` | — | no |  |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `variant` | `dropdown \| droplist \| filled \| function \| kebab \| outline \| quota \| simple \| tonal` | — | no |  |
+| `view` | `elevated \| filled \| function \| outline \| simple \| tonal` | — | no | Вариант кнопки (Figma: filled, outline, function, simple, elevated) |
+
+### ButtonDroplist
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `(Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps, "view" \| "icon" \| "appearance" \| "iconPosition"> & { ...; })` | — | yes |  |
+| `list` | `Pick<DroplistProps, "className" \| "open" \| "onOpenChange" \| "items" \| "closeDroplistOnItemClick">` | — | yes |  |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `PublicListContextType` (interface)
+- `Resize` = `both | horizontal | none | vertical`
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### ButtonKebab
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `Omit<ButtonProps, "view" \| "label" \| "icon">` | — | no |  |
+| `list` | `Pick<DroplistProps, "className" \| "open" \| "onOpenChange" \| "items" \| "closeDroplistOnItemClick">` | — | yes |  |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `PublicListContextType` (interface)
+- `Resize` = `both | horizontal | none | vertical`
+- `ScrollProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
+- `Size` = `s | xs`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### ButtonQuota
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `data-test-id` | `string` | — | no |  |
+| `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onQuotasUrlClick` | `(() => void)` | — | no | Колбек клика по ссылке на страницу квот по проекту |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `QuotaItem` (interface)
+- `Size` = `s | xs`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### ConditionalPopover
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `isOpen` | `boolean` | — | yes |  |
+| `onOpenChange` | `(value: boolean) => void` | — | yes |  |
+| `tip` | `ReactNode` | — | yes |  |
+| `withPopover` | `boolean` | — | no |  |
+
+### DefaultSubtitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `label` | `string` | — | yes | Подпись слева |
+| `labelTooltip` | `ReactNode` | — | no | Тултип-подсказка рядом с подписью |
+| `value` | `CopyLineProps` | — | yes | Копируемое значение (пропсы CopyLine) |
+
+#### Related types
+- `CopyButtonHideStrategy` = `hover | never`
+- `CopyLineProps` (interface)
+
+### DesktopActions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `Action[]` | — | yes |  |
+
+### DesktopPageCatalog
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `ReactNode` | — | no | Действия справа от заголовка |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+### DesktopPageForm
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `{ buttonPrimary: ({ variant: ButtonPrimaryVariant; } \| { variant: "custom"; label: string; }) & { tooltip?: TooltipProps; } & Omit<ButtonProps, "label">; buttonSecondary?: (({ ...; } \| { ...; }) & ... 1 more ... & Omit<...>); buttonAdditional?: ({ ...; } & ... 4 more ... & { ...; }) \| undefin...` | — | no |  |
+| `priceSummary` | `{ total: ReactNode; content?: ReactNode; }` | — | no |  |
+| `sideBlock` | `{ label: string; content: ReactNode; snapPoints?: SnapPoint[]; }[]` | — | no |  |
+| `stepper` | `ReactNode` | — | no |  |
+| `stickyFooter` | `boolean` | — | no | Закрепляет футер внизу формы при прокрутке контента. |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonPrimaryVariant` = `add | continue | create | rent | restore | save | send`
+- `ButtonProps` (interface)
+- `ButtonSecondaryVariant` = `back | cancel`
+- `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `ModalContainer` (alias)
+- `ModalCustomProps` (interface)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalWidth` = `l | m | s`
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `Size` = `s | xs`
+- `SnapPoint` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### DesktopPageServices
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `ReactNode` | — | no | Действия справа от заголовка |
+| `autoHeight` | `boolean` | — | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `limitContentMaxWidth` | `boolean` | — | no |  |
+| `sidebar` | `PageSidebarProps` | — | no |  |
+| `slotAfterTitle` | `ReactNode` | — | no | Слот после заголовка (например, статус) |
+| `slotBeforeTitle` | `ReactNode` | — | no | Слот перед заголовком (например, кнопка «назад») |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+| `truncateTitle` | `boolean` | — | no | Обрезать заголовок в одну строку с многоточием |
+
+#### Related types
+- `CollapseState` (interface)
+- `Documentation` (interface)
+- `HeaderProps` (alias)
+- `ListProps` (interface)
+- `PageSidebarProps` (interface)
+- `SidebarItem` (alias)
+- `SidebarItemBase` (interface)
+
+### Headline
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `ReactNode` | — | no | Действия справа от заголовка |
+| `data-test-id` | `string` | — | no |  |
+| `moreActions` | `ReactNode` | — | no | Слот действий внутри строки заголовка (mobile-рендереры кладут сюда kebab/«ещё») |
+| `slotAfterTitle` | `ReactNode` | — | no | Слот после заголовка (например, статус) |
+| `slotBeforeTitle` | `ReactNode` | — | no | Слот перед заголовком (например, кнопка «назад») |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+| `truncateTitle` | `boolean` | — | no | Обрезать заголовок в одну строку с многоточием |
+
+### Menu
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `enableShrinkMenuButton` | `boolean` | `true` | no |  |
+| `menuItems` | `TreeNodeProps[]` | — | yes |  |
+| `menuTitle` | `string` | — | no |  |
+| `onSelect` | `((selectedKey: string, node: TreeNodeProps) => void)` | — | no |  |
+| `selected` | `string` | — | no |  |
+| `withDefaultOpenedMenuList` | `boolean` | — | no |  |
+
+### MobileActions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `hideDelete` | `boolean \| undefined` | — | no |  |
+| `hideDownload` | `boolean \| undefined` | — | no |  |
+| `hideRetry` | `boolean \| undefined` | — | no |  |
+| `items` | `Action[]` | — | yes |  |
+| `maxVisibleItems` | `number` | — | no |  |
+
+### MobilePageCatalog
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `Action[]` | `[]` | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `maxVisibleActionsItems` | `number` | — | no |  |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `Action` (alias)
+- `ActionsProps` (interface)
+- `BaseItemWithoutNonGroup` (interface)
+- `ButtonDropdownDroplistConfig` (interface)
+- `ButtonDroplistProps` (interface)
+- `ButtonKebabProps` (interface)
+- `ButtonProps` (interface)
+- `CommonGroupItem` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `Item` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuotaItem` (interface)
+- `QuotaWidgetPropsBase` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+
+### MobilePageForm
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `{ buttonPrimary: ({ variant: ButtonPrimaryVariant; } \| { variant: "custom"; label: string; }) & { tooltip?: TooltipProps; } & Omit<ButtonProps, "label">; buttonSecondary?: (({ ...; } \| { ...; }) & ... 1 more ... & Omit<...>); buttonAdditional?: ({ ...; } & ... 4 more ... & { ...; }) \| undefin...` | — | no |  |
+| `priceSummary` | `{ total: ReactNode; content?: ReactNode; }` | — | no |  |
+| `sideBlock` | `{ label: string; content: ReactNode; snapPoints?: SnapPoint[]; }[]` | — | no |  |
+| `stepper` | `ReactNode` | — | no |  |
+| `stickyFooter` | `boolean` | — | no | Закрепляет футер внизу формы при прокрутке контента. |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonPrimaryVariant` = `add | continue | create | rent | restore | save | send`
+- `ButtonProps` (interface)
+- `ButtonSecondaryVariant` = `back | cancel`
+- `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `ModalContainer` (alias)
+- `ModalCustomProps` (interface)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalWidth` = `l | m | s`
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `Size` = `s | xs`
+- `SnapPoint` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### MobilePageServices
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `Action[]` | `[]` | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `maxVisibleActionsItems` | `number` | — | no |  |
+| `sidebar` | `SidebarSelectProps` | — | no |  |
+| `slotAfterTitle` | `ReactNode` | — | no | Слот после заголовка (например, статус) |
+| `slotBeforeTitle` | `ReactNode` | — | no | Слот перед заголовком (например, кнопка «назад») |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `ButtonDropdownDroplistConfig` (interface)
+- `ButtonDroplistProps` (interface)
+- `ButtonKebabProps` (interface)
+- `ButtonProps` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `Item` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuotaItem` (interface)
+- `QuotaWidgetPropsBase` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `SidebarItem` (alias)
+- `SidebarItemBase` (interface)
+- `SidebarSelectProps` (interface)
+
+### PageCatalog
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `Action[]` | — | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `maxVisibleActionsItems` | `number` | — | no |  |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `Action` (alias)
+- `ActionsProps` (interface)
+- `BaseItemWithoutNonGroup` (interface)
+- `ButtonDropdownDroplistConfig` (interface)
+- `ButtonDroplistProps` (interface)
+- `ButtonKebabProps` (interface)
+- `ButtonProps` (interface)
+- `CommonGroupItem` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `Item` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `QuotaItem` (interface)
+- `QuotaWidgetPropsBase` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+
+### PageForm
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `{ buttonPrimary: ({ variant: ButtonPrimaryVariant; } \| { variant: "custom"; label: string; }) & { tooltip?: TooltipProps; } & Omit<ButtonProps, "label">; buttonSecondary?: (({ ...; } \| { ...; }) & ... 1 more ... & Omit<...>); buttonAdditional?: ({ ...; } & ... 4 more ... & { ...; }) \| undefin...` | — | no |  |
+| `priceSummary` | `{ total: ReactNode; content?: ReactNode; }` | — | no |  |
+| `sideBlock` | `{ label: string; content: ReactNode; snapPoints?: SnapPoint[]; }[]` | — | no |  |
+| `stepper` | `ReactNode` | — | no |  |
+| `stickyFooter` | `boolean` | — | no | Закрепляет футер внизу формы при прокрутке контента. |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonPrimaryVariant` = `add | continue | create | rent | restore | save | send`
+- `ButtonProps` (interface)
+- `ButtonSecondaryVariant` = `back | cancel`
+- `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `ModalContainer` (alias)
+- `ModalCustomProps` (interface)
+- `ModalMode` = `aggressive | forced | regular`
+- `ModalWidth` = `l | m | s`
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `Size` = `s | xs`
+- `SnapPoint` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### PageLoading
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+
+### PageServices
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `Action[]` | — | no |  |
+| `autoHeight` | `boolean` | — | no |  |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `limitContentMaxWidth` | `boolean` | — | no |  |
+| `maxVisibleActionsItems` | `number` | — | no |  |
+| `sidebar` | `PageSidebarProps` | — | no |  |
+| `slotAfterTitle` | `ReactNode` | — | no | Слот после заголовка (например, статус) |
+| `slotBeforeTitle` | `ReactNode` | — | no | Слот перед заголовком (например, кнопка «назад») |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
+| `title` | `string` | — | yes | Заголовок страницы |
+| `truncateTitle` | `boolean` | — | no | Обрезать заголовок в одну строку с многоточием |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `ButtonDropdownDroplistConfig` (interface)
+- `ButtonKebabProps` (interface)
+- `ButtonProps` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `Documentation` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `DroplistProps` (interface)
+- `EmptyState` (interface)
+- `HeaderProps` (alias)
+- `Item` (interface)
+- `ListProps` (interface)
+- `PageSidebarProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
+- `ScrollProps` (interface)
+- `SelectionState` (interface)
+- `SidebarItem` (alias)
+- `SidebarItemBase` (interface)
+
+### PageSidebar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `collapse` | `CollapseState` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `defaultOpen` | `boolean` | — | no |  |
+| `documentation` | `Documentation` | — | no | Зарезервировано, в текущей реализации не используется. |
+| `footerItems` | `SidebarItem[]` | — | no |  |
+| `hasSearch` | `boolean` | — | no |  |
+| `header` | `HeaderProps` | — | no |  |
+| `items` | `SidebarItem[]` | — | yes |  |
+| `onOpenChanged` | `((open: boolean) => void)` | — | no |  |
+| `onSelect` | `((id: string \| number) => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `pageContainerId` | `string` | — | no | Зарезервировано, в текущей реализации не используется. |
+| `selected` | `string \| number` | — | no |  |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `Documentation` (interface)
+- `EmptyStateProps` (interface)
+- `HeaderProps` (alias)
+- `Item` (interface)
+- `ItemId` (alias)
+- `ListProps` (interface)
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SidebarItem` (alias)
+- `SidebarItemBase` (interface)
+- `Size` = `s | xs`
+- `TooltipProps` (interface)
+
+### SearchContextProvider
+_Нет публичных пропсов._
+
+### SidebarSelect
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `collapse` | `CollapseState` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `footerItems` | `SidebarItem[]` | — | no |  |
+| `hasSearch` | `boolean` | — | no |  |
+| `items` | `SidebarItem[]` | — | yes |  |
+| `onSelect` | `((id: string \| number) => void)` | — | no |  |
+| `selected` | `string \| number` | — | no |  |
+
+#### Related types
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `DroplistProps` (interface)
+- `EmptyStateProps` (interface)
+- `Item` (interface)
+- `ItemId` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PopoverWidthStrategy` = `auto | eq | gte`
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SidebarItem` (alias)
+- `SidebarItemBase` (interface)
+- `Size` = `s | xs`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+### SidebarTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactNode` | — | no |  |
+| `className` | `string` | — | no |  |
+| `icon` | `JSXElementConstructor<{ size?: number \| undefined; className?: string \| undefined; }>` | — | yes |  |
+| `title` | `string` | — | yes |  |
+
+### TreeNavigation
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `content` | `ReactNode` | — | yes | Контентная часть страницы |
+| `contentClassName` | `string` | — | no | Класс для контейнера контентной части |
+| `header` | `{ title: string; icon?: ReactNode; description?: string \| undefined; status?: StatusProps \| undefined; actions?: ReactNode; }` | — | yes |  |
+| `menu` | `{ menuTitle?: string \| undefined; items: TreeNodeProps[]; isMenuOpen?: boolean \| undefined; onMenuToggle?(open: boolean): void; defaultMenuOpened?: boolean \| undefined; enableShrinkMenuButton?: boolean \| undefined; withDefaultOpenedMenuList?: boolean \| undefined; selected?: string \| undefined; onSelect?(selectedKey:...` | — | yes |  |
+| `mode` | `aside \| fixed \| popover` | — | yes | Вариант отображения |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `StatusProps` (interface)
+- `StatusSize` = `s | xs`
+- `TreeNavigationMode` = `aside | fixed | popover`
+- `TreeNodeId` (alias)
+- `TreeNodeProps` (alias)

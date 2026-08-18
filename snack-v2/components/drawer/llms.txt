@@ -1,0 +1,417 @@
+﻿# @ds/drawer
+
+> Пакет выезжающих панелей — компоненты Drawer и DrawerCustom с едиными токенами позиции и ширины.
+
+Docs: /snack-v2/components/drawer/
+
+## Установка
+
+```sh
+pnpm add @ds/drawer
+```
+
+## API
+
+### DesktopDrawer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом CSS-класс |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
+| `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `disableMotions` | `boolean` | `false` | no | Отключить анимации |
+| `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onSnapIndexChange` | `((snapIndex: number) => void)` | — | no | Callback изменения активного snap'а (пересечение swipe-границы или click по UI). Не вызывается при программной смене controlled `snapIndex`. |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
+| `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
+| `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
+| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
+| `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+
+### DialogBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Горизонтальные паддинги body. При `false` контент идёт во всю ширину sheet'а (edge-to-edge) — для карт, изображений, списков без отступов. Соответствует Figma-оси `padding=false`. |
+| `className` | `string` | — | no | CSS-класс контейнера body. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+
+### DialogFooter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс контейнера footer'а. |
+| `data-test-id` | `string` | — | no |  |
+
+### DialogHeader
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionButton` | `ReactNode` | — | no | Slot справа от headline-строки (любой `ReactNode`, обычно `Button` с иконкой). |
+| `className` | `string` | — | no | CSS-класс контейнера header'а. |
+| `data-test-id` | `string` | — | no |  |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
+| `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `titleId` | `string` | — | no | `id` заголовка — для связи с `aria-labelledby` dialog'а (accessible name). |
+| `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
+
+### Drawer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом CSS-класс |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
+| `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `disableMotions` | `boolean` | `false` | no | Отключить анимации |
+| `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onSnapIndexChange` | `((snapIndex: number) => void)` | — | no | Callback изменения активного snap'а (пересечение swipe-границы или click по UI). Не вызывается при программной смене controlled `snapIndex`. |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
+| `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
+| `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
+| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
+| `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+
+#### Related types
+- `BottomSheetActionButton` (alias)
+- `DrawerProps` (interface)
+- `FooterActionsOrientation` = `horizontal | vertical`
+- `Position` = `bottom | left | right | top`
+- `SnapPoint` (alias)
+- `Width` = `l | m | s`
+
+### DrawerBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Горизонтальные паддинги body. При `false` контент идёт во всю ширину sheet'а (edge-to-edge) — для карт, изображений, списков без отступов. Соответствует Figma-оси `padding=false`. |
+| `className` | `string` | — | no | CSS-класс контейнера body. |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+
+### DrawerCustom
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
+| `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
+| `data-test-id` | `string` | — | no |  |
+| `disableMotions` | `boolean` | `false` | no | Отключить анимации |
+| `footer` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Футер |
+| `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `nestedDrawer` | `ReactElement<Omit<DrawerCustomProps, "resizable">, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
+| `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
+| `push` | `boolean \| PushConfig` | — | no | Смещение при открытии "вложенного" компонента |
+| `resizable` | `{ min: number; max?: number; default?: number; onResize?: ((width: number) => void) \| undefined; onResizeEnd?: ((width: number) => void) \| undefined; draggerTooltip?: string \| undefined; } \| undefined` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+| `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
+| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
+| `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+
+#### Related types
+- `DrawerCustomProps` (interface)
+- `Position` = `bottom | left | right | top`
+- `SnapPoint` (alias)
+- `Width` = `l | m | s`
+
+### MobileDrawer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка — пропсы `Button` (дефолт `view='simple'`, `appearance='neutral'`). |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка действия — пропсы `Button` (дефолт `view='filled'`, `appearance='primary'`). |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом CSS-класс |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
+| `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
+| `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `data-test-id` | `string` | — | no |  |
+| `disableMotions` | `boolean` | `false` | no | Отключить анимации |
+| `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `media` | `ReactNode` | — | no | Медиа-контент |
+| `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
+| `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onSnapIndexChange` | `((snapIndex: number) => void)` | — | no | Callback изменения активного snap'а (пересечение swipe-границы или click по UI). Не вызывается при программной смене controlled `snapIndex`. |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
+| `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
+| `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
+| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
+| `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
+| `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
+| `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Button, ButtonGroup } from '@ds/button';
+import { Drawer } from '@ds/drawer';
+import { useState } from 'react';
+
+export function Basic() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Drawer
+        open={open}
+        position='right'
+        onClose={close}
+        title='Заголовок'
+        subtitle='Короткое пояснение сценария'
+        content='Основной контент тела. Сюда помещается форма, предупреждение или подробный текст.'
+        footer={
+          <ButtonGroup
+            primaryAction={{ label: 'Продолжить', view: 'filled', onClick: close }}
+            secondaryAction={{ label: 'Отмена', appearance: 'neutral', view: 'outline', onClick: close }}
+          />
+        }
+      />
+    </>
+  );
+}
+```
+
+### CustomComposition
+
+```tsx
+import { Button } from '@ds/button';
+import { DrawerCustom } from '@ds/drawer';
+import { useState } from 'react';
+
+export function CustomComposition() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть custom drawer' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <DrawerCustom open={open} position='right' width='s' onClose={close}>
+        <DrawerCustom.Header title='Ручная композиция' subtitle='Header + Body + Footer собираются вручную.' />
+        <DrawerCustom.Body
+          content={
+            <div style={{ padding: 24 }}>
+              <p>Тело Drawer собирается из произвольной разметки.</p>
+              <p>Скролл включается автоматически при большом содержимом.</p>
+            </div>
+          }
+        />
+        <DrawerCustom.Footer>
+          <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+            <Button label='Закрыть' appearance='neutral' view='outline' onClick={close} />
+            <Button label='Подтвердить' appearance='primary' view='filled' onClick={close} />
+          </div>
+        </DrawerCustom.Footer>
+      </DrawerCustom>
+    </>
+  );
+}
+```
+
+### HeightAuto
+
+```tsx
+import { Button } from '@ds/button';
+import { Drawer } from '@ds/drawer';
+import { useState } from 'react';
+
+export function HeightAuto() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть bottom sheet' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Drawer
+        open={open}
+        position='bottom'
+        heightAuto
+        onClose={close}
+        title='Bottom sheet'
+        subtitle='Высота рассчитывается по контенту'
+        content='Подходит для компактных подтверждений на мобильных устройствах.'
+      />
+    </>
+  );
+}
+```
+
+### NestedDrawer
+
+```tsx
+import { Button } from '@ds/button';
+import { Drawer } from '@ds/drawer';
+import { useState } from 'react';
+
+export function NestedDrawer() {
+  const [outerOpen, setOuterOpen] = useState(false);
+  const [innerOpen, setInnerOpen] = useState(false);
+
+  const closeAll = () => {
+    setInnerOpen(false);
+    setOuterOpen(false);
+  };
+
+  return (
+    <>
+      <Button label='Открыть родительский' appearance='primary' view='filled' onClick={() => setOuterOpen(true)} />
+      <Drawer
+        open={outerOpen}
+        position='right'
+        width='m'
+        onClose={closeAll}
+        title='Родительский Drawer'
+        subtitle='При открытии вложенного — родитель сдвигается влево.'
+        content={
+          <Button label='Открыть вложенный' appearance='primary' view='outline' onClick={() => setInnerOpen(true)} />
+        }
+        nestedDrawer={
+          <Drawer
+            open={innerOpen}
+            position='right'
+            width='s'
+            onClose={() => setInnerOpen(false)}
+            title='Вложенный Drawer'
+            subtitle='Кнопка «назад» возвращает к родителю'
+            onBackButtonClick={() => setInnerOpen(false)}
+            content='Вложенный Drawer рендерится через проп nestedDrawer родителя.'
+          />
+        }
+      />
+    </>
+  );
+}
+```
+
+### WithFooter
+
+```tsx
+import { Button, ButtonGroup } from '@ds/button';
+import { Drawer } from '@ds/drawer';
+import { useState } from 'react';
+
+export function WithFooter() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Удалить…' appearance='critical' view='outline' onClick={() => setOpen(true)} />
+      <Drawer
+        open={open}
+        position='right'
+        onClose={close}
+        title='Удалить запись'
+        subtitle='Действие необратимо.'
+        content='После подтверждения запись и все её ссылки исчезнут из списка.'
+        footer={
+          <ButtonGroup
+            primaryAction={{
+              label: 'Удалить',
+              appearance: 'critical',
+              view: 'filled',
+              onClick: close,
+            }}
+            secondaryAction={{
+              label: 'Отмена',
+              appearance: 'neutral',
+              view: 'outline',
+              onClick: close,
+            }}
+          />
+        }
+      />
+    </>
+  );
+}
+```
+
+### WithMedia
+
+```tsx
+import { Button } from '@ds/button';
+import { Drawer } from '@ds/drawer';
+import { useState } from 'react';
+
+export function WithMedia() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      <Button label='Открыть онбординг' appearance='primary' view='filled' onClick={() => setOpen(true)} />
+      <Drawer
+        open={open}
+        position='right'
+        width='m'
+        onClose={close}
+        media={
+          <div
+            style={{
+              height: 200,
+              background: 'linear-gradient(135deg, rgb(102 126 234), rgb(118 75 162))',
+            }}
+          />
+        }
+        title='Добро пожаловать'
+        subtitle='Кратко о том, что изменилось в этой версии.'
+        content='Список ключевых улучшений и ссылки на подробности могут размещаться в теле.'
+      />
+    </>
+  );
+}
+```

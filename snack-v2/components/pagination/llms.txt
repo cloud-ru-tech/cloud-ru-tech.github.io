@@ -1,0 +1,140 @@
+﻿# @ds/pagination
+
+> Пакет пагинации — компоненты Pagination с нумерованными страницами и PaginationSlider для плотной мини-навигации.
+
+Docs: /snack-v2/components/pagination/
+
+## Установка
+
+```sh
+pnpm add @ds/pagination
+```
+
+## API
+
+### Pagination
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS класснейм |
+| `data-test-id` | `string` | — | no |  |
+| `hrefFormatter` | `((page: number) => string)` | — | no | Колбэк форматирования ссылки |
+| `maxLength` | `number` | `7` | no | Максимальное количество страниц/элементов, помещающихся до транкейта |
+| `onChange` | `(page: number, event?: MouseEvent<HTMLButtonElement \| HTMLAnchorElement, MouseEvent> \| undefined) => void` | — | yes | Колбэк смены значения |
+| `page` | `number` | — | yes | Текущая страница |
+| `size` | `m \| s` | `m` | no | Размер |
+| `total` | `number` | — | yes | Общее количество страниц |
+| `variant` | `button \| link` | `button` | no | Варианты тега кнопок: <a/> или <button/> |
+
+#### Related types
+- `PaginationSize` = `m | s`
+- `Variant` = `button | link`
+
+### PaginationNumberItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activated` | `boolean` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `href` | `string` | — | no |  |
+| `label` | `string \| number` | — | yes |  |
+| `onClick` | `(event: MouseEvent<HTMLButtonElement \| HTMLAnchorElement, MouseEvent>) => void` | — | yes |  |
+| `setButtonRef` | `Ref<HTMLButtonElement \| HTMLAnchorElement>` | — | no |  |
+
+### PaginationSlider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS класснейм |
+| `data-test-id` | `string` | — | no |  |
+| `onChange` | `(page: number) => void` | — | yes | Колбек смены значения |
+| `page` | `number` | — | yes | Текущая страница |
+| `size` | `s \| xs` | `xs` | no | Размер |
+| `total` | `number` | — | yes | Общее количество страниц |
+
+#### Related types
+- `PaginationSliderSize` = `s | xs`
+
+### PaginationSliderItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activated` | `boolean` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `onClick` | `() => void` | — | yes |  |
+| `setButtonRef` | `Ref<HTMLButtonElement>` | — | no |  |
+| `size` | `s \| xs` | — | yes |  |
+
+## Примеры
+
+### AsLinks
+
+```tsx
+import { Pagination } from '@ds/pagination';
+import { useState } from 'react';
+
+export function AsLinks() {
+  const [page, setPage] = useState(2);
+
+  return <Pagination total={8} page={page} variant='link' hrefFormatter={p => `?page=${p}`} onChange={setPage} />;
+}
+```
+
+### Basic
+
+```tsx
+import { Pagination } from '@ds/pagination';
+import { useState } from 'react';
+
+export function Basic() {
+  const [page, setPage] = useState(3);
+  return <Pagination total={10} page={page} onChange={setPage} />;
+}
+```
+
+### LongRange
+
+```tsx
+import { Pagination } from '@ds/pagination';
+import { useState } from 'react';
+
+export function LongRange() {
+  const [page, setPage] = useState(12);
+
+  return <Pagination total={42} page={page} maxLength={7} onChange={setPage} />;
+}
+```
+
+### SizeM
+
+```tsx
+import { Pagination } from '@ds/pagination';
+import { useState } from 'react';
+
+export function SizeM() {
+  const [page, setPage] = useState(3);
+
+  return <Pagination total={10} page={page} size='m' onChange={setPage} />;
+}
+```
+
+### SliderBasic
+
+```tsx
+import { PaginationSlider } from '@ds/pagination';
+import { useState } from 'react';
+
+export function SliderBasic() {
+  const [page, setPage] = useState(2);
+  return <PaginationSlider total={5} page={page} onChange={setPage} />;
+}
+```
+
+### SliderSizeS
+
+```tsx
+import { PaginationSlider } from '@ds/pagination';
+import { useState } from 'react';
+
+export function SliderSizeS() {
+  const [page, setPage] = useState(2);
+
+  return <PaginationSlider total={5} page={page} size='s' onChange={setPage} />;
+}
+```

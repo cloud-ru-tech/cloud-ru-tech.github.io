@@ -1,0 +1,269 @@
+﻿# @ds/attachment
+
+> Пакет компонентов для отображения прикреплённых файлов — Attachment (горизонтальный) и AttachmentSquare (квадратный).
+
+Docs: /snack-v2/components/attachment/
+
+## Установка
+
+```sh
+pnpm add @ds/attachment
+```
+
+## Когда использовать
+
+- В списках прикреплённых файлов с возможностью скачать/удалить — `Attachment`.
+- В галереях превью со state `hovered`-overlay — `AttachmentSquare`.
+
+Когда **не** нужен пакет: для drag&drop-загрузки — `Dropzone`; для одиночных preview-карточек без actions — `Card`.
+
+## API
+
+### Actions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `hideDelete` | `boolean` | — | no |  |
+| `hideDownload` | `boolean` | — | no |  |
+| `hideRetry` | `boolean` | — | no |  |
+
+### Attachment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | — | no | Состояние «выбран» (множественный выбор) |
+| `className` | `string` | — | no | CSS-класс корня |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | `fileExtension` | no | Описание |
+| `disabled` | `boolean` | — | no | Заблокировано |
+| `error` | `string` | — | no | Сообщение об ошибке |
+| `file` | `File` | — | no | Файл |
+| `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка для файла @defaultIcon FileSVG |
+| `loading` | `boolean` | — | no | Управление состоянием загрузки |
+| `onClick` | `((event: MouseEvent<HTMLDivElement, MouseEvent>) => void)` | — | no | Клик по карточке |
+| `onDelete` | `((file?: File) => void)` | — | no | Колбек на клик по кнопке удаления |
+| `onDownload` | `((file?: File) => void)` | — | no | Колбек на клик по кнопке скачивания |
+| `onRetry` | `(() => void)` | — | no | Колбек на клик по кнопке повторения |
+| `size` | `m \| s` | `s` | no | Размер |
+| `title` | `string` | `fileName` | no | Заголовок |
+| `truncate` | `{ title?: number; description?: number; error?: number \| undefined; } \| undefined` | — | no |  |
+| `truncateVariant` | `end \| middle` | — | no | Вариант обрезания строки: <br> - `end` — с конца; <br> - `middle` — по середине |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `IconPredefinedProps` (interface)
+- `Size` = `m | s`
+- `TruncateStringProps` (alias)
+
+### AttachmentSquare
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `checked` | `boolean` | — | no | Состояние «выбран» (множественный выбор) |
+| `className` | `string` | — | no | CSS-класс корня |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | `fileExtension` | no | Описание |
+| `disabled` | `boolean` | — | no | Заблокировано |
+| `error` | `string` | — | no | Сообщение об ошибке |
+| `file` | `File` | — | no | Файл |
+| `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка для файла @defaultIcon FileSVG |
+| `loading` | `boolean` | — | no | Управление состоянием загрузки |
+| `onClick` | `((event: MouseEvent<HTMLDivElement, MouseEvent>) => void)` | — | no | Клик по карточке |
+| `onDelete` | `((file?: File) => void)` | — | no | Колбек на клик по кнопке удаления |
+| `onDownload` | `((file?: File) => void)` | — | no | Колбек на клик по кнопке скачивания |
+| `onRetry` | `(() => void)` | — | no | Колбек на клик по кнопке повторения |
+| `size` | `m \| s` | `s` | no | Размер |
+| `title` | `string` | `fileName` | no | Заголовок |
+| `truncateVariant` | `end \| middle` | — | no | Вариант обрезания строки: <br> - `end` — с конца; <br> - `middle` — по середине |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `IconPredefinedProps` (interface)
+- `Size` = `m | s`
+- `TruncateStringProps` (alias)
+
+### Emblem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка для файла @defaultIcon FileSVG |
+| `imageData` | `string` | — | no |  |
+| `loading` | `boolean` | — | no | Управление состоянием загрузки |
+| `title` | `string` | `fileName` | no | Заголовок |
+
+### HoverContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корня |
+| `description` | `string` | `fileExtension` | no | Описание |
+| `error` | `string` | — | no | Сообщение об ошибке |
+| `hasImage` | `boolean` | — | no | image-mode → overlay даёт title/description/actions поверх `<img>`; icon-mode → только actions поверх иконки. |
+| `title` | `string` | `fileName` | no | Заголовок |
+
+### MainContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корня |
+| `description` | `string` | — | no |  |
+| `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка для файла @defaultIcon FileSVG |
+| `imageData` | `string` | — | no |  |
+| `title` | `string` | `fileName` | no | Заголовок |
+
+### Text
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-size` | `string` | — | no | Только на wrapper-div для typography token-mapping; в TruncateString не пробрасывается. |
+| `data-test-id` | `string` | — | no |  |
+| `maxLines` | `number` | `1` | no |  |
+| `text` | `string` | — | no |  |
+
+### TextBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `align` | `center \| left` | `left` | no |  |
+| `className` | `string` | — | no | CSS-класс корня |
+| `description` | `string` | `fileExtension` | no | Описание |
+| `error` | `string` | — | no | Сообщение об ошибке |
+| `title` | `string` | `fileName` | no | Заголовок |
+
+## Примеры
+
+### AttachmentError
+
+```tsx
+import { Attachment } from '@ds/attachment';
+import { useState } from 'react';
+
+import { PDF_FILE } from './sample';
+
+export function AttachmentError() {
+  const [retries, setRetries] = useState(0);
+
+  return (
+    <Attachment
+      file={PDF_FILE}
+      error={`Не удалось загрузить (попыток: ${retries})`}
+      onRetry={() => setRetries(n => n + 1)}
+      onDelete={file => console.info('delete', file?.name)}
+    />
+  );
+}
+```
+
+### AttachmentLoading
+
+```tsx
+import { Attachment } from '@ds/attachment';
+
+import { PDF_FILE } from './sample';
+
+export function AttachmentLoading() {
+  return <Attachment file={PDF_FILE} loading />;
+}
+```
+
+### AttachmentSelectable
+
+```tsx
+import { Attachment } from '@ds/attachment';
+import { useState } from 'react';
+
+import { PDF_FILE } from './sample';
+
+export function AttachmentSelectable() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <Attachment
+      file={PDF_FILE}
+      checked={checked}
+      onClick={() => setChecked(v => !v)}
+      onDelete={file => console.info('delete', file?.name)}
+    />
+  );
+}
+```
+
+### AttachmentSquareBasic
+
+```tsx
+import { AttachmentSquare } from '@ds/attachment';
+
+import { PDF_FILE } from './sample';
+
+export function AttachmentSquareBasic() {
+  return (
+    <AttachmentSquare
+      file={PDF_FILE}
+      onDownload={file => console.info('download', file?.name)}
+      onDelete={file => console.info('delete', file?.name)}
+    />
+  );
+}
+```
+
+### AttachmentSquareImage
+
+```tsx
+import { AttachmentSquare } from '@ds/attachment';
+import { useEffect, useState } from 'react';
+
+import pictureUrl from './picture.jpg?url';
+
+export function AttachmentSquareImage() {
+  const [file, setFile] = useState<File>();
+
+  useEffect(() => {
+    fetch(pictureUrl)
+      .then(r => r.blob())
+      .then(blob => setFile(new File([blob], 'picture.jpg', { type: 'image/jpg' })));
+  }, []);
+
+  return (
+    <AttachmentSquare
+      size='m'
+      file={file}
+      onDownload={f => console.info('download', f?.name)}
+      onDelete={f => console.info('delete', f?.name)}
+    />
+  );
+}
+```
+
+### AttachmentWithImage
+
+```tsx
+import { Attachment } from '@ds/attachment';
+import { useEffect, useState } from 'react';
+
+import pictureUrl from './picture.jpg?url';
+
+export function AttachmentWithImage() {
+  const [file, setFile] = useState<File>();
+
+  useEffect(() => {
+    fetch(pictureUrl)
+      .then(r => r.blob())
+      .then(blob => setFile(new File([blob], 'picture.jpg', { type: 'image/jpg' })));
+  }, []);
+
+  return (
+    <Attachment
+      file={file}
+      title='Скриншот'
+      description='JPG'
+      onDownload={f => console.info('download', f?.name)}
+      onDelete={f => console.info('delete', f?.name)}
+    />
+  );
+}
+```
+
+### BasicAttachment
+
+```tsx
+import { Attachment } from '@ds/attachment';
+
+import { PDF_FILE } from './sample';
+
+export function BasicAttachment() {
+  return <Attachment file={PDF_FILE} onDownload={file => console.info('download', file?.name)} />;
+}
+```

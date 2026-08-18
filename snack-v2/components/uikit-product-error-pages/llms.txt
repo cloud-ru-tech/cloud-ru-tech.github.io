@@ -1,0 +1,101 @@
+﻿# @ds/uikit-product-error-pages
+
+> Полноэкранная error-страница с типовыми сценариями ошибок, действиями и декоративной иллюстрацией.
+
+Docs: /snack-v2/components/uikit-product-error-pages/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-error-pages
+```
+
+## Когда использовать
+
+- Нужно показать пользователю системную ошибку или недоступность страницы целым экраном.
+- Требуется типовой набор: заголовок с кодом статуса, поясняющий текст, кнопка действия и ссылки на главную/назад.
+- Нужна точка входа в поддержку (`onSupportCenterClick`).
+
+Когда **не** нужен:
+
+- Локальная ошибка внутри блока или формы:
+  - используйте `Alert` или inline-сообщение.
+- Загрузочное/пустое состояние без ошибки — это `Skeleton` / empty-state, а не ErrorPage.
+
+## API
+
+### ErrorPage
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс. |
+| `custom` | `ErrorPageCustomConfig` | — | no | Объект с кастомными настройками, используется только для `ERROR_TYPE.Custom`. |
+| `data-test-id` | `string` | — | no |  |
+| `errorType` | `Custom \| FrontendError \| Offline \| PageNotFound \| PageUnavailable \| Redirect` | `FrontendError` | no | Тип ошибки — определяет заголовок, текст, код статуса и набор действий. |
+| `logo` | `ReactNode` | — | no | Кастомный логотип, используется только с `LOGO_VARIANT.Custom`. |
+| `logoVariant` | `Cloud \| Custom \| None` | `None` | no | Вариант логотипа над заголовком. |
+| `mainPageUrl` | `string` | `/` | no | URL главной страницы (для кнопки/ссылки «На главную»). |
+| `onSupportCenterClick` | `(() => void)` | — | no | Обработчик клика по кнопке «Служба поддержки». Если задан — кнопка отображается. |
+| `showMainButton` | `boolean` | `true` | no | Показать основную (filled) кнопку действия. |
+
+#### Related types
+- `ErrorPageCustomConfig` (interface)
+- `MainButtonConfig` (interface)
+
+### Illustration
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+
+## Примеры
+
+### Custom
+
+```tsx
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+
+export function Custom() {
+  return (
+    <ErrorPage
+      errorType={ERROR_TYPE.Custom}
+      logoVariant={LOGO_VARIANT.Custom}
+      logo={<span>ACME</span>}
+      mainPageUrl='/dashboard'
+      custom={{
+        title: 'Quota exceeded',
+        description: 'Your project reached its resource limit. Upgrade the plan to continue.',
+        statusCode: 429,
+        mainButton: { label: 'Upgrade plan', href: '/billing' },
+        showMainPageLink: true,
+        showBackLink: true,
+      }}
+    />
+  );
+}
+```
+
+### NotFound
+
+```tsx
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+
+export function NotFound() {
+  return (
+    <ErrorPage
+      errorType={ERROR_TYPE.PageNotFound}
+      logoVariant={LOGO_VARIANT.Cloud}
+      mainPageUrl='/'
+      onSupportCenterClick={() => window.open('https://cloud.ru/support', '_blank')}
+    />
+  );
+}
+```
+
+### Offline
+
+```tsx
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+
+export function Offline() {
+  return <ErrorPage errorType={ERROR_TYPE.Offline} logoVariant={LOGO_VARIANT.Cloud} />;
+}
+```

@@ -1,0 +1,228 @@
+﻿# @ds/segment-control
+
+> Сегментированный переключатель — компактная радио-группа с единственным выбором, токенами размеров s/m/l, иконками, счётчиками и режимом полной ширины.
+
+Docs: /snack-v2/components/segment-control/
+
+## Установка
+
+```sh
+pnpm add @ds/segment-control
+```
+
+## Когда использовать
+
+- Когда вариантов от 2 до 5 и все они одновременно видимы на экране.
+- Для переключения режимов отображения (list/grid/kanban, day/week/month).
+- Для компактных фильтров с взаимоисключающим выбором.
+
+Когда **не** нужен `SegmentControl`:
+
+- Вариантов больше 5:
+  - используйте `Tabs` или `Select`.
+- Допускается множественный выбор:
+  - используйте чекбоксы или `ToggleGroup`.
+- Выбор приводит к загрузке тяжёлого контента и нужны отдельные урлы:
+  - используйте `Tabs`.
+
+## API
+
+### Segment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `counter` | `string \| number` | — | no | Счётчик в сегменте (отображается после лейбла). |
+| `disabled` | `boolean` | — | no | Состояние активности сегмента. |
+| `focusable` | `boolean` | — | no |  |
+| `icon` | `ReactNode` | — | no | Иконка сегмента. |
+| `iconPosition` | `after \| before` | `before` | no | Позиция иконки относительно лейбла. |
+| `label` | `string` | — | no | Текстовый заголовок сегмента. |
+| `onClick` | `() => void` | — | yes |  |
+| `onGetFocusable` | `((ref: HTMLButtonElement \| null) => void)` | — | no |  |
+| `onSelectionUpdated` | `(element: HTMLButtonElement) => void` | — | yes |  |
+| `renderWrapSegment` | `((segment: ReactNode) => ReactNode)` | — | no | Render-обёртка над сегментом. |
+| `selected` | `boolean` | — | yes |  |
+| `size` | `l \| m \| s` | — | yes |  |
+| `testId` | `string` | — | no |  |
+| `value` | `IdType` | — | yes | Идентификатор сегмента. |
+
+### SegmentControl
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `IdType` | — | no | ID выбранного по умолчанию сегмента (uncontrolled). |
+| `items` | `Segment<Value>[]` | — | yes | Набор сегментов. |
+| `name` | `string` | — | no | Имя поля (hidden input для формы). |
+| `onChange` | `((value: Value) => void)` | — | no | Колбек смены выбранного сегмента. |
+| `outline` | `boolean` | — | no | Обводка. |
+| `size` | `l \| m \| s` | `m` | no | Размер компонента. |
+| `value` | `IdType` | — | no | Value выбранного сегмента. |
+| `width` | `auto \| full` | `auto` | no | Управление шириной компонента. |
+
+#### Related types
+- `IconPosition` = `after | before`
+- `Segment` (interface)
+- `Size` = `l | m | s`
+- `Value` = `0% | 100% | 50%`
+- `Width` = `auto | full`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+
+export function Basic() {
+  return (
+    <SegmentControl
+      defaultValue='overview'
+      items={[
+        { value: 'overview', label: 'Overview' },
+        { value: 'analytics', label: 'Analytics' },
+        { value: 'reports', label: 'Reports' },
+      ]}
+    />
+  );
+}
+```
+
+### Controlled
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+import { useState } from 'react';
+
+export function Controlled() {
+  const [view, setView] = useState<'list' | 'grid' | 'kanban'>('list');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <SegmentControl
+        value={view}
+        onChange={setView}
+        items={[
+          { value: 'list', label: 'List' },
+          { value: 'grid', label: 'Grid' },
+          { value: 'kanban', label: 'Kanban' },
+        ]}
+      />
+      <span>Selected: {view}</span>
+    </div>
+  );
+}
+```
+
+### DisabledSegment
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+
+export function DisabledSegment() {
+  return (
+    <SegmentControl
+      defaultValue='one'
+      items={[
+        { value: 'one', label: 'One' },
+        { value: 'two', label: 'Two', disabled: true },
+        { value: 'three', label: 'Three' },
+      ]}
+    />
+  );
+}
+```
+
+### FullWidth
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+
+export function FullWidth() {
+  return (
+    <div style={{ width: 480, maxWidth: '100%' }}>
+      <SegmentControl
+        width='full'
+        outline
+        defaultValue='day'
+        items={[
+          { value: 'day', label: 'Day' },
+          { value: 'week', label: 'Week' },
+          { value: 'month', label: 'Month' },
+          { value: 'year', label: 'Year' },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### Sizes
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+
+const items = [
+  { value: 'one', label: 'One' },
+  { value: 'two', label: 'Two' },
+  { value: 'three', label: 'Three' },
+];
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <SegmentControl size='s' defaultValue='one' items={items} />
+      <SegmentControl size='m' defaultValue='one' items={items} />
+      <SegmentControl size='l' defaultValue='one' items={items} />
+    </div>
+  );
+}
+```
+
+### WithCounter
+
+```tsx
+import { SegmentControl } from '@ds/segment-control';
+
+export function WithCounter() {
+  return (
+    <SegmentControl
+      defaultValue='inbox'
+      items={[
+        { value: 'inbox', label: 'Inbox', counter: 12 },
+        { value: 'drafts', label: 'Drafts', counter: 3 },
+        { value: 'archive', label: 'Archive' },
+      ]}
+    />
+  );
+}
+```
+
+### WithIcons
+
+```tsx
+import { HomeSVG, PlusSVG, SettingsSVG } from '@ds/icons/interface/system';
+import { SegmentControl } from '@ds/segment-control';
+
+export function WithIcons() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <SegmentControl
+        defaultValue='home'
+        items={[
+          { value: 'home', label: 'Home', icon: <HomeSVG /> },
+          { value: 'settings', label: 'Settings', icon: <SettingsSVG /> },
+          { value: 'add', label: 'Add', icon: <PlusSVG /> },
+        ]}
+      />
+      <SegmentControl
+        defaultValue='home'
+        items={[
+          { value: 'home', icon: <HomeSVG /> },
+          { value: 'settings', icon: <SettingsSVG /> },
+          { value: 'add', icon: <PlusSVG /> },
+        ]}
+      />
+    </div>
+  );
+}
+```

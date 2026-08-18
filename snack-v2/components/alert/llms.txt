@@ -1,0 +1,230 @@
+﻿# @ds/alert
+
+> Семантическое уведомление — компонент Alert для inline-нотификаций в контенте и AlertTop для системных баннеров по верхней кромке.
+
+Docs: /snack-v2/components/alert/
+
+## Установка
+
+```sh
+pnpm add @ds/alert
+```
+
+## API
+
+### Alert
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `align` | `horizontal \| vertical` | `vertical` | no | Выравнивание контента |
+| `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `collapsible` | `boolean` | — | no | Режим сворачивания: длинный текст, ссылка и кнопки скрыты до раскрытия (inline; как MobileAlertTop). При `true` не используйте `TruncateString` на том же узле, что и измерение — см. документацию. |
+| `content` | `ReactNode` | — | yes | Описание |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `boolean` | — | no | Отображать иконку |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<AlertLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива для этого инстанса (deep-merge поверх `ALERT_LAYOUT_PRESETS`). Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `onClose` | `(() => void)` | — | no | Колбек закрытия |
+| `outline` | `boolean` | — | no | Внешний бордер |
+| `size` | `m \| s` | — | no | Размер |
+| `title` | `string` | — | no | Заголовок |
+| `truncate` | `{ title?: number; }` | `title: 1` | no | Максимальное кол-во строк (только при `collapsible={false}`). |
+
+#### Related types
+- `AlertButtonProps` (interface)
+- `AlertLayoutDefaults` (interface)
+- `Align` = `horizontal | vertical`
+- `Appearance` = `error | info | neutral | primary | success | warning`
+- `ButtonSize` = `m | s`
+- `ButtonVariant` = `onAccent | onColor`
+- `IconPosition` = `after | before`
+- `LayoutPresets` (interface)
+- `PolymorphicRef` (alias)
+- `Size` = `m | s`
+
+### ALERT_LAYOUT_PRESETS
+_Нет публичных пропсов._
+
+### ALERT_TOP_LAYOUT_PRESETS
+_Нет публичных пропсов._
+
+### AlertBase
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `align` | `horizontal \| vertical` | — | no | Выравнивание контента |
+| `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `collapsible` | `boolean` | — | no | Режим сворачивания: длинный текст, ссылка и кнопки скрыты до раскрытия (inline; как MobileAlertTop). При `true` не используйте `TruncateString` на том же узле, что и измерение — см. документацию. |
+| `content` | `ReactNode` | — | yes | Описание |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `boolean` | — | no | Отображать иконку |
+| `onClose` | `(() => void)` | — | no | Колбек закрытия |
+| `outline` | `boolean` | — | no |  |
+| `size` | `m \| s` | — | no | Размер |
+| `title` | `string` | — | no | Заголовок |
+| `truncate` | `{ title?: number; }` | `title: 1` | no | Максимальное кол-во строк (только при `collapsible={false}`). |
+| `variant` | `inline \| top` | — | yes |  |
+
+### AlertButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `className` | `string` | — | no | Дополнительный класс |
+| `disabled` | `boolean` | `false` | no | Отключена |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `iconPosition` | `after \| before` | `before` | no | Позиция иконки относительно текста |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `invertFocusOutlineColor` | `boolean` | — | no | Инвертировать цвет фокусного контура |
+| `label` | `string` | — | no | Текст кнопки |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `size` | `m \| s` | `m` | no | Размер |
+| `variant` | `onAccent \| onColor` | `onColor` | no | Вариант оформления |
+
+#### Related types
+- `ButtonSize` = `m | s`
+- `ButtonVariant` = `onAccent | onColor`
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+
+### AlertCloseButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `invertFocusOutlineColor` | `boolean` | — | no | Инверсный цвет фокус-рамки (алерт на акцентной подложке) |
+| `onClick` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик закрытия |
+| `size` | `m \| s` | `m` | no | Размер |
+| `variant` | `onAccent \| onColor` | `onColor` | no | Цветовой режим: `onColor` — обычный алерт, `onAccent` — alertTop на акцентной подложке |
+
+### AlertTop
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `align` | `horizontal \| vertical` | `vertical` | no | Выравнивание контента |
+| `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `collapsible` | `boolean` | — | no | Режим сворачивания: длинный текст, ссылка и кнопки скрыты до раскрытия (inline; как MobileAlertTop). При `true` не используйте `TruncateString` на том же узле, что и измерение — см. документацию. |
+| `content` | `ReactNode` | — | yes | Описание |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `boolean` | — | no | Отображать иконку |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<AlertTopLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива для этого инстанса (deep-merge поверх `ALERT_TOP_LAYOUT_PRESETS`). Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `onClose` | `(() => void)` | — | no | Колбек закрытия |
+| `size` | `m \| s` | — | no | Размер |
+| `title` | `string` | — | no | Заголовок |
+| `truncate` | `{ title?: number; }` | `title: 1` | no | Максимальное кол-во строк (только при `collapsible={false}`). |
+
+#### Related types
+- `AlertButtonProps` (interface)
+- `AlertTopLayoutDefaults` (interface)
+- `Align` = `horizontal | vertical`
+- `Appearance` = `error | info | neutral | primary | success | warning`
+- `ButtonSize` = `m | s`
+- `ButtonVariant` = `onAccent | onColor`
+- `IconPosition` = `after | before`
+- `LayoutPresets` (interface)
+- `PolymorphicRef` (alias)
+- `Size` = `m | s`
+
+## Примеры
+
+### AdaptiveTruncate
+
+```tsx
+import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
+import { Alert } from '@ds/alert';
+
+const LONG_TITLE = 'Плановые технические работы в дата-центре: часть сервисов будет недоступна с 02:00 до 04:00 МСК';
+
+export function AdaptiveTruncate() {
+  return (
+    <AdaptiveProvider layoutType={LAYOUT_TYPE.Mobile}>
+      <div style={{ maxWidth: 360 }}>
+        <Alert appearance='info' title={LONG_TITLE} content='На узком экране заголовок усекается в две строки.' />
+      </div>
+    </AdaptiveProvider>
+  );
+}
+```
+
+### Collapsible
+
+```tsx
+import { Alert } from '@ds/alert';
+
+export function Collapsible() {
+  return (
+    <Alert
+      appearance='info'
+      collapsible
+      title='Совет по настройке'
+      content='Полное описание того, как правильно настроить функцию. Текст длинный и сворачивается до раскрытия.'
+    />
+  );
+}
+```
+
+### Error
+
+```tsx
+import { Alert } from '@ds/alert';
+
+export function Error() {
+  return (
+    <Alert
+      appearance='error'
+      title='Не удалось сохранить'
+      content='Проверьте подключение к сети и повторите попытку.'
+      onClose={() => undefined}
+    />
+  );
+}
+```
+
+### Info
+
+```tsx
+import { Alert } from '@ds/alert';
+
+export function Info() {
+  return (
+    <Alert appearance='info' title='Настройки сохранены' content='Изменения применены ко всем активным проектам.' />
+  );
+}
+```
+
+### SystemNotice
+
+```tsx
+import { AlertTop } from '@ds/alert';
+
+export function SystemNotice() {
+  return (
+    <AlertTop
+      appearance='info'
+      title='Плановые работы'
+      content='Сегодня с 22:00 до 23:00 возможны кратковременные перебои.'
+    />
+  );
+}
+```
+
+### WithActions
+
+```tsx
+import { Alert } from '@ds/alert';
+
+export function WithActions() {
+  return (
+    <Alert
+      appearance='warning'
+      title='Требуется подтверждение'
+      content='Операция необратима. Продолжить?'
+      actions={{
+        primary: { label: 'Продолжить', onClick: () => undefined },
+        secondary: { label: 'Отмена', onClick: () => undefined },
+      }}
+    />
+  );
+}
+```

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SkeletonText.CF0FKeE7.js";import{t as n}from"./WithSkeleton.CPF4dzyk.js";var r=e();function i(){return(0,r.jsx)(n,{loading:!0,skeleton:(0,r.jsx)(t,{loading:!0,lines:2,variant:`body`,size:`m`}),children:(0,r.jsx)(`p`,{children:`Реальный контент после загрузки.`})})}export{i as WithToggle};

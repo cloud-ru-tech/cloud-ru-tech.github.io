@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./Tabs.D2vqjIqs.js";var r=e();function i(){return(0,r.jsx)(n,{defaultValue:`a`,children:(0,r.jsxs)(n.TabBar,{orientation:t.Vertical,children:[(0,r.jsx)(n.Tab,{value:`a`,label:`Профиль`}),(0,r.jsx)(n.Tab,{value:`b`,label:`Безопасность`})]})})}export{i as Vertical};

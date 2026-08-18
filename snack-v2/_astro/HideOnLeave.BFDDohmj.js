@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Scroll.BIWY_-38.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{height:200,width:320},children:(0,n.jsx)(t,{barHideStrategy:`leave`,children:(0,n.jsx)(`div`,{style:{padding:8},children:Array.from({length:20},(e,t)=>(0,n.jsxs)(`div`,{children:[`Строка `,t+1]},t))})})})}export{r as HideOnLeave};

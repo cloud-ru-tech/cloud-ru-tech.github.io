@@ -1,0 +1,128 @@
+﻿# @ds/ai-field-banner
+
+> Инлайн-баннер для поля ввода с семантическим типом, иконкой, описанием и действием.
+
+Docs: /snack-v2/components/ai-field-banner/
+
+## Установка
+
+```sh
+pnpm add @ds/ai-field-banner
+```
+
+## Когда использовать
+
+- Подсказки и валидация у AI-полей (`information`, `help`, `warning`, `critical`).
+- Контекст безопасности или агентного сценария (`security`, `agentic`).
+- Дополнительный контент под основной строкой — ссылка, чип, короткий список (`children`).
+
+### Когда не нужен
+
+- Полноразмерный inline-alert в контенте страницы — используйте `@ds/alert`.
+- Системный баннер по верхней кромке — используйте `AlertTop` из `@ds/alert`.
+
+## API
+
+### AiFieldBanner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | no | Подпись кнопки действия справа. Кнопка не рендерится, если не задана. |
+| `children` | `ReactNode` | — | no | Дополнительный слот под основной строкой. Не рендерится, если не задан. |
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-banner` | no |  |
+| `description` | `ReactNode` | — | no | Текст или контент основной строки. Не рендерится, если не задан. |
+| `hasAdditional` | `boolean` | — | no | Принудительно добавляет высоту компонента на 12px, даже если `children` не задан. |
+| `icon` | `ReactNode` | — | no | Иконка слева от текста |
+| `onActionClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Обработчик клика по кнопке действия. |
+| `size` | `m \| s` | `s` | no | Размер: без `children` — `s` 400×48, `m` 400×60; с `children` — `s` 400×72, `m` 400×84. |
+| `variant` | `agentic \| critical \| help \| information \| security \| warning` | `information` | no | Семантический вариант баннера (ось `Type` в Figma). По умолчанию `information`. |
+
+#### Related types
+- `Size` = `m | s`
+- `Type` = `agentic | critical | help | information | security | warning`
+
+## Примеры
+
+### Default
+
+```tsx
+import { AiFieldBanner, TYPE } from '@ds/ai-field-banner';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Default() {
+  return (
+    <AiFieldBanner
+      variant={TYPE.Information}
+      description='Description'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+      onActionClick={() => undefined}
+    />
+  );
+}
+```
+
+### Mobile
+
+```tsx
+import { AiFieldBanner, SIZE, TYPE } from '@ds/ai-field-banner';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function Mobile() {
+  return (
+    <AiFieldBanner
+      size={SIZE.M}
+      variant={TYPE.Agentic}
+      description='Description'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+    />
+  );
+}
+```
+
+### Types
+
+```tsx
+import { AiFieldBanner, TYPE_ORDER } from '@ds/ai-field-banner';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+const types = TYPE_ORDER;
+
+export function Types() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 400 }}>
+      {types.map(type => (
+        <AiFieldBanner
+          key={type}
+          variant={type}
+          description='Description'
+          actionLabel='Label text'
+          icon={<PlaceholderSVG />}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+### WithAdditionalSlot
+
+```tsx
+import { AiFieldBanner, TYPE } from '@ds/ai-field-banner';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+
+export function WithAdditionalSlot() {
+  return (
+    <AiFieldBanner
+      variant={TYPE.Information}
+      description='Description'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+      onActionClick={() => undefined}
+    >
+      Additional content
+    </AiFieldBanner>
+  );
+}
+```

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{r as t}from"./utils.CxREtkS2.js";import{n,t as r}from"./LoadStatus.DK5fbAEQ.js";var i=e();function a(){return(0,i.jsx)(r,{label:`Загрузка`,progress:65,valueType:`percent`,hint:`Статичный цвет полосы`,appearanceByProgress:[{condition:n.Lte,limit:100,appearance:t.Green}]})}export{a as WithAppearance};

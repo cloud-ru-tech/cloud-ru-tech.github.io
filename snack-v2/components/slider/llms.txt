@@ -1,0 +1,112 @@
+﻿# @ds/slider
+
+> Ползунок для выбора числового значения или диапазона — с метками, tooltip на ручке и опциональным равномерным распределением нелинейных значений.
+
+Docs: /snack-v2/components/slider/
+
+## Установка
+
+```sh
+pnpm add @ds/slider
+```
+
+## Когда использовать
+
+- Выбор числового параметра в известном диапазоне: цена, громкость, приоритет.
+- Фильтры «от…до» (`range`).
+- Управление параметрами, где ценно видеть относительное положение (например, прозрачность).
+
+Когда **не** стоит: точный ввод числа (лучше `InputNumber`), бинарные переключения (`Switch`), выбор из дискретных вариантов без порядка (`RadioGroup`).
+
+## API
+
+### Slider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activeHandleRender` | `((origin: React.ReactElement<React.HTMLAttributes<HTMLDivElement>>, props: RenderProps) => React.ReactElement) \| undefined` | — | no |  |
+| `allowCross` | `boolean \| undefined` | — | no |  |
+| `ariaLabelForHandle` | `string \| string[] \| undefined` | — | no |  |
+| `ariaLabelledByForHandle` | `string \| string[] \| undefined` | — | no |  |
+| `ariaRequired` | `boolean \| undefined` | — | no |  |
+| `ariaValueTextFormatterForHandle` | `AriaValueFormat \| AriaValueFormat[] \| undefined` | — | no |  |
+| `autoFocus` | `boolean \| undefined` | — | no |  |
+| `className` | `string \| undefined` | — | no |  |
+| `count` | `number \| undefined` | — | no |  |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests |
+| `defaultValue` | `number \| number[] \| undefined` | — | no |  |
+| `disabled` | `boolean \| undefined` | — | no |  |
+| `dots` | `boolean \| undefined` | — | no |  |
+| `handleTip` | `boolean` | — | no | Показывать значение в тултипе на ручке |
+| `id` | `string \| undefined` | — | no |  |
+| `included` | `boolean \| undefined` | — | no |  |
+| `keyboard` | `boolean \| undefined` | — | no |  |
+| `marks` | `Record<string \| number, React.ReactNode \| MarkObj> \| undefined` | — | no |  |
+| `marksEqualSpacing` | `boolean` | — | no | Включение равномерного распределения при нелинейных значениях меток. |
+| `max` | `number \| undefined` | — | no |  |
+| `min` | `number \| undefined` | — | no |  |
+| `onAfterChange` | `((value: number \| number[]) => void) \| undefined` | — | no |  |
+| `onBeforeChange` | `((value: number \| number[]) => void) \| undefined` | — | no |  |
+| `onBlur` | `((e: React.FocusEvent<HTMLDivElement>) => void) \| undefined` | — | no |  |
+| `onChange` | `((value: number \| number[]) => void) \| undefined` | — | no |  |
+| `onChangeComplete` | `((value: number \| number[]) => void) \| undefined` | — | no |  |
+| `onFocus` | `((e: React.FocusEvent<HTMLDivElement>) => void) \| undefined` | — | no |  |
+| `pushable` | `number \| boolean \| undefined` | — | no |  |
+| `range` | `boolean \| RangeConfig \| undefined` | — | no |  |
+| `reverse` | `boolean \| undefined` | — | no |  |
+| `startPoint` | `number \| undefined` | — | no |  |
+| `step` | `number \| null \| undefined` | — | no |  |
+| `tabIndex` | `number \| number[] \| undefined` | — | no |  |
+| `tipFormatter` | `((value: string \| number) => ReactNode)` | — | no | Форматирование подсказки; по умолчанию — сырое значение |
+| `track` | `boolean \| undefined` | — | no |  |
+| `value` | `number \| number[] \| undefined` | — | no |  |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Slider } from '@ds/slider';
+
+export function Basic() {
+  return <Slider min={0} max={100} defaultValue={40} />;
+}
+```
+
+### Disabled
+
+```tsx
+import { Slider } from '@ds/slider';
+
+export function Disabled() {
+  return <Slider min={0} max={100} defaultValue={40} disabled />;
+}
+```
+
+### Marks
+
+```tsx
+import { Slider } from '@ds/slider';
+
+export function Marks() {
+  return (
+    <Slider
+      min={0}
+      max={100}
+      step={25}
+      marks={{ 0: '0', 25: '25', 50: '50', 75: '75', 100: '100' }}
+      defaultValue={50}
+      handleTip
+    />
+  );
+}
+```
+
+### Range
+
+```tsx
+import { Slider } from '@ds/slider';
+
+export function Range() {
+  return <Slider range min={0} max={100} defaultValue={[20, 70]} handleTip />;
+}
+```

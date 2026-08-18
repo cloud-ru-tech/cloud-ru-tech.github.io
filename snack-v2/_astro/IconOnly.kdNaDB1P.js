@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.BkCFr3_o.js";import{t as n}from"./Settings.BVgjXeNl.js";var r=e();function i(){return(0,r.jsx)(t,{view:`function`,icon:(0,r.jsx)(n,{}),"aria-label":`Настройки`})}export{i as IconOnly};

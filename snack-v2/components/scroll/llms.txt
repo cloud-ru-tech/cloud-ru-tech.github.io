@@ -1,0 +1,150 @@
+﻿# @ds/scroll
+
+> Контейнер с кастомными скроллбарами, размерами s/m, стратегиями скрытия, автоскролом и опциональным ресайзом.
+
+Docs: /snack-v2/components/scroll/
+
+## Установка
+
+```sh
+pnpm add @ds/scroll
+```
+
+## Когда использовать
+
+- Прокручиваемые области внутри интерфейса: боковые панели, чаты, логи, списки, таблицы в карточках.
+- Контент с динамической высотой, где нужно прилипание к низу (чат, live-лог) — через `autoscrollTo='bottom'`.
+- Контейнер, размер которого пользователь регулирует сам — через `resize='both' | 'horizontal' | 'vertical'`.
+
+Когда **не** использовать:
+
+- На весь `<body>` — нативный скролл окна лучше для SEO, клавиатуры и системных жестов.
+- Внутри виртуализированных списков — они уже управляют своим скроллом.
+- Для коротких блоков, которые гарантированно помещаются — лишний контейнер и JS без выгоды.
+
+## API
+
+### Scroll
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoscrollTo` | `bottom \| right` | — | no | Включает автоскрол при маунте и изменении размера контента: <br /> - `bottom` - автоскрол вниз, <br /> - `right` - автоскрол вправо, |
+| `barHideStrategy` | `leave \| move \| never \| scroll` | `leave` | no | Управление скрытием скролл баров: <br /> - `Never` - показывать всегда <br /> - `Leave` - скрывать когда курсор покидает компонент <br /> - `Scroll` - показывать только когда происходит скроллинг <br /> - `Move` - показывать при движении курсора над компонентом |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `clickScrolling` | `boolean` | `true` | no | Скролить ли по клику в скроллбар. |
+| `data-test-id` | `string` | — | no |  |
+| `onInitialized` | `(() => void)` | — | no | Коллбэк вызывающийся на инициализацию скролла |
+| `onScroll` | `((event?: Event) => void)` | — | no | Колбек события скрола. |
+| `overflow` | `{ x?: "hidden" \| "scroll" \| "visible" \| "visible-hidden" \| "visible-scroll"; y?: "hidden" \| "scroll" \| "visible" \| "visible-hidden" \| "visible-scroll"; } \| undefined` | — | no | Поведение overflow по осям. По умолчанию OverlayScrollbars выставляет `scroll` на обе оси; если контента по оси быть не должно — передавай `'hidden'`. |
+| `paddingAbsolute` | `boolean` | — | no | Должны ли паддинги быть абсолютными |
+| `resize` | `both \| horizontal \| none \| vertical` | `none` | no | Настройка возможности регулировать Scroll-контейнер: <br /> - `None` - нельзя изменять размер <br /> - `Horizontal` - можно изменять размер только по горизонтали <br /> - `Vertical` - можно изменять размер только по вертикали <br /> - `Both` - можно изменять размер в обеих координатах |
+| `size` | `m \| s` | `m` | no | Размер скролбаров |
+| `untouchableScrollbars` | `boolean` | `false` | no | Отключает возможность взаимодействовать со скролбарами мышью. |
+
+#### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `Resize` = `both | horizontal | none | vertical`
+- `Size` = `m | s`
+
+## Примеры
+
+### AutoscrollBottom
+
+```tsx
+import { Scroll } from '@ds/scroll';
+
+export function AutoscrollBottom() {
+  return (
+    <div style={{ height: 200, width: 320 }}>
+      <Scroll autoscrollTo='bottom'>
+        <div style={{ padding: 8 }}>
+          {Array.from({ length: 40 }, (_, i) => (
+            <div key={i}>Сообщение {i + 1}</div>
+          ))}
+        </div>
+      </Scroll>
+    </div>
+  );
+}
+```
+
+### Basic
+
+```tsx
+import { Scroll } from '@ds/scroll';
+
+export function Basic() {
+  return (
+    <div style={{ height: 200, width: 320 }}>
+      <Scroll>
+        <div style={{ padding: 8 }}>
+          {Array.from({ length: 20 }, (_, i) => (
+            <div key={i}>Строка контента {i + 1}</div>
+          ))}
+        </div>
+      </Scroll>
+    </div>
+  );
+}
+```
+
+### HideOnLeave
+
+```tsx
+import { Scroll } from '@ds/scroll';
+
+export function HideOnLeave() {
+  return (
+    <div style={{ height: 200, width: 320 }}>
+      <Scroll barHideStrategy='leave'>
+        <div style={{ padding: 8 }}>
+          {Array.from({ length: 20 }, (_, i) => (
+            <div key={i}>Строка {i + 1}</div>
+          ))}
+        </div>
+      </Scroll>
+    </div>
+  );
+}
+```
+
+### Resizable
+
+```tsx
+import { Scroll } from '@ds/scroll';
+
+export function Resizable() {
+  return (
+    <div style={{ height: 200, width: 320 }}>
+      <Scroll resize='both'>
+        <div style={{ padding: 8 }}>
+          {Array.from({ length: 20 }, (_, i) => (
+            <div key={i}>Контент, который можно ресайзить — {i + 1}</div>
+          ))}
+        </div>
+      </Scroll>
+    </div>
+  );
+}
+```
+
+### SmallSize
+
+```tsx
+import { Scroll } from '@ds/scroll';
+
+export function SmallSize() {
+  return (
+    <div style={{ height: 180, width: 280 }}>
+      <Scroll size='s'>
+        <div style={{ padding: 8 }}>
+          {Array.from({ length: 15 }, (_, i) => (
+            <div key={i}>Пункт {i + 1}</div>
+          ))}
+        </div>
+      </Scroll>
+    </div>
+  );
+}
+```

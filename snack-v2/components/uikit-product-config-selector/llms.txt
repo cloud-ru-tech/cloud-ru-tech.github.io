@@ -1,0 +1,128 @@
+﻿# @ds/uikit-product-config-selector
+
+> Chip-toggle для выбора одной опции конфигурации — кликабельный chip с состояниями checked / available / disabled и tooltip-подсказками.
+
+Docs: /snack-v2/components/uikit-product-config-selector/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-config-selector
+```
+
+## Когда использовать
+
+- Выбор одного значения из набора equal-weight опций конфигурации (тариф, размер инстанса, регион), когда их удобно показать рядом как chips.
+- Когда у опции нужно подсветить «рекомендованность» (`available`) или объяснить недоступность (`disabled`) через tooltip.
+
+Когда **не** нужен `ConfigSelector`:
+
+- Бинарная настройка с заголовком и описанием:
+  - используйте [`SwitchRow`](/components/uikit-product-switch-row).
+- Множественный выбор тегов/фильтров:
+  - используйте `Chip` / `Tag`.
+
+## API
+
+### ConfigSelector
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `available` | `boolean` | — | no | Доступна ли опция |
+| `availableTip` | `ReactNode` | — | no | Тултип для доступной опции |
+| `checked` | `boolean` | — | yes | Отмечен ли компонент |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Деактивирован ли компонент |
+| `disabledTip` | `ReactNode` | — | no | Тултип для деактивированного компонента |
+| `label` | `string` | — | yes | Лейбл |
+| `onChange` | `(checked: boolean, e: ChangeEvent<HTMLInputElement>) => void` | — | yes | Колбек смены значения |
+| `tabIndex` | `number` | `0` | no | HTML tab index |
+
+## Примеры
+
+### Available
+
+```tsx
+import { PortalContextProvider } from '@ds/portal-context';
+import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { useState } from 'react';
+
+export function Available() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <PortalContextProvider>
+      <ConfigSelector
+        label='Рекомендуемый тариф'
+        available
+        availableTip='Подходит для большинства проектов'
+        checked={checked}
+        onChange={setChecked}
+      />
+    </PortalContextProvider>
+  );
+}
+```
+
+### Basic
+
+```tsx
+import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { useState } from 'react';
+
+export function Basic() {
+  const [checked, setChecked] = useState(false);
+
+  return <ConfigSelector label='Авторазвёртывание' checked={checked} onChange={setChecked} />;
+}
+```
+
+### Disabled
+
+```tsx
+import { PortalContextProvider } from '@ds/portal-context';
+import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { useState } from 'react';
+
+export function Disabled() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <PortalContextProvider>
+      <ConfigSelector
+        label='Премиум-конфигурация'
+        disabled
+        disabledTip='Недоступно на текущем тарифе'
+        checked={checked}
+        onChange={setChecked}
+      />
+    </PortalContextProvider>
+  );
+}
+```
+
+### Group
+
+```tsx
+import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { useState } from 'react';
+
+const OPTIONS = ['nano', 'micro', 'standard', 'large'] as const;
+
+export function Group() {
+  const [selected, setSelected] = useState<(typeof OPTIONS)[number]>('micro');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      {OPTIONS.map(option => (
+        <ConfigSelector
+          key={option}
+          label={option}
+          checked={selected === option}
+          onChange={() => setSelected(option)}
+        />
+      ))}
+    </div>
+  );
+}
+```

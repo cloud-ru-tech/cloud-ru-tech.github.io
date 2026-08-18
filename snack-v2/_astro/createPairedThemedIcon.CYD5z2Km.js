@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{n as r}from"./appearanceContext.D8UzYX4D.js";var i=e(t(),1),a=n();function o({light:e,dark:t}){return(0,i.forwardRef)((n,i)=>{let{colorScheme:o}=r().appearance;return(0,a.jsx)(o===`dark`?t:e,{ref:i,...n})})}export{o as t};

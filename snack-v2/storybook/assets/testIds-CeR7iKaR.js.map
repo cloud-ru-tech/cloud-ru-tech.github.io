@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-CeR7iKaR.js","names":[],"sources":["../../../../packages/ai-icon-giga/stories/AiIconGiga/testIds.ts"],"sourcesContent":["import { TEST_IDS as COMPONENT_TEST_IDS } from '@ds/ai-icon-giga';\n\nexport const TEST_IDS = {\n  root: COMPONENT_TEST_IDS.root,\n} as const;\n"],"mappings":"iHAA+C,EAElC,EAAW,CACtB,KAAM,EAAmB,IAC3B"}

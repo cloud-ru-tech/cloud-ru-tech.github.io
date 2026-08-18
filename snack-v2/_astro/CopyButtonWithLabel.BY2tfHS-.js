@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CopyButton.B_Ghrs39.js";var n=e();function r(){return(0,n.jsx)(t,{valueToCopy:`hello-world`,label:`Copy`})}export{r as CopyButtonWithLabel};

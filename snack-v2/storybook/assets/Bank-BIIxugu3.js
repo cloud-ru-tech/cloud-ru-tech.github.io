@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10%209V17M6%2011.5V17.037M14%209L14%2017.037M18%209V14.5M4%209H20V7.5L12%204L4%207.5V9ZM4%2017.037H20V20H4V17.037Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=Bank-BIIxugu3.js.map

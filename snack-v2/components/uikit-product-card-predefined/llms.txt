@@ -1,0 +1,315 @@
+﻿# @ds/uikit-product-card-predefined
+
+> Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceSmall, CardSuggest, CardCustom.
+
+Docs: /snack-v2/components/uikit-product-card-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-card-predefined
+```
+
+## API
+
+### Body
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | Произвольное содержимое тела карточки |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `l \| m \| s` | — | no | Размер |
+
+### CardAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+
+### CardBanner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `image` | `{ src: string; alt: string; }` | — | yes | Изображение |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `onClose` | `MouseEventHandler<HTMLElement>` | — | no | Колбэк закрытия. При наличии отображается кнопка «Закрыть» |
+| `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### CardService
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `emblem` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | yes | Эмблема — передавайте `<IconPredefined icon={...} />` или произвольный ReactElement |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### CardServiceLight
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → фокус на Favourite; ArrowLeft на Favourite → фокус на карточку. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `onKeyDown` | `KeyboardEventHandler<HTMLElement>` | — | no | Колбэк нажатия клавиши клавиатуры на карточке |
+| `promoTag` | `PromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки текста заголовка |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `FavoriteProps` (interface)
+- `PolymorphicRef` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+- `VisibilityStrategy` = `always | hover`
+
+### CardServiceSmall
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `checked` | `boolean` | — | no | Выбранное состояние |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `emblem` | `ReactElement<any, string \| JSXElementConstructor<any>> \| { icon: JSXElementConstructor<{ className?: string \| undefined; size?: number \| undefined; }>; }` | — | yes | Эмблема: объект с иконкой-компонентом. Принимает `{ icon: JSXElementConstructor }` или произвольный ReactElement. |
+| `favorite` | `(FavoriteProps & { visibilityStrategy: "hover" \| "always"; })` | — | no | Настройки кнопки «Избранное». `visibilityStrategy` обязателен. |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `outline` | `boolean` | — | no | Рамка вокруг карточки |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег (бейдж). Тип — `PromoTagProps` из `@ds/promo-tag`. |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки заголовка |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `FavoriteProps` (interface)
+- `PolymorphicRef` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+- `VisibilityStrategy` = `always | hover`
+
+### CardSuggest
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег. Используйте `PromoTagProps` из `@ds/promo-tag`. |
+| `size` | `m \| s` | `m` | no | Размер: управляет типографикой и отступами. `'m'` — roleTitle/m + roleBody/m, padding 16px; `'s'` — roleTitle/s + roleBody/s, padding 8px. |
+| `title` | `string` | — | yes | Заголовок |
+| `truncate` | `{ title?: number; content?: number; } \| undefined` | — | no | Настройки обрезки текста |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `CardSize` = `m | s`
+- `PolymorphicRef` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+
+### Dimension
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `currentValue` | `string` | — | yes | Текущее значение |
+| `dimension` | `string` | — | no | Единица измерения |
+| `oldValue` | `string` | — | no | Старое значение |
+| `size` | `l \| m \| s` | — | no | Размер |
+
+### Emblem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alt` | `string` | — | yes |  |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Внешний вид |
+| `background` | `boolean` | — | no | Наличие цветной подложки |
+| `icon` | `JSXElementConstructor<{ size?: number \| undefined; className?: string \| undefined; }>` | — | yes | JSX иконки |
+| `shape` | `rounded \| squared` | — | no | Форма: круглая или квадратная |
+| `src` | `string` | — | yes |  |
+
+### FooterAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | yes | Параметры для основной кнопки |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `secondaryButton` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | no | Параметры для вторичной кнопки |
+
+### FooterCallToAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `label` | `string` | — | yes | Лейбл |
+
+### FooterPromo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | no | Параметры для основной кнопки |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `volume` | `DimensionProps` | — | no | Параметры для блока значений |
+
+### FunctionBadge
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alwaysVisible` | `boolean` | — | no | Всегда показывать FunctionBadge |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `options` | `Option[]` | — | yes | Вложенные опции |
+
+### FunctionBadgeWrapper
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alwaysVisible` | `boolean` | — | no | Всегда показывать FunctionBadge |
+
+### Header
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Подзаголовок |
+| `emblem` | `EmblemProps` | — | no | Эмблема иконка/картинка |
+| `metadata` | `string` | — | no | Метаинформация |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `title` | `string` | — | yes | Заголовок |
+| `truncate` | `{ title?: number; description?: number; metadata?: number \| undefined; } \| undefined` | `'{ title: 1; description: 2; metadata: 1; }'` | no | Максимальное число строк - `title` — в заголовке - `description` — в описании - `metadata` — в метаинформации |
+
+### Image
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alt` | `string` | — | yes | Описание картинки |
+| `data-test-id` | `string` | — | no |  |
+| `hideFading` | `boolean` | — | no |  |
+| `mode` | `background \| little \| middle` | `little` | no |  |
+| `src` | `string` | — | yes | Путь до картинки |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { CardBanner } from '@ds/uikit-product-card-predefined';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function Basic() {
+  return (
+    <CardBanner
+      title='Заголовок карточки'
+      content='Краткое описание сервиса или предложения для пользователя'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+    />
+  );
+}
+```
+
+### PolymorphicLink
+
+```tsx
+import { CardBanner } from '@ds/uikit-product-card-predefined';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function PolymorphicLink() {
+  return (
+    <CardBanner
+      as='a'
+      href='https://cloud.ru'
+      target='_blank'
+      title='Перейти на сайт'
+      content='Откроется в новой вкладке'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+    />
+  );
+}
+```
+
+### WithClose
+
+```tsx
+import { Typography } from '@ds/typography';
+import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { useState } from 'react';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function WithClose() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) {
+    return (
+      <Typography variant='body' size='m'>
+        Баннер закрыт
+      </Typography>
+    );
+  }
+
+  return (
+    <CardBanner
+      title='Заголовок карточки'
+      content='Кнопка закрытия появляется при передаче onClose'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+      onClose={() => setVisible(false)}
+    />
+  );
+}
+```
+
+### WithOnClick
+
+```tsx
+import { Typography } from '@ds/typography';
+import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { useState } from 'react';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function WithOnClick() {
+  const [clicks, setClicks] = useState(0);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <CardBanner
+        title='Заголовок карточки'
+        content='Клик по карточке обрабатывается через onClick'
+        actionLabel='Подробнее'
+        image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+        onClick={() => setClicks(c => c + 1)}
+      />
+
+      <Typography variant='body' size='m'>
+        Кликов по карточке: {clicks}
+      </Typography>
+    </div>
+  );
+}
+```

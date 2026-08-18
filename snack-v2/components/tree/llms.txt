@@ -1,0 +1,362 @@
+﻿# @ds/tree
+
+> Иерархический список с раскрывающимися узлами, выбором (single/multiple), кастомными иконками, контекстными действиями и асинхронной подгрузкой потомков.
+
+Docs: /snack-v2/components/tree/
+
+## Установка
+
+```sh
+pnpm add @ds/tree
+```
+
+## Когда использовать
+
+- Реальная иерархия с переменной глубиной (≥ 3 уровней): файловая система, dataset-навигация, организационные структуры.
+- Нужно одновременно видеть несколько уровней, а не цепочку breadcrumb'ов.
+- Большие наборы лениво подгружаются — `onDataLoad` доставляет потомков по раскрытию.
+
+Когда **не** нужен:
+
+- Плоский список 5–20 элементов:
+  - используйте `List` или `Select`.
+- Фиксированные 2–7 разделов одного уровня:
+  - используйте `Tabs`.
+- Пошаговый процесс:
+  - используйте `Stepper`.
+
+## API
+
+### ExpandableTreeNode
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `node` | `TreeNodeProps` | — | yes |  |
+| `parentNode` | `(Pick<TreeNodeProps, "id" \| "nested"> & { parentNode?: ParentNode; } & { parentNode?: ParentNode; }) \| undefined` | — | no |  |
+| `tabIndexAvailable` | `boolean` | — | no |  |
+
+### Tree
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data` | `TreeNodeProps[]` | — | yes | Данные для отрисовки |
+| `data-test-id` | `string` | — | no |  |
+| `expandedNodes` | `string[]` | — | no | Состояние для раскрытых элементов |
+| `nodeActions` | `((node: TreeNodeProps) => Item[])` | — | no | Дополнительные действия для элемента-потомка |
+| `onDataLoad` | `((node: TreeNodeProps) => Promise<unknown>)` | — | no | Колбэк для асинхронной загрузки данных при раскрытии дерева |
+| `onExpand` | `((expandedKeys: string[], node: TreeNodeProps) => void)` | — | no | Колбэк при раскрытии/закрытии элементов |
+| `onNodeClick` | `OnNodeClick` | — | no | Обработчик клика по элементу дерева |
+| `onSelect` | `((selectedKeys: string[], node: TreeNodeProps) => void) \| ((selectedKey: string, node: TreeNodeProps) => void)` | — | no | Колбэк при изменении выбраных элементов: <br> - При <strong>selectionMode</strong>=`Multiple` - возвращает массив строк <br> - При <strong>selectionMode</strong>=`Single` - возвращает строку |
+| `parentActions` | `((node: TreeNodeProps) => Item[])` | — | no | Дополнительные действия для элемента-родителя |
+| `selected` | `string \| string[]` | — | no | Состояние для выбраных элементов: <br> - При <strong>selectionMode</strong>=`Multiple` - принимает массив строк <br> - При <strong>selectionMode</strong>=`Single` - принимает строку |
+| `selectionMode` | `multiple \| single` | — | no | Режим выбора элементов: <br> - `Single` - одиночный выбор <br> - `Multi` - множественный выбор <br> - `undefined` - без выбора |
+| `showIcons` | `boolean` | `true` | no | Флаг отвечающий за отображение иконок у элементов дерева |
+| `showLines` | `boolean` | `true` | no | Флаг отвечающий за отображение линий вложенности |
+| `showToggle` | `boolean` | — | no |  |
+| `size` | `l \| m \| s` | `m` | no | Размер строк дерева (Figma variant `size`). |
+| `titleMaxLines` | `number` | `1` | no | Максимальное число строк заголовка узла до обрезки многоточием. Значение больше 1 разрешает перенос; строка растёт по высоте. |
+
+#### Related types
+- `OnNodeClick` (alias)
+- `Size` = `l | m | s`
+- `TreeNodeId` (alias)
+- `TreeNodeProps` (alias)
+
+### TreeContextProvider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `value` | `TreeContextBaseProps` | — | yes |  |
+
+### TreeItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `node` | `TreeNodeProps` | — | yes |  |
+| `parentNode` | `ParentNode` | — | no |  |
+| `tabIndexAvailable` | `boolean` | — | no |  |
+
+### TreeLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `halfWidth` | `boolean` | — | no |  |
+| `horizontal` | `boolean` | — | no |  |
+| `style` | `CSSProperties` | — | no | Доп. инлайн-стили для контейнера (height/width передаются здесь, а не отдельными пропами). |
+| `visible` | `boolean` | — | no |  |
+
+### TreeNode
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `collapsedIcon` | `ReactNode` | — | no | Иконка элемента-родителя в закрытом состоянии |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Является ли элемент деактивированным |
+| `expandedIcon` | `ReactNode` | — | no | Иконка элемента-родителя в открытом состоянии |
+| `href` | `string` | — | no | Ссылка на элемент |
+| `icon` | `ReactNode` | — | no | Иконка дочернего элемента |
+| `id` | `string` | — | yes | Идентификатор элемента |
+| `loading` | `boolean` | — | no |  |
+| `nested` | `(ChildTreeNode \| ParentTreeNode)[]` | — | no | Вложенные элементы дерева |
+| `onChevronClick` | `MouseEventHandler<HTMLElement>` | — | no |  |
+| `onClick` | `MouseEventHandler` | — | no | Обработчик клика по элементу |
+| `onKeyDown` | `KeyboardEventHandler<HTMLElement>` | — | no |  |
+| `parentNode` | `ParentNode` | — | no |  |
+| `tabIndexAvailable` | `boolean` | — | no |  |
+| `title` | `((value: Pick<BaseTreeNode, "id" \| "disabled">) => ReactNode) \| ((string \| ((value: Pick<BaseTreeNode, "id" \| "disabled">) => ReactNode)) & (string \| ((value: Pick<...>) => ReactNode)))` | — | yes | Имя элемента Имя элемента-родителя (расширяет вариант из `BaseTreeNode` — в callback приходят также `nested`-узлы) |
+
+### TreeNodeActions
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `focusNode` | `() => void` | — | yes |  |
+| `getNodeActions` | `(node: Omit<TreeNodeProps, "href">) => Item[]` | — | yes |  |
+| `isDroplistOpen` | `boolean` | — | yes |  |
+| `isDroplistTriggerFocused` | `boolean` | — | yes |  |
+| `node` | `Omit<TreeNodeProps, "href">` | — | yes |  |
+| `onBlurActions` | `() => void` | — | yes |  |
+| `setDroplistOpen` | `Dispatch<SetStateAction<boolean>>` | — | yes |  |
+| `size` | `l \| m \| s` | — | yes |  |
+
+### TreeNodeHref
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `href` | `string` | — | no |  |
+| `onClick` | `MouseEventHandler<HTMLAnchorElement>` | — | no |  |
+
+## Примеры
+
+### AsyncLoad
+
+```tsx
+import { Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const INITIAL: TreeNodeProps[] = [
+  { id: 'region-eu', title: 'EU region', nested: [] },
+  { id: 'region-ru', title: 'RU region', nested: [] },
+];
+
+export function AsyncLoad() {
+  const [data, setData] = useState(INITIAL);
+  const [expanded, setExpanded] = useState<string[]>([]);
+
+  const onDataLoad = async (node: TreeNodeProps) => {
+    await new Promise(r => setTimeout(r, 600));
+    setData(prev =>
+      prev.map((item): TreeNodeProps => {
+        if (item.id !== node.id) return item;
+        return {
+          id: item.id,
+          title: item.title as string,
+          nested: [
+            { id: `${item.id}-vm1`, title: 'vm-prod-01' },
+            { id: `${item.id}-vm2`, title: 'vm-prod-02' },
+            { id: `${item.id}-vm3`, title: 'vm-staging-01' },
+          ],
+        };
+      }),
+    );
+  };
+
+  return <Tree data={data} expandedNodes={expanded} onExpand={setExpanded} onDataLoad={onDataLoad} showLines />;
+}
+```
+
+### Basic
+
+```tsx
+import { Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const DATA: TreeNodeProps[] = [
+  {
+    id: 'fruits',
+    title: 'Fruits',
+    nested: [
+      { id: 'apple', title: 'Apple' },
+      { id: 'banana', title: 'Banana' },
+      {
+        id: 'citrus',
+        title: 'Citrus',
+        nested: [
+          { id: 'orange', title: 'Orange' },
+          { id: 'lemon', title: 'Lemon' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'vegetables',
+    title: 'Vegetables',
+    nested: [
+      { id: 'carrot', title: 'Carrot' },
+      { id: 'potato', title: 'Potato' },
+    ],
+  },
+];
+
+export function Basic() {
+  const [expanded, setExpanded] = useState<string[]>(['fruits']);
+
+  return <Tree data={DATA} expandedNodes={expanded} onExpand={setExpanded} showLines />;
+}
+```
+
+### MultiSelect
+
+```tsx
+import { SELECTION_MODE, Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const DATA: TreeNodeProps[] = [
+  {
+    id: 'compute',
+    title: 'Compute',
+    nested: [
+      { id: 'vm', title: 'Virtual machines' },
+      { id: 'k8s', title: 'Kubernetes' },
+      { id: 'serverless', title: 'Serverless' },
+    ],
+  },
+  {
+    id: 'storage',
+    title: 'Storage',
+    nested: [
+      { id: 's3', title: 'Object storage' },
+      { id: 'block', title: 'Block storage' },
+    ],
+  },
+];
+
+export function MultiSelect() {
+  const [selected, setSelected] = useState<string[]>(['vm', 's3']);
+  const [expanded, setExpanded] = useState<string[]>(['compute', 'storage']);
+
+  return (
+    <Tree
+      data={DATA}
+      selectionMode={SELECTION_MODE.Multiple}
+      selected={selected}
+      onSelect={setSelected}
+      expandedNodes={expanded}
+      onExpand={setExpanded}
+      showLines
+    />
+  );
+}
+```
+
+### SingleSelect
+
+```tsx
+import { SELECTION_MODE, Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const DATA: TreeNodeProps[] = [
+  {
+    id: 'docs',
+    title: 'Documents',
+    nested: [
+      { id: 'specs', title: 'Specs.pdf' },
+      { id: 'budget', title: 'Budget.xlsx' },
+      { id: 'roadmap', title: 'Roadmap.md' },
+    ],
+  },
+  {
+    id: 'media',
+    title: 'Media',
+    nested: [
+      { id: 'logo', title: 'Logo.svg' },
+      { id: 'hero', title: 'Hero.png' },
+    ],
+  },
+];
+
+export function SingleSelect() {
+  const [selected, setSelected] = useState<string | undefined>('specs');
+  const [expanded, setExpanded] = useState<string[]>(['docs', 'media']);
+
+  return (
+    <Tree
+      data={DATA}
+      selectionMode={SELECTION_MODE.Single}
+      selected={selected}
+      onSelect={setSelected}
+      expandedNodes={expanded}
+      onExpand={setExpanded}
+      showToggle
+      showLines
+    />
+  );
+}
+```
+
+### WithActions
+
+```tsx
+import { Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const DATA: TreeNodeProps[] = [
+  {
+    id: 'project',
+    title: 'Project Alpha',
+    nested: [
+      { id: 'overview.md', title: 'overview.md' },
+      { id: 'changelog.md', title: 'changelog.md' },
+    ],
+  },
+  { id: 'project-beta', title: 'Project Beta', nested: [{ id: 'todo.md', title: 'todo.md' }] },
+];
+
+export function WithActions() {
+  const [expanded, setExpanded] = useState<string[]>(['project']);
+  const [lastItemAction, setLastItemAction] = useState<string>('');
+
+  const nodeActions = (node: TreeNodeProps) => [
+    { id: 'rename', content: { label: `Rename ${node.id}` }, onClick: () => setLastItemAction(`rename ${node.id}`) },
+    { id: 'delete', content: { label: 'Delete' }, onClick: () => setLastItemAction(`delete ${node.id}`) },
+  ];
+
+  return (
+    <>
+      <Tree data={DATA} expandedNodes={expanded} onExpand={setExpanded} nodeActions={nodeActions} showLines />
+      <small>Last clicked item action: {lastItemAction || '—'}</small>
+    </>
+  );
+}
+```
+
+### WithIcons
+
+```tsx
+import { FileSVG, FolderOpenSVG, FolderSVG } from '@ds/icons/interface/system';
+import { Tree, TreeNodeProps } from '@ds/tree';
+import { useState } from 'react';
+
+const DATA: TreeNodeProps[] = [
+  {
+    id: 'src',
+    title: 'src',
+    expandedIcon: <FolderOpenSVG />,
+    collapsedIcon: <FolderSVG />,
+    nested: [
+      { id: 'app.tsx', title: 'App.tsx', icon: <FileSVG /> },
+      { id: 'main.tsx', title: 'main.tsx', icon: <FileSVG /> },
+      {
+        id: 'components',
+        title: 'components',
+        expandedIcon: <FolderOpenSVG />,
+        collapsedIcon: <FolderSVG />,
+        nested: [
+          { id: 'button.tsx', title: 'Button.tsx', icon: <FileSVG /> },
+          { id: 'tree.tsx', title: 'Tree.tsx', icon: <FileSVG /> },
+        ],
+      },
+    ],
+  },
+];
+
+export function WithIcons() {
+  const [expanded, setExpanded] = useState<string[]>(['src', 'components']);
+
+  return <Tree data={DATA} expandedNodes={expanded} onExpand={setExpanded} showLines />;
+}
+```

@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={checkbox:{root:`checkbox`,nativeInput:`checkbox-native-input`},radio:{root:`radio`,nativeInput:`radio-native-input`},switch:{root:`switch`,nativeInput:`switch-native-input`},favourite:{root:`favourite`,nativeInput:`favourite-native-input`},toggleGroup:{root:`toggle-group`},radioGroup:{a:`radio-a`,b:`radio-b`}}}));export{n,t};
+//# sourceMappingURL=testIds-qlmU7fvP.js.map

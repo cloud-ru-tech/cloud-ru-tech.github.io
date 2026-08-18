@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-BY7wDOvy.js","names":[],"sources":["../../../../packages/typography/stories/Typography/testIds.ts"],"sourcesContent":["export const TEST_IDS = {\n  root: 'typography',\n} as const;\n"],"mappings":"iEAAa,EAAW,CACtB,KAAM,YACR"}

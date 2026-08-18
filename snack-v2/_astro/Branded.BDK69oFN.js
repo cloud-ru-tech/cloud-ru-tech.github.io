@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{r as t,t as n}from"./AiIconGiga.D_jXAhff.js";var r=e();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(n,{variant:t.LogoLight}),(0,r.jsx)(n,{variant:t.LogoDark})]})}export{i as Branded};

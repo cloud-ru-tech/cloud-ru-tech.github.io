@@ -1,0 +1,164 @@
+﻿# Snack Design System — LLM index
+
+> Машиночитаемые описания компонентов `@ds`. Каждая ссылка ведёт на `llms.txt` пакета с установкой, API (пропсы, типы) и примерами кода.
+
+## Snack
+
+### Actions
+
+- [@ds/button](/snack-v2/components/button/llms.txt): Пакет кнопок дизайн-системы — компоненты Button и ButtonGroup с едиными токенами размеров, appearance и view.
+- [@ds/button-combo](/snack-v2/components/button-combo/llms.txt): Кнопка с основным действием и выпадающим списком дополнительных действий.
+- [@ds/link](/snack-v2/components/link/llms.txt): Семантическая ссылка дизайн-системы — 10 appearance, полиморфный рендер (a / button / кастомный компонент), inline-режим в тексте и интеграция с TruncateString.
+- [@ds/toolbar](/snack-v2/components/toolbar/llms.txt): Панель инструментов списков и таблиц — поиск, фильтры, массовые действия, меню «Ещё».
+
+### Inputs & Forms
+
+- [@ds/calendar](/snack-v2/components/calendar/llms.txt): Пакет календаря и выбора времени — Calendar с режимами даты, диапазона и месяца/года, TimePicker и TimePickerDropdown для времени в составе полей ввода.
+- [@ds/chips](/snack-v2/components/chips/llms.txt): Пакет чипов дизайн-системы — ChipAssist, ChipToggle, семейство ChipChoice и ChipChoiceRow для действий, переключения и фильтрации.
+- [@ds/code-editor](/snack-v2/components/code-editor/llms.txt): Обёртка над monaco-editor с темизацией на токенах дизайн-системы, шапкой с языком и кнопкой копирования, async/lazy-загрузкой и JSON/YAML-валидацией по schema.
+- [@ds/color-picker](/snack-v2/components/color-picker/llms.txt): Компонент выбора цвета с палитрой, переключаемыми цветовыми моделями (HEX/RGB/HSV), альфа-каналом и опциональным режимом ручного применения.
+- [@ds/dropzone](/snack-v2/components/dropzone/llms.txt): Пакет загрузки файлов — видимая зона Dropzone, триггер FileUpload и скрытая оверлей-зона HiddenDropZone над произвольным контентом.
+- [@ds/field-decorator](/snack-v2/components/field-decorator/llms.txt): Структурная обёртка label/caption/hint/error/length для нестандартных input'ов и сложных композиций.
+- [@ds/fields](/snack-v2/components/fields/llms.txt): Поля ввода с единой обёрткой label/caption/hint/error и общими осями size/validationState — текст, пароль, число, ползунок, дата, время, выбор, цвет.
+- [@ds/markdown](/snack-v2/components/markdown/llms.txt): Просмотр и редактирование markdown — рендер GFM и WYSIWYG-редактор на TipTap.
+- [@ds/rating](/snack-v2/components/rating/llms.txt): Звёздный рейтинг — интерактивный ввод и отображение оценки. Поддерживает половинные звёзды, цветовые схемы и readonly-режим.
+- [@ds/search](/snack-v2/components/search/llms.txt): Компонент поискового поля — три размера, фон, рамка состояния, состояния loading и disabled, слот для действия внутри поля.
+- [@ds/segment-control](/snack-v2/components/segment-control/llms.txt): Сегментированный переключатель — компактная радио-группа с единственным выбором, токенами размеров s/m/l, иконками, счётчиками и режимом полной ширины.
+- [@ds/slider](/snack-v2/components/slider/llms.txt): Ползунок для выбора числового значения или диапазона — с метками, tooltip на ручке и опциональным равномерным распределением нелинейных значений.
+- [@ds/toggles](/snack-v2/components/toggles/llms.txt): Пакет компонентов выбора и переключения — Checkbox, Radio, Switch, Favourite и контейнер ToggleGroup с общими токенами размеров и состояний.
+
+### Navigation
+
+- [@ds/breadcrumbs](/snack-v2/components/breadcrumbs/llms.txt): Хлебные крошки — навигационная цепочка пути до текущей страницы с адаптивным поведением при нехватке места.
+- [@ds/pagination](/snack-v2/components/pagination/llms.txt): Пакет пагинации — компоненты Pagination с нумерованными страницами и PaginationSlider для плотной мини-навигации.
+- [@ds/stepper](/snack-v2/components/stepper/llms.txt): Адаптивный индикатор прогресса для многошаговых сценариев — единый render-prop API, раскладка из AdaptiveProvider.
+- [@ds/tabs](/snack-v2/components/tabs/llms.txt): Пакет табов — compound-компонент Tabs c субкомпонентами TabBar, Tab и TabContent для горизонтальной и вертикальной навигации.
+
+### Data display
+
+- [@ds/attachment](/snack-v2/components/attachment/llms.txt): Пакет компонентов для отображения прикреплённых файлов — Attachment (горизонтальный) и AttachmentSquare (квадратный).
+- [@ds/avatar](/snack-v2/components/avatar/llms.txt): Аватар пользователя с фото, инициалами, размерами и цветовыми схемами.
+- [@ds/counter](/snack-v2/components/counter/llms.txt): Компактный счётчик для отображения числовых меток, бейджей и состояний.
+- [@ds/info-block](/snack-v2/components/info-block/llms.txt): Информационный блок — заголовок, описание, опциональные иконка и футер. Базовый строительный элемент для пустых состояний, подсказок и карточек.
+- [@ds/list](/snack-v2/components/list/llms.txt): Списочный UI — компонент List для плоских/вложенных списков с выбором, группами и поиском и Droplist — тот же список в поповере.
+- [@ds/promo-tag](/snack-v2/components/promo-tag/llms.txt): Промо-тег — цветной лейбл для маркетинговых акцентов, выделения категорий и статусных ярлыков. Опционально кликабельный.
+- [@ds/status](/snack-v2/components/status/llms.txt): Пакет статус-индикаторов — компоненты Status (подпись + маркер) и StatusIndicator (только маркер). Цветовая семантика состояний и поддержка loading/progress.
+- [@ds/table](/snack-v2/components/table/llms.txt): Таблица данных: клиентская Table, серверная ServerTable и preset-обёртки с упрощённым API.
+- [@ds/tag](/snack-v2/components/tag/llms.txt): Пакет компактных меток — компонент Tag (опционально удаляемый или ссылочный) и контейнер TagRow для групп меток с обрезанием по строкам.
+- [@ds/timeline](/snack-v2/components/timeline/llms.txt): Пакет таймлайна — вертикальная цепочка событий с маркерами, соединительными линиями и опциональным контентом в противоположной колонке.
+- [@ds/tree](/snack-v2/components/tree/llms.txt): Иерархический список с раскрывающимися узлами, выбором (single/multiple), кастомными иконками, контекстными действиями и асинхронной подгрузкой потомков.
+
+### Overlays
+
+- [@ds/bottom-sheet](/snack-v2/components/bottom-sheet/llms.txt): Mobile-first overlay-контейнер с drag-handle и swipe-down для диалогов, выпадающих списков и фильтров. Поддерживает snap-points (раскрытие на половину → full).
+- [@ds/drawer](/snack-v2/components/drawer/llms.txt): Пакет выезжающих панелей — компоненты Drawer и DrawerCustom с едиными токенами позиции и ширины.
+- [@ds/dropdown](/snack-v2/components/dropdown/llms.txt): Выпадающий блок с произвольным контентом и встроенными состояниями loading / not-found / no-data / data-error.
+- [@ds/modal](/snack-v2/components/modal/llms.txt): Пакет модальных окон — компоненты Modal и ModalCustom с едиными токенами ширины и режимов закрытия.
+- [@ds/popover](/snack-v2/components/popover/llms.txt): Плавающая панель с произвольным содержимым рядом с триггером — для меню, подсказок, форм и вложенных действий.
+- [@ds/toaster](/snack-v2/components/toaster/llms.txt): Система всплывающих уведомлений с тремя типами контента и императивным API.
+- [@ds/tooltip](/snack-v2/components/tooltip/llms.txt): Пакет подсказок — компонент Tooltip для произвольного триггера и QuestionTooltip с иконкой «?» для полей форм и сложной терминологии.
+
+### Layout & containers
+
+- [@ds/accordion](/snack-v2/components/accordion/llms.txt): Аккордеон дизайн-системы — контейнер Accordion и три уровня раскрываемых блоков CollapseBlock с общими токенами view, backgroundPredefined и chevronPosition.
+- [@ds/block](/snack-v2/components/block/llms.txt): Слот-поверхность с акриловым фоном (матовое/полупрозрачное стекло) для композиции содержимого на разных подложках.
+- [@ds/card](/snack-v2/components/card/llms.txt): Корневая карточка с осями radius, view и слоем backgroundPredefined + acrylic.
+- [@ds/carousel](/snack-v2/components/carousel/llms.txt): Компонент горизонтальной прокрутки слайдов — стрелки, пагинация, свайп, автопрокрутка, infinite scroll и multi-item отображение.
+- [@ds/divider](/snack-v2/components/divider/llms.txt): Разделитель контента с горизонтальной и вертикальной ориентацией и вариантами толщины линии.
+- [@ds/scroll](/snack-v2/components/scroll/llms.txt): Контейнер с кастомными скроллбарами, размерами s/m, стратегиями скрытия, автоскролом и опциональным ресайзом.
+
+### Feedback
+
+- [@ds/alert](/snack-v2/components/alert/llms.txt): Семантическое уведомление — компонент Alert для inline-нотификаций в контенте и AlertTop для системных баннеров по верхней кромке.
+- [@ds/hot-spot](/snack-v2/components/hot-spot/llms.txt): Пульсирующая точка-индикатор, привязанная к целевому элементу — подсказка внимания и обучающий акцент.
+- [@ds/loader](/snack-v2/components/loader/llms.txt): Индикаторы загрузки — Spinner (круговой прогресс) и Sun (лучевой индикатор).
+- [@ds/progress-bar](/snack-v2/components/progress-bar/llms.txt): Пакет индикаторов прогресса дизайн-системы — линейный ProgressBar, круговой ProgressBarCircle и верхний page-индикатор ProgressBarPage.
+- [@ds/skeleton](/snack-v2/components/skeleton/llms.txt): Пакет скелетонов дизайн-системы — компоненты Skeleton, SkeletonText и WithSkeleton для индикации состояния загрузки.
+
+### Typography
+
+- [@ds/truncate-string](/snack-v2/components/truncate-string/llms.txt): Обрезает длинный текст и показывает полный текст в тултипе — варианты `end` и `middle`, поддержка многострочного обрезания.
+- [@ds/typography](/snack-v2/components/typography/llms.txt): Универсальный текстовый компонент с едиными токенами стиля — variant / size / weight — и автовыбором семантического тега.
+
+### Foundation & utilities
+
+- [@ds/adaptive](/snack-v2/components/adaptive/llms.txt): React Context текущей раскладки (layoutType) — переключает компоненты дизайн-системы между mobile и desktop поверхностями.
+- [@ds/context-kit](/snack-v2/components/context-kit/llms.txt): Основа всех сквозных провайдеров дизайн-системы — версионно-устойчивый React-контекст-синглтон поверх useSyncExternalStore, безопасный для SSR и микрофронтов.
+- [@ds/fonts](/snack-v2/components/fonts/llms.txt): Подключение фирменных шрифтов SB Sans Interface, Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
+- [@ds/icon-predefined](/snack-v2/components/icon-predefined/llms.txt): SVG-иконка с предустановленным оформлением — цветной подложкой, размером и формой контейнера.
+- [@ds/icons](/snack-v2/components/icons/llms.txt): Наборы интерфейсных иконок React и компонент Sprite для SVG-спрайтов.
+- [@ds/input-private](/snack-v2/components/input-private/llms.txt): Базовая обёртка `<input>` с состояниями, иконками, кнопкой очистки и счётчиком — фундамент для публичных полей ввода (Search, FieldText и пр.).
+- [@ds/locale](/snack-v2/components/locale/llms.txt): Рантайм локализации — строки живут в самих пакетах (defineLocale/defineMessages), провайдер несёт только язык.
+- [@ds/materials](/snack-v2/components/materials/llms.txt): SCSS-миксины для материалов (акрил, state layer) — вспомогательные стили для компонентов дизайн-системы.
+- [@ds/popover-private](/snack-v2/components/popover-private/llms.txt): Низкоуровневый popover на @floating-ui — позиционирование, стрелка, триггеры. Используется как фундамент для Tooltip, Popover, Dropdown.
+- [@ds/portal-context](/snack-v2/components/portal-context/llms.txt): React Context, который задаёт DOM-узел для портальных компонентов (Tooltip, Popover, Dropdown, Modal, Drawer).
+- [@ds/search-private](/snack-v2/components/search-private/llms.txt): Базовый input для поиска без иконок и плейсхолдеров — фундамент для публичного `@ds/search` и доменных search-компонентов.
+- [@ds/theme](/snack-v2/components/theme/llms.txt): Провайдер оформления — оси (цветовая схема, бренд, плотность, акрил) живут в контексте, полный набор sn-* классов эмитится на DOM-границе.
+- [@ds/utils](/snack-v2/components/utils/llms.txt): Хуки и хелперы для React-компонентов — controlled/uncontrolled, дебаунс, свайпы, модалки, персист данных, пропы и SSR.
+
+## Uikit Product
+
+### Actions
+
+- [@ds/uikit-product-button-predefined](/snack-v2/components/uikit-product-button-predefined/llms.txt): Function-кнопка с выпадающим списком (desktop) или modal (mobile).
+- [@ds/uikit-product-copy](/snack-v2/components/uikit-product-copy/llms.txt): Пакет копирования значений в буфер — компоненты CopyButton и CopyLine с единой логикой clipboard и иконкой подтверждения.
+- [@ds/uikit-product-title-clickable](/snack-v2/components/uikit-product-title-clickable/llms.txt): Кликабельный заголовок-ссылка раздела с иконкой, шевроном и опциональным аватар-блоком — для шапок продуктовых разделов.
+
+### Inputs & Forms
+
+- [@ds/uikit-product-config-selector](/snack-v2/components/uikit-product-config-selector/llms.txt): Chip-toggle для выбора одной опции конфигурации — кликабельный chip с состояниями checked / available / disabled и tooltip-подсказками.
+- [@ds/uikit-product-fields-predefined](/snack-v2/components/uikit-product-fields-predefined/llms.txt): Набор предопределённых полей формы поверх @ds/fields — телефон, маски, имя, описание, код и другие готовые сценарии ввода.
+- [@ds/uikit-product-switch-row](/snack-v2/components/uikit-product-switch-row/llms.txt): Кликабельная строка настройки с заголовком, описанием и Switch — целиком кликабельна, поддерживает клавиатуру и tooltip-подсказки.
+- [@ds/uikit-product-toggles-predefined](/snack-v2/components/uikit-product-toggles-predefined/llms.txt): Кликабельные карточки выбора (ToggleCard) и группа выбора (ToggleGroup) — предзаготовленный паттерн single/multiple-выбора на базе @ds/card.
+- [@ds/uikit-product-upload-files](/snack-v2/components/uikit-product-upload-files/llms.txt): Поле загрузки файлов с drag-and-drop, валидацией по формату/размеру/количеству и кастомной функцией upload.
+
+### Data display
+
+- [@ds/uikit-product-avatar-detail](/snack-v2/components/uikit-product-avatar-detail/llms.txt): Типовой пользовательский блок из продуктового UI Kit: аватар с необязательным статус индикатором, имя, контактные данные для копирования и вторичное описание.
+- [@ds/uikit-product-card-predefined](/snack-v2/components/uikit-product-card-predefined/llms.txt): Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceSmall, CardSuggest, CardCustom.
+- [@ds/uikit-product-info-row](/snack-v2/components/uikit-product-info-row/llms.txt): Строки «метка — значение» по макету Figma infoRow — компонент InfoRow и группа InfoGroup по данным.
+- [@ds/uikit-product-price-summary](/snack-v2/components/uikit-product-price-summary/llms.txt): Блоки итоговой цены для checkout и конфигураторов — полный PriceSummary и компактный PriceSummarySmall.
+- [@ds/uikit-product-promo-tag-predefined](/snack-v2/components/uikit-product-promo-tag-predefined/llms.txt): Предопределённый промо-тег продукта с локализованным текстом и tooltip — пресеты product-статусов Cloud.ru.
+- [@ds/uikit-product-quota](/snack-v2/components/uikit-product-quota/llms.txt): Виджеты квот проекта — выпадающий QuotaWidget, аккордеон QuotaWidgetMini и карточка квоты QuotaWidgetCard с прогрессом и состояниями loading/error.
+- [@ds/uikit-product-widget](/snack-v2/components/uikit-product-widget/llms.txt): Карточка продуктового виджета с кликабельным заголовком, SegmentControl, действиями и состояниями loading/error.
+
+### Overlays
+
+- [@ds/uikit-product-modal-predefined](/snack-v2/components/uikit-product-modal-predefined/llms.txt): Product preset-компоненты для delete, recall и release notes сценариев на базе Modal и BottomSheet.
+
+### Feedback
+
+- [@ds/uikit-product-error-pages](/snack-v2/components/uikit-product-error-pages/llms.txt): Полноэкранная error-страница с типовыми сценариями ошибок, действиями и декоративной иллюстрацией.
+- [@ds/uikit-product-load-status](/snack-v2/components/uikit-product-load-status/llms.txt): Строка статуса загрузки с линейным progress bar, заголовком и подсказкой — по макету Figma loadStatus.
+- [@ds/uikit-product-notification](/snack-v2/components/uikit-product-notification/llms.txt): Пакет уведомлений — карточка NotificationCard, лента NotificationPanelContent со стеками и группами и адаптивная обёртка NotificationPanel (drawer на desktop, bottom-sheet на mobile).
+
+### Layout
+
+- [@ds/uikit-product-flex](/snack-v2/components/uikit-product-flex/llms.txt): Контейнер для flex-раскладки: направление, выравнивание, перенос и отступы между детьми.
+- [@ds/uikit-product-layout](/snack-v2/components/uikit-product-layout/llms.txt): Блоки-состояния продуктового экрана — заглушка пустого состояния EmptyBlock и экран ограниченного доступа NoAccess.
+- [@ds/uikit-product-page-layout](/snack-v2/components/uikit-product-page-layout/llms.txt): Набор страничных раскладок продуктового кабинета — каталог, детальная страница сервиса, форма, дерево-навигация, сайдбар и общие слоты — с адаптацией desktop/mobile через AdaptiveProvider.
+
+## AI
+
+### Surfaces
+
+- [@ds/ai-card](/snack-v2/components/ai-card/llms.txt): Selectable AI-карточка с независимым boolean toggle, single-line заголовком и опциональным контентом.
+- [@ds/ai-field-banner](/snack-v2/components/ai-field-banner/llms.txt): Инлайн-баннер для поля ввода с семантическим типом, иконкой, описанием и действием.
+- [@ds/ai-field-notice](/snack-v2/components/ai-field-notice/llms.txt): Композиция AiFieldBanner и AiQueue для контекстных уведомлений над AI-полем.
+- [@ds/ai-suggestion](/snack-v2/components/ai-suggestion/llms.txt): AI-подсказки — простой чип и раскрывающаяся группа с вложенными подсказками.
+
+### Process & motion
+
+- [@ds/ai-chain-of-thoughts](/snack-v2/components/ai-chain-of-thoughts/llms.txt): Цепочка рассуждений AI-агента (Chain of Thoughts) — сворачиваемый заголовок «Размышляю» с длительностью и список строк-инструментов.
+- [@ds/ai-reasoning](/snack-v2/components/ai-reasoning/llms.txt): Строка reasoning в AI-цепочке со степпер-линией, иконкой и текстовым описанием шага.
+- [@ds/ai-shimmer](/snack-v2/components/ai-shimmer/llms.txt): Анимированный shimmer-блок для AI-сценариев с типографикой как в `@ds/typography`.
+
+### Primitives
+
+- [@ds/ai-button-chevron](/snack-v2/components/ai-button-chevron/llms.txt): Кнопка-шеврон 16×16 для раскрытия и сворачивания в составных AI-компонентах стриминга.
+- [@ds/ai-icon-giga](/snack-v2/components/ai-icon-giga/llms.txt): Иконка-логотип GigaChat в монохроме и брендовых градиентах для тёмного и светлого фона.
+- [@ds/ai-tool](/snack-v2/components/ai-tool/llms.txt): Базовые презентационные элементы для сборки AI-компонентов Tool и Tool Simple — иконки, статус, текст, key-value, дерево, бейджи и блок деталей.
+
+## Site
+
+- [@ds/site-card-vacancy](/snack-v2/components/site-card-vacancy/llms.txt): Карточка-ссылка вакансии с заголовком и описанием, нейтральным или акцентным фоном, hover/pressed-состояниями и фокусом.

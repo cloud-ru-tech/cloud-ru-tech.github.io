@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Radio.B_kCysac.js";var n=e();function r(){return(0,n.jsx)(t,{defaultChecked:!0})}export{r as RadioBasic};

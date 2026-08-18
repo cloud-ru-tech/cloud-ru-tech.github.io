@@ -1,0 +1,77 @@
+﻿# @ds/divider
+
+> Разделитель контента с горизонтальной и вертикальной ориентацией и вариантами толщины линии.
+
+Docs: /snack-v2/components/divider/
+
+## Установка
+
+```sh
+pnpm add @ds/divider
+```
+
+## Когда использовать
+
+- Между секциями страницы или блоками контента — горизонтальный `regular`.
+- Внутри тулбаров или рядов элементов — вертикальный `regular` (контейнер должен задать высоту).
+- Вложенные блоки и плотные списки — `thin`, чтобы визуально ослабить границу.
+
+Не ставьте Divider между каждым элементом списка — группируйте логические блоки.
+
+## API
+
+### Divider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `invertNeutral \| neutral` | `neutral` | no | Цвет линии: neutral — на обычном фоне, invertNeutral — на инвертированном. По умолчанию: neutral |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `orientation` | `horizontal \| vertical` | `horizontal` | no | Ориентация: горизонтальная или вертикальная. По умолчанию: horizontal |
+| `variant` | `regular \| thin` | `regular` | no | Вариант толщины линии (regular: 1px, thin: 0.5px). По умолчанию: regular |
+
+#### Related types
+- `DividerAppearance` = `invertNeutral | neutral`
+- `DividerOrientation` = `horizontal | vertical`
+- `DividerVariant` = `regular | thin`
+
+## Примеры
+
+### Horizontal
+
+```tsx
+import { Divider } from '@ds/divider';
+
+export function Horizontal() {
+  return <Divider />;
+}
+```
+
+### Thin
+
+```tsx
+import { Divider } from '@ds/divider';
+
+export function Thin() {
+  return <Divider variant='thin' />;
+}
+```
+
+### VerticalInRow
+
+```tsx
+import { Divider } from '@ds/divider';
+
+import styles from './VerticalInRow.module.scss';
+
+export function VerticalInRow() {
+  return (
+    <div className={styles.row}>
+      <span className={styles.label}>Left</span>
+      <div className={styles.dividerCell}>
+        <Divider orientation='vertical' />
+      </div>
+      <span className={styles.label}>Right</span>
+    </div>
+  );
+}
+```

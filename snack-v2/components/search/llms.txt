@@ -1,0 +1,137 @@
+﻿# @ds/search
+
+> Компонент поискового поля — три размера, фон, рамка состояния, состояния loading и disabled, слот для действия внутри поля.
+
+Docs: /snack-v2/components/search/
+
+## Установка
+
+```sh
+pnpm add @ds/search
+```
+
+## Когда использовать
+
+- Основной поиск по списку / каталогу / таблице.
+- Header-поиск с моментальной отдачей (live search).
+- Форма поиска с явной кнопкой «Найти» (`afterContent`).
+
+Когда **не** подходит: для выбора из фиксированного списка используйте `Combobox`, для фильтра с префиксом — `Input` + `Chip`.
+
+## API
+
+### Search
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactNode` | — | no | Слот справа от строки ввода — после кнопки очистки, внутри поля.  Типовое наполнение — иконочная кнопка того же размера, что поле: `<Button size={size} view='function' appearance='neutral' icon={…} />`. |
+| `background` | `boolean` | `true` | no | Наличие фона |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Деактивирован ли компонент |
+| `inputMode` | `decimal \| email \| none \| numeric \| search \| tel \| text \| url` | — | no | Режим работы экранной клавиатуры |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string, e?: ChangeEvent<HTMLInputElement>) => void)` | — | no | Колбек смены значения |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onSubmit` | `((value: string) => void)` | — | no | Колбек на подтверждение поиска по строке |
+| `outline` | `boolean` | `true` | no | Наличие рамки состояния вокруг поля |
+| `placeholder` | `string` | — | no | Значение плейсхолдера |
+| `showClearButton` | `boolean` | `true` | no | Отображение кнопки Очистки поля |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `tabIndex` | `number` | — | no |  |
+| `value` | `string` | — | no | Значение input |
+
+#### Related types
+- `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
+- `Size` = `l | m | s`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Search } from '@ds/search';
+import { useState } from 'react';
+
+export function Basic() {
+  const [value, setValue] = useState('');
+  return <Search placeholder='Поиск' value={value} onChange={setValue} />;
+}
+```
+
+### Disabled
+
+```tsx
+import { Search } from '@ds/search';
+
+export function Disabled() {
+  return <Search placeholder='Поиск' disabled />;
+}
+```
+
+### Loading
+
+```tsx
+import { Search } from '@ds/search';
+
+export function Loading() {
+  return <Search placeholder='Поиск' loading />;
+}
+```
+
+### SizeL
+
+```tsx
+import { Search } from '@ds/search';
+
+export function SizeL() {
+  return <Search size='l' placeholder='Поиск по каталогу' />;
+}
+```
+
+### TransparentBackground
+
+```tsx
+import { Search } from '@ds/search';
+
+export function TransparentBackground() {
+  return <Search placeholder='Прозрачный фон' background={false} />;
+}
+```
+
+### WithAfterContent
+
+```tsx
+import { APPEARANCE, Button, VIEW } from '@ds/button';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { Search } from '@ds/search';
+import { useState } from 'react';
+
+export function WithAfterContent() {
+  const [value, setValue] = useState('');
+  const [submitted, setSubmitted] = useState('');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Search
+        size='m'
+        placeholder='Поиск'
+        value={value}
+        onChange={setValue}
+        onSubmit={setSubmitted}
+        afterContent={
+          <Button
+            size='m'
+            view={VIEW.Function}
+            appearance={APPEARANCE.Neutral}
+            icon={<PlaceholderSVG />}
+            minWidth={false}
+            onClick={() => setSubmitted(value)}
+          />
+        }
+      />
+      <span>Запрос: {submitted || '—'}</span>
+    </div>
+  );
+}
+```

@@ -1,0 +1,361 @@
+﻿# @ds/uikit-product-modal-predefined
+
+> Product preset-компоненты для delete, recall и release notes сценариев на базе Modal и BottomSheet.
+
+Docs: /snack-v2/components/uikit-product-modal-predefined/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-modal-predefined
+```
+
+## API
+
+### DeleteModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения |
+| `confirmTextVariant` | `name \| text` | `name` | no | Тип текста подтверждения |
+| `confirmable` | `boolean` | `false` | no | Состояние с подтверждением через ввод текста |
+| `content` | `ReactNode` | — | no | Основной текст модалки |
+| `data-test-id` | `string` | — | no |  |
+| `deleting` | `boolean` | — | no | Состояние загрузки кнопки удаления |
+| `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования текста подтверждения |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `objectType` | `string` | — | no | Тип удаляемого объекта, отображается в заголовке |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onDelete` | `(onClose: () => void) => void` | — | yes | Колбэк подтверждения удаления |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок |
+| `titleTooltip` | `ReactNode` | — | no | Подсказка рядом с заголовком |
+
+#### Related types
+- `ConfirmTextVariant` = `name | text`
+- `ModalMode` = `aggressive | forced | regular`
+
+### DesktopReleaseNotes
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `contentState` | `data \| error \| noData` | `data` | no | Визуальное состояние контента по Figma |
+| `data-test-id` | `string` | — | no |  |
+| `items` | `NoteItemProps[]` | — | yes | Массив новостей |
+| `loading` | `boolean` | — | no | Состояние загрузки контента |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onDataErrorRetryClick` | `(() => void)` | — | no | Действие перезагрузки на экране ошибки |
+| `onReadLaterClick` | `(() => void)` | — | no | Действие "Ознакомиться позже" |
+| `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+
+### InputConfirm
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `confirmLabel` | `string` | — | no | Инструкция над текстом подтверждения |
+| `confirmText` | `string` | — | yes | Текст, который нужно ввести для подтверждения |
+| `copyLineAlign` | `space-between \| start` | `space-between` | no | Выравнивание copy-line |
+| `data-test-id` | `string` | — | no |  |
+| `error` | `string` | — | no | Текст ошибки |
+| `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования |
+| `label` | `string` | — | no | Label поля |
+| `onChange` | `(value: string) => void` | — | yes | Колбэк изменения значения |
+| `placeholder` | `string` | — | yes | Placeholder поля |
+| `size` | `l \| m \| s` | `m` | no | Размер поля |
+| `value` | `string` | — | yes | Значение поля |
+
+### MobileReleaseNotes
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `contentState` | `data \| error \| noData` | `data` | no | Визуальное состояние контента по Figma |
+| `data-test-id` | `string` | — | no |  |
+| `items` | `NoteItemProps[]` | — | yes | Массив новостей |
+| `loading` | `boolean` | — | no | Состояние загрузки контента |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onDataErrorRetryClick` | `(() => void)` | — | no | Действие перезагрузки на экране ошибки |
+| `onReadLaterClick` | `(() => void)` | — | no | Действие "Ознакомиться позже" |
+| `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+
+### NoteItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `description` | `string` | — | yes | Описание новости в markdown |
+| `image` | `{ src: string; alt: string; }` | — | yes | Иллюстрация |
+| `surface` | `bottomSheet \| modal` | `modal` | no |  |
+| `title` | `string` | — | yes | Заголовок новости |
+| `video` | `string` | — | no | Видео вместо статичной иллюстрации |
+
+### RecallModal
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения |
+| `confirmable` | `boolean` | `false` | no | Состояние с подтверждением через ввод текста |
+| `content` | `ReactNode` | — | no | Основной текст модалки |
+| `data-test-id` | `string` | — | no |  |
+| `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования текста подтверждения |
+| `loading` | `boolean` | — | no | Состояние загрузки кнопки отзыва |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onRecall` | `(onClose: () => void) => void` | — | yes | Колбэк подтверждения отзыва |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `subtitle` | `ReactNode` | — | no | Подзаголовок |
+| `titleTooltip` | `ReactNode` | — | no | Подсказка рядом с заголовком |
+
+#### Related types
+- `ModalMode` = `aggressive | forced | regular`
+
+### ReleaseNotes
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
+| `contentState` | `data \| error \| noData` | — | no | Визуальное состояние контента по Figma |
+| `data-test-id` | `string` | — | no |  |
+| `items` | `NoteItemProps[]` | — | yes | Массив новостей |
+| `loading` | `boolean` | — | no | Состояние загрузки контента |
+| `onClose` | `() => void` | — | yes | Колбэк закрытия |
+| `onDataErrorRetryClick` | `(() => void)` | — | no | Действие перезагрузки на экране ошибки |
+| `onReadLaterClick` | `(() => void)` | — | no | Действие "Ознакомиться позже" |
+| `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
+| `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
+| `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `NoteItemProps` (interface)
+- `PolymorphicRef` (alias)
+- `ReleaseNotesContentState` = `data | error | noData`
+- `Size` = `s | xs`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### ReleaseNotesContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `contentState` | `data \| error \| noData` | — | yes | Визуальное состояние |
+| `errorDescription` | `string` | — | yes | Описание ошибки |
+| `errorTitle` | `string` | — | yes | Заголовок ошибки |
+| `items` | `NoteItemProps[]` | — | yes | Новости |
+| `loading` | `boolean` | — | no | Состояние загрузки |
+| `noDataDescription` | `string` | — | yes | Описание no-data |
+| `noDataTitle` | `string` | — | yes | Заголовок no-data |
+| `onDataErrorRetryClick` | `(() => void)` | — | no | Повторная загрузка |
+| `onPageChange` | `(pageIndex: number) => void` | — | yes | Смена страницы |
+| `pageIndex` | `number` | — | yes | Текущая страница, zero-based |
+| `retryLabel` | `string` | — | yes | Label retry-кнопки |
+| `surface` | `bottomSheet \| modal` | — | yes | Поверхность |
+
+### ReleaseNotesFooter
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `counterLabel` | `string` | — | yes | Текст счётчика «1 из N» (используется на bottomSheet) |
+| `onNextPageClick` | `() => void` | — | yes | Следующая страница |
+| `onPrevPageClick` | `() => void` | — | yes | Предыдущая страница |
+| `onReadLaterClick` | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes | Действие «Ознакомиться позже» |
+| `pageIndex` | `number` | — | yes | Текущая страница, zero-based |
+| `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Дополнительные пропсы кнопки «Ознакомиться позже» |
+| `readLaterLabel` | `string` | — | yes | Label кнопки «Ознакомиться позже» |
+| `readablePageNumber` | `number` | — | yes | Номер страницы для отображения |
+| `surface` | `bottomSheet \| modal` | — | yes | Поверхность отображения |
+| `total` | `number` | — | yes | Количество страниц |
+
+## Примеры
+
+### DeleteBasic
+
+```tsx
+import { Button } from '@ds/button';
+import { DeleteModal } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+export function DeleteBasic() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open delete modal' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <DeleteModal
+        open={open}
+        onClose={() => setOpen(false)}
+        objectType='виртуальную машину'
+        onDelete={close => close()}
+      />
+    </>
+  );
+}
+```
+
+### DeleteConfirmable
+
+```tsx
+import { Button } from '@ds/button';
+import { DeleteModal } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+export function DeleteConfirmable() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open confirmable delete modal' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <DeleteModal
+        open={open}
+        onClose={() => setOpen(false)}
+        objectType='виртуальную машину'
+        confirmable
+        confirmText='vm-production-01'
+        onDelete={close => close()}
+      />
+    </>
+  );
+}
+```
+
+### RecallBasic
+
+```tsx
+import { Button } from '@ds/button';
+import { RecallModal } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+export function RecallBasic() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open recall modal' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <RecallModal open={open} onClose={() => setOpen(false)} onRecall={close => close()} />
+    </>
+  );
+}
+```
+
+### RecallConfirmable
+
+```tsx
+import { Button } from '@ds/button';
+import { RecallModal } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+export function RecallConfirmable() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open confirmable recall modal' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <RecallModal
+        open={open}
+        onClose={() => setOpen(false)}
+        confirmable
+        confirmText='recall-operation-01'
+        onRecall={close => close()}
+      />
+    </>
+  );
+}
+```
+
+### ReleaseNotesData
+
+```tsx
+import { Button } from '@ds/button';
+import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+import { releaseNotesItems } from './releaseNotesItems';
+
+export function ReleaseNotesData() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open release notes' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <ReleaseNotes open={open} onClose={() => setOpen(false)} items={releaseNotesItems} />
+    </>
+  );
+}
+```
+
+### ReleaseNotesError
+
+```tsx
+import { Button } from '@ds/button';
+import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+import { releaseNotesItems } from './releaseNotesItems';
+
+export function ReleaseNotesError() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open error release notes' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <ReleaseNotes
+        open={open}
+        onClose={() => setOpen(false)}
+        contentState='error'
+        items={releaseNotesItems}
+        onDataErrorRetryClick={() => undefined}
+      />
+    </>
+  );
+}
+```
+
+### ReleaseNotesNoData
+
+```tsx
+import { Button } from '@ds/button';
+import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+import { releaseNotesItems } from './releaseNotesItems';
+
+export function ReleaseNotesNoData() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open no-data release notes' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <ReleaseNotes open={open} onClose={() => setOpen(false)} contentState='noData' items={releaseNotesItems} />
+    </>
+  );
+}
+```
+
+### ReleaseNotesVideo
+
+```tsx
+import { Button } from '@ds/button';
+import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { useState } from 'react';
+
+import { releaseNotesItems } from './releaseNotesItems';
+
+export function ReleaseNotesVideo() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button label='Open video release notes' view='filled' appearance='primary' onClick={() => setOpen(true)} />
+      <ReleaseNotes
+        open={open}
+        onClose={() => setOpen(false)}
+        items={[
+          {
+            ...releaseNotesItems[0],
+            video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+          },
+        ]}
+      />
+    </>
+  );
+}
+```

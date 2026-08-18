@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SkeletonText.CF0FKeE7.js";var n=e();function r(){return(0,n.jsx)(t,{loading:!0,lines:3,variant:`body`,size:`m`})}export{r as TextLines};

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Russia.vIJq0Ifx.js";var n=e();function r(){return(0,n.jsx)(t,{size:32,"aria-label":`Флаг России`})}export{r as Flag};

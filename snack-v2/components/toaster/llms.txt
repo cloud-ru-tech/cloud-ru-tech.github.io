@@ -1,0 +1,1076 @@
+﻿# @ds/toaster
+
+> Система всплывающих уведомлений с тремя типами контента и императивным API.
+
+Docs: /snack-v2/components/toaster/
+
+## Установка
+
+```sh
+pnpm add @ds/toaster
+```
+
+## Когда использовать
+
+- **SystemEvent** — результаты асинхронных операций, системные события, критические ошибки с action-кнопками.
+- **UserAction** — короткий ack на локальное действие («скопировано», «сохранено», «удалено»), опционально с link-отменой.
+- **Upload** — длительная загрузка файлов с прогрессом и контролем pause/resume/cancel.
+
+Когда тосты **не** нужны:
+
+- Блокирующее подтверждение действия — используй Modal/Dialog.
+- Постоянная информация в интерфейсе — используй Alert / InfoBlock.
+- Inline-валидация формы — используй встроенный error-state поля.
+
+## API
+
+### LoadingStatus
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actions` | `UploadActions` | — | no |  |
+| `status` | `error \| errorUploaded \| loading \| pause \| uploaded` | — | yes |  |
+
+### Timer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `duration` | `number` | `AUTO_CLOSE_TIME[TOASTER_TYPE.UserAction] as number` | no | Длительность таймера в мс. По умолчанию — `AUTO_CLOSE_TIME[UserAction]`. Используется только как fallback для standalone-рендера (без `ToasterContainer`) и для вычисления отображаемой цифры — `scaleX` индикатора берётся из реального состояния auto-close таймера менеджера. |
+
+### ToastButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| любой компонент (Link и т.п.) |
+| `children` | `ReactNode` | — | no | Иконка для `composition='iconOnly'`. |
+| `className` | `string` | — | no | Доп. класс на корень. |
+| `composition` | `iconOnly \| labelOnly` | — | yes | `labelOnly` — текстовая кнопка с padding; `iconOnly` — квадратная под SVG-иконку. |
+| `critical` | `boolean` | — | no | Критический вариант (красная палитра, для errorCritical / Cancel-сценариев). |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `any` | — | no | Ref на DOM/instance, рендерящийся через `as`. |
+| `label` | `string` | — | no | Текст для `composition='labelOnly'`. |
+
+### ToastButtonAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | `toast-system-event__button-action` | no |  |
+| `label` | `string` | — | yes |  |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+
+### ToasterContainer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoClose` | `number \| false` | — | no | Дефолтное время автозакрытия (мс) для всех тостов этого контейнера. Используется, если в `toastOptions.autoClose` явно не передано значение. Передать `false` — автозакрытие отключено по умолчанию. Если проп не задан — берётся `AUTO_CLOSE_TIME[type]`. |
+| `containerId` | `string` | — | no | Идентификатор контейнера — ключ маршрутизации тостов. Вызов `toaster.<type>.open({ containerId })` находит контейнер по этому id и рендерит тост в нём. Если не задан — используется дефолт `toaster-container__<type>` (см. `TOASTER_CONTAINER_PREFIX`), общий для всех контейнеров одного `type`. Задавай явный id, когда на странице несколько контейнеров одного типа и нужно адресовать конкретный. |
+| `data-test-id` | `string` | — | no | Override `data-test-id` корня контейнера. Если не задан — используется `TEST_IDS.toasterContainer`. Имеет смысл, если на странице несколько контейнеров одного типа и e2e-тестам нужно адресовать конкретный. |
+| `displayCloseAllButton` | `boolean` | — | no |  |
+| `draggable` | `boolean` | — | no |  |
+| `draggableDirection` | `x \| y` | — | no |  |
+| `limit` | `number` | — | no | Максимум одновременно видимых тостов в контейнере. По умолчанию — из TOASTER_CONTAINER_DEFAULTS[type]. |
+| `position` | `bottom-center \| bottom-left \| bottom-right \| top-center \| top-left \| top-right` | — | no |  |
+| `stacked` | `boolean` | — | no |  |
+| `type` | `system-event \| upload \| user-action` | — | yes |  |
+| `width` | `auto \| full` | — | no |  |
+
+#### Related types
+- `DraggableDirection` = `x | y`
+- `SystemEventPosition` = `bottom-center | bottom-left | bottom-right | top-center | top-left | top-right`
+- `ToasterWidth` = `auto | full`
+
+### ToastSlot
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `containerId` | `string` | — | yes |  |
+| `draggable` | `boolean` | — | yes |  |
+| `draggableDirection` | `x \| y` | — | yes |  |
+| `isFront` | `boolean` | — | yes |  |
+| `stackIndex` | `number` | — | yes |  |
+| `toast` | `ManagedToast` | — | yes |  |
+
+### ToastSystemEvent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `action` | `ToastButtonActionProps[]` | — | no | Кнопки в footer'е |
+| `appearance` | `error \| errorCritical \| neutral \| success \| warning` | `neutral` | no | Цветовая схема |
+| `autoClose` | `number \| false` | `undefined (резолвится в `AUTO_CLOSE_TIME[TOASTER_TYPE.SystemEvent]` = 5000)` | no | Время автозакрытия в мс. Три состояния различимы намеренно: - `undefined` — потребитель не указал значение, toaster-система подставит   дефолт `AUTO_CLOSE_TIME[TOASTER_TYPE.SystemEvent]` (5000 мс) при рендере;   именно этот случай позволяет ProgressBar анимироваться синхронно с   auto-dismiss таймером менеджера. - `number` — явное значение от потребителя, используется как есть. - `false` — автозакрытие выключено, ProgressBar в этом режиме не рендерится. |
+| `className` | `string` | — | no | Доп. класс корневого элемента |
+| `closable` | `boolean` | `true` | no | Возможность закрыть тост |
+| `closeToast` | `(() => void)` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Описание под заголовком |
+| `link` | `ToastSystemEventLink` | — | no | Slot для ссылки |
+| `onCloseClick` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>, close?: (() => void)) => void)` | — | no | Кастомный обработчик клика по кнопке закрытия |
+| `progressBar` | `boolean` | `true` | no | Показывать ли ProgressBar внизу |
+| `title` | `string` | — | yes | Заголовок тоста |
+| `toastProps` | `{ autoClose?: number \| false; }` | — | no |  |
+
+#### Related types
+- `ToastButtonActionProps` (interface)
+- `ToastSystemEventAppearance` = `error | errorCritical | neutral | success | warning`
+- `ToastSystemEventLink` (interface)
+
+### ToastSystemEventCloseAll
+_Нет публичных пропсов._
+
+### ToastSystemEventProgress
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `error \| errorCritical \| neutral \| success \| warning` | — | yes | Цветовая схема — берётся из appearance тоста. |
+| `durationMs` | `number` | — | no | Зарезервирован. Раньше задавал `animation-duration` CSS-кейфрейма; сейчас scaleX полоски считается из реального состояния авто-close таймера через `useToastProgress`, и этот параметр в рантайме не используется. Оставлен в API на случай standalone-рендера карточки вне `ToasterContainer` — там контекста менеджера нет, и полоска зафиксируется на `scaleX(1)`. |
+| `value` | `number` | — | no | Статическое значение 0..1 для визуальных матриц. Когда задано — рендер без подписки на менеджер, бар замораживается на этом scaleX. |
+
+### ToastUpload
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс контейнера |
+| `closable` | `boolean` | `true` | no | Показывать кнопку закрытия тостера. По умолчанию `true`. |
+| `closeToast` | `(() => void)` | — | no |  |
+| `collapsed` | `boolean` | — | no | Тостер свернут/развернут |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | yes | Описание статуса загрузки |
+| `files` | `UploadItem[]` | — | yes | Загружаемые элементы |
+| `generalActions` | `Omit<UploadActions, "onCancel">` | — | no | Экшены для управления общей загрузкой |
+| `onCancelAll` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбэк кнопки отмены всей загрузки. Кнопка рендерится только при наличии колбэка; подпись — из `@ds/locale` (`ToastUpload.cancelAll`). |
+| `onCloseClick` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>, close?: (() => void)) => void)` | — | no | Закрыть тостер |
+| `onCollapsed` | `((collapsed: boolean) => void)` | — | no | Развернуть/свернуть тостер |
+| `progress` | `{ current: number; total: number; }` | — | yes | Общий прогресс загрузки |
+| `status` | `error \| errorUploaded \| loading \| pause \| uploaded` | — | yes | Общий статус загрузки |
+| `title` | `string` | — | no | Заголовок тостера |
+| `toastProps` | `{ autoClose?: number \| false; }` | — | no |  |
+
+#### Related types
+- `ToastUploadItemLink` (interface)
+- `ToastUploadItemStatus` = `error | loading | pause | uploaded`
+- `ToastUploadStateSubscription` (alias)
+- `ToastUploadStatus` = `error | errorUploaded | loading | pause | uploaded`
+- `UploadActions` (interface)
+- `UploadItem` (interface)
+
+### ToastUploadFileLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `item` | `UploadItem` | — | yes |  |
+
+#### Related types
+- `ToastUploadItemLink` (interface)
+- `ToastUploadItemStatus` = `error | loading | pause | uploaded`
+- `ToastUploadStateSubscription` (alias)
+- `UploadActions` (interface)
+- `UploadItem` (interface)
+
+### ToastUploadProgress
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `green \| neutral \| red` | — | yes | Цветовая схема. |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `progress` | `number` | — | yes | Процент заполнения 0..100. |
+
+#### Related types
+- `ToastUploadProgressAppearance` = `green | neutral | red`
+
+### ToastUploadTitleLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `closable` | `boolean` | — | yes |  |
+| `description` | `string` | — | yes |  |
+| `generalActions` | `Omit<UploadActions, "onCancel">` | — | no |  |
+| `isCollapsed` | `boolean` | — | yes |  |
+| `onCancelAll` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no |  |
+| `onCloseClick` | `(e: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes |  |
+| `onCollapseClick` | `(e: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes |  |
+| `progress` | `{ current: number; total: number; }` | — | yes |  |
+| `status` | `error \| errorUploaded \| loading \| pause \| uploaded` | — | yes |  |
+| `title` | `string` | — | yes |  |
+
+### ToastUserAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `action` | `ToastUserActionAction<"button"> \| ToastUserActionAction<"a">` | — | no | Slot для action-кнопки (по умолчанию `<button>`, через `as='a'` — линка) |
+| `appearance` | `error \| neutral \| success \| warning` | `neutral` | no | Цветовая схема (status в Figma) |
+| `className` | `string` | — | no | Доп. класс корневого элемента |
+| `closeToast` | `(() => void)` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `label` | `string` | — | yes | Текст-уведомление |
+| `loading` | `boolean` | `false` | no | Loading-состояние с заменой иконки на Sun-спиннер |
+| `timer` | `boolean` | `false` | no | Показывать ли таймер обратного отсчёта (24×24 SVG-кольцо). Анимация = `AUTO_CLOSE_TIME[UserAction]`. Пауза при hover. Figma axis: `timer=true\|false`. |
+| `toastProps` | `{ autoClose?: number \| false; }` | — | no |  |
+
+#### Related types
+- `ToastUserActionAction` (interface)
+- `ToastUserActionAppearance` = `error | neutral | success | warning`
+
+## Примеры
+
+### BasicSystemEvent
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-basic-system-event';
+
+export function BasicSystemEvent() {
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button
+          appearance={APPEARANCE.Primary}
+          label='Success'
+          onClick={() =>
+            toaster.systemEvent.success({
+              title: 'Изменения сохранены',
+              description: 'Все данные синхронизированы',
+              containerId: CONTAINER_ID,
+            })
+          }
+        />
+        <Button
+          appearance={APPEARANCE.Critical}
+          label='Error'
+          onClick={() =>
+            toaster.systemEvent.error({
+              title: 'Не удалось сохранить',
+              description: 'Попробуйте ещё раз',
+              link: { label: 'Подробнее', href: '#' },
+              containerId: CONTAINER_ID,
+            })
+          }
+        />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='Закрыть все'
+          onClick={() => toaster.systemEvent.dismiss({ containerId: CONTAINER_ID })}
+        />
+        <ToasterContainer
+          type={TOASTER_TYPE.SystemEvent}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={5}
+          autoClose={5000}
+          stacked={false}
+          displayCloseAllButton={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### StackedSystemEvent
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { useRef } from 'react';
+
+const CONTAINER_ID = 'demo-stacked-system-event';
+
+export function StackedSystemEvent() {
+  const counter = useRef(0);
+
+  const fire = () => {
+    counter.current += 1;
+    toaster.systemEvent.neutral({
+      title: `Уведомление #${counter.current}`,
+      description: 'Hover по стопке разворачивает её',
+      containerId: CONTAINER_ID,
+    });
+  };
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button appearance={APPEARANCE.Primary} label='Добавить тост' onClick={fire} />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='Закрыть все'
+          onClick={() => toaster.systemEvent.dismiss({ containerId: CONTAINER_ID })}
+        />
+        <ToasterContainer
+          type={TOASTER_TYPE.SystemEvent}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={5}
+          autoClose={5000}
+          stacked
+          displayCloseAllButton
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### SystemEventCloseHooks
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const CONTAINER_ID = 'demo-system-event-close-hooks';
+
+export function SystemEventCloseHooks() {
+  const [log, setLog] = useState<string[]>([]);
+  const push = (line: string) => setLog(prev => [line, ...prev].slice(0, 4));
+
+  const open = () => {
+    toaster.systemEvent.warning({
+      title: 'Несохранённые изменения',
+      description: 'Закрыть тост?',
+      containerId: CONTAINER_ID,
+      onCloseClick: (_e, close) => {
+        if (window.confirm('Закрыть уведомление?')) {
+          push('onCloseClick → close()');
+          close?.();
+        } else {
+          push('onCloseClick → отменено');
+        }
+      },
+      onClose: id => push(`onClose(${String(id)})`),
+    });
+  };
+
+  return (
+    <PortalContextProvider>
+      <div className={styles.uploadFrame}>
+        <Button appearance={APPEARANCE.Primary} label='Показать тост' onClick={open} />
+        <Button appearance={APPEARANCE.Neutral} label='Очистить лог' onClick={() => setLog([])} />
+        <ul className={styles.eventLog} aria-label='Лог событий'>
+          {log.length === 0 ? <li>Лог пуст</li> : log.map((line, i) => <li key={i}>{line}</li>)}
+        </ul>
+        <ToasterContainer
+          type={TOASTER_TYPE.SystemEvent}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={3}
+          autoClose={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### SystemEventPositions
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, SystemEventPosition, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const POSITIONS: SystemEventPosition[] = Object.values(POSITION_SYSTEM_EVENT);
+
+const containerIdFor = (position: SystemEventPosition) => `demo-system-event-position-${position}`;
+
+export function SystemEventPositions() {
+  const fire = (position: SystemEventPosition) =>
+    toaster.systemEvent.neutral({
+      title: `Тост в ${position}`,
+      description: 'Каждое положение — свой контейнер',
+      containerId: containerIdFor(position),
+    });
+
+  const dismissAll = () =>
+    POSITIONS.forEach(position => toaster.systemEvent.dismiss({ containerId: containerIdFor(position) }));
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        {POSITIONS.map(position => (
+          <Button key={position} appearance={APPEARANCE.Primary} label={position} onClick={() => fire(position)} />
+        ))}
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={dismissAll} />
+        {POSITIONS.map(position => (
+          <ToasterContainer
+            key={position}
+            type={TOASTER_TYPE.SystemEvent}
+            containerId={containerIdFor(position)}
+            position={position}
+            limit={3}
+            autoClose={4000}
+            stacked={false}
+            displayCloseAllButton={false}
+          />
+        ))}
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### SystemEventSavingFlow
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-system-event-saving-flow';
+const PENDING_DELAY_MS = 1500;
+
+export function SystemEventSavingFlow() {
+  const run = async () => {
+    const id = await toaster.systemEvent.neutral({
+      title: 'Сохранение…',
+      description: 'Не закрывайте окно',
+      autoClose: false,
+      progressBar: false,
+      closable: false,
+      containerId: CONTAINER_ID,
+    });
+
+    setTimeout(() => {
+      toaster.systemEvent.update.success(id, {
+        title: 'Сохранено',
+        description: 'Все изменения зафиксированы',
+        autoClose: 3000,
+        containerId: CONTAINER_ID,
+      });
+    }, PENDING_DELAY_MS);
+  };
+
+  const fail = async () => {
+    const id = await toaster.systemEvent.neutral({
+      title: 'Отправка…',
+      description: 'Ждём ответа сервера',
+      autoClose: false,
+      progressBar: false,
+      closable: false,
+      containerId: CONTAINER_ID,
+    });
+
+    setTimeout(() => {
+      toaster.systemEvent.update.error(id, {
+        title: 'Ошибка соединения',
+        description: 'Попробуйте ещё раз',
+        autoClose: 5000,
+        closable: true,
+        containerId: CONTAINER_ID,
+      });
+    }, PENDING_DELAY_MS);
+  };
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button appearance={APPEARANCE.Primary} label='Сохранить → success' onClick={run} />
+        <Button appearance={APPEARANCE.Critical} label='Сохранить → error' onClick={fail} />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='Закрыть все'
+          onClick={() => toaster.systemEvent.dismiss({ containerId: CONTAINER_ID })}
+        />
+        <ToasterContainer
+          type={TOASTER_TYPE.SystemEvent}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={3}
+          autoClose={5000}
+          stacked={false}
+          displayCloseAllButton={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### SystemEventWithAction
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-system-event-with-action';
+
+export function SystemEventWithAction() {
+  const dismiss = () => toaster.systemEvent.dismiss({ containerId: CONTAINER_ID });
+
+  // `autoClose: false` — тост висит, пока пользователь не нажмёт action или
+  // close. Используется, когда от пользователя ждут явного решения.
+  const openSticky = () =>
+    toaster.systemEvent.warning({
+      title: 'Подтвердите действие',
+      description: 'Удалить этот файл без возможности восстановления?',
+      action: [
+        { label: 'Удалить', onClick: dismiss },
+        { label: 'Отмена', onClick: dismiss },
+      ],
+      autoClose: false,
+      containerId: CONTAINER_ID,
+    });
+
+  // Без `autoClose: false` — тост закроется по таймеру контейнера (autoClose
+  // = 5000ms). Action остаётся как «удобный сокращённый путь», но решение
+  // не блокирующее.
+  const openAutoClosing = () =>
+    toaster.systemEvent.warning({
+      title: 'Файл будет удалён через 5 секунд',
+      description: 'Нажмите «Отменить», чтобы прервать.',
+      action: [{ label: 'Отменить', onClick: dismiss }],
+      containerId: CONTAINER_ID,
+    });
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button appearance={APPEARANCE.Critical} label='Sticky (autoClose: false)' onClick={openSticky} />
+        <Button
+          appearance={APPEARANCE.Primary}
+          label='С таймером (autoClose из контейнера)'
+          onClick={openAutoClosing}
+        />
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={dismiss} />
+        <ToasterContainer
+          type={TOASTER_TYPE.SystemEvent}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={5}
+          autoClose={5000}
+          stacked={false}
+          displayCloseAllButton={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UploadBasic
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import {
+  POSITION_SYSTEM_EVENT,
+  TOAST_UPLOAD_ITEM_STATUS,
+  toaster,
+  TOASTER_TYPE,
+  ToasterContainer,
+  UploadItem,
+} from '@ds/toaster';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const CONTAINER_ID = 'demo-upload-basic';
+const TOAST_ID = 'demo-upload-basic-toast';
+
+const initialFiles: UploadItem[] = [
+  {
+    id: '1',
+    title: 'document.pdf',
+    status: TOAST_UPLOAD_ITEM_STATUS.Loading,
+    statusLabel: 'Загрузка...',
+    progress: 45,
+    formattedSize: '12.4 МБ',
+  },
+  {
+    id: '2',
+    title: 'image.png',
+    status: TOAST_UPLOAD_ITEM_STATUS.Uploaded,
+    statusLabel: 'Загружено',
+    progress: 100,
+    formattedSize: '2.1 МБ',
+    actions: {},
+    link: { label: 'Открыть', href: '#' },
+  },
+];
+
+const CLOSE_DELAY_MS = 1500;
+
+export function UploadBasic() {
+  const [files, setFiles] = useState<UploadItem[]>(initialFiles);
+
+  const removeFile = (id: string) => setFiles(prev => prev.filter(f => f.id !== id));
+
+  const cancelAll = () => {
+    const stopped = files.map(f =>
+      f.status === TOAST_UPLOAD_ITEM_STATUS.Loading ? { ...f, status: TOAST_UPLOAD_ITEM_STATUS.Pause, actions: {} } : f,
+    );
+    setFiles(stopped);
+    toaster.upload.startOrUpdate({
+      id: TOAST_ID,
+      title: 'Загрузка остановлена',
+      description: 'Закроется автоматически',
+      status: 'pause',
+      progress: { current: 0, total: stopped.length },
+      files: stopped,
+      closable: true,
+      containerId: CONTAINER_ID,
+    });
+    setTimeout(() => {
+      toaster.upload.dismiss({ containerId: CONTAINER_ID });
+      setFiles(initialFiles);
+    }, CLOSE_DELAY_MS);
+  };
+
+  const filesWithActions: UploadItem[] = files.map(f =>
+    f.status === TOAST_UPLOAD_ITEM_STATUS.Loading ? { ...f, actions: { onCancel: () => removeFile(f.id ?? '') } } : f,
+  );
+
+  const open = () => {
+    const completed = filesWithActions.filter(f => f.status === TOAST_UPLOAD_ITEM_STATUS.Uploaded).length;
+    toaster.upload.startOrUpdate({
+      id: TOAST_ID,
+      title: 'Загрузка файлов',
+      description: `${completed} из ${filesWithActions.length} файлов`,
+      status: 'loading',
+      progress: { current: completed, total: filesWithActions.length },
+      files: filesWithActions,
+      closable: true,
+      onCancelAll: cancelAll,
+      containerId: CONTAINER_ID,
+    });
+  };
+
+  return (
+    <PortalContextProvider>
+      <div className={styles.uploadFrame}>
+        <Button appearance={APPEARANCE.Primary} label='Открыть Upload' onClick={open} />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='Сбросить'
+          onClick={() => {
+            setFiles(initialFiles);
+            toaster.upload.dismiss({ containerId: CONTAINER_ID });
+          }}
+        />
+        <ToasterContainer
+          type={TOASTER_TYPE.Upload}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={1}
+          autoClose={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UploadCloseHooks
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import {
+  POSITION_SYSTEM_EVENT,
+  TOAST_UPLOAD_ITEM_STATUS,
+  TOAST_UPLOAD_STATUS,
+  toaster,
+  TOASTER_TYPE,
+  ToasterContainer,
+  UploadItem,
+} from '@ds/toaster';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+
+const CONTAINER_ID = 'demo-upload-close-hooks';
+const TOAST_ID = 'demo-upload-close-hooks-toast';
+
+const file: UploadItem = {
+  id: '1',
+  title: 'archive.zip',
+  status: TOAST_UPLOAD_ITEM_STATUS.Loading,
+  statusLabel: '40%',
+  progress: 40,
+  formattedSize: '120 МБ',
+};
+
+export function UploadCloseHooks() {
+  const [log, setLog] = useState<string[]>([]);
+  const push = (line: string) => setLog(prev => [line, ...prev].slice(0, 4));
+
+  const open = () => {
+    toaster.upload.startOrUpdate({
+      id: TOAST_ID,
+      title: 'Загрузка файла',
+      description: '40% из 100%',
+      status: TOAST_UPLOAD_STATUS.Loading,
+      progress: { current: 40, total: 100 },
+      files: [file],
+      closable: true,
+      containerId: CONTAINER_ID,
+      onCloseClick: (_e, close) => {
+        if (window.confirm('Закрыть тост загрузки?')) {
+          push('onCloseClick → close()');
+          close?.();
+        } else {
+          push('onCloseClick → отменено');
+        }
+      },
+      onClose: id => push(`onClose(${String(id)})`),
+    });
+  };
+
+  return (
+    <PortalContextProvider>
+      <div className={styles.uploadFrame}>
+        <Button appearance={APPEARANCE.Primary} label='Открыть Upload' onClick={open} />
+        <Button appearance={APPEARANCE.Neutral} label='Очистить лог' onClick={() => setLog([])} />
+        <ul className={styles.eventLog} aria-label='Лог событий'>
+          {log.length === 0 ? <li>Лог пуст</li> : log.map((line, i) => <li key={i}>{line}</li>)}
+        </ul>
+        <ToasterContainer
+          type={TOASTER_TYPE.Upload}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={1}
+          autoClose={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UploadProgress
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import {
+  POSITION_SYSTEM_EVENT,
+  TOAST_UPLOAD_ITEM_STATUS,
+  TOAST_UPLOAD_STATUS,
+  toaster,
+  TOASTER_TYPE,
+  ToasterContainer,
+  UploadItem,
+} from '@ds/toaster';
+import { useEffect, useRef } from 'react';
+
+import styles from './styles.module.scss';
+
+const CONTAINER_ID = 'demo-upload-progress';
+const TOAST_ID = 'demo-upload-progress-toast';
+const TICK_MS = 400;
+const CLOSE_DELAY_MS = 1500;
+
+function getStatusLabel(progress: number, status: UploadItem['status']): string {
+  if (status === TOAST_UPLOAD_ITEM_STATUS.Uploaded) return 'Загружено';
+  if (status === TOAST_UPLOAD_ITEM_STATUS.Error) return 'Ошибка';
+  return `${progress}%`;
+}
+
+function makeFile(progress: number, status: UploadItem['status'], onCancel: () => void): UploadItem {
+  return {
+    id: '1',
+    title: 'video.mp4',
+    status,
+    statusLabel: getStatusLabel(progress, status),
+    progress,
+    formattedSize: '48.6 МБ',
+    actions: status === TOAST_UPLOAD_ITEM_STATUS.Loading ? { onCancel } : {},
+    ...(status === TOAST_UPLOAD_ITEM_STATUS.Uploaded ? { link: { label: 'Открыть', href: '#' } } : {}),
+  };
+}
+
+export function UploadProgress() {
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const progressRef = useRef(0);
+
+  const stop = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  const cancel = () => {
+    stop();
+    if (closeTimerRef.current) return;
+    toaster.upload.startOrUpdate({
+      id: TOAST_ID,
+      title: 'Загрузка остановлена',
+      description: 'Закроется автоматически',
+      status: TOAST_UPLOAD_STATUS.Pause,
+      progress: { current: progressRef.current, total: 100 },
+      files: [makeFile(progressRef.current, TOAST_UPLOAD_ITEM_STATUS.Pause, cancel)],
+      generalActions: {},
+      closable: true,
+      containerId: CONTAINER_ID,
+    });
+    closeTimerRef.current = setTimeout(() => {
+      closeTimerRef.current = null;
+      toaster.upload.dismiss({ containerId: CONTAINER_ID });
+    }, CLOSE_DELAY_MS);
+  };
+
+  useEffect(
+    () => () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
+
+  const start = () => {
+    stop();
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    progressRef.current = 0;
+    let progress = 0;
+
+    toaster.upload.startOrUpdate({
+      id: TOAST_ID,
+      title: 'Загрузка файла',
+      description: `${progress}% из 100%`,
+      status: TOAST_UPLOAD_STATUS.Loading,
+      progress: { current: progress, total: 100 },
+      files: [makeFile(progress, TOAST_UPLOAD_ITEM_STATUS.Loading, cancel)],
+      generalActions: { onPause: stop },
+      closable: true,
+      onCancelAll: cancel,
+      containerId: CONTAINER_ID,
+    });
+
+    intervalRef.current = setInterval(() => {
+      progress += 10;
+      progressRef.current = progress;
+      const done = progress >= 100;
+
+      toaster.upload.startOrUpdate({
+        id: TOAST_ID,
+        title: done ? 'Файл загружен' : 'Загрузка файла',
+        description: done ? '1 из 1 файлов' : `${progress}% из 100%`,
+        status: done ? TOAST_UPLOAD_STATUS.Uploaded : TOAST_UPLOAD_STATUS.Loading,
+        progress: { current: progress, total: 100 },
+        files: [
+          makeFile(progress, done ? TOAST_UPLOAD_ITEM_STATUS.Uploaded : TOAST_UPLOAD_ITEM_STATUS.Loading, cancel),
+        ],
+        generalActions: {},
+        closable: true,
+        onCancelAll: done ? undefined : cancel,
+        containerId: CONTAINER_ID,
+      });
+
+      if (done) stop();
+    }, TICK_MS);
+  };
+
+  return (
+    <PortalContextProvider>
+      <div className={styles.uploadFrame}>
+        <Button appearance={APPEARANCE.Primary} label='Запустить загрузку' onClick={start} />
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={cancel} />
+        <ToasterContainer
+          type={TOASTER_TYPE.Upload}
+          containerId={CONTAINER_ID}
+          position={POSITION_SYSTEM_EVENT.BottomRight}
+          limit={1}
+          autoClose={false}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UserActionBasic
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-user-action-basic';
+
+export function UserActionBasic() {
+  const dismiss = () => toaster.userAction.dismiss({ containerId: CONTAINER_ID });
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button
+          appearance={APPEARANCE.Primary}
+          label='Success'
+          onClick={() => toaster.userAction.success({ label: 'Скопировано', containerId: CONTAINER_ID })}
+        />
+        <Button
+          appearance={APPEARANCE.Critical}
+          label='Error'
+          onClick={() => toaster.userAction.error({ label: 'Не удалось', containerId: CONTAINER_ID })}
+        />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='С отменой'
+          onClick={() =>
+            toaster.userAction.neutral({
+              label: 'Сохранено',
+              action: {
+                label: 'Отменить',
+                onClick: () => {
+                  dismiss();
+                  toaster.userAction.success({ label: 'Отменено', containerId: CONTAINER_ID });
+                },
+              },
+              containerId: CONTAINER_ID,
+            })
+          }
+        />
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={dismiss} />
+        <ToasterContainer
+          type={TOASTER_TYPE.UserAction}
+          containerId={CONTAINER_ID}
+          position={POSITION_USER_ACTION.BottomCenter}
+          limit={2}
+          autoClose={2000}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UserActionLoading
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-user-action-loading';
+const OPERATION_MS = 1500;
+
+export function UserActionLoading() {
+  const run = async () => {
+    const id = await toaster.userAction.neutral({
+      label: 'Загрузка…',
+      loading: true,
+      containerId: CONTAINER_ID,
+    });
+    setTimeout(() => {
+      toaster.userAction.update.success(id, { label: 'Готово!', containerId: CONTAINER_ID });
+    }, OPERATION_MS);
+  };
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button appearance={APPEARANCE.Primary} label='Запустить операцию' onClick={run} />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='Закрыть все'
+          onClick={() => toaster.userAction.dismiss({ containerId: CONTAINER_ID })}
+        />
+        <ToasterContainer
+          type={TOASTER_TYPE.UserAction}
+          containerId={CONTAINER_ID}
+          position={POSITION_USER_ACTION.BottomCenter}
+          limit={2}
+          autoClose={2000}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UserActionPositions
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer, UserActionPosition } from '@ds/toaster';
+
+const POSITIONS: UserActionPosition[] = Object.values(POSITION_USER_ACTION);
+
+const containerIdFor = (position: UserActionPosition) => `demo-user-action-position-${position}`;
+
+export function UserActionPositions() {
+  const fire = (position: UserActionPosition) =>
+    toaster.userAction.success({
+      label: `Тост в ${position}`,
+      containerId: containerIdFor(position),
+    });
+
+  const dismissAll = () =>
+    POSITIONS.forEach(position => toaster.userAction.dismiss({ containerId: containerIdFor(position) }));
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        {POSITIONS.map(position => (
+          <Button key={position} appearance={APPEARANCE.Primary} label={position} onClick={() => fire(position)} />
+        ))}
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={dismissAll} />
+        {POSITIONS.map(position => (
+          <ToasterContainer
+            key={position}
+            type={TOASTER_TYPE.UserAction}
+            containerId={containerIdFor(position)}
+            position={position}
+            limit={2}
+            autoClose={3000}
+          />
+        ))}
+      </div>
+    </PortalContextProvider>
+  );
+}
+```
+
+### UserActionTimer
+
+```tsx
+import { APPEARANCE, Button } from '@ds/button';
+import { PortalContextProvider } from '@ds/portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+
+const CONTAINER_ID = 'demo-user-action-timer';
+
+export function UserActionTimer() {
+  const dismiss = () => toaster.userAction.dismiss({ containerId: CONTAINER_ID });
+
+  return (
+    <PortalContextProvider>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <Button
+          appearance={APPEARANCE.Primary}
+          label='Тост с таймером'
+          onClick={() =>
+            toaster.userAction.success({
+              label: 'Скопировано',
+              timer: true,
+              containerId: CONTAINER_ID,
+            })
+          }
+        />
+        <Button
+          appearance={APPEARANCE.Neutral}
+          label='С таймером и ссылкой'
+          onClick={() =>
+            toaster.userAction.neutral({
+              label: 'Сохранено',
+              timer: true,
+              action: { label: 'Отменить', onClick: dismiss },
+              containerId: CONTAINER_ID,
+            })
+          }
+        />
+        <Button appearance={APPEARANCE.Neutral} label='Закрыть все' onClick={dismiss} />
+        <ToasterContainer
+          type={TOASTER_TYPE.UserAction}
+          containerId={CONTAINER_ID}
+          position={POSITION_USER_ACTION.BottomCenter}
+          limit={2}
+          autoClose={4000}
+        />
+      </div>
+    </PortalContextProvider>
+  );
+}
+```

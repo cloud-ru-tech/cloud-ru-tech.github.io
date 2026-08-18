@@ -1,0 +1,122 @@
+﻿# @ds/promo-tag
+
+> Промо-тег — цветной лейбл для маркетинговых акцентов, выделения категорий и статусных ярлыков. Опционально кликабельный.
+
+Docs: /snack-v2/components/promo-tag/
+
+## Установка
+
+```sh
+pnpm add @ds/promo-tag
+```
+
+## Когда использовать
+
+- Пометка карточки товара/услуги — новинка, скидка, хит.
+- Цветовая категоризация в списках (темы, теги статей).
+- Статусная метка, которая **не** несёт функциональной семантики (для статусов берите `Status`).
+
+Когда **не** нужен: интерактивные chip'ы с удалением — берите `Chip`/`Tag`; функциональные статусы — берите `Status`.
+
+## API
+
+### PromoTag
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactNode` | `null` | no | Контент после текста |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `primary` | no | Внешний вид |
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| Link из react-router-dom и т.п. |
+| `beforeContent` | `ReactNode` | `null` | no | Контент перед текстом |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Явный проп вместо forwardRef — как в Button и AiToolBadge. |
+| `label` | `string` | — | no | Текст компонента |
+| `onClick` | `MouseEventHandler<HTMLElement>` | — | no | Колбэк для обработки клика на тег |
+| `roleAppearance` | `accent \| decor` | `accent` | no | Роль, в которой применяется `appearance`: акцентная заливка или декоративная |
+| `size` | `m \| s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `PolymorphicRef` (alias)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `m | s | xs`
+
+## Примеры
+
+### Basic
+
+```tsx
+import { PromoTag } from '@ds/promo-tag';
+
+export function Basic() {
+  return <PromoTag label='NEW' appearance='primary' roleAppearance='accent' />;
+}
+```
+
+### Clickable
+
+```tsx
+import { PromoTag } from '@ds/promo-tag';
+import { useState } from 'react';
+
+export function Clickable() {
+  const [clicked, setClicked] = useState(false);
+
+  return <PromoTag label={clicked ? 'Нажато' : 'Кликабельный'} appearance='blue' onClick={() => setClicked(true)} />;
+}
+```
+
+### Colors
+
+```tsx
+import { PromoTag } from '@ds/promo-tag';
+
+export function Colors() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <PromoTag label='Primary' appearance='primary' />
+      <PromoTag label='Green' appearance='green' />
+      <PromoTag label='Red' appearance='red' />
+      <PromoTag label='Violet' appearance='violet' />
+    </div>
+  );
+}
+```
+
+### Polymorphic
+
+```tsx
+import { APPEARANCE, PromoTag, ROLE_APPEARANCE } from '@ds/promo-tag';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
+
+type MockLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & { to: string };
+
+const MockLink = forwardRef<HTMLAnchorElement, MockLinkProps>(({ to, onClick, children, ...rest }, ref) => (
+  <a ref={ref} href={to} onClick={onClick} {...rest}>
+    {children}
+  </a>
+));
+MockLink.displayName = 'MockLink';
+
+export function Polymorphic() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <PromoTag
+        as='a'
+        href='https://example.com'
+        target='_blank'
+        label='External promo'
+        appearance={APPEARANCE.Blue}
+        roleAppearance={ROLE_APPEARANCE.Decor}
+      />
+      <PromoTag
+        as={MockLink}
+        to='https://example.com'
+        label='Preview link'
+        appearance={APPEARANCE.Primary}
+        roleAppearance={ROLE_APPEARANCE.Accent}
+      />
+    </div>
+  );
+}
+```

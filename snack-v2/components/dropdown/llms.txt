@@ -1,0 +1,216 @@
+﻿# @ds/dropdown
+
+> Выпадающий блок с произвольным контентом и встроенными состояниями loading / not-found / no-data / data-error.
+
+Docs: /snack-v2/components/dropdown/
+
+## Установка
+
+```sh
+pnpm add @ds/dropdown
+```
+
+## Когда использовать
+
+- Меню действий над кнопкой (экспорт, фильтры, настройки).
+- Асинхронные подсказки и suggestions — встроенный `state` скрывает ручное ветвление UI.
+- Композитные виджеты: селекторы, комбобоксы, авторасшифровки.
+
+Когда **не** нужен `Dropdown`: для одиночного подсказывающего текста используйте `Tooltip`, для модального выбора — `Modal` или `Popover`.
+
+## API
+
+### DesktopDropdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Паддинги body. `false` — убрать (контент во всю ширину; на mobile прокидывается в `BottomSheet`). |
+| `className` | `string` | — | no | CSS-класс |
+| `closeOnEscapeKey` | `boolean` | `true` | no | Закрывать ли по нажатию на кнопку `Esc` |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
+| `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
+| `data-test-id` | `string` | — | no |  |
+| `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
+| `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
+| `footerDivider` | `boolean` | — | no | Divider между body и футером |
+| `headerDivider` | `boolean` | — | no | Divider между шапкой и body |
+| `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
+| `hoverDelayOpen` | `number` | — | no | Задержка открытия по ховеру |
+| `offset` | `number` | `0` | no | Отступ поповера от его триггер-элемента (в пикселях). |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `outsideClick` | `boolean \| OutsideClickHandler` | — | no | Закрывать ли при клике вне поповера |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `bottom-start` | no | Положение поповера относительно своего триггера (children). |
+| `search` | `ReactNode` | — | no | Слот поиска в шапке (topBar) |
+| `slotAfterTitle` | `ReactNode` | — | no | Подсказка-иконка рядом с заголовком (потребитель собирает, напр. `<QuestionTooltip />`) |
+| `snapPoints` | `SnapPoint[]` | `['fit-content']` | no | Только mobile: snap-точки `BottomSheet`'а (высота листа). На desktop игнорируется. |
+| `state` | `DropdownState` | — | no | Состояние |
+| `stopPropagation` | `StopPropagationHandlers` | `{ onClick: true, onMouseDown: true, onMouseUp: true, onTouchStart: true, onTouchEnd: true, onTouchMove: true }` | no | Гасить всплытие pointer/touch-событий с floating-контейнера (`stopPropagation`). По умолчанию все хендлеры включены. Для drag&drop внутри поповера отключите `onMouseUp` / `onTouchEnd`, чтобы они дошли до `document`. |
+| `title` | `ReactNode` | — | no | Заголовок в шапке (topBar) |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | `click` | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerClickByKeys` | `boolean` | `true` | no | Вызывается ли попоповер по нажатию клавиш Enter/Space (при trigger = `click`) |
+| `triggerRef` | `ForwardedRef<HTMLElement \| ReferenceType \| null>` | — | no | Ref ссылка на триггер |
+| `widthStrategy` | `auto \| eq \| gte` | `gte` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+### Dropdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Паддинги body. `false` — убрать (контент во всю ширину; на mobile прокидывается в `BottomSheet`). |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | CSS-класс |
+| `closeOnEscapeKey` | `boolean` | `true` | no | Закрывать ли по нажатию на кнопку `Esc` |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
+| `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
+| `data-test-id` | `string` | — | no |  |
+| `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
+| `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
+| `footerDivider` | `boolean` | — | no | Divider между body и футером |
+| `headerDivider` | `boolean` | — | no | Divider между шапкой и body |
+| `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
+| `hoverDelayOpen` | `number` | — | no | Задержка открытия по ховеру |
+| `offset` | `number` | `0` | no | Отступ поповера от его триггер-элемента (в пикселях). |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `outsideClick` | `boolean \| OutsideClickHandler` | — | no | Закрывать ли при клике вне поповера |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `search` | `ReactNode` | — | no | Слот поиска в шапке (topBar) |
+| `slotAfterTitle` | `ReactNode` | — | no | Подсказка-иконка рядом с заголовком (потребитель собирает, напр. `<QuestionTooltip />`) |
+| `snapPoints` | `SnapPoint[]` | `['fit-content']` | no | Только mobile: snap-точки `BottomSheet`'а (высота листа). На desktop игнорируется. |
+| `state` | `DropdownState` | — | no | Состояние |
+| `stopPropagation` | `StopPropagationHandlers` | `{ onClick: true, onMouseDown: true, onMouseUp: true, onTouchStart: true, onTouchEnd: true, onTouchMove: true }` | no | Гасить всплытие pointer/touch-событий с floating-контейнера (`stopPropagation`). По умолчанию все хендлеры включены. Для drag&drop внутри поповера отключите `onMouseUp` / `onTouchEnd`, чтобы они дошли до `document`. |
+| `title` | `ReactNode` | — | no | Заголовок в шапке (topBar) |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerClickByKeys` | `boolean` | `true` | no | Вызывается ли попоповер по нажатию клавиш Enter/Space (при trigger = `click`) |
+| `triggerRef` | `ForwardedRef<HTMLElement \| ReferenceType \| null>` | — | no | Ref ссылка на триггер |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+#### Related types
+- `ActionButtonProps` (interface)
+- `BlockProps` (interface)
+- `BlockPropsWithIcon` (interface)
+- `DropdownState` (alias)
+- `IconPredefinedProps` (interface)
+- `OutsideClickHandler` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PopoverWidthStrategy` = `auto | eq | gte`
+- `SnapPoint` (alias)
+- `StopPropagationHandlers` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+### DropdownBody
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Паддинги body. `false` — убрать (контент во всю ширину; на mobile прокидывается в `BottomSheet`). |
+| `state` | `DropdownState` | — | no | Состояние |
+
+### MobileDropdown
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `bodyPadding` | `boolean` | `true` | no | Паддинги body. `false` — убрать (контент во всю ширину; на mobile прокидывается в `BottomSheet`). |
+| `className` | `string` | — | no | CSS-класс |
+| `closeOnEscapeKey` | `boolean` | `true` | no | Закрывать ли по нажатию на кнопку `Esc` |
+| `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
+| `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
+| `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
+| `data-test-id` | `string` | — | no |  |
+| `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
+| `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
+| `footerDivider` | `boolean` | — | no | Divider между body и футером |
+| `headerDivider` | `boolean` | — | no | Divider между шапкой и body |
+| `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
+| `hoverDelayOpen` | `number` | — | no | Задержка открытия по ховеру |
+| `offset` | `number` | `0` | no | Отступ поповера от его триггер-элемента (в пикселях). |
+| `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек отображения компонента. Срабатывает при изменении состояния open. |
+| `open` | `boolean` | — | no | Управляет состоянием показан/не показан. |
+| `outsideClick` | `boolean \| OutsideClickHandler` | — | no | Закрывать ли при клике вне поповера |
+| `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | `top` | no | Положение поповера относительно своего триггера (children). |
+| `search` | `ReactNode` | — | no | Слот поиска в шапке (topBar) |
+| `slotAfterTitle` | `ReactNode` | — | no | Подсказка-иконка рядом с заголовком (потребитель собирает, напр. `<QuestionTooltip />`) |
+| `snapPoints` | `SnapPoint[]` | `['fit-content']` | no | Только mobile: snap-точки `BottomSheet`'а (высота листа). На desktop игнорируется. |
+| `state` | `DropdownState` | — | no | Состояние |
+| `stopPropagation` | `StopPropagationHandlers` | `{ onClick: true, onMouseDown: true, onMouseUp: true, onTouchStart: true, onTouchEnd: true, onTouchMove: true }` | no | Гасить всплытие pointer/touch-событий с floating-контейнера (`stopPropagation`). По умолчанию все хендлеры включены. Для drag&drop внутри поповера отключите `onMouseUp` / `onTouchEnd`, чтобы они дошли до `document`. |
+| `title` | `ReactNode` | — | no | Заголовок в шапке (topBar) |
+| `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
+| `triggerClassName` | `string` | — | no | CSS-класс триггера |
+| `triggerClickByKeys` | `boolean` | `true` | no | Вызывается ли попоповер по нажатию клавиш Enter/Space (при trigger = `click`) |
+| `triggerRef` | `ForwardedRef<HTMLElement \| ReferenceType \| null>` | — | no | Ref ссылка на триггер |
+| `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Button } from '@ds/button';
+import { Dropdown } from '@ds/dropdown';
+
+export function Basic() {
+  return (
+    <Dropdown content={<div style={{ padding: 12 }}>Контент меню</div>}>
+      <Button label='Открыть' />
+    </Dropdown>
+  );
+}
+```
+
+### Loading
+
+```tsx
+import { Button } from '@ds/button';
+import { Dropdown, STATE } from '@ds/dropdown';
+
+export function Loading() {
+  return (
+    <Dropdown state={{ type: STATE.Loading }} content={null}>
+      <Button label='Загрузка' />
+    </Dropdown>
+  );
+}
+```
+
+### NotFound
+
+```tsx
+import { Button } from '@ds/button';
+import { Dropdown, STATE } from '@ds/dropdown';
+
+export function NotFound() {
+  return (
+    <Dropdown
+      state={{
+        type: STATE.NotFound,
+        content: 'Ничего не нашли',
+        actionLabel: 'Сбросить фильтры',
+        onActionClick: () => {},
+      }}
+      content={null}
+    >
+      <Button label='Поиск' />
+    </Dropdown>
+  );
+}
+```
+
+### OpenForReview
+
+```tsx
+import { Button } from '@ds/button';
+import { Dropdown } from '@ds/dropdown';
+
+export function OpenForReview() {
+  return (
+    <Dropdown content={<div style={{ padding: 12 }}>Видимое содержимое</div>}>
+      <Button label='Триггер' />
+    </Dropdown>
+  );
+}
+```

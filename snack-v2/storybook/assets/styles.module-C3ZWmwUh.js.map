@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-C3ZWmwUh.js","names":[],"sources":["../../../../packages/ai-chain-of-thoughts/stories/styles.module.scss"],"sourcesContent":[".grid {\n  display: grid;\n  gap: 1.5rem;\n}\n\n.cell {\n  width: 360px;\n}\n"],"mappings":""}

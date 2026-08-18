@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./PromoTag.CopsCbuW.js";var i=e(t(),1),a=n();function o(){let[e,t]=(0,i.useState)(!1);return(0,a.jsx)(r,{label:e?`Нажато`:`Кликабельный`,appearance:`blue`,onClick:()=>t(!0)})}export{o as Clickable};

@@ -1,0 +1,157 @@
+﻿# @ds/color-picker
+
+> Компонент выбора цвета с палитрой, переключаемыми цветовыми моделями (HEX/RGB/HSV), альфа-каналом и опциональным режимом ручного применения.
+
+Docs: /snack-v2/components/color-picker/
+
+## Установка
+
+```sh
+pnpm add @ds/color-picker
+```
+
+## Когда использовать
+
+- Когда пользователю нужно выбрать произвольный цвет (брендинг, темы, разметка карт, рисование).
+- Когда требуется поддержка нескольких цветовых моделей.
+- Когда нужен альфа-канал.
+
+Когда **не** нужен `ColorPicker`:
+
+- Выбор из фиксированной палитры — используйте набор `Tag`/`Chip`.
+- Только подтверждение одной заранее заданной коррекции — используйте `Toggle`/`Switch`.
+
+## API
+
+### ChannelSlider
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alpha` | `boolean` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `gradient` | `string` | — | yes |  |
+| `max` | `number` | `100` | no |  |
+| `min` | `number` | `0` | no |  |
+| `onChange` | `(value: number) => void` | — | yes |  |
+| `size` | `l \| m \| s` | — | no |  |
+| `step` | `number` | `1` | no |  |
+| `thumbColor` | `string` | — | no |  |
+| `value` | `number` | — | yes |  |
+
+### ColorPicker
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoApply` | `boolean` | `true` | no | Применять изменения автоматически. Если `false` — появляются кнопки Cancel/Apply. По умолчанию `true` — без футера (паритет с Figma colorPicker, где Cancel/Apply нет). |
+| `availableModes` | `ColorMode[]` | `['hex', 'hsv', 'rgb']` | no | Какие цветовые модели доступны переключателю. |
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `data-test-id` | `string` | — | no |  |
+| `onChange` | `((rawColor: RawColor) => void)` | — | no | Колбек на изменение значения. Вызывается на каждое изменение если `autoApply`, иначе только по нажатию Apply. |
+| `size` | `l \| m \| s` | `m` | no | Размер компонента. |
+| `value` | `Color` | — | no | Текущее значение цвета. Если задано — компонент синхронизируется с ним при изменении. |
+| `withAlpha` | `boolean` | `true` | no | Управляет альфа-каналом палитры и наличием поля Alpha. |
+| `withColorArea` | `boolean` | `true` | no | Показывать 2D-область (saturation/value квадрат). `false` — только поля и слайдеры (раскладка для узких поверхностей, напр. мобильный BottomSheet). |
+
+#### Related types
+- `Alpha` (interface)
+- `Color` (alias)
+- `ColorMode` = `hex | hsv | rgb`
+- `HslColor` (interface)
+- `HsvColor` (interface)
+- `RgbColor` (interface)
+- `Size` = `l | m | s`
+
+### FieldAlphaColor
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `onChange` | `(color: Color) => void` | — | yes |  |
+| `rgba` | `RgbaColor` | — | yes |  |
+| `size` | `l \| m \| s` | — | no |  |
+
+### FieldPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `error` | `boolean` | — | no |  |
+| `inputType` | `number \| text` | `number` | no |  |
+| `max` | `number` | `255` | no |  |
+| `min` | `number` | `0` | no |  |
+| `onChange` | `((value?: string) => void)` | — | no |  |
+| `size` | `l \| m \| s` | `s` | no |  |
+| `value` | `string \| number` | — | no |  |
+
+## Примеры
+
+### AutoApply
+
+```tsx
+import { ColorPicker } from '@ds/color-picker';
+import { useState } from 'react';
+
+export function AutoApply() {
+  const [color, setColor] = useState<string>('#4387e2');
+
+  return <ColorPicker value={color} autoApply onChange={raw => setColor(raw.hex)} />;
+}
+```
+
+### Basic
+
+```tsx
+import { ColorPicker } from '@ds/color-picker';
+import { useState } from 'react';
+
+export function Basic() {
+  const [color, setColor] = useState<string>('#389f74');
+
+  return <ColorPicker value={color} onChange={raw => setColor(raw.hex)} />;
+}
+```
+
+### Compact
+
+```tsx
+import { ColorPicker } from '@ds/color-picker';
+import { useState } from 'react';
+
+export function Compact() {
+  const [color, setColor] = useState<string>('#389f74');
+
+  return <ColorPicker value={color} withColorArea={false} autoApply={false} onChange={raw => setColor(raw.hex)} />;
+}
+```
+
+### Sizes
+
+```tsx
+import { ColorPicker } from '@ds/color-picker';
+import { useState } from 'react';
+
+export function Sizes() {
+  const [color, setColor] = useState<string>('#389f74');
+  const handleChange = (raw: { hex: string }) => setColor(raw.hex);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ColorPicker size='s' value={color} onChange={handleChange} autoApply />
+      <ColorPicker size='m' value={color} onChange={handleChange} autoApply />
+      <ColorPicker size='l' value={color} onChange={handleChange} autoApply />
+    </div>
+  );
+}
+```
+
+### WithoutAlpha
+
+```tsx
+import { ColorPicker } from '@ds/color-picker';
+import { useState } from 'react';
+
+export function WithoutAlpha() {
+  const [color, setColor] = useState<string>('#d52e33');
+
+  return <ColorPicker value={color} withAlpha={false} autoApply onChange={raw => setColor(raw.hex)} />;
+}
+```

@@ -1,0 +1,154 @@
+﻿# @ds/tag
+
+> Пакет компактных меток — компонент Tag (опционально удаляемый или ссылочный) и контейнер TagRow для групп меток с обрезанием по строкам.
+
+Docs: /snack-v2/components/tag/
+
+## Установка
+
+```sh
+pnpm add @ds/tag
+```
+
+## API
+
+### Tag
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no |  |
+| `as` | `a` | — | no | Элемент или компонент для рендера: 'a' \| ComponentType (например Link из react-router-dom) |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `((instance: HTMLAnchorElement \| null) => void) \| RefObject<HTMLAnchorElement> \| Ref<HTMLSpanElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `label` | `string` | — | yes |  |
+| `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
+| `size` | `m \| s \| xs` | — | no |  |
+| `tabIndex` | `number` | — | no |  |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Size` = `m | s | xs`
+
+### TagBase
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `neutral` | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLSpanElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `label` | `string` | — | yes |  |
+| `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
+| `size` | `m \| s \| xs` | `s` | no |  |
+| `tabIndex` | `number` | — | no |  |
+
+### TagLink
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `neutral` | no |  |
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера: 'a' \| ComponentType (например Link из react-router-dom) |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `label` | `string` | — | yes |  |
+| `size` | `m \| s \| xs` | `s` | no |  |
+| `tabIndex` | `number` | — | no |  |
+
+### TagList
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `TagRowItemInner[]` | — | yes |  |
+| `onItemRemove` | `((item: string) => void)` | — | no |  |
+| `setTagRef` | `SetTagRef` | — | no |  |
+| `size` | `m \| s \| xs` | `s` | no |  |
+
+### TagMore
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `buttonRef` | `Ref<HTMLButtonElement>` | — | no |  |
+| `items` | `TagRowItemInner[]` | — | yes |  |
+| `onItemRemove` | `((item: string) => void)` | — | no |  |
+| `size` | `m \| s \| xs` | `s` | no |  |
+| `text` | `string` | — | no |  |
+
+### TagRow
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `items` | `TagRowItem[]` | — | yes |  |
+| `moreButtonLabel` | `string` | — | no |  |
+| `onItemRemove` | `((item: string) => void)` | — | no |  |
+| `rowLimit` | `number` | — | no |  |
+| `size` | `m \| s \| xs` | — | no |  |
+
+### TagRowSimple
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `items` | `TagRowItemInner[]` | — | yes |  |
+| `onItemRemove` | `((item: string) => void)` | — | no |  |
+| `setTagRef` | `((item: TagRowItemInner, index: number) => Ref<HTMLDivElement>)` | — | no |  |
+| `size` | `m \| s \| xs` | — | yes |  |
+
+### TagRowTruncated
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `items` | `TagRowItemInner[]` | — | yes |  |
+| `moreButtonLabel` | `string` | — | no |  |
+| `onItemRemove` | `((item: string) => void)` | — | no |  |
+| `rowLimit` | `number` | — | yes |  |
+| `size` | `m \| s \| xs` | — | yes |  |
+
+## Примеры
+
+### AsLink
+
+```tsx
+import { Tag } from '@ds/tag';
+
+export function AsLink() {
+  return <Tag label='Документация' href='https://example.com' target='_blank' />;
+}
+```
+
+### Basic
+
+```tsx
+import { Tag } from '@ds/tag';
+
+export function Basic() {
+  return <Tag label='Frontend' appearance='blue' />;
+}
+```
+
+### Removable
+
+```tsx
+import { Tag } from '@ds/tag';
+
+export function Removable() {
+  return <Tag label='React' appearance='blue' onDelete={() => alert('remove')} />;
+}
+```
+
+### RowTruncated
+
+```tsx
+import { TagRow } from '@ds/tag';
+
+export function RowTruncated() {
+  return (
+    <TagRow
+      rowLimit={1}
+      items={[
+        { id: '1', label: 'Frontend', appearance: 'blue' },
+        { id: '2', label: 'Backend', appearance: 'green' },
+        { id: '3', label: 'Design', appearance: 'violet' },
+        { id: '4', label: 'DevOps', appearance: 'orange' },
+        { id: '5', label: 'Data', appearance: 'yellow' },
+      ]}
+    />
+  );
+}
+```

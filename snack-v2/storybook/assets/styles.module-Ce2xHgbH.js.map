@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-Ce2xHgbH.js","names":[],"sources":["../../../../packages/uikit-product-fields-predefined/stories/FieldChat/styles.module.scss"],"sourcesContent":[".panel {\n  width: 360px;\n  padding: 24px;\n}\n\n.grid {\n  display: grid;\n  gap: 1.5rem;\n  padding: 24px;\n}\n\n.cell {\n  width: 320px;\n}\n"],"mappings":""}

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Avatar.Dhc9I9dY.js";var n=e();function r(){return(0,n.jsx)(t,{name:`Иван Петров`})}export{r as Initials};

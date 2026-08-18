@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{t as n}from"./CardServiceLight.RZw-eVo8.js";var r=e();function i(){return(0,r.jsx)(n,{as:`a`,href:`https://cloud.ru`,target:`_blank`,title:`Ссылка-сервис`,icon:(0,r.jsx)(t,{size:24})})}export{i as PolymorphicLink};

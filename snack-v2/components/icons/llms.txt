@@ -1,0 +1,136 @@
+﻿# @ds/icons
+
+> Наборы интерфейсных иконок React и компонент Sprite для SVG-спрайтов.
+
+Docs: /snack-v2/components/icons/
+
+## Установка
+
+```sh
+pnpm add @ds/icons
+```
+
+## API
+
+### Sprite
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `content` | `string` | — | yes |  |
+| `data-test-id` | `string` | — | no |  |
+
+### SpriteFromUrl
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `src` | `string` | — | yes | URL файла спрайта (обычно из manifest.json, созданного npx @ds/icons copy-sprites) |
+
+### SpriteIcon
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `fallback` | `ReactNode` | — | no | Что рендерить внутри <svg>, пока символа нет в DOM (спрайт не смонтирован или id неизвестен) |
+| `size` | `number` | — | no | Размер иконки в px (по умолчанию 24) |
+| `symbolId` | `string` | — | yes | id символа спрайта, на который ссылается <use href="#...">; каталог валидных id — SPRITE_SYMBOL_IDS / sprite.symbols.json |
+| `testId` | `string` | — | no | Суффикс data-test-id (итоговый атрибут — icon${testId}); переопределяется явным data-test-id |
+
+## Примеры
+
+### Color
+
+```tsx
+import { TrashSVG } from '@ds/icons/interface/system';
+
+import styles from './Color.module.scss';
+
+export function Color() {
+  return (
+    <div className={styles.row}>
+      <span className={styles.main}>
+        <TrashSVG size={24} aria-label='Основной цвет' />
+      </span>
+      <span className={styles.accent}>
+        <TrashSVG size={24} aria-label='Акцентный цвет' />
+      </span>
+      <span className={styles.critical}>
+        <TrashSVG size={24} aria-label='Критический цвет' />
+      </span>
+    </div>
+  );
+}
+```
+
+### CustomThemedIcon
+
+```tsx
+import { createThemedIcon } from '@ds/icons';
+
+// Свой логотип в двух исполнениях. createThemedIcon собирает из них компонент,
+// который сам выбирает вариант по активной теме DS и ведёт себя как штатная иконка
+// (проп size, сохранение соотношения сторон, data-test-id).
+const AcmeLogo = createThemedIcon({
+  testId: 'acme-logo',
+  light: {
+    nativeWidth: 24,
+    nativeHeight: 24,
+    children: (
+      <>
+        <rect width={24} height={24} rx={6} fill='#1A1A1A' />
+        <path d='M7 16 12 7l5 9z' fill='#FFFFFF' />
+      </>
+    ),
+  },
+  dark: {
+    nativeWidth: 24,
+    nativeHeight: 24,
+    children: (
+      <>
+        <rect width={24} height={24} rx={6} fill='#FFFFFF' />
+        <path d='M7 16 12 7l5 9z' fill='#1A1A1A' />
+      </>
+    ),
+  },
+});
+
+export function CustomThemedIcon() {
+  return <AcmeLogo size={48} aria-label='Логотип Acme' />;
+}
+```
+
+### Flag
+
+```tsx
+import { RussiaSVG } from '@ds/icons/flags';
+
+export function Flag() {
+  return <RussiaSVG size={32} aria-label='Флаг России' />;
+}
+```
+
+### Sizes
+
+```tsx
+import { CheckSVG, PlusSVG, SearchSVG, TrashSVG } from '@ds/icons/interface/system';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+      <SearchSVG size={16} aria-label='Поиск 16' />
+      <CheckSVG size={20} aria-label='Готово 20' />
+      <PlusSVG size={24} aria-label='Добавить 24' />
+      <TrashSVG size={32} aria-label='Удалить 32' />
+    </div>
+  );
+}
+```
+
+### ThemedLogo
+
+```tsx
+import { CloudLogo } from '@ds/icons/logos';
+
+// Логотип сам переключает Light/Dark исполнение по активной теме DS —
+// отдельного пропа не требуется, достаточно быть внутри провайдера темы.
+export function ThemedLogo() {
+  return <CloudLogo size={40} aria-label='Cloud.ru' />;
+}
+```

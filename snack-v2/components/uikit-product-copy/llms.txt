@@ -1,0 +1,164 @@
+﻿# @ds/uikit-product-copy
+
+> Пакет копирования значений в буфер — компоненты CopyButton и CopyLine с единой логикой clipboard и иконкой подтверждения.
+
+Docs: /snack-v2/components/uikit-product-copy/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-copy
+```
+
+## API
+
+### CopyButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс. |
+| `data-test-id` | `string` | — | no |  |
+| `label` | `string` | — | no | Текст рядом с иконкой. Если не задан — кнопка отображается только с иконкой. |
+| `onClick` | `MouseEventHandler<HTMLButtonElement>` | — | no | Доп. обработчик клика. |
+| `size` | `l \| m \| s` | `s` | no | Размер кнопки (s / m / l). По-умолчанию s. |
+| `valueToCopy` | `string \| number` | — | yes | Значение для копирования в буфер. |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `Size` = `s | xs`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### CopyLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс корневого элемента. |
+| `content` | `ReactNode` | — | yes | Отображаемое содержимое. Если это строка/число — автоматически truncated и используется как значение для копирования по-умолчанию. |
+| `copyButtonHideStrategy` | `hover \| never` | `hover` | no | Стратегия показа кнопки копирования: hover — только по наведению, never — всегда. |
+| `data-test-id` | `string` | — | no |  |
+| `onClick` | `MouseEventHandler<HTMLDivElement>` | — | no | Обработчик клика по строке. |
+| `valueToCopy` | `string \| number` | — | no | Значение, которое попадёт в буфер при клике. По-умолчанию равно content, если он string/number. |
+
+#### Related types
+- `CopyButtonHideStrategy` = `hover | never`
+
+## Примеры
+
+### CopyButtonBasic
+
+```tsx
+import { CopyButton } from '@ds/uikit-product-copy';
+
+export function CopyButtonBasic() {
+  return <CopyButton valueToCopy='hello-world' />;
+}
+```
+
+### CopyButtonSizes
+
+```tsx
+import { CopyButton } from '@ds/uikit-product-copy';
+
+export function CopyButtonSizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <CopyButton size='s' valueToCopy='small' />
+      <CopyButton size='m' valueToCopy='medium' />
+      <CopyButton size='l' valueToCopy='large' />
+    </div>
+  );
+}
+```
+
+### CopyButtonWithHandler
+
+```tsx
+import { CopyButton } from '@ds/uikit-product-copy';
+import { useState } from 'react';
+
+export function CopyButtonWithHandler() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <CopyButton valueToCopy='tracked-value' onClick={() => setCount(c => c + 1)} />
+      <span>Скопировано раз: {count}</span>
+    </div>
+  );
+}
+```
+
+### CopyButtonWithLabel
+
+```tsx
+import { CopyButton } from '@ds/uikit-product-copy';
+
+export function CopyButtonWithLabel() {
+  return <CopyButton valueToCopy='hello-world' label='Copy' />;
+}
+```
+
+### CopyLineAlwaysVisible
+
+```tsx
+import { CopyLine } from '@ds/uikit-product-copy';
+
+export function CopyLineAlwaysVisible() {
+  return <CopyLine content='persistent-token-9000' copyButtonHideStrategy='never' />;
+}
+```
+
+### CopyLineBasic
+
+```tsx
+import { CopyLine } from '@ds/uikit-product-copy';
+
+export function CopyLineBasic() {
+  return <CopyLine content='550e8400-e29b-41d4-a716-446655440000' />;
+}
+```
+
+### CopyLineCustomValue
+
+```tsx
+import { CopyLine } from '@ds/uikit-product-copy';
+
+export function CopyLineCustomValue() {
+  return <CopyLine content='IP: 192.168.0.1 (production)' valueToCopy='192.168.0.1' />;
+}
+```
+
+### CopyLineRichContent
+
+```tsx
+import { CopyLine } from '@ds/uikit-product-copy';
+
+export function CopyLineRichContent() {
+  return (
+    <CopyLine
+      content={
+        <span>
+          <strong>Token:</strong> <code>sk-prod-9000</code>
+        </span>
+      }
+      valueToCopy='sk-prod-9000'
+    />
+  );
+}
+```
+
+### CopyLineTruncated
+
+```tsx
+import { CopyLine } from '@ds/uikit-product-copy';
+
+export function CopyLineTruncated() {
+  return (
+    <div style={{ width: 280 }}>
+      <CopyLine content='very-long-identifier-1234567890-abcdefghijklmnop' />
+    </div>
+  );
+}
+```

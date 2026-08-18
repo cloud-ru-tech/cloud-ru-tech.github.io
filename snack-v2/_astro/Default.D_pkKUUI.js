@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./AiCard.DaiwJ6cc.js";var i=e(t(),1),a=n();function o(){let[e,t]=(0,i.useState)(!1);return(0,a.jsx)(r,{title:`Card title`,checked:e,onChange:t,children:`Default content`})}export{o as Default};

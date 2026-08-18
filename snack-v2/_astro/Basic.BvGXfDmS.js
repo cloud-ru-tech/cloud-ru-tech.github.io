@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SwitchRow.DnDqmmhz.js";var n=e();function r(){return(0,n.jsx)(t,{title:`Включить уведомления`,description:`Раз в сутки будет приходить дайджест событий`,defaultChecked:!0})}export{r as Basic};

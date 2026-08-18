@@ -1,0 +1,130 @@
+﻿# @ds/timeline
+
+> Пакет таймлайна — вертикальная цепочка событий с маркерами, соединительными линиями и опциональным контентом в противоположной колонке.
+
+Docs: /snack-v2/components/timeline/
+
+## Установка
+
+```sh
+pnpm add @ds/timeline
+```
+
+## API
+
+### Timeline
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alternate` | `boolean` | — | no | Перемешать положение контента |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `contentPosition` | `left \| right` | `right` | no | Положение контента |
+| `data-test-id` | `string` | — | no |  |
+| `fullWidth` | `boolean` | — | no | Сделать таймлайн во всю ширину |
+| `items` | `TimelineItem[]` | — | yes | Пункты таймлайна |
+
+#### Related types
+- `ContentPosition` = `left | right`
+- `TimelineItem` (interface)
+- `TrackItemProps` (interface)
+- `TrackProps` (interface)
+
+### Track
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dotAppearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Семантический цвет маркера |
+| `dotVariant` | `default \| subEvent` | `default` | no | Вид маркера |
+| `lineStyle` | `dashed \| solid` | — | no | Стиль нижней линии |
+| `position` | `center \| end \| start` | — | yes | Положение элемента в ленте: первый, промежуточный или последний |
+| `showLines` | `boolean` | `true` | no | Показывать вертикальные сегменты |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Position` = `center | end | start`
+- `Style` = `dashed | solid`
+- `TrackDotProps` (interface)
+- `TrackLineProps` (interface)
+- `Variant` = `default | subEvent`
+
+### TrackDot
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `neutral` | no | Семантический цвет маркера |
+| `variant` | `default \| subEvent` | `default` | no | Вид маркера |
+
+### TrackItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alternateMode` | `boolean` | — | no | Перемешать положение контента |
+| `content` | `ReactNode` | — | yes | Контент |
+| `contentPosition` | `left \| right` | `right` | no | Положение контента |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests |
+| `dotAppearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Семантический цвет маркера |
+| `dotVariant` | `default \| subEvent` | — | no | Вид маркера |
+| `key` | `string` | — | no | Уникальный ключ |
+| `lineStyle` | `dashed \| solid` | — | no | Стиль нижней линии |
+| `opposite` | `ReactNode` | — | no | Контент в противоположной колонке |
+| `position` | `center \| end \| start` | — | yes | Положение элемента в ленте: первый, промежуточный или последний |
+| `showLines` | `boolean` | — | no | Показывать вертикальные сегменты |
+
+#### Related types
+- `ContentPosition` = `left | right`
+- `Position` = `center | end | start`
+- `TrackDotProps` (interface)
+- `TrackLineProps` (interface)
+- `TrackProps` (interface)
+
+### TrackLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `style` | `dashed \| solid` | `solid` | no |  |
+
+## Примеры
+
+### Alternate
+
+```tsx
+import { Timeline } from '@ds/timeline';
+
+const items = [
+  { content: 'Создано', opposite: '10:00' },
+  { content: 'Назначено', opposite: '10:10' },
+  { content: 'Завершено', opposite: '10:30', dotAppearance: 'green' as const },
+];
+
+export function Alternate() {
+  return <Timeline items={items} alternate fullWidth />;
+}
+```
+
+### Basic
+
+```tsx
+import { Timeline } from '@ds/timeline';
+
+const items = [
+  { content: 'Заявка создана' },
+  { content: 'Передана в работу' },
+  { content: 'В обработке' },
+  { content: 'Выполнено' },
+];
+
+export function Basic() {
+  return <Timeline items={items} />;
+}
+```
+
+### WithOpposite
+
+```tsx
+import { Timeline } from '@ds/timeline';
+
+const items = [
+  { content: 'Заявка создана', opposite: '10:00' },
+  { content: 'Обработка', opposite: '10:15' },
+  { content: 'Выполнено', opposite: '10:40', dotAppearance: 'green' as const },
+];
+
+export function WithOpposite() {
+  return <Timeline items={items} />;
+}
+```

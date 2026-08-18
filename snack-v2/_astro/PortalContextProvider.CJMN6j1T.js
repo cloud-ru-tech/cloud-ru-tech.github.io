@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./globalStore.BoHsxCI0.js";import{n}from"./usePortalContext.wJPyMKIl.js";var r=e();function i({root:e,children:i}){return(0,r.jsx)(n,{value:e??t(),children:i})}export{i as t};

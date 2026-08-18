@@ -1,0 +1,1 @@
+function e(e={}){let{density:t,colorScheme:n,brand:r,brandRole:i,acrylic:a}=e,o=[`sn-base-styles`,`sn-figmaStyles`,`sn-components`,a?`sn-yes`:`sn-no`];return t&&o.push(`sn-${t}`),n&&o.push(`sn-${n}`),r&&o.push(`sn-${r}`),i&&o.push(`sn-${i}`),o}function t(t={}){return e(t).join(` `)}export{t as n,e as t};

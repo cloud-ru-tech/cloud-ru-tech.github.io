@@ -1,0 +1,2 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{n,t as r}from"./classnames-iuquYaxc.js";var i,a,o=t((()=>{i=`_square_1sio1_4`,a={square:i}}));function s({children:e,className:t,...n}){return(0,l.jsx)(`div`,{className:(0,c.default)(a.square,t),...n,children:e})}var c,l,u=t((()=>{c=e(r(),1),o(),l=n()})),d=t((()=>{u()}));export{s as n,u as r,d as t};
+//# sourceMappingURL=Square-B85AG9WV.js.map

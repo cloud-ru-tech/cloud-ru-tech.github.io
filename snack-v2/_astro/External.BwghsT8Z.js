@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Link.BXx1_8-C.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Открыть в новой вкладке`,href:`https://example.com`,target:`_blank`})}export{r as External};

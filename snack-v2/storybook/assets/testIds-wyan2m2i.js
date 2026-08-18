@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={label:{root:`label`},hint:{root:`hint`},fieldDecorator:{root:`field-decorator`}}}));export{n,t};
+//# sourceMappingURL=testIds-wyan2m2i.js.map

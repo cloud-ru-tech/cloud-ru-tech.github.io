@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CardVacancy.BirWfPPv.js";var n=e();function r(){return(0,n.jsx)(t,{href:`#frontend`,title:`Frontend Developer`,description:`Remote · Full-time`})}export{r as Neutral};

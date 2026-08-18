@@ -1,0 +1,11 @@
+﻿# @ds/materials
+
+> SCSS-миксины для материалов (акрил, state layer) — вспомогательные стили для компонентов дизайн-системы.
+
+Docs: /snack-v2/components/materials/
+
+## Установка
+
+```sh
+pnpm add @ds/materials
+```

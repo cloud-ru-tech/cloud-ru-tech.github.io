@@ -1,0 +1,128 @@
+﻿# @ds/uikit-product-flex
+
+> Контейнер для flex-раскладки: направление, выравнивание, перенос и отступы между детьми.
+
+Docs: /snack-v2/components/uikit-product-flex/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-flex
+```
+
+## Когда использовать
+
+- Нужно расположить несколько элементов в ряд или столбец с предсказуемым отступом между ними.
+- Требуется выравнивание группы по главной (`justify`) или поперечной (`align`) оси.
+- Элементы должны переноситься на новую строку при нехватке места (`wrap`).
+
+Когда **не** нужен:
+
+- Двумерная сетка с явными строками и колонками:
+  - используйте CSS Grid.
+- Единичный элемент без соседей — обёртка-flex ничего не даёт.
+
+## API
+
+### Flex
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `align` | `baseline \| center \| flex-end \| flex-start \| self-end \| self-start \| stretch` | — | no | Выравнивание по поперечной оси (`align-items`). |
+| `alignContent` | `baseline \| center \| flex-end \| flex-start \| space-around \| space-between \| space-evenly \| stretch` | — | no | Выравнивание строк многострочного flex (`align-content`, работает при `wrap`). |
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера. По умолчанию `div`. |
+| `children` | `ReactNode` | — | no | Содержимое контейнера. |
+| `className` | `string` | — | no | Дополнительный класс. |
+| `columnGap` | `025m \| 050m \| 10m \| 1m \| 2m \| 3m \| 4m \| 5m \| 6m \| 7m \| 8m \| 9m` | — | no | Отступ между колонками (CSS `column-gap`). Только токен модульной шкалы (см. `gap`). |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests. |
+| `direction` | `column \| column-reverse \| row \| row-reverse` | — | no | Направление главной оси (`flex-direction`). По умолчанию `row`. |
+| `flex` | `Size` | — | no | Значение CSS-свойства `flex`. Keyword (`ElementSize` — `auto` / `max-content` / … → через `data-*`), число (`flex-grow`) или shorthand-строка (`'1 1 auto'`). |
+| `fullWidth` | `boolean` | `false` | no | Растянуть контейнер на всю ширину родителя (`width: 100%`). |
+| `gap` | `025m \| 050m \| 10m \| 1m \| 2m \| 3m \| 4m \| 5m \| 6m \| 7m \| 8m \| 9m` | — | no | Отступ между детьми (CSS `gap`). Только токен модульной шкалы (привязан к dimension-токенам DS). <pre> 025m - 2px 050m - 4px 1m - 8px 2m - 16px 3m - 24px 4m - 32px 5m - 40px 6m - 48px 7m - 56px 8m - 64px 9m - 72px 10m - 80px </pre> |
+| `height` | `Size` | — | no | Высота контейнера. Keyword (`ElementSize`), число (px) или CSS-строка (`'50%'`). |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. |
+| `justify` | `center \| flex-end \| flex-start \| space-around \| space-between \| space-evenly \| stretch` | — | no | Выравнивание по главной оси (`justify-content`). |
+| `overflow` | `auto \| clip \| hidden \| scroll \| visible` | — | no | Переполнение по обеим осям (`overflow`). |
+| `overflowX` | `auto \| clip \| hidden \| scroll \| visible` | — | no | Переполнение по горизонтали (`overflow-x`). |
+| `overflowY` | `auto \| clip \| hidden \| scroll \| visible` | — | no | Переполнение по вертикали (`overflow-y`). |
+| `rowGap` | `025m \| 050m \| 10m \| 1m \| 2m \| 3m \| 4m \| 5m \| 6m \| 7m \| 8m \| 9m` | — | no | Отступ между строками (CSS `row-gap`). Только токен модульной шкалы (см. `gap`). |
+| `style` | `CSSProperties` | — | no | Инлайн-стили, домешиваются последними и перекрывают `width`/`height`/`flex`. |
+| `width` | `Size` | — | no | Ширина контейнера. Keyword (`ElementSize`), число (px) или CSS-строка (`'50%'`). |
+| `wrap` | `boolean \| Wrap` | — | no | Перенос детей (`flex-wrap`). `true` → `wrap`, `false` → `nowrap`, либо явное значение `nowrap` \| `wrap` \| `wrap-reverse`. |
+
+#### Related types
+- `Align` = `baseline | center | flex-end | flex-start | self-end | self-start | stretch`
+- `AlignContent` = `baseline | center | flex-end | flex-start | space-around | space-between | space-evenly | stretch`
+- `Direction` = `column | column-reverse | row | row-reverse`
+- `GapToken` = `025m | 050m | 10m | 1m | 2m | 3m | 4m | 5m | 6m | 7m | 8m | 9m`
+- `Justify` = `center | flex-end | flex-start | space-around | space-between | space-evenly | stretch`
+- `Overflow` = `auto | clip | hidden | scroll | visible`
+- `PolymorphicRef` (alias)
+- `Size` (alias)
+- `Wrap` = `nowrap | wrap | wrap-reverse`
+
+## Примеры
+
+### Stack
+
+```tsx
+import { Button } from '@ds/button';
+import { Flex } from '@ds/uikit-product-flex';
+
+export function Stack() {
+  return (
+    <Flex direction='column' gap='1m' width={220}>
+      <Button label='Первый' fullWidth />
+      <Button label='Второй' fullWidth view='outline' appearance='neutral' />
+      <Button label='Третий' fullWidth view='outline' appearance='neutral' />
+    </Flex>
+  );
+}
+```
+
+### Toolbar
+
+```tsx
+import { Button } from '@ds/button';
+import { Flex } from '@ds/uikit-product-flex';
+
+export function Toolbar() {
+  return (
+    <Flex justify='space-between' align='center' gap='2m' fullWidth>
+      <Button label='Назад' view='outline' appearance='neutral' />
+      <Flex gap='1m'>
+        <Button label='Отмена' view='outline' appearance='neutral' />
+        <Button label='Сохранить' />
+      </Flex>
+    </Flex>
+  );
+}
+```
+
+### WrapTags
+
+```tsx
+import { Flex } from '@ds/uikit-product-flex';
+
+const items = ['React', 'TypeScript', 'SCSS', 'Vite', 'Storybook', 'Playwright'];
+
+const chipStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  padding: '4px 12px',
+  borderRadius: 16,
+  background: 'var(--sn-theme-color-neutral-background1Level)',
+  boxShadow: 'inset 0 0 0 1px var(--sn-theme-color-available-borderColor)',
+} as const;
+
+export function WrapTags() {
+  return (
+    <Flex wrap gap='1m' width={240}>
+      {items.map(item => (
+        <span key={item} style={chipStyle}>
+          {item}
+        </span>
+      ))}
+    </Flex>
+  );
+}
+```

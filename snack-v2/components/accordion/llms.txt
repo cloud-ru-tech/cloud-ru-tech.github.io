@@ -1,0 +1,308 @@
+﻿# @ds/accordion
+
+> Аккордеон дизайн-системы — контейнер Accordion и три уровня раскрываемых блоков CollapseBlock с общими токенами view, backgroundPredefined и chevronPosition.
+
+Docs: /snack-v2/components/accordion/
+
+## Установка
+
+```sh
+pnpm add @ds/accordion
+```
+
+## Когда использовать
+
+| Задача | Как решить |
+|--------|------------|
+| Длинная форма / настройки с логическими секциями | `Accordion` + `CollapseBlockPrimary` на каждый раздел |
+| Двух- / трёхуровневая иерархия (раздел → подраздел → деталь) | Вложенные `Accordion` с `Primary` → `Secondary` → `Tertiary` |
+| Разрешить открыть один блок за раз (FAQ) | `selectionMode='single'` |
+| Разрешить одновременно несколько открытых блоков | `selectionMode='multiple'` |
+
+Когда **не** нужен аккордеон: короткие списки (≤ 3 пунктов), критичный контент, который пользователь не должен пропустить, и навигация — для неё используйте `Tabs`.
+
+## API
+
+### Accordion
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `expanded` | `string \| string[]` | — | no | Controlled состояние |
+| `expandedDefault` | `string \| string[]` | — | no | Начальное состояние |
+| `onExpandedChange` | `((value: string) => void) \| ((value: string[]) => void) \| undefined` | — | no | Controlled обработчик измения состояния |
+| `selectionMode` | `multiple \| single` | — | no | Режим работы аккордиона |
+
+### CollapseBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `chevronPosition` | `after \| before` | `after` | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс корневого элемента |
+| `component` | `accordionPrimary \| accordionSecondary \| accordionTertiary` | — | yes | Уровень аккордеона: размер типографики и отступы |
+| `data-test-id` | `string` | — | no |  |
+| `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
+| `keepMounted` | `boolean` | `false` | no | Оставлять ли контент в DOM при сворачивании |
+| `showChevron` | `boolean` | `true` | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
+| `title` | `string` | — | no | Начальное состояние раскрытия (uncontrolled) |
+| `view` | `elevated \| outline \| simple` | `simple` | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
+
+#### Related types
+- `BackgroundPredefinedFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`
+- `ChevronPosition` = `after | before`
+- `Component` = `accordionPrimary | accordionSecondary | accordionTertiary`
+- `View` = `elevated | outline | simple`
+
+### CollapseBlockPrimary
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `chevronPosition` | `after \| before` | — | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
+| `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
+| `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
+| `title` | `string` | — | no | Начальное состояние раскрытия (uncontrolled) |
+| `view` | `elevated \| outline \| simple` | — | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
+
+#### Related types
+- `BackgroundPredefinedFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`
+- `ChevronPosition` = `after | before`
+- `View` = `elevated | outline | simple`
+
+### CollapseBlockSecondary
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `chevronPosition` | `after \| before` | — | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
+| `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
+| `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
+| `title` | `string` | — | no | Начальное состояние раскрытия (uncontrolled) |
+| `view` | `elevated \| outline \| simple` | — | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
+
+#### Related types
+- `BackgroundPredefinedFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`
+- `ChevronPosition` = `after | before`
+- `View` = `elevated | outline | simple`
+
+### CollapseBlockTertiary
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
+| `chevronPosition` | `after \| before` | — | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
+| `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
+| `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
+| `title` | `string` | — | no | Начальное состояние раскрытия (uncontrolled) |
+
+#### Related types
+- `ChevronPosition` = `after | before`
+
+## Примеры
+
+### AfterTitle
+
+```tsx
+import { Accordion } from '@ds/accordion';
+import { Counter } from '@ds/counter';
+
+import styles from './styles.module.scss';
+
+export function AfterTitle() {
+  return (
+    <div className={styles.wrapper}>
+      <Accordion>
+        <Accordion.CollapseBlockPrimary id='inbox' title='Входящие' view='outline' afterTitle={<Counter value={12} />}>
+          Непрочитанные сообщения и уведомления.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary id='archive' title='Архив' view='outline' afterTitle={<Counter value={238} />}>
+          Перемещённые из входящих.
+        </Accordion.CollapseBlockPrimary>
+      </Accordion>
+    </div>
+  );
+}
+```
+
+### Appearances
+
+```tsx
+import { Accordion } from '@ds/accordion';
+import { BACKGROUND_PREDEFINED_FILL } from '@ds/materials';
+
+import styles from './styles.module.scss';
+
+export function Appearances() {
+  return (
+    <div className={styles.wrapper}>
+      <Accordion>
+        <Accordion.CollapseBlockPrimary
+          id='neutral'
+          backgroundPredefined={BACKGROUND_PREDEFINED_FILL.NeutralBackground1Level}
+          title='Neutral'
+          view='outline'
+        >
+          Нейтральный акрил — значение по умолчанию.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary
+          id='primary'
+          backgroundPredefined={BACKGROUND_PREDEFINED_FILL.PrimaryBackground}
+          title='Primary'
+          view='outline'
+        >
+          Акцентный раздел, выделенный основным цветом.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary
+          id='green'
+          backgroundPredefined={BACKGROUND_PREDEFINED_FILL.GreenBackground}
+          title='Green'
+          view='outline'
+        >
+          Успех, подтверждённые действия.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary
+          id='red'
+          backgroundPredefined={BACKGROUND_PREDEFINED_FILL.RedBackground}
+          title='Red'
+          view='outline'
+        >
+          Предупреждение или критическое внимание.
+        </Accordion.CollapseBlockPrimary>
+      </Accordion>
+    </div>
+  );
+}
+```
+
+### BasicAccordion
+
+```tsx
+import { Accordion } from '@ds/accordion';
+
+import styles from './styles.module.scss';
+export function BasicAccordion() {
+  return (
+    <div className={styles.wrapper}>
+      <Accordion expandedDefault='profile'>
+        <Accordion.CollapseBlockPrimary id='profile' title='Профиль' subTitle='Контакты и предпочтения' view='outline'>
+          Имя, email, аватар.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary id='security' title='Безопасность' view='outline'>
+          Пароль, сессии, 2FA.
+        </Accordion.CollapseBlockPrimary>
+      </Accordion>
+    </div>
+  );
+}
+```
+
+### ChevronBefore
+
+```tsx
+import { Accordion } from '@ds/accordion';
+
+import styles from './styles.module.scss';
+export function ChevronBefore() {
+  return (
+    <div className={styles.wrapper}>
+      <Accordion>
+        <Accordion.CollapseBlockSecondary
+          id='summary'
+          view='outline'
+          title='Итого'
+          chevronPosition='before'
+          afterTitle='1 200 ₽'
+        >
+          Разбивка платежа по позициям.
+        </Accordion.CollapseBlockSecondary>
+        <Accordion.CollapseBlockSecondary
+          id='delivery'
+          view='outline'
+          title='Доставка'
+          chevronPosition='before'
+          afterTitle='бесплатно'
+        >
+          Курьер по Москве, 2–3 дня.
+        </Accordion.CollapseBlockSecondary>
+      </Accordion>
+    </div>
+  );
+}
+```
+
+### MultipleMode
+
+```tsx
+import { Accordion } from '@ds/accordion';
+import { useState } from 'react';
+
+import styles from './styles.module.scss';
+export function MultipleMode() {
+  const [expanded, setExpanded] = useState<string[]>(['email']);
+
+  return (
+    <div className={styles.wrapper}>
+      <Accordion selectionMode='multiple' expanded={expanded} onExpandedChange={next => setExpanded(next ?? [])}>
+        <Accordion.CollapseBlockPrimary id='email' title='Email' view='outline'>
+          Уведомления на почту.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary id='push' title='Push' view='outline'>
+          Браузерные push-уведомления.
+        </Accordion.CollapseBlockPrimary>
+        <Accordion.CollapseBlockPrimary id='messenger' title='Мессенджеры' view='outline'>
+          Telegram, Slack, Mattermost.
+        </Accordion.CollapseBlockPrimary>
+      </Accordion>
+    </div>
+  );
+}
+```
+
+### NestedLevels
+
+```tsx
+import { Accordion } from '@ds/accordion';
+
+import styles from './styles.module.scss';
+export function NestedLevels() {
+  return (
+    <div className={styles.wrapper}>
+      <Accordion>
+        <Accordion.CollapseBlockPrimary id='root' title='Платежи' view='outline'>
+          <Accordion>
+            <Accordion.CollapseBlockSecondary id='sub-cards' view='outline' title='Карты'>
+              <Accordion>
+                <Accordion.CollapseBlockTertiary id='visa' title='Visa •••• 4242'>
+                  Основная карта, истекает 09/28.
+                </Accordion.CollapseBlockTertiary>
+                <Accordion.CollapseBlockTertiary id='mir' title='МИР •••• 7781'>
+                  Зарплатная карта.
+                </Accordion.CollapseBlockTertiary>
+              </Accordion>
+            </Accordion.CollapseBlockSecondary>
+            <Accordion.CollapseBlockSecondary id='sub-invoices' view='outline' title='Счета'>
+              История операций и выставленные счета.
+            </Accordion.CollapseBlockSecondary>
+          </Accordion>
+        </Accordion.CollapseBlockPrimary>
+      </Accordion>
+    </div>
+  );
+}
+```

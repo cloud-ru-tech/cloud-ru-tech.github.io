@@ -1,0 +1,313 @@
+﻿# @ds/uikit-product-quota
+
+> Виджеты квот проекта — выпадающий QuotaWidget, аккордеон QuotaWidgetMini и карточка квоты QuotaWidgetCard с прогрессом и состояниями loading/error.
+
+Docs: /snack-v2/components/uikit-product-quota/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-quota
+```
+
+## API
+
+### Grid
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disableSorting` | `boolean` | `false` | no | Флаг отключения сортировки квот |
+| `isAccordion` | `boolean` | `false` | no |  |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+
+### ProjectHeader
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onQuotasUrlClick` | `(() => void)` | — | no |  |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotasUrl` | `string` | — | yes |  |
+
+### QuotaCardsGrid
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disableSorting` | `boolean` | `false` | no | Флаг отключения сортировки квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `isAccordion` | `boolean` | `false` | no |  |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+
+### QuotaError
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onRefresh` | `() => void` | — | yes |  |
+
+### QuotaIncreaseButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onClick` | `(() => void)` | — | no |  |
+
+### QuotaMobileHeader
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `projectName` | `string` | — | yes |  |
+
+### QuotaTooltip
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `quota` | `QuotaItem` | — | yes |  |
+
+### QuotaWidget
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `data-test-id` | `string` | — | no |  |
+| `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onQuotasUrlClick` | `(() => void)` | — | no | Колбек клика по ссылке на страницу квот по проекту |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ButtonProps` (interface)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `QuotaItem` (interface)
+- `Size` = `s | xs`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### QuotaWidgetCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `loading` | `boolean` | `false` | no | Состояние загрузки (Figma: loading=true) |
+| `noData` | `boolean` | `false` | no | Состояние «не удалось загрузить данные» (Figma: noData=true) |
+| `onRefresh` | `(() => void)` | — | no | Колбек кнопки «Обновить» в состоянии noData |
+| `quota` | `QuotaItem` | — | yes | Отображаемая квота |
+
+#### Related types
+- `QuotaItem` (interface)
+
+### QuotaWidgetCardsSkeleton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `loading` | `boolean` | — | yes |  |
+
+### QuotaWidgetContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `data-test-id` | `string` | — | no |  |
+| `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `hideMobileHeader` | `boolean` | `false` | no | Не рендерить мобильную шапку (её выносят в pinned-`title` контейнера, напр. BottomSheet). На desktop не влияет. |
+| `hideMobileIncreaseButton` | `boolean` | `false` | no | Не рендерить мобильную кнопку расширения (её выносят в pinned-`footer` контейнера). На desktop не влияет. |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onQuotasUrlClick` | `(() => void)` | — | no | Колбек клика по ссылке на страницу квот по проекту |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+
+#### Related types
+- `QuotaItem` (interface)
+
+### QuotaWidgetMini
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
+| `data-test-id` | `string` | — | no |  |
+| `defaultExpanded` | `boolean` | — | no | Флаг раскрытия аккордиона по умолчанию |
+| `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
+| `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
+| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `loading` | `boolean` | — | yes | Флаг загрузки квот |
+| `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
+| `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
+| `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
+| `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
+| `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+
+#### Related types
+- `QuotaItem` (interface)
+
+## Примеры
+
+### QuotaCardLevels
+
+```tsx
+import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+
+export function QuotaCardLevels() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <QuotaWidgetCard quota={{ name: 'Network', limit: 100, usage: 30, remains: 70, unitDisplayName: 'GB' }} />
+      <QuotaWidgetCard quota={{ name: 'RAM', limit: 100, usage: 75, remains: 25, unitDisplayName: 'GB' }} />
+      <QuotaWidgetCard quota={{ name: 'vCPU', limit: 100, usage: 95, remains: 5, unitDisplayName: 'cores' }} />
+      <QuotaWidgetCard quota={{ name: 'SSD', limit: 100, usage: 100, remains: 0, unitDisplayName: 'GB' }} />
+    </div>
+  );
+}
+```
+
+### QuotaCardLoading
+
+```tsx
+import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+
+export function QuotaCardLoading() {
+  return (
+    <QuotaWidgetCard loading quota={{ name: 'Network', limit: 100, usage: 30, remains: 70, unitDisplayName: 'GB' }} />
+  );
+}
+```
+
+### QuotaCardNoData
+
+```tsx
+import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+import { useState } from 'react';
+
+const QUOTA = { name: 'Network', limit: 100, usage: 30, remains: 70, unitDisplayName: 'GB' };
+
+export function QuotaCardNoData() {
+  const [noData, setNoData] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const handleRefresh = () => {
+    setLoading(true);
+    setNoData(false);
+    setTimeout(() => setLoading(false), 800);
+  };
+
+  return <QuotaWidgetCard quota={QUOTA} noData={noData} loading={loading} onRefresh={handleRefresh} />;
+}
+```
+
+### QuotaWidgetBasic
+
+```tsx
+import { QuotaItem, QuotaWidget } from '@ds/uikit-product-quota';
+import { useState } from 'react';
+
+const QUOTAS: QuotaItem[] = [
+  { name: 'vCPU', limit: 100, usage: 42, remains: 58, unitDisplayName: 'cores' },
+  { name: 'RAM', limit: 256, usage: 230, remains: 26, unitDisplayName: 'GB' },
+  { name: 'SSD', limit: 1000, usage: 1000, remains: 0, unitDisplayName: 'GB' },
+  { name: 'Public IP', limit: 10, usage: 9, remains: 1, unitDisplayName: 'pcs' },
+];
+
+export function QuotaWidgetBasic() {
+  const [loading, setLoading] = useState(false);
+
+  const reload = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 800);
+  };
+
+  return (
+    // В продукте виджет живёт у правого края страницы — dropdown прижат к правому краю триггера
+    <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+      <QuotaWidget
+        quotas={QUOTAS}
+        projectName='ml-platform-production'
+        quotasUrl='#'
+        canEditQuota={false}
+        loading={loading}
+        error={false}
+        onRefresh={reload}
+      />
+    </div>
+  );
+}
+```
+
+### QuotaWidgetError
+
+```tsx
+import { QuotaItem, QuotaWidget } from '@ds/uikit-product-quota';
+import { useState } from 'react';
+
+const QUOTAS: QuotaItem[] = [
+  { name: 'vCPU', limit: 100, usage: 42, remains: 58, unitDisplayName: 'cores' },
+  { name: 'RAM', limit: 256, usage: 230, remains: 26, unitDisplayName: 'GB' },
+];
+
+export function QuotaWidgetError() {
+  const [error, setError] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const handleRefresh = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setError(false);
+    }, 800);
+  };
+
+  return (
+    // В продукте виджет живёт у правого края страницы — dropdown прижат к правому краю триггера
+    <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+      <QuotaWidget
+        quotas={QUOTAS}
+        projectName='ml-platform-production'
+        quotasUrl='#'
+        canEditQuota={false}
+        loading={loading}
+        error={error}
+        onRefresh={handleRefresh}
+      />
+    </div>
+  );
+}
+```
+
+### QuotaWidgetMiniExpanded
+
+```tsx
+import { QuotaItem, QuotaWidgetMini } from '@ds/uikit-product-quota';
+import { useState } from 'react';
+
+const QUOTAS: QuotaItem[] = [
+  { name: 'SSD', limit: 1000, usage: 1000, remains: 0, unitDisplayName: 'GB' },
+  { name: 'RAM', limit: 256, usage: 230, remains: 26, unitDisplayName: 'GB' },
+  { name: 'vCPU', limit: 100, usage: 42, remains: 58, unitDisplayName: 'cores' },
+];
+
+export function QuotaWidgetMiniExpanded() {
+  const [loading, setLoading] = useState(false);
+
+  const reload = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 800);
+  };
+
+  return (
+    <QuotaWidgetMini
+      quotas={QUOTAS}
+      projectName='ml-platform-production'
+      canEditQuota={false}
+      defaultExpanded
+      loading={loading}
+      error={false}
+      onRefresh={reload}
+    />
+  );
+}
+```

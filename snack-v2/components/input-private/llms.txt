@@ -1,0 +1,54 @@
+﻿# @ds/input-private
+
+> Базовая обёртка `<input>` с состояниями, иконками, кнопкой очистки и счётчиком — фундамент для публичных полей ввода (Search, FieldText и пр.).
+
+Docs: /snack-v2/components/input-private/
+
+## Установка
+
+```sh
+pnpm add @ds/input-private
+```
+
+## Когда использовать
+
+- Создаёте новый публичный input-компонент и хотите получить готовое поведение состояний и слотов.
+- Реализуете кастомный фильтр / автокомплит и нужна та же обвязка, что у `Search`.
+
+В продуктовом коде **не** импортируйте напрямую — берите публичный компонент.
+
+## API
+
+### InputPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `autoComplete` | `string \| boolean` | `false` | no | Включен ли автокомплит для поля |
+| `autoFocus` | `boolean` | `false` | no | Включен ли авто-фокус для поля |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Является ли поле деактивированным |
+| `id` | `string` | — | no | Значение html-атрибута id |
+| `inputMode` | `decimal \| email \| none \| numeric \| search \| tel \| text \| url` | `text` | no | Режим работы экранной клавиатуры |
+| `max` | `number` | — | no | Максимальное значение поля |
+| `maxLength` | `number` | — | no | Максимальная длина вводимого значения |
+| `min` | `number` | — | no | Минимальное значение поля |
+| `name` | `string` | — | no | Значение html-атрибута name |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `((value: string, e?: ChangeEvent<HTMLInputElement>) => void)` | — | no | Колбек смены значения |
+| `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки клика |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
+| `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
+| `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
+| `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
+| `placeholder` | `string` | — | no | Значение плейсхолдера |
+| `readonly` | `boolean` | `false` | no | Является ли поле доступным только для чтения |
+| `spellCheck` | `boolean` | `true` | no | Значение атрибута spellcheck (проверка орфографии) |
+| `step` | `string \| number` | — | no | Максимальное значение поля |
+| `tabIndex` | `number` | `0` | no | Значение атрибута tab-index |
+| `type` | `email \| number \| password \| tel \| text \| url` | `text` | no | Тип инпута |
+| `value` | `string` | — | no | Значение input |
+
+#### Related types
+- `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
+- `Type` = `email | number | password | tel | text | url`

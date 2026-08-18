@@ -1,0 +1,2 @@
+import{r as e}from"./preload-helper-CCSz8wUY.js";import{t}from"./react-dom-B-lo4GPG.js";var n=e((e=>{var n=t();e.createRoot=n.createRoot,e.hydrateRoot=n.hydrateRoot}));export{n as t};
+//# sourceMappingURL=client-BonomYvf.js.map

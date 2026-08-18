@@ -1,0 +1,245 @@
+﻿# @ds/field-decorator
+
+> Структурная обёртка label/caption/hint/error/length для нестандартных input'ов и сложных композиций.
+
+Docs: /snack-v2/components/field-decorator/
+
+## Установка
+
+```sh
+pnpm add @ds/field-decorator
+```
+
+## Когда использовать
+
+- Когда нужно обернуть нестандартный input в типовую разметку поля.
+- Когда `FieldText` / `FieldSecure` не подходят:
+  - отдельный date-picker;
+  - masked input;
+  - кастомная композиция со счётчиком `length` или валидационной подсказкой.
+
+## API
+
+### FieldDecorator
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `caption` | `string` | — | no | Вторичная подпись справа |
+| `children` | `ReactNode` | — | yes | Содержимое (декорируемое поле) |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `hint` | `string` | — | no | Подсказка |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `label` | `string` | — | no | Заголовок |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `readonly` | `boolean` | — | no | Только для чтения |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `showHintIcon` | `boolean` | `true` | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `validationState` | `default \| error \| success \| warning` | `default` | no | Состояние валидации |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `FieldLength` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `l | m | s`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `ValidationState` = `default | error | success | warning`
+
+### Hint
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
+| `hint` | `string` | — | no | Подсказка |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
+| `maxLines` | `number` | — | no | Обрезать подсказку до N строк многоточием (через `TruncateString`, с тултипом полного текста на ховере). Без значения подсказка переносится без ограничения (дефолт поля). Нужно для карточек фиксированной высоты (`@ds/attachment`), где длинный текст ошибки иначе выходит за границы. |
+| `readonly` | `boolean` | — | no | Только для чтения |
+| `showHintIcon` | `boolean` | `true` | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `validationState` | `default \| error \| success \| warning` | `default` | no | Состояние валидации |
+
+#### Related types
+- `FieldLength` (interface)
+- `Size` = `l | m | s`
+- `ValidationState` = `default | error | success | warning`
+
+### Label
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `caption` | `string` | — | no | Вторичная подпись справа |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Поле выключено |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
+| `label` | `string` | — | no | Заголовок |
+| `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
+| `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
+| `required` | `boolean` | — | no | Показать знак обязательности `*` |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `QuestionTooltipProps` (interface)
+- `Size` = `l | m | s`
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+## Примеры
+
+### DecoratorBasic
+
+```tsx
+import { FieldDecorator } from '@ds/field-decorator';
+import { InputPrivate } from '@ds/input-private';
+import { useState } from 'react';
+
+export function DecoratorBasic() {
+  const [value, setValue] = useState('');
+  return (
+    <FieldDecorator label='Custom field' hint='FieldDecorator оборачивает любой input' showHintIcon>
+      <InputPrivate value={value} onChange={setValue} placeholder='Type here' />
+    </FieldDecorator>
+  );
+}
+```
+
+### DecoratorDisabledReadonly
+
+```tsx
+import { FieldDecorator } from '@ds/field-decorator';
+import { InputPrivate } from '@ds/input-private';
+
+export function DecoratorDisabledReadonly() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+      <FieldDecorator
+        label='Disabled'
+        hint='На неактивном поле счётчик скрыт, подсказка нейтральна'
+        validationState='error'
+        showHintIcon
+        disabled
+        length={{ current: 5, max: 20 }}
+      >
+        <InputPrivate value='value' onChange={() => undefined} disabled />
+      </FieldDecorator>
+      <FieldDecorator
+        label='Readonly'
+        hint='Readonly также нейтрализует подсказку и прячет счётчик'
+        validationState='warning'
+        showHintIcon
+        readonly
+        length={{ current: 5, max: 20 }}
+      >
+        <InputPrivate value='value' onChange={() => undefined} readonly />
+      </FieldDecorator>
+    </div>
+  );
+}
+```
+
+### DecoratorLabelTooltip
+
+```tsx
+import { FieldDecorator } from '@ds/field-decorator';
+import { InputPrivate } from '@ds/input-private';
+import { useState } from 'react';
+
+export function DecoratorLabelTooltip() {
+  const [value, setValue] = useState('');
+  return (
+    <FieldDecorator
+      label='Идентификатор'
+      required
+      labelTooltip={{ tip: 'Уникальный идентификатор ресурса. Наведите на иконку рядом с заголовком.' }}
+      hint='Подсказка к заголовку выводится через иконку вопроса'
+    >
+      <InputPrivate value={value} onChange={setValue} placeholder='res-id' />
+    </FieldDecorator>
+  );
+}
+```
+
+### DecoratorLength
+
+```tsx
+import { FieldDecorator } from '@ds/field-decorator';
+import { InputPrivate } from '@ds/input-private';
+import { useState } from 'react';
+
+export function DecoratorLength() {
+  const [value, setValue] = useState('');
+  return (
+    <FieldDecorator
+      label='Bio'
+      caption='Опционально'
+      hint='Кратко расскажите о себе'
+      length={{ current: value.length, max: 120 }}
+    >
+      <InputPrivate value={value} onChange={setValue} maxLength={120} placeholder='Hi there' />
+    </FieldDecorator>
+  );
+}
+```
+
+### DecoratorLimitExceeded
+
+```tsx
+import { FieldDecorator } from '@ds/field-decorator';
+import { InputPrivate } from '@ds/input-private';
+import { useState } from 'react';
+
+export function DecoratorLimitExceeded() {
+  const [value, setValue] = useState('Слишком длинное значение, которое превышает лимит');
+  return (
+    <FieldDecorator
+      label='Заголовок'
+      hint='Счётчик подсвечивается, когда current превышает max'
+      length={{ current: value.length, max: 20 }}
+    >
+      <InputPrivate value={value} onChange={setValue} placeholder='Введите текст' />
+    </FieldDecorator>
+  );
+}
+```
+
+### HintStandalone
+
+```tsx
+import { Hint } from '@ds/field-decorator';
+
+export function HintStandalone() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <Hint hint='Нейтральная подсказка под полем' length={{ current: 12, max: 100 }} />
+      <Hint hint='Ошибка валидации' validationState='error' showHintIcon />
+      <Hint hint='Предупреждение' validationState='warning' showHintIcon />
+      <Hint hint='Проверка пройдена' validationState='success' showHintIcon />
+    </div>
+  );
+}
+```
+
+### LabelStandalone
+
+```tsx
+import { Label } from '@ds/field-decorator';
+
+export function LabelStandalone() {
+  return (
+    <Label
+      label='Заголовок поля'
+      caption='Опционально'
+      required
+      labelTooltip={{ tip: 'Пояснение к заголовку через иконку вопроса' }}
+    />
+  );
+}
+```

@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{l as r}from"./utils.Duk-jmvN.js";import{t as i}from"./FieldCombo.BJzM8Pxo.js";var a=e(t(),1),o=n(),s=(0,a.forwardRef)(function(e,t){return(0,o.jsx)(i,{...e,ref:t,innerTestIds:{shell:r.fieldTextShell,input:r.fieldTextInput}})});export{s as t};

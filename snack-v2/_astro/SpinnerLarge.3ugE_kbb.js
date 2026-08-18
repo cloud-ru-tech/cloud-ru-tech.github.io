@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Spinner.DPgrnSs_.js";var n=e();function r(){return(0,n.jsx)(t,{size:`l`})}export{r as SpinnerLarge};

@@ -1,0 +1,199 @@
+﻿# @ds/tabs
+
+> Пакет табов — compound-компонент Tabs c субкомпонентами TabBar, Tab и TabContent для горизонтальной и вертикальной навигации.
+
+Docs: /snack-v2/components/tabs/
+
+## Установка
+
+```sh
+pnpm add @ds/tabs
+```
+
+## Когда использовать
+
+- 2–7 связанных разделов одного уровня иерархии.
+- Переключение между представлениями одного объекта (обзор / настройки / история).
+
+Когда **не** подходит: для иерархической навигации используйте `Sidebar`, для шагов процесса — `Stepper`, для фильтров — `Chip`/`Select`.
+
+## API
+
+### ScrollButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `direction` | `bottom \| left \| right \| top` | — | yes |  |
+| `onClick` | `() => void` | — | yes |  |
+| `orientation` | `horizontal \| vertical` | — | yes |  |
+| `size` | `l \| m` | — | yes |  |
+
+#### Related types
+- `Direction` = `bottom | left | right | top`
+- `Orientation` = `horizontal | vertical`
+- `Size` = `l | m`
+
+### Tab
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс |
+| `counter` | `{ label: number; appearance?: Appearance; roleAppearance?: RoleAppearance; } \| undefined` | — | no | Счетчик, отображающийся внутри кнопки переключения |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Деактивирована ли вкладка |
+| `label` | `string` | — | yes | Заголовок вкладки |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбек клика по кнопке переключения |
+| `value` | `string` | — | yes | Value вкладки |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `CounterProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `l | m`
+- `Variant` = `count | count-k | count-plus`
+
+### TabBar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactElement<TabProps, string \| JSXElementConstructor<any>>[]` | — | yes | Контент (элементы Tabs.Tab) |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `disableDivider` | `boolean` | `false` | no | Скрыть разделитель под/рядом с панелью табов |
+| `markerPosition` | `after \| before` | `after` | no | Позиция маркера относительно таб-бара.  Значения ориентационно-нейтральны, в Figma та же ось названа сторонами: `before` = Figma `top` (horizontal) / `left` (vertical), `after`  = Figma `bottom` (horizontal) / `right` (vertical). |
+| `orientation` | `horizontal \| vertical` | `horizontal` | no | Ориентация |
+| `size` | `l \| m` | `l` | no | Размер панели табов: L — верхнеуровневый, M — на уровне контента |
+| `slotActionButton` | `ReactNode` | — | no | Слот действия: контент после списка табов — справа при горизонтальной ориентации, снизу при вертикальной. Разделитель под ним не продолжается. |
+
+#### Related types
+- `CounterProps` (interface)
+- `MarkerPosition` = `after | before`
+- `Orientation` = `horizontal | vertical`
+- `Size` = `l | m`
+- `TabProps` (interface)
+
+### TabContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `value` | `string` | — | yes | Значение таба |
+
+### Tabs
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no | Дополнительный класс на корневой контейнер |
+| `defaultValue` | `string` | — | no | Выбранная вкладка по умолчанию |
+| `onChange` | `((id: T) => void)` | — | no | Колбек выбора вкладки |
+| `value` | `string` | — | no | Текущая вкладка |
+
+## Примеры
+
+### Disabled
+
+```tsx
+import { Tabs } from '@ds/tabs';
+
+export function Disabled() {
+  return (
+    <Tabs defaultValue='a'>
+      <Tabs.TabBar>
+        <Tabs.Tab value='a' label='Активен' />
+        <Tabs.Tab value='b' label='Выключен' disabled />
+      </Tabs.TabBar>
+    </Tabs>
+  );
+}
+```
+
+### SizeL
+
+```tsx
+import { SIZE, Tabs } from '@ds/tabs';
+
+export function SizeL() {
+  return (
+    <Tabs defaultValue='a'>
+      <Tabs.TabBar size={SIZE.L}>
+        <Tabs.Tab value='a' label='Первая' />
+        <Tabs.Tab value='b' label='Вторая' />
+      </Tabs.TabBar>
+    </Tabs>
+  );
+}
+```
+
+### Uncontrolled
+
+```tsx
+import { Tabs } from '@ds/tabs';
+
+export function Uncontrolled() {
+  return (
+    <Tabs defaultValue='a'>
+      <Tabs.TabBar>
+        <Tabs.Tab value='a' label='Alpha' />
+        <Tabs.Tab value='b' label='Beta' />
+      </Tabs.TabBar>
+      <Tabs.TabContent value='a'>Alpha content</Tabs.TabContent>
+      <Tabs.TabContent value='b'>Beta content</Tabs.TabContent>
+    </Tabs>
+  );
+}
+```
+
+### Vertical
+
+```tsx
+import { ORIENTATION, Tabs } from '@ds/tabs';
+
+export function Vertical() {
+  return (
+    <Tabs defaultValue='a'>
+      <Tabs.TabBar orientation={ORIENTATION.Vertical}>
+        <Tabs.Tab value='a' label='Профиль' />
+        <Tabs.Tab value='b' label='Безопасность' />
+      </Tabs.TabBar>
+    </Tabs>
+  );
+}
+```
+
+### WithContent
+
+```tsx
+import { Tabs } from '@ds/tabs';
+
+export function WithContent() {
+  return (
+    <Tabs defaultValue='a'>
+      <Tabs.TabBar>
+        <Tabs.Tab value='a' label='Первая' />
+        <Tabs.Tab value='b' label='Вторая' />
+      </Tabs.TabBar>
+      <Tabs.TabContent value='a'>
+        <div style={{ padding: '12px 0' }}>Контент первого таба</div>
+      </Tabs.TabContent>
+      <Tabs.TabContent value='b'>
+        <div style={{ padding: '12px 0' }}>Контент второго таба</div>
+      </Tabs.TabContent>
+    </Tabs>
+  );
+}
+```
+
+### WithCounter
+
+```tsx
+import { Tabs } from '@ds/tabs';
+
+export function WithCounter() {
+  return (
+    <Tabs defaultValue='inbox'>
+      <Tabs.TabBar>
+        <Tabs.Tab value='inbox' label='Входящие' counter={{ label: 12 }} />
+        <Tabs.Tab value='archive' label='Архив' />
+      </Tabs.TabBar>
+    </Tabs>
+  );
+}
+```

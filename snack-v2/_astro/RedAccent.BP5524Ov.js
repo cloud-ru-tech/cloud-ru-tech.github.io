@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.BkCFr3_o.js";import{t as n}from"./HotSpot.dzOJxk4Q.js";var r=e();function i(){return(0,r.jsx)(n,{appearance:`red`,placement:`right-top`,children:(0,r.jsx)(t,{label:`Ошибки`,view:`outline`})})}export{i as RedAccent};

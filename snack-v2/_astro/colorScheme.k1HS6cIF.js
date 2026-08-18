@@ -1,0 +1,1 @@
+var e={Light:`light`,Dark:`dark`};export{e as t};

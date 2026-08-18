@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CloudLogo.CcN240Jv.js";var n=e();function r(){return(0,n.jsx)(t,{size:40,"aria-label":`Cloud.ru`})}export{r as ThemedLogo};

@@ -1,0 +1,172 @@
+﻿# @ds/progress-bar
+
+> Пакет индикаторов прогресса дизайн-системы — линейный ProgressBar, круговой ProgressBarCircle и верхний page-индикатор ProgressBarPage.
+
+Docs: /snack-v2/components/progress-bar/
+
+## Установка
+
+```sh
+pnpm add @ds/progress-bar
+```
+
+## API
+
+### ProgressBar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `progress` | `number` | — | yes | Процент загрузки от 0 до 100 |
+| `size` | `s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ProgressBarSize` = `s | xs`
+
+### ProgressBarCircle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `primary` | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `progress` | `number` | — | yes | Процент загрузки от 0 до 100 |
+| `size` | `s \| xs` | `s` | no | Размер |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ProgressBarCircleSize` = `s | xs`
+
+### ProgressBarPage
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `animationDuration` | `number` | `200` | no | Скорость анимации |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `inProgress` | `boolean` | — | yes | Включен/выключен |
+| `incrementDuration` | `number` | `800` | no | Время между прогрессом |
+| `minimum` | `number` | — | no | Минимальное значение прогресс бара от 0 до 1 |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+
+### ProgressBarPrivate
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `animationDuration` | `number` | `0` | no | Скорость анимации |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `primary` | no | Внешний вид |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `progress` | `number` | — | yes | Процент загрузки от 0 до 100 |
+| `size` | `s \| xs` | — | no | Размер |
+
+## Примеры
+
+### AnimatedProgress
+
+```tsx
+import { ProgressBar } from '@ds/progress-bar';
+import { useEffect, useState } from 'react';
+
+export function AnimatedProgress() {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setValue(prev => (prev >= 100 ? 0 : prev + 5));
+    }, 400);
+    return () => clearInterval(id);
+  }, []);
+
+  return <ProgressBar progress={value} />;
+}
+```
+
+### Appearances
+
+```tsx
+import { APPEARANCE, ProgressBar } from '@ds/progress-bar';
+
+export function Appearances() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ProgressBar progress={60} appearance={APPEARANCE.Primary} />
+      <ProgressBar progress={60} appearance={APPEARANCE.Green} />
+      <ProgressBar progress={60} appearance={APPEARANCE.Red} />
+    </div>
+  );
+}
+```
+
+### CircleAppearances
+
+```tsx
+import { APPEARANCE, ProgressBarCircle } from '@ds/progress-bar';
+
+export function CircleAppearances() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ProgressBarCircle progress={60} appearance={APPEARANCE.Primary} />
+      <ProgressBarCircle progress={60} appearance={APPEARANCE.Green} />
+      <ProgressBarCircle progress={60} appearance={APPEARANCE.Red} />
+    </div>
+  );
+}
+```
+
+### CircleStatic
+
+```tsx
+import { ProgressBarCircle } from '@ds/progress-bar';
+
+export function CircleStatic() {
+  return <ProgressBarCircle progress={75} />;
+}
+```
+
+### PageToggle
+
+```tsx
+import { ProgressBarPage } from '@ds/progress-bar';
+import { useState } from 'react';
+
+export function PageToggle() {
+  const [loading, setLoading] = useState(false);
+
+  return (
+    <>
+      <ProgressBarPage inProgress={loading} />
+      <button type='button' onClick={() => setLoading(v => !v)}>
+        {loading ? 'Stop' : 'Start'} loading
+      </button>
+    </>
+  );
+}
+```
+
+### Sizes
+
+```tsx
+import { PROGRESS_BAR_SIZE, ProgressBar } from '@ds/progress-bar';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <ProgressBar progress={40} size={PROGRESS_BAR_SIZE.XS} />
+      <ProgressBar progress={40} size={PROGRESS_BAR_SIZE.S} />
+    </div>
+  );
+}
+```
+
+### Static
+
+```tsx
+import { ProgressBar } from '@ds/progress-bar';
+
+export function Static() {
+  return <ProgressBar progress={40} />;
+}
+```

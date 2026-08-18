@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-C7JKx5QE.js","names":[],"sources":["../../../../packages/ai-tool/stories/styles.module.scss"],"sourcesContent":[".grid {\n  display: grid;\n  gap: 1.5rem;\n}\n\n.cell {\n  width: 364px;\n}\n\n.timeline {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  width: 364px;\n}\n"],"mappings":""}

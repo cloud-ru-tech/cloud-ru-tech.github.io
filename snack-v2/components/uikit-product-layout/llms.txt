@@ -1,0 +1,88 @@
+﻿# @ds/uikit-product-layout
+
+> Блоки-состояния продуктового экрана — заглушка пустого состояния EmptyBlock и экран ограниченного доступа NoAccess.
+
+Docs: /snack-v2/components/uikit-product-layout/
+
+## Установка
+
+```sh
+pnpm add @ds/uikit-product-layout
+```
+
+## Когда использовать
+
+- `EmptyBlock`:
+  - список, таблица или экран без данных;
+  - нужна подсказка-действие («создать», «импортировать») через слот `footer`.
+- `NoAccess`:
+  - у пользователя нет прав на контент;
+  - текст сообщения берётся из локали и не задаётся вручную.
+
+## API
+
+### EMPTY_BLOCK_LAYOUT_PRESETS
+_Нет публичных пропсов._
+
+### EmptyBlock
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `align` | `horizontal \| vertical` | — | no | Выравнивание иконки и текста |
+| `className` | `string` | — | no | Дополнительный класс |
+| `content` | `ReactNode` | — | no | Описание под заголовком |
+| `data-test-id` | `string` | — | no |  |
+| `footer` | `ReactNode` | — | no | Слот действий под текстом (например, `ButtonGroup`) |
+| `icon` | `IconPredefinedProps` | — | no | Иконка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<EmptyBlockLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива для этого инстанса (deep-merge поверх `EMPTY_BLOCK_LAYOUT_PRESETS`). Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
+| `title` | `string` | — | no | Заголовок |
+
+#### Related types
+- `Align` = `horizontal | vertical`
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `EmptyBlockLayoutDefaults` (interface)
+- `IconPredefinedProps` (interface)
+- `LayoutPresets` (interface)
+- `Size` = `s | xs`
+
+### NoAccess
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Дополнительный класс |
+| `data-test-id` | `string` | — | no |  |
+| `serviceName` | `string` | — | no | Заголовок над блоком (например, название сервиса) |
+
+## Примеры
+
+### EmptyBlockWithFooter
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { EmptyBlock } from '@ds/uikit-product-layout';
+
+export function EmptyBlockWithFooter() {
+  return (
+    <EmptyBlock
+      icon={{ icon: PlaceholderSVG }}
+      title='Нет данных'
+      content='Создайте первую запись, чтобы начать работу'
+      footer={<ButtonGroup primaryAction={{ label: 'Создать' }} secondaryAction={{ label: 'Импортировать' }} />}
+    />
+  );
+}
+```
+
+### NoAccessBasic
+
+```tsx
+import { LocaleProvider } from '@ds/locale';
+import { NoAccess } from '@ds/uikit-product-layout';
+
+export function NoAccessBasic() {
+  return (
+    <LocaleProvider lang='ru-RU'>
+      <NoAccess serviceName='Название сервиса' />
+    </LocaleProvider>
+  );
+}
+```

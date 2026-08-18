@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-Du0zU9lI.js";import{c,i as l,n as u,o as d,s as f,t as p}from"./src-B_bQIaEJ.js";var m,h=e((()=>{m={root:`counter`}})),g,_,v,y,b,x;e((()=>{p(),o(),h(),g=t(),{expect:_,within:v}=__STORYBOOK_MODULE_TEST__,y={title:`Snack/Data display/Counter`,id:`components-counter`,component:u,parameters:{layout:`fullscreen`},render:e=>(0,g.jsx)(s,{children:(0,g.jsxs)(r,{children:[(0,g.jsx)(a,{children:`Playground`}),(0,g.jsx)(i,{children:`Счётчик числовых значений с порогом для варианта count-plus.`}),(0,g.jsx)(n,{align:`center`,children:(0,g.jsx)(u,{...e})})]})}),args:{value:9,appearance:l.Primary,size:f.S,variant:c.Count,plusLimit:10,roleAppearance:d.Accent,"data-test-id":m.root},argTypes:{value:{control:`number`,description:`Числовое значение`},appearance:{control:`radio`,options:Object.values(l),description:`Цветовая схема`},size:{control:`radio`,options:Object.values(f),description:`Размер`},variant:{control:`radio`,options:Object.values(c),description:`Вариант форматирования`},plusLimit:{control:`number`,description:"Порог для варианта `count-plus`"},roleAppearance:{control:`radio`,options:Object.values(d),description:`Семантический цвет`}}},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await _(v(e).getByTestId(m.root)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Playground`]}))();export{b as Playground,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=Counter.Playground.stories-CMg-2KWC.js.map

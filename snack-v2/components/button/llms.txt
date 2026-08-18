@@ -1,0 +1,270 @@
+﻿# @ds/button
+
+> Пакет кнопок дизайн-системы — компоненты Button и ButtonGroup с едиными токенами размеров, appearance и view.
+
+Docs: /snack-v2/components/button/
+
+## Установка
+
+```sh
+pnpm add @ds/button
+```
+
+## API
+
+### Button
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `critical \| neutral \| primary` | `primary` | no | Вариант оформления |
+| `as` | `ElementType` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `className` | `string` | — | no | Дополнительный класс |
+| `counter` | `Omit<CounterProps, "size">` | — | no | Пропсы для counter. `appearance` можно задать явно (по умолчанию наследуется от appearance кнопки). |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Отключена |
+| `fullWidth` | `boolean` | `false` | no | На всю ширину |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `iconPosition` | `after \| before` | `before` | no | Позиция иконки относительно текста |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `label` | `string` | — | no | Текст кнопки |
+| `loading` | `boolean` | `false` | no | Состояние загрузки |
+| `minWidth` | `boolean` | `true` | no | Минимальная ширина контейнера (`min-width` из токена размера). По умолчанию `true`. `false` — кнопка сжимается по контенту вместо фиксированного минимума. |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `view` | `elevated \| filled \| function \| outline \| simple \| tonal` | `filled` | no | Вариант кнопки (Figma: filled, outline, function, simple, elevated) |
+
+#### Related types
+- `Appearance` = `critical | neutral | primary`
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `PolymorphicRef` (alias)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `l | m | s`
+- `Variant` = `icon-after | icon-before | icon-only | label-only`
+- `View` = `elevated | filled | function | outline | simple | tonal`
+
+### BUTTON_GROUP_ACTION_SLOT
+_Нет публичных пропсов._
+
+### ButtonGroup
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `break` | `boolean` | `false` | no | Перенос на новую строку при нехватке места |
+| `centered` | `boolean` | `false` | no | Центрирование по горизонтали |
+| `className` | `string` | — | no | Дополнительный класс |
+| `data-test-id` | `string` | — | no |  |
+| `filled` | `boolean` | `false` | no | Заливка контейнера |
+| `primaryAction` | `ActionProps` | — | no | Основное действие (filled) |
+| `renderAction` | `((button: ReactNode, slot: ButtonGroupActionSlot) => ReactNode)` | — | no | Обёртка каждой кнопки. Получает готовый `<Button>` и слот действия (`primary`/`secondary`/`tertiary`) и возвращает узел, который встанет на место кнопки. Позволяет обернуть кнопку в `Tooltip` на стороне потребителя (сам `@ds/button` не зависит от `@ds/tooltip`). Чтобы не ломать раскладку `filled`, обёртка не должна добавлять лишний DOM-узел между группой и кнопкой (`Tooltip` — с `disableSpanWrapper`). |
+| `secondaryAction` | `ActionProps` | — | no | Вторичное действие (outline), опционально |
+| `size` | `l \| m \| s` | `m` | no | Размер кнопок |
+| `tertiaryAction` | `ActionProps` | — | no | Третичное действие (simple/text-only), опционально |
+| `vertical` | `boolean` | `false` | no | Вертикальное расположение |
+
+#### Related types
+- `ActionProps` (alias)
+- `Size` = `l | m | s`
+
+## Примеры
+
+### Actions
+
+```tsx
+import { Button } from '@ds/button';
+
+export function Actions() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button appearance='primary' view='filled' label='Сохранить' />
+      <Button appearance='neutral' view='simple' label='Отмена' />
+    </div>
+  );
+}
+```
+
+### Appearances
+
+```tsx
+import { Button } from '@ds/button';
+
+export function Appearances() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button appearance='primary' label='Primary' />
+      <Button appearance='neutral' label='Neutral' />
+      <Button appearance='critical' label='Critical' />
+    </div>
+  );
+}
+```
+
+### ButtonGroupBreak
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+
+export function ButtonGroupBreak() {
+  return (
+    <div style={{ width: 480 }}>
+      <ButtonGroup
+        break
+        tertiaryAction={{ label: 'Назад', appearance: 'neutral', view: 'simple' }}
+        primaryAction={{ label: 'Продолжить', appearance: 'primary', view: 'filled' }}
+      />
+    </div>
+  );
+}
+```
+
+### ButtonGroupFilled
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+
+export function ButtonGroupFilled() {
+  return (
+    <div style={{ width: 320 }}>
+      <ButtonGroup
+        filled
+        primaryAction={{ label: 'Применить', appearance: 'primary', view: 'filled' }}
+        secondaryAction={{ label: 'Сбросить', appearance: 'neutral', view: 'outline' }}
+      />
+    </div>
+  );
+}
+```
+
+### ButtonGroupPrimarySecondary
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+
+export function ButtonGroupPrimarySecondary() {
+  return (
+    <ButtonGroup
+      primaryAction={{ label: 'Сохранить', appearance: 'primary', view: 'filled' }}
+      secondaryAction={{ label: 'Отмена', appearance: 'neutral', view: 'outline' }}
+    />
+  );
+}
+```
+
+### ButtonGroupThreeActions
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+
+export function ButtonGroupThreeActions() {
+  return (
+    <ButtonGroup
+      primaryAction={{ label: 'Сохранить', appearance: 'primary', view: 'filled' }}
+      secondaryAction={{ label: 'Отмена', appearance: 'neutral', view: 'outline' }}
+      tertiaryAction={{ label: 'Помощь', appearance: 'neutral', view: 'simple' }}
+    />
+  );
+}
+```
+
+### ButtonGroupVertical
+
+```tsx
+import { ButtonGroup } from '@ds/button';
+
+export function ButtonGroupVertical() {
+  return (
+    <ButtonGroup
+      vertical
+      primaryAction={{ label: 'Сохранить', appearance: 'primary', view: 'filled' }}
+      secondaryAction={{ label: 'Отмена', appearance: 'neutral', view: 'outline' }}
+      tertiaryAction={{ label: 'Помощь', appearance: 'neutral', view: 'simple' }}
+    />
+  );
+}
+```
+
+### CounterBadge
+
+```tsx
+import { Button } from '@ds/button';
+import { EmailSVG } from '@ds/icons/interface/system';
+
+export function CounterBadge() {
+  return <Button icon={<EmailSVG />} iconPosition='after' label='Сообщения' counter={{ value: 12 }} />;
+}
+```
+
+### Destructive
+
+```tsx
+import { Button } from '@ds/button';
+import { TrashSVG } from '@ds/icons/interface/system';
+
+export function Destructive() {
+  return <Button appearance='critical' view='filled' icon={<TrashSVG />} label='Удалить' />;
+}
+```
+
+### IconOnly
+
+```tsx
+import { Button } from '@ds/button';
+import { SettingsSVG } from '@ds/icons/interface/system';
+
+export function IconOnly() {
+  return <Button view='function' icon={<SettingsSVG />} aria-label='Настройки' />;
+}
+```
+
+### LinkButton
+
+```tsx
+import { Button } from '@ds/button'
+
+export function LinkButton() {
+  return <Button as='a' href='https://example.com' target='_blank' label='Документация' />
+}
+```
+
+### Loading
+
+```tsx
+import { Button } from '@ds/button';
+import { DownloadSVG } from '@ds/icons/interface/system';
+
+export function Loading() {
+  return <Button appearance='primary' view='filled' icon={<DownloadSVG />} label='Скачать отчёт' loading />;
+}
+```
+
+### Sizes
+
+```tsx
+import { Button } from '@ds/button';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button size='s' label='Small' />
+      <Button size='m' label='Medium' />
+      <Button size='l' label='Large' />
+    </div>
+  );
+}
+```
+
+### Views
+
+```tsx
+import { Button } from '@ds/button';
+
+export function Views() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button view='filled' label='Filled' />
+      <Button view='outline' label='Outline' />
+      <Button view='tonal' label='Tonal' />
+      <Button view='simple' label='Simple' />
+      <Button view='elevated' label='Elevated' />
+      <Button view='function' label='Function' />
+    </div>
+  );
+}
+```

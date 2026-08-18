@@ -1,0 +1,150 @@
+﻿# @ds/card
+
+> Корневая карточка с осями radius, view и слоем backgroundPredefined + acrylic.
+
+Docs: /snack-v2/components/card/
+
+## Установка
+
+```sh
+pnpm add @ds/card
+```
+
+## Когда использовать
+
+- Плитки и превью сущностей в сетках и списках.
+- Выбираемые карточки (`checked`, `multiSelect`) в режиме множественного выбора.
+- Любой блок, где нужны скругления `radius`, режим `view` и согласованный акрил из `@ds/materials`.
+
+Когда **не** нужен:
+
+- Достаточно плоской поверхности без предустановленной заливки и state layer — рассмотрите более лёгкие обёртки.
+- Нужно «стекло» без карточной рамки и модели выбора — см. [`Block`](/components/block).
+
+## API
+
+### Card
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no |  |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `checked` | `boolean` | — | no | Выбран (для multiSelect — показывает чек-бэйдж в углу). |
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `className` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Заблокированный режим: интерактив отключён, opacity снижен. |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `interactive` | `boolean` | `true` | no | Включает интерактивные эффекты (hover/press state layer, cursor: pointer, focus-ring). Установи `false` для презентационной карточки без отклика на курсор. |
+| `multiSelect` | `boolean` | `false` | no | Режим множественного выбора — добавляет чек-бэйдж в углу при `checked`. |
+| `radius` | `l \| m \| s` | `m` | no | Радиус контейнера. |
+| `view` | `elevated \| outline \| simple` | `simple` | no | Визуальный режим карточки. |
+
+#### Related types
+- `BackgroundPredefinedFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`
+- `PolymorphicRef` (alias)
+- `Radius` = `l | m | s`
+- `View` = `elevated | outline | simple`
+
+## Примеры
+
+### BackgroundFills
+
+```tsx
+import { Card } from '@ds/card';
+import { BACKGROUND_PREDEFINED_FILL } from '@ds/materials';
+
+export function BackgroundFills() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Card backgroundPredefined={BACKGROUND_PREDEFINED_FILL.NeutralBackground1Level}>
+        <div style={{ padding: 8 }}>neutralBackground1Level</div>
+      </Card>
+      <Card backgroundPredefined={BACKGROUND_PREDEFINED_FILL.PrimaryBackground}>
+        <div style={{ padding: 8 }}>primaryBackground</div>
+      </Card>
+      <Card backgroundPredefined={BACKGROUND_PREDEFINED_FILL.VioletBackground}>
+        <div style={{ padding: 8 }}>violetBackground</div>
+      </Card>
+    </div>
+  );
+}
+```
+
+### DisabledCard
+
+```tsx
+import { Card } from '@ds/card';
+
+export function DisabledCard() {
+  return (
+    <Card disabled>
+      <div style={{ padding: 8 }}>Состояние disabled — без hover/focus визуала интеракции</div>
+    </Card>
+  );
+}
+```
+
+### RadiusValues
+
+```tsx
+import { Card, RADIUS, VIEW } from '@ds/card';
+
+export function RadiusValues() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Card view={VIEW.Outline} radius={RADIUS.S}>
+        <div style={{ padding: 8 }}>radius S</div>
+      </Card>
+      <Card view={VIEW.Outline} radius={RADIUS.M}>
+        <div style={{ padding: 8 }}>radius M</div>
+      </Card>
+      <Card view={VIEW.Outline} radius={RADIUS.L}>
+        <div style={{ padding: 8 }}>radius L</div>
+      </Card>
+    </div>
+  );
+}
+```
+
+### SelectionToggle
+
+```tsx
+import { Card } from '@ds/card';
+import { useState } from 'react';
+
+export function SelectionToggle() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Card checked={checked} multiSelect>
+        <div style={{ padding: 8 }}>Множественный выбор (иконка при checked)</div>
+      </Card>
+      <button type='button' onClick={() => setChecked(v => !v)}>
+        {checked ? 'Снять выбор' : 'Выбрать'}
+      </button>
+    </div>
+  );
+}
+```
+
+### ViewValues
+
+```tsx
+import { Card, VIEW } from '@ds/card';
+
+export function ViewValues() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Card view={VIEW.Simple}>
+        <div style={{ padding: 8 }}>simple</div>
+      </Card>
+      <Card view={VIEW.Outline}>
+        <div style={{ padding: 8 }}>outline</div>
+      </Card>
+      <Card view={VIEW.Elevated}>
+        <div style={{ padding: 8 }}>elevated</div>
+      </Card>
+    </div>
+  );
+}
+```

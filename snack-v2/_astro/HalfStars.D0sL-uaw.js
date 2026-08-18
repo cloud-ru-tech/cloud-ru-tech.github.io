@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Rating.C_Cl3JGM.js";var n=e();function r(){return(0,n.jsx)(t,{count:5,defaultValue:3.5,allowHalf:!0,allowClear:!1,readonly:!1})}export{r as HalfStars};

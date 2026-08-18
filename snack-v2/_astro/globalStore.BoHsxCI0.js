@@ -1,0 +1,1 @@
+import{t as e}from"./isBrowser.Cf2lhMma.js";import{t}from"./providerKey.DM39QMDQ.js";var n=1,r={context:t(`portal-context`,n),store:`@cloud-ru/ds:global-portal-root:v${n}`},i=Symbol.for(r.store);function a(){let t=globalThis;return t[i]??={current:e()?document.body:null}}export{r as n,a as t};
