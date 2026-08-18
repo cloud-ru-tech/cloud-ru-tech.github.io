@@ -1,4 +1,4 @@
-﻿# @ds/fonts
+﻿# @cloud-ru/ds-fonts
 
 > Подключение фирменных шрифтов SB Sans Interface, Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/fonts/
 ## Установка
 
 ```sh
-pnpm add @ds/fonts
+pnpm add @cloud-ru/ds-fonts
 ```
 
 ## Когда использовать

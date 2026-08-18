@@ -1,4 +1,4 @@
-﻿# @ds/avatar
+﻿# @cloud-ru/ds-avatar
 
 > Аватар пользователя с фото, инициалами, размерами и цветовыми схемами.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/avatar/
 ## Установка
 
 ```sh
-pnpm add @ds/avatar
+pnpm add @cloud-ru/ds-avatar
 ```
 
 ## Когда использовать
@@ -47,10 +47,10 @@ pnpm add @ds/avatar
 ### CustomBadge
 
 ```tsx
-import { Avatar, AVATAR_TO_STATUS_INDICATOR_SIZE, SIZE } from '@ds/avatar';
-import { Counter, SIZE as COUNTER_SIZE } from '@ds/counter';
-import { CheckSVG } from '@ds/icons/interface/system';
-import { APPEARANCE as STATUS_APPEARANCE, StatusIndicator } from '@ds/status';
+import { Avatar, AVATAR_TO_STATUS_INDICATOR_SIZE, SIZE } from '@cloud-ru/ds-avatar';
+import { Counter, SIZE as COUNTER_SIZE } from '@cloud-ru/ds-counter';
+import { CheckSVG } from '@cloud-ru/ds-icons/interface/system';
+import { APPEARANCE as STATUS_APPEARANCE, StatusIndicator } from '@cloud-ru/ds-status';
 
 import styles from './CustomBadge.module.scss';
 
@@ -98,7 +98,7 @@ export function CustomBadge() {
 ### Initials
 
 ```tsx
-import { Avatar } from '@ds/avatar';
+import { Avatar } from '@cloud-ru/ds-avatar';
 
 export function Initials() {
   return <Avatar name='Иван Петров' />;
@@ -108,7 +108,7 @@ export function Initials() {
 ### Sizes
 
 ```tsx
-import { Avatar } from '@ds/avatar';
+import { Avatar } from '@cloud-ru/ds-avatar';
 
 export function Sizes() {
   return (
@@ -124,7 +124,7 @@ export function Sizes() {
 ### WithImage
 
 ```tsx
-import { Avatar } from '@ds/avatar';
+import { Avatar } from '@cloud-ru/ds-avatar';
 
 export function WithImage() {
   return <Avatar src='https://i.pravatar.cc/80?img=12' name='Анна Смирнова' />;

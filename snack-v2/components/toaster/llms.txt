@@ -1,4 +1,4 @@
-﻿# @ds/toaster
+﻿# @cloud-ru/ds-toaster
 
 > Система всплывающих уведомлений с тремя типами контента и императивным API.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/toaster/
 ## Установка
 
 ```sh
-pnpm add @ds/toaster
+pnpm add @cloud-ru/ds-toaster
 ```
 
 ## Когда использовать
@@ -130,7 +130,7 @@ _Нет публичных пропсов._
 | `description` | `string` | — | yes | Описание статуса загрузки |
 | `files` | `UploadItem[]` | — | yes | Загружаемые элементы |
 | `generalActions` | `Omit<UploadActions, "onCancel">` | — | no | Экшены для управления общей загрузкой |
-| `onCancelAll` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбэк кнопки отмены всей загрузки. Кнопка рендерится только при наличии колбэка; подпись — из `@ds/locale` (`ToastUpload.cancelAll`). |
+| `onCancelAll` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбэк кнопки отмены всей загрузки. Кнопка рендерится только при наличии колбэка; подпись — из `@cloud-ru/ds-locale` (`ToastUpload.cancelAll`). |
 | `onCloseClick` | `((e: MouseEvent<HTMLButtonElement, MouseEvent>, close?: (() => void)) => void)` | — | no | Закрыть тостер |
 | `onCollapsed` | `((collapsed: boolean) => void)` | — | no | Развернуть/свернуть тостер |
 | `progress` | `{ current: number; total: number; }` | — | yes | Общий прогресс загрузки |
@@ -204,9 +204,9 @@ _Нет публичных пропсов._
 ### BasicSystemEvent
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-basic-system-event';
 
@@ -260,9 +260,9 @@ export function BasicSystemEvent() {
 ### StackedSystemEvent
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 import { useRef } from 'react';
 
 const CONTAINER_ID = 'demo-stacked-system-event';
@@ -306,9 +306,9 @@ export function StackedSystemEvent() {
 ### SystemEventCloseHooks
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -360,9 +360,9 @@ export function SystemEventCloseHooks() {
 ### SystemEventPositions
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, SystemEventPosition, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, SystemEventPosition, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const POSITIONS: SystemEventPosition[] = Object.values(POSITION_SYSTEM_EVENT);
 
@@ -407,9 +407,9 @@ export function SystemEventPositions() {
 ### SystemEventSavingFlow
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-system-event-saving-flow';
 const PENDING_DELAY_MS = 1500;
@@ -484,9 +484,9 @@ export function SystemEventSavingFlow() {
 ### SystemEventWithAction
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_SYSTEM_EVENT, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-system-event-with-action';
 
@@ -546,8 +546,8 @@ export function SystemEventWithAction() {
 ### UploadBasic
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
 import {
   POSITION_SYSTEM_EVENT,
   TOAST_UPLOAD_ITEM_STATUS,
@@ -555,7 +555,7 @@ import {
   TOASTER_TYPE,
   ToasterContainer,
   UploadItem,
-} from '@ds/toaster';
+} from '@cloud-ru/ds-toaster';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -659,8 +659,8 @@ export function UploadBasic() {
 ### UploadCloseHooks
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
 import {
   POSITION_SYSTEM_EVENT,
   TOAST_UPLOAD_ITEM_STATUS,
@@ -669,7 +669,7 @@ import {
   TOASTER_TYPE,
   ToasterContainer,
   UploadItem,
-} from '@ds/toaster';
+} from '@cloud-ru/ds-toaster';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -736,8 +736,8 @@ export function UploadCloseHooks() {
 ### UploadProgress
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
 import {
   POSITION_SYSTEM_EVENT,
   TOAST_UPLOAD_ITEM_STATUS,
@@ -746,7 +746,7 @@ import {
   TOASTER_TYPE,
   ToasterContainer,
   UploadItem,
-} from '@ds/toaster';
+} from '@cloud-ru/ds-toaster';
 import { useEffect, useRef } from 'react';
 
 import styles from './styles.module.scss';
@@ -882,9 +882,9 @@ export function UploadProgress() {
 ### UserActionBasic
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-user-action-basic';
 
@@ -938,9 +938,9 @@ export function UserActionBasic() {
 ### UserActionLoading
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-user-action-loading';
 const OPERATION_MS = 1500;
@@ -982,9 +982,9 @@ export function UserActionLoading() {
 ### UserActionPositions
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer, UserActionPosition } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer, UserActionPosition } from '@cloud-ru/ds-toaster';
 
 const POSITIONS: UserActionPosition[] = Object.values(POSITION_USER_ACTION);
 
@@ -1026,9 +1026,9 @@ export function UserActionPositions() {
 ### UserActionTimer
 
 ```tsx
-import { APPEARANCE, Button } from '@ds/button';
-import { PortalContextProvider } from '@ds/portal-context';
-import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@ds/toaster';
+import { APPEARANCE, Button } from '@cloud-ru/ds-button';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { POSITION_USER_ACTION, toaster, TOASTER_TYPE, ToasterContainer } from '@cloud-ru/ds-toaster';
 
 const CONTAINER_ID = 'demo-user-action-timer';
 

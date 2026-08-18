@@ -1,4 +1,4 @@
-﻿# @ds/hot-spot
+﻿# @cloud-ru/ds-hot-spot
 
 > Пульсирующая точка-индикатор, привязанная к целевому элементу — подсказка внимания и обучающий акцент.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/hot-spot/
 ## Установка
 
 ```sh
-pnpm add @ds/hot-spot
+pnpm add @cloud-ru/ds-hot-spot
 ```
 
 ## Когда использовать
@@ -45,8 +45,8 @@ pnpm add @ds/hot-spot
 ### NoPulse
 
 ```tsx
-import { Button } from '@ds/button';
-import { HotSpot } from '@ds/hot-spot';
+import { Button } from '@cloud-ru/ds-button';
+import { HotSpot } from '@cloud-ru/ds-hot-spot';
 
 export function NoPulse() {
   return (
@@ -60,8 +60,8 @@ export function NoPulse() {
 ### OnButton
 
 ```tsx
-import { Button } from '@ds/button';
-import { HotSpot } from '@ds/hot-spot';
+import { Button } from '@cloud-ru/ds-button';
+import { HotSpot } from '@cloud-ru/ds-hot-spot';
 
 export function OnButton() {
   return (
@@ -75,8 +75,8 @@ export function OnButton() {
 ### RedAccent
 
 ```tsx
-import { Button } from '@ds/button';
-import { HotSpot } from '@ds/hot-spot';
+import { Button } from '@cloud-ru/ds-button';
+import { HotSpot } from '@cloud-ru/ds-hot-spot';
 
 export function RedAccent() {
   return (
@@ -90,7 +90,7 @@ export function RedAccent() {
 ### Standalone
 
 ```tsx
-import { HotSpot } from '@ds/hot-spot';
+import { HotSpot } from '@cloud-ru/ds-hot-spot';
 
 export function Standalone() {
   return <HotSpot appearance='green' />;

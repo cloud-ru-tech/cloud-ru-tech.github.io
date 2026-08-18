@@ -1,4 +1,4 @@
-﻿# @ds/ai-button-chevron
+﻿# @cloud-ru/ds-ai-button-chevron
 
 > Кнопка-шеврон 16×16 для раскрытия и сворачивания в составных AI-компонентах стриминга.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-button-chevron/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-button-chevron
+pnpm add @cloud-ru/ds-ai-button-chevron
 ```
 
 ## Когда использовать
@@ -18,9 +18,9 @@ pnpm add @ds/ai-button-chevron
 ### Когда не нужен
 
 - Полноценная кнопка с текстом или иконкой действия:
-  - используйте `@ds/button`.
+  - используйте `@cloud-ru/ds-button`.
 - Самостоятельный переключатель с собственным состоянием выбора:
-  - используйте `@ds/ai-card` либо `SegmentControl`.
+  - используйте `@cloud-ru/ds-ai-card` либо `SegmentControl`.
 
 ## API
 
@@ -39,7 +39,7 @@ pnpm add @ds/ai-button-chevron
 ### Default
 
 ```tsx
-import { AiButtonChevron } from '@ds/ai-button-chevron';
+import { AiButtonChevron } from '@cloud-ru/ds-ai-button-chevron';
 import { useState } from 'react';
 
 export function Default() {
@@ -51,7 +51,7 @@ export function Default() {
 ### Disabled
 
 ```tsx
-import { AiButtonChevron } from '@ds/ai-button-chevron';
+import { AiButtonChevron } from '@cloud-ru/ds-ai-button-chevron';
 
 export function Disabled() {
   return <AiButtonChevron disabled />;
@@ -61,7 +61,7 @@ export function Disabled() {
 ### Expandable
 
 ```tsx
-import { AiButtonChevron } from '@ds/ai-button-chevron';
+import { AiButtonChevron } from '@cloud-ru/ds-ai-button-chevron';
 import { useState } from 'react';
 
 export function Expandable() {

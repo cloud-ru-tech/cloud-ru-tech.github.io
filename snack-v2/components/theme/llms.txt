@@ -1,4 +1,4 @@
-﻿# @ds/theme
+﻿# @cloud-ru/ds-theme
 
 > Провайдер оформления — оси (цветовая схема, бренд, плотность, акрил) живут в контексте, полный набор sn-* классов эмитится на DOM-границе.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/theme/
 ## Установка
 
 ```sh
-pnpm add @ds/theme
+pnpm add @cloud-ru/ds-theme
 ```
 
 ## Когда использовать
@@ -81,13 +81,13 @@ pnpm add @ds/theme
 ### BrandSwitch
 
 ```tsx
-import { Block } from '@ds/block';
-import { Button } from '@ds/button';
-import { Counter } from '@ds/counter';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { BRAND, Brand, ChildThemeProvider } from '@ds/theme';
-import { Flex } from '@ds/uikit-product-flex';
+import { Block } from '@cloud-ru/ds-block';
+import { Button } from '@cloud-ru/ds-button';
+import { Counter } from '@cloud-ru/ds-counter';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { BRAND, Brand, ChildThemeProvider } from '@cloud-ru/ds-theme';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const BRAND_ITEMS = Object.values(BRAND).map(value => ({ value, label: value }));
@@ -118,12 +118,12 @@ export function BrandSwitch() {
 ### ColorSchemeToggle
 
 ```tsx
-import { Block } from '@ds/block';
-import { Button } from '@ds/button';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { ChildThemeProvider, COLOR_SCHEME, ColorScheme } from '@ds/theme';
-import { Flex } from '@ds/uikit-product-flex';
+import { Block } from '@cloud-ru/ds-block';
+import { Button } from '@cloud-ru/ds-button';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { ChildThemeProvider, COLOR_SCHEME, ColorScheme } from '@cloud-ru/ds-theme';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const SCHEME_ITEMS = [
@@ -162,13 +162,13 @@ export function ColorSchemeToggle() {
 ### CustomBrandColor
 
 ```tsx
-import { Block } from '@ds/block';
-import { Button } from '@ds/button';
-import { Counter } from '@ds/counter';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { RootThemeProvider } from '@ds/theme';
-import { Flex } from '@ds/uikit-product-flex';
+import { Block } from '@cloud-ru/ds-block';
+import { Button } from '@cloud-ru/ds-button';
+import { Counter } from '@cloud-ru/ds-counter';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { RootThemeProvider } from '@cloud-ru/ds-theme';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const COLOR_ITEMS = [
@@ -204,13 +204,13 @@ export function CustomBrandColor() {
 ### CustomBrandColorHook
 
 ```tsx
-import { Block } from '@ds/block';
-import { Button } from '@ds/button';
-import { Counter } from '@ds/counter';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { RootThemeProvider, useApplyCustomTheme } from '@ds/theme';
-import { Flex } from '@ds/uikit-product-flex';
+import { Block } from '@cloud-ru/ds-block';
+import { Button } from '@cloud-ru/ds-button';
+import { Counter } from '@cloud-ru/ds-counter';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { RootThemeProvider, useApplyCustomTheme } from '@cloud-ru/ds-theme';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const COLOR_ITEMS = [
@@ -252,11 +252,11 @@ export function CustomBrandColorHook() {
 ### LocalDensity
 
 ```tsx
-import { Button } from '@ds/button';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { DENSITY, Density, useThemeClassnames } from '@ds/theme';
-import { Flex } from '@ds/uikit-product-flex';
+import { Button } from '@cloud-ru/ds-button';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { DENSITY, Density, useThemeClassnames } from '@cloud-ru/ds-theme';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const DENSITY_ITEMS = Object.values(DENSITY).map(value => ({ value, label: value }));

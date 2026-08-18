@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-layout
+﻿# @cloud-ru/ds-uikit-product-layout
 
 > Блоки-состояния продуктового экрана — заглушка пустого состояния EmptyBlock и экран ограниченного доступа NoAccess.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-layout/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-layout
+pnpm add @cloud-ru/ds-uikit-product-layout
 ```
 
 ## Когда использовать
@@ -56,9 +56,9 @@ _Нет публичных пропсов._
 ### EmptyBlockWithFooter
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { EmptyBlock } from '@ds/uikit-product-layout';
+import { ButtonGroup } from '@cloud-ru/ds-button';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { EmptyBlock } from '@cloud-ru/ds-uikit-product-layout';
 
 export function EmptyBlockWithFooter() {
   return (
@@ -75,8 +75,8 @@ export function EmptyBlockWithFooter() {
 ### NoAccessBasic
 
 ```tsx
-import { LocaleProvider } from '@ds/locale';
-import { NoAccess } from '@ds/uikit-product-layout';
+import { LocaleProvider } from '@cloud-ru/ds-locale';
+import { NoAccess } from '@cloud-ru/ds-uikit-product-layout';
 
 export function NoAccessBasic() {
   return (

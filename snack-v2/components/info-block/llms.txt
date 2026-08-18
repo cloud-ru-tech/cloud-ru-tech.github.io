@@ -1,4 +1,4 @@
-﻿# @ds/info-block
+﻿# @cloud-ru/ds-info-block
 
 > Информационный блок — заголовок, описание, опциональные иконка и футер. Базовый строительный элемент для пустых состояний, подсказок и карточек.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/info-block/
 ## Установка
 
 ```sh
-pnpm add @ds/info-block
+pnpm add @cloud-ru/ds-info-block
 ```
 
 ## Когда использовать
@@ -44,7 +44,7 @@ pnpm add @ds/info-block
 ### Basic
 
 ```tsx
-import { InfoBlock } from '@ds/info-block';
+import { InfoBlock } from '@cloud-ru/ds-info-block';
 
 export function Basic() {
   return <InfoBlock title='Заголовок' content='Короткое описание под заголовком.' />;
@@ -54,7 +54,7 @@ export function Basic() {
 ### Horizontal
 
 ```tsx
-import { InfoBlock } from '@ds/info-block';
+import { InfoBlock } from '@cloud-ru/ds-info-block';
 
 export function Horizontal() {
   return (
@@ -71,7 +71,7 @@ export function Horizontal() {
 ### Sizes
 
 ```tsx
-import { InfoBlock } from '@ds/info-block';
+import { InfoBlock } from '@cloud-ru/ds-info-block';
 
 export function Sizes() {
   return (
@@ -87,8 +87,8 @@ export function Sizes() {
 ### WithIcon
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { InfoBlock } from '@ds/info-block';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { InfoBlock } from '@cloud-ru/ds-info-block';
 
 export function WithIcon() {
   return (

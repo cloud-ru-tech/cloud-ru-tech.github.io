@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-title-clickable
+﻿# @cloud-ru/ds-uikit-product-title-clickable
 
 > Кликабельный заголовок-ссылка раздела с иконкой, шевроном и опциональным аватар-блоком — для шапок продуктовых разделов.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-title-clickable/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-title-clickable
+pnpm add @cloud-ru/ds-uikit-product-title-clickable
 ```
 
 ## Когда использовать
@@ -19,11 +19,11 @@ pnpm add @ds/uikit-product-title-clickable
 Когда **не** нужен:
 
 - Inline-ссылка в тексте:
-  - используйте [`@ds/link`](/components/link).
+  - используйте [`@cloud-ru/ds-link`](/components/link).
 - Action-кнопка:
-  - используйте [`@ds/button`](/components/button/button).
+  - используйте [`@cloud-ru/ds-button`](/components/button/button).
 - Строка списка с действием:
-  - используйте [`@ds/uikit-product-info-row`](/components/uikit-product-info-row).
+  - используйте [`@cloud-ru/ds-uikit-product-info-row`](/components/uikit-product-info-row).
 
 ## API
 
@@ -96,7 +96,7 @@ pnpm add @ds/uikit-product-title-clickable
 ### Basic
 
 ```tsx
-import { TitleClickable } from '@ds/uikit-product-title-clickable';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function Basic() {
   return <TitleClickable href='#' title='Production environment' />;
@@ -106,7 +106,7 @@ export function Basic() {
 ### External
 
 ```tsx
-import { TitleClickable } from '@ds/uikit-product-title-clickable';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function External() {
   return <TitleClickable href='https://example.com' target='_blank' title='Внешняя ссылка' />;
@@ -116,8 +116,8 @@ export function External() {
 ### FullWidth
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { TitleClickable } from '@ds/uikit-product-title-clickable';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function FullWidth() {
   return <TitleClickable href='#' title='Раздел занимает всю ширину контейнера' icon={<PlaceholderSVG />} fullWidth />;
@@ -127,8 +127,8 @@ export function FullWidth() {
 ### HiddenArrow
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { TitleClickable } from '@ds/uikit-product-title-clickable';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function HiddenArrow() {
   return <TitleClickable href='#' title='Без шеврона' icon={<PlaceholderSVG />} showArrow={false} />;
@@ -138,7 +138,7 @@ export function HiddenArrow() {
 ### WithAvatar
 
 ```tsx
-import { TitleClickable, TitleClickableAvatar } from '@ds/uikit-product-title-clickable';
+import { TitleClickable, TitleClickableAvatar } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithAvatar() {
   return (
@@ -150,8 +150,8 @@ export function WithAvatar() {
 ### WithCustomBefore
 
 ```tsx
-import { Typography } from '@ds/typography';
-import { TitleClickable } from '@ds/uikit-product-title-clickable';
+import { Typography } from '@cloud-ru/ds-typography';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithCustomBefore() {
   return (
@@ -170,8 +170,8 @@ export function WithCustomBefore() {
 ### WithIcon
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { TitleClickable, TitleClickableIcon } from '@ds/uikit-product-title-clickable';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable, TitleClickableIcon } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithIcon() {
   return (

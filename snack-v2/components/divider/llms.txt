@@ -1,4 +1,4 @@
-﻿# @ds/divider
+﻿# @cloud-ru/ds-divider
 
 > Разделитель контента с горизонтальной и вертикальной ориентацией и вариантами толщины линии.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/divider/
 ## Установка
 
 ```sh
-pnpm add @ds/divider
+pnpm add @cloud-ru/ds-divider
 ```
 
 ## Когда использовать
@@ -39,7 +39,7 @@ pnpm add @ds/divider
 ### Horizontal
 
 ```tsx
-import { Divider } from '@ds/divider';
+import { Divider } from '@cloud-ru/ds-divider';
 
 export function Horizontal() {
   return <Divider />;
@@ -49,7 +49,7 @@ export function Horizontal() {
 ### Thin
 
 ```tsx
-import { Divider } from '@ds/divider';
+import { Divider } from '@cloud-ru/ds-divider';
 
 export function Thin() {
   return <Divider variant='thin' />;
@@ -59,7 +59,7 @@ export function Thin() {
 ### VerticalInRow
 
 ```tsx
-import { Divider } from '@ds/divider';
+import { Divider } from '@cloud-ru/ds-divider';
 
 import styles from './VerticalInRow.module.scss';
 

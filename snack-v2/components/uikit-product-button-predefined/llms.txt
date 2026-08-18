@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-button-predefined
+﻿# @cloud-ru/ds-uikit-product-button-predefined
 
 > Function-кнопка с выпадающим списком (desktop) или modal (mobile).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-button-predefined/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-button-predefined
+pnpm add @cloud-ru/ds-uikit-product-button-predefined
 ```
 
 ## Когда использовать
@@ -71,7 +71,7 @@ pnpm add @ds/uikit-product-button-predefined
 ### Basic
 
 ```tsx
-import { ButtonDropdown, type ButtonDropdownProps } from '@ds/uikit-product-button-predefined';
+import { ButtonDropdown, type ButtonDropdownProps } from '@cloud-ru/ds-uikit-product-button-predefined';
 
 export function Basic(props: ButtonDropdownProps) {
   return <ButtonDropdown {...props} />;
@@ -81,8 +81,8 @@ export function Basic(props: ButtonDropdownProps) {
 ### DesktopBasic
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { ButtonDropdown } from '@cloud-ru/ds-uikit-product-button-predefined';
 import { useState } from 'react';
 
 const periods = [
@@ -110,8 +110,8 @@ export function DesktopBasic() {
 ### DesktopOpen
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { ButtonDropdown } from '@cloud-ru/ds-uikit-product-button-predefined';
 import { useState } from 'react';
 
 const periods = [
@@ -139,8 +139,8 @@ export function DesktopOpen() {
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { ButtonDropdown } from '@ds/uikit-product-button-predefined';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { ButtonDropdown } from '@cloud-ru/ds-uikit-product-button-predefined';
 import { useState } from 'react';
 
 const periods = [

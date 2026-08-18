@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-widget
+﻿# @cloud-ru/ds-uikit-product-widget
 
 > Карточка продуктового виджета с кликабельным заголовком, SegmentControl, действиями и состояниями loading/error.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-widget/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-widget
+pnpm add @cloud-ru/ds-uikit-product-widget
 ```
 
 ## Когда использовать
@@ -19,7 +19,7 @@ pnpm add @ds/uikit-product-widget
 Когда **не** нужен `Widget`:
 
 - Простая карточка без шапки и действий:
-  - используйте [`@ds/block`](/components/block) или [`@ds/card`](/components/card).
+  - используйте [`@cloud-ru/ds-block`](/components/block) или [`@cloud-ru/ds-card`](/components/card).
 - Только кликабельный заголовок без оболочки:
   - используйте [`TitleClickable`](/components/uikit-product-title-clickable).
 - Сложная таблица или список с сортировкой и пагинацией:
@@ -142,8 +142,8 @@ pnpm add @ds/uikit-product-widget
 ### DefaultContent
 
 ```tsx
-import { WIDTH } from '@ds/segment-control';
-import { Widget } from '@ds/uikit-product-widget';
+import { WIDTH } from '@cloud-ru/ds-segment-control';
+import { Widget } from '@cloud-ru/ds-uikit-product-widget';
 
 export function DefaultContent() {
   return (
@@ -167,7 +167,7 @@ export function DefaultContent() {
 ### ErrorState
 
 ```tsx
-import { Widget } from '@ds/uikit-product-widget';
+import { Widget } from '@cloud-ru/ds-uikit-product-widget';
 import { useState } from 'react';
 
 export function ErrorState() {
@@ -193,7 +193,7 @@ export function ErrorState() {
 ### LoadingState
 
 ```tsx
-import { Widget } from '@ds/uikit-product-widget';
+import { Widget } from '@cloud-ru/ds-uikit-product-widget';
 
 export function LoadingState() {
   return (
@@ -212,8 +212,8 @@ export function LoadingState() {
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { BUTTON_TYPE, Widget } from '@ds/uikit-product-widget';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { BUTTON_TYPE, Widget } from '@cloud-ru/ds-uikit-product-widget';
 import { useState } from 'react';
 
 export function MobileLayout() {
@@ -252,8 +252,8 @@ export function MobileLayout() {
 ### WithActions
 
 ```tsx
-import { WIDTH } from '@ds/segment-control';
-import { BUTTON_TYPE, Widget } from '@ds/uikit-product-widget';
+import { WIDTH } from '@cloud-ru/ds-segment-control';
+import { BUTTON_TYPE, Widget } from '@cloud-ru/ds-uikit-product-widget';
 import { useState } from 'react';
 
 export function WithActions() {

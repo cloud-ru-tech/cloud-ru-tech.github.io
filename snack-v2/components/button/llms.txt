@@ -1,4 +1,4 @@
-﻿# @ds/button
+﻿# @cloud-ru/ds-button
 
 > Пакет кнопок дизайн-системы — компоненты Button и ButtonGroup с едиными токенами размеров, appearance и view.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/button/
 ## Установка
 
 ```sh
-pnpm add @ds/button
+pnpm add @cloud-ru/ds-button
 ```
 
 ## API
@@ -53,7 +53,7 @@ _Нет публичных пропсов._
 | `data-test-id` | `string` | — | no |  |
 | `filled` | `boolean` | `false` | no | Заливка контейнера |
 | `primaryAction` | `ActionProps` | — | no | Основное действие (filled) |
-| `renderAction` | `((button: ReactNode, slot: ButtonGroupActionSlot) => ReactNode)` | — | no | Обёртка каждой кнопки. Получает готовый `<Button>` и слот действия (`primary`/`secondary`/`tertiary`) и возвращает узел, который встанет на место кнопки. Позволяет обернуть кнопку в `Tooltip` на стороне потребителя (сам `@ds/button` не зависит от `@ds/tooltip`). Чтобы не ломать раскладку `filled`, обёртка не должна добавлять лишний DOM-узел между группой и кнопкой (`Tooltip` — с `disableSpanWrapper`). |
+| `renderAction` | `((button: ReactNode, slot: ButtonGroupActionSlot) => ReactNode)` | — | no | Обёртка каждой кнопки. Получает готовый `<Button>` и слот действия (`primary`/`secondary`/`tertiary`) и возвращает узел, который встанет на место кнопки. Позволяет обернуть кнопку в `Tooltip` на стороне потребителя (сам `@cloud-ru/ds-button` не зависит от `@cloud-ru/ds-tooltip`). Чтобы не ломать раскладку `filled`, обёртка не должна добавлять лишний DOM-узел между группой и кнопкой (`Tooltip` — с `disableSpanWrapper`). |
 | `secondaryAction` | `ActionProps` | — | no | Вторичное действие (outline), опционально |
 | `size` | `l \| m \| s` | `m` | no | Размер кнопок |
 | `tertiaryAction` | `ActionProps` | — | no | Третичное действие (simple/text-only), опционально |
@@ -68,7 +68,7 @@ _Нет публичных пропсов._
 ### Actions
 
 ```tsx
-import { Button } from '@ds/button';
+import { Button } from '@cloud-ru/ds-button';
 
 export function Actions() {
   return (
@@ -83,7 +83,7 @@ export function Actions() {
 ### Appearances
 
 ```tsx
-import { Button } from '@ds/button';
+import { Button } from '@cloud-ru/ds-button';
 
 export function Appearances() {
   return (
@@ -99,7 +99,7 @@ export function Appearances() {
 ### ButtonGroupBreak
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
+import { ButtonGroup } from '@cloud-ru/ds-button';
 
 export function ButtonGroupBreak() {
   return (
@@ -117,7 +117,7 @@ export function ButtonGroupBreak() {
 ### ButtonGroupFilled
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
+import { ButtonGroup } from '@cloud-ru/ds-button';
 
 export function ButtonGroupFilled() {
   return (
@@ -135,7 +135,7 @@ export function ButtonGroupFilled() {
 ### ButtonGroupPrimarySecondary
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
+import { ButtonGroup } from '@cloud-ru/ds-button';
 
 export function ButtonGroupPrimarySecondary() {
   return (
@@ -150,7 +150,7 @@ export function ButtonGroupPrimarySecondary() {
 ### ButtonGroupThreeActions
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
+import { ButtonGroup } from '@cloud-ru/ds-button';
 
 export function ButtonGroupThreeActions() {
   return (
@@ -166,7 +166,7 @@ export function ButtonGroupThreeActions() {
 ### ButtonGroupVertical
 
 ```tsx
-import { ButtonGroup } from '@ds/button';
+import { ButtonGroup } from '@cloud-ru/ds-button';
 
 export function ButtonGroupVertical() {
   return (
@@ -183,8 +183,8 @@ export function ButtonGroupVertical() {
 ### CounterBadge
 
 ```tsx
-import { Button } from '@ds/button';
-import { EmailSVG } from '@ds/icons/interface/system';
+import { Button } from '@cloud-ru/ds-button';
+import { EmailSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function CounterBadge() {
   return <Button icon={<EmailSVG />} iconPosition='after' label='Сообщения' counter={{ value: 12 }} />;
@@ -194,8 +194,8 @@ export function CounterBadge() {
 ### Destructive
 
 ```tsx
-import { Button } from '@ds/button';
-import { TrashSVG } from '@ds/icons/interface/system';
+import { Button } from '@cloud-ru/ds-button';
+import { TrashSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Destructive() {
   return <Button appearance='critical' view='filled' icon={<TrashSVG />} label='Удалить' />;
@@ -205,8 +205,8 @@ export function Destructive() {
 ### IconOnly
 
 ```tsx
-import { Button } from '@ds/button';
-import { SettingsSVG } from '@ds/icons/interface/system';
+import { Button } from '@cloud-ru/ds-button';
+import { SettingsSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function IconOnly() {
   return <Button view='function' icon={<SettingsSVG />} aria-label='Настройки' />;
@@ -216,7 +216,7 @@ export function IconOnly() {
 ### LinkButton
 
 ```tsx
-import { Button } from '@ds/button'
+import { Button } from '@cloud-ru/ds-button'
 
 export function LinkButton() {
   return <Button as='a' href='https://example.com' target='_blank' label='Документация' />
@@ -226,8 +226,8 @@ export function LinkButton() {
 ### Loading
 
 ```tsx
-import { Button } from '@ds/button';
-import { DownloadSVG } from '@ds/icons/interface/system';
+import { Button } from '@cloud-ru/ds-button';
+import { DownloadSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Loading() {
   return <Button appearance='primary' view='filled' icon={<DownloadSVG />} label='Скачать отчёт' loading />;
@@ -237,7 +237,7 @@ export function Loading() {
 ### Sizes
 
 ```tsx
-import { Button } from '@ds/button';
+import { Button } from '@cloud-ru/ds-button';
 
 export function Sizes() {
   return (
@@ -253,7 +253,7 @@ export function Sizes() {
 ### Views
 
 ```tsx
-import { Button } from '@ds/button';
+import { Button } from '@cloud-ru/ds-button';
 
 export function Views() {
   return (

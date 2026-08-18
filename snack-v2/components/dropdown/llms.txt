@@ -1,4 +1,4 @@
-﻿# @ds/dropdown
+﻿# @cloud-ru/ds-dropdown
 
 > Выпадающий блок с произвольным контентом и встроенными состояниями loading / not-found / no-data / data-error.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/dropdown/
 ## Установка
 
 ```sh
-pnpm add @ds/dropdown
+pnpm add @cloud-ru/ds-dropdown
 ```
 
 ## Когда использовать
@@ -31,7 +31,7 @@ pnpm add @ds/dropdown
 | `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
 | `data-test-id` | `string` | — | no |  |
 | `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
 | `footerDivider` | `boolean` | — | no | Divider между body и футером |
@@ -67,7 +67,7 @@ pnpm add @ds/dropdown
 | `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
 | `data-test-id` | `string` | — | no |  |
 | `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
 | `footerDivider` | `boolean` | — | no | Divider между body и футером |
@@ -121,7 +121,7 @@ pnpm add @ds/dropdown
 | `content` | `ReactNode` | — | yes | Содержимое внутри поповера (body) |
 | `data-test-id` | `string` | — | no |  |
 | `defaultSnapIndex` | `number` | — | no | Только mobile: индекс snap'а по умолчанию (см. `BottomSheet`). |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `footer` | `ReactNode` | — | no | Слот футера (bottomBar) |
 | `footerDivider` | `boolean` | — | no | Divider между body и футером |
@@ -150,8 +150,8 @@ pnpm add @ds/dropdown
 ### Basic
 
 ```tsx
-import { Button } from '@ds/button';
-import { Dropdown } from '@ds/dropdown';
+import { Button } from '@cloud-ru/ds-button';
+import { Dropdown } from '@cloud-ru/ds-dropdown';
 
 export function Basic() {
   return (
@@ -165,8 +165,8 @@ export function Basic() {
 ### Loading
 
 ```tsx
-import { Button } from '@ds/button';
-import { Dropdown, STATE } from '@ds/dropdown';
+import { Button } from '@cloud-ru/ds-button';
+import { Dropdown, STATE } from '@cloud-ru/ds-dropdown';
 
 export function Loading() {
   return (
@@ -180,8 +180,8 @@ export function Loading() {
 ### NotFound
 
 ```tsx
-import { Button } from '@ds/button';
-import { Dropdown, STATE } from '@ds/dropdown';
+import { Button } from '@cloud-ru/ds-button';
+import { Dropdown, STATE } from '@cloud-ru/ds-dropdown';
 
 export function NotFound() {
   return (
@@ -203,8 +203,8 @@ export function NotFound() {
 ### OpenForReview
 
 ```tsx
-import { Button } from '@ds/button';
-import { Dropdown } from '@ds/dropdown';
+import { Button } from '@cloud-ru/ds-button';
+import { Dropdown } from '@cloud-ru/ds-dropdown';
 
 export function OpenForReview() {
   return (

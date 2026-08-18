@@ -1,4 +1,4 @@
-﻿# @ds/site-card-vacancy
+﻿# @cloud-ru/ds-site-card-vacancy
 
 > Карточка-ссылка вакансии с заголовком и описанием, нейтральным или акцентным фоном, hover/pressed-состояниями и фокусом.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/site-card-vacancy/
 ## Установка
 
 ```sh
-pnpm add @ds/site-card-vacancy
+pnpm add @cloud-ru/ds-site-card-vacancy
 ```
 
 ## Когда использовать
@@ -19,11 +19,11 @@ pnpm add @ds/site-card-vacancy
 Когда **не** нужен:
 
 - Inline-ссылка в тексте:
-  - используйте [`@ds/link`](/components/link).
+  - используйте [`@cloud-ru/ds-link`](/components/link).
 - Кнопка-действие без перехода:
-  - используйте [`@ds/button`](/components/button/button).
+  - используйте [`@cloud-ru/ds-button`](/components/button/button).
 - Строка списка «лейбл — значение»:
-  - используйте [`@ds/uikit-product-info-row`](/components/uikit-product-info-row).
+  - используйте [`@cloud-ru/ds-uikit-product-info-row`](/components/uikit-product-info-row).
 
 ## API
 
@@ -48,7 +48,7 @@ pnpm add @ds/site-card-vacancy
 ### External
 
 ```tsx
-import { CardVacancy } from '@ds/site-card-vacancy';
+import { CardVacancy } from '@cloud-ru/ds-site-card-vacancy';
 
 export function External() {
   return (
@@ -65,7 +65,7 @@ export function External() {
 ### Mobile
 
 ```tsx
-import { APPEARANCE, CardVacancy } from '@ds/site-card-vacancy';
+import { APPEARANCE, CardVacancy } from '@cloud-ru/ds-site-card-vacancy';
 
 export function Mobile() {
   return (
@@ -83,7 +83,7 @@ export function Mobile() {
 ### Neutral
 
 ```tsx
-import { CardVacancy } from '@ds/site-card-vacancy';
+import { CardVacancy } from '@cloud-ru/ds-site-card-vacancy';
 
 export function Neutral() {
   return <CardVacancy href='#frontend' title='Frontend Developer' description='Remote · Full-time' />;
@@ -93,7 +93,7 @@ export function Neutral() {
 ### Polymorphic
 
 ```tsx
-import { CardVacancy } from '@ds/site-card-vacancy';
+import { CardVacancy } from '@cloud-ru/ds-site-card-vacancy';
 import { useState } from 'react';
 
 export function Polymorphic() {
@@ -114,7 +114,7 @@ export function Polymorphic() {
 ### Primary
 
 ```tsx
-import { APPEARANCE, CardVacancy } from '@ds/site-card-vacancy';
+import { APPEARANCE, CardVacancy } from '@cloud-ru/ds-site-card-vacancy';
 
 export function Primary() {
   return (

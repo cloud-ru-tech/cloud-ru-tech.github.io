@@ -1,4 +1,4 @@
-﻿# @ds/icon-predefined
+﻿# @cloud-ru/ds-icon-predefined
 
 > SVG-иконка с предустановленным оформлением — цветной подложкой, размером и формой контейнера.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/icon-predefined/
 ## Установка
 
 ```sh
-pnpm add @ds/icon-predefined
+pnpm add @cloud-ru/ds-icon-predefined
 ```
 
 ## Когда использовать
@@ -41,8 +41,8 @@ pnpm add @ds/icon-predefined
 ### Appearances
 
 ```tsx
-import { IconPredefined } from '@ds/icon-predefined';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { IconPredefined } from '@cloud-ru/ds-icon-predefined';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Appearances() {
   return (
@@ -61,8 +61,8 @@ export function Appearances() {
 ### Shapes
 
 ```tsx
-import { IconPredefined } from '@ds/icon-predefined';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { IconPredefined } from '@cloud-ru/ds-icon-predefined';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Shapes() {
   return (
@@ -78,8 +78,8 @@ export function Shapes() {
 ### Sizes
 
 ```tsx
-import { IconPredefined } from '@ds/icon-predefined';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { IconPredefined } from '@cloud-ru/ds-icon-predefined';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Sizes() {
   return (

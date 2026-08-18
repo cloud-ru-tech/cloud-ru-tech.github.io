@@ -1,0 +1,1 @@
+function e(e){let t=`/snack-v2/${e.replace(/^\/+/,``)}`;return t.endsWith(`/`)||(t+=`/`),t}export{e as t};

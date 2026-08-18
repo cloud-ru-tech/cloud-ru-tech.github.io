@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-promo-tag-predefined
+﻿# @cloud-ru/ds-uikit-product-promo-tag-predefined
 
 > Предопределённый промо-тег продукта с локализованным текстом и tooltip — пресеты product-статусов Cloud.ru.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-promo-tag-predefined/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-promo-tag-predefined
+pnpm add @cloud-ru/ds-uikit-product-promo-tag-predefined
 ```
 
 ## Когда использовать
@@ -39,7 +39,7 @@ pnpm add @ds/uikit-product-promo-tag-predefined
 ### Connecting
 
 ```tsx
-import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 import { MouseEvent } from 'react';
 
 function handleSupportClick(e: MouseEvent) {
@@ -54,9 +54,9 @@ export function Connecting() {
 ### CustomTip
 
 ```tsx
-import { Link } from '@ds/link';
-import { Typography } from '@ds/typography';
-import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { Link } from '@cloud-ru/ds-link';
+import { Typography } from '@cloud-ru/ds-typography';
+import { PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 import { Fragment, MouseEvent } from 'react';
 
 const CUSTOM_TOOLTIP_CONTENT = `Demo content, for replacement, use the property: ◆Slot...
@@ -114,7 +114,7 @@ export function CustomTip() {
 ### Default
 
 ```tsx
-import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 
 export function Default() {
   return <PromoTagPredefined variant={VARIANTS.Default} />;
@@ -124,7 +124,7 @@ export function Default() {
 ### FreeTier
 
 ```tsx
-import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 
 export function FreeTier() {
   return <PromoTagPredefined variant={VARIANTS.FreeTier} />;
@@ -134,7 +134,7 @@ export function FreeTier() {
 ### Partner
 
 ```tsx
-import { PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 
 export function Partner() {
   return <PromoTagPredefined variant={VARIANTS.Partner} />;
@@ -144,7 +144,7 @@ export function Partner() {
 ### PreviewFunctional
 
 ```tsx
-import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 
 export function PreviewFunctional() {
   return <PromoTagPredefined variant={VARIANTS.Preview} context={PREVIEW_CONTEXT.Functional} />;
@@ -154,7 +154,7 @@ export function PreviewFunctional() {
 ### PreviewService
 
 ```tsx
-import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@ds/uikit-product-promo-tag-predefined';
+import { PREVIEW_CONTEXT, PromoTagPredefined, VARIANTS } from '@cloud-ru/ds-uikit-product-promo-tag-predefined';
 
 export function PreviewService() {
   return <PromoTagPredefined variant={VARIANTS.Preview} context={PREVIEW_CONTEXT.Service} />;

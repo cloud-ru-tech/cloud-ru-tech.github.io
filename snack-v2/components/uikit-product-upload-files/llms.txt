@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-upload-files
+﻿# @cloud-ru/ds-uikit-product-upload-files
 
 > Поле загрузки файлов с drag-and-drop, валидацией по формату/размеру/количеству и кастомной функцией upload.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-upload-files/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-upload-files
+pnpm add @cloud-ru/ds-uikit-product-upload-files
 ```
 
 ## Когда использовать
@@ -18,8 +18,8 @@ pnpm add @ds/uikit-product-upload-files
 
 Когда **не** нужен:
 
-- Для одиночного триггера-кнопки без зоны перетаскивания — используйте `FileUpload` из [@ds/dropzone](/components/dropzone/file-upload).
-- Для скрытой оверлей-зоны над произвольным контентом — `HiddenDropZone` из [@ds/dropzone](/components/dropzone/hidden-drop-zone).
+- Для одиночного триггера-кнопки без зоны перетаскивания — используйте `FileUpload` из [@cloud-ru/ds-dropzone](/components/dropzone/file-upload).
+- Для скрытой оверлей-зоны над произвольным контентом — `HiddenDropZone` из [@cloud-ru/ds-dropzone](/components/dropzone/hidden-drop-zone).
 
 ## API
 
@@ -73,8 +73,8 @@ pnpm add @ds/uikit-product-upload-files
 ### Basic
 
 ```tsx
-import { LocaleProvider } from '@ds/locale';
-import { UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+import { LocaleProvider } from '@cloud-ru/ds-locale';
+import { UploadFileItem, UploadFiles } from '@cloud-ru/ds-uikit-product-upload-files';
 import { useState } from 'react';
 
 async function upload(file: File) {
@@ -97,8 +97,8 @@ export function Basic() {
 ### CustomFormats
 
 ```tsx
-import { LocaleProvider } from '@ds/locale';
-import { UploadFileItem, UploadFiles, UploadFilesAcceptItem } from '@ds/uikit-product-upload-files';
+import { LocaleProvider } from '@cloud-ru/ds-locale';
+import { UploadFileItem, UploadFiles, UploadFilesAcceptItem } from '@cloud-ru/ds-uikit-product-upload-files';
 import { useState } from 'react';
 
 async function upload(file: File) {
@@ -135,8 +135,8 @@ export function CustomFormats() {
 ### Disabled
 
 ```tsx
-import { LocaleProvider } from '@ds/locale';
-import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+import { LocaleProvider } from '@cloud-ru/ds-locale';
+import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@cloud-ru/ds-uikit-product-upload-files';
 
 async function upload(file: File) {
   return { url: `https://example.com/${file.name}` };
@@ -165,8 +165,8 @@ export function Disabled() {
 ### FormField
 
 ```tsx
-import { LocaleProvider } from '@ds/locale';
-import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@ds/uikit-product-upload-files';
+import { LocaleProvider } from '@cloud-ru/ds-locale';
+import { UPLOAD_STATUS, UploadFileItem, UploadFiles } from '@cloud-ru/ds-uikit-product-upload-files';
 import { useState } from 'react';
 
 async function upload(file: File) {

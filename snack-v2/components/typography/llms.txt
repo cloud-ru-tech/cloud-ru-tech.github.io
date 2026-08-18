@@ -1,4 +1,4 @@
-﻿# @ds/typography
+﻿# @cloud-ru/ds-typography
 
 > Универсальный текстовый компонент с едиными токенами стиля — variant / size / weight — и автовыбором семантического тега.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/typography/
 ## Установка
 
 ```sh
-pnpm add @ds/typography
+pnpm add @cloud-ru/ds-typography
 ```
 
 ## Когда использовать
@@ -40,7 +40,7 @@ pnpm add @ds/typography
 ### TypographyBasic
 
 ```tsx
-import { Typography } from '@ds/typography';
+import { Typography } from '@cloud-ru/ds-typography';
 
 export function TypographyBasic() {
   return <Typography>Обычный body-текст по умолчанию</Typography>;
@@ -50,7 +50,7 @@ export function TypographyBasic() {
 ### TypographyHeadline
 
 ```tsx
-import { Typography } from '@ds/typography';
+import { Typography } from '@cloud-ru/ds-typography';
 
 export function TypographyHeadline() {
   return (
@@ -64,7 +64,7 @@ export function TypographyHeadline() {
 ### TypographyMono
 
 ```tsx
-import { Typography } from '@ds/typography';
+import { Typography } from '@cloud-ru/ds-typography';
 
 export function TypographyMono() {
   return (
@@ -78,7 +78,7 @@ export function TypographyMono() {
 ### TypographyPolymorphic
 
 ```tsx
-import { Typography } from '@ds/typography';
+import { Typography } from '@cloud-ru/ds-typography';
 
 export function TypographyPolymorphic() {
   return (

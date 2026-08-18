@@ -1,4 +1,4 @@
-﻿# @ds/color-picker
+﻿# @cloud-ru/ds-color-picker
 
 > Компонент выбора цвета с палитрой, переключаемыми цветовыми моделями (HEX/RGB/HSV), альфа-каналом и опциональным режимом ручного применения.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/color-picker/
 ## Установка
 
 ```sh
-pnpm add @ds/color-picker
+pnpm add @cloud-ru/ds-color-picker
 ```
 
 ## Когда использовать
@@ -87,7 +87,7 @@ pnpm add @ds/color-picker
 ### AutoApply
 
 ```tsx
-import { ColorPicker } from '@ds/color-picker';
+import { ColorPicker } from '@cloud-ru/ds-color-picker';
 import { useState } from 'react';
 
 export function AutoApply() {
@@ -100,7 +100,7 @@ export function AutoApply() {
 ### Basic
 
 ```tsx
-import { ColorPicker } from '@ds/color-picker';
+import { ColorPicker } from '@cloud-ru/ds-color-picker';
 import { useState } from 'react';
 
 export function Basic() {
@@ -113,7 +113,7 @@ export function Basic() {
 ### Compact
 
 ```tsx
-import { ColorPicker } from '@ds/color-picker';
+import { ColorPicker } from '@cloud-ru/ds-color-picker';
 import { useState } from 'react';
 
 export function Compact() {
@@ -126,7 +126,7 @@ export function Compact() {
 ### Sizes
 
 ```tsx
-import { ColorPicker } from '@ds/color-picker';
+import { ColorPicker } from '@cloud-ru/ds-color-picker';
 import { useState } from 'react';
 
 export function Sizes() {
@@ -146,7 +146,7 @@ export function Sizes() {
 ### WithoutAlpha
 
 ```tsx
-import { ColorPicker } from '@ds/color-picker';
+import { ColorPicker } from '@cloud-ru/ds-color-picker';
 import { useState } from 'react';
 
 export function WithoutAlpha() {

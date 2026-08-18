@@ -1,4 +1,4 @@
-﻿# @ds/field-decorator
+﻿# @cloud-ru/ds-field-decorator
 
 > Структурная обёртка label/caption/hint/error/length для нестандартных input'ов и сложных композиций.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/field-decorator/
 ## Установка
 
 ```sh
-pnpm add @ds/field-decorator
+pnpm add @cloud-ru/ds-field-decorator
 ```
 
 ## Когда использовать
@@ -60,7 +60,7 @@ pnpm add @ds/field-decorator
 | `hint` | `string` | — | no | Подсказка |
 | `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
 | `length` | `FieldLength` | — | no | Счётчик длины `current/max` |
-| `maxLines` | `number` | — | no | Обрезать подсказку до N строк многоточием (через `TruncateString`, с тултипом полного текста на ховере). Без значения подсказка переносится без ограничения (дефолт поля). Нужно для карточек фиксированной высоты (`@ds/attachment`), где длинный текст ошибки иначе выходит за границы. |
+| `maxLines` | `number` | — | no | Обрезать подсказку до N строк многоточием (через `TruncateString`, с тултипом полного текста на ховере). Без значения подсказка переносится без ограничения (дефолт поля). Нужно для карточек фиксированной высоты (`@cloud-ru/ds-attachment`), где длинный текст ошибки иначе выходит за границы. |
 | `readonly` | `boolean` | — | no | Только для чтения |
 | `showHintIcon` | `boolean` | `true` | no | Отображение статус-иконки у подсказки (по умолчанию `true`) |
 | `size` | `l \| m \| s` | `m` | no | Размер |
@@ -97,8 +97,8 @@ pnpm add @ds/field-decorator
 ### DecoratorBasic
 
 ```tsx
-import { FieldDecorator } from '@ds/field-decorator';
-import { InputPrivate } from '@ds/input-private';
+import { FieldDecorator } from '@cloud-ru/ds-field-decorator';
+import { InputPrivate } from '@cloud-ru/ds-input-private';
 import { useState } from 'react';
 
 export function DecoratorBasic() {
@@ -114,8 +114,8 @@ export function DecoratorBasic() {
 ### DecoratorDisabledReadonly
 
 ```tsx
-import { FieldDecorator } from '@ds/field-decorator';
-import { InputPrivate } from '@ds/input-private';
+import { FieldDecorator } from '@cloud-ru/ds-field-decorator';
+import { InputPrivate } from '@cloud-ru/ds-input-private';
 
 export function DecoratorDisabledReadonly() {
   return (
@@ -148,8 +148,8 @@ export function DecoratorDisabledReadonly() {
 ### DecoratorLabelTooltip
 
 ```tsx
-import { FieldDecorator } from '@ds/field-decorator';
-import { InputPrivate } from '@ds/input-private';
+import { FieldDecorator } from '@cloud-ru/ds-field-decorator';
+import { InputPrivate } from '@cloud-ru/ds-input-private';
 import { useState } from 'react';
 
 export function DecoratorLabelTooltip() {
@@ -170,8 +170,8 @@ export function DecoratorLabelTooltip() {
 ### DecoratorLength
 
 ```tsx
-import { FieldDecorator } from '@ds/field-decorator';
-import { InputPrivate } from '@ds/input-private';
+import { FieldDecorator } from '@cloud-ru/ds-field-decorator';
+import { InputPrivate } from '@cloud-ru/ds-input-private';
 import { useState } from 'react';
 
 export function DecoratorLength() {
@@ -192,8 +192,8 @@ export function DecoratorLength() {
 ### DecoratorLimitExceeded
 
 ```tsx
-import { FieldDecorator } from '@ds/field-decorator';
-import { InputPrivate } from '@ds/input-private';
+import { FieldDecorator } from '@cloud-ru/ds-field-decorator';
+import { InputPrivate } from '@cloud-ru/ds-input-private';
 import { useState } from 'react';
 
 export function DecoratorLimitExceeded() {
@@ -213,7 +213,7 @@ export function DecoratorLimitExceeded() {
 ### HintStandalone
 
 ```tsx
-import { Hint } from '@ds/field-decorator';
+import { Hint } from '@cloud-ru/ds-field-decorator';
 
 export function HintStandalone() {
   return (
@@ -230,7 +230,7 @@ export function HintStandalone() {
 ### LabelStandalone
 
 ```tsx
-import { Label } from '@ds/field-decorator';
+import { Label } from '@cloud-ru/ds-field-decorator';
 
 export function LabelStandalone() {
   return (

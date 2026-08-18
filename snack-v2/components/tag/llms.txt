@@ -1,4 +1,4 @@
-﻿# @ds/tag
+﻿# @cloud-ru/ds-tag
 
 > Пакет компактных меток — компонент Tag (опционально удаляемый или ссылочный) и контейнер TagRow для групп меток с обрезанием по строкам.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/tag/
 ## Установка
 
 ```sh
-pnpm add @ds/tag
+pnpm add @cloud-ru/ds-tag
 ```
 
 ## API
@@ -105,7 +105,7 @@ pnpm add @ds/tag
 ### AsLink
 
 ```tsx
-import { Tag } from '@ds/tag';
+import { Tag } from '@cloud-ru/ds-tag';
 
 export function AsLink() {
   return <Tag label='Документация' href='https://example.com' target='_blank' />;
@@ -115,7 +115,7 @@ export function AsLink() {
 ### Basic
 
 ```tsx
-import { Tag } from '@ds/tag';
+import { Tag } from '@cloud-ru/ds-tag';
 
 export function Basic() {
   return <Tag label='Frontend' appearance='blue' />;
@@ -125,7 +125,7 @@ export function Basic() {
 ### Removable
 
 ```tsx
-import { Tag } from '@ds/tag';
+import { Tag } from '@cloud-ru/ds-tag';
 
 export function Removable() {
   return <Tag label='React' appearance='blue' onDelete={() => alert('remove')} />;
@@ -135,7 +135,7 @@ export function Removable() {
 ### RowTruncated
 
 ```tsx
-import { TagRow } from '@ds/tag';
+import { TagRow } from '@cloud-ru/ds-tag';
 
 export function RowTruncated() {
   return (

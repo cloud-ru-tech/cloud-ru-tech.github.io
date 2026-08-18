@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-switch-row
+﻿# @cloud-ru/ds-uikit-product-switch-row
 
 > Кликабельная строка настройки с заголовком, описанием и Switch — целиком кликабельна, поддерживает клавиатуру и tooltip-подсказки.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-switch-row/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-switch-row
+pnpm add @cloud-ru/ds-uikit-product-switch-row
 ```
 
 ## Когда использовать
@@ -58,7 +58,7 @@ pnpm add @ds/uikit-product-switch-row
 ### Basic
 
 ```tsx
-import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 
 export function Basic() {
   return (
@@ -70,7 +70,7 @@ export function Basic() {
 ### Controlled
 
 ```tsx
-import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 import { useState } from 'react';
 
 export function Controlled() {
@@ -90,7 +90,7 @@ export function Controlled() {
 ### Disabled
 
 ```tsx
-import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 
 export function Disabled() {
   return (
@@ -107,7 +107,7 @@ export function Disabled() {
 ### Line
 
 ```tsx
-import { SWITCH_ROW_TYPES, SwitchRow } from '@ds/uikit-product-switch-row';
+import { SWITCH_ROW_TYPES, SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 
 export function Line() {
   return (
@@ -124,7 +124,7 @@ export function Line() {
 ### Loading
 
 ```tsx
-import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 
 export function Loading() {
   return <SwitchRow title='Синхронизация данных' description='Применяем изменение на сервере' defaultChecked loading />;
@@ -134,7 +134,7 @@ export function Loading() {
 ### WithTip
 
 ```tsx
-import { SwitchRow } from '@ds/uikit-product-switch-row';
+import { SwitchRow } from '@cloud-ru/ds-uikit-product-switch-row';
 
 export function WithTip() {
   return (

@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-error-pages
+﻿# @cloud-ru/ds-uikit-product-error-pages
 
 > Полноэкранная error-страница с типовыми сценариями ошибок, действиями и декоративной иллюстрацией.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-error-pages/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-error-pages
+pnpm add @cloud-ru/ds-uikit-product-error-pages
 ```
 
 ## Когда использовать
@@ -51,7 +51,7 @@ pnpm add @ds/uikit-product-error-pages
 ### Custom
 
 ```tsx
-import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@cloud-ru/ds-uikit-product-error-pages';
 
 export function Custom() {
   return (
@@ -76,7 +76,7 @@ export function Custom() {
 ### NotFound
 
 ```tsx
-import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@cloud-ru/ds-uikit-product-error-pages';
 
 export function NotFound() {
   return (
@@ -93,7 +93,7 @@ export function NotFound() {
 ### Offline
 
 ```tsx
-import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@ds/uikit-product-error-pages';
+import { ERROR_TYPE, ErrorPage, LOGO_VARIANT } from '@cloud-ru/ds-uikit-product-error-pages';
 
 export function Offline() {
   return <ErrorPage errorType={ERROR_TYPE.Offline} logoVariant={LOGO_VARIANT.Cloud} />;

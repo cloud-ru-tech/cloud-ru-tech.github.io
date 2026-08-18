@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-price-summary
+﻿# @cloud-ru/ds-uikit-product-price-summary
 
 > Блоки итоговой цены для checkout и конфигураторов — полный PriceSummary и компактный PriceSummarySmall.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-price-summary/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-price-summary
+pnpm add @cloud-ru/ds-uikit-product-price-summary
 ```
 
 ## API
@@ -154,8 +154,8 @@ pnpm add @ds/uikit-product-price-summary
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { PRICE_PERIOD, PriceSummary } from '@ds/uikit-product-price-summary';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { PRICE_PERIOD, PriceSummary } from '@cloud-ru/ds-uikit-product-price-summary';
 
 export function MobileLayout() {
   return (
@@ -181,7 +181,7 @@ export function MobileLayout() {
 ### SmallError
 
 ```tsx
-import { PriceSummarySmall } from '@ds/uikit-product-price-summary';
+import { PriceSummarySmall } from '@cloud-ru/ds-uikit-product-price-summary';
 import { useState } from 'react';
 
 import styles from '../demoSurface.module.scss';
@@ -210,7 +210,7 @@ export function SmallError() {
 ### SmallLoading
 
 ```tsx
-import { PriceSummarySmall } from '@ds/uikit-product-price-summary';
+import { PriceSummarySmall } from '@cloud-ru/ds-uikit-product-price-summary';
 
 import styles from '../demoSurface.module.scss';
 
@@ -226,7 +226,7 @@ export function SmallLoading() {
 ### WithDiscount
 
 ```tsx
-import { PRICE_PERIOD, PriceSummary } from '@ds/uikit-product-price-summary';
+import { PRICE_PERIOD, PriceSummary } from '@cloud-ru/ds-uikit-product-price-summary';
 
 import styles from '../demoSurface.module.scss';
 
@@ -250,7 +250,7 @@ export function WithDiscount() {
 ### WithInvoice
 
 ```tsx
-import { PRICE_PERIOD } from '@ds/uikit-product-price-summary';
+import { PRICE_PERIOD } from '@cloud-ru/ds-uikit-product-price-summary';
 
 import styles from '../demoSurface.module.scss';
 import { PriceSummaryControlled } from '../PriceSummaryControlled';

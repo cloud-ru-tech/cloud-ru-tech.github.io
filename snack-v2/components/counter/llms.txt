@@ -1,4 +1,4 @@
-﻿# @ds/counter
+﻿# @cloud-ru/ds-counter
 
 > Компактный счётчик для отображения числовых меток, бейджей и состояний.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/counter/
 ## Установка
 
 ```sh
-pnpm add @ds/counter
+pnpm add @cloud-ru/ds-counter
 ```
 
 ## Когда использовать
@@ -44,7 +44,7 @@ pnpm add @ds/counter
 ### Basic
 
 ```tsx
-import { Counter } from '@ds/counter';
+import { Counter } from '@cloud-ru/ds-counter';
 
 export function Basic() {
   return <Counter value={9} />;
@@ -54,7 +54,7 @@ export function Basic() {
 ### PlusThreshold
 
 ```tsx
-import { Counter } from '@ds/counter';
+import { Counter } from '@cloud-ru/ds-counter';
 
 export function PlusThreshold() {
   return <Counter value={42} variant='count-plus' plusLimit={10} />;
@@ -64,7 +64,7 @@ export function PlusThreshold() {
 ### Red
 
 ```tsx
-import { Counter } from '@ds/counter';
+import { Counter } from '@cloud-ru/ds-counter';
 
 export function Red() {
   return <Counter value={3} appearance='red' />;
@@ -74,7 +74,7 @@ export function Red() {
 ### ThousandsK
 
 ```tsx
-import { Counter } from '@ds/counter';
+import { Counter } from '@cloud-ru/ds-counter';
 
 export function ThousandsK() {
   return <Counter value={2500} variant='count-k' />;

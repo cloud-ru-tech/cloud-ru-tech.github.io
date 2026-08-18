@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-modal-predefined
+﻿# @cloud-ru/ds-uikit-product-modal-predefined
 
 > Product preset-компоненты для delete, recall и release notes сценариев на базе Modal и BottomSheet.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-modal-predefined/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-modal-predefined
+pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 ```
 
 ## API
@@ -170,8 +170,8 @@ pnpm add @ds/uikit-product-modal-predefined
 ### DeleteBasic
 
 ```tsx
-import { Button } from '@ds/button';
-import { DeleteModal } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { DeleteModal } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 export function DeleteBasic() {
@@ -194,8 +194,8 @@ export function DeleteBasic() {
 ### DeleteConfirmable
 
 ```tsx
-import { Button } from '@ds/button';
-import { DeleteModal } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { DeleteModal } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 export function DeleteConfirmable() {
@@ -220,8 +220,8 @@ export function DeleteConfirmable() {
 ### RecallBasic
 
 ```tsx
-import { Button } from '@ds/button';
-import { RecallModal } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { RecallModal } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 export function RecallBasic() {
@@ -239,8 +239,8 @@ export function RecallBasic() {
 ### RecallConfirmable
 
 ```tsx
-import { Button } from '@ds/button';
-import { RecallModal } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { RecallModal } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 export function RecallConfirmable() {
@@ -264,8 +264,8 @@ export function RecallConfirmable() {
 ### ReleaseNotesData
 
 ```tsx
-import { Button } from '@ds/button';
-import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { ReleaseNotes } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 import { releaseNotesItems } from './releaseNotesItems';
@@ -285,8 +285,8 @@ export function ReleaseNotesData() {
 ### ReleaseNotesError
 
 ```tsx
-import { Button } from '@ds/button';
-import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { ReleaseNotes } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 import { releaseNotesItems } from './releaseNotesItems';
@@ -312,8 +312,8 @@ export function ReleaseNotesError() {
 ### ReleaseNotesNoData
 
 ```tsx
-import { Button } from '@ds/button';
-import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { ReleaseNotes } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 import { releaseNotesItems } from './releaseNotesItems';
@@ -333,8 +333,8 @@ export function ReleaseNotesNoData() {
 ### ReleaseNotesVideo
 
 ```tsx
-import { Button } from '@ds/button';
-import { ReleaseNotes } from '@ds/uikit-product-modal-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { ReleaseNotes } from '@cloud-ru/ds-uikit-product-modal-predefined';
 import { useState } from 'react';
 
 import { releaseNotesItems } from './releaseNotesItems';

@@ -1,5 +1,5 @@
 import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./CodeEditor.BCeMHaUX.js";var i=e(t(),1),a=n(),o=`{
-  "name": "@ds/code-editor",
+  "name": "@cloud-ru/ds-code-editor",
   "version": "0.0.0",
   "language": "json"
 }

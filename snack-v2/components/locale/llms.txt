@@ -1,4 +1,4 @@
-﻿# @ds/locale
+﻿# @cloud-ru/ds-locale
 
 > Рантайм локализации — строки живут в самих пакетах (defineLocale/defineMessages), провайдер несёт только язык.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/locale/
 ## Установка
 
 ```sh
-pnpm add @ds/locale
+pnpm add @cloud-ru/ds-locale
 ```
 
 ## Когда использовать
@@ -40,12 +40,12 @@ pnpm add @ds/locale
 ### LanguageToggle
 
 ```tsx
-import { Button } from '@ds/button';
-import { defineLocale, defineMessages, LocaleProvider } from '@ds/locale';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { Typography } from '@ds/typography';
-import { Flex } from '@ds/uikit-product-flex';
+import { Button } from '@cloud-ru/ds-button';
+import { defineLocale, defineMessages, LocaleProvider } from '@cloud-ru/ds-locale';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { Typography } from '@cloud-ru/ds-typography';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 // Словарь компонента co-located: defineMessages требует одинаковый набор ключей во всех языках.

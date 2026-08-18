@@ -1,4 +1,4 @@
-﻿# @ds/code-editor
+﻿# @cloud-ru/ds-code-editor
 
 > Обёртка над monaco-editor с темизацией на токенах дизайн-системы, шапкой с языком и кнопкой копирования, async/lazy-загрузкой и JSON/YAML-валидацией по schema.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/code-editor/
 ## Установка
 
 ```sh
-pnpm add @ds/code-editor
+pnpm add @cloud-ru/ds-code-editor
 ```
 
 ## Когда использовать
@@ -103,11 +103,11 @@ _Нет публичных пропсов._
 ### Json
 
 ```tsx
-import { CodeEditor } from '@ds/code-editor';
+import { CodeEditor } from '@cloud-ru/ds-code-editor';
 import { useState } from 'react';
 
 const INITIAL = `{
-  "name": "@ds/code-editor",
+  "name": "@cloud-ru/ds-code-editor",
   "version": "0.0.0",
   "language": "json"
 }
@@ -123,7 +123,7 @@ export function Json() {
 ### LazyLoaded
 
 ```tsx
-import { LazyCodeEditor } from '@ds/code-editor';
+import { LazyCodeEditor } from '@cloud-ru/ds-code-editor';
 import { useState } from 'react';
 
 const INITIAL = `{
@@ -141,7 +141,7 @@ export function LazyLoaded() {
 ### NoBackground
 
 ```tsx
-import { CodeEditor } from '@ds/code-editor';
+import { CodeEditor } from '@cloud-ru/ds-code-editor';
 import { useState } from 'react';
 
 import styles from './NoBackground.module.scss';
@@ -170,7 +170,7 @@ export function NoBackground() {
 ### WithHeader
 
 ```tsx
-import { CodeEditor } from '@ds/code-editor';
+import { CodeEditor } from '@cloud-ru/ds-code-editor';
 import { useState } from 'react';
 
 const INITIAL = `{
@@ -201,10 +201,10 @@ export function WithHeader() {
 ### Yaml
 
 ```tsx
-import { CodeEditor } from '@ds/code-editor';
+import { CodeEditor } from '@cloud-ru/ds-code-editor';
 import { useState } from 'react';
 
-const INITIAL = `name: '@ds/code-editor'
+const INITIAL = `name: '@cloud-ru/ds-code-editor'
 version: 0.0.0
 language: yaml
 `;

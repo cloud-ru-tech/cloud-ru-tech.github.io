@@ -1,4 +1,4 @@
-﻿# @ds/ai-field-banner
+﻿# @cloud-ru/ds-ai-field-banner
 
 > Инлайн-баннер для поля ввода с семантическим типом, иконкой, описанием и действием.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-field-banner/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-field-banner
+pnpm add @cloud-ru/ds-ai-field-banner
 ```
 
 ## Когда использовать
@@ -18,8 +18,8 @@ pnpm add @ds/ai-field-banner
 
 ### Когда не нужен
 
-- Полноразмерный inline-alert в контенте страницы — используйте `@ds/alert`.
-- Системный баннер по верхней кромке — используйте `AlertTop` из `@ds/alert`.
+- Полноразмерный inline-alert в контенте страницы — используйте `@cloud-ru/ds-alert`.
+- Системный баннер по верхней кромке — используйте `AlertTop` из `@cloud-ru/ds-alert`.
 
 ## API
 
@@ -46,8 +46,8 @@ pnpm add @ds/ai-field-banner
 ### Default
 
 ```tsx
-import { AiFieldBanner, TYPE } from '@ds/ai-field-banner';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiFieldBanner, TYPE } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Default() {
   return (
@@ -65,8 +65,8 @@ export function Default() {
 ### Mobile
 
 ```tsx
-import { AiFieldBanner, SIZE, TYPE } from '@ds/ai-field-banner';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiFieldBanner, SIZE, TYPE } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Mobile() {
   return (
@@ -84,8 +84,8 @@ export function Mobile() {
 ### Types
 
 ```tsx
-import { AiFieldBanner, TYPE_ORDER } from '@ds/ai-field-banner';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiFieldBanner, TYPE_ORDER } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 const types = TYPE_ORDER;
 
@@ -109,8 +109,8 @@ export function Types() {
 ### WithAdditionalSlot
 
 ```tsx
-import { AiFieldBanner, TYPE } from '@ds/ai-field-banner';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiFieldBanner, TYPE } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function WithAdditionalSlot() {
   return (

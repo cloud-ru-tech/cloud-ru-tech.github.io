@@ -1,4 +1,4 @@
-﻿# @ds/promo-tag
+﻿# @cloud-ru/ds-promo-tag
 
 > Промо-тег — цветной лейбл для маркетинговых акцентов, выделения категорий и статусных ярлыков. Опционально кликабельный.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/promo-tag/
 ## Установка
 
 ```sh
-pnpm add @ds/promo-tag
+pnpm add @cloud-ru/ds-promo-tag
 ```
 
 ## Когда использовать
@@ -46,7 +46,7 @@ pnpm add @ds/promo-tag
 ### Basic
 
 ```tsx
-import { PromoTag } from '@ds/promo-tag';
+import { PromoTag } from '@cloud-ru/ds-promo-tag';
 
 export function Basic() {
   return <PromoTag label='NEW' appearance='primary' roleAppearance='accent' />;
@@ -56,7 +56,7 @@ export function Basic() {
 ### Clickable
 
 ```tsx
-import { PromoTag } from '@ds/promo-tag';
+import { PromoTag } from '@cloud-ru/ds-promo-tag';
 import { useState } from 'react';
 
 export function Clickable() {
@@ -69,7 +69,7 @@ export function Clickable() {
 ### Colors
 
 ```tsx
-import { PromoTag } from '@ds/promo-tag';
+import { PromoTag } from '@cloud-ru/ds-promo-tag';
 
 export function Colors() {
   return (
@@ -86,7 +86,7 @@ export function Colors() {
 ### Polymorphic
 
 ```tsx
-import { APPEARANCE, PromoTag, ROLE_APPEARANCE } from '@ds/promo-tag';
+import { APPEARANCE, PromoTag, ROLE_APPEARANCE } from '@cloud-ru/ds-promo-tag';
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 type MockLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & { to: string };

@@ -1,4 +1,4 @@
-﻿# @ds/adaptive
+﻿# @cloud-ru/ds-adaptive
 
 > React Context текущей раскладки (layoutType) — переключает компоненты дизайн-системы между mobile и desktop поверхностями.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/adaptive/
 ## Установка
 
 ```sh
-pnpm add @ds/adaptive
+pnpm add @cloud-ru/ds-adaptive
 ```
 
 ## Когда использовать
@@ -15,7 +15,7 @@ pnpm add @ds/adaptive
 - Приложение использует адаптивные компоненты дизайн-системы и должно переключать их между mobile и desktop поверхностями. Провайдер ставится один раз в корне.
 - Раскладка считается в корне через `useAdaptiveBootstrap()` (user-agent + media-query) и раздаётся вложенным компонентам без проброса пропа.
 - Микрофронт получает раскладку из реактивного стора хост-приложения — провайдер подключается через `store` (адаптер собирается `createAdaptiveStore`).
-- Серверный рендеринг: раскладка вычисляется из user-agent запроса через подпуть `@ds/adaptive/ssr` (чистые функции без React Context).
+- Серверный рендеринг: раскладка вычисляется из user-agent запроса через подпуть `@cloud-ru/ds-adaptive/ssr` (чистые функции без React Context).
 
 Точечно зафиксировать платформу для поддерева можно вложенным `<AdaptiveProvider layoutType=…>` или HOC `withLayoutType(Component, …)` — он затеняет внешний контекст. Пропа `layoutType` у самих компонентов нет: форс идёт только через контекст.
 
@@ -37,10 +37,10 @@ pnpm add @ds/adaptive
 ### CustomBreakpoints
 
 ```tsx
-import { AdaptiveProvider, isMobileLayout, useAdaptiveBootstrap, useAdaptiveLayout } from '@ds/adaptive';
-import { Tag } from '@ds/tag';
-import { Typography } from '@ds/typography';
-import { Flex } from '@ds/uikit-product-flex';
+import { AdaptiveProvider, isMobileLayout, useAdaptiveBootstrap, useAdaptiveLayout } from '@cloud-ru/ds-adaptive';
+import { Tag } from '@cloud-ru/ds-tag';
+import { Typography } from '@cloud-ru/ds-typography';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 
 // Раскладка приходит из контекста; Tag перекрашивается, когда ширина окна пересекает порог.
 function LayoutSurface() {
@@ -71,11 +71,11 @@ export function CustomBreakpoints() {
 ### LayoutTypeOverride
 
 ```tsx
-import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@ds/adaptive';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { Typography } from '@ds/typography';
-import { Flex } from '@ds/uikit-product-flex';
+import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@cloud-ru/ds-adaptive';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { Typography } from '@cloud-ru/ds-typography';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const CONTEXT_ITEMS = [
@@ -133,11 +133,11 @@ export function LayoutTypeOverride() {
 ### ProviderBasic
 
 ```tsx
-import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@ds/adaptive';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { Typography } from '@ds/typography';
-import { Flex } from '@ds/uikit-product-flex';
+import { AdaptiveProvider, isMobileLayout, LAYOUT_TYPE, LayoutType, useAdaptiveLayout } from '@cloud-ru/ds-adaptive';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { Typography } from '@cloud-ru/ds-typography';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
 const LAYOUT_ITEMS = Object.values(LAYOUT_TYPE).map(value => ({ value, label: value }));

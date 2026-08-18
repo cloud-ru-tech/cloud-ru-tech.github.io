@@ -1,4 +1,4 @@
-﻿# @ds/toggles
+﻿# @cloud-ru/ds-toggles
 
 > Пакет компонентов выбора и переключения — Checkbox, Radio, Switch, Favourite и контейнер ToggleGroup с общими токенами размеров и состояний.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/toggles/
 ## Установка
 
 ```sh
-pnpm add @ds/toggles
+pnpm add @cloud-ru/ds-toggles
 ```
 
 ## API
@@ -127,7 +127,7 @@ pnpm add @ds/toggles
 ### CheckboxBasic
 
 ```tsx
-import { Checkbox } from '@ds/toggles';
+import { Checkbox } from '@cloud-ru/ds-toggles';
 
 export function CheckboxBasic() {
   return <Checkbox defaultChecked />;
@@ -137,7 +137,7 @@ export function CheckboxBasic() {
 ### CheckboxIndeterminate
 
 ```tsx
-import { Checkbox } from '@ds/toggles';
+import { Checkbox } from '@cloud-ru/ds-toggles';
 
 export function CheckboxIndeterminate() {
   return <Checkbox indeterminateDefault />;
@@ -147,7 +147,7 @@ export function CheckboxIndeterminate() {
 ### CheckboxStates
 
 ```tsx
-import { Checkbox } from '@ds/toggles';
+import { Checkbox } from '@cloud-ru/ds-toggles';
 
 export function CheckboxStates() {
   return (
@@ -165,7 +165,7 @@ export function CheckboxStates() {
 ### FavouriteHeart
 
 ```tsx
-import { Favourite } from '@ds/toggles';
+import { Favourite } from '@cloud-ru/ds-toggles';
 
 export function FavouriteHeart() {
   return <Favourite icon='heart' defaultChecked />;
@@ -175,7 +175,7 @@ export function FavouriteHeart() {
 ### FavouriteStar
 
 ```tsx
-import { Favourite } from '@ds/toggles';
+import { Favourite } from '@cloud-ru/ds-toggles';
 
 export function FavouriteStar() {
   return <Favourite icon='star' defaultChecked />;
@@ -185,7 +185,7 @@ export function FavouriteStar() {
 ### FavouriteStates
 
 ```tsx
-import { Favourite } from '@ds/toggles';
+import { Favourite } from '@cloud-ru/ds-toggles';
 
 export function FavouriteStates() {
   return (
@@ -202,7 +202,7 @@ export function FavouriteStates() {
 ### RadioBasic
 
 ```tsx
-import { Radio } from '@ds/toggles';
+import { Radio } from '@cloud-ru/ds-toggles';
 
 export function RadioBasic() {
   return <Radio defaultChecked />;
@@ -212,7 +212,7 @@ export function RadioBasic() {
 ### RadioGroup
 
 ```tsx
-import { Radio } from '@ds/toggles';
+import { Radio } from '@cloud-ru/ds-toggles';
 
 export function RadioGroup() {
   return (
@@ -234,7 +234,7 @@ export function RadioGroup() {
 ### RadioStates
 
 ```tsx
-import { Radio } from '@ds/toggles';
+import { Radio } from '@cloud-ru/ds-toggles';
 
 export function RadioStates() {
   return (
@@ -252,7 +252,7 @@ export function RadioStates() {
 ### SwitchBasic
 
 ```tsx
-import { Switch } from '@ds/toggles';
+import { Switch } from '@cloud-ru/ds-toggles';
 
 export function SwitchBasic() {
   return <Switch defaultChecked />;
@@ -262,7 +262,7 @@ export function SwitchBasic() {
 ### SwitchSizes
 
 ```tsx
-import { Switch } from '@ds/toggles';
+import { Switch } from '@cloud-ru/ds-toggles';
 
 export function SwitchSizes() {
   return (
@@ -277,7 +277,7 @@ export function SwitchSizes() {
 ### SwitchStates
 
 ```tsx
-import { Switch } from '@ds/toggles';
+import { Switch } from '@cloud-ru/ds-toggles';
 
 export function SwitchStates() {
   return (
@@ -295,7 +295,7 @@ export function SwitchStates() {
 ### ToggleGroupControlled
 
 ```tsx
-import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { ToggleGroup, useToggleGroup } from '@cloud-ru/ds-toggles';
 import { useState } from 'react';
 
 function Option({ id, label }: { id: string; label: string }) {
@@ -325,7 +325,7 @@ export function ToggleGroupControlled() {
 ### ToggleGroupMultiple
 
 ```tsx
-import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { ToggleGroup, useToggleGroup } from '@cloud-ru/ds-toggles';
 import { useState } from 'react';
 
 function Chip({ id, label }: { id: string; label: string }) {
@@ -352,7 +352,7 @@ export function ToggleGroupMultiple() {
 ### ToggleGroupSingle
 
 ```tsx
-import { ToggleGroup, useToggleGroup } from '@ds/toggles';
+import { ToggleGroup, useToggleGroup } from '@cloud-ru/ds-toggles';
 import { useState } from 'react';
 
 function Chip({ id, label }: { id: string; label: string }) {

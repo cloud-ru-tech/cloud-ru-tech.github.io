@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-notification
+﻿# @cloud-ru/ds-uikit-product-notification
 
 > Пакет уведомлений — карточка NotificationCard, лента NotificationPanelContent со стеками и группами и адаптивная обёртка NotificationPanel (drawer на desktop, bottom-sheet на mobile).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-notification/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-notification
+pnpm add @cloud-ru/ds-uikit-product-notification
 ```
 
 ## API
@@ -34,7 +34,7 @@ pnpm add @ds/uikit-product-notification
 | `description` | `ReactNode` | — | no | Описание уведомления — вторичный текст под заголовком |
 | `id` | `string` | — | yes | Идентификатор уведомления |
 | `label` | `string` | — | no | Лейбл перед заголовком |
-| `link` | `PickLinkProps<"a", "label" \| "truncateVariant" \| "insideText">` | — | no | Ссылка (рендерится как `<a href>` через `@ds/link`) |
+| `link` | `PickLinkProps<"a", "label" \| "truncateVariant" \| "insideText">` | — | no | Ссылка (рендерится как `<a href>` через `@cloud-ru/ds-link`) |
 | `onClick` | `MouseEventHandler<HTMLDivElement>` | — | no | Колбэк клика по карточке. Делает карточку кликабельной (`role='button'`, фокус с клавиатуры). Активация по карточке срабатывает только при фокусе на самой карточке — вложенные кнопки, ссылка и меню действий активируются независимо. |
 | `onVisible` | `((cardId: string) => void)` | — | no | Колбэк при попадании карточки в область видимости на 80% |
 | `primaryButton` | `NotificationButtonProps` | — | no | Кнопка главного действия у карточки (рендерится как Button view='tonal') |
@@ -184,7 +184,7 @@ pnpm add @ds/uikit-product-notification
 ### BasicCard
 
 ```tsx
-import { APPEARANCE, NotificationCard } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard } from '@cloud-ru/ds-uikit-product-notification';
 
 export function BasicCard() {
   return (
@@ -203,7 +203,7 @@ export function BasicCard() {
 ### DeployFailureCard
 
 ```tsx
-import { APPEARANCE, NotificationCard } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard } from '@cloud-ru/ds-uikit-product-notification';
 import { useState } from 'react';
 
 export function DeployFailureCard() {
@@ -247,7 +247,7 @@ export function DeployFailureCard() {
 ### IncidentCard
 
 ```tsx
-import { APPEARANCE, NotificationCard } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard } from '@cloud-ru/ds-uikit-product-notification';
 
 export function IncidentCard() {
   return (
@@ -268,7 +268,7 @@ export function IncidentCard() {
 ### PanelBasic
 
 ```tsx
-import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
 import { useState } from 'react';
 
 export function PanelBasic() {
@@ -333,8 +333,8 @@ export function PanelBasic() {
 ### PanelError
 
 ```tsx
-import { CrossSVG } from '@ds/icons/interface/system';
-import { NotificationPanelContent } from '@ds/uikit-product-notification';
+import { CrossSVG } from '@cloud-ru/ds-icons/interface/system';
+import { NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
 
 export function PanelError() {
   return (
@@ -355,7 +355,7 @@ export function PanelError() {
 ### PanelFull
 
 ```tsx
-import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
 import { useMemo, useState } from 'react';
 
 type Filter = 'all' | 'unread' | 'mentions';
@@ -548,7 +548,7 @@ export function PanelFull() {
 ### PanelLoading
 
 ```tsx
-import { NotificationPanelContent } from '@ds/uikit-product-notification';
+import { NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
 
 export function PanelLoading() {
   return (
@@ -574,13 +574,13 @@ export function PanelLoading() {
 ### PanelScenario
 
 ```tsx
-import { Button } from '@ds/button';
+import { Button } from '@cloud-ru/ds-button';
 import {
   APPEARANCE,
   NotificationCard,
   NotificationPanel,
   NotificationPanelContent,
-} from '@ds/uikit-product-notification';
+} from '@cloud-ru/ds-uikit-product-notification';
 import { useMemo, useState } from 'react';
 
 export function PanelScenario() {
@@ -666,7 +666,7 @@ export function PanelScenario() {
 ### UnreadCard
 
 ```tsx
-import { APPEARANCE, NotificationCard } from '@ds/uikit-product-notification';
+import { APPEARANCE, NotificationCard } from '@cloud-ru/ds-uikit-product-notification';
 import { useState } from 'react';
 
 export function UnreadCard() {

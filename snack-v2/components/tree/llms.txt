@@ -1,4 +1,4 @@
-﻿# @ds/tree
+﻿# @cloud-ru/ds-tree
 
 > Иерархический список с раскрывающимися узлами, выбором (single/multiple), кастомными иконками, контекстными действиями и асинхронной подгрузкой потомков.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/tree/
 ## Установка
 
 ```sh
-pnpm add @ds/tree
+pnpm add @cloud-ru/ds-tree
 ```
 
 ## Когда использовать
@@ -125,7 +125,7 @@ pnpm add @ds/tree
 ### AsyncLoad
 
 ```tsx
-import { Tree, TreeNodeProps } from '@ds/tree';
+import { Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const INITIAL: TreeNodeProps[] = [
@@ -162,7 +162,7 @@ export function AsyncLoad() {
 ### Basic
 
 ```tsx
-import { Tree, TreeNodeProps } from '@ds/tree';
+import { Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const DATA: TreeNodeProps[] = [
@@ -202,7 +202,7 @@ export function Basic() {
 ### MultiSelect
 
 ```tsx
-import { SELECTION_MODE, Tree, TreeNodeProps } from '@ds/tree';
+import { SELECTION_MODE, Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const DATA: TreeNodeProps[] = [
@@ -246,7 +246,7 @@ export function MultiSelect() {
 ### SingleSelect
 
 ```tsx
-import { SELECTION_MODE, Tree, TreeNodeProps } from '@ds/tree';
+import { SELECTION_MODE, Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const DATA: TreeNodeProps[] = [
@@ -291,7 +291,7 @@ export function SingleSelect() {
 ### WithActions
 
 ```tsx
-import { Tree, TreeNodeProps } from '@ds/tree';
+import { Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const DATA: TreeNodeProps[] = [
@@ -327,8 +327,8 @@ export function WithActions() {
 ### WithIcons
 
 ```tsx
-import { FileSVG, FolderOpenSVG, FolderSVG } from '@ds/icons/interface/system';
-import { Tree, TreeNodeProps } from '@ds/tree';
+import { FileSVG, FolderOpenSVG, FolderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { Tree, TreeNodeProps } from '@cloud-ru/ds-tree';
 import { useState } from 'react';
 
 const DATA: TreeNodeProps[] = [

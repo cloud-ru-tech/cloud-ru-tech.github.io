@@ -1,4 +1,4 @@
-﻿# @ds/tabs
+﻿# @cloud-ru/ds-tabs
 
 > Пакет табов — compound-компонент Tabs c субкомпонентами TabBar, Tab и TabContent для горизонтальной и вертикальной навигации.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/tabs/
 ## Установка
 
 ```sh
-pnpm add @ds/tabs
+pnpm add @cloud-ru/ds-tabs
 ```
 
 ## Когда использовать
@@ -91,7 +91,7 @@ pnpm add @ds/tabs
 ### Disabled
 
 ```tsx
-import { Tabs } from '@ds/tabs';
+import { Tabs } from '@cloud-ru/ds-tabs';
 
 export function Disabled() {
   return (
@@ -108,7 +108,7 @@ export function Disabled() {
 ### SizeL
 
 ```tsx
-import { SIZE, Tabs } from '@ds/tabs';
+import { SIZE, Tabs } from '@cloud-ru/ds-tabs';
 
 export function SizeL() {
   return (
@@ -125,7 +125,7 @@ export function SizeL() {
 ### Uncontrolled
 
 ```tsx
-import { Tabs } from '@ds/tabs';
+import { Tabs } from '@cloud-ru/ds-tabs';
 
 export function Uncontrolled() {
   return (
@@ -144,7 +144,7 @@ export function Uncontrolled() {
 ### Vertical
 
 ```tsx
-import { ORIENTATION, Tabs } from '@ds/tabs';
+import { ORIENTATION, Tabs } from '@cloud-ru/ds-tabs';
 
 export function Vertical() {
   return (
@@ -161,7 +161,7 @@ export function Vertical() {
 ### WithContent
 
 ```tsx
-import { Tabs } from '@ds/tabs';
+import { Tabs } from '@cloud-ru/ds-tabs';
 
 export function WithContent() {
   return (
@@ -184,7 +184,7 @@ export function WithContent() {
 ### WithCounter
 
 ```tsx
-import { Tabs } from '@ds/tabs';
+import { Tabs } from '@cloud-ru/ds-tabs';
 
 export function WithCounter() {
   return (

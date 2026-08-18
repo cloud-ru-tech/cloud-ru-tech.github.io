@@ -1,4 +1,4 @@
-﻿# @ds/breadcrumbs
+﻿# @cloud-ru/ds-breadcrumbs
 
 > Хлебные крошки — навигационная цепочка пути до текущей страницы с адаптивным поведением при нехватке места.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/breadcrumbs/
 ## Установка
 
 ```sh
-pnpm add @ds/breadcrumbs
+pnpm add @cloud-ru/ds-breadcrumbs
 ```
 
 ## Когда использовать
@@ -81,7 +81,7 @@ pnpm add @ds/breadcrumbs
 ### BasicTrail
 
 ```tsx
-import { Breadcrumbs } from '@ds/breadcrumbs';
+import { Breadcrumbs } from '@cloud-ru/ds-breadcrumbs';
 
 const items = [
   { id: '1', label: 'Главная', href: '#' },
@@ -97,7 +97,7 @@ export function BasicTrail() {
 ### CustomSeparator
 
 ```tsx
-import { Breadcrumbs } from '@ds/breadcrumbs';
+import { Breadcrumbs } from '@cloud-ru/ds-breadcrumbs';
 
 const items = [
   { id: '1', label: 'Dashboard', href: '#' },
@@ -113,7 +113,7 @@ export function CustomSeparator() {
 ### LongTrail
 
 ```tsx
-import { Breadcrumbs } from '@ds/breadcrumbs';
+import { Breadcrumbs } from '@cloud-ru/ds-breadcrumbs';
 
 const items = [
   { id: '1', label: 'Литература', href: '#' },

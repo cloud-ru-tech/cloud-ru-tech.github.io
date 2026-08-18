@@ -1,4 +1,4 @@
-﻿# @ds/ai-field-notice
+﻿# @cloud-ru/ds-ai-field-notice
 
 > Композиция AiFieldBanner и AiQueue для контекстных уведомлений над AI-полем.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-field-notice/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-field-notice
+pnpm add @cloud-ru/ds-ai-field-notice
 ```
 
 ## Когда использовать
@@ -18,9 +18,9 @@ pnpm add @ds/ai-field-notice
 ### Когда не нужен
 
 - Универсальный баннер с произвольным текстом и типом:
-  - используйте `@ds/ai-field-banner` напрямую.
+  - используйте `@cloud-ru/ds-ai-field-banner` напрямую.
 - Inline-alert в контенте страницы:
-  - используйте `@ds/alert`.
+  - используйте `@cloud-ru/ds-alert`.
 
 ## API
 
@@ -78,7 +78,7 @@ pnpm add @ds/ai-field-notice
 ### Password
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Password() {
   return <AiFieldNotice size={SIZE.S} variant={VARIANT.Password} onActionClick={() => undefined} />;
@@ -88,7 +88,7 @@ export function Password() {
 ### Queue
 
 ```tsx
-import { AI_QUEUE_STEP_STATE, AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+import { AI_QUEUE_STEP_STATE, AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 const steps = [
   { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Done },
@@ -115,7 +115,7 @@ export function Queue() {
 ### Ssh
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Ssh() {
   return <AiFieldNotice size={SIZE.S} variant={VARIANT.Ssh} onActionClick={() => undefined} />;
@@ -125,7 +125,7 @@ export function Ssh() {
 ### Support
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Support() {
   return <AiFieldNotice size={SIZE.S} variant={VARIANT.Support} onActionClick={() => undefined} />;
@@ -135,7 +135,7 @@ export function Support() {
 ### VmAgent
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@ds/ai-field-notice';
+import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function VmAgent() {
   return (

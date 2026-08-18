@@ -1,4 +1,4 @@
-﻿# @ds/stepper
+﻿# @cloud-ru/ds-stepper
 
 > Адаптивный индикатор прогресса для многошаговых сценариев — единый render-prop API, раскладка из AdaptiveProvider.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/stepper/
 ## Установка
 
 ```sh
-pnpm add @ds/stepper
+pnpm add @cloud-ru/ds-stepper
 ```
 
 ## Когда использовать
@@ -87,8 +87,8 @@ pnpm add @ds/stepper
 ### BasicFlow
 
 ```tsx
-import { Button } from '@ds/button';
-import { Stepper } from '@ds/stepper';
+import { Button } from '@cloud-ru/ds-button';
+import { Stepper } from '@cloud-ru/ds-stepper';
 
 export function BasicFlow() {
   return (
@@ -123,9 +123,9 @@ export function BasicFlow() {
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { Button } from '@ds/button';
-import { Stepper } from '@ds/stepper';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { Button } from '@cloud-ru/ds-button';
+import { Stepper } from '@cloud-ru/ds-stepper';
 
 export function MobileLayout() {
   return (
@@ -162,8 +162,8 @@ export function MobileLayout() {
 ### WithValidator
 
 ```tsx
-import { Button } from '@ds/button';
-import { Stepper, StepsValidator } from '@ds/stepper';
+import { Button } from '@cloud-ru/ds-button';
+import { Stepper, StepsValidator } from '@cloud-ru/ds-stepper';
 import { useRef } from 'react';
 
 export function WithValidator() {

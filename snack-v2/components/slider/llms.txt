@@ -1,4 +1,4 @@
-﻿# @ds/slider
+﻿# @cloud-ru/ds-slider
 
 > Ползунок для выбора числового значения или диапазона — с метками, tooltip на ручке и опциональным равномерным распределением нелинейных значений.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/slider/
 ## Установка
 
 ```sh
-pnpm add @ds/slider
+pnpm add @cloud-ru/ds-slider
 ```
 
 ## Когда использовать
@@ -65,7 +65,7 @@ pnpm add @ds/slider
 ### Basic
 
 ```tsx
-import { Slider } from '@ds/slider';
+import { Slider } from '@cloud-ru/ds-slider';
 
 export function Basic() {
   return <Slider min={0} max={100} defaultValue={40} />;
@@ -75,7 +75,7 @@ export function Basic() {
 ### Disabled
 
 ```tsx
-import { Slider } from '@ds/slider';
+import { Slider } from '@cloud-ru/ds-slider';
 
 export function Disabled() {
   return <Slider min={0} max={100} defaultValue={40} disabled />;
@@ -85,7 +85,7 @@ export function Disabled() {
 ### Marks
 
 ```tsx
-import { Slider } from '@ds/slider';
+import { Slider } from '@cloud-ru/ds-slider';
 
 export function Marks() {
   return (
@@ -104,7 +104,7 @@ export function Marks() {
 ### Range
 
 ```tsx
-import { Slider } from '@ds/slider';
+import { Slider } from '@cloud-ru/ds-slider';
 
 export function Range() {
   return <Slider range min={0} max={100} defaultValue={[20, 70]} handleTip />;

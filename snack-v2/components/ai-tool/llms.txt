@@ -1,4 +1,4 @@
-﻿# @ds/ai-tool
+﻿# @cloud-ru/ds-ai-tool
 
 > Базовые презентационные элементы для сборки AI-компонентов Tool и Tool Simple — иконки, статус, текст, key-value, дерево, бейджи и блок деталей.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-tool/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-tool
+pnpm add @cloud-ru/ds-ai-tool
 ```
 
 ## Когда использовать
@@ -21,7 +21,7 @@ pnpm add @ds/ai-tool
 - Готовый высокоуровневый компонент вызова инструмента:
   - используйте `Tool` / `Tool Simple` (собраны из этих элементов).
 - Обычный контент-блок без семантики инструмента:
-  - используйте `@ds/card` или типографику `@ds/typography`.
+  - используйте `@cloud-ru/ds-card` или типографику `@cloud-ru/ds-typography`.
 
 ## API
 
@@ -194,7 +194,7 @@ pnpm add @ds/ai-tool
 ### ArrayList
 
 ```tsx
-import { AiToolArray, AiToolObject } from '@ds/ai-tool';
+import { AiToolArray, AiToolObject } from '@cloud-ru/ds-ai-tool';
 import { useState } from 'react';
 
 export function ArrayList() {
@@ -220,7 +220,7 @@ export function ArrayList() {
 ### Badges
 
 ```tsx
-import { AI_TOOL_BADGE_TYPE, AiToolBadge } from '@ds/ai-tool';
+import { AI_TOOL_BADGE_TYPE, AiToolBadge } from '@cloud-ru/ds-ai-tool';
 
 export function Badges() {
   return (
@@ -236,7 +236,7 @@ export function Badges() {
 ### DetailsCard
 
 ```tsx
-import { AiToolDetails, AiToolText } from '@ds/ai-tool';
+import { AiToolDetails, AiToolText } from '@cloud-ru/ds-ai-tool';
 
 export function DetailsCard() {
   return (
@@ -250,7 +250,7 @@ export function DetailsCard() {
 ### DetailsLabelSecret
 
 ```tsx
-import { AiToolDetailsLabel } from '@ds/ai-tool';
+import { AiToolDetailsLabel } from '@cloud-ru/ds-ai-tool';
 import { useState } from 'react';
 
 export function DetailsLabelSecret() {
@@ -272,7 +272,7 @@ export function DetailsLabelSecret() {
 ### IconSet
 
 ```tsx
-import { AI_TOOL_ICON_TYPE, AiToolIcon } from '@ds/ai-tool';
+import { AI_TOOL_ICON_TYPE, AiToolIcon } from '@cloud-ru/ds-ai-tool';
 
 export function IconSet() {
   return (
@@ -288,7 +288,7 @@ export function IconSet() {
 ### KeyValuePair
 
 ```tsx
-import { AiToolKeyValue } from '@ds/ai-tool';
+import { AiToolKeyValue } from '@cloud-ru/ds-ai-tool';
 
 export function KeyValuePair() {
   return (
@@ -303,7 +303,7 @@ export function KeyValuePair() {
 ### StatusRow
 
 ```tsx
-import { AI_TOOL_STATUS_STATE, AiToolStatus } from '@ds/ai-tool';
+import { AI_TOOL_STATUS_STATE, AiToolStatus } from '@cloud-ru/ds-ai-tool';
 
 export function StatusRow() {
   return (
@@ -320,7 +320,7 @@ export function StatusRow() {
 ### TextBlock
 
 ```tsx
-import { AiToolText } from '@ds/ai-tool';
+import { AiToolText } from '@cloud-ru/ds-ai-tool';
 
 export function TextBlock() {
   return (
@@ -337,7 +337,7 @@ export function TextBlock() {
 ### ToolCallTree
 
 ```tsx
-import { AiToolArray, AiToolKeyValue, AiToolObject } from '@ds/ai-tool';
+import { AiToolArray, AiToolKeyValue, AiToolObject } from '@cloud-ru/ds-ai-tool';
 import { useState } from 'react';
 
 export function ToolCallTree() {
@@ -360,7 +360,7 @@ export function ToolCallTree() {
 ### ToolSimpleBadges
 
 ```tsx
-import { AI_TOOL_BADGE_TYPE, AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiToolBadge, AiToolSimple } from '@ds/ai-tool';
+import { AI_TOOL_BADGE_TYPE, AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiToolBadge, AiToolSimple } from '@cloud-ru/ds-ai-tool';
 
 export function ToolSimpleBadges() {
   return (
@@ -392,7 +392,7 @@ export function ToolSimpleBadges() {
 ### ToolTimeline
 
 ```tsx
-import { AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiTool, AiToolKeyValue, AiToolText } from '@ds/ai-tool';
+import { AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiTool, AiToolKeyValue, AiToolText } from '@cloud-ru/ds-ai-tool';
 
 export function ToolTimeline() {
   return (

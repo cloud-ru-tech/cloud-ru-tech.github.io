@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-load-status
+﻿# @cloud-ru/ds-uikit-product-load-status
 
 > Строка статуса загрузки с линейным progress bar, заголовком и подсказкой — по макету Figma loadStatus.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-load-status/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-load-status
+pnpm add @cloud-ru/ds-uikit-product-load-status
 ```
 
 ## Когда использовать
@@ -48,7 +48,7 @@ pnpm add @ds/uikit-product-load-status
 ### Thresholds
 
 ```tsx
-import { LoadStatus } from '@ds/uikit-product-load-status';
+import { LoadStatus } from '@cloud-ru/ds-uikit-product-load-status';
 
 export function Thresholds() {
   return (
@@ -64,8 +64,8 @@ export function Thresholds() {
 ### WithAppearance
 
 ```tsx
-import { APPEARANCE } from '@ds/progress-bar';
-import { LoadStatus, PROGRESS_LIMIT_CONDITION } from '@ds/uikit-product-load-status';
+import { APPEARANCE } from '@cloud-ru/ds-progress-bar';
+import { LoadStatus, PROGRESS_LIMIT_CONDITION } from '@cloud-ru/ds-uikit-product-load-status';
 
 export function WithAppearance() {
   return (
@@ -83,7 +83,7 @@ export function WithAppearance() {
 ### WithHintError
 
 ```tsx
-import { LoadStatus } from '@ds/uikit-product-load-status';
+import { LoadStatus } from '@cloud-ru/ds-uikit-product-load-status';
 
 export function WithHintError() {
   return (
@@ -103,7 +103,7 @@ export function WithHintError() {
 ### WithPercent
 
 ```tsx
-import { LoadStatus } from '@ds/uikit-product-load-status';
+import { LoadStatus } from '@cloud-ru/ds-uikit-product-load-status';
 
 export function WithPercent() {
   return <LoadStatus label='Загрузка' progress={72} valueType='percent' />;

@@ -1,4 +1,4 @@
-﻿# @ds/accordion
+﻿# @cloud-ru/ds-accordion
 
 > Аккордеон дизайн-системы — контейнер Accordion и три уровня раскрываемых блоков CollapseBlock с общими токенами view, backgroundPredefined и chevronPosition.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/accordion/
 ## Установка
 
 ```sh
-pnpm add @ds/accordion
+pnpm add @cloud-ru/ds-accordion
 ```
 
 ## Когда использовать
@@ -36,7 +36,7 @@ pnpm add @ds/accordion
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
-| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@cloud-ru/ds-materials`). По умолчанию `material/neutralBackground1Level`. |
 | `chevronPosition` | `after \| before` | `after` | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
 | `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Дополнительный класс корневого элемента |
@@ -59,7 +59,7 @@ pnpm add @ds/accordion
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
-| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@cloud-ru/ds-materials`). По умолчанию `material/neutralBackground1Level`. |
 | `chevronPosition` | `after \| before` | — | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
 | `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Дополнительный класс корневого элемента |
@@ -80,7 +80,7 @@ pnpm add @ds/accordion
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `afterTitle` | `ReactNode` | — | no | Контент справа от заголовка |
-| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). По умолчанию `material/neutralBackground1Level`. |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | — | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@cloud-ru/ds-materials`). По умолчанию `material/neutralBackground1Level`. |
 | `chevronPosition` | `after \| before` | — | no | Положение шеврона-раскрытия относительно текста (`before` \| `after`) |
 | `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Дополнительный класс корневого элемента |
@@ -119,8 +119,8 @@ pnpm add @ds/accordion
 ### AfterTitle
 
 ```tsx
-import { Accordion } from '@ds/accordion';
-import { Counter } from '@ds/counter';
+import { Accordion } from '@cloud-ru/ds-accordion';
+import { Counter } from '@cloud-ru/ds-counter';
 
 import styles from './styles.module.scss';
 
@@ -143,8 +143,8 @@ export function AfterTitle() {
 ### Appearances
 
 ```tsx
-import { Accordion } from '@ds/accordion';
-import { BACKGROUND_PREDEFINED_FILL } from '@ds/materials';
+import { Accordion } from '@cloud-ru/ds-accordion';
+import { BACKGROUND_PREDEFINED_FILL } from '@cloud-ru/ds-materials';
 
 import styles from './styles.module.scss';
 
@@ -193,7 +193,7 @@ export function Appearances() {
 ### BasicAccordion
 
 ```tsx
-import { Accordion } from '@ds/accordion';
+import { Accordion } from '@cloud-ru/ds-accordion';
 
 import styles from './styles.module.scss';
 export function BasicAccordion() {
@@ -215,7 +215,7 @@ export function BasicAccordion() {
 ### ChevronBefore
 
 ```tsx
-import { Accordion } from '@ds/accordion';
+import { Accordion } from '@cloud-ru/ds-accordion';
 
 import styles from './styles.module.scss';
 export function ChevronBefore() {
@@ -249,7 +249,7 @@ export function ChevronBefore() {
 ### MultipleMode
 
 ```tsx
-import { Accordion } from '@ds/accordion';
+import { Accordion } from '@cloud-ru/ds-accordion';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -277,7 +277,7 @@ export function MultipleMode() {
 ### NestedLevels
 
 ```tsx
-import { Accordion } from '@ds/accordion';
+import { Accordion } from '@cloud-ru/ds-accordion';
 
 import styles from './styles.module.scss';
 export function NestedLevels() {

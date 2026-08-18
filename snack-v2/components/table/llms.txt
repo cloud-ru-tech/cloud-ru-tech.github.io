@@ -1,4 +1,4 @@
-﻿# @ds/table
+﻿# @cloud-ru/ds-table
 
 > Таблица данных: клиентская Table, серверная ServerTable и preset-обёртки с упрощённым API.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/table/
 ## Установка
 
 ```sh
-pnpm add @ds/table
+pnpm add @cloud-ru/ds-table
 ```
 
 ## API

@@ -1,4 +1,4 @@
-﻿# @ds/ai-chain-of-thoughts
+﻿# @cloud-ru/ds-ai-chain-of-thoughts
 
 > Цепочка рассуждений AI-агента (Chain of Thoughts) — сворачиваемый заголовок «Размышляю» с длительностью и список строк-инструментов.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-chain-of-thoughts/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-chain-of-thoughts
+pnpm add @cloud-ru/ds-ai-chain-of-thoughts
 ```
 
 ## Когда использовать
@@ -18,9 +18,9 @@ pnpm add @ds/ai-chain-of-thoughts
 ### Когда не нужен
 
 - Одиночный шаг reasoning без заголовка-цепочки:
-  - используйте `@ds/ai-reasoning`.
+  - используйте `@cloud-ru/ds-ai-reasoning`.
 - Отдельный вызов инструмента вне цепочки:
-  - используйте `AiTool` / `AiToolSimple` из `@ds/ai-tool`.
+  - используйте `AiTool` / `AiToolSimple` из `@cloud-ru/ds-ai-tool`.
 
 ## API
 
@@ -58,7 +58,7 @@ pnpm add @ds/ai-chain-of-thoughts
 ### Broken
 
 ```tsx
-import { AiChainOfThoughts } from '@ds/ai-chain-of-thoughts';
+import { AiChainOfThoughts } from '@cloud-ru/ds-ai-chain-of-thoughts';
 
 export function Broken() {
   return <AiChainOfThoughts broken />;
@@ -68,8 +68,8 @@ export function Broken() {
 ### Default
 
 ```tsx
-import { AiChainOfThoughts } from '@ds/ai-chain-of-thoughts';
-import { AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiTool, AiToolSimple } from '@ds/ai-tool';
+import { AiChainOfThoughts } from '@cloud-ru/ds-ai-chain-of-thoughts';
+import { AI_TOOL_ICON_TYPE, AI_TOOL_STATUS_STATE, AiTool, AiToolSimple } from '@cloud-ru/ds-ai-tool';
 
 export function Default() {
   return (
@@ -90,7 +90,7 @@ export function Default() {
 ### HeadlineStates
 
 ```tsx
-import { AiChainOfThoughtsHeadline } from '@ds/ai-chain-of-thoughts';
+import { AiChainOfThoughtsHeadline } from '@cloud-ru/ds-ai-chain-of-thoughts';
 
 export function HeadlineStates() {
   return (

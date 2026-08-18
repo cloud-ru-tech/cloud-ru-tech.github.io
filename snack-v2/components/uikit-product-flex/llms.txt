@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-flex
+﻿# @cloud-ru/ds-uikit-product-flex
 
 > Контейнер для flex-раскладки: направление, выравнивание, перенос и отступы между детьми.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-flex/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-flex
+pnpm add @cloud-ru/ds-uikit-product-flex
 ```
 
 ## Когда использовать
@@ -65,8 +65,8 @@ pnpm add @ds/uikit-product-flex
 ### Stack
 
 ```tsx
-import { Button } from '@ds/button';
-import { Flex } from '@ds/uikit-product-flex';
+import { Button } from '@cloud-ru/ds-button';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 
 export function Stack() {
   return (
@@ -82,8 +82,8 @@ export function Stack() {
 ### Toolbar
 
 ```tsx
-import { Button } from '@ds/button';
-import { Flex } from '@ds/uikit-product-flex';
+import { Button } from '@cloud-ru/ds-button';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 
 export function Toolbar() {
   return (
@@ -101,7 +101,7 @@ export function Toolbar() {
 ### WrapTags
 
 ```tsx
-import { Flex } from '@ds/uikit-product-flex';
+import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 
 const items = ['React', 'TypeScript', 'SCSS', 'Vite', 'Storybook', 'Playwright'];
 

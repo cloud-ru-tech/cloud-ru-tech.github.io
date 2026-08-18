@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./DragPreview.rMr6wqSt.js";import{t as n}from"./demo.module.DwzK125d.js";var r=e();function i(){return(0,r.jsx)(t,{className:n.entity,children:(0,r.jsx)(`div`,{className:n.row,children:`ListItem 2`})})}export{i as PreviewSurface};

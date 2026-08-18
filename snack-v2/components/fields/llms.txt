@@ -1,4 +1,4 @@
-﻿# @ds/fields
+﻿# @cloud-ru/ds-fields
 
 > Поля ввода с единой обёрткой label/caption/hint/error и общими осями size/validationState — текст, пароль, число, ползунок, дата, время, выбор, цвет.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/fields/
 ## Установка
 
 ```sh
-pnpm add @ds/fields
+pnpm add @cloud-ru/ds-fields
 ```
 
 ## API
@@ -329,7 +329,7 @@ pnpm add @ds/fields
 | `autocomplete` | `boolean` | `false` | no | Не фильтровать список на клиенте — фильтрацию обеспечивает потребитель (серверный поиск). Введённый текст уходит в `search.onChange`, список берётся из `items` как есть. |
 | `background` | `boolean` | `true` | no | Фон поля (acrylic) |
 | `caption` | `string` | — | no | Вторичная подпись справа |
-| `chips` | `boolean` | `true` | no | Отображать выбранные значения как чипы (`@ds/tag`) внутри поля. Если `false`, показывает строку из `formatSelected` либо comma-joined. |
+| `chips` | `boolean` | `true` | no | Отображать выбранные значения как чипы (`@cloud-ru/ds-tag`) внутри поля. Если `false`, показывает строку из `formatSelected` либо comma-joined. |
 | `className` | `string` | — | no | CSS-класс CSS-класс корня `FieldDecorator` |
 | `closeDroplistOnItemClick` | `boolean` | `true false` | no | Закрывать дроплист после клика на айтем. |
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
@@ -349,7 +349,7 @@ pnpm add @ds/fields
 | `iconBefore` | `ReactNode` | — | no | Иконка перед текстом |
 | `id` | `string` | — | no | HTML-атрибут `id` для input (и `for` у label) |
 | `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
-| `items` | `Item[]` | — | yes | Список айтемов дроплиста (формат `@ds/list`) |
+| `items` | `Item[]` | — | yes | Список айтемов дроплиста (формат `@cloud-ru/ds-list`) |
 | `label` | `string` | — | no | Заголовок |
 | `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
 | `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
@@ -367,8 +367,8 @@ pnpm add @ds/fields
 | `onKeyDown` | `((event: KeyboardEvent<HTMLInputElement>) => void)` | — | no | Колбек нажатия клавиши на input (вызывается после внутренней обработки навигации) |
 | `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек смены открытия |
 | `open` | `boolean` | — | no | Управляемое открытие дроплиста |
-| `pinBottom` | `Item[]` | — | no | Пресет-айтемы снизу (формат `@ds/list`) |
-| `pinTop` | `Item[]` | — | no | Пресет-айтемы сверху (формат `@ds/list`) |
+| `pinBottom` | `Item[]` | — | no | Пресет-айтемы снизу (формат `@cloud-ru/ds-list`) |
+| `pinTop` | `Item[]` | — | no | Пресет-айтемы сверху (формат `@cloud-ru/ds-list`) |
 | `placeholder` | `string` | — | no | Placeholder в триггере, когда нет выбранного значения |
 | `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | — | no | Placement дроплиста |
 | `postfix` | `ReactNode` | — | no | Постфикс — текст или нода после значения (Figma `postfix`) |
@@ -723,7 +723,7 @@ pnpm add @ds/fields
 ### Affixes
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
+import { FieldCombo } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function Affixes() {
@@ -735,7 +735,7 @@ export function Affixes() {
 ### Basic
 
 ```tsx
-import { FieldText } from '@ds/fields';
+import { FieldText } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function Basic() {
@@ -747,7 +747,7 @@ export function Basic() {
 ### ColorBasic
 
 ```tsx
-import { FieldColor } from '@ds/fields';
+import { FieldColor } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function ColorBasic() {
@@ -766,7 +766,7 @@ export function ColorBasic() {
 ### ColorModes
 
 ```tsx
-import { FieldColor } from '@ds/fields';
+import { FieldColor } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function ColorModes() {
@@ -787,7 +787,7 @@ export function ColorModes() {
 ### ColorReadonly
 
 ```tsx
-import { FieldColor } from '@ds/fields';
+import { FieldColor } from '@cloud-ru/ds-fields';
 
 export function ColorReadonly() {
   // readonly блокирует ввод — onChange не нужен, значение показывается из defaultValue.
@@ -798,7 +798,7 @@ export function ColorReadonly() {
 ### ColorWithAlpha
 
 ```tsx
-import { FieldColor } from '@ds/fields';
+import { FieldColor } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function ColorWithAlpha() {
@@ -818,7 +818,7 @@ export function ColorWithAlpha() {
 ### DateBasic
 
 ```tsx
-import { FieldDate } from '@ds/fields';
+import { FieldDate } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function DateBasic() {
@@ -830,7 +830,7 @@ export function DateBasic() {
 ### DatePresets
 
 ```tsx
-import { DATE_MODE, FieldDate } from '@ds/fields';
+import { DATE_MODE, FieldDate } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 const today = new Date();
@@ -867,7 +867,7 @@ export function DatePresets() {
 ### DateRange
 
 ```tsx
-import { FieldDate } from '@ds/fields';
+import { FieldDate } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function DateRange() {
@@ -887,7 +887,7 @@ export function DateRange() {
 ### DateReadonly
 
 ```tsx
-import { FieldDate } from '@ds/fields';
+import { FieldDate } from '@cloud-ru/ds-fields';
 
 export function DateReadonly() {
   return <FieldDate label='Дата создания' readonly defaultValue={new Date(2026, 4, 17)} />;
@@ -897,7 +897,7 @@ export function DateReadonly() {
 ### DateTimeWithSeconds
 
 ```tsx
-import { FieldDate } from '@ds/fields';
+import { FieldDate } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function DateTimeWithSeconds() {
@@ -918,7 +918,7 @@ export function DateTimeWithSeconds() {
 ### ElementAfter
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
+import { FieldCombo } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 const CURRENCIES = [
@@ -957,8 +957,8 @@ export function ElementAfter() {
 ### ElementBefore
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
-import { CalendarSVG } from '@ds/icons/interface/system';
+import { FieldCombo } from '@cloud-ru/ds-fields';
+import { CalendarSVG } from '@cloud-ru/ds-icons/interface/system';
 import { useState } from 'react';
 
 function formatToday(): string {
@@ -985,8 +985,8 @@ export function ElementBefore() {
 ### IconAfter
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
-import { QuestionSVG } from '@ds/icons/interface/system';
+import { FieldCombo } from '@cloud-ru/ds-fields';
+import { QuestionSVG } from '@cloud-ru/ds-icons/interface/system';
 import { useState } from 'react';
 
 export function IconAfter() {
@@ -1006,8 +1006,8 @@ export function IconAfter() {
 ### IconAndAffix
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
-import { BankCardSVG } from '@ds/icons/interface/web';
+import { FieldCombo } from '@cloud-ru/ds-fields';
+import { BankCardSVG } from '@cloud-ru/ds-icons/interface/web';
 import { useState } from 'react';
 
 export function IconAndAffix() {
@@ -1028,8 +1028,8 @@ export function IconAndAffix() {
 ### IconBefore
 
 ```tsx
-import { FieldCombo } from '@ds/fields';
-import { SearchSVG } from '@ds/icons/interface/system';
+import { FieldCombo } from '@cloud-ru/ds-fields';
+import { SearchSVG } from '@cloud-ru/ds-icons/interface/system';
 import { useState } from 'react';
 
 export function IconBefore() {
@@ -1043,7 +1043,7 @@ export function IconBefore() {
 ### Readonly
 
 ```tsx
-import { FieldText } from '@ds/fields';
+import { FieldText } from '@cloud-ru/ds-fields';
 
 export function Readonly() {
   return <FieldText label='Token' readonly value='sk-XXXXXXXXXXXXXXXXXXXXXXXX' />;
@@ -1053,7 +1053,7 @@ export function Readonly() {
 ### Secure
 
 ```tsx
-import { FieldSecure } from '@ds/fields';
+import { FieldSecure } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function Secure() {
@@ -1075,7 +1075,7 @@ export function Secure() {
 ### SecureAsync
 
 ```tsx
-import { FieldSecure } from '@ds/fields';
+import { FieldSecure } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 const fakeFetch = (): Promise<string> =>
@@ -1099,7 +1099,7 @@ export function SecureAsync() {
 ### SecureControlledVisibility
 
 ```tsx
-import { FieldSecure } from '@ds/fields';
+import { FieldSecure } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function SecureControlledVisibility() {
@@ -1121,7 +1121,7 @@ export function SecureControlledVisibility() {
 ### SecureReadonly
 
 ```tsx
-import { FieldSecure } from '@ds/fields';
+import { FieldSecure } from '@cloud-ru/ds-fields';
 
 export function SecureReadonly() {
   return <FieldSecure label='API Token' readonly defaultValue='sk-XXXXXXXXXXXXXXXXXXXXXXXX' />;
@@ -1131,8 +1131,8 @@ export function SecureReadonly() {
 ### Select
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const options: ItemProps[] = [
@@ -1160,8 +1160,8 @@ export function Select() {
 ### SelectAutocomplete
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useMemo, useState } from 'react';
 
 const ALL_REGIONS: ItemProps[] = [
@@ -1207,8 +1207,8 @@ export function SelectAutocomplete() {
 ### SelectCreatable
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const PRESET_TAGS: ItemProps[] = [
@@ -1238,8 +1238,8 @@ export function SelectCreatable() {
 ### SelectDisabledChips
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const options: ItemProps[] = [
@@ -1269,8 +1269,8 @@ export function SelectDisabledChips() {
 ### SelectItemWrapRender
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 // itemWrapRender оборачивает отрендеренный айтем в произвольный узел — типичный кейс:
@@ -1311,8 +1311,8 @@ export function SelectItemWrapRender() {
 ### SelectMultiple
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const options: ItemProps[] = [
@@ -1341,8 +1341,8 @@ export function SelectMultiple() {
 ### SelectPinned
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const regions: ItemProps[] = [
@@ -1373,8 +1373,8 @@ export function SelectPinned() {
 ### SelectReadonly
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemProps } from '@cloud-ru/ds-list';
 
 const options: ItemProps[] = [
   { id: 'm', content: { label: 'Medium (2 vCPU, 4 GB)' } },
@@ -1389,11 +1389,11 @@ export function SelectReadonly() {
 ### SelectRichContent
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
-// Айтемы @ds/list поддерживают label + caption + description.
+// Айтемы @cloud-ru/ds-list поддерживают label + caption + description.
 // Поиск (extractSearchText) матчит запрос по всем трём полям.
 const options: ItemProps[] = [
   {
@@ -1430,8 +1430,8 @@ export function SelectRichContent() {
 ### SelectSearchable
 
 ```tsx
-import { FieldSelect } from '@ds/fields';
-import { ItemId, ItemProps } from '@ds/list';
+import { FieldSelect } from '@cloud-ru/ds-fields';
+import { ItemId, ItemProps } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const options: ItemProps[] = [
@@ -1463,7 +1463,7 @@ export function SelectSearchable() {
 ### SliderRange
 
 ```tsx
-import { FieldSlider } from '@ds/fields';
+import { FieldSlider } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function SliderRange() {
@@ -1487,7 +1487,7 @@ export function SliderRange() {
 ### SliderWithFormatter
 
 ```tsx
-import { FieldSlider } from '@ds/fields';
+import { FieldSlider } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function SliderWithFormatter() {
@@ -1510,7 +1510,7 @@ export function SliderWithFormatter() {
 ### SliderWithMarks
 
 ```tsx
-import { FieldSlider } from '@ds/fields';
+import { FieldSlider } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function SliderWithMarks() {
@@ -1533,7 +1533,7 @@ export function SliderWithMarks() {
 ### Stepper
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function Stepper() {
@@ -1545,7 +1545,7 @@ export function Stepper() {
 ### StepperFractional
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function StepperFractional() {
@@ -1557,7 +1557,7 @@ export function StepperFractional() {
 ### StepperLimits
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function StepperLimits() {
@@ -1579,7 +1579,7 @@ export function StepperLimits() {
 ### StepperTooltips
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function StepperTooltips() {
@@ -1607,7 +1607,7 @@ export function StepperTooltips() {
 ### StepperUncontrolled
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 
 export function StepperUncontrolled() {
   return <FieldStepper label='Количество' postfix='шт' defaultValue={3} min={0} max={10} />;
@@ -1617,7 +1617,7 @@ export function StepperUncontrolled() {
 ### StepperWithPostfix
 
 ```tsx
-import { FieldStepper } from '@ds/fields';
+import { FieldStepper } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function StepperWithPostfix() {
@@ -1629,7 +1629,7 @@ export function StepperWithPostfix() {
 ### TextArea
 
 ```tsx
-import { FieldTextArea } from '@ds/fields';
+import { FieldTextArea } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function TextArea() {
@@ -1651,7 +1651,7 @@ export function TextArea() {
 ### TextAreaReadonly
 
 ```tsx
-import { FieldTextArea } from '@ds/fields';
+import { FieldTextArea } from '@cloud-ru/ds-fields';
 
 export function TextAreaReadonly() {
   return (
@@ -1669,7 +1669,7 @@ export function TextAreaReadonly() {
 ### TextAreaResizable
 
 ```tsx
-import { FieldTextArea } from '@ds/fields';
+import { FieldTextArea } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function TextAreaResizable() {
@@ -1691,7 +1691,7 @@ export function TextAreaResizable() {
 ### TextAreaUncontrolled
 
 ```tsx
-import { FieldTextArea } from '@ds/fields';
+import { FieldTextArea } from '@cloud-ru/ds-fields';
 
 export function TextAreaUncontrolled() {
   return (
@@ -1709,7 +1709,7 @@ export function TextAreaUncontrolled() {
 ### TextAreaWithLength
 
 ```tsx
-import { FieldTextArea } from '@ds/fields';
+import { FieldTextArea } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function TextAreaWithLength() {
@@ -1723,8 +1723,8 @@ export function TextAreaWithLength() {
 ### TimeBasic
 
 ```tsx
-import { TimeValue } from '@ds/calendar';
-import { FieldTime } from '@ds/fields';
+import { TimeValue } from '@cloud-ru/ds-calendar';
+import { FieldTime } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function TimeBasic() {
@@ -1738,7 +1738,7 @@ export function TimeBasic() {
 ### TimeReadonly
 
 ```tsx
-import { FieldTime } from '@ds/fields';
+import { FieldTime } from '@cloud-ru/ds-fields';
 
 export function TimeReadonly() {
   return <FieldTime label='Время выполнения' readonly defaultValue={{ hours: 23, minutes: 59, seconds: 59 }} />;
@@ -1748,8 +1748,8 @@ export function TimeReadonly() {
 ### TimeShowSeconds
 
 ```tsx
-import { TimeValue } from '@ds/calendar';
-import { FieldTime } from '@ds/fields';
+import { TimeValue } from '@cloud-ru/ds-calendar';
+import { FieldTime } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function TimeShowSeconds() {
@@ -1769,7 +1769,7 @@ export function TimeShowSeconds() {
 ### WithError
 
 ```tsx
-import { FieldText } from '@ds/fields';
+import { FieldText } from '@cloud-ru/ds-fields';
 import { useState } from 'react';
 
 export function WithError() {

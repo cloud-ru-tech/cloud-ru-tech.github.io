@@ -1,13 +1,13 @@
-﻿# @ds/ai-shimmer
+﻿# @cloud-ru/ds-ai-shimmer
 
-> Анимированный shimmer-блок для AI-сценариев с типографикой как в `@ds/typography`.
+> Анимированный shimmer-блок для AI-сценариев с типографикой как в `@cloud-ru/ds-typography`.
 
 Docs: /snack-v2/components/ai-shimmer/
 
 ## Установка
 
 ```sh
-pnpm add @ds/ai-shimmer
+pnpm add @cloud-ru/ds-ai-shimmer
 ```
 
 ## Когда использовать
@@ -17,8 +17,8 @@ pnpm add @ds/ai-shimmer
 
 ### Когда не нужен
 
-- Для нейтральной индикации загрузки без текста — используйте `@ds/skeleton`.
-- Для спиннера поверх модального окна — используйте `@ds/loader`.
+- Для нейтральной индикации загрузки без текста — используйте `@cloud-ru/ds-skeleton`.
+- Для спиннера поверх модального окна — используйте `@cloud-ru/ds-loader`.
 
 ## API
 
@@ -29,10 +29,10 @@ pnpm add @ds/ai-shimmer
 | `data-test-id` | `string` | `ai-shimmer` | no |  |
 | `iconMask` | `string` | — | no | Силуэт ведущей иконки как CSS `mask-image` (обычно `url("data:image/svg+xml,…")`). Если задан — перед текстом рисуется иконка, залитая тем же бегущим градиентом, что и текст: блеск проходит сплошной полосой «иконка → конец строки», как будто иконка — часть текста. Иконка не несёт собственного цвета, она наследует shimmer-покрытие (приглушённая база + блик). |
 | `iconSize` | `number` | `16` | no | Размер ведущей иконки в px (квадрат). Действует только с `iconMask`. По умолчанию `16`. |
-| `size` | `l \| m \| s` | `SIZE.m` | no | Размер типографики (`s`, `m`, `l`), как в `@ds/typography`. Задаёт `data-size` и шкалу шрифта для текста shimmer. |
+| `size` | `l \| m \| s` | `SIZE.m` | no | Размер типографики (`s`, `m`, `l`), как в `@cloud-ru/ds-typography`. Задаёт `data-size` и шкалу шрифта для текста shimmer. |
 | `text` | `string` | — | yes | Текст, по которому рендерится shimmer. Поддерживает переносы строк через `\n`. |
-| `variant` | `body \| display \| headline \| label \| title` | `VARIANT.body` | no | Вариант типографики, как в `@ds/typography`. Задаёт `data-variant` и шкалу шрифта. |
-| `weight` | `mono \| regular \| thin` | `WEIGHT.regular` | no | Начертание шрифта, как в `@ds/typography`. Задаёт `data-weight`. |
+| `variant` | `body \| display \| headline \| label \| title` | `VARIANT.body` | no | Вариант типографики, как в `@cloud-ru/ds-typography`. Задаёт `data-variant` и шкалу шрифта. |
+| `weight` | `mono \| regular \| thin` | `WEIGHT.regular` | no | Начертание шрифта, как в `@cloud-ru/ds-typography`. Задаёт `data-weight`. |
 
 #### Related types
 - `AiShimmerSize` = `l | m | s`
@@ -44,7 +44,7 @@ pnpm add @ds/ai-shimmer
 ### Basic
 
 ```tsx
-import { AiShimmer } from '@ds/ai-shimmer';
+import { AiShimmer } from '@cloud-ru/ds-ai-shimmer';
 
 export function Basic() {
   return <AiShimmer text='Generating AI response...' />;
@@ -54,7 +54,7 @@ export function Basic() {
 ### CustomSize
 
 ```tsx
-import { AiShimmer, SIZE } from '@ds/ai-shimmer';
+import { AiShimmer, SIZE } from '@cloud-ru/ds-ai-shimmer';
 
 export function CustomSize() {
   return (
@@ -70,7 +70,7 @@ export function CustomSize() {
 ### Multiline
 
 ```tsx
-import { AiShimmer } from '@ds/ai-shimmer';
+import { AiShimmer } from '@cloud-ru/ds-ai-shimmer';
 
 export function Multiline() {
   return <AiShimmer text={'Generating AI response for your request...\nPlease wait a few seconds.'} />;

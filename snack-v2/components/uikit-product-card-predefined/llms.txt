@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-card-predefined
+﻿# @cloud-ru/ds-uikit-product-card-predefined
 
 > Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceSmall, CardSuggest, CardCustom.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-card-predefined/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-card-predefined
+pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ```
 
 ## API
@@ -96,7 +96,7 @@ pnpm add @ds/uikit-product-card-predefined
 | `favorite` | `(FavoriteProps & { visibilityStrategy: "hover" \| "always"; })` | — | no | Настройки кнопки «Избранное». `visibilityStrategy` обязателен. |
 | `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
 | `outline` | `boolean` | — | no | Рамка вокруг карточки |
-| `promoBadge` | `PromoTagProps` | — | no | Промо-тег (бейдж). Тип — `PromoTagProps` из `@ds/promo-tag`. |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег (бейдж). Тип — `PromoTagProps` из `@cloud-ru/ds-promo-tag`. |
 | `title` | `string` | — | yes | Заголовок карточки |
 | `truncate` | `{ title?: number; }` | — | no | Настройки обрезки заголовка |
 
@@ -119,7 +119,7 @@ pnpm add @ds/uikit-product-card-predefined
 | `data-test-id` | `string` | — | no | Support prop для тестов |
 | `disabled` | `boolean` | — | no | Неактивное состояние |
 | `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
-| `promoBadge` | `PromoTagProps` | — | no | Промо-тег. Используйте `PromoTagProps` из `@ds/promo-tag`. |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег. Используйте `PromoTagProps` из `@cloud-ru/ds-promo-tag`. |
 | `size` | `m \| s` | `m` | no | Размер: управляет типографикой и отступами. `'m'` — roleTitle/m + roleBody/m, padding 16px; `'s'` — roleTitle/s + roleBody/s, padding 8px. |
 | `title` | `string` | — | yes | Заголовок |
 | `truncate` | `{ title?: number; content?: number; } \| undefined` | — | no | Настройки обрезки текста |
@@ -214,7 +214,7 @@ pnpm add @ds/uikit-product-card-predefined
 ### Basic
 
 ```tsx
-import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
 
 import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
 
@@ -233,7 +233,7 @@ export function Basic() {
 ### PolymorphicLink
 
 ```tsx
-import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
 
 import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
 
@@ -255,8 +255,8 @@ export function PolymorphicLink() {
 ### WithClose
 
 ```tsx
-import { Typography } from '@ds/typography';
-import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { Typography } from '@cloud-ru/ds-typography';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
 import { useState } from 'react';
 
 import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
@@ -287,8 +287,8 @@ export function WithClose() {
 ### WithOnClick
 
 ```tsx
-import { Typography } from '@ds/typography';
-import { CardBanner } from '@ds/uikit-product-card-predefined';
+import { Typography } from '@cloud-ru/ds-typography';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
 import { useState } from 'react';
 
 import illustrationSrc from '../assets/card-banner-illustration.jpg?url';

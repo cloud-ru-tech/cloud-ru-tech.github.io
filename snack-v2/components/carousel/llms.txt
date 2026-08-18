@@ -1,4 +1,4 @@
-﻿# @ds/carousel
+﻿# @cloud-ru/ds-carousel
 
 > Компонент горизонтальной прокрутки слайдов — стрелки, пагинация, свайп, автопрокрутка, infinite scroll и multi-item отображение.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/carousel/
 ## Установка
 
 ```sh
-pnpm add @ds/carousel
+pnpm add @cloud-ru/ds-carousel
 ```
 
 ## Когда использовать
@@ -16,7 +16,7 @@ pnpm add @ds/carousel
 - Онбординг с несколькими шагами.
 - Секции «Похожие товары», «Недавние проекты» — несколько карточек в viewport (`showItems > 1`).
 
-Когда **не** нужен: для табличных данных (используйте `@ds/tabs`), для форм (обычная вертикальная прокрутка), для длинных списков (виртуализация).
+Когда **не** нужен: для табличных данных (используйте `@cloud-ru/ds-tabs`), для форм (обычная вертикальная прокрутка), для длинных списков (виртуализация).
 
 ## API
 
@@ -67,7 +67,7 @@ pnpm add @ds/carousel
 ### Basic
 
 ```tsx
-import { Carousel } from '@ds/carousel';
+import { Carousel } from '@cloud-ru/ds-carousel';
 
 export function Basic() {
   return (
@@ -88,7 +88,7 @@ export function Basic() {
 ### Infinite
 
 ```tsx
-import { Carousel } from '@ds/carousel';
+import { Carousel } from '@cloud-ru/ds-carousel';
 
 export function Infinite() {
   return (
@@ -112,7 +112,7 @@ export function Infinite() {
 ### ThreePerView
 
 ```tsx
-import { Carousel } from '@ds/carousel';
+import { Carousel } from '@cloud-ru/ds-carousel';
 
 export function ThreePerView() {
   return (

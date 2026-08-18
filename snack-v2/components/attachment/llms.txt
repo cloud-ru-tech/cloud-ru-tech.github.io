@@ -1,4 +1,4 @@
-﻿# @ds/attachment
+﻿# @cloud-ru/ds-attachment
 
 > Пакет компонентов для отображения прикреплённых файлов — Attachment (горизонтальный) и AttachmentSquare (квадратный).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/attachment/
 ## Установка
 
 ```sh
-pnpm add @ds/attachment
+pnpm add @cloud-ru/ds-attachment
 ```
 
 ## Когда использовать
@@ -128,7 +128,7 @@ pnpm add @ds/attachment
 ### AttachmentError
 
 ```tsx
-import { Attachment } from '@ds/attachment';
+import { Attachment } from '@cloud-ru/ds-attachment';
 import { useState } from 'react';
 
 import { PDF_FILE } from './sample';
@@ -150,7 +150,7 @@ export function AttachmentError() {
 ### AttachmentLoading
 
 ```tsx
-import { Attachment } from '@ds/attachment';
+import { Attachment } from '@cloud-ru/ds-attachment';
 
 import { PDF_FILE } from './sample';
 
@@ -162,7 +162,7 @@ export function AttachmentLoading() {
 ### AttachmentSelectable
 
 ```tsx
-import { Attachment } from '@ds/attachment';
+import { Attachment } from '@cloud-ru/ds-attachment';
 import { useState } from 'react';
 
 import { PDF_FILE } from './sample';
@@ -184,7 +184,7 @@ export function AttachmentSelectable() {
 ### AttachmentSquareBasic
 
 ```tsx
-import { AttachmentSquare } from '@ds/attachment';
+import { AttachmentSquare } from '@cloud-ru/ds-attachment';
 
 import { PDF_FILE } from './sample';
 
@@ -202,7 +202,7 @@ export function AttachmentSquareBasic() {
 ### AttachmentSquareImage
 
 ```tsx
-import { AttachmentSquare } from '@ds/attachment';
+import { AttachmentSquare } from '@cloud-ru/ds-attachment';
 import { useEffect, useState } from 'react';
 
 import pictureUrl from './picture.jpg?url';
@@ -230,7 +230,7 @@ export function AttachmentSquareImage() {
 ### AttachmentWithImage
 
 ```tsx
-import { Attachment } from '@ds/attachment';
+import { Attachment } from '@cloud-ru/ds-attachment';
 import { useEffect, useState } from 'react';
 
 import pictureUrl from './picture.jpg?url';
@@ -259,7 +259,7 @@ export function AttachmentWithImage() {
 ### BasicAttachment
 
 ```tsx
-import { Attachment } from '@ds/attachment';
+import { Attachment } from '@cloud-ru/ds-attachment';
 
 import { PDF_FILE } from './sample';
 

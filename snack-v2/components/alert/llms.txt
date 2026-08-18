@@ -1,4 +1,4 @@
-﻿# @ds/alert
+﻿# @cloud-ru/ds-alert
 
 > Семантическое уведомление — компонент Alert для inline-нотификаций в контенте и AlertTop для системных баннеров по верхней кромке.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/alert/
 ## Установка
 
 ```sh
-pnpm add @ds/alert
+pnpm add @cloud-ru/ds-alert
 ```
 
 ## API
@@ -131,8 +131,8 @@ _Нет публичных пропсов._
 ### AdaptiveTruncate
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { Alert } from '@ds/alert';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { Alert } from '@cloud-ru/ds-alert';
 
 const LONG_TITLE = 'Плановые технические работы в дата-центре: часть сервисов будет недоступна с 02:00 до 04:00 МСК';
 
@@ -150,7 +150,7 @@ export function AdaptiveTruncate() {
 ### Collapsible
 
 ```tsx
-import { Alert } from '@ds/alert';
+import { Alert } from '@cloud-ru/ds-alert';
 
 export function Collapsible() {
   return (
@@ -167,7 +167,7 @@ export function Collapsible() {
 ### Error
 
 ```tsx
-import { Alert } from '@ds/alert';
+import { Alert } from '@cloud-ru/ds-alert';
 
 export function Error() {
   return (
@@ -184,7 +184,7 @@ export function Error() {
 ### Info
 
 ```tsx
-import { Alert } from '@ds/alert';
+import { Alert } from '@cloud-ru/ds-alert';
 
 export function Info() {
   return (
@@ -196,7 +196,7 @@ export function Info() {
 ### SystemNotice
 
 ```tsx
-import { AlertTop } from '@ds/alert';
+import { AlertTop } from '@cloud-ru/ds-alert';
 
 export function SystemNotice() {
   return (
@@ -212,7 +212,7 @@ export function SystemNotice() {
 ### WithActions
 
 ```tsx
-import { Alert } from '@ds/alert';
+import { Alert } from '@cloud-ru/ds-alert';
 
 export function WithActions() {
   return (

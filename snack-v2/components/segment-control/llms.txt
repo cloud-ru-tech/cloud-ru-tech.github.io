@@ -1,4 +1,4 @@
-﻿# @ds/segment-control
+﻿# @cloud-ru/ds-segment-control
 
 > Сегментированный переключатель — компактная радио-группа с единственным выбором, токенами размеров s/m/l, иконками, счётчиками и режимом полной ширины.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/segment-control/
 ## Установка
 
 ```sh
-pnpm add @ds/segment-control
+pnpm add @cloud-ru/ds-segment-control
 ```
 
 ## Когда использовать
@@ -71,7 +71,7 @@ pnpm add @ds/segment-control
 ### Basic
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 export function Basic() {
   return (
@@ -90,7 +90,7 @@ export function Basic() {
 ### Controlled
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 import { useState } from 'react';
 
 export function Controlled() {
@@ -116,7 +116,7 @@ export function Controlled() {
 ### DisabledSegment
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 export function DisabledSegment() {
   return (
@@ -135,7 +135,7 @@ export function DisabledSegment() {
 ### FullWidth
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 export function FullWidth() {
   return (
@@ -159,7 +159,7 @@ export function FullWidth() {
 ### Sizes
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 const items = [
   { value: 'one', label: 'One' },
@@ -181,7 +181,7 @@ export function Sizes() {
 ### WithCounter
 
 ```tsx
-import { SegmentControl } from '@ds/segment-control';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 export function WithCounter() {
   return (
@@ -200,8 +200,8 @@ export function WithCounter() {
 ### WithIcons
 
 ```tsx
-import { HomeSVG, PlusSVG, SettingsSVG } from '@ds/icons/interface/system';
-import { SegmentControl } from '@ds/segment-control';
+import { HomeSVG, PlusSVG, SettingsSVG } from '@cloud-ru/ds-icons/interface/system';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
 
 export function WithIcons() {
   return (

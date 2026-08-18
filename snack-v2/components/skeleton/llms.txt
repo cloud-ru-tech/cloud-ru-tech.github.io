@@ -1,4 +1,4 @@
-﻿# @ds/skeleton
+﻿# @cloud-ru/ds-skeleton
 
 > Пакет скелетонов дизайн-системы — компоненты Skeleton, SkeletonText и WithSkeleton для индикации состояния загрузки.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/skeleton/
 ## Установка
 
 ```sh
-pnpm add @ds/skeleton
+pnpm add @cloud-ru/ds-skeleton
 ```
 
 ## Когда использовать
@@ -71,7 +71,7 @@ pnpm add @ds/skeleton
 ### Block
 
 ```tsx
-import { Skeleton } from '@ds/skeleton';
+import { Skeleton } from '@cloud-ru/ds-skeleton';
 
 export function Block() {
   return <Skeleton loading width={240} height={24} borderRadius={4} />;
@@ -81,7 +81,7 @@ export function Block() {
 ### Circle
 
 ```tsx
-import { Skeleton } from '@ds/skeleton';
+import { Skeleton } from '@cloud-ru/ds-skeleton';
 
 export function Circle() {
   return <Skeleton loading width={48} height={48} borderRadius='50%' />;
@@ -91,7 +91,7 @@ export function Circle() {
 ### TextLines
 
 ```tsx
-import { SkeletonText } from '@ds/skeleton';
+import { SkeletonText } from '@cloud-ru/ds-skeleton';
 
 export function TextLines() {
   return <SkeletonText loading lines={3} variant='body' size='m' />;
@@ -101,7 +101,7 @@ export function TextLines() {
 ### WithToggle
 
 ```tsx
-import { SkeletonText, WithSkeleton } from '@ds/skeleton';
+import { SkeletonText, WithSkeleton } from '@cloud-ru/ds-skeleton';
 
 export function WithToggle() {
   const loading = true;

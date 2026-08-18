@@ -1,4 +1,4 @@
-﻿# @ds/loader
+﻿# @cloud-ru/ds-loader
 
 > Индикаторы загрузки — Spinner (круговой прогресс) и Sun (лучевой индикатор).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/loader/
 ## Установка
 
 ```sh
-pnpm add @ds/loader
+pnpm add @cloud-ru/ds-loader
 ```
 
 ## Когда использовать
@@ -44,7 +44,7 @@ pnpm add @ds/loader
 ### SpinnerDefault
 
 ```tsx
-import { Spinner } from '@ds/loader';
+import { Spinner } from '@cloud-ru/ds-loader';
 
 export function SpinnerDefault() {
   return <Spinner />;
@@ -54,7 +54,7 @@ export function SpinnerDefault() {
 ### SpinnerLarge
 
 ```tsx
-import { Spinner } from '@ds/loader';
+import { Spinner } from '@cloud-ru/ds-loader';
 
 export function SpinnerLarge() {
   return <Spinner size='l' />;
@@ -64,7 +64,7 @@ export function SpinnerLarge() {
 ### SunMedium
 
 ```tsx
-import { Sun } from '@ds/loader';
+import { Sun } from '@cloud-ru/ds-loader';
 
 export function SunMedium() {
   return <Sun size='m' />;

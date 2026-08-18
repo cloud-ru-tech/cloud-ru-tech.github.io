@@ -1,4 +1,4 @@
-﻿# @ds/input-private
+﻿# @cloud-ru/ds-input-private
 
 > Базовая обёртка `<input>` с состояниями, иконками, кнопкой очистки и счётчиком — фундамент для публичных полей ввода (Search, FieldText и пр.).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/input-private/
 ## Установка
 
 ```sh
-pnpm add @ds/input-private
+pnpm add @cloud-ru/ds-input-private
 ```
 
 ## Когда использовать

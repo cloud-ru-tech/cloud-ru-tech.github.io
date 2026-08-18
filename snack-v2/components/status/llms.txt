@@ -1,4 +1,4 @@
-﻿# @ds/status
+﻿# @cloud-ru/ds-status
 
 > Пакет статус-индикаторов — компоненты Status (подпись + маркер) и StatusIndicator (только маркер). Цветовая семантика состояний и поддержка loading/progress.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/status/
 ## Установка
 
 ```sh
-pnpm add @ds/status
+pnpm add @cloud-ru/ds-status
 ```
 
 ## API
@@ -47,7 +47,7 @@ pnpm add @ds/status
 ### Active
 
 ```tsx
-import { Status } from '@ds/status';
+import { Status } from '@cloud-ru/ds-status';
 
 export function Active() {
   return <Status label='Active' appearance='green' />;
@@ -57,7 +57,7 @@ export function Active() {
 ### BasicIndicator
 
 ```tsx
-import { StatusIndicator } from '@ds/status';
+import { StatusIndicator } from '@cloud-ru/ds-status';
 
 export function BasicIndicator() {
   return <StatusIndicator size='xs' appearance='green' />;
@@ -67,7 +67,7 @@ export function BasicIndicator() {
 ### Loading
 
 ```tsx
-import { Status } from '@ds/status';
+import { Status } from '@cloud-ru/ds-status';
 
 export function Loading() {
   return <Status label='Processing' loading />;
@@ -77,7 +77,7 @@ export function Loading() {
 ### WithBackground
 
 ```tsx
-import { Status } from '@ds/status';
+import { Status } from '@cloud-ru/ds-status';
 
 export function WithBackground() {
   return <Status label='Error' appearance='red' background />;

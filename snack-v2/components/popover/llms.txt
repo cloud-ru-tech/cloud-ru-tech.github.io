@@ -1,4 +1,4 @@
-﻿# @ds/popover
+﻿# @cloud-ru/ds-popover
 
 > Плавающая панель с произвольным содержимым рядом с триггером — для меню, подсказок, форм и вложенных действий.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/popover/
 ## Установка
 
 ```sh
-pnpm add @ds/popover
+pnpm add @cloud-ru/ds-popover
 ```
 
 ## Когда использовать
@@ -30,7 +30,7 @@ pnpm add @ds/popover
 | `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
 | `content` | `ReactNode` | — | yes | Контент поповера (отображается внутри контейнера по макету) |
 | `data-test-id` | `string` | — | no |  |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `heightStrategy` | `auto \| eq \| lte` | `auto` | no | Стратегия управления высотой контейнера поповера <br/> - `auto` - соответствует высоте контента, <br/> - `lte` - Less Than or Equal, равен высоте таргета или меньше ее, если контент в поповере меньше, <br/> - `eq` - Equal, строго равен высоте таргета. |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -61,7 +61,7 @@ pnpm add @ds/popover
 ### Basic
 
 ```tsx
-import { Popover } from '@ds/popover';
+import { Popover } from '@cloud-ru/ds-popover';
 
 export function Basic() {
   return (
@@ -75,7 +75,7 @@ export function Basic() {
 ### HoverTrigger
 
 ```tsx
-import { Popover } from '@ds/popover';
+import { Popover } from '@cloud-ru/ds-popover';
 
 export function HoverTrigger() {
   return (
@@ -89,7 +89,7 @@ export function HoverTrigger() {
 ### Placement
 
 ```tsx
-import { Popover } from '@ds/popover';
+import { Popover } from '@cloud-ru/ds-popover';
 
 export function Placement() {
   return (

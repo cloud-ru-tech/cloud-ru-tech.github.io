@@ -1,4 +1,4 @@
-﻿# @ds/context-kit
+﻿# @cloud-ru/ds-context-kit
 
 > Основа всех сквозных провайдеров дизайн-системы — версионно-устойчивый React-контекст-синглтон поверх useSyncExternalStore, безопасный для SSR и микрофронтов.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/context-kit/
 ## Установка
 
 ```sh
-pnpm add @ds/context-kit
+pnpm add @cloud-ru/ds-context-kit
 ```
 
 ## Когда использовать

@@ -1,4 +1,4 @@
-﻿# @ds/rating
+﻿# @cloud-ru/ds-rating
 
 > Звёздный рейтинг — интерактивный ввод и отображение оценки. Поддерживает половинные звёзды, цветовые схемы и readonly-режим.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/rating/
 ## Установка
 
 ```sh
-pnpm add @ds/rating
+pnpm add @cloud-ru/ds-rating
 ```
 
 ## Когда использовать
@@ -57,7 +57,7 @@ pnpm add @ds/rating
 ### Basic
 
 ```tsx
-import { Rating } from '@ds/rating';
+import { Rating } from '@cloud-ru/ds-rating';
 
 export function Basic() {
   return <Rating count={5} defaultValue={3} allowHalf={false} allowClear={false} readonly={false} />;
@@ -67,7 +67,7 @@ export function Basic() {
 ### HalfStars
 
 ```tsx
-import { Rating } from '@ds/rating';
+import { Rating } from '@cloud-ru/ds-rating';
 
 export function HalfStars() {
   return <Rating count={5} defaultValue={3.5} allowHalf allowClear={false} readonly={false} />;
@@ -77,7 +77,7 @@ export function HalfStars() {
 ### Readonly
 
 ```tsx
-import { Rating } from '@ds/rating';
+import { Rating } from '@cloud-ru/ds-rating';
 
 export function Readonly() {
   return <Rating count={5} defaultValue={4} readonly allowHalf={false} allowClear={false} />;

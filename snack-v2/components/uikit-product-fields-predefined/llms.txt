@@ -1,13 +1,13 @@
-﻿# @ds/uikit-product-fields-predefined
+﻿# @cloud-ru/ds-uikit-product-fields-predefined
 
-> Набор предопределённых полей формы поверх @ds/fields — телефон, маски, имя, описание, код и другие готовые сценарии ввода.
+> Набор предопределённых полей формы поверх @cloud-ru/ds-fields — телефон, маски, имя, описание, код и другие готовые сценарии ввода.
 
 Docs: /snack-v2/components/uikit-product-fields-predefined/
 
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-fields-predefined
+pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 ```
 
 ## API
@@ -529,7 +529,7 @@ pnpm add @ds/uikit-product-fields-predefined
 | `entityName` | `EntityName` | — | yes | Название сущности в единственном и множественном числе — для кнопок и пустых состояний. |
 | `onRefetch` | `(() => void)` | — | no | Повтор загрузки в состоянии ошибки (кнопка «Обновить» в футере `errorDataState`). |
 | `permission` | `canCreate \| canRead \| none` | `canCreate` | no | Права пользователя: - `canCreate` (по умолчанию) — доступны и выбор, и создание; - `canRead` — поле активно, но создание недоступно (кнопки «Создать» с tooltip); - `none` — поле недоступно (с tooltip). |
-| `selectProps` | `SelectFieldProps` | — | yes | Пропсы, прокидываемые в `FieldSelect` (`@ds/fields`). |
+| `selectProps` | `SelectFieldProps` | — | yes | Пропсы, прокидываемые в `FieldSelect` (`@cloud-ru/ds-fields`). |
 | `submitHandler` | `() => Promise<string \| void>` | — | yes | Действие создания опции: возвращает `value` новой опции, которая выбирается в поле (single-режим). |
 
 #### Related types
@@ -600,7 +600,7 @@ pnpm add @ds/uikit-product-fields-predefined
 ### FieldChatBasic
 
 ```tsx
-import { FieldChat } from '@ds/uikit-product-fields-predefined';
+import { FieldChat } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldChatBasic() {
@@ -613,7 +613,7 @@ export function FieldChatBasic() {
 ### FieldChatWithAttachments
 
 ```tsx
-import { FieldChat } from '@ds/uikit-product-fields-predefined';
+import { FieldChat } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldChatWithAttachments() {
@@ -642,7 +642,7 @@ export function FieldChatWithAttachments() {
 ### FieldCodeBasic
 
 ```tsx
-import { FieldCode } from '@ds/uikit-product-fields-predefined';
+import { FieldCode } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldCodeBasic() {
@@ -661,7 +661,7 @@ export function FieldCodeBasic() {
 ### FieldCodeResend
 
 ```tsx
-import { FieldCode } from '@ds/uikit-product-fields-predefined';
+import { FieldCode } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useEffect, useState } from 'react';
 
 const RESEND_COUNTDOWN_SECONDS = 10;
@@ -700,7 +700,7 @@ export function FieldCodeResend() {
 ### FieldCodeValidation
 
 ```tsx
-import { FieldCode, useFieldCodeValidate } from '@ds/uikit-product-fields-predefined';
+import { FieldCode, useFieldCodeValidate } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 const CODE_LENGTH = 6;
@@ -731,7 +731,7 @@ export function FieldCodeValidation() {
 ### FieldDescriptionBasic
 
 ```tsx
-import { FieldDescription } from '@ds/uikit-product-fields-predefined';
+import { FieldDescription } from '@cloud-ru/ds-uikit-product-fields-predefined';
 
 export function FieldDescriptionBasic() {
   return <FieldDescription />;
@@ -741,8 +741,8 @@ export function FieldDescriptionBasic() {
 ### FieldDescriptionRHF
 
 ```tsx
-import { Button } from '@ds/button';
-import { FieldDescriptionRHF } from '@ds/uikit-product-fields-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { FieldDescriptionRHF } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { FormProvider, useForm } from 'react-hook-form';
 
 type FormValues = { description: string };
@@ -767,7 +767,7 @@ export function FieldDescriptionRHFExample() {
 ### FieldDescriptionWithAddButton
 
 ```tsx
-import { FieldDescription } from '@ds/uikit-product-fields-predefined';
+import { FieldDescription } from '@cloud-ru/ds-uikit-product-fields-predefined';
 
 export function FieldDescriptionWithAddButton() {
   return <FieldDescription addButton />;
@@ -777,7 +777,7 @@ export function FieldDescriptionWithAddButton() {
 ### FieldMaskControlled
 
 ```tsx
-import { FieldMask, MASK } from '@ds/uikit-product-fields-predefined';
+import { FieldMask, MASK } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldMaskControlled() {
@@ -798,7 +798,7 @@ export function FieldMaskControlled() {
 ### FieldMaskMasks
 
 ```tsx
-import { FieldMask, MASK } from '@ds/uikit-product-fields-predefined';
+import { FieldMask, MASK } from '@cloud-ru/ds-uikit-product-fields-predefined';
 
 export function FieldMaskMasks() {
   return (
@@ -814,7 +814,7 @@ export function FieldMaskMasks() {
 ### FieldNameBasic
 
 ```tsx
-import { FieldName } from '@ds/uikit-product-fields-predefined';
+import { FieldName } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldNameBasic() {
@@ -827,8 +827,8 @@ export function FieldNameBasic() {
 ### FieldNameRHF
 
 ```tsx
-import { Button } from '@ds/button';
-import { FieldNameRHF } from '@ds/uikit-product-fields-predefined';
+import { Button } from '@cloud-ru/ds-button';
+import { FieldNameRHF } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { FormProvider, useForm } from 'react-hook-form';
 
 type FormValues = { serviceName: string };
@@ -853,8 +853,8 @@ export function FieldNameRHFExample() {
 ### FieldPhoneBasic
 
 ```tsx
-import { PortalContextProvider } from '@ds/portal-context';
-import { FieldPhone } from '@ds/uikit-product-fields-predefined';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { FieldPhone } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useRef, useState } from 'react';
 
 export function FieldPhoneBasic() {
@@ -874,14 +874,14 @@ export function FieldPhoneBasic() {
 ### FieldPhoneCountrySettings
 
 ```tsx
-import { PortalContextProvider } from '@ds/portal-context';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
 import {
   ARMENIA_COUNTRY_CODE,
   BELARUS_COUNTRY_CODE,
   FieldPhone,
   KAZAKHSTAN_COUNTRY_CODE,
   RUSSIA_COUNTRY_CODE,
-} from '@ds/uikit-product-fields-predefined';
+} from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useRef, useState } from 'react';
 
 export function FieldPhoneCountrySettings() {
@@ -913,8 +913,8 @@ export function FieldPhoneCountrySettings() {
 ### FieldSelectCreateAsync
 
 ```tsx
-import { ItemId } from '@ds/list';
-import { FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { ItemId } from '@cloud-ru/ds-list';
+import { FieldSelectCreate } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldSelectCreateAsync() {
@@ -952,9 +952,9 @@ export function FieldSelectCreateAsync() {
 ### FieldSelectCreateBasic
 
 ```tsx
-import { FieldText } from '@ds/fields';
-import { ItemId } from '@ds/list';
-import { FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { FieldText } from '@cloud-ru/ds-fields';
+import { ItemId } from '@cloud-ru/ds-list';
+import { FieldSelectCreate } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldSelectCreateBasic() {
@@ -991,9 +991,9 @@ export function FieldSelectCreateBasic() {
 ### FieldSelectCreateModal
 
 ```tsx
-import { FieldText } from '@ds/fields';
-import { ItemId } from '@ds/list';
-import { CREATE_LAYOUT_TYPE, FieldSelectCreate } from '@ds/uikit-product-fields-predefined';
+import { FieldText } from '@cloud-ru/ds-fields';
+import { ItemId } from '@cloud-ru/ds-list';
+import { CREATE_LAYOUT_TYPE, FieldSelectCreate } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useState } from 'react';
 
 export function FieldSelectCreateModal() {

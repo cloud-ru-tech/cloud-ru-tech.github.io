@@ -1,4 +1,4 @@
-﻿# @ds/ai-icon-giga
+﻿# @cloud-ru/ds-ai-icon-giga
 
 > Иконка-логотип GigaChat в монохроме и брендовых градиентах для тёмного и светлого фона.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-icon-giga/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-icon-giga
+pnpm add @cloud-ru/ds-ai-icon-giga
 ```
 
 ## Когда использовать
@@ -18,9 +18,9 @@ pnpm add @ds/ai-icon-giga
 ### Когда не нужен
 
 - Произвольная интерфейсная иконка:
-  - используйте `@ds/icons`.
+  - используйте `@cloud-ru/ds-icons`.
 - Кликабельный триггер:
-  - оборачивайте `AiIconGiga` в `@ds/button` или ставьте обработчик на родителя.
+  - оборачивайте `AiIconGiga` в `@cloud-ru/ds-button` или ставьте обработчик на родителя.
 
 ## API
 
@@ -40,7 +40,7 @@ pnpm add @ds/ai-icon-giga
 ### Branded
 
 ```tsx
-import { AiIconGiga, VARIANT } from '@ds/ai-icon-giga';
+import { AiIconGiga, VARIANT } from '@cloud-ru/ds-ai-icon-giga';
 
 export function Branded() {
   return (
@@ -55,7 +55,7 @@ export function Branded() {
 ### Neutral
 
 ```tsx
-import { AiIconGiga, VARIANT } from '@ds/ai-icon-giga';
+import { AiIconGiga, VARIANT } from '@cloud-ru/ds-ai-icon-giga';
 
 export function Neutral() {
   return <AiIconGiga variant={VARIANT.Neutral} />;
@@ -65,7 +65,7 @@ export function Neutral() {
 ### Sizes
 
 ```tsx
-import { AiIconGiga } from '@ds/ai-icon-giga';
+import { AiIconGiga } from '@cloud-ru/ds-ai-icon-giga';
 
 export function Sizes() {
   return (

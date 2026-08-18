@@ -1,4 +1,4 @@
-﻿# @ds/link
+﻿# @cloud-ru/ds-link
 
 > Семантическая ссылка дизайн-системы — 10 appearance, полиморфный рендер (a / button / кастомный компонент), inline-режим в тексте и интеграция с TruncateString.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/link/
 ## Установка
 
 ```sh
-pnpm add @ds/link
+pnpm add @cloud-ru/ds-link
 ```
 
 ## Когда использовать
@@ -16,7 +16,7 @@ pnpm add @ds/link
 - Для ссылок внутри текста (`insideText`) — компонент не ломает перенос строк.
 - Для действий, которые семантически являются навигацией, но физически — кнопкой (`as='button'`).
 
-Когда **не** нужен: для кнопки-действия (сохранить, удалить) используйте `@ds/button` с `view='function'`, а не `Link as='button'`.
+Когда **не** нужен: для кнопки-действия (сохранить, удалить) используйте `@cloud-ru/ds-button` с `view='function'`, а не `Link as='button'`.
 
 ## API
 
@@ -41,7 +41,7 @@ pnpm add @ds/link
 ### Basic
 
 ```tsx
-import { Link } from '@ds/link';
+import { Link } from '@cloud-ru/ds-link';
 
 export function Basic() {
   return <Link label='Документация API' href='https://example.com/docs' />;
@@ -51,7 +51,7 @@ export function Basic() {
 ### External
 
 ```tsx
-import { Link } from '@ds/link';
+import { Link } from '@cloud-ru/ds-link';
 
 export function External() {
   return <Link label='Открыть в новой вкладке' href='https://example.com' target='_blank' />;
@@ -61,7 +61,7 @@ export function External() {
 ### InsideText
 
 ```tsx
-import { Link } from '@ds/link';
+import { Link } from '@cloud-ru/ds-link';
 
 export function InsideText() {
   return (
@@ -76,7 +76,7 @@ export function InsideText() {
 ### Polymorphic
 
 ```tsx
-import { Link } from '@ds/link';
+import { Link } from '@cloud-ru/ds-link';
 
 export function Polymorphic() {
   return <Link as='button' type='button' label='Открыть диалог' onClick={() => alert('clicked')} />;

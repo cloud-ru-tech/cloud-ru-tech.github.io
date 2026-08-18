@@ -1,4 +1,4 @@
-﻿# @ds/dropzone
+﻿# @cloud-ru/ds-dropzone
 
 > Пакет загрузки файлов — видимая зона Dropzone, триггер FileUpload и скрытая оверлей-зона HiddenDropZone над произвольным контентом.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/dropzone/
 ## Установка
 
 ```sh
-pnpm add @ds/dropzone
+pnpm add @cloud-ru/ds-dropzone
 ```
 
 ## API
@@ -110,7 +110,7 @@ pnpm add @ds/dropzone
 ### DropzoneBasic
 
 ```tsx
-import { Dropzone } from '@ds/dropzone';
+import { Dropzone } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 export function DropzoneBasic() {
@@ -137,7 +137,7 @@ export function DropzoneBasic() {
 ### DropzoneDisabled
 
 ```tsx
-import { Dropzone } from '@ds/dropzone';
+import { Dropzone } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 export function DropzoneDisabled() {
@@ -154,7 +154,7 @@ export function DropzoneDisabled() {
 ### DropzoneSingleImage
 
 ```tsx
-import { Dropzone } from '@ds/dropzone';
+import { Dropzone } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 export function DropzoneSingleImage() {
@@ -171,8 +171,8 @@ export function DropzoneSingleImage() {
 ### FileUploadBasic
 
 ```tsx
-import { Button } from '@ds/button';
-import { FileUpload } from '@ds/dropzone';
+import { Button } from '@cloud-ru/ds-button';
+import { FileUpload } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 export function FileUploadBasic() {
@@ -192,8 +192,8 @@ export function FileUploadBasic() {
 ### FileUploadFormField
 
 ```tsx
-import { Button } from '@ds/button';
-import { FileRejection, FileUpload } from '@ds/dropzone';
+import { Button } from '@cloud-ru/ds-button';
+import { FileRejection, FileUpload } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 const MAX_SIZE = 5 * 1024 * 1024;
@@ -235,7 +235,7 @@ export function FileUploadFormField() {
 ### HiddenDropZoneBasic
 
 ```tsx
-import { HiddenDropZone } from '@ds/dropzone';
+import { HiddenDropZone } from '@cloud-ru/ds-dropzone';
 import { useState } from 'react';
 
 export function HiddenDropZoneBasic() {

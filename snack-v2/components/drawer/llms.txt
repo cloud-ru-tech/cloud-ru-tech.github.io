@@ -1,4 +1,4 @@
-﻿# @ds/drawer
+﻿# @cloud-ru/ds-drawer
 
 > Пакет выезжающих панелей — компоненты Drawer и DrawerCustom с едиными токенами позиции и ширины.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/drawer/
 ## Установка
 
 ```sh
-pnpm add @ds/drawer
+pnpm add @cloud-ru/ds-drawer
 ```
 
 ## API
@@ -38,7 +38,7 @@ pnpm add @ds/drawer
 | `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
@@ -67,7 +67,7 @@ pnpm add @ds/drawer
 | `className` | `string` | — | no | CSS-класс контейнера header'а. |
 | `data-test-id` | `string` | — | no |  |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
@@ -102,7 +102,7 @@ pnpm add @ds/drawer
 | `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
@@ -183,7 +183,7 @@ pnpm add @ds/drawer
 | `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
@@ -196,8 +196,8 @@ pnpm add @ds/drawer
 ### Basic
 
 ```tsx
-import { Button, ButtonGroup } from '@ds/button';
-import { Drawer } from '@ds/drawer';
+import { Button, ButtonGroup } from '@cloud-ru/ds-button';
+import { Drawer } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function Basic() {
@@ -229,8 +229,8 @@ export function Basic() {
 ### CustomComposition
 
 ```tsx
-import { Button } from '@ds/button';
-import { DrawerCustom } from '@ds/drawer';
+import { Button } from '@cloud-ru/ds-button';
+import { DrawerCustom } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function CustomComposition() {
@@ -265,8 +265,8 @@ export function CustomComposition() {
 ### HeightAuto
 
 ```tsx
-import { Button } from '@ds/button';
-import { Drawer } from '@ds/drawer';
+import { Button } from '@cloud-ru/ds-button';
+import { Drawer } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function HeightAuto() {
@@ -293,8 +293,8 @@ export function HeightAuto() {
 ### NestedDrawer
 
 ```tsx
-import { Button } from '@ds/button';
-import { Drawer } from '@ds/drawer';
+import { Button } from '@cloud-ru/ds-button';
+import { Drawer } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function NestedDrawer() {
@@ -340,8 +340,8 @@ export function NestedDrawer() {
 ### WithFooter
 
 ```tsx
-import { Button, ButtonGroup } from '@ds/button';
-import { Drawer } from '@ds/drawer';
+import { Button, ButtonGroup } from '@cloud-ru/ds-button';
+import { Drawer } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function WithFooter() {
@@ -383,8 +383,8 @@ export function WithFooter() {
 ### WithMedia
 
 ```tsx
-import { Button } from '@ds/button';
-import { Drawer } from '@ds/drawer';
+import { Button } from '@cloud-ru/ds-button';
+import { Drawer } from '@cloud-ru/ds-drawer';
 import { useState } from 'react';
 
 export function WithMedia() {

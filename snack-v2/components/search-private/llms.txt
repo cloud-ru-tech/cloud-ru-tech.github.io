@@ -1,20 +1,20 @@
-﻿# @ds/search-private
+﻿# @cloud-ru/ds-search-private
 
-> Базовый input для поиска без иконок и плейсхолдеров — фундамент для публичного `@ds/search` и доменных search-компонентов.
+> Базовый input для поиска без иконок и плейсхолдеров — фундамент для публичного `@cloud-ru/ds-search` и доменных search-компонентов.
 
 Docs: /snack-v2/components/search-private/
 
 ## Установка
 
 ```sh
-pnpm add @ds/search-private
+pnpm add @cloud-ru/ds-search-private
 ```
 
 ## Когда использовать
 
-- Реализация кастомного поиска с иной разметкой (например, без иконки или со встроенным фильтром), который нельзя выразить пропсами `@ds/search`.
+- Реализация кастомного поиска с иной разметкой (например, без иконки или со встроенным фильтром), который нельзя выразить пропсами `@cloud-ru/ds-search`.
 
-В большинстве случаев — берите публичный `@ds/search`.
+В большинстве случаев — берите публичный `@cloud-ru/ds-search`.
 
 ## API
 
@@ -47,7 +47,7 @@ pnpm add @ds/search-private
 ### Basic
 
 ```tsx
-import { SearchPrivate } from '@ds/search-private';
+import { SearchPrivate } from '@cloud-ru/ds-search-private';
 import { useState } from 'react';
 
 export function Basic() {

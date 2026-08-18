@@ -1,4 +1,4 @@
-﻿# @ds/ai-card
+﻿# @cloud-ru/ds-ai-card
 
 > Selectable AI-карточка с независимым boolean toggle, single-line заголовком и опциональным контентом.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-card/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-card
+pnpm add @cloud-ru/ds-ai-card
 ```
 
 ## Когда использовать
@@ -21,9 +21,9 @@ pnpm add @ds/ai-card
 - Один из группы (radio-семантика):
   - используйте `SegmentControl` либо обёртку с собственным состоянием.
 - Статичный контейнер без выбора:
-  - используйте `@ds/card`.
+  - используйте `@cloud-ru/ds-card`.
 - Действие-кнопка:
-  - используйте `@ds/button`.
+  - используйте `@cloud-ru/ds-button`.
 
 ## API
 
@@ -44,7 +44,7 @@ pnpm add @ds/ai-card
 ### Controlled
 
 ```tsx
-import { AiCard } from '@ds/ai-card';
+import { AiCard } from '@cloud-ru/ds-ai-card';
 import { useState } from 'react';
 
 export function Controlled() {
@@ -60,7 +60,7 @@ export function Controlled() {
 ### Default
 
 ```tsx
-import { AiCard } from '@ds/ai-card';
+import { AiCard } from '@cloud-ru/ds-ai-card';
 import { useState } from 'react';
 
 export function Default() {
@@ -76,7 +76,7 @@ export function Default() {
 ### Disabled
 
 ```tsx
-import { AiCard } from '@ds/ai-card';
+import { AiCard } from '@cloud-ru/ds-ai-card';
 
 export function Disabled() {
   return (
@@ -95,7 +95,7 @@ export function Disabled() {
 ### Selected
 
 ```tsx
-import { AiCard } from '@ds/ai-card';
+import { AiCard } from '@cloud-ru/ds-ai-card';
 import { useState } from 'react';
 
 export function Selected() {

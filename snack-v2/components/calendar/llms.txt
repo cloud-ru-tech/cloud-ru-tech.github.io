@@ -1,4 +1,4 @@
-﻿# @ds/calendar
+﻿# @cloud-ru/ds-calendar
 
 > Пакет календаря и выбора времени — Calendar с режимами даты, диапазона и месяца/года, TimePicker и TimePickerDropdown для времени в составе полей ввода.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/calendar/
 ## Установка
 
 ```sh
-pnpm add @ds/calendar
+pnpm add @cloud-ru/ds-calendar
 ```
 
 ## Когда использовать
@@ -85,7 +85,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `Date \| Range` | — | no | Значение по-умолчанию для uncontrolled.<br> - в режиме date тип `Date` <br> - в режиме date-range тип `Range` (`[Date, Date]`) <br> - в режиме month-range тип `Range` (`[Date, Date]`) <br> - в режиме year-range тип `Range` (`[Date, Date]`) <br> - в режиме month тип `Date` <br> - в режиме date-time тип `Date` <br> - в режиме year тип `Date` |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `true` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -136,7 +136,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `Date \| Range` | — | no | Значение по-умолчанию для uncontrolled.<br> - в режиме date тип `Date` <br> - в режиме date-range тип `Range` (`[Date, Date]`) <br> - в режиме month-range тип `Range` (`[Date, Date]`) <br> - в режиме year-range тип `Range` (`[Date, Date]`) <br> - в режиме month тип `Date` <br> - в режиме date-time тип `Date` <br> - в режиме year тип `Date` |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `true` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -174,7 +174,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `TimeValue` | — | no | Значение по-умолчанию для uncontrolled. |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `false` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -266,7 +266,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `Date \| Range` | — | no | Значение по-умолчанию для uncontrolled.<br> - в режиме date тип `Date` <br> - в режиме date-range тип `Range` (`[Date, Date]`) <br> - в режиме month-range тип `Range` (`[Date, Date]`) <br> - в режиме year-range тип `Range` (`[Date, Date]`) <br> - в режиме month тип `Date` <br> - в режиме date-time тип `Date` <br> - в режиме year тип `Date` |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `true` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -335,7 +335,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `TimeValue` | — | no | Значение по-умолчанию для uncontrolled. |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `true` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -433,7 +433,7 @@ pnpm add @ds/calendar
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `defaultValue` | `TimeValue` | — | no | Значение по-умолчанию для uncontrolled. |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `fitToContainer` | `boolean` | `true` | no | Отключает предустановленный размер, заставляя компонент подстраиваться к размеру контейнра: (width: 100%, height: 100%). |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
@@ -496,7 +496,7 @@ pnpm add @ds/calendar
 ### CalendarDateRange
 
 ```tsx
-import { Calendar, CALENDAR_MODE, Range, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, Range, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarDateRange() {
@@ -519,7 +519,7 @@ export function CalendarDateRange() {
 ### CalendarDateSingle
 
 ```tsx
-import { Calendar, CALENDAR_MODE, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarDateSingle() {
@@ -536,7 +536,7 @@ export function CalendarDateSingle() {
 ### CalendarDateTime
 
 ```tsx
-import { Calendar, CALENDAR_MODE, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarDateTime() {
@@ -560,7 +560,7 @@ export function CalendarDateTime() {
 ### CalendarMonthMode
 
 ```tsx
-import { Calendar, CALENDAR_MODE, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarMonthMode() {
@@ -583,7 +583,7 @@ export function CalendarMonthMode() {
 ### CalendarWithPresets
 
 ```tsx
-import { Calendar, CALENDAR_MODE, Range, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, Range, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarWithPresets() {
@@ -607,7 +607,7 @@ export function CalendarWithPresets() {
 ### CalendarYearRange
 
 ```tsx
-import { Calendar, CALENDAR_MODE, Range, SIZE } from '@ds/calendar';
+import { Calendar, CALENDAR_MODE, Range, SIZE } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function CalendarYearRange() {
@@ -630,7 +630,7 @@ export function CalendarYearRange() {
 ### TimePickerBasic
 
 ```tsx
-import { SIZE, TimePicker, TimeValue } from '@ds/calendar';
+import { SIZE, TimePicker, TimeValue } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function TimePickerBasic() {
@@ -647,8 +647,8 @@ export function TimePickerBasic() {
 ### TimePickerDropdownBasic
 
 ```tsx
-import { Button } from '@ds/button';
-import { SIZE, TimePickerDropdown, TimeValue } from '@ds/calendar';
+import { Button } from '@cloud-ru/ds-button';
+import { SIZE, TimePickerDropdown, TimeValue } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function TimePickerDropdownBasic() {
@@ -673,8 +673,8 @@ export function TimePickerDropdownBasic() {
 ### TimePickerDropdownControlled
 
 ```tsx
-import { Button } from '@ds/button';
-import { SIZE, TimePickerDropdown, TimeValue } from '@ds/calendar';
+import { Button } from '@cloud-ru/ds-button';
+import { SIZE, TimePickerDropdown, TimeValue } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function TimePickerDropdownControlled() {
@@ -705,8 +705,8 @@ export function TimePickerDropdownControlled() {
 ### TimePickerDropdownPlacement
 
 ```tsx
-import { Button } from '@ds/button';
-import { SIZE, TimePickerDropdown, TimeValue } from '@ds/calendar';
+import { Button } from '@cloud-ru/ds-button';
+import { SIZE, TimePickerDropdown, TimeValue } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function TimePickerDropdownPlacement() {
@@ -744,7 +744,7 @@ export function TimePickerDropdownPlacement() {
 ### TimePickerNoSeconds
 
 ```tsx
-import { SIZE, TimePicker, TimeValue } from '@ds/calendar';
+import { SIZE, TimePicker, TimeValue } from '@cloud-ru/ds-calendar';
 import { useState } from 'react';
 
 export function TimePickerNoSeconds() {
@@ -761,7 +761,7 @@ export function TimePickerNoSeconds() {
 ### TimePickerSizes
 
 ```tsx
-import { SIZE, TimePicker } from '@ds/calendar';
+import { SIZE, TimePicker } from '@cloud-ru/ds-calendar';
 
 export function TimePickerSizes() {
   return (

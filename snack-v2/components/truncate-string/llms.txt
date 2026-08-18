@@ -1,4 +1,4 @@
-﻿# @ds/truncate-string
+﻿# @cloud-ru/ds-truncate-string
 
 > Обрезает длинный текст и показывает полный текст в тултипе — варианты `end` и `middle`, поддержка многострочного обрезания.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/truncate-string/
 ## Установка
 
 ```sh
-pnpm add @ds/truncate-string
+pnpm add @cloud-ru/ds-truncate-string
 ```
 
 ## Когда использовать
@@ -67,7 +67,7 @@ pnpm add @ds/truncate-string
 ### TruncateEnd
 
 ```tsx
-import { TruncateString } from '@ds/truncate-string';
+import { TruncateString } from '@cloud-ru/ds-truncate-string';
 
 export function TruncateEnd() {
   return (
@@ -81,7 +81,7 @@ export function TruncateEnd() {
 ### TruncateMiddle
 
 ```tsx
-import { TruncateString } from '@ds/truncate-string';
+import { TruncateString } from '@cloud-ru/ds-truncate-string';
 
 export function TruncateMiddle() {
   return (
@@ -95,7 +95,7 @@ export function TruncateMiddle() {
 ### TruncateMultiline
 
 ```tsx
-import { TruncateString } from '@ds/truncate-string';
+import { TruncateString } from '@cloud-ru/ds-truncate-string';
 
 export function TruncateMultiline() {
   return (

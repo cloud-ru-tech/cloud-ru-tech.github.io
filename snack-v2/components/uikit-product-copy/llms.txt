@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-copy
+﻿# @cloud-ru/ds-uikit-product-copy
 
 > Пакет копирования значений в буфер — компоненты CopyButton и CopyLine с единой логикой clipboard и иконкой подтверждения.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-copy/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-copy
+pnpm add @cloud-ru/ds-uikit-product-copy
 ```
 
 ## API
@@ -49,7 +49,7 @@ pnpm add @ds/uikit-product-copy
 ### CopyButtonBasic
 
 ```tsx
-import { CopyButton } from '@ds/uikit-product-copy';
+import { CopyButton } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyButtonBasic() {
   return <CopyButton valueToCopy='hello-world' />;
@@ -59,7 +59,7 @@ export function CopyButtonBasic() {
 ### CopyButtonSizes
 
 ```tsx
-import { CopyButton } from '@ds/uikit-product-copy';
+import { CopyButton } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyButtonSizes() {
   return (
@@ -75,7 +75,7 @@ export function CopyButtonSizes() {
 ### CopyButtonWithHandler
 
 ```tsx
-import { CopyButton } from '@ds/uikit-product-copy';
+import { CopyButton } from '@cloud-ru/ds-uikit-product-copy';
 import { useState } from 'react';
 
 export function CopyButtonWithHandler() {
@@ -93,7 +93,7 @@ export function CopyButtonWithHandler() {
 ### CopyButtonWithLabel
 
 ```tsx
-import { CopyButton } from '@ds/uikit-product-copy';
+import { CopyButton } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyButtonWithLabel() {
   return <CopyButton valueToCopy='hello-world' label='Copy' />;
@@ -103,7 +103,7 @@ export function CopyButtonWithLabel() {
 ### CopyLineAlwaysVisible
 
 ```tsx
-import { CopyLine } from '@ds/uikit-product-copy';
+import { CopyLine } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyLineAlwaysVisible() {
   return <CopyLine content='persistent-token-9000' copyButtonHideStrategy='never' />;
@@ -113,7 +113,7 @@ export function CopyLineAlwaysVisible() {
 ### CopyLineBasic
 
 ```tsx
-import { CopyLine } from '@ds/uikit-product-copy';
+import { CopyLine } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyLineBasic() {
   return <CopyLine content='550e8400-e29b-41d4-a716-446655440000' />;
@@ -123,7 +123,7 @@ export function CopyLineBasic() {
 ### CopyLineCustomValue
 
 ```tsx
-import { CopyLine } from '@ds/uikit-product-copy';
+import { CopyLine } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyLineCustomValue() {
   return <CopyLine content='IP: 192.168.0.1 (production)' valueToCopy='192.168.0.1' />;
@@ -133,7 +133,7 @@ export function CopyLineCustomValue() {
 ### CopyLineRichContent
 
 ```tsx
-import { CopyLine } from '@ds/uikit-product-copy';
+import { CopyLine } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyLineRichContent() {
   return (
@@ -152,7 +152,7 @@ export function CopyLineRichContent() {
 ### CopyLineTruncated
 
 ```tsx
-import { CopyLine } from '@ds/uikit-product-copy';
+import { CopyLine } from '@cloud-ru/ds-uikit-product-copy';
 
 export function CopyLineTruncated() {
   return (

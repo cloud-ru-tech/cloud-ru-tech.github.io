@@ -1,4 +1,4 @@
-﻿# @ds/popover-private
+﻿# @cloud-ru/ds-popover-private
 
 > Низкоуровневый popover на @floating-ui — позиционирование, стрелка, триггеры. Используется как фундамент для Tooltip, Popover, Dropdown.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/popover-private/
 ## Установка
 
 ```sh
-pnpm add @ds/popover-private
+pnpm add @cloud-ru/ds-popover-private
 ```
 
 ## Когда использовать
@@ -40,7 +40,7 @@ pnpm add @ds/popover-private
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `container` | `RefObject<HTMLElement \| null>` | — | no | Контейнер портала (ref). Переопределяет `PortalContext` для этого инстанса — по аналогии с `container` у Modal/Drawer. По умолчанию берётся из `PortalContextProvider`. |
 | `data-test-id` | `string` | — | no |  |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `hasArrow` | `boolean` | — | no | Параметр наличия стрелки у поповера. В размеры стрелки встроен отступ. Дополнительный отступ может быть задан параметром `offset`. У элемента стрелки нет цвета, необходимо задавать его через параметр `arrowClassName`. |
 | `heightStrategy` | `auto \| eq \| lte` | `auto` | no | Стратегия управления высотой контейнера поповера <br/> - `auto` - соответствует высоте контента, <br/> - `lte` - Less Than or Equal, равен высоте таргета или меньше ее, если контент в поповере меньше, <br/> - `eq` - Equal, строго равен высоте таргета. |

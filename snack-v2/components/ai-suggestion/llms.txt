@@ -1,4 +1,4 @@
-﻿# @ds/ai-suggestion
+﻿# @cloud-ru/ds-ai-suggestion
 
 > AI-подсказки — простой чип и раскрывающаяся группа с вложенными подсказками.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-suggestion/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-suggestion
+pnpm add @cloud-ru/ds-ai-suggestion
 ```
 
 ## Когда использовать
@@ -91,8 +91,8 @@ _Нет публичных пропсов._
 ### Basic
 
 ```tsx
-import { AiSuggestionSimple, APPEARANCE, SIZE } from '@ds/ai-suggestion';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiSuggestionSimple, APPEARANCE, SIZE } from '@cloud-ru/ds-ai-suggestion';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Basic() {
   return (
@@ -104,8 +104,8 @@ export function Basic() {
 ### ControlledParent
 
 ```tsx
-import { AiSuggestionParent, SIZE } from '@ds/ai-suggestion';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiSuggestionParent, SIZE } from '@cloud-ru/ds-ai-suggestion';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 import { useState } from 'react';
 
 export function ControlledParent() {
@@ -127,8 +127,8 @@ export function ControlledParent() {
 ### NestedParent
 
 ```tsx
-import { AiSuggestionParent, CHILD_TYPE, SIZE } from '@ds/ai-suggestion';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiSuggestionParent, CHILD_TYPE, SIZE } from '@cloud-ru/ds-ai-suggestion';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function NestedParent() {
   return (
@@ -170,8 +170,8 @@ export function NestedParent() {
 ### ParentExpandable
 
 ```tsx
-import { AiSuggestionParent, CHILD_TYPE } from '@ds/ai-suggestion';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
+import { AiSuggestionParent, CHILD_TYPE } from '@cloud-ru/ds-ai-suggestion';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function ParentExpandable() {
   return (

@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-info-row
+﻿# @cloud-ru/ds-uikit-product-info-row
 
 > Строки «метка — значение» по макету Figma infoRow — компонент InfoRow и группа InfoGroup по данным.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-info-row/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-info-row
+pnpm add @cloud-ru/ds-uikit-product-info-row
 ```
 
 ## API
@@ -39,7 +39,7 @@ pnpm add @ds/uikit-product-info-row
 | `labelWidth` | `auto \| fixed` | — | no | Ширина колонки метки |
 | `loading` | `boolean` | `false` | no |  |
 | `maxWidth` | `boolean` | `false` | no | Ось Figma `maxWidth` |
-| `rowActions` | `RowActionsPair` | — | no | До двух кнопок `@ds/button` (tonal neutral, size m) у первой колонки; при `column="2"` в макете — одна (`first`). Игнорируется, если задан `rowActionsSlot` |
+| `rowActions` | `RowActionsPair` | — | no | До двух кнопок `@cloud-ru/ds-button` (tonal neutral, size m) у первой колонки; при `column="2"` в макете — одна (`first`). Игнорируется, если задан `rowActionsSlot` |
 | `rowActionsSlot` | `ReactNode` | — | no | Кастомная область действий у первой колонки; рендерится вместо `rowActions`. |
 | `rowClassName` | `string` | — | no |  |
 | `secondaryContent` | `ReactNode` | — | no | Вторая колонка значений (только при `column="2"`, ось Figma) |
@@ -87,7 +87,7 @@ pnpm add @ds/uikit-product-info-row
 | `loading` | `boolean` | — | no |  |
 | `maxWidth` | `boolean` | — | no | Ось Figma `maxWidth` |
 | `position` | `first \| inner \| last` | — | no | Только mobile: позиция строки в группе (`first`/`inner`/`last`) — задаёт скругление/разделители мобильной карточки. На desktop игнорируется (обычно проставляется `InfoGroup` автоматически). |
-| `rowActions` | `RowActionsPair` | — | no | До двух кнопок `@ds/button` (tonal neutral, size m) у первой колонки; при `column="2"` в макете — одна (`first`). Игнорируется, если задан `rowActionsSlot` |
+| `rowActions` | `RowActionsPair` | — | no | До двух кнопок `@cloud-ru/ds-button` (tonal neutral, size m) у первой колонки; при `column="2"` в макете — одна (`first`). Игнорируется, если задан `rowActionsSlot` |
 | `rowActionsSlot` | `ReactNode` | — | no | Кастомная область действий у первой колонки; рендерится вместо `rowActions`. |
 | `rowClassName` | `string` | — | no |  |
 | `secondaryContent` | `ReactNode` | — | no | Вторая колонка значений (только при `column="2"`, ось Figma) |
@@ -161,8 +161,8 @@ _Нет публичных пропсов._
 ### DataListExample
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { InfoRow, InfoRowFieldItem, useGetContent } from '@ds/uikit-product-info-row';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { InfoRow, InfoRowFieldItem, useGetContent } from '@cloud-ru/ds-uikit-product-info-row';
 
 type Row = { name: string; active: boolean };
 
@@ -218,7 +218,7 @@ export function DataListExample() {
 ### InfoGroupBasic
 
 ```tsx
-import { InfoGroup } from '@ds/uikit-product-info-row';
+import { InfoGroup } from '@cloud-ru/ds-uikit-product-info-row';
 
 type Project = { name: string; status: string; active: boolean };
 
@@ -241,7 +241,7 @@ export function InfoGroupBasic() {
 ### InfoGroupCustomRender
 
 ```tsx
-import { InfoGroup } from '@ds/uikit-product-info-row';
+import { InfoGroup } from '@cloud-ru/ds-uikit-product-info-row';
 
 type Order = { id: string; total: number; paid: boolean };
 
@@ -267,7 +267,7 @@ export function InfoGroupCustomRender() {
 ### InfoGroupDoubleColumn
 
 ```tsx
-import { InfoGroup } from '@ds/uikit-product-info-row';
+import { InfoGroup } from '@cloud-ru/ds-uikit-product-info-row';
 
 type Server = { region: string; cpu: string; memory: string; disk: string };
 
@@ -293,8 +293,8 @@ export function InfoGroupDoubleColumn() {
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { InfoGroup } from '@ds/uikit-product-info-row';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { InfoGroup } from '@cloud-ru/ds-uikit-product-info-row';
 
 type Project = { name: string; status: string; region: string; active: boolean };
 

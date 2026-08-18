@@ -1,4 +1,4 @@
-﻿# @ds/icons
+﻿# @cloud-ru/ds-icons
 
 > Наборы интерфейсных иконок React и компонент Sprite для SVG-спрайтов.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/icons/
 ## Установка
 
 ```sh
-pnpm add @ds/icons
+pnpm add @cloud-ru/ds-icons
 ```
 
 ## API
@@ -22,7 +22,7 @@ pnpm add @ds/icons
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `data-test-id` | `string` | — | no |  |
-| `src` | `string` | — | yes | URL файла спрайта (обычно из manifest.json, созданного npx @ds/icons copy-sprites) |
+| `src` | `string` | — | yes | URL файла спрайта (обычно из manifest.json, созданного npx @cloud-ru/ds-icons copy-sprites) |
 
 ### SpriteIcon
 | Prop | Type | Default | Required | Description |
@@ -38,7 +38,7 @@ pnpm add @ds/icons
 ### Color
 
 ```tsx
-import { TrashSVG } from '@ds/icons/interface/system';
+import { TrashSVG } from '@cloud-ru/ds-icons/interface/system';
 
 import styles from './Color.module.scss';
 
@@ -62,7 +62,7 @@ export function Color() {
 ### CustomThemedIcon
 
 ```tsx
-import { createThemedIcon } from '@ds/icons';
+import { createThemedIcon } from '@cloud-ru/ds-icons';
 
 // Свой логотип в двух исполнениях. createThemedIcon собирает из них компонент,
 // который сам выбирает вариант по активной теме DS и ведёт себя как штатная иконка
@@ -99,7 +99,7 @@ export function CustomThemedIcon() {
 ### Flag
 
 ```tsx
-import { RussiaSVG } from '@ds/icons/flags';
+import { RussiaSVG } from '@cloud-ru/ds-icons/flags';
 
 export function Flag() {
   return <RussiaSVG size={32} aria-label='Флаг России' />;
@@ -109,7 +109,7 @@ export function Flag() {
 ### Sizes
 
 ```tsx
-import { CheckSVG, PlusSVG, SearchSVG, TrashSVG } from '@ds/icons/interface/system';
+import { CheckSVG, PlusSVG, SearchSVG, TrashSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function Sizes() {
   return (
@@ -126,7 +126,7 @@ export function Sizes() {
 ### ThemedLogo
 
 ```tsx
-import { CloudLogo } from '@ds/icons/logos';
+import { CloudLogo } from '@cloud-ru/ds-icons/logos';
 
 // Логотип сам переключает Light/Dark исполнение по активной теме DS —
 // отдельного пропа не требуется, достаточно быть внутри провайдера темы.

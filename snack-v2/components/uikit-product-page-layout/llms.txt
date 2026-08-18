@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-page-layout
+﻿# @cloud-ru/ds-uikit-product-page-layout
 
 > Набор страничных раскладок продуктового кабинета — каталог, детальная страница сервиса, форма, дерево-навигация, сайдбар и общие слоты — с адаптацией desktop/mobile через AdaptiveProvider.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-page-layout/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-page-layout
+pnpm add @cloud-ru/ds-uikit-product-page-layout
 ```
 
 ## Когда использовать
@@ -18,7 +18,7 @@ pnpm add @ds/uikit-product-page-layout
 Когда **не** нужен пакет:
 
 - Отдельная карточка или виджет внутри страницы:
-  - используйте [`@ds/uikit-product-widget`](/components/uikit-product-widget) или [`@ds/card`](/components/card).
+  - используйте [`@cloud-ru/ds-uikit-product-widget`](/components/uikit-product-widget) или [`@cloud-ru/ds-card`](/components/card).
 - Только панель действий без страничной обёртки:
   - соберите `Button` / kebab напрямую.
 

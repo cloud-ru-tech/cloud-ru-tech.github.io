@@ -1,4 +1,4 @@
-﻿# @ds/progress-bar
+﻿# @cloud-ru/ds-progress-bar
 
 > Пакет индикаторов прогресса дизайн-системы — линейный ProgressBar, круговой ProgressBarCircle и верхний page-индикатор ProgressBarPage.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/progress-bar/
 ## Установка
 
 ```sh
-pnpm add @ds/progress-bar
+pnpm add @cloud-ru/ds-progress-bar
 ```
 
 ## API
@@ -67,7 +67,7 @@ pnpm add @ds/progress-bar
 ### AnimatedProgress
 
 ```tsx
-import { ProgressBar } from '@ds/progress-bar';
+import { ProgressBar } from '@cloud-ru/ds-progress-bar';
 import { useEffect, useState } from 'react';
 
 export function AnimatedProgress() {
@@ -87,7 +87,7 @@ export function AnimatedProgress() {
 ### Appearances
 
 ```tsx
-import { APPEARANCE, ProgressBar } from '@ds/progress-bar';
+import { APPEARANCE, ProgressBar } from '@cloud-ru/ds-progress-bar';
 
 export function Appearances() {
   return (
@@ -103,7 +103,7 @@ export function Appearances() {
 ### CircleAppearances
 
 ```tsx
-import { APPEARANCE, ProgressBarCircle } from '@ds/progress-bar';
+import { APPEARANCE, ProgressBarCircle } from '@cloud-ru/ds-progress-bar';
 
 export function CircleAppearances() {
   return (
@@ -119,7 +119,7 @@ export function CircleAppearances() {
 ### CircleStatic
 
 ```tsx
-import { ProgressBarCircle } from '@ds/progress-bar';
+import { ProgressBarCircle } from '@cloud-ru/ds-progress-bar';
 
 export function CircleStatic() {
   return <ProgressBarCircle progress={75} />;
@@ -129,7 +129,7 @@ export function CircleStatic() {
 ### PageToggle
 
 ```tsx
-import { ProgressBarPage } from '@ds/progress-bar';
+import { ProgressBarPage } from '@cloud-ru/ds-progress-bar';
 import { useState } from 'react';
 
 export function PageToggle() {
@@ -149,7 +149,7 @@ export function PageToggle() {
 ### Sizes
 
 ```tsx
-import { PROGRESS_BAR_SIZE, ProgressBar } from '@ds/progress-bar';
+import { PROGRESS_BAR_SIZE, ProgressBar } from '@cloud-ru/ds-progress-bar';
 
 export function Sizes() {
   return (
@@ -164,7 +164,7 @@ export function Sizes() {
 ### Static
 
 ```tsx
-import { ProgressBar } from '@ds/progress-bar';
+import { ProgressBar } from '@cloud-ru/ds-progress-bar';
 
 export function Static() {
   return <ProgressBar progress={40} />;

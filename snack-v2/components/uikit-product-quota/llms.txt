@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-quota
+﻿# @cloud-ru/ds-uikit-product-quota
 
 > Виджеты квот проекта — выпадающий QuotaWidget, аккордеон QuotaWidgetMini и карточка квоты QuotaWidgetCard с прогрессом и состояниями loading/error.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-quota/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-quota
+pnpm add @cloud-ru/ds-uikit-product-quota
 ```
 
 ## API
@@ -152,7 +152,7 @@ pnpm add @ds/uikit-product-quota
 ### QuotaCardLevels
 
 ```tsx
-import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+import { QuotaWidgetCard } from '@cloud-ru/ds-uikit-product-quota';
 
 export function QuotaCardLevels() {
   return (
@@ -169,7 +169,7 @@ export function QuotaCardLevels() {
 ### QuotaCardLoading
 
 ```tsx
-import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+import { QuotaWidgetCard } from '@cloud-ru/ds-uikit-product-quota';
 
 export function QuotaCardLoading() {
   return (
@@ -181,7 +181,7 @@ export function QuotaCardLoading() {
 ### QuotaCardNoData
 
 ```tsx
-import { QuotaWidgetCard } from '@ds/uikit-product-quota';
+import { QuotaWidgetCard } from '@cloud-ru/ds-uikit-product-quota';
 import { useState } from 'react';
 
 const QUOTA = { name: 'Network', limit: 100, usage: 30, remains: 70, unitDisplayName: 'GB' };
@@ -203,7 +203,7 @@ export function QuotaCardNoData() {
 ### QuotaWidgetBasic
 
 ```tsx
-import { QuotaItem, QuotaWidget } from '@ds/uikit-product-quota';
+import { QuotaItem, QuotaWidget } from '@cloud-ru/ds-uikit-product-quota';
 import { useState } from 'react';
 
 const QUOTAS: QuotaItem[] = [
@@ -241,7 +241,7 @@ export function QuotaWidgetBasic() {
 ### QuotaWidgetError
 
 ```tsx
-import { QuotaItem, QuotaWidget } from '@ds/uikit-product-quota';
+import { QuotaItem, QuotaWidget } from '@cloud-ru/ds-uikit-product-quota';
 import { useState } from 'react';
 
 const QUOTAS: QuotaItem[] = [
@@ -281,7 +281,7 @@ export function QuotaWidgetError() {
 ### QuotaWidgetMiniExpanded
 
 ```tsx
-import { QuotaItem, QuotaWidgetMini } from '@ds/uikit-product-quota';
+import { QuotaItem, QuotaWidgetMini } from '@cloud-ru/ds-uikit-product-quota';
 import { useState } from 'react';
 
 const QUOTAS: QuotaItem[] = [

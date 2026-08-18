@@ -1,4 +1,4 @@
-﻿# @ds/markdown
+﻿# @cloud-ru/ds-markdown
 
 > Просмотр и редактирование markdown — рендер GFM и WYSIWYG-редактор на TipTap.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/markdown/
 ## Установка
 
 ```sh
-pnpm add @ds/markdown
+pnpm add @cloud-ru/ds-markdown
 ```
 
 ## API
@@ -121,7 +121,7 @@ _Нет публичных пропсов._
 ### EditorControlled
 
 ```tsx
-import { MarkdownEditor } from '@ds/markdown';
+import { MarkdownEditor } from '@cloud-ru/ds-markdown';
 import { useState } from 'react';
 
 export function EditorControlled() {
@@ -137,7 +137,7 @@ export function EditorControlled() {
 ### EditorCustomToolbar
 
 ```tsx
-import { MarkdownEditor, TOOLBAR_ITEM } from '@ds/markdown';
+import { MarkdownEditor, TOOLBAR_ITEM } from '@cloud-ru/ds-markdown';
 
 const INITIAL = `Оставьте в тулбаре только нужные кнопки через \`toolbar\`.
 `;
@@ -156,7 +156,7 @@ export function EditorCustomToolbar() {
 ### EditorUncontrolled
 
 ```tsx
-import { MarkdownEditor } from '@ds/markdown';
+import { MarkdownEditor } from '@cloud-ru/ds-markdown';
 
 const INITIAL = `# Заметка
 
@@ -171,7 +171,7 @@ export function EditorUncontrolled() {
 ### Viewer
 
 ```tsx
-import { Markdown } from '@ds/markdown';
+import { Markdown } from '@cloud-ru/ds-markdown';
 
 const SOURCE = `# Релиз 2.0
 
@@ -197,13 +197,13 @@ export function Viewer() {
 ### ViewerCodeCopy
 
 ```tsx
-import { Markdown } from '@ds/markdown';
+import { Markdown } from '@cloud-ru/ds-markdown';
 import { useState } from 'react';
 
 const SOURCE = `Нажмите Copy на блоке кода — \`onCodeCopyClick\` получит сырой текст.
 
 \`\`\`bash
-pnpm add @ds/markdown
+pnpm add @cloud-ru/ds-markdown
 \`\`\`
 `;
 

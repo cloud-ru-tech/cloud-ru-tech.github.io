@@ -1,4 +1,4 @@
-﻿# @ds/button-combo
+﻿# @cloud-ru/ds-button-combo
 
 > Кнопка с основным действием и выпадающим списком дополнительных действий.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/button-combo/
 ## Установка
 
 ```sh
-pnpm add @ds/button-combo
+pnpm add @cloud-ru/ds-button-combo
 ```
 
 ## Когда использовать
@@ -17,9 +17,9 @@ pnpm add @ds/button-combo
 
 Когда **не** нужен:
 
-- Для единственного действия — обычный `Button` из `@ds/button`.
-- Для выбора значения (а не запуска действия) — `@ds/segment-control` или select.
-- Для равнозначных несвязанных действий — `ButtonGroup` из `@ds/button`.
+- Для единственного действия — обычный `Button` из `@cloud-ru/ds-button`.
+- Для выбора значения (а не запуска действия) — `@cloud-ru/ds-segment-control` или select.
+- Для равнозначных несвязанных действий — `ButtonGroup` из `@cloud-ru/ds-button`.
 
 ## API
 
@@ -60,7 +60,7 @@ pnpm add @ds/button-combo
 ### Basic
 
 ```tsx
-import { ButtonCombo, Item } from '@ds/button-combo';
+import { ButtonCombo, Item } from '@cloud-ru/ds-button-combo';
 
 const items: Item[] = [
   { id: 'save', label: 'Сохранить', onClick: () => console.info('Сохранить') },
@@ -76,8 +76,8 @@ export function Basic() {
 ### Controlled
 
 ```tsx
-import { ButtonCombo, Item } from '@ds/button-combo';
-import { ItemId } from '@ds/list';
+import { ButtonCombo, Item } from '@cloud-ru/ds-button-combo';
+import { ItemId } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 const items: Item[] = [
@@ -97,7 +97,7 @@ export function Controlled() {
 ### FullWidth
 
 ```tsx
-import { ButtonCombo, Item } from '@ds/button-combo';
+import { ButtonCombo, Item } from '@cloud-ru/ds-button-combo';
 
 import styles from './styles.module.scss';
 
@@ -118,7 +118,7 @@ export function FullWidth() {
 ### Views
 
 ```tsx
-import { ButtonCombo, Item, VIEW } from '@ds/button-combo';
+import { ButtonCombo, Item, VIEW } from '@cloud-ru/ds-button-combo';
 
 const items: Item[] = [
   { id: 'run', label: 'Запустить', onClick: () => console.info('Запустить') },

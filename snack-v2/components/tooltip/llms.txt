@@ -1,4 +1,4 @@
-﻿# @ds/tooltip
+﻿# @cloud-ru/ds-tooltip
 
 > Пакет подсказок — компонент Tooltip для произвольного триггера и QuestionTooltip с иконкой «?» для полей форм и сложной терминологии.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/tooltip/
 ## Установка
 
 ```sh
-pnpm add @ds/tooltip
+pnpm add @cloud-ru/ds-tooltip
 ```
 
 ## API
@@ -20,7 +20,7 @@ pnpm add @ds/tooltip
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `disableMaxWidth` | `boolean` | `false` | no | Отключение ограничения ширины тултипа |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `hoverDelayClose` | `number` | — | no | Задержка закрытия по ховеру |
 | `hoverDelayOpen` | `number` | — | no | Задержка открытия по ховеру |
@@ -51,7 +51,7 @@ pnpm add @ds/tooltip
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
 | `data-test-id` | `string` | — | no |  |
 | `disableMaxWidth` | `boolean` | `false` | no | Отключение ограничения ширины тултипа |
-| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@ds/utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `fallbackPlacements` | `Placement[]` | — | no | Цепочка расположений которая будет применяться к поповеру от первого к последнему если при текущем он не влезает. |
 | `hoverDelayClose` | `number` | `0` | no | Задержка закрытия по ховеру |
 | `hoverDelayOpen` | `number` | `0` | no | Задержка открытия по ховеру |
@@ -86,7 +86,7 @@ pnpm add @ds/tooltip
 ### Basic
 
 ```tsx
-import { Tooltip } from '@ds/tooltip';
+import { Tooltip } from '@cloud-ru/ds-tooltip';
 
 export function Basic() {
   return (
@@ -100,7 +100,7 @@ export function Basic() {
 ### ClickTrigger
 
 ```tsx
-import { Tooltip } from '@ds/tooltip';
+import { Tooltip } from '@cloud-ru/ds-tooltip';
 
 export function ClickTrigger() {
   return (
@@ -114,7 +114,7 @@ export function ClickTrigger() {
 ### Question
 
 ```tsx
-import { QuestionTooltip } from '@ds/tooltip';
+import { QuestionTooltip } from '@cloud-ru/ds-tooltip';
 
 export function Question() {
   return (

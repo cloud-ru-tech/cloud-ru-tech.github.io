@@ -1,4 +1,4 @@
-﻿# @ds/toolbar
+﻿# @cloud-ru/ds-toolbar
 
 > Панель инструментов списков и таблиц — поиск, фильтры, массовые действия, меню «Ещё».
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/toolbar/
 ## Установка
 
 ```sh
-pnpm add @ds/toolbar
+pnpm add @cloud-ru/ds-toolbar
 ```
 
 ## Когда использовать
@@ -156,7 +156,7 @@ pnpm add @ds/toolbar
 ### Basic
 
 ```tsx
-import { Toolbar } from '@ds/toolbar';
+import { Toolbar } from '@cloud-ru/ds-toolbar';
 import { useState } from 'react';
 
 export function Basic() {
@@ -180,8 +180,8 @@ export function Basic() {
 ### BulkActions
 
 ```tsx
-import { CheckSVG, CopySVG, CrossSVG } from '@ds/icons/interface/system';
-import { Toolbar } from '@ds/toolbar';
+import { CheckSVG, CopySVG, CrossSVG } from '@cloud-ru/ds-icons/interface/system';
+import { Toolbar } from '@cloud-ru/ds-toolbar';
 import { useState } from 'react';
 
 export function BulkActions() {
@@ -211,10 +211,10 @@ export function BulkActions() {
 ### MobileLayout
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { CheckSVG, CrossSVG } from '@ds/icons/interface/system';
-import { Checkbox } from '@ds/toggles';
-import { Toolbar } from '@ds/toolbar';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { CheckSVG, CrossSVG } from '@cloud-ru/ds-icons/interface/system';
+import { Checkbox } from '@cloud-ru/ds-toggles';
+import { Toolbar } from '@cloud-ru/ds-toolbar';
 import { useId, useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -258,9 +258,9 @@ export function MobileLayout() {
 ### WithDataView
 
 ```tsx
-import { Button } from '@ds/button';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { Toolbar } from '@ds/toolbar';
+import { Button } from '@cloud-ru/ds-button';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { Toolbar } from '@cloud-ru/ds-toolbar';
 import { useState } from 'react';
 
 export function WithDataView() {
@@ -292,7 +292,7 @@ export function WithDataView() {
 ### WithFilters
 
 ```tsx
-import { Toolbar } from '@ds/toolbar';
+import { Toolbar } from '@cloud-ru/ds-toolbar';
 import { useState } from 'react';
 
 export function WithFilters() {

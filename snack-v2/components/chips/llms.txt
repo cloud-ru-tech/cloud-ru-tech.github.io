@@ -1,4 +1,4 @@
-﻿# @ds/chips
+﻿# @cloud-ru/ds-chips
 
 > Пакет чипов дизайн-системы — ChipAssist, ChipToggle, семейство ChipChoice и ChipChoiceRow для действий, переключения и фильтрации.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/chips/
 ## Установка
 
 ```sh
-pnpm add @ds/chips
+pnpm add @cloud-ru/ds-chips
 ```
 
 ## API
@@ -355,7 +355,7 @@ pnpm add @ds/chips
 ### AssistSizes
 
 ```tsx
-import { ChipAssist } from '@ds/chips';
+import { ChipAssist } from '@cloud-ru/ds-chips';
 
 export function AssistSizes() {
   return (
@@ -371,8 +371,8 @@ export function AssistSizes() {
 ### AssistStates
 
 ```tsx
-import { ChipAssist } from '@ds/chips';
-import { PlusSVG } from '@ds/icons/interface/system';
+import { ChipAssist } from '@cloud-ru/ds-chips';
+import { PlusSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function AssistStates() {
   return (
@@ -388,8 +388,8 @@ export function AssistStates() {
 ### AssistWithIcon
 
 ```tsx
-import { ChipAssist } from '@ds/chips';
-import { PlusSVG } from '@ds/icons/interface/system';
+import { ChipAssist } from '@cloud-ru/ds-chips';
+import { PlusSVG } from '@cloud-ru/ds-icons/interface/system';
 
 export function AssistWithIcon() {
   return <ChipAssist label='Добавить тег' icon={<PlusSVG />} size='m' onClick={() => {}} />;
@@ -399,8 +399,8 @@ export function AssistWithIcon() {
 ### ChoiceCustomBasic
 
 ```tsx
-import { Button } from '@ds/button';
-import { ChipChoice } from '@ds/chips';
+import { Button } from '@cloud-ru/ds-button';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const PRIORITIES = [
@@ -442,7 +442,7 @@ export function ChoiceCustomBasic() {
 ### ChoiceDateBasic
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceDateBasic() {
@@ -455,7 +455,7 @@ export function ChoiceDateBasic() {
 ### ChoiceDateMonth
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceDateMonth() {
@@ -468,7 +468,7 @@ export function ChoiceDateMonth() {
 ### ChoiceDateRangeBasic
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceDateRangeBasic() {
@@ -481,7 +481,7 @@ export function ChoiceDateRangeBasic() {
 ### ChoiceDateRangeUncontrolled
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 
 export function ChoiceDateRangeUncontrolled() {
   return <ChipChoice.DateRange label='Период' defaultValue={[new Date(2024, 0, 15), new Date(2024, 0, 22)]} />;
@@ -491,7 +491,7 @@ export function ChoiceDateRangeUncontrolled() {
 ### ChoiceDateTime
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceDateTime() {
@@ -504,7 +504,7 @@ export function ChoiceDateTime() {
 ### ChoiceMultipleBasic
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = [
@@ -526,7 +526,7 @@ export function ChoiceMultipleBasic() {
 ### ChoiceMultipleSearchable
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = [
@@ -556,7 +556,7 @@ export function ChoiceMultipleSearchable() {
 ### ChoiceRowBasic
 
 ```tsx
-import { CHIP_CHOICE_TYPE, ChipChoiceRow } from '@ds/chips';
+import { CHIP_CHOICE_TYPE, ChipChoiceRow } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const FILTERS = [
@@ -596,7 +596,7 @@ export function ChoiceRowBasic() {
 ### ChoiceRowPinned
 
 ```tsx
-import { CHIP_CHOICE_TYPE, ChipChoiceRow } from '@ds/chips';
+import { CHIP_CHOICE_TYPE, ChipChoiceRow } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const FILTERS = [
@@ -636,7 +636,7 @@ export function ChoiceRowPinned() {
 ### ChoiceSingleBasic
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = [
@@ -655,7 +655,7 @@ export function ChoiceSingleBasic() {
 ### ChoiceSingleManualApply
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = [
@@ -674,7 +674,7 @@ export function ChoiceSingleManualApply() {
 ### ChoiceSingleSearchable
 
 ```tsx
-import { ChipChoice } from '@ds/chips';
+import { ChipChoice } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = [
@@ -696,7 +696,7 @@ export function ChoiceSingleSearchable() {
 ### ChoiceTimeBasic
 
 ```tsx
-import { ChipChoice, ChipChoiceTimeProps } from '@ds/chips';
+import { ChipChoice, ChipChoiceTimeProps } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceTimeBasic() {
@@ -712,7 +712,7 @@ export function ChoiceTimeBasic() {
 ### ChoiceTimeSeconds
 
 ```tsx
-import { ChipChoice, ChipChoiceTimeProps } from '@ds/chips';
+import { ChipChoice, ChipChoiceTimeProps } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ChoiceTimeSeconds() {
@@ -729,7 +729,7 @@ export function ChoiceTimeSeconds() {
 ### ToggleBasic
 
 ```tsx
-import { ChipToggle } from '@ds/chips';
+import { ChipToggle } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ToggleBasic() {
@@ -742,7 +742,7 @@ export function ToggleBasic() {
 ### ToggleGroup
 
 ```tsx
-import { ChipToggle } from '@ds/chips';
+import { ChipToggle } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 const OPTIONS = ['React', 'Vue', 'Svelte'];
@@ -769,7 +769,7 @@ export function ToggleGroup() {
 ### ToggleStates
 
 ```tsx
-import { ChipToggle } from '@ds/chips';
+import { ChipToggle } from '@cloud-ru/ds-chips';
 import { useState } from 'react';
 
 export function ToggleStates() {

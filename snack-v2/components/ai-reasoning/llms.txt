@@ -1,4 +1,4 @@
-﻿# @ds/ai-reasoning
+﻿# @cloud-ru/ds-ai-reasoning
 
 > Строка reasoning в AI-цепочке со степпер-линией, иконкой и текстовым описанием шага.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/ai-reasoning/
 ## Установка
 
 ```sh
-pnpm add @ds/ai-reasoning
+pnpm add @cloud-ru/ds-ai-reasoning
 ```
 
 ## Когда использовать
@@ -32,7 +32,7 @@ pnpm add @ds/ai-reasoning
 ### Default
 
 ```tsx
-import { AiReasoning } from '@ds/ai-reasoning';
+import { AiReasoning } from '@cloud-ru/ds-ai-reasoning';
 
 export function Default() {
   return <AiReasoning description='Tool is reasoning about the next action' />;

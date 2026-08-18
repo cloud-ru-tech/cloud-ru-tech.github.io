@@ -1,4 +1,4 @@
-﻿# @ds/portal-context
+﻿# @cloud-ru/ds-portal-context
 
 > React Context, который задаёт DOM-узел для портальных компонентов (Tooltip, Popover, Dropdown, Modal, Drawer).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/portal-context/
 ## Установка
 
 ```sh
-pnpm add @ds/portal-context
+pnpm add @cloud-ru/ds-portal-context
 ```
 
 ## Когда использовать
@@ -31,11 +31,11 @@ pnpm add @ds/portal-context
 ### CascadingThemes
 
 ```tsx
-import { Button } from '@ds/button';
-import { Popover } from '@ds/popover';
-import { PortalContextProvider } from '@ds/portal-context';
-import { COLOR_SCHEME, ColorScheme, useThemeClassnames } from '@ds/theme';
-import { Tooltip } from '@ds/tooltip';
+import { Button } from '@cloud-ru/ds-button';
+import { Popover } from '@cloud-ru/ds-popover';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { COLOR_SCHEME, ColorScheme, useThemeClassnames } from '@cloud-ru/ds-theme';
+import { Tooltip } from '@cloud-ru/ds-tooltip';
 import { useRef } from 'react';
 
 import styles from './CascadingThemes.module.scss';
@@ -75,7 +75,7 @@ export function CascadingThemes() {
 ### CustomRoot
 
 ```tsx
-import { PortalContextProvider, usePortalContext } from '@ds/portal-context';
+import { PortalContextProvider, usePortalContext } from '@cloud-ru/ds-portal-context';
 import { useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 

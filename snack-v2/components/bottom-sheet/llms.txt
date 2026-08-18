@@ -1,4 +1,4 @@
-﻿# @ds/bottom-sheet
+﻿# @cloud-ru/ds-bottom-sheet
 
 > Mobile-first overlay-контейнер с drag-handle и swipe-down для диалогов, выпадающих списков и фильтров. Поддерживает snap-points (раскрытие на половину → full).
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/bottom-sheet/
 ## Установка
 
 ```sh
-pnpm add @ds/bottom-sheet
+pnpm add @cloud-ru/ds-bottom-sheet
 ```
 
 ## Когда использовать
@@ -29,7 +29,7 @@ pnpm add @ds/bottom-sheet
 | `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены — объект пропсов `Button` (по умолчанию `view='outline'`, `appearance='neutral'`). |
 | `className` | `string` | — | no | CSS-класс самого sheet-контейнера. |
 | `closeOnPopstate` | `boolean` | `true` | no | Закрывать sheet при `popstate` (browser-back на mobile). |
-| `container` | `string \| HTMLElement` | — | no | Контейнер для портала. По дефолту — `body` либо контекст-провайдер `@ds/portal-context`. |
+| `container` | `string \| HTMLElement` | — | no | Контейнер для портала. По дефолту — `body` либо контекст-провайдер `@cloud-ru/ds-portal-context`. |
 | `content` | `ReactNode` | — | no | Основное содержимое (рендерится в `BottomSheetCustom.Body`). |
 | `data-test-id` | `string` | — | no |  |
 | `defaultSnapIndex` | `number` | `0` | no | Индекс snap'а, на котором sheet открывается по дефолту. Игнорируется при controlled `snapIndex`. |
@@ -67,7 +67,7 @@ pnpm add @ds/bottom-sheet
 | `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | CSS-класс самого sheet-контейнера. |
 | `closeOnPopstate` | `boolean` | `true` | no | Закрывать sheet при `popstate` (browser-back на mobile). |
-| `container` | `string \| HTMLElement` | — | no | Контейнер для портала. По дефолту — `body` либо контекст-провайдер `@ds/portal-context`. |
+| `container` | `string \| HTMLElement` | — | no | Контейнер для портала. По дефолту — `body` либо контекст-провайдер `@cloud-ru/ds-portal-context`. |
 | `data-test-id` | `string` | — | no |  |
 | `defaultSnapIndex` | `number` | `0` | no | Индекс snap'а, на котором sheet открывается по дефолту. Игнорируется при controlled `snapIndex`. |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации открытия / закрытия и перехода между snap-точками. |
@@ -93,8 +93,8 @@ _Нет публичных пропсов._
 ### Basic
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -125,8 +125,8 @@ export function Basic() {
 ### CustomComposition
 
 ```tsx
-import { BottomSheetCustom } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheetCustom } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -159,8 +159,8 @@ export function CustomComposition() {
 ### CustomDisableMotions
 
 ```tsx
-import { BottomSheetCustom } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheetCustom } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -193,8 +193,8 @@ export function CustomDisableMotions() {
 ### CustomScrollable
 
 ```tsx
-import { BottomSheetCustom } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheetCustom } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -230,8 +230,8 @@ export function CustomScrollable() {
 ### CustomSnapPoints
 
 ```tsx
-import { BottomSheetCustom } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheetCustom } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -278,8 +278,8 @@ export function CustomSnapPoints() {
 ### Expandable
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -321,12 +321,12 @@ export function Expandable() {
 ### Filters
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
-import { SegmentControl } from '@ds/segment-control';
-import { Tag } from '@ds/tag';
-import { Switch } from '@ds/toggles';
-import { QuestionTooltip } from '@ds/tooltip';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
+import { SegmentControl } from '@cloud-ru/ds-segment-control';
+import { Tag } from '@cloud-ru/ds-tag';
+import { Switch } from '@cloud-ru/ds-toggles';
+import { QuestionTooltip } from '@cloud-ru/ds-tooltip';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -404,8 +404,8 @@ export function Filters() {
 ### FooterActions
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -436,8 +436,8 @@ export function FooterActions() {
 ### NonModal
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -483,8 +483,8 @@ export function NonModal() {
 ### Scrollable
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -517,9 +517,9 @@ export function Scrollable() {
 ### SelectionList
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
-import { Checkbox } from '@ds/toggles';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
+import { Checkbox } from '@cloud-ru/ds-toggles';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -584,11 +584,11 @@ export function SelectionList() {
 ### TagPicker
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
-import { Search } from '@ds/search';
-import { Tag } from '@ds/tag';
-import { QuestionTooltip } from '@ds/tooltip';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
+import { Search } from '@cloud-ru/ds-search';
+import { Tag } from '@cloud-ru/ds-tag';
+import { QuestionTooltip } from '@cloud-ru/ds-tooltip';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -643,10 +643,10 @@ export function TagPicker() {
 ### WithActionButton
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
-import { Dropdown } from '@ds/dropdown';
-import { KebabSVG } from '@ds/icons/interface/system';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
+import { Dropdown } from '@cloud-ru/ds-dropdown';
+import { KebabSVG } from '@cloud-ru/ds-icons/interface/system';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -715,8 +715,8 @@ export function WithActionButton() {
 ### WithMedia
 
 ```tsx
-import { BottomSheet, MEDIA_KIND } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet, MEDIA_KIND } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -747,8 +747,8 @@ export function WithMedia() {
 ### WithSubtitle
 
 ```tsx
-import { BottomSheet } from '@ds/bottom-sheet';
-import { Button } from '@ds/button';
+import { BottomSheet } from '@cloud-ru/ds-bottom-sheet';
+import { Button } from '@cloud-ru/ds-button';
 import { useState } from 'react';
 
 import { MobilePreview } from '../MobilePreview';
@@ -763,7 +763,7 @@ export function WithSubtitle() {
         open={open}
         onClose={() => setOpen(false)}
         title='Filters'
-        // В продакшене сюда — `@ds/search::SearchBar` или `@ds/segment-control::SegmentControl`.
+        // В продакшене сюда — `@cloud-ru/ds-search::SearchBar` или `@cloud-ru/ds-segment-control::SegmentControl`.
         slotSecondTitle={<div>SearchBar / SegmentControl placeholder</div>}
         content={<p>Subtitle располагается под заголовком — sticky-зона для поиска/фильтров.</p>}
         approveButton={{ label: 'Применить', onClick: () => setOpen(false) }}

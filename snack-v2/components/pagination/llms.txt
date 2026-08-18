@@ -1,4 +1,4 @@
-﻿# @ds/pagination
+﻿# @cloud-ru/ds-pagination
 
 > Пакет пагинации — компоненты Pagination с нумерованными страницами и PaginationSlider для плотной мини-навигации.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/pagination/
 ## Установка
 
 ```sh
-pnpm add @ds/pagination
+pnpm add @cloud-ru/ds-pagination
 ```
 
 ## API
@@ -66,7 +66,7 @@ pnpm add @ds/pagination
 ### AsLinks
 
 ```tsx
-import { Pagination } from '@ds/pagination';
+import { Pagination } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function AsLinks() {
@@ -79,7 +79,7 @@ export function AsLinks() {
 ### Basic
 
 ```tsx
-import { Pagination } from '@ds/pagination';
+import { Pagination } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function Basic() {
@@ -91,7 +91,7 @@ export function Basic() {
 ### LongRange
 
 ```tsx
-import { Pagination } from '@ds/pagination';
+import { Pagination } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function LongRange() {
@@ -104,7 +104,7 @@ export function LongRange() {
 ### SizeM
 
 ```tsx
-import { Pagination } from '@ds/pagination';
+import { Pagination } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function SizeM() {
@@ -117,7 +117,7 @@ export function SizeM() {
 ### SliderBasic
 
 ```tsx
-import { PaginationSlider } from '@ds/pagination';
+import { PaginationSlider } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function SliderBasic() {
@@ -129,7 +129,7 @@ export function SliderBasic() {
 ### SliderSizeS
 
 ```tsx
-import { PaginationSlider } from '@ds/pagination';
+import { PaginationSlider } from '@cloud-ru/ds-pagination';
 import { useState } from 'react';
 
 export function SliderSizeS() {

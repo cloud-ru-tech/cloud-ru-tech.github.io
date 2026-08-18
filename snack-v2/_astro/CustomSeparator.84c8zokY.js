@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Breadcrumbs.5j0jOiFa.js";var n=e(),r=[{id:`1`,label:`Dashboard`,href:`#`},{id:`2`,label:`Projects`,href:`#`},{id:`3`,label:`Astro`}];function i(){return(0,n.jsx)(t,{items:r,separator:`/`})}export{i as CustomSeparator};

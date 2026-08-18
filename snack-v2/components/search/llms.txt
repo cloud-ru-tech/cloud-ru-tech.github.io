@@ -1,4 +1,4 @@
-﻿# @ds/search
+﻿# @cloud-ru/ds-search
 
 > Компонент поискового поля — три размера, фон, рамка состояния, состояния loading и disabled, слот для действия внутри поля.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/search/
 ## Установка
 
 ```sh
-pnpm add @ds/search
+pnpm add @cloud-ru/ds-search
 ```
 
 ## Когда использовать
@@ -50,7 +50,7 @@ pnpm add @ds/search
 ### Basic
 
 ```tsx
-import { Search } from '@ds/search';
+import { Search } from '@cloud-ru/ds-search';
 import { useState } from 'react';
 
 export function Basic() {
@@ -62,7 +62,7 @@ export function Basic() {
 ### Disabled
 
 ```tsx
-import { Search } from '@ds/search';
+import { Search } from '@cloud-ru/ds-search';
 
 export function Disabled() {
   return <Search placeholder='Поиск' disabled />;
@@ -72,7 +72,7 @@ export function Disabled() {
 ### Loading
 
 ```tsx
-import { Search } from '@ds/search';
+import { Search } from '@cloud-ru/ds-search';
 
 export function Loading() {
   return <Search placeholder='Поиск' loading />;
@@ -82,7 +82,7 @@ export function Loading() {
 ### SizeL
 
 ```tsx
-import { Search } from '@ds/search';
+import { Search } from '@cloud-ru/ds-search';
 
 export function SizeL() {
   return <Search size='l' placeholder='Поиск по каталогу' />;
@@ -92,7 +92,7 @@ export function SizeL() {
 ### TransparentBackground
 
 ```tsx
-import { Search } from '@ds/search';
+import { Search } from '@cloud-ru/ds-search';
 
 export function TransparentBackground() {
   return <Search placeholder='Прозрачный фон' background={false} />;
@@ -102,9 +102,9 @@ export function TransparentBackground() {
 ### WithAfterContent
 
 ```tsx
-import { APPEARANCE, Button, VIEW } from '@ds/button';
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { Search } from '@ds/search';
+import { APPEARANCE, Button, VIEW } from '@cloud-ru/ds-button';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { Search } from '@cloud-ru/ds-search';
 import { useState } from 'react';
 
 export function WithAfterContent() {

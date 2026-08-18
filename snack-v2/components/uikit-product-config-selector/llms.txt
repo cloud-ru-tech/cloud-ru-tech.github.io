@@ -1,4 +1,4 @@
-﻿# @ds/uikit-product-config-selector
+﻿# @cloud-ru/ds-uikit-product-config-selector
 
 > Chip-toggle для выбора одной опции конфигурации — кликабельный chip с состояниями checked / available / disabled и tooltip-подсказками.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/uikit-product-config-selector/
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-config-selector
+pnpm add @cloud-ru/ds-uikit-product-config-selector
 ```
 
 ## Когда использовать
@@ -43,8 +43,8 @@ pnpm add @ds/uikit-product-config-selector
 ### Available
 
 ```tsx
-import { PortalContextProvider } from '@ds/portal-context';
-import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { ConfigSelector } from '@cloud-ru/ds-uikit-product-config-selector';
 import { useState } from 'react';
 
 export function Available() {
@@ -67,7 +67,7 @@ export function Available() {
 ### Basic
 
 ```tsx
-import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { ConfigSelector } from '@cloud-ru/ds-uikit-product-config-selector';
 import { useState } from 'react';
 
 export function Basic() {
@@ -80,8 +80,8 @@ export function Basic() {
 ### Disabled
 
 ```tsx
-import { PortalContextProvider } from '@ds/portal-context';
-import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
+import { ConfigSelector } from '@cloud-ru/ds-uikit-product-config-selector';
 import { useState } from 'react';
 
 export function Disabled() {
@@ -104,7 +104,7 @@ export function Disabled() {
 ### Group
 
 ```tsx
-import { ConfigSelector } from '@ds/uikit-product-config-selector';
+import { ConfigSelector } from '@cloud-ru/ds-uikit-product-config-selector';
 import { useState } from 'react';
 
 const OPTIONS = ['nano', 'micro', 'standard', 'large'] as const;

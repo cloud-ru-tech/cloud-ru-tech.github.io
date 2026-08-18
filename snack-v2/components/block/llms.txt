@@ -1,4 +1,4 @@
-﻿# @ds/block
+﻿# @cloud-ru/ds-block
 
 > Слот-поверхность с акриловым фоном (матовое/полупрозрачное стекло) для композиции содержимого на разных подложках.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/block/
 ## Установка
 
 ```sh
-pnpm add @ds/block
+pnpm add @cloud-ru/ds-block
 ```
 
 ## Когда использовать
@@ -23,7 +23,7 @@ pnpm add @ds/block
 ### Block
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@ds/materials`). Задаёт палитру подложки: цвета, `transparent` и `decorTransparent`. По умолчанию `material/neutralBackground1Level`. |
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@cloud-ru/ds-materials`). Задаёт палитру подложки: цвета, `transparent` и `decorTransparent`. По умолчанию `material/neutralBackground1Level`. |
 | `children` | `ReactNode` | — | no | Содержимое |
 | `content` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no | Подзаголовок |
 | `contentClassName` | `string` | — | no | Класс на внутренний слот содержимого (`.content`). Block — подложка, а не layout-контейнер (`display: block`); раскладку контента задаёт потребитель. Этот проп даёт управлять слотом содержимого напрямую — напр. растянуть его по высоте блока (`flex`/`height`), когда корень блока сделан flex-контейнером через `className`. |
@@ -36,8 +36,8 @@ pnpm add @ds/block
 ### BackgroundPalette
 
 ```tsx
-import { Block } from '@ds/block';
-import { BACKGROUND_PREDEFINED_FILL } from '@ds/materials';
+import { Block } from '@cloud-ru/ds-block';
+import { BACKGROUND_PREDEFINED_FILL } from '@cloud-ru/ds-materials';
 
 const FILLS = [
   BACKGROUND_PREDEFINED_FILL.PrimaryBackground,
@@ -63,7 +63,7 @@ export function BackgroundPalette() {
 ### Basic
 
 ```tsx
-import { Block } from '@ds/block';
+import { Block } from '@cloud-ru/ds-block';
 
 export function Basic() {
   return (
@@ -77,7 +77,7 @@ export function Basic() {
 ### OutlineLarge
 
 ```tsx
-import { Block } from '@ds/block';
+import { Block } from '@cloud-ru/ds-block';
 
 export function OutlineLarge() {
   return (
@@ -91,8 +91,8 @@ export function OutlineLarge() {
 ### Transparent
 
 ```tsx
-import { Block } from '@ds/block';
-import { BACKGROUND_PREDEFINED_FILL } from '@ds/materials';
+import { Block } from '@cloud-ru/ds-block';
+import { BACKGROUND_PREDEFINED_FILL } from '@cloud-ru/ds-materials';
 
 export function Transparent() {
   return (

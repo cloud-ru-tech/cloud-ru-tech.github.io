@@ -1,13 +1,13 @@
-﻿# @ds/uikit-product-toggles-predefined
+﻿# @cloud-ru/ds-uikit-product-toggles-predefined
 
-> Кликабельные карточки выбора (ToggleCard) и группа выбора (ToggleGroup) — предзаготовленный паттерн single/multiple-выбора на базе @ds/card.
+> Кликабельные карточки выбора (ToggleCard) и группа выбора (ToggleGroup) — предзаготовленный паттерн single/multiple-выбора на базе @cloud-ru/ds-card.
 
 Docs: /snack-v2/components/uikit-product-toggles-predefined/
 
 ## Установка
 
 ```sh
-pnpm add @ds/uikit-product-toggles-predefined
+pnpm add @cloud-ru/ds-uikit-product-toggles-predefined
 ```
 
 ## Когда использовать
@@ -34,7 +34,7 @@ pnpm add @ds/uikit-product-toggles-predefined
 | `disabled` | `boolean` | `false` | no | Заблокированное состояние: интерактив отключён |
 | `emblem` | `Emblem` | — | no | Ведущая эмблема. Передаются только параметры — сам `IconPredefined` встроен в компонент; `size` эмблемы выводится из `size` карточки. |
 | `promoBadge` | `string \| Pick<PromoTagProps, "label" \| "appearance">` | — | no | Промо-бейдж в правом верхнем углу карточки |
-| `size` | `l \| m \| s` | `m` | no | Размер карточки — масштабирует padding, gap, типографику и `radius` контейнера `@ds/card` |
+| `size` | `l \| m \| s` | `m` | no | Размер карточки — масштабирует padding, gap, типографику и `radius` контейнера `@cloud-ru/ds-card` |
 | `title` | `string` | — | yes | Заголовок карточки |
 | `truncate` | `{ title?: number; description?: number; } \| undefined` | `'{ title: 1; description: 2; }'` | no | Максимальное число строк до обрезки. |
 | `value` | `string` | — | yes | Значение карточки в контексте `ToggleGroup` |
@@ -69,7 +69,7 @@ pnpm add @ds/uikit-product-toggles-predefined
 ### Basic
 
 ```tsx
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 
 export function Basic() {
   return (
@@ -85,7 +85,7 @@ export function Basic() {
 ### Controlled
 
 ```tsx
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 import { useState } from 'react';
 
 export function Controlled() {
@@ -103,7 +103,7 @@ export function Controlled() {
 ### Horizontal
 
 ```tsx
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 
 export function Horizontal() {
   return (
@@ -118,7 +118,7 @@ export function Horizontal() {
 ### Multiple
 
 ```tsx
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 import { useState } from 'react';
 
 export function Multiple() {
@@ -137,8 +137,8 @@ export function Multiple() {
 ### WithIcon
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 
 export function WithIcon() {
   return (
@@ -153,8 +153,8 @@ export function WithIcon() {
 ### WithPromoBadge
 
 ```tsx
-import { PlaceholderSVG } from '@ds/icons/interface/system';
-import { ToggleCard, ToggleGroup } from '@ds/uikit-product-toggles-predefined';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { ToggleCard, ToggleGroup } from '@cloud-ru/ds-uikit-product-toggles-predefined';
 
 export function WithPromoBadge() {
   return (

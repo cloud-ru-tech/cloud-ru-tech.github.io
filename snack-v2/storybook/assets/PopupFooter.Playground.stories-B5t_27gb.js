@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,l as r,m as i,t as a,u as o}from"./iframe-Du0zU9lI.js";import{b as s,c,n as l,t as u}from"./src-B85uhcRv.js";import{n as d,t as f}from"./frame.module-mEVel5mV.js";import{t as p}from"./testIds-DN6P_u0w.js";var m,h,g,_,v,y;e((()=>{u(),a(),d(),p(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Foundation & utilities/PopupPrivate/PopupFooter`,id:`components-popupprivate-popupfooter`,component:c,parameters:{layout:`fullscreen`,figma:{disable:!0}},render:e=>(0,m.jsx)(o,{children:(0,m.jsxs)(n,{children:[(0,m.jsx)(i,{children:`Playground`}),(0,m.jsx)(r,{children:`Нижняя action-зона overlay-слоя. Рендерит переданные children в bottomBar-секции.`}),(0,m.jsxs)(`div`,{className:f.frame,children:[(0,m.jsxs)(`div`,{className:f.bodyStub,children:[(0,m.jsx)(`span`,{className:f.bodyLine}),(0,m.jsx)(`span`,{className:f.bodyLine})]}),(0,m.jsx)(c,{...e,children:(0,m.jsx)(l,{approveButton:{label:`Применить`},cancelButton:{label:`Отмена`},testIds:{approve:s.footerApprove,cancel:s.footerCancel,additional:s.footerAdditional}})})]})]})})},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(s.footer)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(SLOT_TEST_IDS.footer)).toBeVisible();
-  }
-}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
-//# sourceMappingURL=PopupFooter.Playground.stories-B5t_27gb.js.map

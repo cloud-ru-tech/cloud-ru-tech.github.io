@@ -1,4 +1,4 @@
-﻿# @ds/list
+﻿# @cloud-ru/ds-list
 
 > Списочный UI — компонент List для плоских/вложенных списков с выбором, группами и поиском и Droplist — тот же список в поповере.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/list/
 ## Установка
 
 ```sh
-pnpm add @ds/list
+pnpm add @cloud-ru/ds-list
 ```
 
 ## Когда использовать
@@ -676,8 +676,8 @@ _Нет публичных пропсов._
 ### BasicDroplist
 
 ```tsx
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -709,7 +709,7 @@ export function BasicDroplist() {
 ### BasicList
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -733,8 +733,8 @@ export function BasicList() {
 ### DroplistAsFormSelect
 
 ```tsx
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -770,8 +770,8 @@ export function DroplistAsFormSelect() {
 ### DroplistMultiple
 
 ```tsx
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -802,8 +802,8 @@ export function DroplistMultiple() {
 ### DroplistWithHeader
 
 ```tsx
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -839,8 +839,8 @@ export function DroplistWithHeader() {
 ### DroplistWithSearch
 
 ```tsx
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useMemo, useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -893,7 +893,7 @@ export function DroplistWithSearch() {
 ### EmptyState
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -922,7 +922,7 @@ export function EmptyState() {
 ### GroupsCollapsible
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -963,7 +963,7 @@ export function GroupsCollapsible() {
 ### ItemContentDescription
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -999,8 +999,8 @@ export function ItemContentDescription() {
 ### ItemContentSlots
 
 ```tsx
-import { FileSVG, FolderSVG, StarSVG } from '@ds/icons/interface/system';
-import { List } from '@ds/list';
+import { FileSVG, FolderSVG, StarSVG } from '@cloud-ru/ds-icons/interface/system';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -1031,7 +1031,7 @@ export function ItemContentSlots() {
 ### ItemContentTruncate
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -1061,7 +1061,7 @@ export function ItemContentTruncate() {
 ### LinkItems
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { ReactNode } from 'react';
 
 import styles from './styles.module.scss';
@@ -1102,7 +1102,7 @@ export function LinkItems() {
 ### ListItemWrap
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { ReactNode } from 'react';
 
 import styles from './styles.module.scss';
@@ -1147,7 +1147,7 @@ export function ListItemWrap() {
 ### ListReorder
 
 ```tsx
-import { ReorderableList, SimpleItem } from '@ds/list';
+import { ReorderableList, SimpleItem } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1173,7 +1173,7 @@ export function ListReorder() {
 ### ListReorderGroups
 
 ```tsx
-import { ReorderableList, ReorderItem } from '@ds/list';
+import { ReorderableList, ReorderItem } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1183,6 +1183,7 @@ const INITIAL_ITEMS: ReorderItem[] = [
     id: 'group-1',
     type: 'group',
     label: 'Избранное',
+    divider: true,
     items: [
       { id: 'catalog', content: { label: 'Каталог' } },
       { id: 'orders', content: { label: 'Заказы' } },
@@ -1193,6 +1194,7 @@ const INITIAL_ITEMS: ReorderItem[] = [
     id: 'group-2',
     type: 'group',
     label: 'Система',
+    divider: true,
     items: [
       { id: 'settings', content: { label: 'Настройки' } },
       { id: 'trash', content: { label: 'Корзина' } },
@@ -1214,9 +1216,9 @@ export function ListReorderGroups() {
 ### MobileDroplist
 
 ```tsx
-import { AdaptiveProvider, LAYOUT_TYPE } from '@ds/adaptive';
-import { Button } from '@ds/button';
-import { Droplist } from '@ds/list';
+import { AdaptiveProvider, LAYOUT_TYPE } from '@cloud-ru/ds-adaptive';
+import { Button } from '@cloud-ru/ds-button';
+import { Droplist } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1249,7 +1251,7 @@ export function MobileDroplist() {
 ### MultipleSelection
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1277,7 +1279,7 @@ export function MultipleSelection() {
 ### NestedLevels
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -1323,7 +1325,7 @@ export function NestedLevels() {
 ### PinnedItems
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 
 import styles from './styles.module.scss';
 
@@ -1352,7 +1354,7 @@ export function PinnedItems() {
 ### SingleSelection
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1381,8 +1383,8 @@ export function SingleSelection() {
 ### Virtualized
 
 ```tsx
-import { Button } from '@ds/button';
-import { List } from '@ds/list';
+import { Button } from '@cloud-ru/ds-button';
+import { List } from '@cloud-ru/ds-list';
 import { useMemo, useState } from 'react';
 
 import styles from './styles.module.scss';
@@ -1427,7 +1429,7 @@ export function Virtualized() {
 ### WithSearch
 
 ```tsx
-import { List } from '@ds/list';
+import { List } from '@cloud-ru/ds-list';
 import { useMemo, useState } from 'react';
 
 import styles from './styles.module.scss';

@@ -1,4 +1,4 @@
-﻿# @ds/modal
+﻿# @cloud-ru/ds-modal
 
 > Пакет модальных окон — компоненты Modal и ModalCustom с едиными токенами ширины и режимов закрытия.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/modal/
 ## Установка
 
 ```sh
-pnpm add @ds/modal
+pnpm add @cloud-ru/ds-modal
 ```
 
 ## API
@@ -34,7 +34,7 @@ pnpm add @ds/modal
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
 | `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
@@ -61,7 +61,7 @@ pnpm add @ds/modal
 | `className` | `string` | — | no | CSS-класс контейнера header'а. |
 | `data-test-id` | `string` | — | no |  |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
@@ -91,7 +91,7 @@ pnpm add @ds/modal
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
 | `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
@@ -119,7 +119,7 @@ pnpm add @ds/modal
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
 | `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
-| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@ds/tooltip`). |
+| `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
@@ -170,8 +170,8 @@ pnpm add @ds/modal
 ### Basic
 
 ```tsx
-import { Button, ButtonGroup } from '@ds/button';
-import { Modal } from '@ds/modal';
+import { Button, ButtonGroup } from '@cloud-ru/ds-button';
+import { Modal } from '@cloud-ru/ds-modal';
 import { useState } from 'react';
 
 export function Basic() {
@@ -202,8 +202,8 @@ export function Basic() {
 ### CustomComposition
 
 ```tsx
-import { Button } from '@ds/button';
-import { ModalCustom } from '@ds/modal';
+import { Button } from '@cloud-ru/ds-button';
+import { ModalCustom } from '@cloud-ru/ds-modal';
 import { useState } from 'react';
 
 export function CustomComposition() {
@@ -238,8 +238,8 @@ export function CustomComposition() {
 ### Forced
 
 ```tsx
-import { Button, ButtonGroup } from '@ds/button';
-import { Modal, MODE } from '@ds/modal';
+import { Button, ButtonGroup } from '@cloud-ru/ds-button';
+import { Modal, MODE } from '@cloud-ru/ds-modal';
 import { useState } from 'react';
 
 export function Forced() {
@@ -271,8 +271,8 @@ export function Forced() {
 ### Loading
 
 ```tsx
-import { Button } from '@ds/button';
-import { Modal } from '@ds/modal';
+import { Button } from '@cloud-ru/ds-button';
+import { Modal } from '@cloud-ru/ds-modal';
 import { useState } from 'react';
 
 export function Loading() {
@@ -297,8 +297,8 @@ export function Loading() {
 ### WithFooter
 
 ```tsx
-import { Button, ButtonGroup } from '@ds/button';
-import { Modal } from '@ds/modal';
+import { Button, ButtonGroup } from '@cloud-ru/ds-button';
+import { Modal } from '@cloud-ru/ds-modal';
 import { useState } from 'react';
 
 export function WithFooter() {

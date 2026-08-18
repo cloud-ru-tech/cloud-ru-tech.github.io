@@ -1,4 +1,4 @@
-﻿# @ds/timeline
+﻿# @cloud-ru/ds-timeline
 
 > Пакет таймлайна — вертикальная цепочка событий с маркерами, соединительными линиями и опциональным контентом в противоположной колонке.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/timeline/
 ## Установка
 
 ```sh
-pnpm add @ds/timeline
+pnpm add @cloud-ru/ds-timeline
 ```
 
 ## API
@@ -83,7 +83,7 @@ pnpm add @ds/timeline
 ### Alternate
 
 ```tsx
-import { Timeline } from '@ds/timeline';
+import { Timeline } from '@cloud-ru/ds-timeline';
 
 const items = [
   { content: 'Создано', opposite: '10:00' },
@@ -99,7 +99,7 @@ export function Alternate() {
 ### Basic
 
 ```tsx
-import { Timeline } from '@ds/timeline';
+import { Timeline } from '@cloud-ru/ds-timeline';
 
 const items = [
   { content: 'Заявка создана' },
@@ -116,7 +116,7 @@ export function Basic() {
 ### WithOpposite
 
 ```tsx
-import { Timeline } from '@ds/timeline';
+import { Timeline } from '@cloud-ru/ds-timeline';
 
 const items = [
   { content: 'Заявка создана', opposite: '10:00' },

@@ -1,4 +1,4 @@
-﻿# @ds/scroll
+﻿# @cloud-ru/ds-scroll
 
 > Контейнер с кастомными скроллбарами, размерами s/m, стратегиями скрытия, автоскролом и опциональным ресайзом.
 
@@ -7,7 +7,7 @@ Docs: /snack-v2/components/scroll/
 ## Установка
 
 ```sh
-pnpm add @ds/scroll
+pnpm add @cloud-ru/ds-scroll
 ```
 
 ## Когда использовать
@@ -52,7 +52,7 @@ pnpm add @ds/scroll
 ### AutoscrollBottom
 
 ```tsx
-import { Scroll } from '@ds/scroll';
+import { Scroll } from '@cloud-ru/ds-scroll';
 
 export function AutoscrollBottom() {
   return (
@@ -72,7 +72,7 @@ export function AutoscrollBottom() {
 ### Basic
 
 ```tsx
-import { Scroll } from '@ds/scroll';
+import { Scroll } from '@cloud-ru/ds-scroll';
 
 export function Basic() {
   return (
@@ -92,7 +92,7 @@ export function Basic() {
 ### HideOnLeave
 
 ```tsx
-import { Scroll } from '@ds/scroll';
+import { Scroll } from '@cloud-ru/ds-scroll';
 
 export function HideOnLeave() {
   return (
@@ -112,7 +112,7 @@ export function HideOnLeave() {
 ### Resizable
 
 ```tsx
-import { Scroll } from '@ds/scroll';
+import { Scroll } from '@cloud-ru/ds-scroll';
 
 export function Resizable() {
   return (
@@ -132,7 +132,7 @@ export function Resizable() {
 ### SmallSize
 
 ```tsx
-import { Scroll } from '@ds/scroll';
+import { Scroll } from '@cloud-ru/ds-scroll';
 
 export function SmallSize() {
   return (
