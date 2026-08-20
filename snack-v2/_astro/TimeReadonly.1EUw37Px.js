@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldTime.BIh_vW36.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Время выполнения`,readonly:!0,defaultValue:{hours:23,minutes:59,seconds:59}})}export{r as TimeReadonly};

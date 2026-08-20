@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,r as c,t as l,u}from"./iframe-DMWsC78w.js";import{a as d,s as f,t as p,u as m}from"./src-CayYsASu.js";import{n as h,t as g}from"./src---qDMW1E.js";import{n as _,t as v}from"./testIds-DRj3Za3P.js";import{n as y,r as b,t as x}from"./ThemedDrawerMedia-BsE8lHKn.js";function S(){let[e,t]=(0,C.useState)(!1),n=()=>t(!1),r=b(c());return(0,w.jsxs)(u,{children:[(0,w.jsxs)(a,{children:[(0,w.jsx)(s,{children:`WithMedia`}),(0,w.jsx)(o,{children:`Слот media — заглавная картинка над текстом. Адаптируется под текущую тему.`}),(0,w.jsx)(i,{align:`center`,children:(0,w.jsx)(d,{"data-test-id":v.drawer.triggerOpen,label:`Open onboarding drawer`,view:m.Outline,appearance:f.Neutral,onClick:()=>t(!0)})})]}),(0,w.jsx)(h,{"data-test-id":v.drawer.root,open:e,position:`right`,width:`m`,onClose:n,media:(0,w.jsx)(x,{src:r}),title:`Добро пожаловать`,subtitle:`Кратко о том, что изменилось в этой версии.`,content:`Список ключевых улучшений и ссылки на подробности могут размещаться в теле.`,approveButton:{label:`Готово`,onClick:n}})]})}var C,w,T,E,D,O,k;t((()=>{p(),g(),C=e(n(),1),l(),_(),y(),w=r(),{expect:T,within:E}=__STORYBOOK_MODULE_TEST__,D={title:`Snack/Overlays/Drawer/Drawer/Examples/WithMedia`,id:`components-drawer-drawer-examples-withmedia`,component:h,parameters:{layout:`fullscreen`}},O={tags:[`dev`,`test`],render:()=>(0,w.jsx)(S,{}),play:async({canvasElement:e})=>{await T(E(e).getByTestId(v.drawer.triggerOpen)).toBeVisible()}},O.parameters={...O.parameters,docs:{...O.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <WithMediaScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.drawer.triggerOpen)).toBeVisible();
+  }
+}`,...O.parameters?.docs?.source}}},k=[`WithMedia`]}))();export{O as WithMedia,k as __namedExportsOrder,D as default};
+//# sourceMappingURL=Drawer.WithMedia.stories-YuAb4Np-.js.map

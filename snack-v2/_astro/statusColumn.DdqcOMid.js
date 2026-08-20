@@ -1,1 +1,0 @@
-import{r as e}from"./Table.CRilKGo0.js";function t({key:t,mapStatusToAppearance:n,header:r=`Статус`,renderDescription:i,width:a=160,sortable:o=!0}){return{...e(i?{accessorKey:t,mapStatusToAppearance:n,renderDescription:i,header:r,size:a,enableSorting:o}:{accessorKey:t,mapStatusToAppearance:n,enableSorting:o}),columnSettings:{label:r}}}export{t};
