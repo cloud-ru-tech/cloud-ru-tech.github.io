@@ -1,0 +1,10 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{i as n,t as r}from"./iframe-Bd5xtg2w.js";import{V as i,t as a}from"./system-D2QEyDJQ.js";import{l as o,s,t as c,u as l}from"./src-vvZfR3iT.js";import{n as u,t as d}from"./testIds-BNu8o8i7.js";var f,p,m=e((()=>{f=`_matrix_90uz1_1`,p={matrix:f}})),h,g,_,v,y,b;e((()=>{c(),a(),r(),m(),d(),h=t(),g={title:`AI/Surfaces/AiSuggestion/AiSuggestionSimple`,id:`ai-aisuggestion-aisuggestionsimple`,component:s,parameters:{layout:`padded`,controls:{disable:!0},design:{type:`figma`,url:`https://www.figma.com/design/tCbbB5RUGyJeBRtjF3dt4d/AI-COMPONENTS?node-id=6450-3666`}}},_=[l.S,l.M],v=Object.values(o),y={tags:[`test`,`dev`],render:()=>(0,h.jsx)(`div`,{className:p.matrix,children:(0,h.jsx)(n,{sectionTitle:`Appearance × Size`,firstColumnHeader:`Appearance`,columnHeaders:_.map(e=>e.toUpperCase()),rows:v.map(e=>({variantLabel:e,cells:_.map(t=>(0,h.jsx)(s,{appearance:e,size:t,icon:(0,h.jsx)(i,{}),"data-test-id":u(e,t)},`${e}-${t}`))}))})})},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  tags: ['test', 'dev'],
+  render: () => <div className={styles.matrix}>
+      <StoryTable sectionTitle='Appearance × Size' firstColumnHeader='Appearance' columnHeaders={sizes.map(size => size.toUpperCase())} rows={appearances.map(appearance => ({
+      variantLabel: appearance,
+      cells: sizes.map(size => <AiSuggestionSimple key={\`\${appearance}-\${size}\`} appearance={appearance} size={size} icon={<PlaceholderSVG />} data-test-id={matrixCellTestId(appearance, size)} />)
+    }))} />
+    </div>
+}`,...y.parameters?.docs?.source}}},b=[`VisualMatrix`]}))();export{y as VisualMatrix,b as __namedExportsOrder,g as default};
+//# sourceMappingURL=AiSuggestionSimple.VisualMatrix.stories-3aMLx8au.js.map

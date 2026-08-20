@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{n,t as r}from"./src-DESXNENb.js";import{n as i,t as a}from"./styles.module-BlTuu6Pl.js";function o({title:e,description:t}){return(0,s.jsxs)(`div`,{className:i.demoComponent,children:[e&&(0,s.jsx)(n,{variant:`title`,size:`m`,className:i.title,children:e}),t&&(0,s.jsx)(n,{variant:`body`,size:`m`,children:t})]})}var s,c=e((()=>{r(),a(),s=t()}));export{c as n,o as t};
+//# sourceMappingURL=DemoComponent-CEsaBC2x.js.map

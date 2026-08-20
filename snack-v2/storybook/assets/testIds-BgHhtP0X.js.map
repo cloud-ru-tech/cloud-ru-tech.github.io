@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-BgHhtP0X.js","names":[],"sources":["../../../../packages/uikit-product-switch-row/stories/SwitchRow/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"uGAAyB"}

@@ -112,6 +112,7 @@ pnpm add @cloud-ru/ds-table
 |------|------|---------|----------|-------------|
 | `cell` | `Cell<TData, unknown>` | — | yes |  |
 | `className` | `string` | — | no |  |
+| `columnOrder` | `ColumnOrder` | — | no |  |
 | `isDraggable` | `boolean` | — | no |  |
 | `onClick` | `MouseEventHandler` | — | no |  |
 | `onMouseUp` | `MouseEventHandler` | — | no |  |

@@ -106,6 +106,7 @@ pnpm add @cloud-ru/ds-toggles
 | `onChange` | `((checked: boolean) => void)` | — | no | Колбек смены значения |
 | `onClick` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек клика |
 | `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек приобретения фокуса |
+| `showIcon` | `boolean` | `false` | no | Показывать ли иконку внутри ползунка. Спиннер в состоянии `loading` показывается независимо |
 | `size` | `s \| xs` | `s` | no | Размер |
 | `tabIndex` | `number` | — | no | HTML-аттрибут tab-index |
 | `value` | `string` | — | no | HTML-аттрибут value |

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Canvas.khHW1YFg.js";import{t as n}from"./ProgressBar.V0gFsdGX.js";import{t as r}from"./props.SOrOs2D2.js";var i=e();function a(){return(0,i.jsx)(t,{component:n,componentDoc:r.ProgressBar,defaultProps:{},controls:{}})}export{a as ProgressBarDemo};

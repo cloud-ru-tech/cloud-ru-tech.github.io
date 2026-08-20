@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-Bd5xtg2w.js";import{a as c,i as l,n as u,o as d,s as f,t as p}from"./src-B4lejAvh.js";import{t as m}from"./testIds-BBeCrT3Z.js";var h,g,_,v,y,b;e((()=>{p(),o(),f(),m(),h=t(),{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v={title:`Snack/Inputs & Forms/Rating`,id:`components-rating`,component:u,parameters:{layout:`fullscreen`},render:e=>(0,h.jsx)(s,{children:(0,h.jsxs)(r,{children:[(0,h.jsx)(a,{children:`Playground`}),(0,h.jsx)(i,{children:`Рейтинг звёздами с целыми или половинными значениями.`}),(0,h.jsx)(n,{align:`center`,children:(0,h.jsx)(u,{...e})})]})}),args:{size:c.Xs,appearance:l.Yellow,allowHalf:!1,allowClear:!1,count:5,defaultValue:0,readonly:!1,"data-test-id":d.root},argTypes:{size:{control:`radio`,options:Object.values(c),description:`Размер`},appearance:{control:`select`,options:Object.values(l),description:`Внешний вид`},count:{control:`number`,description:`Общее количество звёзд`},defaultValue:{control:`number`,description:`Значение по умолчанию (uncontrolled)`},allowHalf:{control:`boolean`,description:`Разрешить половинные значения`},allowClear:{control:`boolean`,description:`Сброс рейтинга при повторном клике`},readonly:{control:`boolean`,description:`Только для чтения`},className:{control:`text`,description:`CSS-класс`},value:{table:{disable:!0}}}},y={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(_(e).getByTestId(d.root)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...y.parameters?.docs?.source}}},b=[`Playground`]}))();export{y as Playground,b as __namedExportsOrder,v as default};
+//# sourceMappingURL=Rating.Playground.stories-CaWodt4C.js.map
