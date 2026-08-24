@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,r as n,t as r}from"./PromoTagPredefined.BQ8F0x_c.js";var i=e();function a(){return(0,i.jsx)(r,{variant:n.Preview,context:t.Functional})}export{a as PreviewFunctional};

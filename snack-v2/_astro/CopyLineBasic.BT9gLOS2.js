@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CopyLine.CUlWf1Ol.js";var n=e();function r(){return(0,n.jsx)(t,{content:`550e8400-e29b-41d4-a716-446655440000`})}export{r as CopyLineBasic};

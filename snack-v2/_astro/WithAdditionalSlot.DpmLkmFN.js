@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{r as n,t as r}from"./AiFieldBanner.oYnSEvhM.js";var i=e();function a(){return(0,i.jsx)(r,{variant:n.Information,description:`Description`,actionLabel:`Label text`,icon:(0,i.jsx)(t,{}),onActionClick:()=>void 0,children:`Additional content`})}export{a as WithAdditionalSlot};

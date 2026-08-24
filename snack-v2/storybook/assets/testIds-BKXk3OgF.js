@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,t as n}from"./src-B9kFFkVf.js";var r,i,a,o=e((()=>{r=`_matrix_1jb0h_4`,i=`_bannerCell_1jb0h_9`,a={matrix:r,bannerCell:i}})),s,c=e((()=>{n(),s={root:t.root,icon:t.icon,description:t.description,action:t.action,additional:t.additional}}));export{a as i,c as n,o as r,s as t};
-//# sourceMappingURL=testIds-BKXk3OgF.js.map

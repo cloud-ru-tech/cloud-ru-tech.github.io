@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{i as t}from"./src.Bhh42JIj.js";var n=e();function r(){return(0,n.jsx)(t,{appearance:`info`,title:`Настройки сохранены`,content:`Изменения применены ко всем активным проектам.`})}export{r as Info};

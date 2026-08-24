@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AttachmentSquare.CYpkeFdL.js";import{t as n}from"./sample.BEXfVzOI.js";var r=e();function i(){return(0,r.jsx)(t,{file:n,onDownload:e=>console.info(`download`,e?.name),onDelete:e=>console.info(`delete`,e?.name)})}export{i as AttachmentSquareBasic};

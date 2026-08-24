@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiFieldNotice.D1MY5t2v.js";import{n as r}from"./AiFieldBanner.D_z4fklS.js";var i=e();function a(){return(0,i.jsx)(n,{size:r.S,variant:t.Password,onActionClick:()=>void 0})}export{a as Password};

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Popover.DvYIrSMh.js";var n=e();function r(){return(0,n.jsx)(t,{content:`Открывается при наведении`,trigger:`hover`,placement:`top`,children:(0,n.jsx)(`button`,{type:`button`,children:`Наведи курсор`})})}export{r as HoverTrigger};

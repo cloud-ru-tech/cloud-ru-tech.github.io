@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{n as r,t as i}from"./FieldMask.CLlvmo1R.js";var a=e(t(),1),o=n();function s(){let[e,t]=(0,a.useState)(``);return(0,o.jsx)(i,{label:`Код`,mask:r.Code,value:e,onChange:e=>t(e),caption:`value: ${e||`—`}`})}export{s as FieldMaskControlled};

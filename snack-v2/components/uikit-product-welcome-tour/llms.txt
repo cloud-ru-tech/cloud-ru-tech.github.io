@@ -1,0 +1,226 @@
+﻿# @cloud-ru/ds-uikit-product-welcome-tour
+
+> Онбординг-тур по интерфейсу — пошаговые подсказки с подсветкой целевых элементов.
+
+Docs: /snack-v2/components/uikit-product-welcome-tour/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-uikit-product-welcome-tour
+```
+
+## Когда использовать
+
+- Первое знакомство с разделом: показать, где что находится, сразу после входа или после релиза.
+- Анонс новой функции — короткий тур из одного-двух шагов вокруг новых элементов.
+- Обучающий сценарий, где важна последовательность: сначала фильтры, потом действие над выбранным.
+
+Когда **не** нужен:
+
+- Подсказка к одному элементу:
+  - [`Tooltip`](/components/tooltip) — короткое пояснение по наведению.
+  - [`HotSpot`](/components/hot-spot) — точка привлечения внимания без пошагового сценария.
+- Блокирующее подтверждение — [`Modal`](/components/modal).
+- Справка, которую читают целиком, а не проходят по шагам — отдельная страница документации.
+
+## API
+
+### TourHint
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `backProps` | `{ 'aria-label': string; 'data-action': string; onClick: MouseEventHandler<HTMLElement>; role: string; title: string; }` | — | yes | Props to spread on the back button. |
+| `closeProps` | `{ 'aria-label': string; 'data-action': string; onClick: MouseEventHandler<HTMLElement>; role: string; title: string; }` | — | yes |  |
+| `continuous` | `boolean` | — | yes | Whether the tour is in continuous mode. |
+| `controls` | `Controls` | — | yes |  |
+| `index` | `number` | — | yes |  |
+| `isLastStep` | `boolean` | — | yes |  |
+| `primaryProps` | `{ 'aria-label': string; 'data-action': string; onClick: MouseEventHandler<HTMLElement>; role: string; title: string; }` | — | yes |  |
+| `size` | `number` | — | yes |  |
+| `skipProps` | `{ 'aria-label': string; 'data-action': string; onClick: MouseEventHandler<HTMLElement>; role: string; title: string; }` | — | yes |  |
+| `step` | `{ id?: string \| undefined; title?: ReactNode; before?: BeforeHook \| undefined; after?: AfterHook \| undefined; data?: any; content: ReactNode; ... 42 more ...; isFixed: boolean; }` | — | yes |  |
+| `tooltipProps` | `{ 'aria-modal': boolean; role: string; }` | — | yes |  |
+
+### TourSteps
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `current` | `number` | — | yes | Индекс текущего шага (с нуля). |
+| `total` | `number` | — | yes | Общее количество шагов. |
+
+### WelcomeTour
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `buttons` | `TourButton[]` | `[TOUR_BUTTON.Back, TOUR_BUTTON.Primary, TOUR_BUTTON.Skip]` | no | Набор кнопок подсказки. |
+| `defaultOpen` | `boolean` | `false` | no | Запущен ли тур изначально. Неуправляемый режим. |
+| `defaultStepIndex` | `number` | `0` | no | Индекс шага, с которого начинается тур. Неуправляемый режим. |
+| `labels` | `Partial<TourLabels>` | — | no | Подписи кнопок. Переопределяют значения из locale. |
+| `onOpenChange` | `((open: boolean, status: TourStatus) => void)` | — | no | Колбек смены состояния тура. Вторым аргументом приходит статус, с которым тур завершился. |
+| `onStepChange` | `((index: number) => void)` | — | no | Колбек смены шага.  В неуправляемом режиме сообщает об уже случившемся переходе — в том числе о показе первого шага при запуске тура. В управляемом (когда задан `stepIndex`) это запрос на переход: компонент сам шаг не меняет, новый индекс обязан применить потребитель — иначе тур остановится на текущем шаге. |
+| `open` | `boolean` | — | no | Запущен ли тур. Управляемый режим. |
+| `portalContainer` | `HTMLElement \| null` | — | no | Контейнер для портала. По умолчанию — контейнер из `PortalContextProvider` либо `document.body`. |
+| `scrollOffset` | `number` | `20` | no | Отступ при скролле к целевому элементу, px. |
+| `stepIndex` | `number` | — | no | Индекс текущего шага. Управляемый режим. |
+| `steps` | `TourStep[]` | — | yes | Шаги тура. |
+
+#### Related types
+- `TourButton` = `back | primary | skip`
+- `TourLabels` (interface)
+- `TourPlacement` = `auto | bottom | bottom-end | bottom-start | center | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TourStep` (interface)
+- `TourTarget` (alias)
+
+## Примеры
+
+### Basic
+
+```tsx
+import { Button } from '@cloud-ru/ds-button';
+import { WelcomeTour } from '@cloud-ru/ds-uikit-product-welcome-tour';
+import { useRef, useState } from 'react';
+
+export function Basic() {
+  const menuRef = useRef<HTMLSpanElement>(null);
+  const searchRef = useRef<HTMLSpanElement>(null);
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <span ref={menuRef}>Меню</span>
+      <span ref={searchRef}>Поиск</span>
+
+      <Button label='Запустить тур' appearance='neutral' view='outline' onClick={() => setOpen(true)} />
+
+      <WelcomeTour
+        open={open}
+        onOpenChange={setOpen}
+        steps={[
+          {
+            target: menuRef,
+            title: 'Меню разделов',
+            subtitle: 'Навигация по проекту',
+            content: 'Отсюда открываются все разделы: ресурсы, биллинг и настройки.',
+          },
+          {
+            target: searchRef,
+            title: 'Поиск',
+            content: 'Ищет по ресурсам проекта и открывает найденное в текущем разделе.',
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### Controlled
+
+```tsx
+import { Button } from '@cloud-ru/ds-button';
+import { TourStep, WelcomeTour } from '@cloud-ru/ds-uikit-product-welcome-tour';
+import { useRef, useState } from 'react';
+
+export function Controlled() {
+  const menuRef = useRef<HTMLSpanElement>(null);
+  const searchRef = useRef<HTMLSpanElement>(null);
+  const [open, setOpen] = useState(false);
+  const [stepIndex, setStepIndex] = useState(0);
+
+  const steps: TourStep[] = [
+    { target: menuRef, title: 'Меню разделов', content: 'Первый шаг тура.' },
+    { target: searchRef, title: 'Поиск', content: 'Второй шаг тура.' },
+  ];
+
+  const start = (index: number) => {
+    setStepIndex(index);
+    setOpen(true);
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <span ref={menuRef}>Меню</span>
+      <span ref={searchRef}>Поиск</span>
+
+      <Button label='С первого шага' appearance='neutral' view='outline' onClick={() => start(0)} />
+      <Button label='Со второго шага' appearance='neutral' view='outline' onClick={() => start(1)} />
+
+      <span>Текущий шаг: {stepIndex + 1}</span>
+
+      <WelcomeTour open={open} stepIndex={stepIndex} steps={steps} onOpenChange={setOpen} onStepChange={setStepIndex} />
+    </div>
+  );
+}
+```
+
+### CustomLabels
+
+```tsx
+import { Button } from '@cloud-ru/ds-button';
+import { WelcomeTour } from '@cloud-ru/ds-uikit-product-welcome-tour';
+import { useRef, useState } from 'react';
+
+export function CustomLabels() {
+  const menuRef = useRef<HTMLSpanElement>(null);
+  const billingRef = useRef<HTMLSpanElement>(null);
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <span ref={menuRef}>Меню</span>
+      <span ref={billingRef}>Биллинг</span>
+
+      <Button label='Запустить тур' appearance='neutral' view='outline' onClick={() => setOpen(true)} />
+
+      <WelcomeTour
+        open={open}
+        onOpenChange={setOpen}
+        // Подписи всего тура: переопределяют дефолты из locale.
+        labels={{ next: 'Дальше', back: 'Назад', finish: 'Всё понятно' }}
+        steps={[
+          { target: menuRef, title: 'Меню разделов', content: 'Навигация по проекту.' },
+          {
+            target: billingRef,
+            title: 'Биллинг',
+            content: 'Расходы проекта и настройки оплаты.',
+            // Подписи одного шага: переопределяют `labels` компонента.
+            labels: { finish: 'Перейти в биллинг' },
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```
+
+### WithoutBackButton
+
+```tsx
+import { Button } from '@cloud-ru/ds-button';
+import { TOUR_BUTTON, WelcomeTour } from '@cloud-ru/ds-uikit-product-welcome-tour';
+import { useRef, useState } from 'react';
+
+export function WithoutBackButton() {
+  const menuRef = useRef<HTMLSpanElement>(null);
+  const searchRef = useRef<HTMLSpanElement>(null);
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <span ref={menuRef}>Меню</span>
+      <span ref={searchRef}>Поиск</span>
+
+      <Button label='Запустить тур' appearance='neutral' view='outline' onClick={() => setOpen(true)} />
+
+      <WelcomeTour
+        open={open}
+        // Набор кнопок подсказки: без `back` тур идёт только вперёд.
+        buttons={[TOUR_BUTTON.Primary, TOUR_BUTTON.Skip]}
+        onOpenChange={setOpen}
+        steps={[
+          { target: menuRef, title: 'Меню разделов', content: 'Первый шаг.' },
+          { target: searchRef, title: 'Поиск', content: 'Последний шаг — кнопки «Назад» нет.' },
+        ]}
+      />
+    </div>
+  );
+}
+```

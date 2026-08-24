@@ -126,6 +126,7 @@
 ### Overlays
 
 - [@cloud-ru/ds-uikit-product-modal-predefined](/snack-v2/components/uikit-product-modal-predefined/llms.txt): Product preset-компоненты для delete, recall и release notes сценариев на базе Modal и BottomSheet.
+- [@cloud-ru/ds-uikit-product-welcome-tour](/snack-v2/components/uikit-product-welcome-tour/llms.txt): Онбординг-тур по интерфейсу — пошаговые подсказки с подсветкой целевых элементов.
 
 ### Feedback
 

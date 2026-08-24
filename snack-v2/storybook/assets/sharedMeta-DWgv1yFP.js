@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{t,v as n}from"./src-xocaoH2b.js";import{r,t as i}from"./decorators-D3Rbig37.js";var a,o=e((()=>{t(),i(),a={component:n,parameters:{layout:`fullscreen`},decorators:[r]}}));export{a as n,o as t};
+//# sourceMappingURL=sharedMeta-DWgv1yFP.js.map

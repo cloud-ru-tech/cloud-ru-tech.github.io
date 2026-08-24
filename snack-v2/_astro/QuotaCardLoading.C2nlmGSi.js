@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./QuotaWidgetCard.CB9isy_u.js";var n=e();function r(){return(0,n.jsx)(t,{loading:!0,quota:{name:`Network`,limit:100,usage:30,remains:70,unitDisplayName:`GB`}})}export{r as QuotaCardLoading};

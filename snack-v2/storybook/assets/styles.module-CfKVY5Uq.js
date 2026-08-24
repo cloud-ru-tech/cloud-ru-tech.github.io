@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i=e((()=>{t=`_storyWrapper_hky41_4`,n=`_tablesWrapper_hky41_13`,r={storyWrapper:t,tablesWrapper:n}}));export{r as n,i as t};
-//# sourceMappingURL=styles.module-CfKVY5Uq.js.map

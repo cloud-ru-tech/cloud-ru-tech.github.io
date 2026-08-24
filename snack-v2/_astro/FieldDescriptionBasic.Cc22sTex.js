@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldDescription.Bi-w3MVW.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as FieldDescriptionBasic};

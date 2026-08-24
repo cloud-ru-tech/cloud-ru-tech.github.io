@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o=e((()=>{t=`_matrix_go83p_4`,n=`_narrow_go83p_9`,r=`_wide_go83p_13`,i=`_variantList_go83p_17`,a={matrix:t,narrow:n,wide:r,variantList:i}}));export{a as n,o as t};
-//# sourceMappingURL=styles2.module-D2Nzks2b.js.map

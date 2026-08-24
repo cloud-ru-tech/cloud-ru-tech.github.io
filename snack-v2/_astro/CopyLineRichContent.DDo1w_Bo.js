@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./CopyLine.CUlWf1Ol.js";var n=e();function r(){return(0,n.jsx)(t,{content:(0,n.jsxs)(`span`,{children:[(0,n.jsx)(`strong`,{children:`Token:`}),` `,(0,n.jsx)(`code`,{children:`sk-prod-9000`})]}),valueToCopy:`sk-prod-9000`})}export{r as CopyLineRichContent};

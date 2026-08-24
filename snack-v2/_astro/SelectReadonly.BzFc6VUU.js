@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldSelect.B3dQik2U.js";var n=e(),r=[{id:`m`,content:{label:`Medium (2 vCPU, 4 GB)`}},{id:`l`,content:{label:`Large (4 vCPU, 8 GB)`}}];function i(){return(0,n.jsx)(t,{label:`Размер инстанса`,readonly:!0,selection:`single`,items:r,defaultValue:`l`})}export{i as SelectReadonly};

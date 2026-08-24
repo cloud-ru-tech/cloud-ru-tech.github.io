@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t}from"./src.D25EjtGX.js";var n=e();function r(){return(0,n.jsx)(t,{appearance:`info`,title:`Системное уведомление`,content:`Плановые работы пройдут сегодня с 22:00 до 23:00 по московскому времени.`})}export{r as AlertTopDemo};

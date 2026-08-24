@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TitleClickable.Z3G6VC9N.js";var n=e();function r(){return(0,n.jsx)(t,{href:`https://example.com`,target:`_blank`,title:`Внешняя ссылка`})}export{r as External};

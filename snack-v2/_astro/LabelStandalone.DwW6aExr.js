@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Label.CMAJz1bn.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Заголовок поля`,caption:`Опционально`,required:!0,labelTooltip:{tip:`Пояснение к заголовку через иконку вопроса`}})}export{r as LabelStandalone};

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./PriceSummarySmall.Bl6JP4a9.js";import{t as n}from"./demoSurface.module.Dwy7eF7s.js";var r=e();function i(){return(0,r.jsx)(`div`,{className:n.surface,children:(0,r.jsx)(t,{value:void 0,loading:!0})})}export{i as SmallLoading};

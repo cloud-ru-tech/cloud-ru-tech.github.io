@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TruncateString.CLlGfboA.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:260},children:(0,n.jsx)(t,{variant:`end`,maxLines:3,text:`Длинное описание, которое укладывается в три строки, а затем обрезается с троеточием в конце.`})})}export{r as TruncateMultiline};

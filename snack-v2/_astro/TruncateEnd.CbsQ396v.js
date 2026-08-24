@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TruncateString.ClB_4FlI.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:220},children:(0,n.jsx)(t,{variant:`end`,text:`Очень длинный заголовок, который не помещается`,maxLines:1})})}export{r as TruncateEnd};
