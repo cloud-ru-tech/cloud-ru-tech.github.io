@@ -1,0 +1,488 @@
+﻿# @cloud-ru/ds-uikit-product-header
+
+> Продуктовая шапка консоли — HeaderLayout, MainMenu, UserMenu, Logo, PathBreadcrumbs и PlatformLogo.
+
+Docs: /snack-v2/components/uikit-product-header/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-uikit-product-header
+```
+
+## API
+
+### Container
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+
+### Content
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activeSegmentId` | `string` | — | no | Активный сегмент правой панели. Не передано — неуправляемое состояние (дефолт — первый сегмент с видимыми карточками). |
+| `className` | `string` | — | no |  |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `footer` | `ReactNode` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `loading` | `boolean` | — | no | Флаг загрузки данных |
+| `onActiveSegmentChange` | `((segmentId: string) => void)` | — | no | Колбэк смены активного сегмента правой панели. |
+| `onClose` | `(() => void)` | — | no |  |
+| `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no |  |
+| `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no |  |
+| `preferences` | `MainMenuPreferencesProps` | — | no |  |
+| `rightTop` | `ReactNode` | — | no | Слот над тулбаром правой колонки (например, баннеры) |
+| `search` | `ReactNode` | — | no |  |
+| `searchGroups` | `LinksGroup[]` | `[]` | no | Результаты поиска (уже смерженные); в обычном режиме не используются. |
+| `searchValue` | `string` | — | no |  |
+| `segmentPrefs` | `MainMenuSegmentPrefs[]` | — | no |  |
+| `segments` | `MainMenuSegment[]` | — | yes |  |
+
+### ContentToolbar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allGroupsExpanded` | `boolean` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onSegmentChange` | `(segment: string) => void` | — | yes |  |
+| `onToggleAllGroupsExpanded` | `() => void` | — | yes |  |
+| `preferences` | `MainMenuPreferencesProps` | — | no | Настройки меню (модалка по кнопке). Не передано — кнопка настроек не отображается. |
+| `segment` | `string` | — | yes |  |
+| `segmentItems` | `ContentToolbarSegmentItem[]` | — | yes |  |
+
+### DraggableServiceCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `dragDisabled` | `boolean` | — | no |  |
+| `dragPreview` | `boolean` | — | no |  |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `groupId` | `string` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `service` | `InnerLink` | — | yes |  |
+| `showDescription` | `boolean` | — | yes |  |
+| `tabIndex` | `number` | — | no |  |
+
+### EmptyFavoriteSVG
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+
+### EmptyRecentSVG
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+
+### EmptyState
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `isFavoritesSegment` | `boolean` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+
+### Favorites
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `allServiceGroups` | `LinksGroup[]` | — | yes | Группы сервисов для разрешения id в карточки |
+| `favorite` | `FavoriteProps` | — | yes | Список избранных сервисов |
+| `headerClassName` | `string` | — | no | CSS-класс строки заголовка (segment + кнопка настроек) |
+| `isMobile` | `boolean` | — | no | Флаг мобильной раскладки |
+
+#### Related types
+- `BaseItemProps` (interface)
+- `FavoriteProps` (interface)
+- `FavoritesSegment` = `favorites | recent`
+- `InnerLink` (interface)
+- `LinksGroup` (interface)
+- `LinksGroupBlockColor` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `LinksGroupTitle` (alias)
+- `TitleClickable` (interface)
+- `TitleStatic` (interface)
+
+### FavoritesSortable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `favorite` | `FavoriteProps` | — | yes |  |
+| `favoriteItems` | `InnerLink[]` | — | yes |  |
+| `isEmpty` | `boolean` | — | yes |  |
+| `onFavoriteServiceClick` | `(service: InnerLink) => (event: MouseEvent<HTMLElement, MouseEvent>) => void` | — | yes |  |
+| `recentCards` | `ReactNode` | — | yes |  |
+| `segment` | `favorites \| recent` | — | yes |  |
+| `setSegment` | `(segment: FavoritesSegment) => void` | — | yes |  |
+
+### HeaderButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `any` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `className` | `any` | — | no | Дополнительный класс |
+| `counter` | `any` | — | no | Пропсы для counter. `appearance` можно задать явно (по умолчанию наследуется от appearance кнопки). |
+| `data-test-id` | `any` | — | no |  |
+| `disabled` | `any` | — | no | Отключена |
+| `fullWidth` | `any` | — | no | На всю ширину |
+| `icon` | `any` | — | no | Иконка |
+| `iconPosition` | `any` | — | no | Позиция иконки относительно текста |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `isMobile` | `boolean` | — | no |  |
+| `label` | `any` | — | no | Текст кнопки |
+| `loading` | `any` | — | no | Состояние загрузки |
+| `minWidth` | `any` | — | no | Минимальная ширина контейнера (`min-width` из токена размера). По умолчанию `true`. `false` — кнопка сжимается по контенту вместо фиксированного минимума. |
+| `tooltip` | `Omit<TooltipProps, "placement">` | — | no | Настройки тултипа. `placement` и `disableSpanWrapper` зафиксированы под анатомию хедера |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `Variant` = `count | count-k | count-plus`
+
+### HeaderLayout
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `breadcrumbs` | `ReactNode` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `logo` | `ReactNode` | — | no |  |
+| `menu` | `ReactNode` | — | no |  |
+| `select` | `ReactNode` | — | no |  |
+| `toolbar` | `ReactNode` | — | no |  |
+
+### Logo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `href` | `string` | — | yes |  |
+| `loading` | `boolean` | — | no |  |
+| `mode` | `develop \| hybrid \| prod \| stage` | — | no |  |
+| `onClick` | `MouseEventHandler<HTMLAnchorElement>` | — | no |  |
+| `path` | `string` | — | no |  |
+| `tooltip` | `TooltipProps` | — | no |  |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `HeaderLogoMode` = `develop | hybrid | prod | stage`
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+
+### MainMenu
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activeSegmentId` | `string` | — | no | Активный сегмент правой панели (значение SegmentControl, см. {@link MainMenuSegment.id}).  Не передано — неуправляемое состояние (дефолт — первый сегмент с видимыми карточками). |
+| `defaultWidth` | `number` | — | no | Ширина дровера, с которой открывается меню (desktop only) |
+| `disabled` | `boolean` | — | no |  |
+| `draggerTooltip` | `string` | — | no | Текст подсказки для драггера (desktop only) |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `loading` | `boolean` | — | no | Флаг загрузки данных |
+| `logo` | `ReactNode` | — | no |  |
+| `onActiveSegmentChange` | `((segmentId: string) => void)` | — | no | Колбэк смены активного сегмента правой панели. |
+| `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
+| `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
+| `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
+| `preferences` | `MainMenuPreferencesProps` | — | no | Настройки меню (модалка по кнопке в тулбаре): описания карточек, цвета групп.  Не передано — кнопка настроек в тулбаре не отображается. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `segmentPrefs` | `MainMenuSegmentPrefs[]` | — | no | Пользовательские prefs сегментов (порядок / раскрытие групп).  Нет записи для сегмента или omit `order` / `expanded` → uncontrolled для этого поля. |
+| `segments` | `MainMenuSegment[]` | — | no | Сегменты правой панели (сетка карточек) — только каталог.  При поиске: совпадения из сегментов без `pinBottomOnSearch` → `platformGroups` → сегменты с `pinBottomOnSearch`. Если один и тот же {@link InnerLink.id} совпал сразу в нескольких сегментах — остаётся только первое по этому приоритету вхождение, остальные (и опустевшие после этого группы) не показываются. При `segments.length > 1` показывается SegmentControl (скрывается во время поиска). Порядок и раскрытие групп — через `segmentPrefs` и колбэки ниже. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `Item[]` | — | no | Пункты левой колонки (desktop) / нижней части списка (mobile).  Плоский список `List` (`BaseItem` и при необходимости `type: 'group'` с `divider` для разделителей). Не связан с сегментами правой панели и не меняется при сортировке групп в сегментах. |
+
+#### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `EmptyStateProps` (interface)
+- `Item` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `LinksGroup` (interface)
+- `ListProps` (interface)
+- `MainMenuSegment` (interface)
+- `MainMenuSegmentPrefs` (interface)
+- `Resize` = `both | horizontal | none | vertical`
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `Size` = `s | xs`
+- `TruncateStringProps` (alias)
+
+### MainMenuDndContext
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `collisionDetection` | `CollisionDetection` | — | no |  |
+| `dragOverlay` | `string \| number \| boolean \| Iterable<ReactNode> \| Element \| null` | — | no |  |
+| `modifiers` | `Modifier[]` | — | no |  |
+| `onDragCancel` | `(({ active }: DragCancelEvent) => void)` | — | no |  |
+| `onDragEnd` | `(({ active, over, delta, activatorEvent }: DragEndEvent) => void)` | — | no |  |
+| `onDragStart` | `(({ active }: DragStartEvent) => void)` | — | no |  |
+| `overlayContextValue` | `{ setGroupDragOverlay: Dispatch<SetStateAction<ReactNode>>; }` | — | no |  |
+| `sensors` | `SensorDescriptor<SensorOptions>[]` | — | no |  |
+
+### MenuBanner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterTitle` | `ReactNode` | — | no | Слот справа от заголовка и промо-тега |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no |  |
+| `onClose` | `MouseEventHandler<HTMLElement>` | — | no | Колбэк закрытия. При наличии отображается кнопка «Закрыть» на hover |
+| `promoTag` | `Omit<PromoTagProps, "data-test-id" \| "role" \| "size" \| "as">` | — | no | Текст промо-тега рядом с заголовком |
+| `title` | `string` | — | yes | Заголовок баннера |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `PolymorphicRef` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `s | xs`
+
+### MenuDesktop
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activeSegmentId` | `string` | — | no | Активный сегмент правой панели (значение SegmentControl, см. {@link MainMenuSegment.id}).  Не передано — неуправляемое состояние (дефолт — первый сегмент с видимыми карточками). |
+| `defaultWidth` | `number` | `1208 + 24` | no | Ширина дровера, с которой открывается меню (desktop only) |
+| `disabled` | `boolean` | — | no |  |
+| `draggerTooltip` | `string` | — | no | Текст подсказки для драггера (desktop only) |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `loading` | `boolean` | — | no | Флаг загрузки данных |
+| `logo` | `ReactNode` | — | no |  |
+| `onActiveSegmentChange` | `((segmentId: string) => void)` | — | no | Колбэк смены активного сегмента правой панели. |
+| `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
+| `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
+| `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
+| `preferences` | `MainMenuPreferencesProps` | — | no | Настройки меню (модалка по кнопке в тулбаре): описания карточек, цвета групп.  Не передано — кнопка настроек в тулбаре не отображается. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `segmentPrefs` | `MainMenuSegmentPrefs[]` | — | no | Пользовательские prefs сегментов (порядок / раскрытие групп).  Нет записи для сегмента или omit `order` / `expanded` → uncontrolled для этого поля. |
+| `segments` | `MainMenuSegment[]` | — | no | Сегменты правой панели (сетка карточек) — только каталог.  При поиске: совпадения из сегментов без `pinBottomOnSearch` → `platformGroups` → сегменты с `pinBottomOnSearch`. Если один и тот же {@link InnerLink.id} совпал сразу в нескольких сегментах — остаётся только первое по этому приоритету вхождение, остальные (и опустевшие после этого группы) не показываются. При `segments.length > 1` показывается SegmentControl (скрывается во время поиска). Порядок и раскрытие групп — через `segmentPrefs` и колбэки ниже. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `Item[]` | — | no | Пункты левой колонки (desktop) / нижней части списка (mobile).  Плоский список `List` (`BaseItem` и при необходимости `type: 'group'` с `divider` для разделителей). Не связан с сегментами правой панели и не меняется при сортировке групп в сегментах. |
+
+### MenuHeaderBrand
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `logo` | `ReactNode` | — | no |  |
+| `onClose` | `() => void` | — | yes |  |
+
+### MenuMobile
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `activeSegmentId` | `string` | — | no | Активный сегмент правой панели (значение SegmentControl, см. {@link MainMenuSegment.id}).  Не передано — неуправляемое состояние (дефолт — первый сегмент с видимыми карточками). |
+| `defaultWidth` | `number` | — | no | Ширина дровера, с которой открывается меню (desktop only) |
+| `disabled` | `boolean` | — | no |  |
+| `draggerTooltip` | `string` | — | no | Текст подсказки для драггера (desktop only) |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `loading` | `boolean` | — | no | Флаг загрузки данных |
+| `logo` | `ReactNode` | — | no |  |
+| `onActiveSegmentChange` | `((segmentId: string) => void)` | — | no | Колбэк смены активного сегмента правой панели. |
+| `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
+| `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
+| `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
+| `preferences` | `MainMenuPreferencesProps` | — | no | Настройки меню (модалка по кнопке в тулбаре): описания карточек, цвета групп.  Не передано — кнопка настроек в тулбаре не отображается. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `segmentPrefs` | `MainMenuSegmentPrefs[]` | — | no | Пользовательские prefs сегментов (порядок / раскрытие групп).  Нет записи для сегмента или omit `order` / `expanded` → uncontrolled для этого поля. |
+| `segments` | `MainMenuSegment[]` | — | no | Сегменты правой панели (сетка карточек) — только каталог.  При поиске: совпадения из сегментов без `pinBottomOnSearch` → `platformGroups` → сегменты с `pinBottomOnSearch`. Если один и тот же {@link InnerLink.id} совпал сразу в нескольких сегментах — остаётся только первое по этому приоритету вхождение, остальные (и опустевшие после этого группы) не показываются. При `segments.length > 1` показывается SegmentControl (скрывается во время поиска). Порядок и раскрытие групп — через `segmentPrefs` и колбэки ниже. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `Item[]` | — | no | Пункты левой колонки (desktop) / нижней части списка (mobile).  Плоский список `List` (`BaseItem` и при необходимости `type: 'group'` с `divider` для разделителей). Не связан с сегментами правой панели и не меняется при сортировке групп в сегментах. |
+
+### MountAnimation
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `type` | `fade-in \| fade-slide-up \| fade-slide-up-right \| slide-right` | `slide-right` | no |  |
+
+### PathBreadcrumbs
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `isMobile` | `boolean` | — | no |  |
+| `items` | `Item[]` | — | yes |  |
+
+#### Related types
+- `BreadcrumbsProps` (interface)
+- `Item` (interface)
+- `Size` = `s | xs`
+
+### ScrollWithAnimatedStickyPanel
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `panel` | `ReactNode` | — | yes |  |
+
+### Search
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `isMobile` | `boolean` | `false` | no |  |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки потери фокуса |
+| `onChange` | `(value: string) => void` | — | yes |  |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек обработки получения фокуса |
+| `onSearchNoResult` | `((value: string) => void)` | — | no |  |
+| `value` | `string` | — | yes |  |
+
+### ServiceCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no |  |
+| `dragPreview` | `boolean` | — | no |  |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `service` | `InnerLink` | — | yes |  |
+| `showDescription` | `boolean` | — | yes |  |
+| `tabIndex` | `number` | — | no |  |
+
+### SortableFavoriteCard
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → tooltip (если есть) → Favorite; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `isFirst` | `boolean` | — | no |  |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `serviceId` | `string` | — | yes |  |
+| `showInsertIndicatorAfter` | `boolean` | — | no |  |
+| `showInsertIndicatorBefore` | `boolean` | — | no |  |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `tooltip` | `Omit<TooltipProps, "size" \| "trigger">` | — | no | Подсказка с иконкой «?» рядом с заголовком |
+
+### SortableGroup
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `blockColor` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no |  |
+| `enableServiceDrag` | `boolean` | — | no |  |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `highlight` | `boolean` | — | no |  |
+| `id` | `string` | — | yes |  |
+| `isExpanded` | `boolean` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `items` | `InnerLink[]` | — | yes |  |
+| `label` | `LinksGroupTitle` | — | yes |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `showDescription` | `boolean` | — | yes |  |
+
+### SortableGroupCards
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `enableServiceDrag` | `boolean` | — | no |  |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `groupId` | `string` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+| `items` | `InnerLink[]` | — | yes |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `showDescription` | `boolean` | — | yes |  |
+
+### SortableGroupDragHandle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `attributes` | `DraggableAttributes` | — | no |  |
+| `listeners` | `DraggableSyntheticListeners` | — | no |  |
+
+### SortableGroupDragPreview
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `blockColor` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no |  |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `highlight` | `boolean` | — | no |  |
+| `id` | `string` | — | yes |  |
+| `isExpanded` | `boolean` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `items` | `InnerLink[]` | — | yes |  |
+| `label` | `LinksGroupTitle` | — | yes |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `showDescription` | `boolean` | — | yes |  |
+
+### SortableGroupHeader
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `attributes` | `DraggableAttributes` | — | no |  |
+| `enableServiceDrag` | `boolean` | — | no |  |
+| `isExpanded` | `boolean` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `label` | `LinksGroupTitle` | — | yes |  |
+| `listeners` | `DraggableSyntheticListeners` | — | no |  |
+
+### SortableGroupSkeleton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `isMobile` | `boolean` | — | no |  |
+
+### SubCategory
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dragDisabled` | `boolean` | — | no |  |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `groupId` | `string` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `service` | `InnerLink` | — | yes |  |
+| `showDescription` | `boolean` | — | yes |  |
+
+### SubCategoryTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `dragDisabled` | `boolean` | — | no |  |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no |  |
+| `groupId` | `string` | — | yes |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `service` | `InnerLink` | — | yes |  |
+| `showDescription` | `boolean` | — | yes |  |
+
+### UserMenu
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `Item[]` | — | no |  |
+| `onClick` | `(() => void)` | — | no |  |
+| `onLogout` | `(() => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `profile` | `UserProfileProps` | `{}` | no |  |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `BaseItem[]` | — | no |  |
+| `theme` | `ThemeProps` | — | no |  |
+| `triggerTooltip` | `string` | — | no |  |
+
+#### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
+- `BaseItemWithoutNonGroup` (interface)
+- `CollapseState` (interface)
+- `CommonGroupItem` (interface)
+- `EmptyStateProps` (interface)
+- `Item` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `ListProps` (interface)
+- `Resize` = `both | horizontal | none | vertical`
+- `ScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `Size` = `s | xs`
+- `ThemeMode` = `dark | light | system`
+- `ThemeProps` (interface)
+- `TruncateStringProps` (alias)
+- `UserProfileProps` (interface)

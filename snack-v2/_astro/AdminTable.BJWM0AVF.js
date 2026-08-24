@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Table.BICLyOOC.js";import{t as n}from"./useAdminTableProps.BtdKPXH4.js";var r=e();function i(e){return(0,r.jsx)(t,{...n(e)})}export{i as t};

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{i as n,n as r,r as i}from"./PromoTag.CopsCbuW.js";import{t as a}from"./CardServiceLight.RZw-eVo8.js";var o=e();function s(){return(0,o.jsx)(a,{title:`Мой сервис`,icon:(0,o.jsx)(t,{size:24}),promoTag:{label:`New`,appearance:r.Primary,role:i.Accent,size:n.Xs}})}export{s as WithPromoTag};

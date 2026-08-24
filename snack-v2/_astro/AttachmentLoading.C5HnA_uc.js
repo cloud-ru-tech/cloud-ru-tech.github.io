@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Attachment.Cb1452or.js";import{t as n}from"./sample.BEXfVzOI.js";var r=e();function i(){return(0,r.jsx)(t,{file:n,loading:!0})}export{i as AttachmentLoading};

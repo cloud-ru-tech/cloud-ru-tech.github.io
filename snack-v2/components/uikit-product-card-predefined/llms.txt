@@ -1,6 +1,6 @@
 ﻿# @cloud-ru/ds-uikit-product-card-predefined
 
-> Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceSmall, CardSuggest, CardCustom.
+> Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceInfo, CardServiceSmall, CardSuggest, CardCustom.
 
 Docs: /snack-v2/components/uikit-product-card-predefined/
 
@@ -26,6 +26,25 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 | `actionLabel` | `string` | — | yes | Текст кнопки действия |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
 
+### CardActionsSurface
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsSize` | `m \| s` | `m` | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
+| `actionsVisibility` | `always \| hover` | `hover` | no | Формат отображения действий: всегда или при наведении и фокусе |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `expandable` | `{ value: boolean; onClick(): void; buttonRef?: RefObject<HTMLButtonElement>; }` | — | no | Кнопка раскрытия |
+| `favorite` | `(FavoriteProps & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка «Избранное» |
+| `tooltip` | `(Omit<TooltipProps, "children"> & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка info с тултипом |
+
+#### Related types
+- `CardSize` = `m | s`
+- `ChildrenFunction` (alias)
+- `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `VisibilityStrategy` = `always | hover`
+
 ### CardBanner
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
@@ -43,6 +62,15 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 #### Related types
 - `PolymorphicRef` (alias)
 
+### CardPromoTag
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс промо-тега |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `innerRef` | `RefObject<HTMLElement>` | — | no | Ref на trigger тултипа — по нему карточка водит фокус стрелками |
+| `promoTag` | `CardPromoTagProps` | — | yes | Настройки promo tag, пришедшие в карточку |
+| `tooltipTrigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible \| undefined` | — | yes | Триггер тултипа: карточка выбирает его по своему `actionsVisibility` |
+
 ### CardService
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
@@ -59,41 +87,72 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 #### Related types
 - `PolymorphicRef` (alias)
 
-### CardServiceLight
+### CardServiceInfo
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `actionsSize` | `m \| s` | `m` | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
 | `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
 | `data-test-id` | `string` | — | no | Support prop для тестов |
+| `description` | `string` | — | yes | Описание сервиса |
 | `disabled` | `boolean` | — | no | Неактивное состояние |
-| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → фокус на Favourite; ArrowLeft на Favourite → фокус на карточку. |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → Favorite → expand; ArrowLeft — в обратном порядке. |
 | `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
 | `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
-| `onKeyDown` | `KeyboardEventHandler<HTMLElement>` | — | no | Колбэк нажатия клавиши клавиатуры на карточке |
-| `promoTag` | `PromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
 | `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `CardPromoTagProps` (alias)
+- `CardSize` = `m | s`
+- `FavoriteProps` (interface)
+- `PolymorphicRef` (alias)
+- `PromoTagPredefinedBaseProps` (alias)
+- `VisibilityStrategy` = `always | hover`
+
+### CardServiceLight
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsSize` | `m \| s` | — | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | `false` | no | Неактивное состояние |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → tooltip (если есть) → Favorite; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `tooltip` | `Omit<TooltipProps, "size" \| "trigger">` | — | no | Подсказка с иконкой «?» рядом с заголовком |
 | `truncate` | `{ title?: number; }` | — | no | Настройки обрезки текста заголовка |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `CardPromoTagProps` (alias)
+- `CardSize` = `m | s`
+- `ChildrenFunction` (alias)
 - `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
-- `PromoTagOwnProps` (interface)
-- `PromoTagProps` (interface)
-- `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
+- `PromoTagPredefinedBaseProps` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `VisibilityStrategy` = `always | hover`
 
 ### CardServiceSmall
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения кнопки «Избранное»: всегда или при наведении и фокусе |
 | `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
 | `checked` | `boolean` | — | no | Выбранное состояние |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
 | `data-test-id` | `string` | — | no | Support prop для тестов |
 | `disabled` | `boolean` | — | no | Неактивное состояние |
 | `emblem` | `ReactElement<any, string \| JSXElementConstructor<any>> \| { icon: JSXElementConstructor<{ className?: string \| undefined; size?: number \| undefined; }>; }` | — | yes | Эмблема: объект с иконкой-компонентом. Принимает `{ icon: JSXElementConstructor }` или произвольный ReactElement. |
-| `favorite` | `(FavoriteProps & { visibilityStrategy: "hover" \| "always"; })` | — | no | Настройки кнопки «Избранное». `visibilityStrategy` обязателен. |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное» |
 | `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
 | `outline` | `boolean` | — | no | Рамка вокруг карточки |
 | `promoBadge` | `PromoTagProps` | — | no | Промо-тег (бейдж). Тип — `PromoTagProps` из `@cloud-ru/ds-promo-tag`. |

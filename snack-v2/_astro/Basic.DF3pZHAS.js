@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{t as n}from"./CardServiceInfo.gRI_hLox.js";var r=e();function i(){return(0,r.jsx)(n,{title:`Мой сервис`,description:`Краткое описание сервиса для подробного режима карточки.`,icon:(0,r.jsx)(t,{size:24})})}export{i as Basic};

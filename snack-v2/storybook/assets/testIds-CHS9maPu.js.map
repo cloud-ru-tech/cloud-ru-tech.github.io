@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-CHS9maPu.js","names":[],"sources":["../../../../packages/uikit-product-header/stories/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../src/constants';\n"],"mappings":"uGAAyB"}

@@ -1,0 +1,10 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-CqCwb0Nr.js";import{a as c,t as l}from"./src-CVvAtkaN.js";import{C as u,M as d,S as f,d as p,j as m,t as h,x as g}from"./src-BGWgS3Hr.js";import{n as _,t as v}from"./styles.module-Bgazicgw.js";function y(){let e=u({defaultValues:{serviceName:``},mode:`onBlur`});return(0,b.jsx)(s,{children:(0,b.jsxs)(r,{children:[(0,b.jsx)(a,{children:`React Hook Form`}),(0,b.jsx)(i,{children:`FieldNameRHF внутри FormProvider — валидация интегрирована в форму через Controller.`}),(0,b.jsx)(g,{...e,children:(0,b.jsxs)(`form`,{onSubmit:e.handleSubmit(()=>void 0),className:_.form,children:[(0,b.jsx)(p,{controllerProps:{name:`serviceName`},"data-test-id":m.fieldName}),(0,b.jsx)(n,{align:`start`,children:(0,b.jsx)(c,{type:`submit`,label:`Отправить`,"data-test-id":`field-name-submit`})})]})})]})})}var b,x,S,C,w,T;e((()=>{l(),h(),f(),o(),d(),v(),b=t(),{expect:x,within:S}=__STORYBOOK_MODULE_TEST__,C={title:`Uikit Product/Inputs & Forms/FieldsPredefined/FieldName/Examples/RHF`,id:`uikit-product-fieldspredefined-fieldname-examples-rhf`,component:p,parameters:{layout:`fullscreen`}},w={tags:[`dev`,`test`],render:()=>(0,b.jsx)(y,{}),play:async({canvasElement:e})=>{await x(S(e).getByTestId(m.fieldName)).toBeVisible()}},w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <RHFScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldName)).toBeVisible();
+  }
+}`,...w.parameters?.docs?.source}}},T=[`RHF`]}))();export{w as RHF,T as __namedExportsOrder,C as default};
+//# sourceMappingURL=FieldName.RHF.stories-Ct4RYA2O.js.map

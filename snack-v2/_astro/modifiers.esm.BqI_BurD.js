@@ -1,0 +1,1 @@
+import"./DragGhost.DMgxqA5w.js";var e=e=>{let{transform:t}=e;return{...t,y:0}},t=e=>{let{transform:t}=e;return{...t,x:0}};export{t as n,e as t};

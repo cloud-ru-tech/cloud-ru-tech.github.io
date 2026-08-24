@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Skeleton.jK9w4y6g.js";var n=e();function r(){return(0,n.jsx)(t,{loading:!0,width:240,height:24,borderRadius:4})}export{r as Block};

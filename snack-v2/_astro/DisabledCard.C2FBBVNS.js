@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Card.DEWF3_8U.js";var n=e();function r(){return(0,n.jsx)(t,{disabled:!0,children:(0,n.jsx)(`div`,{style:{padding:8},children:`Состояние disabled — без hover/focus визуала интеракции`})})}export{r as DisabledCard};

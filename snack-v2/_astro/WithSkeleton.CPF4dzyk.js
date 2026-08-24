@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,r as n}from"./Skeleton.jK9w4y6g.js";var r=e();function i({children:e,skeleton:i,loading:a}){return t(a)?(0,r.jsx)(n,{loading:!0,children:i}):(0,r.jsx)(r.Fragment,{children:e})}export{i as t};
