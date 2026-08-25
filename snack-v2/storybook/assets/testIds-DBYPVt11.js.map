@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-DBYPVt11.js","names":[],"sources":["../../../../packages/ai-chain-of-thoughts/stories/testIds.ts"],"sourcesContent":["import { TEST_IDS as COMPONENT_TEST_IDS } from '@ds/ai-chain-of-thoughts';\n\nexport const TEST_IDS = COMPONENT_TEST_IDS;\n"],"mappings":"oHAA+C,EAElC,EAAW"}
