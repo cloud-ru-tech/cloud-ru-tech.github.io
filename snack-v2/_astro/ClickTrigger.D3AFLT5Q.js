@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Tooltip.DiKa_ICv.js";var n=e();function r(){return(0,n.jsx)(t,{tip:`Открывается по клику и остаётся видимой`,trigger:`click`,children:(0,n.jsx)(`button`,{type:`button`,children:`Подробнее`})})}export{r as ClickTrigger};

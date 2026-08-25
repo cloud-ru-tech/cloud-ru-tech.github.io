@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-BV6VapDN.js","names":[],"sources":["../../../../packages/avatar/stories/Avatar/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"uGAAyB"}

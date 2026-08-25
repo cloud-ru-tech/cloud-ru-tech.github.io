@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./TitleClickable.Z3G6VC9N.js";import{t as r}from"./Placeholder.gu93pEb-.js";var i=e();function a(){return(0,i.jsx)(n,{href:`#`,title:`Production environment`,before:(0,i.jsx)(t,{icon:(0,i.jsx)(r,{})})})}export{a as WithIcon};

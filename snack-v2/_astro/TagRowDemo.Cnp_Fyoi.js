@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TagRow.m63MjrYW.js";var n=e();function r(){return(0,n.jsx)(t,{items:[{id:`1`,label:`Frontend`,appearance:`blue`},{id:`2`,label:`Backend`,appearance:`green`},{id:`3`,label:`Design`,appearance:`violet`},{id:`4`,label:`DevOps`,appearance:`orange`}]})}export{r as TagRowDemo};

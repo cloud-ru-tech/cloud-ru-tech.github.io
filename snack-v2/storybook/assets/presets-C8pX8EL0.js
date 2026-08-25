@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,t as r,u as i}from"./src-B07fK4k5.js";var a,o,s,c,l,u=e((()=>{r(),a=t(),o=`status_for_users`,s=31568949,c=(0,a.jsx)(i,{mono:!0,children:`{ "user_id": 42 }`}),l=(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(n,{label:`status`,value:`active`}),(0,a.jsx)(n,{label:`last_seen`,value:`2026-06-10T12:00:00Z`})]})}));export{l as a,u as i,o as n,c as r,s as t};
-//# sourceMappingURL=presets-C8pX8EL0.js.map

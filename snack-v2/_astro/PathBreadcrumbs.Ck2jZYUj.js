@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Breadcrumbs.C1wuyD62.js";import{t as n}from"./constants.B0UQxJs0.js";var r={breadcrumbs:`_breadcrumbs_jxjdp_4`},i=e();function a({isMobile:e,items:a}){return(0,i.jsx)(t,{items:a,className:r.breadcrumbs,inactiveLastItem:a.length>1,separator:`/`,size:e?`xs`:`s`,"data-test-id":n.breadcrumbs.root})}export{a as t};

@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-BUDedHtH.js";import{c,l,n as u,o as d,t as f}from"./src-CwDv2yOi.js";import{t as p}from"./testIds-DqMeGyO4.js";var m,h,g,_,v,y;e((()=>{f(),o(),p(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Inputs & Forms/ColorPicker`,id:`components-colorpicker`,component:u,parameters:{layout:`fullscreen`},render:e=>(0,m.jsx)(s,{children:(0,m.jsxs)(r,{children:[(0,m.jsx)(a,{children:`Playground`}),(0,m.jsx)(i,{children:`Выбор цвета с поддержкой режимов HEX, RGB и HSV.`}),(0,m.jsx)(n,{align:`center`,children:(0,m.jsx)(u,{...e})})]})}),args:{size:c.M,withAlpha:!0,withColorArea:!0,autoApply:!0,value:`#389f74`,availableModes:[d.Hex,d.Hsv,d.Rgb],"data-test-id":l.root},argTypes:{size:{control:`radio`,options:Object.values(c)},withAlpha:{control:`boolean`},autoApply:{control:`boolean`},value:{control:`color`},availableModes:{control:`check`,options:Object.values(d)},onChange:{table:{disable:!0}}}},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(l.root)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
+//# sourceMappingURL=ColorPicker.Playground.stories-CzMSjOLg.js.map

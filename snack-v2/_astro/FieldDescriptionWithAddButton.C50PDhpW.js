@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldDescription.B404OY3L.js";var n=e();function r(){return(0,n.jsx)(t,{addButton:!0})}export{r as FieldDescriptionWithAddButton};

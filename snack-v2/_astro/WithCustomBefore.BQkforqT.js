@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TitleClickable.Z3G6VC9N.js";import{t as n}from"./Typography.DvcEYAsd.js";var r=e();function i(){return(0,r.jsx)(t,{href:`#`,before:(0,r.jsx)(n,{variant:`label`,size:`s`,as:`span`,children:`Custom before`})})}export{i as WithCustomBefore};

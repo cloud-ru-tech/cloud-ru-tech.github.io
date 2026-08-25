@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TitleClickable.Z3G6VC9N.js";import{t as n}from"./Placeholder.gu93pEb-.js";var r=e();function i(){return(0,r.jsx)(t,{href:`#`,title:`Без шеврона`,icon:(0,r.jsx)(n,{}),showArrow:!1})}export{i as HiddenArrow};

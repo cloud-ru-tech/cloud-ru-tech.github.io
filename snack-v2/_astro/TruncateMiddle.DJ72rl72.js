@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TruncateString.ClB_4FlI.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:220},children:(0,n.jsx)(t,{variant:`middle`,text:`2024-quarterly-report-final-v3.pdf`})})}export{r as TruncateMiddle};

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t}from"./src.D25EjtGX.js";var n=e();function r(){return(0,n.jsx)(t,{appearance:`info`,title:`Плановые работы`,content:`Сегодня с 22:00 до 23:00 возможны кратковременные перебои.`})}export{r as SystemNotice};

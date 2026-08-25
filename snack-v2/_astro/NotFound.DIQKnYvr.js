@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.BkCFr3_o.js";import{n,t as r}from"./Dropdown.B-hHC5EQ.js";var i=e();function a(){return(0,i.jsx)(r,{state:{type:n.NotFound,content:`Ничего не нашли`,actionLabel:`Сбросить фильтры`,onActionClick:()=>{}},content:null,children:(0,i.jsx)(t,{label:`Поиск`})})}export{a as NotFound};

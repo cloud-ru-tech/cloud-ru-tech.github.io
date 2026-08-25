@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,i as n}from"./src-DjKRRBfq.js";var r,i=e((()=>{t(),r={...n,availableRoot:`config-selector-available`,availableTip:`config-selector-available__tip`}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-EIKMs2wn.js.map
