@@ -73,12 +73,12 @@ pnpm add @cloud-ru/ds-list
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
 | `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
 | `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
-| `onExpandIconClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Клик по явной кнопке-триггеру `groupIndicator` (шеврон справа), открывающей/закрывающей вложенный список. Если передан — шеврон рендерится как отдельная интерактивная кнопка со своим state-layer'ом, а клик по телу строки больше не переключает раскрытие. |
 | `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
 | `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
 | `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
 | `onOpenNestedList` | `((e?: KeyboardEvent<HTMLElement>) => void)` | — | no |  |
 | `onSelect` | `(() => void)` | — | no |  |
+| `onToggleExpand` | `(() => void)` | — | no | Переключение раскрытия вложенного списка. Триггер — вся строка целиком (клик или Enter/Space), шеврон `groupIndicator` при этом остаётся неинтерактивным индикатором состояния. |
 | `open` | `boolean` | — | no |  |
 | `showSwitchIcon` | `boolean` | — | no | Флаг отображения иконки у чекбоксов |
 | `switch` | `boolean` | — | no | Флаг отображения состояния выбранного элемента через switch |

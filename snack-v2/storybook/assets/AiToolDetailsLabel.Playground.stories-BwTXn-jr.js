@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-BiKgHgfb.js";import{S as c,T as l,t as u}from"./src-DOh-bq5s.js";import{n as d,t as f}from"./testIds-CRM0zo7W.js";var p,m,h,g,_,v,y;e((()=>{u(),o(),d(),p=t(),{useArgs:m}=__STORYBOOK_MODULE_PREVIEW_API__,{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`AI/Primitives/AiTool/Atoms/AiToolDetailsLabel`,id:`ai-aitool-atoms-aitooldetailslabel`,component:c,parameters:{layout:`fullscreen`},args:{label:`Ответ`,state:l.Default,showSecret:!0,secretRevealed:!1,"data-test-id":f.detailsLabel},argTypes:{onToggleSecret:{table:{disable:!0}}},render:function(e){let[{secretRevealed:t},o]=m();return(0,p.jsx)(s,{children:(0,p.jsxs)(r,{width:`narrow`,children:[(0,p.jsx)(a,{children:`Playground`}),(0,p.jsx)(i,{children:`Заголовок части блока деталей — обычно «Запрос» или «Ответ». Кнопка-глаз переключает показ секретных значений в теле блока: зачёркнутый глаз — секреты скрыты, открытый — показаны.`}),(0,p.jsx)(n,{align:`start`,children:(0,p.jsx)(c,{...e,secretRevealed:t,onToggleSecret:()=>o({secretRevealed:!t})})})]})})}},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(f.detailsLabel)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.detailsLabel)).toBeVisible();
-  }
-}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
-//# sourceMappingURL=AiToolDetailsLabel.Playground.stories-BwTXn-jr.js.map

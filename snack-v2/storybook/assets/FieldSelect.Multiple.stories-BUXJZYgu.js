@@ -1,0 +1,9 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-C96OK3Oq.js";import{O as u,m as d,t as f}from"./src-D5iCeaF_.js";function p(){let[e,t]=(0,m.useState)([`ru-central1-a`,`ru-central1-b`]);return(0,h.jsx)(l,{children:(0,h.jsxs)(a,{width:`narrow`,children:[(0,h.jsx)(s,{children:`Multiple selection`}),(0,h.jsx)(o,{children:"Множественный выбор: значение — `ItemId[]`, выбранное показывается чипами. Backspace на пустом вводе удаляет последний чип, кнопка очистки сбрасывает в `[]`."}),(0,h.jsx)(i,{block:!0,children:(0,h.jsx)(d,{"data-test-id":u.fieldSelect,label:`Availability zones`,placeholder:`Add zones…`,items:v,selection:`multiple`,chips:!0,value:e,onChange:t})})]})})}var m,h,g,_,v,y,b,x;t((()=>{f(),m=e(n(),1),c(),h=r(),{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v=[{id:`ru-central1-a`,content:{label:`ru-central1-a`}},{id:`ru-central1-b`,content:{label:`ru-central1-b`}},{id:`ru-central1-c`,content:{label:`ru-central1-c`}},{id:`kz-central1-a`,content:{label:`kz-central1-a`}}],y={title:`Snack/Inputs & Forms/Fields/FieldSelect/Examples/Multiple`,id:`components-fields-fieldselect-examples-multiple`,component:d,parameters:{layout:`fullscreen`},render:()=>(0,h.jsx)(p,{})},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(_(e).getByTestId(u.fieldSelect)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldSelect)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Multiple`]}))();export{b as Multiple,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=FieldSelect.Multiple.stories-BUXJZYgu.js.map

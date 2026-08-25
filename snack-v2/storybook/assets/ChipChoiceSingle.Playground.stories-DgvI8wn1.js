@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,f as i,l as a,m as o,t as s,u as c}from"./iframe-BiKgHgfb.js";import{o as l,t as u}from"./src-BlK_LQk1.js";import{n as d,t as f}from"./testIds-rYjH_ezV.js";import{a as p,i as m,n as h,r as g,t as _}from"./playground.helpers-BSp_gQQn.js";var v,y,b,x,S,C,w;e((()=>{u(),s(),d(),m(),v=t(),{expect:y,within:b}=__STORYBOOK_MODULE_TEST__,x=e=>{let t=p({defaultValue:void 0});return(0,v.jsx)(c,{children:(0,v.jsxs)(r,{children:[(0,v.jsx)(o,{children:`Playground (Single)`}),(0,v.jsx)(a,{children:`Чип-фильтр с выпадающим одиночным выбором.`}),(0,v.jsx)(n,{align:`center`,children:(0,v.jsx)(i,{width:`fit`,children:(0,v.jsx)(l.Single,{...e,...t})})})]})})},S={title:`Snack/Inputs & Forms/Chips/ChipChoice/Single`,id:`components-chips-chipchoice-single`,component:l.Single,parameters:{layout:`fullscreen`},render:x,args:{..._,label:`Filter`,options:g,autoApply:!0,searchable:!1,disableFuzzySearch:!1,"data-test-id":f.chipChoice.root},argTypes:{...h,disableFuzzySearch:{control:`boolean`,if:{arg:`searchable`,eq:!0}}}},C={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await y(b(e).getByTestId(f.chipChoice.root)).toBeVisible()}},C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.chipChoice.root)).toBeVisible();
-  }
-}`,...C.parameters?.docs?.source}}},w=[`Playground`]}))();export{C as Playground,w as __namedExportsOrder,S as default};
-//# sourceMappingURL=ChipChoiceSingle.Playground.stories-DgvI8wn1.js.map

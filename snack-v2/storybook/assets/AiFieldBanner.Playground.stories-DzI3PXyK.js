@@ -1,0 +1,12 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-C96OK3Oq.js";import{U as c,t as l}from"./system-BZBdoYww.js";import{i as u,n as d,o as f,s as p,t as m}from"./src-BzOTHCe_.js";import{i as h,n as g,r as _,t as v}from"./testIds-BHgbdNWT.js";var y,b,x,S,C,w,T,E,D;e((()=>{m(),l(),o(),_(),g(),y=t(),{expect:b,fn:x,userEvent:S,within:C}=__STORYBOOK_MODULE_TEST__,w={none:void 0,placeholder:(0,y.jsx)(c,{})},T={title:`AI/Surfaces/AiFieldBanner`,id:`ai-aifieldbanner`,component:d,parameters:{layout:`fullscreen`},args:{variant:f.Information,size:u.S,description:`Description`,actionLabel:`Label text`,icon:`placeholder`,"data-test-id":v.root},argTypes:{variant:{control:`select`,options:p,description:`Семантический тип баннера.`},size:{control:`inline-radio`,options:Object.values(u),description:`Размер (Figma: Mobile Off → s, Mobile On → m)`},description:{control:`text`,description:`Текст основной строки.`},children:{control:`text`,description:`Дополнительный слот.`},icon:{control:`select`,options:Object.keys(w),mapping:w,description:"Иконка слева (`none` | `placeholder`)."},actionLabel:{control:`text`,description:`Подпись кнопки действия.`},onActionClick:{table:{disable:!0}}},render:e=>(0,y.jsx)(s,{children:(0,y.jsxs)(r,{children:[(0,y.jsx)(a,{children:`Playground`}),(0,y.jsx)(i,{children:`Инлайн-баннер для поля ввода: тип, описание, действие и доп. слот.`}),(0,y.jsx)(n,{align:`start`,children:(0,y.jsx)(d,{...e,className:h.bannerCell,onActionClick:x()})})]})})},E={tags:[`dev`,`test`],play:async({canvasElement:e})=>{let t=C(e);await b(t.getByTestId(v.root)).toBeVisible(),await b(t.getByTestId(v.description)).toHaveTextContent(`Description`),await S.click(t.getByTestId(v.action))}},E.parameters={...E.parameters,docs:{...E.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId(TEST_IDS.root)).toBeVisible();
+    await expect(canvas.getByTestId(TEST_IDS.description)).toHaveTextContent('Description');
+    await userEvent.click(canvas.getByTestId(TEST_IDS.action));
+  }
+}`,...E.parameters?.docs?.source}}},D=[`Playground`]}))();export{E as Playground,D as __namedExportsOrder,T as default};
+//# sourceMappingURL=AiFieldBanner.Playground.stories-DzI3PXyK.js.map
