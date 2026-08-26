@@ -127,9 +127,8 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 - `InfoBlockProps` (interface)
 - `Segment` (interface)
 - `SegmentControlProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `TooltipProps` (interface)
-- `Value` = `0% | 100% | 50%`
 - `WidgetActionListProps` (interface)
 - `WidgetErrorStateProps` (interface)
 - `WidgetHeaderProps` (interface)

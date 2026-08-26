@@ -41,6 +41,7 @@ pnpm add @cloud-ru/ds-uikit-product-toggles-predefined
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Appearance (@cloud-ru/ds-promo-tag)` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `Emblem` (alias)
 - `EmblemIcon` (interface)
 - `EmblemPicture` (interface)
@@ -49,6 +50,7 @@ pnpm add @cloud-ru/ds-uikit-product-toggles-predefined
 - `PromoTagProps` (interface)
 - `RoleAppearance` = `accent | decor`
 - `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-promo-tag)` = `m | s | xs`
 
 ### ToggleGroup
 | Prop | Type | Default | Required | Description |
@@ -63,6 +65,10 @@ pnpm add @cloud-ru/ds-uikit-product-toggles-predefined
 | `orientation` | `horizontal \| vertical` | — | no | Направление раскладки |
 | `selectionMode` | `multiple \| single` | — | no | Режим выбора |
 | `value` | `string \| string[]` | — | no | Controlled состояние |
+
+#### Related types
+- `Gap` = `l | m | s`
+- `Orientation` = `horizontal | vertical`
 
 ## Примеры
 

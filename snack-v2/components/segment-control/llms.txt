@@ -63,7 +63,6 @@ pnpm add @cloud-ru/ds-segment-control
 - `IconPosition` = `after | before`
 - `Segment` (interface)
 - `Size` = `l | m | s`
-- `Value` = `0% | 100% | 50%`
 - `Width` = `auto | full`
 
 ## Примеры

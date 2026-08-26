@@ -48,11 +48,11 @@ pnpm add @cloud-ru/ds-button-combo
 | `view` | `elevated \| filled \| function \| outline \| simple \| tonal` | `filled` | no | Вариант оформления обеих кнопок |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Appearance` = `critical | neutral | primary`
 - `Item` (interface)
 - `ItemContent` (interface)
 - `ItemId` (alias)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ## Примеры

@@ -1,0 +1,11 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{o as i,t as a}from"./src-sZaiZ0dw.js";import{n as o,o as s,r as c}from"./presetFixtures-D4Az85s0.js";import{n as l,r as u}from"./testIds-Bglm_hNi.js";function d(e){let[t,n]=(0,f.useState)([]),[r,a]=(0,f.useState)(0),[s,c]=(0,f.useState)(0),[l,u]=(0,f.useState)(e.pageSize??5),[d,m]=(0,f.useState)(!0),h=(0,f.useRef)(0),g=(0,f.useCallback)((e,t)=>{let r=++h.current;m(!0),window.setTimeout(()=>{r===h.current&&(n(o.slice(e,e+t)),a(o.length),m(!1))},300)},[]);return(0,f.useEffect)(()=>{g(s,l)},[g,s,l]),(0,p.jsx)(i,{...e,items:t,total:r,offset:s,limit:l,loading:d,onChangePage:(e,t)=>{c(e),u(t)}})}var f,p,m,h,g,_,v;t((()=>{a(),f=e(n(),1),c(),u(),p=r(),{expect:m,within:h}=__STORYBOOK_MODULE_TEST__,g={title:`Snack/Data display/Table/ServerTable/Examples/ServerSimpleTable`,id:`components-table-servertable-examples-serversimpletable`,component:i,parameters:{layout:`fullscreen`},args:{columns:s,pageSize:5,getRowId:e=>e.id,"data-test-id":l.serverTable.root},argTypes:{columns:{table:{disable:!0}},items:{table:{disable:!0}},total:{table:{disable:!0}},offset:{table:{disable:!0}},limit:{table:{disable:!0}},onChangePage:{table:{disable:!0}},getRowId:{table:{disable:!0}}}},_={tags:[`dev`,`test`],render:e=>(0,p.jsx)(d,{...e,outline:!0}),play:async({canvasElement:e})=>{let t=h(e);await m(t.getByTestId(l.serverTable.root)).toBeVisible()}},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: args => <ServerSimpleTableExample {...args} outline />,
+  play: async ({
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId(TEST_IDS.serverTable.root)).toBeVisible();
+  }
+}`,..._.parameters?.docs?.source}}},v=[`ServerSimpleTable`]}))();export{_ as ServerSimpleTable,v as __namedExportsOrder,g as default};
+//# sourceMappingURL=ServerTable.ServerSimpleTable.stories-Bpz_QYnF.js.map

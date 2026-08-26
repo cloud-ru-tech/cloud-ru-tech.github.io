@@ -23,8 +23,8 @@ pnpm add @cloud-ru/ds-ai-reasoning
 | `children` | `ReactNode` | — | no | Дополнительный контент под описанием (например, карточка с деталями). |
 | `className` | `string` | — | no | Дополнительный CSS-класс корневого контейнера. |
 | `connector` | `boolean` | — | no | Явно управляет нижним коннектором. Если не передан, совпадает с `stepperLine`. |
+| `content` | `ReactNode` | — | no | Текстовый контент блока reasoning. |
 | `data-test-id` | `string` | `ai-reasoning` | no |  |
-| `description` | `ReactNode` | — | no | Текстовый контент блока reasoning. |
 | `stepperLine` | `boolean` | `true` | no | Показывает продолжение степпера вниз (для промежуточного шага). |
 
 ## Примеры
@@ -35,6 +35,6 @@ pnpm add @cloud-ru/ds-ai-reasoning
 import { AiReasoning } from '@cloud-ru/ds-ai-reasoning';
 
 export function Default() {
-  return <AiReasoning description='Tool is reasoning about the next action' />;
+  return <AiReasoning content='Tool is reasoning about the next action' />;
 }
 ```

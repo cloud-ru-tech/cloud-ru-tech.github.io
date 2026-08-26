@@ -42,7 +42,7 @@ _Нет публичных пропсов._
 - `EmptyBlockLayoutDefaults` (interface)
 - `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `Size` = `s | xs`
+- `Size` = `3xl | 5xl | l | m | s`
 
 ### NoAccess
 | Prop | Type | Default | Required | Description |

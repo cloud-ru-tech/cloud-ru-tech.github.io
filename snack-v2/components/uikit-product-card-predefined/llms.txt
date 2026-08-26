@@ -163,10 +163,11 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `FavoriteProps` (interface)
 - `PolymorphicRef` (alias)
+- `PolymorphicRef (@cloud-ru/ds-promo-tag)` (alias)
 - `PromoTagOwnProps` (interface)
 - `PromoTagProps` (interface)
 - `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
+- `Size` = `m | s | xs`
 - `VisibilityStrategy` = `always | hover`
 
 ### CardSuggest
@@ -187,10 +188,11 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `CardSize` = `m | s`
 - `PolymorphicRef` (alias)
+- `PolymorphicRef (@cloud-ru/ds-promo-tag)` (alias)
 - `PromoTagOwnProps` (interface)
 - `PromoTagProps` (interface)
 - `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
+- `Size` = `m | s | xs`
 
 ### Dimension
 | Prop | Type | Default | Required | Description |

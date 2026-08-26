@@ -43,7 +43,6 @@ pnpm add @cloud-ru/ds-ai-suggestion
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `chevron` | `ReactNode` | — | no |  |
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no |  |
 | `disabled` | `boolean` | `false` | no |  |
 | `expanded` | `boolean` | `false` | no |  |

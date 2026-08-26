@@ -128,7 +128,6 @@ pnpm add @cloud-ru/ds-toolbar
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `after` | `ReactNode` | — | no | Дополнительный слот между поиском и переключателем вида (+ slotExtraButton в Figma). <br> На mobile-раскладке (из `AdaptiveProvider`) не рендерится в строке — кнопки переносятся в меню «⋯» (`Button` с `onClick` и `label` / `icon` / `aria-label`, одна обёртка вокруг кнопки или элемент с `data-toolbar-after-overflow`). Иначе — в `moreActions`. |
-| `api` | `{ mode: "wysiwyg" \| "raw"; focus(): void; isActive(id: ToolbarItemId): boolean; isHeadingActive(level: HeadingLevel): boolean; toggle(id: ToolbarItemId): void; toggleHeading(level: HeadingLevel): void; setParagraph(): void; getLinkHref(): string \| undefined; getLinkTitle(): string \| undefined; setLink(props: LinkProps): void; insertImage(src: string, alt: string): void; insertTable(rows: number, cols: number): void; subscribe(callback: () => void): () => void; }` | — | yes | Бэкенд команд: WYSIWYG (TipTap) в preview-режиме либо markdown-исходник (textarea) в raw-режиме. |
 | `bulkActions` | `BulkAction[]` | — | no | Список массовых действий |
 | `checked` | `boolean` | — | no | Значение чекбокса |
 | `className` | `string` | — | no | Класснейм |
@@ -136,7 +135,6 @@ pnpm add @cloud-ru/ds-toolbar
 | `dataView` | `ToolbarDataViewProps` | — | no | Переключатель вида данных — SegmentControl (showDataView в Figma) |
 | `filterRow` | `FilterRow<TState>` | — | no |  |
 | `indeterminate` | `boolean` | — | no | Состояние частичного выбора |
-| `items` | `ToolbarItemId[]` | — | yes |  |
 | `moreActions` | `Action[]` | — | no | Элементы выпадающего списка кнопки с действиями |
 | `onCheck` | `(() => void)` | — | no | Колбек смены значения чекбокса |
 | `onRefresh` | `(() => void)` | — | no | Колбек обновления |
@@ -148,8 +146,26 @@ pnpm add @cloud-ru/ds-toolbar
 | `totalCount` | `number` | — | no | Общее количество элементов (для подписи Selected: N of M) |
 
 #### Related types
-- `ToolbarApi` (interface)
-- `ToolbarItemId` = `block-code | block-quote | bold | bullet-list | heading | image | inline-code | italic | link | ordered-list | strikethrough | table`
+- `Action` (interface)
+- `BaseChipProps` (interface)
+- `BulkAction` (interface)
+- `BulkActionsProps` (interface)
+- `DataViewBaseProps` (interface)
+- `DataViewValue` = `compact | list`
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `FilterRow` (interface)
+- `MoreActionsProps` (interface)
+- `PublicListContextType` (interface)
+- `ScrollProps` (interface)
+- `SearchProps` (interface)
+- `Segment` (interface)
+- `SegmentControlProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionState` (interface)
+- `ToolbarDataViewProps` (interface)
+- `ToolbarPersistConfig` (interface)
 
 ## Примеры
 

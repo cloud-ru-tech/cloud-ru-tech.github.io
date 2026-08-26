@@ -80,6 +80,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
 - `Size` = `s | xs`
+- `Size (@cloud-ru/ds-attachment)` = `m | s`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `TruncateStringProps` (alias)
 - `UploadMode` = `multiple | single`
@@ -107,7 +108,8 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 
 #### Related types
 - `ResendCodeProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-button)` = `l | m | s`
 
 ### FieldDescription
 | Prop | Type | Default | Required | Description |
@@ -156,7 +158,8 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -207,7 +210,8 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -272,26 +276,26 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `value` | `string` | — | no | Значение поля (controlled-режим) |
 
 #### Related types
-- `ButtonSize` = `m | s`
+- `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
 - `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `FieldElementButtonProps` (interface)
-- `FieldElementDroplistProps` (interface)
 - `FieldElementSlot` (interface)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
+- `Mask` = `code | ip-v4-address | ip-v4-address-with-mask | passport | snils | uuid`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Type` = `email | number | password | tel | text | url`
 - `ValidationState` = `default | error | success | warning`
-- `Variant` = `count | count-k | count-plus`
+- `Variant` = `after | before`
 
 ### FieldName
 | Prop | Type | Default | Required | Description |
@@ -351,7 +355,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `value` | `string` | — | no | Значение поля (controlled-режим) |
 
 #### Related types
-- `ButtonSize` = `m | s`
+- `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
@@ -366,10 +370,11 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
-- `Variant` = `count | count-k | count-plus`
+- `Variant` = `after | before`
 
 ### FieldNameRHF
 | Prop | Type | Default | Required | Description |
@@ -429,7 +434,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `value` | `string` | — | no | Значение поля (controlled-режим) |
 
 #### Related types
-- `ButtonSize` = `m | s`
+- `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
@@ -444,10 +449,11 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
-- `Variant` = `count | count-k | count-plus`
+- `Variant` = `after | before`
 
 ### FieldPhone
 | Prop | Type | Default | Required | Description |
@@ -512,9 +518,10 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Type` = `email | number | password | tel | text | url`
 - `ValidationState` = `default | error | success | warning`
 
 ### FieldSelectCreate
@@ -533,10 +540,11 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `submitHandler` | `() => Promise<string \| void>` | — | yes | Действие создания опции: возвращает `value` новой опции, которая выбирается в поле (single-режим). |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
-- `BarHideStrategy` = `leave | move | never | scroll`
 - `BottomSheetActionButton` (alias)
 - `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EntityIcon` (alias)
 - `EntityName` (interface)
 - `FieldLength` (interface)
 - `FieldSelectDecoratorProps` (interface)
@@ -546,14 +554,12 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `ModalMode` = `aggressive | forced | regular`
 - `ModalProps` (interface)
 - `ModalWidth` = `l | m | s`
+- `Permission` = `canCreate | canRead | none`
 - `PublicListContextType` (interface)
 - `QuestionTooltipProps` (interface)
-- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
+- `SelectFieldProps` (alias)
 - `SelectionState` (interface)
-- `Size` = `s | xs`
 
 ### FieldSubmitButton
 | Prop | Type | Default | Required | Description |
@@ -580,7 +586,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `size` | `l \| m \| s` | — | no | Размер |
 
 #### Related types
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 
 ### SelectFooter
 | Prop | Type | Default | Required | Description |

@@ -30,16 +30,15 @@ pnpm add @cloud-ru/ds-ai-tool
 |------|------|---------|----------|-------------|
 | `call` | `ReactNode` | — | no | Содержимое блока запроса. Блок рендерится только при переданном значении. |
 | `callLabel` | `ReactNode` | `Запрос` | no | Заголовок блока запроса. |
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Доп. класс корня. |
 | `connector` | `boolean` | `false` | no | Линия-коннектор к следующему инструменту в таймлайне. Линия выходит на 8px ниже корня — рассчитана на вертикальный список с `gap: 8px`. |
 | `data-test-id` | `string` | `ai-tool` | no |  |
-| `defaultOpened` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
+| `defaultOpen` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
 | `duration` | `number` | — | no | Длительность выполнения в секундах. Форматируется компонентом в д/ч/м/с (ведущие нулевые единицы опускаются, секунды показываются всегда). |
 | `icon` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — глиф `AiToolIcon` в заголовке. |
 | `name` | `ReactNode` | — | yes | Имя инструмента — моноширинная строка заголовка, обрезается ellipsis. |
-| `onToggle` | `((opened: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `opened`. |
-| `opened` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpened`. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
+| `open` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpen`. |
 | `result` | `ReactNode` | — | no | Содержимое блока ответа. Блок рендерится только при переданном значении. |
 | `resultLabel` | `ReactNode` | `Ответ` | no | Заголовок блока ответа. |
 | `state` | `error \| loading \| pending \| success` | `pending` | no | Состояние выполнения инструмента: `loading` — выполняется (синяя пульсирующая точка, заголовок основным цветом текста вместо приглушённого), `success` — завершён, `error` — завершён с ошибкой (блок ответа подсвечивается красным), `pending` — в очереди. |
@@ -58,8 +57,8 @@ pnpm add @cloud-ru/ds-ai-tool
 | `error` | `boolean` | — | no | Состояние ошибки: имя и счётчик красные. По умолчанию наследуется от `AiToolDetails`. |
 | `mono` | `boolean` | — | no | Моноширинный режим имени и счётчика. По умолчанию наследуется от `AiToolDetails`. |
 | `name` | `ReactNode` | — | no | Имя узла (`Key[ArrayName]`). |
-| `onToggle` | `((opened: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `opened`. |
-| `opened` | `boolean` | `false` | no | Раскрытое состояние. Источник истины — родитель. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
+| `open` | `boolean` | `false` | no | Раскрытое состояние. Источник истины — родитель. |
 | `unit` | `string` | — | no | Единица измерения после количества (например `шт.`). |
 
 ### AiToolBadge
@@ -86,7 +85,7 @@ pnpm add @cloud-ru/ds-ai-tool
 | `onToggleSecret` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Клик по кнопке-«глаз» заголовка. |
 | `scroll` | `boolean` | `true` | no | Ограничить высоту контента и включить вертикальный скролл. По умолчанию `true`. |
 | `secretRevealed` | `boolean` | `false` | no | Секрет раскрыт. Источник истины — родитель. |
-| `showSecret` | `boolean` | `false` | no | Показать кнопку-«глаз» в заголовке для раскрытия секрета. |
+| `showEyeButton` | `boolean` | `false` | no | Показать кнопку-«глаз» в заголовке для раскрытия секрета. |
 | `state` | `default \| error` | `default` | no | Состояние: `default` — нейтральный, `error` — красная рамка и лейбл. |
 
 #### Related types
@@ -95,13 +94,12 @@ pnpm add @cloud-ru/ds-ai-tool
 ### AiToolDetailsLabel
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-tool-details-label` | no |  |
 | `label` | `ReactNode` | — | no | Текст лейбла (заголовок блока деталей). |
-| `onToggleSecret` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Клик по кнопке-«глаз». Не вызывается, если `showSecret` не задан. |
+| `onToggleSecret` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Клик по кнопке-«глаз». Не вызывается, если `showEyeButton` не задан. |
 | `secretRevealed` | `boolean` | `false` | no | Секрет раскрыт: глаз открыт (секреты видны). Зачёркнутый глаз — секреты скрыты. Источник истины — родитель. |
-| `showSecret` | `boolean` | `false` | no | Показать кнопку-«глаз» для раскрытия секретного значения. |
+| `showEyeButton` | `boolean` | `false` | no | Показать кнопку-«глаз» для раскрытия секретного значения. |
 | `state` | `default \| error` | `default` | no | Состояние: `default` — нейтральный, `error` — красный. |
 
 #### Related types
@@ -110,7 +108,6 @@ pnpm add @cloud-ru/ds-ai-tool
 ### AiToolIcon
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-tool-icon` | no |  |
 | `variant` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — определяет глиф (reasoning / search / read / act / security / wait). |
@@ -121,7 +118,6 @@ pnpm add @cloud-ru/ds-ai-tool
 ### AiToolKeyValue
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-tool-key-value` | no |  |
 | `error` | `boolean` | — | no | Состояние ошибки: ключ и значение красные. По умолчанию наследуется от `AiToolDetails`. |
@@ -142,8 +138,8 @@ pnpm add @cloud-ru/ds-ai-tool
 | `error` | `boolean` | — | no | Состояние ошибки: имя и значение красные. По умолчанию наследуется от `AiToolDetails`. |
 | `mono` | `boolean` | — | no | Моноширинный режим имени и значения. По умолчанию наследуется от `AiToolDetails`. |
 | `name` | `ReactNode` | — | no | Имя узла (`Key[ObjectName]`). |
-| `onToggle` | `((opened: boolean) => void)` | — | no | Переключение раскрытия (только для `complex`). Получает новое значение `opened`. |
-| `opened` | `boolean` | `false` | no | Раскрытое состояние (только для `complex`). Источник истины — родитель. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия (только для `complex`). Получает новое значение `open`. |
+| `open` | `boolean` | `false` | no | Раскрытое состояние (только для `complex`). Источник истины — родитель. |
 | `value` | `ReactNode` | — | no | Значение для типа `string` (инлайн рядом с именем). |
 | `variant` | `complex \| string` | `complex` | no | Тип узла: `complex` — сворачиваемое дерево, `string` — инлайн ключ-значение. |
 
@@ -157,12 +153,12 @@ pnpm add @cloud-ru/ds-ai-tool
 | `className` | `string` | — | no | Доп. класс корня. |
 | `connector` | `boolean` | `false` | no | Линия-коннектор к следующему инструменту в таймлайне. Линия выходит на 8px ниже корня — рассчитана на вертикальный список с `gap: 8px`. |
 | `data-test-id` | `string` | `ai-tool-simple` | no |  |
-| `defaultOpened` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
+| `defaultOpen` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
 | `description` | `ReactNode` | — | no | Текстовое описание под заголовком в раскрытом состоянии. |
 | `icon` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — глиф `AiToolIcon` слева от заголовка. |
 | `name` | `ReactNode` | — | yes | Имя инструмента — строка заголовка; в свёрнутом состоянии обрезается ellipsis. |
-| `onToggle` | `((opened: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `opened`. |
-| `opened` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpened`. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
+| `open` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpen`. |
 | `state` | `error \| loading \| pending \| success` | `pending` | no | Состояние выполнения. В `loading` тип инструмента ещё неизвестен, поэтому вместо иконки показывается пульсирующая точка `AiToolStatus`, а заголовок подсвечивается основным цветом текста. В остальных состояниях слева рендерится иконка типа (`icon`). |
 
 #### Related types
@@ -172,7 +168,6 @@ pnpm add @cloud-ru/ds-ai-tool
 ### AiToolStatus
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-tool-status` | no |  |
 | `state` | `error \| loading \| pending \| success` | — | yes | Состояние выполнения инструмента: success / error / loading / pending. |
@@ -198,16 +193,16 @@ import { AiToolArray, AiToolObject } from '@cloud-ru/ds-ai-tool';
 import { useState } from 'react';
 
 export function ArrayList() {
-  const [opened, setOpened] = useState(true);
+  const [open, setOpen] = useState(true);
 
   return (
     <div style={{ width: 360 }}>
-      <AiToolArray name='Key[ArrayName]' count={2} unit='шт.' opened={opened} onToggle={setOpened}>
-        <AiToolObject name='Key[0]' opened>
+      <AiToolArray name='Key[ArrayName]' count={2} unit='шт.' open={open} onOpenChange={setOpen}>
+        <AiToolObject name='Key[0]' open>
           <AiToolObject variant='string' name='region' value='ru-central1' />
           <AiToolObject variant='string' name='status' value='ok' />
         </AiToolObject>
-        <AiToolObject name='Key[1]' opened>
+        <AiToolObject name='Key[1]' open>
           <AiToolObject variant='string' name='region' value='ru-central1-a' />
           <AiToolObject variant='string' name='status' value='pending' />
         </AiToolObject>
@@ -260,7 +255,7 @@ export function DetailsLabelSecret() {
     <div style={{ width: 280 }}>
       <AiToolDetailsLabel
         label='Ответ'
-        showSecret
+        showEyeButton
         secretRevealed={revealed}
         onToggleSecret={() => setRevealed(prev => !prev)}
       />
@@ -345,10 +340,10 @@ export function ToolCallTree() {
   const [openZones, setOpenZones] = useState(true);
 
   return (
-    <AiToolObject variant='complex' name='result' opened={openRoot} onToggle={setOpenRoot}>
+    <AiToolObject variant='complex' name='result' open={openRoot} onOpenChange={setOpenRoot}>
       <AiToolKeyValue label='region' value='ru-central1' />
       <AiToolKeyValue label='status' value='running' />
-      <AiToolArray name='zones' count={2} unit='шт.' opened={openZones} onToggle={setOpenZones}>
+      <AiToolArray name='zones' count={2} unit='шт.' open={openZones} onOpenChange={setOpenZones}>
         <AiToolObject variant='string' name='[0]' value='ru-central1-a' />
         <AiToolObject variant='string' name='[1]' value='ru-central1-b' />
       </AiToolArray>
@@ -378,7 +373,7 @@ export function ToolSimpleBadges() {
         name='status_for_users'
         icon={AI_TOOL_ICON_TYPE.Act}
         state={AI_TOOL_STATUS_STATE.Loading}
-        defaultOpened
+        defaultOpen
         description='Запрашивает статусы пользователей и агрегирует результат.'
       >
         <AiToolBadge badgeType={AI_TOOL_BADGE_TYPE.CloudRu} label='users-service' />
@@ -416,7 +411,7 @@ export function ToolTimeline() {
         icon={AI_TOOL_ICON_TYPE.Act}
         state={AI_TOOL_STATUS_STATE.Loading}
         duration={9}
-        defaultOpened
+        defaultOpen
         call={<AiToolText mono>{'{ "user_id": 42 }'}</AiToolText>}
       />
     </div>

@@ -103,6 +103,7 @@ pnpm add @cloud-ru/ds-uikit-product-price-summary
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Appearance (@cloud-ru/ds-link)` = `blue | green | invertNeutral | neutral | orange | pink | primary | red | violet | yellow`
 - `AppearanceState` = `default | systemError | userError | warning`
 - `DiscountDetails` (interface)
 - `DiscountInvoiceItem` (interface)
@@ -117,7 +118,8 @@ pnpm add @cloud-ru/ds-uikit-product-price-summary
 - `PromoTagOwnProps` (interface)
 - `PromoTagProps` (interface)
 - `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
+- `RoleAppearance (@cloud-ru/ds-link)` = `onAccent | regular`
+- `Size` = `m | s | xs`
 - `TotalSumType` = `equal | from`
 - `VatType` = `excluding | including`
 
@@ -134,7 +136,11 @@ pnpm add @cloud-ru/ds-uikit-product-price-summary
 | `value` | `number` | `0` | no | Итоговая сумма. |
 
 #### Related types
+- `Appearance` = `blue | green | invertNeutral | neutral | orange | pink | primary | red | violet | yellow`
 - `LinkProps` (interface)
+- `PolymorphicRef` (alias)
+- `RoleAppearance` = `onAccent | regular`
+- `TruncateStringProps` (alias)
 
 ### TotalValueBlock
 | Prop | Type | Default | Required | Description |

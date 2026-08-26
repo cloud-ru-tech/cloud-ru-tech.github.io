@@ -75,9 +75,10 @@ pnpm add @cloud-ru/ds-fields
 - `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Type` = `email | number | password | tel | text | url`
 - `ValidationState` = `default | error | success | warning`
 
 ### FieldCombo
@@ -144,11 +145,10 @@ pnpm add @cloud-ru/ds-fields
 - `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
 - `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `FieldElementButtonProps` (interface)
-- `FieldElementDroplistProps` (interface)
 - `FieldElementSlot` (interface)
+- `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
 - `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
@@ -156,9 +156,10 @@ pnpm add @cloud-ru/ds-fields
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Type` = `email | number | password | tel | text | url`
 - `ValidationState` = `default | error | success | warning`
 - `Variant` = `after | before`
 
@@ -223,7 +224,8 @@ pnpm add @cloud-ru/ds-fields
 - `PresetItem` (interface)
 - `PresetsOptions` (interface)
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -317,7 +319,8 @@ pnpm add @cloud-ru/ds-fields
 - `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -395,21 +398,21 @@ pnpm add @cloud-ru/ds-fields
 #### Related types
 - `BaseItemWithoutNonGroup` (interface)
 - `ChildrenFunction` (alias)
-- `CollapseState` (interface)
 - `CommonGroupItem` (interface)
 - `DroplistProps` (interface)
 - `EmptyStateProps` (interface)
 - `FieldDecoratorProps` (interface)
+- `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
 - `IconPredefinedProps` (interface)
-- `Item` (interface)
+- `ItemId` (alias)
+- `ItemProps` (alias)
+- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SearchState` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
 - `Size` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
@@ -434,7 +437,7 @@ pnpm add @cloud-ru/ds-fields
 | `validationState` | `default \| error \| success \| warning` | `default` | no | Состояние валидации — тонирует acrylic-фон |
 
 #### Related types
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `ValidationState` = `default | error | success | warning`
 
 ### FieldSlider
@@ -488,7 +491,8 @@ pnpm add @cloud-ru/ds-fields
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `SliderMarks` (alias)
 - `SliderValue` (alias)
 - `TextInputFormatter` (alias)
@@ -543,7 +547,8 @@ pnpm add @cloud-ru/ds-fields
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `TooltipProps` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
@@ -607,9 +612,10 @@ pnpm add @cloud-ru/ds-fields
 - `InputMode` = `decimal | email | none | numeric | search | tel | text | url`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Type` = `email | number | password | tel | text | url`
 - `ValidationState` = `default | error | success | warning`
 
 ### FieldTextArea
@@ -663,7 +669,8 @@ pnpm add @cloud-ru/ds-fields
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -713,7 +720,8 @@ pnpm add @cloud-ru/ds-fields
 - `FieldLength` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `TimeValue` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`

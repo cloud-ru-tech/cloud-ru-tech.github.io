@@ -32,7 +32,7 @@ pnpm add @cloud-ru/ds-ai-button-chevron
 | `disabled` | `boolean` | `false` | no | Disabled-состояние: opacity, нативная блокировка кликов и клавиатуры. |
 | `interactive` | `boolean` | `true` | no | Интерактивный режим: `true` — рендерится как `button`, `false` — как декоративный `span`. |
 | `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нативный обработчик клика. Не вызывается для disabled-кнопки. |
-| `opened` | `boolean` | `false` | no | Раскрытое состояние: `true` — шеврон смотрит вверх, `false` — вниз. По умолчанию `false`. |
+| `open` | `boolean` | `false` | no | Раскрытое состояние: `true` — шеврон смотрит вверх, `false` — вниз. По умолчанию `false`. |
 
 ## Примеры
 
@@ -43,8 +43,8 @@ import { AiButtonChevron } from '@cloud-ru/ds-ai-button-chevron';
 import { useState } from 'react';
 
 export function Default() {
-  const [opened, setOpened] = useState(false);
-  return <AiButtonChevron opened={opened} onClick={() => setOpened(prev => !prev)} />;
+  const [open, setOpen] = useState(false);
+  return <AiButtonChevron open={open} onClick={() => setOpen(prev => !prev)} />;
 }
 ```
 
@@ -65,11 +65,11 @@ import { AiButtonChevron } from '@cloud-ru/ds-ai-button-chevron';
 import { useState } from 'react';
 
 export function Expandable() {
-  const [opened, setOpened] = useState(true);
+  const [open, setOpen] = useState(true);
   return (
     <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-      <AiButtonChevron opened={opened} onClick={() => setOpened(prev => !prev)} />
-      {opened && <span>Раскрытый контент</span>}
+      <AiButtonChevron open={open} onClick={() => setOpen(prev => !prev)} />
+      {open && <span>Раскрытый контент</span>}
     </div>
   );
 }

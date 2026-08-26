@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AiChainOfThoughts.CLsCnahc.js";var n=e();function r(){return(0,n.jsx)(t,{broken:!0})}export{r as Broken};

@@ -28,11 +28,11 @@ pnpm add @cloud-ru/ds-uikit-product-avatar-detail
 | `name` | `string` | — | yes | Имя пользователя |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `AvatarProps` (interface)
 - `Shape` = `rounded | squared`
-- `Size` = `s | xs`
-- `StatusAppearance` = `blue | green | loading | neutral | orange | pink | primary | red | violet | yellow`
+- `Size` = `3xl | 6xl | 9xl | l | m | s | xs`
+- `StatusAppearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
 
 ## Примеры
 

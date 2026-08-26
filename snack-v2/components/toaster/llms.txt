@@ -162,7 +162,6 @@ _Нет публичных пропсов._
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `appearance` | `green \| neutral \| red` | — | yes | Цветовая схема. |
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `progress` | `number` | — | yes | Процент заполнения 0..100. |
 
 #### Related types

@@ -192,25 +192,25 @@ pnpm add @cloud-ru/ds-chips
 | `visibleFilters` | `string[]` | — | no | Состояние для видимых фильтров |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
-- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseChipProps` (interface)
 - `ChipChoiceDateWithSeconds` (interface)
+- `ChipChoiceRowFilter` (alias)
+- `ChipChoiceRowSize` = `l | m | s`
 - `DropdownBridgeProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `EmptyStateProps` (interface)
-- `OutsideClickHandler` (alias)
+- `ItemId` (alias)
+- `OnChangeHandler` (alias)
+- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
-- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `SelectionState` (interface)
 - `Size` = `l | m | s`
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `TruncateStringProps` (alias)
 
 ### ChipChoiceSingle

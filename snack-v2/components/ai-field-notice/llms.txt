@@ -38,8 +38,8 @@ pnpm add @cloud-ru/ds-ai-field-notice
 
 #### Related types
 - `AiFieldBannerProps` (interface)
-- `Size` = `s | xs`
-- `Type` = `agentic | critical | help | information | security | warning`
+- `Size` = `m | s`
+- `Variant` = `agentic | critical | help | information | security | warning`
 
 ### AiFieldNoticeAnimatedDescription
 | Prop | Type | Default | Required | Description |

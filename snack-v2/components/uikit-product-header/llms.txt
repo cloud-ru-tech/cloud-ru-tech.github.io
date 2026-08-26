@@ -198,25 +198,25 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `settingItems` | `Item[]` | — | no | Пункты левой колонки (desktop) / нижней части списка (mobile).  Плоский список `List` (`BaseItem` и при необходимости `type: 'group'` с `divider` для разделителей). Не связан с сегментами правой панели и не меняется при сортировке групп в сегментах. |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
-- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
-- `EmptyStateProps` (interface)
-- `Item` (interface)
+- `FavoriteProps` (interface)
+- `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
 - `LinksGroup` (interface)
 - `ListProps` (interface)
+- `MainMenuPreferencesProps` (interface)
 - `MainMenuSegment` (interface)
 - `MainMenuSegmentPrefs` (interface)
-- `Resize` = `both | horizontal | none | vertical`
+- `OriginalScrollProps` (interface)
 - `ScrollProps` (interface)
+- `SearchProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `TruncateStringProps` (alias)
 
 ### MainMenuDndContext
@@ -247,7 +247,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 - `PromoTagOwnProps` (interface)
 - `PromoTagProps` (interface)
 - `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
+- `Size` = `m | s | xs`
 
 ### MenuDesktop
 | Prop | Type | Default | Required | Description |
@@ -466,22 +466,21 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `triggerTooltip` | `string` | — | no |  |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
-- `BarHideStrategy` = `leave | move | never | scroll`
+- `BaseItemProps` (interface)
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
-- `Item` (interface)
+- `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
 - `ListProps` (interface)
-- `Resize` = `both | horizontal | none | vertical`
+- `OriginalScrollProps` (interface)
 - `ScrollProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `ThemeMode` = `dark | light | system`
 - `ThemeProps` (interface)
 - `TruncateStringProps` (alias)

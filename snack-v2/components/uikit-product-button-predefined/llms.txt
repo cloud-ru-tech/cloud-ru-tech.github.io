@@ -27,7 +27,6 @@ pnpm add @cloud-ru/ds-uikit-product-button-predefined
 |------|------|---------|----------|-------------|
 | `appearance` | `critical \| neutral \| primary` | `neutral` | no | Вариант оформления |
 | `as` | `button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
-| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
 | `className` | `string` | — | no | Дополнительный класс Класс триггерной кнопки. |
 | `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
 | `closeOnPopstate` | `boolean` | — | no | Закрывать ли поповер при переходе по истории браузера |
@@ -47,19 +46,18 @@ pnpm add @cloud-ru/ds-uikit-product-button-predefined
 | `triggerClassName` | `string` | — | no | CSS-класс триггера |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
-- `AutoscrollTo` = `bottom | right`
-- `BarHideStrategy` = `leave | move | never | scroll`
+- `Appearance` = `critical | neutral | primary`
+- `Appearance (@cloud-ru/ds-counter)` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownSize` = `l | m | s | xs`
 - `CommonGroupItem` (interface)
 - `CounterProps` (interface)
-- `Item` (interface)
+- `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
+- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
-- `Resize` = `both | horizontal | none | vertical`
 - `RoleAppearance` = `accent | decor`
 - `ScrollProps` (interface)
 - `Size` = `s | xs`

@@ -33,12 +33,14 @@ pnpm add @cloud-ru/ds-button
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`
+- `Appearance (@cloud-ru/ds-counter)` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `CounterProps` (interface)
 - `IconPosition` = `after | before`
 - `PolymorphicRef` (alias)
 - `RoleAppearance` = `accent | decor`
 - `Size` = `l | m | s`
-- `Variant` = `icon-after | icon-before | icon-only | label-only`
+- `Size (@cloud-ru/ds-counter)` = `s | xs`
+- `Variant` = `count | count-k | count-plus`
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### BUTTON_GROUP_ACTION_SLOT

@@ -197,22 +197,24 @@ _Нет публичных пропсов._
 | `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
 
 #### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
-- `IconPredefinedProps` (interface)
 - `Item` (alias)
-- `ItemContent` (interface)
 - `ItemId` (alias)
-- `OnChangeHandler` (alias)
+- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
+- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-scroll)` = `m | s`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `TruncateStringProps` (alias)
 
@@ -301,6 +303,19 @@ _Нет публичных пропсов._
 | `hasNoItems` | `boolean` | — | yes |  |
 | `loading` | `boolean` | — | no |  |
 | `size` | `l \| m \| s \| undefined` | — | yes |  |
+
+#### Related types
+- `CollapseState` (interface)
+- `EmptyStateProps` (interface)
+- `FlattenBaseItem` (interface)
+- `IconPredefinedProps` (interface)
+- `ItemId` (alias)
+- `ListPrivateProps` (interface)
+- `OriginalScrollProps` (interface)
+- `SearchState` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `Size` = `l | m | s`
 
 ### ListPrivate
 | Prop | Type | Default | Required | Description |
@@ -503,23 +518,24 @@ _Нет публичных пропсов._
 | `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
 
 #### Related types
+- `AutoscrollTo` = `bottom | right`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
-- `IconPredefinedProps` (interface)
 - `Item` (alias)
-- `ItemContent` (interface)
-- `ItemId` (alias)
-- `OnChangeHandler` (alias)
+- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `ReorderItem` (alias)
+- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-scroll)` = `m | s`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `TruncateStringProps` (alias)
 

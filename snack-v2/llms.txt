@@ -146,7 +146,7 @@
 ### Surfaces
 
 - [@cloud-ru/ds-ai-card](/snack-v2/components/ai-card/llms.txt): Selectable AI-карточка с независимым boolean toggle, single-line заголовком и опциональным контентом.
-- [@cloud-ru/ds-ai-field-banner](/snack-v2/components/ai-field-banner/llms.txt): Инлайн-баннер для поля ввода с семантическим типом, иконкой, описанием и действием.
+- [@cloud-ru/ds-ai-field-banner](/snack-v2/components/ai-field-banner/llms.txt): Инлайн-баннер для поля ввода с семантическим вариантом, иконкой, контентом и действием.
 - [@cloud-ru/ds-ai-field-notice](/snack-v2/components/ai-field-notice/llms.txt): Композиция AiFieldBanner и AiQueue для контекстных уведомлений над AI-полем.
 - [@cloud-ru/ds-ai-suggestion](/snack-v2/components/ai-suggestion/llms.txt): AI-подсказки — простой чип и раскрывающаяся группа с вложенными подсказками.
 

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AiButtonChevron.CTxX0sIc.js";var n=e();function r(){return(0,n.jsx)(t,{disabled:!0})}export{r as Disabled};

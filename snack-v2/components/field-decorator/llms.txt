@@ -47,6 +47,7 @@ pnpm add @cloud-ru/ds-field-decorator
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
 - `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 
@@ -90,6 +91,7 @@ pnpm add @cloud-ru/ds-field-decorator
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
 - `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 
 ## Примеры

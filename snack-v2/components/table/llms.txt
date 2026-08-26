@@ -85,26 +85,25 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
-- `ActionsGenerator` (alias)
-- `BaseChipProps` (interface)
-- `ChipChoiceDateWithSeconds` (interface)
-- `ColumnDefinition` (alias)
-- `DropdownBridgeProps` (interface)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
-- `Except` (alias)
+- `AdminTableSearchConfig` (interface)
+- `AdminTableSelectionConfig` (interface)
+- `ColumnVirtualizer` (alias)
+- `EmptyStateProps` (interface)
 - `FilterRow` (interface)
-- `MapStatusToAppearanceFnType` (alias)
-- `PublicListContextType` (interface)
+- `LayoutPresets` (interface)
 - `RenderCardContext` (interface)
 - `RowActionsConfig` (interface)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
-- `SelectionState` (interface)
+- `RowClickHandler` (alias)
+- `RowVirtualizer` (alias)
 - `SimpleColumnDef` (interface)
 - `StatusColumnConfig` (interface)
+- `StickyControls` (interface)
+- `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarCheckBoxMode` = `allRows | pageRows`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
+- `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
 ### BodyCell
@@ -309,25 +308,24 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
-- `BaseChipProps` (interface)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
+- `LoadMoreTrigger` = `button | scroll`
 - `RenderCardContext` (interface)
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
 - `SimpleColumnDef` (interface)
-- `StickyControlsLayoutDefaults` (interface)
+- `StickyControls` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -445,25 +443,24 @@ pnpm add @cloud-ru/ds-table
 
 #### Related types
 - `AdminTableSelectionConfig` (interface)
-- `BaseChipProps` (interface)
-- `ChipChoiceDateWithSeconds` (interface)
-- `ChipChoiceRowFilter` (alias)
-- `ClientTableProps` (interface)
-- `DropdownBridgeProps` (interface)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
-- `SelectionState` (interface)
-- `StickyControlsLayoutDefaults` (interface)
+- `RenderCardContext` (interface)
+- `RowActionsConfig` (interface)
+- `RowClickHandler` (alias)
+- `RowVirtualizer` (alias)
+- `ServerTableProps` (interface)
+- `SimpleColumnDef` (interface)
+- `StatusColumnConfig` (interface)
+- `StickyControls` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarCheckBoxMode` = `allRows | pageRows`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
+- `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
 ### ServerSimpleTable
@@ -541,25 +538,24 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
-- `BaseChipProps` (interface)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
 - `RenderCardContext` (interface)
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
 - `SimpleColumnDef` (interface)
+- `StickyControls` (interface)
 - `StickyControlsLayoutDefaults` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -638,24 +634,23 @@ pnpm add @cloud-ru/ds-table
 
 #### Related types
 - `BaseChipProps` (interface)
-- `ChipChoiceDateWithSeconds` (interface)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
 - `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
+- `StickyControls` (interface)
 - `StickyControlsLayoutDefaults` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -732,25 +727,24 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
-- `BaseChipProps` (interface)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
 - `RenderCardContext` (interface)
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
 - `SimpleColumnDef` (interface)
-- `StickyControlsLayoutDefaults` (interface)
+- `StickyControls` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarCheckBoxMode` = `allRows | pageRows`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -828,23 +822,23 @@ pnpm add @cloud-ru/ds-table
 
 #### Related types
 - `BaseChipProps` (interface)
-- `ChipChoiceDateWithSeconds` (interface)
-- `ChipChoiceRowFilter` (alias)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DropdownBridgeProps` (interface)
+- `ColumnVirtualizer` (alias)
 - `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
-- `PublicListContextType` (interface)
+- `LayoutPresets` (interface)
+- `LoadMoreTrigger` = `button | scroll`
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
+- `StickyControls` (interface)
+- `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -864,6 +858,7 @@ _Нет публичных пропсов._
 
 #### Related types
 - `CardSelection` = `multiple | none | single`
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
 
 ### TableCardsBody
@@ -1060,24 +1055,23 @@ _Нет публичных пропсов._
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
-- `BaseChipProps` (interface)
+- `BulkAction` (interface)
 - `ColumnDefinition` (alias)
-- `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
+- `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
 - `Except` (alias)
 - `FilterRow` (interface)
-- `IconPredefinedProps` (interface)
 - `LayoutPresets` (interface)
-- `PublicListContextType` (interface)
 - `RenderCardContext` (interface)
 - `RowClickHandler` (alias)
-- `ScrollProps` (interface)
-- `SelectionState` (interface)
+- `RowVirtualizer` (alias)
 - `SimpleColumnDef` (interface)
-- `StickyControlsLayoutDefaults` (interface)
+- `StickyControls` (interface)
 - `TableLayoutDefaults` (interface)
+- `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
+- `ToolbarCheckBoxMode` = `allRows | pageRows`
+- `ToolbarPersistConfig` (interface)
+- `ToolbarProps` (alias)
 - `TreeTablePrimaryColumn` (interface)
 - `TreeTableSelectionConfig` (interface)
 - `View` = `cards | table`

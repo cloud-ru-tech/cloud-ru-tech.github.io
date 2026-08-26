@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-D1b9r8k6.js";import{g as c,k as l,t as u}from"./src-Dz1g2alk.js";import{n as d,t as f}from"./testIds-3EvVNU4u.js";var p,m,h,g,_,v;e((()=>{u(),o(),d(),p=t(),{expect:m,within:h}=__STORYBOOK_MODULE_TEST__,g={title:`AI/Primitives/AiTool/Atoms/AiToolStatus`,id:`ai-aitool-atoms-aitoolstatus`,component:c,parameters:{layout:`fullscreen`},args:{state:l.Loading,"data-test-id":f.status},render:e=>(0,p.jsx)(s,{children:(0,p.jsxs)(r,{children:[(0,p.jsx)(a,{children:`Playground`}),(0,p.jsx)(i,{children:`Индикатор состояния шага инструмента. Состояние loading пульсирует, остальные показывают статичную точку своего цвета: pending — серый, success — зелёный, error — красный.`}),(0,p.jsx)(n,{align:`center`,children:(0,p.jsx)(c,{...e})})]})})},_={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await m(h(e).getByTestId(f.status)).toBeVisible()}},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.status)).toBeVisible();
+  }
+}`,..._.parameters?.docs?.source}}},v=[`Playground`]}))();export{_ as Playground,v as __namedExportsOrder,g as default};
+//# sourceMappingURL=AiToolStatus.Playground.stories-CZ9PLEgl.js.map

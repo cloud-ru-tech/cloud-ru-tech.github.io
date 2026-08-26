@@ -95,7 +95,7 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 - `Position` = `bottom | left | right | top`
 - `SegmentControlProps` (interface)
 - `TooltipProps` (interface)
-- `Width` = `auto | full`
+- `Width` = `l | m | s`
 
 ### NotificationPanelBlank
 | Prop | Type | Default | Required | Description |
@@ -107,9 +107,9 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 | `title` | `string` | — | no | Заголовок |
 
 #### Related types
-- `Appearance` = `default | error | success | warning`
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `IconPredefinedProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `3xl | 5xl | l | m | s`
 
 ### NotificationPanelContent
 | Prop | Type | Default | Required | Description |
@@ -129,16 +129,21 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 
 #### Related types
 - `Action` (interface)
+- `Appearance` = `critical | neutral | primary`
 - `ButtonProps` (interface)
 - `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
 - `NotificationPanelSettingsProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
 - `Segment` (interface)
 - `SegmentControlProps` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-button)` = `l | m | s`
 - `TooltipProps` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `Value` = `0% | 100% | 50%`
+- `View` = `elevated | filled | function | outline | simple | tonal`
 - `Width` = `auto | full`
 
 ### NotificationPanelGroup
@@ -158,13 +163,13 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 
 #### Related types
 - `Action` (interface)
-- `Appearance` = `default | error | success | warning`
+- `Appearance` = `critical | neutral | primary`
 - `ButtonProps` (interface)
 - `CounterProps` (interface)
 - `IconPosition` = `after | before`
 - `ItemContent` (interface)
 - `PolymorphicRef` (alias)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### NotificationPanelSettingsDroplist

@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{d as t}from"./src-kmfnQDpn.js";var n,r,i,a,o,s,c,l,u,d=e((()=>{n=`_wrapper_26i1y_4`,r=`_contentCard_26i1y_10`,i=`_avatarPlaceholder_26i1y_22`,a=`_textAlignLeft_26i1y_29`,o=`_textAlignRight_26i1y_33`,s=`_textContainer_26i1y_37`,c=`_textContent_26i1y_49`,l=`_skeletonOverlay_26i1y_53`,u={wrapper:n,contentCard:r,avatarPlaceholder:i,textAlignLeft:a,textAlignRight:o,textContainer:s,textContent:c,skeletonOverlay:l}})),f=e((()=>{t()}));export{d as n,u as r,f as t};
-//# sourceMappingURL=testIds-CYaEWxMm.js.map
