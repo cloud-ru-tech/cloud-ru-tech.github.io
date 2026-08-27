@@ -16,9 +16,8 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
-| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения |
+| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения. Если передан — модалка показывает поле подтверждения |
 | `confirmTextVariant` | `name \| text` | `name` | no | Тип текста подтверждения |
-| `confirmable` | `boolean` | `false` | no | Состояние с подтверждением через ввод текста |
 | `content` | `ReactNode` | — | no | Основной текст модалки |
 | `data-test-id` | `string` | — | no |  |
 | `deleting` | `boolean` | — | no | Состояние загрузки кнопки удаления |
@@ -93,8 +92,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `closeOnPopstate` | `boolean` | — | no | Закрытие при навигации по истории |
-| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения |
-| `confirmable` | `boolean` | `false` | no | Состояние с подтверждением через ввод текста |
+| `confirmText` | `string` | — | no | Текст, который нужно ввести для подтверждения. Если передан — модалка показывает поле подтверждения |
 | `content` | `ReactNode` | — | no | Основной текст модалки |
 | `data-test-id` | `string` | — | no |  |
 | `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования текста подтверждения |
@@ -208,7 +206,6 @@ export function DeleteConfirmable() {
         open={open}
         onClose={() => setOpen(false)}
         objectType='виртуальную машину'
-        confirmable
         confirmText='vm-production-01'
         onDelete={close => close()}
       />
@@ -252,7 +249,6 @@ export function RecallConfirmable() {
       <RecallModal
         open={open}
         onClose={() => setOpen(false)}
-        confirmable
         confirmText='recall-operation-01'
         onRecall={close => close()}
       />

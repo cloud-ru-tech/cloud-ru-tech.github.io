@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Breadcrumbs.CsUK1DbK.js";var n=e(),r=[{id:`1`,label:`Главная`,href:`#`},{id:`2`,label:`Документы`,href:`#`},{id:`3`,label:`Текущая страница`}];function i(){return(0,n.jsx)(t,{items:r})}export{i as BasicTrail};

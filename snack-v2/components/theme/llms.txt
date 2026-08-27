@@ -31,7 +31,7 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `Partial<ThemeAppearance>` | — | yes | Оси, переопределяемые в поддереве. Остальные наследуются от ближайшего родителя (слияние). |
 
 #### Related types
-- `Brand` = `brandA | brandB | brandC | brandD | brandE`
+- `Brand` = `brandA | brandB | brandC | brandD | brandE | brandF`
 - `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`
@@ -49,7 +49,7 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `ThemeAppearance` | — | no | Оформление приложения. Используется в static-режиме (один React-корень: SSR — одно значение на запрос, либо CSR с собственным state, напр. `colorScheme` из `useColorScheme`). Для multi-root (single-spa) — см. `store`. |
 
 #### Related types
-- `Brand` = `brandA | brandB | brandC | brandD | brandE`
+- `Brand` = `brandA | brandB | brandC | brandD | brandE | brandF`
 - `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`

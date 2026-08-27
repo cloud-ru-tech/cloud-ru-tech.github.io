@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SwitchRow.CMfFCOVF.js";var n=e();function r(){return(0,n.jsx)(t,{title:`Двухфакторная аутентификация`,description:`Подтверждение входа кодом из приложения`,tip:`Защищает аккаунт, даже если кто-то узнает пароль`,defaultChecked:!0})}export{r as WithTip};

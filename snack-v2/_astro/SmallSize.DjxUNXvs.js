@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Scroll.C29m3gg_.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{height:180,width:280},children:(0,n.jsx)(t,{size:`s`,children:(0,n.jsx)(`div`,{style:{padding:8},children:Array.from({length:15},(e,t)=>(0,n.jsxs)(`div`,{children:[`Пункт `,t+1]},t))})})})}export{r as SmallSize};

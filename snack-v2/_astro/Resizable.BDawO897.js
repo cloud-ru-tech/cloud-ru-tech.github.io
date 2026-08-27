@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Scroll.C29m3gg_.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{height:200,width:320},children:(0,n.jsx)(t,{resize:`both`,children:(0,n.jsx)(`div`,{style:{padding:8},children:Array.from({length:20},(e,t)=>(0,n.jsxs)(`div`,{children:[`Контент, который можно ресайзить — `,t+1]},t))})})})}export{r as Resizable};

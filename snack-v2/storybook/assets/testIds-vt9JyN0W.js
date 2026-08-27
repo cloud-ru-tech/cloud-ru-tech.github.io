@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,o as n}from"./src-rgCf0UsU.js";var r,i=e((()=>{n(),r={...t,afterContentButton:`search__after-content-button`}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-vt9JyN0W.js.map

@@ -17,6 +17,7 @@ pnpm add @cloud-ru/ds-uikit-product-copy
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | Дополнительный класс. |
 | `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Отключённое состояние: копирование не выполняется, `onClick` не вызывается. |
 | `label` | `string` | — | no | Текст рядом с иконкой. Если не задан — кнопка отображается только с иконкой. |
 | `onClick` | `MouseEventHandler<HTMLButtonElement>` | — | no | Доп. обработчик клика. |
 | `size` | `l \| m \| s` | `s` | no | Размер кнопки (s / m / l). По-умолчанию s. |

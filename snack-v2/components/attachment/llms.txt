@@ -36,6 +36,7 @@ pnpm add @cloud-ru/ds-attachment
 | `disabled` | `boolean` | — | no | Заблокировано |
 | `error` | `string` | — | no | Сообщение об ошибке |
 | `file` | `File` | — | no | Файл |
+| `fullWidth` | `boolean` | `true` | no | Растянуть карточку на всю ширину контейнера. Выключенная — ужимается по содержимому. |
 | `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка для файла @defaultIcon FileSVG |
 | `loading` | `boolean` | — | no | Управление состоянием загрузки |
 | `onClick` | `((event: MouseEvent<HTMLDivElement, MouseEvent>) => void)` | — | no | Клик по карточке |

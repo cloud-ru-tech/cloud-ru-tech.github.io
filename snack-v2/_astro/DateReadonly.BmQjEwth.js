@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldDate.DI2HC22b.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Дата создания`,readonly:!0,defaultValue:new Date(2026,4,17)})}export{r as DateReadonly};
