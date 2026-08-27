@@ -40,7 +40,7 @@ pnpm add @cloud-ru/ds-list
 | `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | — | no | Флаг неактивности элемента |
-| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и исключается из навигации) |
 | `id` | `ItemId` | — | no | Уникальный идентификатор |
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
@@ -64,9 +64,9 @@ pnpm add @cloud-ru/ds-list
 | `disabled` | `boolean` | — | no | Флаг неактивности элемента |
 | `dragHandle` | `ReactNode` | — | no | Слот ручки drag&drop (Figma `centeredWrapper`) — рендерится первым в строке, перед маркером/чекбоксом. Интерактивность (обработчики `@dnd-kit`) и содержимое (иконка) приходят снаружи — `BaseItem` только позиционирует слот, ничего не знает про DnD. |
 | `expandIcon` | `ReactNode` | — | no |  |
-| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и исключается из навигации) |
 | `id` | `ItemId` | — | no | Уникальный идентификатор |
-| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Также элемент исключается из навигации с клавиатуры и не может быть выбран (selection) |
 | `indeterminate` | `boolean` | — | no |  |
 | `isParentNode` | `boolean` | — | no |  |
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
@@ -436,7 +436,7 @@ _Нет публичных пропсов._
 | `dataFiltered` | `boolean` | `false` | no | Вложенный список отфильтрован — пустой результат показывает `noResultsState`, а не `noDataState` |
 | `disabled` | `boolean` | — | no | Флаг неактивности элемента |
 | `focusId` | `ItemId` | — | no |  |
-| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и исключается из навигации) |
 | `id` | `ItemId` | — | no | Уникальный идентификатор |
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
@@ -647,9 +647,9 @@ _Нет публичных пропсов._
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | — | no | Флаг неактивности элемента |
 | `groupId` | `ItemId` | — | no | Id группы-родителя (если строка внутри группы) — уходит в `data` `useSortable` (kind=row). |
-| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и исключается из навигации) |
 | `id` | `ItemId` | — | no | Уникальный идентификатор |
-| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Также элемент исключается из навигации с клавиатуры и не может быть выбран (selection) |
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
 | `items` | `ItemId[]` | — | yes |  |
@@ -673,9 +673,9 @@ _Нет публичных пропсов._
 | `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | — | no | Флаг неактивности элемента |
-| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и выпадает из навигации) |
+| `hidden` | `boolean` | — | no | Скрыть элемент из списка (не рендерится и исключается из навигации) |
 | `id` | `ItemId` | — | no | Уникальный идентификатор |
-| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Так же элемент пропадает из навигации с клавиатуры, и не может быть выбран (selection) |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Также элемент исключается из навигации с клавиатуры и не может быть выбран (selection) |
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
 | `items` | `ItemId[]` | — | yes |  |

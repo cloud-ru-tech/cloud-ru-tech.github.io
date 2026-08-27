@@ -51,8 +51,12 @@ pnpm add @cloud-ru/ds-modal
 ### DialogFooter
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка. |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка. Задаёт штатную раскладку футера — вместо `children`. |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены. |
 | `className` | `string` | — | no | CSS-класс контейнера footer'а. |
 | `data-test-id` | `string` | — | no |  |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок при ровно двух действиях. |
 
 ### DialogHeader
 | Prop | Type | Default | Required | Description |

@@ -1,5 +1,0 @@
-import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{b as i,t as a}from"./src-RbwpdxGx.js";import{a as o,c as s,t as c}from"./fixtures-C3acPEZs.js";import{n as l,r as u}from"./testIds-uj6NvpMo.js";import{n as d,t as f}from"./sharedMeta-DZxsH53w.js";function p(){let[e,t]=(0,m.useState)([{id:`amount`,desc:!0}]);return(0,h.jsx)(i,{"data-test-id":l.table.root,data:c,columnDefinitions:_,sorting:{state:e,onChange:t},outline:!0})}var m,h,g,_,v,y;t((()=>{a(),m=e(n(),1),s(),u(),f(),h=r(),g={title:`Snack/Data display/Table/Table/Examples/Sorting`,id:`components-table-table-examples-sorting`,...d},_=o({withStatusColumn:!0,withDates:!0}),v={tags:[`dev`,`test`],render:()=>(0,h.jsx)(p,{})},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  render: () => <ControlledSorting />
-}`,...v.parameters?.docs?.source}}},y=[`Sorting`]}))();export{v as Sorting,y as __namedExportsOrder,g as default};
-//# sourceMappingURL=Table.Sorting.stories-RioVNyjf.js.map

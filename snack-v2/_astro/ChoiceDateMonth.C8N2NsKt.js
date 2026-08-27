@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./ChipChoice.C2Qea5t-.js";var i=e(t(),1),a=n();function o(){let[e,t]=(0,i.useState)(new Date(2024,0,1));return(0,a.jsx)(r.Date,{label:`Месяц`,mode:`month`,value:e,onChange:t})}export{o as ChoiceDateMonth};

@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-BRJzdrhE.js";import{i as c,r as l,s as u,t as d}from"./presets--OUyiItr.js";import{n as f,t as p}from"./testIds-slTxXiOS.js";var m,h,g,_,v,y,b;e((()=>{c(),o(),l(),f(),m=t(),{expect:h,fn:g,within:_}=__STORYBOOK_MODULE_TEST__,v={title:`AI/Process & motion/AiChainOfThoughts/AiChainOfThoughtsHeadline`,id:`ai-aichainofthoughts-aichainofthoughtsheadline`,component:u,parameters:{layout:`fullscreen`},args:{inProgress:!0,broken:!1,duration:d,collapsible:!0,open:!1,onOpenChange:g(),"data-test-id":p.headline},argTypes:{onOpenChange:{table:{disable:!0}},label:{control:`text`},brokenMessage:{control:`text`}},render:e=>(0,m.jsx)(s,{children:(0,m.jsxs)(r,{width:`narrow`,children:[(0,m.jsx)(a,{children:`Playground`}),(0,m.jsx)(i,{children:`Заголовок цепочки рассуждений: иконка GigaChat, подпись «Размышляю» / «Размышлял», длительность и chevron.`}),(0,m.jsx)(n,{block:!0,children:(0,m.jsx)(u,{...e})})]})})},y={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(_(e).getByTestId(p.headline)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.headline)).toBeVisible();
+  }
+}`,...y.parameters?.docs?.source}}},b=[`Playground`]}))();export{y as Playground,b as __namedExportsOrder,v as default};
+//# sourceMappingURL=AiChainOfThoughtsHeadline.Playground.stories-5s90nxvG.js.map

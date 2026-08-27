@@ -1,8 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{i as n,t as r}from"./iframe-DCnmYW19.js";import{U as i,t as a}from"./system-RRIeUQJT.js";import{n as o,t as s}from"./src-Dl7dXfk-.js";import{m as c,t as l}from"./src-Bu1apFIW.js";var u,d,f,p,m;e((()=>{s(),a(),l(),r(),u=t(),d={title:`Uikit Product/Data display/CardPredefined/CardService`,id:`uikit-product-cardpredefined-cardservice`,component:c,parameters:{layout:`padded`,controls:{disable:!0}}},f={title:`Облачный сервис`,content:`Платформа для разработчиков с API доступом`,actionLabel:`Перейти`,emblem:(0,u.jsx)(o,{size:`l`,icon:i,appearance:`primary`})},p={tags:[`test`,`dev`],render:()=>(0,u.jsx)(n,{sectionTitle:`CardService`,firstColumnHeader:`Вариант`,columnHeaders:[`Default`,`disabled`],rows:[{variantLabel:`default`,cells:[(0,u.jsx)(c,{...f},`default`),(0,u.jsx)(c,{...f,disabled:!0},`disabled`)]}]})},p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
-  tags: ['test', 'dev'],
-  render: () => <StoryTable sectionTitle='CardService' firstColumnHeader='Вариант' columnHeaders={['Default', 'disabled']} rows={[{
-    variantLabel: 'default',
-    cells: [<CardService key='default' {...serviceProps} />, <CardService key='disabled' {...serviceProps} disabled />]
-  }]} />
-}`,...p.parameters?.docs?.source}}},m=[`VisualMatrix`]}))();export{p as VisualMatrix,m as __namedExportsOrder,d as default};
-//# sourceMappingURL=CardService.VisualMatrix.stories-DoVt3XUF.js.map

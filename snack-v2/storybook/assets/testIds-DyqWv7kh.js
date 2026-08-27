@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{c as t,f as n}from"./src-CoUSs7yE.js";var r,i=e((()=>{n(),r={pagination:{root:t.root,prev:t.prev,next:t.next,pageNumberPrefix:t.pageNumberPrefix,pageMorePrefix:t.pageMorePrefix},paginationSlider:{root:t.sliderRoot,itemPrefix:t.sliderItemPrefix}}}));export{i as n,r as t};
-//# sourceMappingURL=testIds-DyqWv7kh.js.map

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Breadcrumbs.CsUK1DbK.js";var n=e();function r({items:e}){return(0,n.jsx)(t,{items:e,size:`s`,inactiveLastItem:!0})}export{r as PageBreadcrumbs};
