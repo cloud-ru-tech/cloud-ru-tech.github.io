@@ -1,0 +1,5 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{o as n,t as r}from"./src-CJcOIlqj.js";import{n as i,t as a}from"./testIds-COnR5YMe.js";var o,s,c,l;e((()=>{r(),i(),o=t(),s={title:`Uikit Product/Data display/CardPredefined/CardSuggest/Examples/Polymorphic`,id:`uikit-product-cardpredefined-cardsuggest-examples-polymorphic`,component:n,parameters:{layout:`padded`}},c={tags:[`dev`,`test`],render:()=>(0,o.jsx)(n,{as:`a`,href:`https://cloud.ru`,title:`Подсказка-ссылка`,content:`Это якорный элемент`,"data-test-id":a.cardSuggest})},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <CardSuggest as='a' href='https://cloud.ru' title='Подсказка-ссылка' content='Это якорный элемент' data-test-id={TEST_IDS.cardSuggest} />
+}`,...c.parameters?.docs?.source}}},l=[`Polymorphic`]}))();export{c as Polymorphic,l as __namedExportsOrder,s as default};
+//# sourceMappingURL=CardSuggest.Polymorphic.stories-CgZC9oGM.js.map

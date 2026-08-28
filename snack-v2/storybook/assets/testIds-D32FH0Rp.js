@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,s as n}from"./src-BbnZtJZH.js";var r,i=e((()=>{n(),r={...t,promoTagHover:`promo-tag-predefined__promo-tag-hover`,promoTagClickTrigger:`promo-tag-predefined__promo-tag-click-trigger`,promoTagSupport:`promo-tag-predefined__promo-tag-support`}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-D32FH0Rp.js.map

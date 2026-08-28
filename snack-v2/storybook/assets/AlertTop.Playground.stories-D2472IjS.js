@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-SlIP-akt.js";import{d as c,l,n as u,t as d}from"./src-DD8u5UE9.js";import{t as f}from"./testIds-1jwFq4pC.js";var p,m,h,g,_,v,y;e((()=>{d(),o(),f(),p=t(),{expect:m,fn:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Feedback/Alert/AlertTop`,id:`components-alert-alerttop`,component:u,parameters:{layout:`fullscreen`},args:{title:`Системное уведомление`,content:`Краткое описание изменения, которое касается всех пользователей.`,appearance:l.Info,icon:!0,onClose:h(),"data-test-id":c.alertTop.root},argTypes:{title:{control:`text`,description:`Заголовок`},content:{control:`text`,description:`Описание`},appearance:{control:`select`,options:Object.values(l),description:`Внешний вид`},icon:{control:`boolean`,description:`Отображать иконку`},onClose:{table:{disable:!0}},actions:{table:{disable:!0}}},render:e=>(0,p.jsx)(s,{children:(0,p.jsxs)(r,{children:[(0,p.jsx)(a,{children:`Playground`}),(0,p.jsx)(i,{children:`Верхнее системное уведомление на всю ширину страницы.`}),(0,p.jsx)(n,{block:!0,children:(0,p.jsx)(u,{...e})})]})})},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await m(g(e).getByTestId(c.alertTop.root)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.alertTop.root)).toBeVisible();
+  }
+}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
+//# sourceMappingURL=AlertTop.Playground.stories-D2472IjS.js.map

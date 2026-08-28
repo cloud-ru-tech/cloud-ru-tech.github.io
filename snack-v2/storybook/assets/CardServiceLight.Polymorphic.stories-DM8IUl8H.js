@@ -1,0 +1,5 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{U as n,t as r}from"./system-BjV8PRvn.js";import{f as i,t as a}from"./src-CJcOIlqj.js";import{n as o,t as s}from"./testIds-COnR5YMe.js";var c,l,u,d;e((()=>{r(),a(),o(),c=t(),l={title:`Uikit Product/Data display/CardPredefined/CardServiceLight/Examples/Polymorphic`,id:`uikit-product-cardpredefined-cardservicelight-examples-polymorphic`,component:i,parameters:{layout:`padded`}},u={tags:[`dev`,`test`],render:()=>(0,c.jsx)(i,{as:`a`,href:`https://cloud.ru`,title:`Ссылка-сервис`,icon:(0,c.jsx)(n,{size:24}),"data-test-id":s.cardServiceLight})},u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <CardServiceLight as='a' href='https://cloud.ru' title='Ссылка-сервис' icon={<PlaceholderSVG size={24} />} data-test-id={TEST_IDS.cardServiceLight} />
+}`,...u.parameters?.docs?.source}}},d=[`Polymorphic`]}))();export{u as Polymorphic,d as __namedExportsOrder,l as default};
+//# sourceMappingURL=CardServiceLight.Polymorphic.stories-DM8IUl8H.js.map

@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-SlIP-akt.js";import{a as c,c as l,i as u,l as d,n as f,o as p,s as m,t as h}from"./src-DESXNENb.js";import{n as g,t as _}from"./testIds-BY7wDOvy.js";var v,y,b,x,S,C;e((()=>{h(),o(),g(),v=t(),{expect:y,within:b}=__STORYBOOK_MODULE_TEST__,x={title:`Snack/Typography/Typography`,id:`components-typography`,component:f,parameters:{layout:`fullscreen`},render:e=>(0,v.jsx)(s,{children:(0,v.jsxs)(r,{children:[(0,v.jsx)(a,{children:`Playground`}),(0,v.jsx)(i,{children:`Типографический компонент: variant, size, weight и произвольный HTML-тег.`}),(0,v.jsx)(n,{align:`center`,children:(0,v.jsx)(f,{...e})})]})}),args:{children:`Typography text`,variant:c,size:u,weight:p,"data-test-id":_.root},argTypes:{children:{control:`text`,description:`Текст для отображения`},variant:{control:`select`,options:Object.values(l),description:`Вариант типографики`},size:{control:`select`,options:Object.values(m),description:`Размер типографики`},weight:{control:`select`,options:Object.values(d),description:`Начертание шрифта`},as:{control:`text`,description:`HTML тег для рендеринга (по умолчанию выбирается автоматически)`},className:{control:`text`,description:`CSS-класс`}}},S={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await y(b(e).getByTestId(_.root)).toBeVisible()}},S.parameters={...S.parameters,docs:{...S.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...S.parameters?.docs?.source}}},C=[`Playground`]}))();export{S as Playground,C as __namedExportsOrder,x as default};
+//# sourceMappingURL=Typography.Playground.stories-e8LImKHi.js.map
