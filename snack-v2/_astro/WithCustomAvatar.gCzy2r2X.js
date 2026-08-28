@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AvatarDetail.C38L6Dkq.js";var n=e();function r(){return(0,n.jsx)(t,{name:`Козлова Анна`,contactData:`kozlova@example.com`,avatar:{appearance:`violet`,status:`green`}})}export{r as WithCustomAvatar};

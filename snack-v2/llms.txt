@@ -138,6 +138,7 @@
 
 - [@cloud-ru/ds-uikit-product-flex](/snack-v2/components/uikit-product-flex/llms.txt): Контейнер для flex-раскладки: направление, выравнивание, перенос и отступы между детьми.
 - [@cloud-ru/ds-uikit-product-header](/snack-v2/components/uikit-product-header/llms.txt): Продуктовая шапка консоли — HeaderLayout, MainMenu, UserMenu, Logo, PathBreadcrumbs и PlatformLogo.
+- [@cloud-ru/ds-uikit-product-header-legacy](/snack-v2/components/uikit-product-header-legacy/llms.txt): Legacy-шапка консоли на Snack V2 — HeaderLayout, Logo, MainMenu (desktop/mobile) и PlatformLogo.
 - [@cloud-ru/ds-uikit-product-layout](/snack-v2/components/uikit-product-layout/llms.txt): Блоки-состояния продуктового экрана — заглушка пустого состояния EmptyBlock и экран ограниченного доступа NoAccess.
 - [@cloud-ru/ds-uikit-product-page-layout](/snack-v2/components/uikit-product-page-layout/llms.txt): Набор страничных раскладок продуктового кабинета — каталог, детальная страница сервиса, форма, дерево-навигация, сайдбар и общие слоты — с адаптацией desktop/mobile через AdaptiveProvider.
 

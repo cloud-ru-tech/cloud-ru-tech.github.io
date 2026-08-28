@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Plus.CpX3mzTj.js";import{t as n}from"./ChipAssist.BaLsCPDj.js";var r=e();function i(){return(0,r.jsx)(n,{label:`Добавить тег`,icon:(0,r.jsx)(t,{}),size:`m`,onClick:()=>{}})}export{i as AssistWithIcon};

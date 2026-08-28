@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./InfoBlock.BPYj4B9-.js";var n=e();function r(){return(0,n.jsx)(t,{align:`horizontal`,size:`m`,title:`Горизонтальный вариант`,content:`Иконка (если есть) и текст располагаются в строку.`})}export{r as Horizontal};

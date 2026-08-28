@@ -115,7 +115,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ### CardServiceLight
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actionsSize` | `m \| s` | — | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
 | `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
 | `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
@@ -132,7 +131,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 
 #### Related types
 - `CardPromoTagProps` (alias)
-- `CardSize` = `m | s`
 - `ChildrenFunction` (alias)
 - `FavoriteProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`

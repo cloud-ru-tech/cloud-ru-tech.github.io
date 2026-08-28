@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./PlatformLogo.Pkdkjiy5.js";var r=e();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(n,{variant:t.Partner}),(0,r.jsx)(n,{variant:t.Marketplace})]})}export{i as AvatarVariants};

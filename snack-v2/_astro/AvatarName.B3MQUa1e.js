@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./PlatformLogo.Pkdkjiy5.js";var n=e();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(t,{avatarName:`Название проекта 1`}),(0,n.jsx)(t,{avatarName:`Staging environment`,compact:!0})]})}export{r as AvatarName};

@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-CSZ3Qkp5.js";import{a as c,c as l}from"./src-lc4nOEdH.js";import{c as u,i as d,t as f}from"./src-DUmBE6GT.js";import{n as p,t as m}from"./testIds-B1kEjsBQ.js";function h({tip:e,...t}){return(0,g.jsx)(s,{children:(0,g.jsxs)(r,{children:[(0,g.jsx)(a,{children:`Playground`}),(0,g.jsx)(i,{children:`QuestionTooltip — иконка-триггер «?» для подсказок к полям форм. Наведите на «?».`}),(0,g.jsx)(n,{align:`center`,children:(0,g.jsx)(d,{...t,tip:(0,g.jsx)(`span`,{"data-test-id":m.questionTooltip.content,children:e})})})]})})}var g,_,v,y,b,x;e((()=>{f(),o(),p(),g=t(),{expect:_,within:v}=__STORYBOOK_MODULE_TEST__,y={title:`Snack/Overlays/Tooltip/QuestionTooltip`,id:`components-tooltip-questiontooltip`,component:d,parameters:{layout:`fullscreen`},args:{tip:`Подсказка о поле формы`,placement:c.Top,trigger:l.Hover,size:u.XS,triggerLabel:`Подсказка`},argTypes:{tip:{control:`text`},placement:{control:`select`,options:Object.values(c),description:`Позиция popover`},trigger:{control:`select`,options:Object.values(l),description:`Способ открытия popover`},size:{control:`radio`,options:Object.values(u)},triggerLabel:{control:`text`,description:`aria-label триггера-иконки`}},render:h},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await _(v(e).getByTestId(m.questionTooltip.triggerOpen)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.questionTooltip.triggerOpen)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Playground`]}))();export{b as Playground,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=QuestionTooltip.Playground.stories-BkTU6C1V.js.map

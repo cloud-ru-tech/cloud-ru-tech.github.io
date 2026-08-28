@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Search.M7lM3ouH.js";var n=e();function r(){return(0,n.jsx)(t,{placeholder:`Поиск`,disabled:!0})}export{r as Disabled};

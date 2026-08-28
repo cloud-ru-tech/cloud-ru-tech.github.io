@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{t as n}from"./InfoBlock.BPYj4B9-.js";var r=e();function i(){return(0,r.jsx)(n,{title:`С иконкой`,content:`Иконка передаётся через проп icon как IconPredefinedProps.`,icon:{icon:t,appearance:`primary`,background:!0}})}export{i as WithIcon};

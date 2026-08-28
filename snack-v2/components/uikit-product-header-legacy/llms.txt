@@ -1,0 +1,157 @@
+﻿# @cloud-ru/ds-uikit-product-header-legacy
+
+> Legacy-шапка консоли на Snack V2 — HeaderLayout, Logo, MainMenu (desktop/mobile) и PlatformLogo.
+
+Docs: /snack-v2/components/uikit-product-header-legacy/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-uikit-product-header-legacy
+```
+
+## Когда использовать
+
+- Нужна обратимо совместимая шапка и меню навигации старого кабинета на стеке `@ds/*`.
+- Собирается MainMenu с селектором платформ и категориями сервисов: desktop — двухколоночный drawer; mobile — левый одноколоночный drawer.
+
+Когда **не** нужен пакет:
+
+- Новая продуктовая шапка без legacy-контрактов:
+  - используйте актуальные layout/header-пакеты Product UI Kit.
+- Отдельная карточка сервиса вне меню:
+  - используйте [`@cloud-ru/ds-uikit-product-card-predefined`](/components/uikit-product-card-predefined).
+
+## API
+
+### Content
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `banners` | `ReactNode` | — | no |  |
+| `className` | `string` | — | no |  |
+| `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `onClose` | `(() => void)` | — | no |  |
+| `onLinkChange` | `((value: string) => void)` | — | no |  |
+| `searchValue` | `string` | — | no |  |
+| `serviceGroups` | `LinksGroup[]` | — | no |  |
+
+### HeaderLayout
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `breadcrumbs` | `ReactNode` | — | no | Хлебные крошки. |
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `data-test-id` | `string` | — | no |  |
+| `isMobile` | `boolean` | `false` | no | Переносит хлебные крошки под основную строку и скрывает селектор. |
+| `logo` | `ReactNode` | — | no | Логотип платформы. |
+| `menu` | `ReactNode` | — | no | Главное меню. |
+| `select` | `ReactNode` | — | no | Селектор проекта. |
+| `toolbar` | `ReactNode` | — | no | Панель действий в правой части. |
+
+### Logo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневой кнопки. |
+| `data-test-id` | `string` | — | no |  |
+| `href` | `string` | — | yes | Ссылка логотипа. |
+| `loading` | `boolean` | `false` | no | Состояние загрузки (spinner Button). |
+| `mode` | `develop \| hybrid \| prod \| stage` | — | no | Окружение: влияет на вариант брендового логотипа (legacy-extension). |
+| `onClick` | `MouseEventHandler<HTMLAnchorElement>` | — | no | Обработчик клика. |
+| `path` | `string` | — | no | URL кастомной картинки логотипа. При ошибке загрузки — fallback на mode/prod. |
+
+#### Related types
+- `HeaderLogoMode` = `develop | hybrid | prod | stage`
+
+### MainMenu
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `onLinkChange` | `((value: string) => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — **после** `serviceGroups`, **перед** `settingItems`. Обычно `favoritesEnabled: false`. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
+
+### MenuDesktop
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `onLinkChange` | `((value: string) => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — **после** `serviceGroups`, **перед** `settingItems`. Обычно `favoritesEnabled: false`. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
+
+### MenuMobile
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
+| `isMobile` | `boolean` | — | no |  |
+| `leftTop` | `ReactNode` | — | no |  |
+| `onLinkChange` | `((value: string) => void)` | — | no |  |
+| `open` | `boolean` | — | no |  |
+| `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — **после** `serviceGroups`, **перед** `settingItems`. Обычно `favoritesEnabled: false`. |
+| `rightTop` | `ReactNode` | — | no |  |
+| `search` | `SearchProps` | — | no |  |
+| `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
+| `setOpen` | `((open: boolean) => void)` | — | no |  |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
+
+### NavigationSearch
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `onBlur` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек потери фокуса полем поиска. |
+| `onChange` | `(value: string) => void` | — | yes | Колбек изменения значения. |
+| `onFocus` | `FocusEventHandler<HTMLInputElement>` | — | no | Колбек фокуса полем поиска. |
+| `onOpenSearchChange` | `((open: boolean) => void)` | — | no | Только mobile: колбек смены раскрытого состояния поля поиска. |
+| `onSelectedOptionChange` | `(id: string) => void` | — | yes | Колбек смены режима поиска. |
+| `onShowSettingsChange` | `((show: boolean) => void)` | — | no | Колбек смены видимости панели настроек. |
+| `openSearch` | `boolean` | — | no | Только mobile: раскрыто ли поле поиска (controlled). Без пропа — uncontrolled. |
+| `options` | `NavigationSearchOption[]` | — | yes | Опции режима поиска — чипы в раскрываемой панели настроек. |
+| `placeholder` | `string` | — | no | Плейсхолдер поля поиска. |
+| `selectedOption` | `string` | — | yes | Выбранная опция (id из `options`). |
+| `showSettings` | `boolean` | — | no | Показывать панель настроек (Figma `showSettings`, controlled). Без пропа — uncontrolled. |
+| `title` | `string` | — | no | Только mobile: заголовок рядом с кнопкой открытия поиска. |
+| `value` | `string` | — | yes | Значение строки поиска. |
+
+### PlatformLogo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `avatarName` | `string` | — | no | Имя для Avatar в trigger (Figma mobile project selector). При наличии рендерится Avatar вместо SVG-иконки платформы. |
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `compact` | `boolean` | `false` | no | Компактный размер для пунктов Droplist (Figma listItem icon без padding, 24×24). |
+| `data-test-id` | `string` | — | no |  |
+| `variant` | `advanced \| evolution \| marketplace \| partner \| vmware` | `evolution` | no | Вариант платформы (Figma `platformSelectorIcons` / variant). |
+
+#### Related types
+- `Variant` = `advanced | evolution | marketplace | partner | vmware`
+
+### ServicesCategory
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | Карточки сервисов — обычно `@cloud-ru/ds-uikit-product-card-predefined` `CardServiceLight`. |
+| `className` | `string` | — | no | CSS-класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
+| `highlight` | `boolean` | `false` | no | Визуальное выделение категории (Figma `highlight`). |
+| `href` | `string` | — | no | URL заголовка. При наличии рендерится `TitleClickable` (`showArrow={false}`). Без `href`/`onTitleClick` — статичный title. |
+| `onTitleClick` | `MouseEventHandler<HTMLElement>` | — | no | Клик по заголовку (legacy `label.onClick`). |
+| `showArrow` | `boolean` | — | no | Показывать иконку-стрелку справа. Иконка автоматически меняется на `external link` при `target='_blank'`. |
+| `title` | `string` | — | yes | Заголовок категории (Figma title/m). |

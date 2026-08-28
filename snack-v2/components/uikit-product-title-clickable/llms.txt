@@ -31,13 +31,12 @@ pnpm add @cloud-ru/ds-uikit-product-title-clickable
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `as` | `ElementType` | — | no | Полиморфный тег корня — `'a'` по умолчанию, либо компонент-роутер (`Link` из react-router-dom). |
-| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | @deprecated Используй `before={<TitleClickableAvatar {...} subtitle={...} />}`. Аватар с subtitle (Figma `userTitle`). |
-| `before` | `ReactNode` | — | no | Слот слева от заголовка. Произвольная нода либо предзаготовленные пресеты `<TitleClickableIcon icon={...} />` / `<TitleClickableAvatar {...} />`. Соответствует Figma-слоту `+ slotTitle` (`simpleTitle` / `userTitle`). |
-| `children` | `ReactNode` | — | no | Кастомное содержимое вместо title/before |
+| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | Аватар с subtitle (Figma `userTitle`). Рендерится после заголовка, если `children` не передан. |
+| `children` | `ReactNode` | — | no | Произвольная нода после заголовка. Имеет приоритет над `avatar`. |
 | `className` | `string` | — | no | CSS-класс |
 | `data-test-id` | `string` | — | no |  |
 | `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
-| `icon` | `ReactNode` | — | no | @deprecated Используй `before={<TitleClickableIcon icon={...} />}`. Иконка слева от заголовка. |
+| `icon` | `ReactNode` | — | no | Иконка слева от заголовка. |
 | `innerRef` | `any` | — | no | Ref на корневой элемент. |
 | `showArrow` | `boolean` | `true` | no | Показывать иконку-стрелку справа. Иконка автоматически меняется на `external link` при `target='_blank'`. |
 | `title` | `string` | — | no | Заголовок |
@@ -76,11 +75,10 @@ pnpm add @cloud-ru/ds-uikit-product-title-clickable
 ### TitleClickableContent
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | @deprecated Используй `before={<TitleClickableAvatar {...} subtitle={...} />}`. Аватар с subtitle (Figma `userTitle`). |
-| `before` | `ReactNode` | — | no | Слот слева от заголовка. Произвольная нода либо предзаготовленные пресеты `<TitleClickableIcon icon={...} />` / `<TitleClickableAvatar {...} />`. Соответствует Figma-слоту `+ slotTitle` (`simpleTitle` / `userTitle`). |
-| `children` | `ReactNode` | — | no | Кастомное содержимое вместо title/before |
+| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | Аватар с subtitle (Figma `userTitle`). Рендерится после заголовка, если `children` не передан. |
+| `children` | `ReactNode` | — | no | Произвольная нода после заголовка. Имеет приоритет над `avatar`. |
 | `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
-| `icon` | `ReactNode` | — | no | @deprecated Используй `before={<TitleClickableIcon icon={...} />}`. Иконка слева от заголовка. |
+| `icon` | `ReactNode` | — | no | Иконка слева от заголовка. |
 | `title` | `string` | — | no | Заголовок |
 | `titleTag` | `ElementType` | — | no | Тег заголовка для семантики (например `'h2'`, `'h3'`, `'span'`) |
 
@@ -137,31 +135,26 @@ export function HiddenArrow() {
 ### WithAvatar
 
 ```tsx
-import { TitleClickable, TitleClickableAvatar } from '@cloud-ru/ds-uikit-product-title-clickable';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithAvatar() {
-  return (
-    <TitleClickable href='#' fullWidth before={<TitleClickableAvatar name='John Doe' subtitle='jdoe@example.com' />} />
-  );
+  return <TitleClickable href='#' fullWidth avatar={{ name: 'John Doe', subtitle: 'jdoe@example.com' }} />;
 }
 ```
 
-### WithCustomBefore
+### WithCustomNode
 
 ```tsx
 import { Typography } from '@cloud-ru/ds-typography';
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
-export function WithCustomBefore() {
+export function WithCustomNode() {
   return (
-    <TitleClickable
-      href='#'
-      before={
-        <Typography variant='label' size='s' as='span'>
-          Custom before
-        </Typography>
-      }
-    />
+    <TitleClickable href='#' title='Section title'>
+      <Typography variant='label' size='s' as='span'>
+        Custom children
+      </Typography>
+    </TitleClickable>
   );
 }
 ```
@@ -170,11 +163,9 @@ export function WithCustomBefore() {
 
 ```tsx
 import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
-import { TitleClickable, TitleClickableIcon } from '@cloud-ru/ds-uikit-product-title-clickable';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithIcon() {
-  return (
-    <TitleClickable href='#' title='Production environment' before={<TitleClickableIcon icon={<PlaceholderSVG />} />} />
-  );
+  return <TitleClickable href='#' title='Production environment' icon={<PlaceholderSVG />} />;
 }
 ```
