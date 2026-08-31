@@ -1,6 +1,6 @@
 ﻿# @cloud-ru/ds-uikit-product-notification
 
-> Пакет уведомлений — карточка NotificationCard, лента NotificationPanelContent со стеками и группами и адаптивная обёртка NotificationPanel (drawer на desktop, bottom-sheet на mobile).
+> Пакет уведомлений — карточка NotificationCard и адаптивная панель NotificationPanel со стеками и группами (drawer на desktop, bottom-sheet на mobile).
 
 Docs: /snack-v2/components/uikit-product-notification/
 
@@ -76,26 +76,47 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 ### NotificationPanel
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `chipToggle` | `{ label: string; checked: boolean; onChange(checked: boolean): void; }` | — | no | Переключатель для фильтрации. Только desktop: в мастере bottomSheet его нет. |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом CSS-класс |
 | `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
 | `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
-| `content` | `ReactElement<NotificationPanelContentProps, typeof NotificationPanelContent>` | — | yes | Контент панели (`NotificationPanelContent`), отображаемый внутри обёртки |
+| `content` | `ReactNode` | — | no | Контент для отрисовки (e.g NotificationCard \| NotificationPanel.Blank) |
 | `data-test-id` | `string` | — | no |  |
+| `loading` | `boolean` | — | no | Состояние загрузки |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
 | `position` | `bottom \| left \| right \| top` | `right` | no | Расположение |
+| `readAllButton` | `(Omit<ButtonProps, "data-test-id" \| "size"> & { tooltip?: TooltipProps; })` | — | no | Кнопка в "шапке" панели |
 | `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
+| `scrollEndRef` | `RefObject<HTMLDivElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
+| `segments` | `Omit<SegmentControlProps, "data-test-id" \| "size">` | — | no | Сегменты для фильтрации |
+| `settings` | `NotificationPanelSettingsProps` | — | no | Кнопка настроек и выпадающий список |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
+| `skeletonsAmount` | `number` | `2` | no | Количество скелетонов карточек для отображения при загрузке |
+| `title` | `string` | — | yes | Заголовок панели |
 | `width` | `string \| number` | `s` | no | Ширина (только при position: "left" \| "right") |
 
 #### Related types
+- `Action` (interface)
+- `Appearance` = `critical | neutral | primary`
 - `ButtonProps` (interface)
-- `NotificationPanelContentProps` (interface)
+- `ChildrenFunction` (alias)
+- `CounterProps` (interface)
+- `IconPosition` = `after | before`
 - `NotificationPanelSettingsProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
 - `Position` = `bottom | left | right | top`
+- `Segment` (interface)
 - `SegmentControlProps` (interface)
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-button)` = `l | m | s`
 - `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `View` = `elevated | filled | function | outline | simple | tonal`
 - `Width` = `l | m | s`
+- `Width (@cloud-ru/ds-segment-control)` = `auto | full`
 
 ### NotificationPanelBlank
 | Prop | Type | Default | Required | Description |
@@ -110,41 +131,6 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `IconPredefinedProps` (interface)
 - `Size` = `3xl | 5xl | l | m | s`
-
-### NotificationPanelContent
-| Prop | Type | Default | Required | Description |
-|------|------|---------|----------|-------------|
-| `chipToggle` | `{ label: string; checked: boolean; onChange(checked: boolean): void; }` | — | no | Переключатель для фильтрации |
-| `className` | `string` | — | no |  |
-| `content` | `ReactNode` | — | no | Контент для отрисовки (e.g NotificationCard \| NotificationPanelContent.Blank) |
-| `data-test-id` | `string` | — | no |  |
-| `loading` | `boolean` | — | no | Состояние загрузки |
-| `readAllButton` | `(Omit<ButtonProps, "data-test-id" \| "size"> & { tooltip?: TooltipProps; })` | — | no | Кнопка в "шапке" панели |
-| `scrollContainerRef` | `RefObject<HTMLElement>` | — | no | Ссылка на контейнер, который скроллится |
-| `scrollEndRef` | `RefObject<HTMLDivElement>` | — | no | Ссылка на элемент, обозначающий самый конец прокручиваемого списка |
-| `segments` | `Omit<SegmentControlProps, "data-test-id" \| "size">` | — | no | Сегменты для фильтрации |
-| `settings` | `NotificationPanelSettingsProps` | — | no | Кнопка настроек и выпадающий список |
-| `skeletonsAmount` | `number` | `2` | no | Количество скелетонов карточек для отображения при загрузке |
-| `title` | `string` | — | yes | Заголовок панели |
-
-#### Related types
-- `Action` (interface)
-- `Appearance` = `critical | neutral | primary`
-- `ButtonProps` (interface)
-- `ChildrenFunction` (alias)
-- `CounterProps` (interface)
-- `IconPosition` = `after | before`
-- `NotificationPanelSettingsProps` (interface)
-- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `PolymorphicRef` (alias)
-- `Segment` (interface)
-- `SegmentControlProps` (interface)
-- `Size` = `l | m | s`
-- `Size (@cloud-ru/ds-button)` = `l | m | s`
-- `TooltipProps` (interface)
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `View` = `elevated | filled | function | outline | simple | tonal`
-- `Width` = `auto | full`
 
 ### NotificationPanelGroup
 | Prop | Type | Default | Required | Description |
@@ -273,64 +259,71 @@ export function IncidentCard() {
 ### PanelBasic
 
 ```tsx
-import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
+import { Button } from '@cloud-ru/ds-button';
+import { APPEARANCE, NotificationCard, NotificationPanel } from '@cloud-ru/ds-uikit-product-notification';
 import { useState } from 'react';
 
 export function PanelBasic() {
+  const [open, setOpen] = useState(false);
   const [readIds, setReadIds] = useState<Set<string>>(new Set());
   const markRead = (id: string) => setReadIds(prev => (prev.has(id) ? prev : new Set(prev).add(id)));
 
   return (
-    <NotificationPanelContent
-      title='Уведомления'
-      readAllButton={{
-        label: 'Прочитать всё',
-        onClick: () => setReadIds(new Set(['inc-4821', 'quota-var-data', 'deploy-9217', 'backup-1729'])),
-      }}
-      content={
-        <>
-          <NotificationCard
-            id='inc-4821'
-            label='INC-4821'
-            appearance={APPEARANCE.Error}
-            title='Кластер k8s-prod-1 деградирован'
-            description='3 из 5 нод недоступны последние 6 минут.'
-            date='03:14'
-            link={{ label: 'Открыть инцидент', href: '/incidents/INC-4821' }}
-            unread={!readIds.has('inc-4821')}
-            onVisible={markRead}
-          />
-          <NotificationCard
-            id='quota-var-data'
-            label='Storage'
-            appearance={APPEARANCE.Warning}
-            title='Лимит дисковой квоты'
-            description='Использовано 92% /var/data — осталось 38 ГБ из 480 ГБ.'
-            date='02:50'
-            unread={!readIds.has('quota-var-data')}
-            onVisible={markRead}
-          />
-          <NotificationCard
-            id='deploy-9217'
-            label='api-gateway · v2.18.3'
-            appearance={APPEARANCE.Error}
-            title='Деплой не прошёл health-check'
-            description='Readiness probe вернул 503 на 4 из 6 подов.'
-            date='вчера · 23:11'
-            unread={!readIds.has('deploy-9217')}
-            onVisible={markRead}
-          />
-          <NotificationCard
-            id='backup-1729'
-            label='Backup'
-            appearance={APPEARANCE.Success}
-            title='Резервная копия завершена'
-            description='Бэкап БД prod-1 (412 ГБ) загружен в s3://backups-prod/.'
-            date='вчера · 14:32'
-          />
-        </>
-      }
-    />
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button label='Уведомления' view='outline' appearance='neutral' onClick={() => setOpen(true)} />
+      <NotificationPanel
+        open={open}
+        onClose={() => setOpen(false)}
+        title='Уведомления'
+        readAllButton={{
+          label: 'Прочитать всё',
+          onClick: () => setReadIds(new Set(['inc-4821', 'quota-var-data', 'deploy-9217', 'backup-1729'])),
+        }}
+        content={
+          <>
+            <NotificationCard
+              id='inc-4821'
+              label='INC-4821'
+              appearance={APPEARANCE.Error}
+              title='Кластер k8s-prod-1 деградирован'
+              description='3 из 5 нод недоступны последние 6 минут.'
+              date='03:14'
+              link={{ label: 'Открыть инцидент', href: '/incidents/INC-4821' }}
+              unread={!readIds.has('inc-4821')}
+              onVisible={markRead}
+            />
+            <NotificationCard
+              id='quota-var-data'
+              label='Storage'
+              appearance={APPEARANCE.Warning}
+              title='Лимит дисковой квоты'
+              description='Использовано 92% /var/data — осталось 38 ГБ из 480 ГБ.'
+              date='02:50'
+              unread={!readIds.has('quota-var-data')}
+              onVisible={markRead}
+            />
+            <NotificationCard
+              id='deploy-9217'
+              label='api-gateway · v2.18.3'
+              appearance={APPEARANCE.Error}
+              title='Деплой не прошёл health-check'
+              description='Readiness probe вернул 503 на 4 из 6 подов.'
+              date='вчера · 23:11'
+              unread={!readIds.has('deploy-9217')}
+              onVisible={markRead}
+            />
+            <NotificationCard
+              id='backup-1729'
+              label='Backup'
+              appearance={APPEARANCE.Success}
+              title='Резервная копия завершена'
+              description='Бэкап БД prod-1 (412 ГБ) загружен в s3://backups-prod/.'
+              date='вчера · 14:32'
+            />
+          </>
+        }
+      />
+    </div>
   );
 }
 ```
@@ -338,21 +331,30 @@ export function PanelBasic() {
 ### PanelError
 
 ```tsx
+import { Button } from '@cloud-ru/ds-button';
 import { CrossSVG } from '@cloud-ru/ds-icons/interface/system';
-import { NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
+import { NotificationPanel } from '@cloud-ru/ds-uikit-product-notification';
+import { useState } from 'react';
 
 export function PanelError() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <NotificationPanelContent
-      title='Уведомления'
-      content={
-        <NotificationPanelContent.Blank
-          icon={{ icon: CrossSVG, appearance: 'neutral' }}
-          title='Сервис временно недоступен'
-          content='Восстановление уже идёт. Обновите страницу через минуту.'
-        />
-      }
-    />
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button label='Уведомления' view='outline' appearance='neutral' onClick={() => setOpen(true)} />
+      <NotificationPanel
+        open={open}
+        onClose={() => setOpen(false)}
+        title='Уведомления'
+        content={
+          <NotificationPanel.Blank
+            icon={{ icon: CrossSVG, appearance: 'neutral' }}
+            title='Сервис временно недоступен'
+            content='Восстановление уже идёт. Обновите страницу через минуту.'
+          />
+        }
+      />
+    </div>
   );
 }
 ```
@@ -360,7 +362,8 @@ export function PanelError() {
 ### PanelFull
 
 ```tsx
-import { APPEARANCE, NotificationCard, NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
+import { Button } from '@cloud-ru/ds-button';
+import { APPEARANCE, NotificationCard, NotificationPanel } from '@cloud-ru/ds-uikit-product-notification';
 import { useMemo, useState } from 'react';
 
 type Filter = 'all' | 'unread' | 'mentions';
@@ -368,6 +371,7 @@ type Filter = 'all' | 'unread' | 'mentions';
 type CardId = 'inc-4821' | 'deploy-9217' | 'stack-quota' | 'mention-1' | 'backup-1729';
 
 export function PanelFull() {
+  const [open, setOpen] = useState(false);
   const [filter, setFilter] = useState<Filter>('all');
   const [importantOnly, setImportantOnly] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -399,21 +403,21 @@ export function PanelFull() {
 
   const attentionVisible = visible.inc || visible.deploy;
 
-  if (muted) {
-    return (
-      <NotificationPanelContent
-        title='Уведомления'
-        settings={{
-          button: { onClick: () => setMuted(false) },
-          actions: [{ content: { label: 'Снять заглушение' }, onClick: () => setMuted(false) }],
-        }}
-        content={<NotificationPanelContent.Blank />}
-      />
-    );
-  }
-
-  return (
-    <NotificationPanelContent
+  const panel = muted ? (
+    <NotificationPanel
+      open={open}
+      onClose={() => setOpen(false)}
+      title='Уведомления'
+      settings={{
+        button: { onClick: () => setMuted(false) },
+        actions: [{ content: { label: 'Снять заглушение' }, onClick: () => setMuted(false) }],
+      }}
+      content={<NotificationPanel.Blank />}
+    />
+  ) : (
+    <NotificationPanel
+      open={open}
+      onClose={() => setOpen(false)}
       title='Уведомления'
       segments={{
         items: [
@@ -444,7 +448,7 @@ export function PanelFull() {
       content={
         <>
           {attentionVisible && (
-            <NotificationPanelContent.Group title='Требуют внимания'>
+            <NotificationPanel.Group title='Требуют внимания'>
               {visible.inc && (
                 <NotificationCard
                   id='inc-4821'
@@ -475,12 +479,12 @@ export function PanelFull() {
                   onVisible={markRead}
                 />
               )}
-            </NotificationPanelContent.Group>
+            </NotificationPanel.Group>
           )}
 
           {visible.quota && (
             <>
-              <NotificationPanelContent.Stack
+              <NotificationPanel.Stack
                 title='Лимит дисковой квоты · 3 хоста'
                 unread={isUnread('stack-quota')}
                 actions={[
@@ -513,7 +517,7 @@ export function PanelFull() {
                   description='Использовано 84% — осталось 76 ГБ из 480 ГБ.'
                   date='вчера · 23:50'
                 />
-              </NotificationPanelContent.Stack>
+              </NotificationPanel.Stack>
             </>
           )}
 
@@ -547,31 +551,47 @@ export function PanelFull() {
       }
     />
   );
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button label='Уведомления' view='outline' appearance='neutral' onClick={() => setOpen(true)} />
+      {panel}
+    </div>
+  );
 }
 ```
 
 ### PanelLoading
 
 ```tsx
-import { NotificationPanelContent } from '@cloud-ru/ds-uikit-product-notification';
+import { Button } from '@cloud-ru/ds-button';
+import { NotificationPanel } from '@cloud-ru/ds-uikit-product-notification';
+import { useState } from 'react';
 
 export function PanelLoading() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <NotificationPanelContent
-      title='Уведомления'
-      loading
-      skeletonsAmount={4}
-      segments={{
-        items: [
-          { value: 'all', label: 'Все' },
-          { value: 'unread', label: 'Непрочитанные' },
-          { value: 'mentions', label: 'Упоминания' },
-        ],
-        value: 'all',
-        onChange: () => {},
-      }}
-      readAllButton={{ label: 'Прочитать всё', onClick: () => {} }}
-    />
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button label='Уведомления' view='outline' appearance='neutral' onClick={() => setOpen(true)} />
+      <NotificationPanel
+        open={open}
+        onClose={() => setOpen(false)}
+        title='Уведомления'
+        loading
+        skeletonsAmount={4}
+        segments={{
+          items: [
+            { value: 'all', label: 'Все' },
+            { value: 'unread', label: 'Непрочитанные' },
+            { value: 'mentions', label: 'Упоминания' },
+          ],
+          value: 'all',
+          onChange: () => {},
+        }}
+        readAllButton={{ label: 'Прочитать всё', onClick: () => {} }}
+      />
+    </div>
   );
 }
 ```
@@ -580,12 +600,7 @@ export function PanelLoading() {
 
 ```tsx
 import { Button } from '@cloud-ru/ds-button';
-import {
-  APPEARANCE,
-  NotificationCard,
-  NotificationPanel,
-  NotificationPanelContent,
-} from '@cloud-ru/ds-uikit-product-notification';
+import { APPEARANCE, NotificationCard, NotificationPanel } from '@cloud-ru/ds-uikit-product-notification';
 import { useMemo, useState } from 'react';
 
 export function PanelScenario() {
@@ -615,52 +630,48 @@ export function PanelScenario() {
       <NotificationPanel
         open={open}
         onClose={() => setOpen(false)}
+        title='Уведомления'
+        readAllButton={{
+          label: 'Прочитать всё',
+          onClick: () => setReadIds(new Set(['inc-4821', 'deploy-9217'])),
+        }}
         content={
-          <NotificationPanelContent
-            title='Уведомления'
-            readAllButton={{
-              label: 'Прочитать всё',
-              onClick: () => setReadIds(new Set(['inc-4821', 'deploy-9217'])),
-            }}
-            content={
-              <>
-                <NotificationCard
-                  id='inc-4821'
-                  label='INC-4821'
-                  appearance={APPEARANCE.Error}
-                  title='Кластер k8s-prod-1 деградирован'
-                  description='3 из 5 нод недоступны последние 6 минут.'
-                  date='03:14'
-                  link={{ label: 'Открыть инцидент', href: '/incidents/INC-4821' }}
-                  unread={!readIds.has('inc-4821')}
-                  onVisible={markRead}
-                />
-                <NotificationCard
-                  id='deploy-9217'
-                  label='api-gateway · v2.18.3'
-                  appearance={APPEARANCE.Error}
-                  title='Деплой не прошёл health-check'
-                  description='Readiness probe вернул 503 на 4 из 6 подов.'
-                  date='02:50'
-                  primaryButton={{ label: 'Повторить', onClick: () => markRead('deploy-9217') }}
-                  secondaryButton={{
-                    label: 'Логи',
-                    onClick: () => window.open('/logs/api-gateway/2.18.3', '_blank'),
-                  }}
-                  unread={!readIds.has('deploy-9217')}
-                  onVisible={markRead}
-                />
-                <NotificationCard
-                  id='backup-1729'
-                  label='Backup'
-                  appearance={APPEARANCE.Success}
-                  title='Резервная копия завершена'
-                  description='prod-1 (412 ГБ) → s3://backups-prod/2026-05-26/'
-                  date='вчера · 14:32'
-                />
-              </>
-            }
-          />
+          <>
+            <NotificationCard
+              id='inc-4821'
+              label='INC-4821'
+              appearance={APPEARANCE.Error}
+              title='Кластер k8s-prod-1 деградирован'
+              description='3 из 5 нод недоступны последние 6 минут.'
+              date='03:14'
+              link={{ label: 'Открыть инцидент', href: '/incidents/INC-4821' }}
+              unread={!readIds.has('inc-4821')}
+              onVisible={markRead}
+            />
+            <NotificationCard
+              id='deploy-9217'
+              label='api-gateway · v2.18.3'
+              appearance={APPEARANCE.Error}
+              title='Деплой не прошёл health-check'
+              description='Readiness probe вернул 503 на 4 из 6 подов.'
+              date='02:50'
+              primaryButton={{ label: 'Повторить', onClick: () => markRead('deploy-9217') }}
+              secondaryButton={{
+                label: 'Логи',
+                onClick: () => window.open('/logs/api-gateway/2.18.3', '_blank'),
+              }}
+              unread={!readIds.has('deploy-9217')}
+              onVisible={markRead}
+            />
+            <NotificationCard
+              id='backup-1729'
+              label='Backup'
+              appearance={APPEARANCE.Success}
+              title='Резервная копия завершена'
+              description='prod-1 (412 ГБ) → s3://backups-prod/2026-05-26/'
+              date='вчера · 14:32'
+            />
+          </>
         }
       />
     </div>

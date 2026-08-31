@@ -22,6 +22,7 @@ pnpm add @cloud-ru/ds-drawer
 | `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
 | `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `contentRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер контента (например, для дозагрузки по скроллу). |
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
@@ -39,12 +40,14 @@ pnpm add @cloud-ru/ds-drawer
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком — типично `SearchBar`, `SegmentControl` или `Filter`. Рендерится на обеих поверхностях: `secondWrapper` в мастере `bottomSheet`, `subHeadlineWrapper` в мастере `window` (modal / drawer). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
 | `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+| `withDividers` | `boolean` | `false` | no | Только mobile: разделители между шапкой/контентом/футером sheet'а. |
 
 ### DialogBody
 | Prop | Type | Default | Required | Description |
@@ -53,12 +56,17 @@ pnpm add @cloud-ru/ds-drawer
 | `className` | `string` | — | no | CSS-класс контейнера body. |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер body. |
 
 ### DialogFooter
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `additionalButton` | `BottomSheetActionButton` | — | no | Дополнительная (третья) кнопка. |
+| `approveButton` | `BottomSheetActionButton` | — | no | Основная кнопка. Задаёт штатную раскладку футера — вместо `children`. |
+| `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены. |
 | `className` | `string` | — | no | CSS-класс контейнера footer'а. |
 | `data-test-id` | `string` | — | no |  |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок при ровно двух действиях. |
 
 ### DialogHeader
 | Prop | Type | Default | Required | Description |
@@ -68,7 +76,7 @@ pnpm add @cloud-ru/ds-drawer
 | `data-test-id` | `string` | — | no |  |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
-| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком — типично `SearchBar`, `SegmentControl` или `Filter`. Рендерится на обеих поверхностях: `secondWrapper` в мастере `bottomSheet`, `subHeadlineWrapper` в мастере `window` (modal / drawer). |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
@@ -86,6 +94,7 @@ pnpm add @cloud-ru/ds-drawer
 | `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
 | `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `contentRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер контента (например, для дозагрузки по скроллу). |
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
@@ -103,12 +112,14 @@ pnpm add @cloud-ru/ds-drawer
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком — типично `SearchBar`, `SegmentControl` или `Filter`. Рендерится на обеих поверхностях: `secondWrapper` в мастере `bottomSheet`, `subHeadlineWrapper` в мастере `window` (modal / drawer). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
 | `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+| `withDividers` | `boolean` | `false` | no | Только mobile: разделители между шапкой/контентом/футером sheet'а. |
 
 #### Related types
 - `BottomSheetActionButton` (alias)
@@ -125,6 +136,7 @@ pnpm add @cloud-ru/ds-drawer
 | `className` | `string` | — | no | CSS-класс контейнера body. |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер body. |
 
 ### DrawerCustom
 | Prop | Type | Default | Required | Description |
@@ -167,6 +179,7 @@ pnpm add @cloud-ru/ds-drawer
 | `closeOnPopstate` | `boolean` | — | no | Закрывать дровер при перемещении по истории браузера |
 | `container` | `string \| HTMLElement` | — | no | Контейнер в котором будет рендерится Drawer. По-умолчанию - body |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
+| `contentRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер контента (например, для дозагрузки по скроллу). |
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
@@ -184,12 +197,14 @@ pnpm add @cloud-ru/ds-drawer
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком — типично `SearchBar`, `SegmentControl` или `Filter`. Рендерится на обеих поверхностях: `secondWrapper` в мастере `bottomSheet`, `subHeadlineWrapper` в мастере `window` (modal / drawer). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
 | `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
+| `withDividers` | `boolean` | `false` | no | Только mobile: разделители между шапкой/контентом/футером sheet'а. |
 
 ## Примеры
 

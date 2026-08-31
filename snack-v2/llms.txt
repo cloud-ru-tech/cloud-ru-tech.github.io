@@ -132,7 +132,7 @@
 
 - [@cloud-ru/ds-uikit-product-error-pages](/snack-v2/components/uikit-product-error-pages/llms.txt): Полноэкранная error-страница с типовыми сценариями ошибок, действиями и декоративной иллюстрацией.
 - [@cloud-ru/ds-uikit-product-load-status](/snack-v2/components/uikit-product-load-status/llms.txt): Строка статуса загрузки с линейным progress bar, заголовком и подсказкой — по макету Figma loadStatus.
-- [@cloud-ru/ds-uikit-product-notification](/snack-v2/components/uikit-product-notification/llms.txt): Пакет уведомлений — карточка NotificationCard, лента NotificationPanelContent со стеками и группами и адаптивная обёртка NotificationPanel (drawer на desktop, bottom-sheet на mobile).
+- [@cloud-ru/ds-uikit-product-notification](/snack-v2/components/uikit-product-notification/llms.txt): Пакет уведомлений — карточка NotificationCard и адаптивная панель NotificationPanel со стеками и группами (drawer на desktop, bottom-sheet на mobile).
 
 ### Layout
 

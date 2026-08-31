@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Placeholder.gu93pEb-.js";import{i as n}from"./constants.D0iUaZk-.js";import{t as r}from"./CardServiceLight.DSjXnrpK.js";var i=e();function a(){return(0,i.jsx)(r,{title:`Мой сервис`,icon:(0,i.jsx)(t,{size:24}),actionsVisibility:n.hover,favorite:{enabled:!0}})}export{a as WithFavoriteHover};

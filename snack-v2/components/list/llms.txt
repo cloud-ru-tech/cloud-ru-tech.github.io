@@ -189,6 +189,7 @@ _Нет публичных пропсов._
 | `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
 | `size` | `l \| m \| s` | — | no | Размер списка |
 | `slotAfterTitle` | `ReactNode` | — | no | Только mobile (`BottomSheet`): slot справа от заголовка. |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `trigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible` | — | no | Условие отображения поповера: <br/> - `click` - открывать по клику <br/> - `hover` - открывать по ховеру <br/> - `focusVisible` - открывать по focus-visible <br/> - `focus` - открывать по фокусу <br/> - `hoverAndFocusVisible` - открывать по ховеру и focus-visible <br/> - `hoverAndFocus` - открывать по ховеру и фокусу <br/> - `clickAndFocusVisible` - открывать по клику и focus-visible |
 | `triggerClassName` | `string` | — | no | CSS-класс триггера |
 | `triggerElemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент-триггер для дроплиста |
@@ -204,7 +205,6 @@ _Нет публичных пропсов._
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
 - `Item` (alias)
-- `ItemId` (alias)
 - `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
@@ -215,6 +215,7 @@ _Нет публичных пропсов._
 - `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
 - `Size (@cloud-ru/ds-scroll)` = `m | s`
+- `SnapPoint` (alias)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `TruncateStringProps` (alias)
 
@@ -407,6 +408,7 @@ _Нет публичных пропсов._
 | `selection` | `SelectionMultipleState \| SelectionSingleState` | — | no | Настройки выбора элементов. `mode: 'single'` — один выбранный элемент (`value: ItemId`), `mode: 'multiple'` — множественный выбор (`value: ItemId[]`). Без `selection` выбора нет — клик вызывает только `onClick` элемента. |
 | `size` | `l \| m \| s` | — | no | Размер списка |
 | `slotAfterTitle` | `ReactNode` | — | no | Только mobile (`BottomSheet`): slot справа от заголовка. |
+| `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `untouchableScrollbars` | `boolean` | — | no | Отключает возможность взаимодействовать со скролбарами мышью. |
 | `virtualized` | `boolean` | — | no |  |
 

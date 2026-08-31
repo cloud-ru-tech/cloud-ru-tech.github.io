@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./LocaleProvider.DRebhrP8.js";import{t as n}from"./NoAccess.Cav05hQO.js";var r=e();function i(){return(0,r.jsx)(t,{lang:`ru-RU`,children:(0,r.jsx)(n,{serviceName:`Название сервиса`})})}export{i as NoAccessBasic};

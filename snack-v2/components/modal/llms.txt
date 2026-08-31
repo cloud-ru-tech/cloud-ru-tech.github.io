@@ -47,6 +47,7 @@ pnpm add @cloud-ru/ds-modal
 | `className` | `string` | — | no | CSS-класс контейнера body. |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер body. |
 
 ### DialogFooter
 | Prop | Type | Default | Required | Description |
@@ -66,7 +67,7 @@ pnpm add @cloud-ru/ds-modal
 | `data-test-id` | `string` | — | no |  |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
-| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком (Figma `secondWrapper`) — типично `SearchBar`, `SegmentControl` или `Filter`. Есть только в мастере `bottomSheet`, поэтому рендерится **только** на sheet-поверхности. |
+| `slotSecondTitle` | `ReactNode` | — | no | Slot под подзаголовком — типично `SearchBar`, `SegmentControl` или `Filter`. Рендерится на обеих поверхностях: `secondWrapper` в мастере `bottomSheet`, `subHeadlineWrapper` в мастере `window` (modal / drawer). |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title (Figma `subtitleWrapper`). Рендерится на всех поверхностях. |
 | `testIds` | `PopupHeaderTestIds` | — | no | Переопределение `data-test-id` слотов шапки. Каждый пропущенный ключ берётся из `TEST_IDS`. Потребитель-обёртка (drawer/modal) прокидывает сюда свои id, чтобы сохранить публичный контракт. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
@@ -143,6 +144,7 @@ pnpm add @cloud-ru/ds-modal
 | `className` | `string` | — | no | CSS-класс контейнера body. |
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLElement>` | — | no | Ссылка на скроллируемый контейнер body. |
 
 ### ModalCustom
 | Prop | Type | Default | Required | Description |

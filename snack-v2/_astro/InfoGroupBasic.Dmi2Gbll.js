@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./InfoGroup.COdSqbLO.js";var n=e(),r={name:`Mercury`,status:`Running`,active:!0};function i(){return(0,n.jsx)(t,{data:r,items:[{label:`Имя`,accessorKey:`name`},{label:`Статус`,accessorKey:`status`},{label:`Активен`,accessorKey:`active`}]})}export{i as InfoGroupBasic};

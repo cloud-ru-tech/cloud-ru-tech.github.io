@@ -1,0 +1,1 @@
+import{n as e,u as t}from"./adaptiveContext.bpVijEhU.js";function n(){let{layoutType:n}=e();return n!==t.Desktop}export{n as t};

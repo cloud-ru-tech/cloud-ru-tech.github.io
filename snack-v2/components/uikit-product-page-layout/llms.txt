@@ -575,6 +575,7 @@ _Нет публичных пропсов._
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
 - `Size` = `l | m | s`
+- `SnapPoint` (alias)
 - `TooltipProps` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 

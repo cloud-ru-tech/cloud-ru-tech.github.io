@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{i as t}from"./src.DeEJD_Vb.js";var n=e();function r(){return(0,n.jsx)(t,{appearance:`info`,collapsible:!0,title:`Совет по настройке`,content:`Полное описание того, как правильно настроить функцию. Текст длинный и сворачивается до раскрытия.`})}export{r as Collapsible};

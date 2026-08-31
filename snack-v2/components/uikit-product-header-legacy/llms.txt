@@ -68,7 +68,6 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | — | no |  |
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
-| `isMobile` | `boolean` | — | no |  |
 | `leftTop` | `ReactNode` | — | no |  |
 | `onLinkChange` | `((value: string) => void)` | — | no |  |
 | `open` | `boolean` | — | no |  |
@@ -84,7 +83,6 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
-| `isMobile` | `boolean` | — | no |  |
 | `leftTop` | `ReactNode` | — | no |  |
 | `onLinkChange` | `((value: string) => void)` | — | no |  |
 | `open` | `boolean` | — | no |  |
@@ -100,7 +98,6 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
-| `isMobile` | `boolean` | — | no |  |
 | `leftTop` | `ReactNode` | — | no |  |
 | `onLinkChange` | `((value: string) => void)` | — | no |  |
 | `open` | `boolean` | — | no |  |

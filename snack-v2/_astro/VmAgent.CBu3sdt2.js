@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiFieldNotice.rGiP74Z2.js";import{n as r}from"./AiFieldBanner.ChJUDYad.js";var i=e();function a(){return(0,i.jsx)(n,{size:r.S,variant:t.VmAgent,vmName:`my-lovely-vm`,vmIp:`93.7.94.11`,onActionClick:()=>void 0})}export{a as VmAgent};

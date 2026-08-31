@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TitleClickable.CJ3RDYlK.js";import{t as n}from"./Typography.DvcEYAsd.js";var r=e();function i(){return(0,r.jsx)(t,{href:`#`,title:`Section title`,children:(0,r.jsx)(n,{variant:`label`,size:`s`,as:`span`,children:`Custom children`})})}export{i as WithCustomNode};
