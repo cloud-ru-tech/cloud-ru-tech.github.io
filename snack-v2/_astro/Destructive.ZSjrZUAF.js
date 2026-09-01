@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.mWLKsyx5.js";import{t as n}from"./Trash.L4T5FcTf.js";var r=e();function i(){return(0,r.jsx)(t,{appearance:`critical`,view:`filled`,icon:(0,r.jsx)(n,{}),label:`Удалить`})}export{i as Destructive};

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ButtonGroup.B2xTJa7Q.js";var n=e();function r(){return(0,n.jsx)(t,{primaryAction:{label:`Сохранить`,appearance:`primary`,view:`filled`},secondaryAction:{label:`Отмена`,appearance:`neutral`,view:`outline`},tertiaryAction:{label:`Помощь`,appearance:`neutral`,view:`simple`}})}export{r as ButtonGroupThreeActions};

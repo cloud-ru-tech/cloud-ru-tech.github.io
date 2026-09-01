@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldColor.BYP6w7o_.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Цвет токена`,readonly:!0,defaultValue:`#7e57c2`,showCopyButton:!0})}export{r as ColorReadonly};

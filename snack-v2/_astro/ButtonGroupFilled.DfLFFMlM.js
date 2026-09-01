@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ButtonGroup.B2xTJa7Q.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:320},children:(0,n.jsx)(t,{filled:!0,primaryAction:{label:`Применить`,appearance:`primary`,view:`filled`},secondaryAction:{label:`Сбросить`,appearance:`neutral`,view:`outline`}})})}export{r as ButtonGroupFilled};

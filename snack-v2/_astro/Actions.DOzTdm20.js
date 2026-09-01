@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.mWLKsyx5.js";var n=e();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(t,{appearance:`primary`,view:`filled`,label:`Сохранить`}),(0,n.jsx)(t,{appearance:`neutral`,view:`simple`,label:`Отмена`})]})}export{r as Actions};

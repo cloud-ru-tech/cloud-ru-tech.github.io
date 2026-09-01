@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./Pagination.Cr1K4inF.js";var i=e(t(),1),a=n();function o(){let[e,t]=(0,i.useState)(2);return(0,a.jsx)(r,{total:8,page:e,variant:`link`,hrefFormatter:e=>`?page=${e}`,onChange:t})}export{o as AsLinks};

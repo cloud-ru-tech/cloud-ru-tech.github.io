@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.mWLKsyx5.js";import{t as n}from"./Dropdown.Cog_tU9R.js";var r=e();function i(){return(0,r.jsx)(n,{content:(0,r.jsx)(`div`,{style:{padding:12},children:`Контент меню`}),children:(0,r.jsx)(t,{label:`Открыть`})})}export{i as Basic};

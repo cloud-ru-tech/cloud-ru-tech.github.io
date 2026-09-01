@@ -28,7 +28,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `appearance` | `critical \| neutral \| primary` | — | no | Вариант оформления |
-| `as` | `button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
+| `as` | `a \| button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
 | `button` | `Omit<ButtonProps, "view" \| "label" \| "icon"> \| (Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled"; }) \| (Omit<...> & { ...; })` | — | no |  |
 | `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
 | `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
@@ -44,9 +44,10 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `fullWidth` | `boolean` | — | no | На всю ширину |
 | `hidden` | `boolean` | `false` | no |  |
 | `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
+| `href` | `string` | — | no |  |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `iconPosition` | `after \| before` | — | no | Позиция иконки относительно текста |
-| `innerRef` | `((instance: HTMLButtonElement \| null) => void) \| RefObject<HTMLButtonElement> \| null` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `innerRef` | `((instance: HTMLButtonElement \| null) => void) \| RefObject<HTMLButtonElement> \| ((instance: HTMLAnchorElement \| null) => void) \| RefObject<...> \| null` | — | no | Ref на реальный DOM-элемент/инстанс, который рендерится через `as`. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
 | `items` | `Item[]` | — | yes | Основные элементы списка |
 | `label` | `string` | — | no | Текст кнопки |
 | `list` | `Pick<DroplistProps, "className" \| "open" \| "onOpenChange" \| "items" \| "closeDroplistOnItemClick">` | — | yes |  |
@@ -63,6 +64,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
 | `size` | `l \| m \| s \| xs` | — | no | Размер Размер триггера; для `xs` применяется кнопка `s`. |
+| `target` | `HTMLAttributeAnchorTarget` | — | no |  |
 | `tooltip` | `TooltipProps` | — | no |  |
 | `triggerClassName` | `string` | — | no | CSS-класс триггера |
 | `variant` | `dropdown \| droplist \| filled \| function \| kebab \| outline \| quota \| simple \| tonal` | — | no |  |

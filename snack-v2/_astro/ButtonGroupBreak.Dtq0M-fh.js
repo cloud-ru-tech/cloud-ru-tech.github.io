@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ButtonGroup.DE3GRJ8F.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:480},children:(0,n.jsx)(t,{break:!0,tertiaryAction:{label:`Назад`,appearance:`neutral`,view:`simple`},primaryAction:{label:`Продолжить`,appearance:`primary`,view:`filled`}})})}export{r as ButtonGroupBreak};

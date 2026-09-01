@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Search.CRQ3xLpQ.js";var n=e();function r(){return(0,n.jsx)(t,{size:`l`,placeholder:`Поиск по каталогу`})}export{r as SizeL};

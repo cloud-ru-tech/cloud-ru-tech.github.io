@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Tabs.D2vqjIqs.js";var n=e();function r(){return(0,n.jsx)(t,{defaultValue:`a`,children:(0,n.jsxs)(t.TabBar,{children:[(0,n.jsx)(t.Tab,{value:`a`,label:`Активен`}),(0,n.jsx)(t.Tab,{value:`b`,label:`Выключен`,disabled:!0})]})})}export{r as Disabled};

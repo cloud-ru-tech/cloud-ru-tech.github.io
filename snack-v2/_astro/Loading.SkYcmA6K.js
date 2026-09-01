@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.mWLKsyx5.js";import{t as n}from"./Download.KmX7ejQF.js";var r=e();function i(){return(0,r.jsx)(t,{appearance:`primary`,view:`filled`,icon:(0,r.jsx)(n,{}),label:`Скачать отчёт`,loading:!0})}export{i as Loading};

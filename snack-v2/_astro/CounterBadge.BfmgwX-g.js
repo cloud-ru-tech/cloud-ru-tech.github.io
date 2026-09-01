@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.BkCFr3_o.js";import{t as n}from"./Email.DXUK2-Ad.js";var r=e();function i(){return(0,r.jsx)(t,{icon:(0,r.jsx)(n,{}),iconPosition:`after`,label:`Сообщения`,counter:{value:12}})}export{i as CounterBadge};

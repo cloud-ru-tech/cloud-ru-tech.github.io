@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";import{t as n}from"./jsx-runtime.C852uKRQ.js";import{t as r}from"./FieldStepper.CX1qjoEE.js";var i=e(t(),1),a=n();function o(){let[e,t]=(0,i.useState)(0);return(0,a.jsx)(r,{label:`Возраст`,hint:`От 0 до 120`,min:0,max:120,allowMoreThanLimits:!1,value:e,onChange:t})}export{o as StepperLimits};

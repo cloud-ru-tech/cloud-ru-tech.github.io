@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AvatarDetail.ruEufwcQ.js";var n=e();function r(){return(0,n.jsx)(t,{name:`Иванов Иван`})}export{r as Basic};

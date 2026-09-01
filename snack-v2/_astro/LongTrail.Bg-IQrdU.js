@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./PathBreadcrumbs.B8gApb39.js";var n=e(),r=[{id:`1`,label:`Главная`,href:`#`},{id:`2`,label:`Организация`,href:`#`},{id:`3`,label:`Проект`,href:`#`},{id:`4`,label:`Раздел`,href:`#`},{id:`5`,label:`Текущая страница`}];function i(){return(0,n.jsx)(t,{items:r})}export{i as LongTrail};

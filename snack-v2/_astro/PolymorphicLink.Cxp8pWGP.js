@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./card-banner-illustration.B9vZSzWm.js";var r=e();function i(){return(0,r.jsx)(t,{as:`a`,href:`https://cloud.ru`,target:`_blank`,title:`Перейти на сайт`,content:`Откроется в новой вкладке`,actionLabel:`Подробнее`,image:{src:n,alt:`Иллюстрация сервиса`}})}export{i as PolymorphicLink};

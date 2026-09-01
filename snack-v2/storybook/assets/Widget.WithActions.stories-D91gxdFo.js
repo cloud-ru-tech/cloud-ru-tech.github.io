@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{o as i,t as a}from"./src-CkZuczhG2.js";import{a as o,i as s,n as c,t as l}from"./src-2IPFfqY0.js";import{t as u}from"./testIds-BD6i4BXk.js";function d(){let[e,t]=(0,f.useState)(null);return(0,p.jsxs)(`div`,{style:{display:`flex`,flexDirection:`column`,gap:8},children:[(0,p.jsx)(c,{wide:!0,header:{title:`Managed databases`,href:`#`},segmentControl:{width:i.Auto,defaultValue:`overview`,items:[{value:`overview`,label:`Overview`},{value:`events`,label:`Events`}]},actions:[{label:`Create`,onClick:()=>t(`Create`)},{variant:s.Outline,label:`Settings`,onClick:()=>t(`Settings`)},{variant:s.Kebab,list:{items:[{content:{label:`Export`},onClick:()=>t(`Export`)},{content:{label:`Archive`},onClick:()=>t(`Archive`)}]}}],children:`Actions are shown in the header for wide desktop widgets.`}),e?(0,p.jsxs)(`span`,{children:[`Last action: `,e]}):null]})}var f,p,m=t((()=>{a(),l(),f=e(n(),1),p=r()})),h,g,_,v,y,b;t((()=>{m(),u(),h=r(),{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v={title:`Uikit Product/Data display/Widget/Examples/WithActions`,id:`uikit-product-widget-examples-withactions`},y={tags:[`dev`,`test`],render:()=>(0,h.jsx)(d,{}),play:async({canvasElement:e})=>{await g(_(e).getByTestId(o.actions)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <WithActionsDemo />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.actions)).toBeVisible();
+  }
+}`,...y.parameters?.docs?.source}}},b=[`WithActions`]}))();export{y as WithActions,b as __namedExportsOrder,v as default};
+//# sourceMappingURL=Widget.WithActions.stories-D91gxdFo.js.map

@@ -116,7 +116,6 @@
 ### Data display
 
 - [@cloud-ru/ds-uikit-product-avatar-detail](/snack-v2/components/uikit-product-avatar-detail/llms.txt): Типовой пользовательский блок из продуктового UI Kit: аватар с необязательным статус индикатором, имя, контактные данные для копирования и вторичное описание.
-- [@cloud-ru/ds-uikit-product-card-predefined](/snack-v2/components/uikit-product-card-predefined/llms.txt): Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceInfo, CardServiceSmall, CardSuggest, CardCustom.
 - [@cloud-ru/ds-uikit-product-info-row](/snack-v2/components/uikit-product-info-row/llms.txt): Строки «метка — значение» по макету Figma infoRow — компонент InfoRow и группа InfoGroup по данным.
 - [@cloud-ru/ds-uikit-product-price-summary](/snack-v2/components/uikit-product-price-summary/llms.txt): Блоки итоговой цены для checkout и конфигураторов — полный PriceSummary и компактный PriceSummarySmall.
 - [@cloud-ru/ds-uikit-product-promo-tag-predefined](/snack-v2/components/uikit-product-promo-tag-predefined/llms.txt): Предопределённый промо-тег продукта с локализованным текстом и tooltip — пресеты product-статусов Cloud.ru.
@@ -134,8 +133,9 @@
 - [@cloud-ru/ds-uikit-product-load-status](/snack-v2/components/uikit-product-load-status/llms.txt): Строка статуса загрузки с линейным progress bar, заголовком и подсказкой — по макету Figma loadStatus.
 - [@cloud-ru/ds-uikit-product-notification](/snack-v2/components/uikit-product-notification/llms.txt): Пакет уведомлений — карточка NotificationCard и адаптивная панель NotificationPanel со стеками и группами (drawer на desktop, bottom-sheet на mobile).
 
-### Layout
+### Layout & containers
 
+- [@cloud-ru/ds-uikit-product-card-predefined](/snack-v2/components/uikit-product-card-predefined/llms.txt): Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceInfo, CardServiceSmall, CardSuggest, CardCustom.
 - [@cloud-ru/ds-uikit-product-flex](/snack-v2/components/uikit-product-flex/llms.txt): Контейнер для flex-раскладки: направление, выравнивание, перенос и отступы между детьми.
 - [@cloud-ru/ds-uikit-product-header](/snack-v2/components/uikit-product-header/llms.txt): Продуктовая шапка консоли — HeaderLayout, MainMenu, UserMenu, Logo, PathBreadcrumbs и PlatformLogo.
 - [@cloud-ru/ds-uikit-product-header-legacy](/snack-v2/components/uikit-product-header-legacy/llms.txt): Legacy-шапка консоли на Snack V2 — HeaderLayout, Logo, MainMenu (desktop/mobile) и PlatformLogo.

@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,l as r,m as i,t as a,u as o}from"./iframe-B2mzxEaG.js";import{b as s,f as c,t as l,u}from"./src-CCHDpYI3.js";import{n as d,t as f}from"./frame.module-mEVel5mV.js";import{t as p}from"./testIds-BGKKsUlW.js";var m,h,g,_,v,y;e((()=>{l(),a(),d(),p(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Foundation & utilities/PopupPrivate/PopupBody`,id:`components-popupprivate-popupbody`,component:u,parameters:{layout:`fullscreen`,figma:{disable:!0}},args:{content:`Основное содержимое overlay-слоя. Body — собственный scroll-контейнер: при переполнении высоты окна появляется вертикальный скролл, а шапка и футер остаются на месте. bodyPadding=true задаёт горизонтальные паддинги; bodyPadding=false растягивает контент во всю ширину (edge-to-edge). `+`Прокрутите этот текст, чтобы увидеть поведение скролла внутри рамки окна. `.repeat(4),bodyPadding:!0},render:e=>(0,m.jsx)(o,{children:(0,m.jsxs)(n,{children:[(0,m.jsx)(i,{children:`Playground`}),(0,m.jsx)(r,{children:`Контейнер основного содержимого. Собственный scroll-контейнер; bodyPadding=false → edge-to-edge.`}),(0,m.jsxs)(`div`,{className:`${f.frame} ${f.frameTall}`,children:[(0,m.jsx)(c,{title:`Заголовок окна`}),(0,m.jsx)(u,{...e})]})]})})},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(s.body)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(SLOT_TEST_IDS.body)).toBeVisible();
-  }
-}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
-//# sourceMappingURL=PopupBody.Playground.stories-Bue_EvSC.js.map

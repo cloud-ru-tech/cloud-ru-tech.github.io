@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Logo.BqX5Pgv-.js";var n=e();function r(){return(0,n.jsx)(t,{href:`/`,tooltip:{tip:`На главную`},"data-test-id":`header-logo-basic`})}export{r as Basic};
