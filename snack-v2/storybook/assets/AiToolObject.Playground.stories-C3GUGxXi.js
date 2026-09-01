@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-CRw8NhXI.js";import{O as c,c as l,o as u,t as d}from"./src-DH4LvopH.js";import{n as f,t as p}from"./testIds-BdXNakzP.js";var m,h,g,_,v,y,b;e((()=>{d(),o(),f(),m=t(),{useArgs:h}=__STORYBOOK_MODULE_PREVIEW_API__,{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v={title:`AI/Primitives/AiTool/Content/AiToolObject`,id:`ai-aitool-content-aitoolobject`,component:u,parameters:{layout:`fullscreen`},args:{name:`Key[ObjectName]`,variant:c.Complex,open:!0,"data-test-id":p.object},argTypes:{onOpenChange:{table:{disable:!0}},children:{table:{disable:!0}}},render:function(e){let[{open:t},o]=h();return(0,m.jsx)(s,{children:(0,m.jsxs)(r,{width:`narrow`,children:[(0,m.jsx)(a,{children:`Playground`}),(0,m.jsx)(i,{children:`Узел дерева аргументов. Тип complex сворачивается по шеврону и содержит вложенные узлы, string показывает значение сразу рядом с ключом.`}),(0,m.jsx)(n,{block:!0,children:(0,m.jsxs)(u,{...e,open:t,onOpenChange:e=>o({open:e}),children:[(0,m.jsx)(l,{label:`region`,value:`ru-central1`}),(0,m.jsx)(l,{label:`status`,value:`ok`})]})})]})})}},y={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(_(e).getByTestId(p.object)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.object)).toBeVisible();
-  }
-}`,...y.parameters?.docs?.source}}},b=[`Playground`]}))();export{y as Playground,b as __namedExportsOrder,v as default};
-//# sourceMappingURL=AiToolObject.Playground.stories-C3GUGxXi.js.map
