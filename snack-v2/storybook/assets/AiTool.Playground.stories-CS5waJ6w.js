@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-BLXw10_m.js";import{E as c,k as l,m as u,t as d}from"./src-BCkYEbcS.js";import{n as f,t as p}from"./testIds-C9xkaL6J.js";import{a as m,i as h,n as g,r as _,t as v}from"./presets-D5kphaHc.js";var y,b,x,S,C,w;e((()=>{d(),o(),f(),h(),y=t(),{expect:b,within:x}=__STORYBOOK_MODULE_TEST__,S={title:`AI/Primitives/AiTool/AiTool`,id:`ai-aitool-aitool`,component:u,parameters:{layout:`fullscreen`},args:{name:g,icon:c.Search,state:l.Loading,duration:v,defaultOpen:!1,connector:!1,callLabel:`Запрос`,resultLabel:`Ответ`,call:`json`,result:`keyValue`,"data-test-id":p.tool},argTypes:{open:{table:{disable:!0}},onOpenChange:{table:{disable:!0}},name:{control:`text`},icon:{control:`select`,options:Object.values(c)},duration:{control:`number`},callLabel:{control:`text`},resultLabel:{control:`text`},call:{control:`select`,options:[`none`,`json`],mapping:{none:void 0,json:_}},result:{control:`select`,options:[`none`,`keyValue`],mapping:{none:void 0,keyValue:m}}},render:e=>(0,y.jsx)(s,{children:(0,y.jsxs)(r,{width:`narrow`,children:[(0,y.jsx)(a,{children:`Playground`}),(0,y.jsx)(i,{children:`Составной инструмент стриминга: статус, иконка, имя, длительность и chevron; раскрытие показывает блоки запроса и ответа.`}),(0,y.jsx)(n,{block:!0,children:(0,y.jsx)(u,{...e})})]})})},C={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await b(x(e).getByTestId(p.tool)).toBeVisible()}},C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.tool)).toBeVisible();
+  }
+}`,...C.parameters?.docs?.source}}},w=[`Playground`]}))();export{C as Playground,w as __namedExportsOrder,S as default};
+//# sourceMappingURL=AiTool.Playground.stories-CS5waJ6w.js.map

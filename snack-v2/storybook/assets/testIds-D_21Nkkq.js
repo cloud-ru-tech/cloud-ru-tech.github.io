@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{c as t,l as n}from"./src-BXr0UqCt.js";var r,i=e((()=>{n(),r={root:t.main,mobile:`toolbar-mobile`,adaptiveDesktop:`toolbar-adaptive-desktop`,adaptiveMobile:`toolbar-adaptive-mobile`,example:`toolbar-example`,mobileSelectionToggle:`toolbar-mobile-selection-toggle`}}));export{i as n,r as t};
-//# sourceMappingURL=testIds-D_21Nkkq.js.map

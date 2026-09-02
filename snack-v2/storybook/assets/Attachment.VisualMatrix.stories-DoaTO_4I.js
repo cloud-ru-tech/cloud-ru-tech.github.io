@@ -1,0 +1,10 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{i as n,t as r}from"./iframe-BLXw10_m.js";import{i,o as a,t as o}from"./src-cc7H-S_C.js";import{n as s,r as c,t as l}from"./sampleFiles-CGSbhD9C.js";var u,d,f,p,m=e((()=>{u=`_grid_1c9uz_4`,d=`_cell_1c9uz_9`,f=`_wideCell_1c9uz_18`,p={grid:u,cell:d,wideCell:f}}));function h(){let e=c(),t=[{key:`icon`,file:l},{key:`image`,file:e}];return(0,g.jsxs)(`div`,{className:p.grid,children:[t.map(({key:e,file:t})=>(0,g.jsx)(n,{sectionTitle:`State × Size (beforeContent = ${e})`,firstColumnHeader:`State`,columnHeaders:y.map(e=>e.toUpperCase()),rows:x.map(({key:e,extra:n})=>({variantLabel:e,cells:y.map(e=>(0,g.jsx)(`div`,{className:p.cell,children:(0,g.jsx)(i,{file:t,size:e,title:`Label text`,description:`Description text`,onDownload:_(),onDelete:_(),onRetry:_(),...n})},e))}))},e)),(0,g.jsx)(n,{sectionTitle:`FullWidth × Size`,firstColumnHeader:`fullWidth`,columnHeaders:y.map(e=>e.toUpperCase()),rows:b.map(t=>({variantLabel:String(t),cells:y.map(n=>(0,g.jsx)(`div`,{className:p.wideCell,children:(0,g.jsx)(i,{file:e,size:n,fullWidth:t,title:`Label text`,description:`Description text`,onDownload:_(),onDelete:_()})},n))}))})]})}var g,_,v,y,b,x,S,C;e((()=>{o(),r(),s(),m(),g=t(),{fn:_}=__STORYBOOK_MODULE_TEST__,v={title:`Snack/Data display/Attachment/Attachment`,id:`components-attachment-attachment`,component:i,parameters:{layout:`padded`,controls:{disable:!0}}},y=[a.S,a.M],b=[!0,!1],x=[{key:`default`,extra:{}},{key:`checked`,extra:{checked:!0}},{key:`disabled`,extra:{disabled:!0}},{key:`error`,extra:{error:`Hint text`}},{key:`loading`,extra:{loading:!0}}],S={tags:[`test`,`dev`],parameters:{controls:{disable:!0}},render:()=>(0,g.jsx)(h,{})},S.parameters={...S.parameters,docs:{...S.parameters?.docs,source:{originalSource:`{
+  tags: ['test', 'dev'],
+  parameters: {
+    controls: {
+      disable: true
+    }
+  },
+  render: () => <MatrixView />
+}`,...S.parameters?.docs?.source}}},C=[`VisualMatrix`]}))();export{S as VisualMatrix,C as __namedExportsOrder,v as default};
+//# sourceMappingURL=Attachment.VisualMatrix.stories-DoaTO_4I.js.map
