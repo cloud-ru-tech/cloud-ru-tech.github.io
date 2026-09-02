@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-DX9o2Et9.js","names":[],"sources":["../../../../packages/uikit-product-avatar-detail/stories/AvatarDetail/testIds.ts"],"sourcesContent":["import { TEST_IDS as PACKAGE_TEST_IDS } from '../../src/constants';\n\nexport const TEST_IDS = PACKAGE_TEST_IDS;\n"],"mappings":"gHAA6C,EAEhC,EAAW"}

@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-n9OCAA8q.js";import{a as c,i as l,n as u,r as d,t as f}from"./presets-B3dz75YG.js";import{n as p,t as m}from"./testIds-gxkWiYRt.js";var h,g,_,v,y,b;e((()=>{l(),o(),p(),d(),h=t(),{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v={title:`AI/Process & motion/AiChainOfThoughts/AiChainOfThoughts`,id:`ai-aichainofthoughts-aichainofthoughts`,component:c,parameters:{layout:`fullscreen`},args:{inProgress:!0,broken:!1,duration:f,defaultOpen:!0,children:`content`,"data-test-id":m.root},argTypes:{open:{table:{disable:!0}},onOpenChange:{table:{disable:!0}},label:{control:`text`},brokenMessage:{control:`text`},children:{control:`select`,options:[`none`,`content`],mapping:{none:void 0,content:u}}},render:e=>(0,h.jsx)(s,{children:(0,h.jsxs)(r,{width:`narrow`,children:[(0,h.jsx)(a,{children:`Playground`}),(0,h.jsx)(i,{children:`Цепочка рассуждений агента: сворачиваемый заголовок «Размышляю» с длительностью и список строк-инструментов под ним.`}),(0,h.jsx)(n,{block:!0,children:(0,h.jsx)(c,{...e})})]})})},y={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(_(e).getByTestId(m.root)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
-  }
-}`,...y.parameters?.docs?.source}}},b=[`Playground`]}))();export{y as Playground,b as __namedExportsOrder,v as default};
-//# sourceMappingURL=AiChainOfThoughts.Playground.stories-CVc6ztFr.js.map

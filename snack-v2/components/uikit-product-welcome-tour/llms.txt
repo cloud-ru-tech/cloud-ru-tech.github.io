@@ -59,6 +59,7 @@ pnpm add @cloud-ru/ds-uikit-product-welcome-tour
 | `open` | `boolean` | — | no | Запущен ли тур. Управляемый режим. |
 | `portalContainer` | `HTMLElement \| null` | — | no | Контейнер для портала. По умолчанию — контейнер из `PortalContextProvider` либо `document.body`. |
 | `scrollOffset` | `number` | `20` | no | Отступ при скролле к целевому элементу, px. |
+| `spotlightPadding` | `TourSpotlightPadding` | `10` | no | Отступ выреза от границ целевого элемента для всех шагов. Шаг переопределяет своим `spotlightPadding`. |
 | `stepIndex` | `number` | — | no | Индекс текущего шага. Управляемый режим. |
 | `steps` | `TourStep[]` | — | yes | Шаги тура. |
 
@@ -66,6 +67,7 @@ pnpm add @cloud-ru/ds-uikit-product-welcome-tour
 - `TourButton` = `back | primary | skip`
 - `TourLabels` (interface)
 - `TourPlacement` = `auto | bottom | bottom-end | bottom-start | center | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TourSpotlightPadding` (alias)
 - `TourStep` (interface)
 - `TourTarget` (alias)
 
