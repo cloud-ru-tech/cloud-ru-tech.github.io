@@ -1,0 +1,11 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{V as n,i as r,t as i}from"./src-Dxa8on6G.js";import{r as a,t as o}from"./decorators-YMBFJKD-.js";import{n as s,o as c,r as l}from"./presetFixtures-SBJdD2LR.js";import{n as u,r as d}from"./testIds-BH8EQRKz.js";var f,p,m,h,g,_;e((()=>{i(),o(),l(),d(),f=t(),{expect:p,within:m}=__STORYBOOK_MODULE_TEST__,h={title:`Snack/Data display/Table/SimpleTable`,id:`components-table-simpletable`,component:r,parameters:{layout:`fullscreen`},decorators:[a],args:{data:s,columns:c,pageSize:5,getRowId:e=>e.id,headlineKey:`name`,defaultView:n.Table,outline:!0,fullWidth:!0,loading:!1,"data-test-id":u.table.root},argTypes:{headlineKey:{if:{arg:`defaultView`,eq:n.Cards}},view:{table:{disable:!0}},onViewChange:{table:{disable:!0}},data:{table:{disable:!0}},columns:{table:{disable:!0}},getRowId:{table:{disable:!0}},renderCard:{table:{disable:!0}},pagination:{table:{disable:!0}},sorting:{table:{disable:!0}},columnFilters:{table:{disable:!0}},rowSelection:{table:{disable:!0}},columnsSettings:{table:{disable:!0}},bulkActions:{table:{disable:!0}},savedState:{table:{disable:!0}},moreActions:{table:{disable:!0}},onRefresh:{table:{disable:!0}},onRowClick:{table:{disable:!0}},search:{table:{disable:!0}},expanding:{table:{disable:!0}},rowPinning:{table:{disable:!0}},getRowBackgroundColor:{control:!1,table:{disable:!0}},scrollRef:{table:{disable:!0}},scrollContainerRef:{table:{disable:!0}},toolbarCheckBoxMode:{table:{disable:!0}}}},g={tags:[`dev`,`test`],render:e=>(0,f.jsx)(r,{...e}),play:async({canvasElement:e})=>{let t=m(e);await p(t.getByTestId(u.table.root)).toBeVisible()}},g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: args => <SimpleTable {...args} />,
+  play: async ({
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId(TEST_IDS.table.root)).toBeVisible();
+  }
+}`,...g.parameters?.docs?.source}}},_=[`Playground`]}))();export{g as Playground,_ as __namedExportsOrder,h as default};
+//# sourceMappingURL=SimpleTable.Playground.stories-BQCn01GN.js.map

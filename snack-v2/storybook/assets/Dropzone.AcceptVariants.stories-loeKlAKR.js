@@ -1,7 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-XppXgSyX.js";import{o as c,t as l}from"./src-B_adGBlk.js";import{n as u,t as d}from"./testIds-B-k2utBQ.js";import{n as f,t as p}from"./SlotContent-DMkiLPvn.js";var m,h,g,_;e((()=>{o(),l(),u(),f(),m=t(),h={title:`Snack/Inputs & Forms/Dropzone/Dropzone/Tests/AcceptVariants`,id:`components-dropzone-dropzone-tests-acceptvariants`,component:c,parameters:{layout:`fullscreen`,controls:{disable:!0}},args:{"data-test-id":d.dropzone.root,onFilesUpload:()=>{},children:(0,m.jsx)(p,{})},render:e=>(0,m.jsx)(s,{children:(0,m.jsxs)(r,{children:[(0,m.jsx)(a,{children:`AcceptVariants`}),(0,m.jsx)(i,{children:`Проброс accept в нативный input Dropzone.`}),(0,m.jsx)(n,{align:`center`,children:(0,m.jsx)(c,{...e})})]})})},g={tags:[`test`,`dev`],args:{accept:`image/*`}},g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{
-  tags: ['test', 'dev'],
-  args: {
-    accept: 'image/*'
-  }
-}`,...g.parameters?.docs?.source}}},_=[`AcceptImage`]}))();export{g as AcceptImage,_ as __namedExportsOrder,h as default};
-//# sourceMappingURL=Dropzone.AcceptVariants.stories-loeKlAKR.js.map
