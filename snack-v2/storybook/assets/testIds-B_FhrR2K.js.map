@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-B_FhrR2K.js","names":[],"sources":["../../../../packages/uikit-product-upload-files/stories/UploadFiles/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"iHAAyB"}

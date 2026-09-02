@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-DQTa2Tvz.js";import{a as u,s as d,t as f,u as p}from"./src-BSWo-EXU.js";import{n as m,t as h}from"./src-Ck6oG8TU.js";import{r as g,t as _}from"./testIds-CJSvoPbc.js";function v(){let[e,t]=(0,y.useState)(!1),n=()=>t(!1);return(0,b.jsxs)(l,{children:[(0,b.jsxs)(a,{children:[(0,b.jsx)(s,{children:`WithFooter`}),(0,b.jsx)(o,{children:"Подтверждение деструктивного действия. Футер — типизированные слоты `approveButton` / `cancelButton`: на desktop ряд кнопок прижат вправо, на mobile (тулбар Layout) тот же футер уезжает в `BottomSheet`."}),(0,b.jsx)(i,{align:`center`,children:(0,b.jsx)(u,{"data-test-id":_.modal.triggerOpen,label:`Open confirm dialog`,view:p.Outline,appearance:d.Neutral,onClick:()=>t(!0)})})]}),(0,b.jsx)(m,{"data-test-id":_.modal.root,open:e,onClose:n,title:`Удалить запись`,subtitle:`Действие необратимо. Связанные данные также будут удалены.`,content:`После подтверждения запись и все её ссылки исчезнут из списка.`,approveButton:{label:`Удалить`,appearance:d.Critical,onClick:n},cancelButton:{label:`Отмена`,onClick:n}})]})}var y,b,x,S,C,w,T;t((()=>{f(),h(),y=e(n(),1),c(),g(),b=r(),{expect:x,within:S}=__STORYBOOK_MODULE_TEST__,C={title:`Snack/Overlays/Modal/Modal/Examples/WithFooter`,id:`components-modal-modal-examples-withfooter`,component:m,parameters:{layout:`fullscreen`}},w={tags:[`dev`,`test`],render:()=>(0,b.jsx)(v,{}),play:async({canvasElement:e})=>{await x(S(e).getByTestId(_.modal.triggerOpen)).toBeVisible()}},w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <WithFooterScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.modal.triggerOpen)).toBeVisible();
+  }
+}`,...w.parameters?.docs?.source}}},T=[`WithFooter`]}))();export{w as WithFooter,T as __namedExportsOrder,C as default};
+//# sourceMappingURL=Modal.WithFooter.stories-JRc85kTT.js.map

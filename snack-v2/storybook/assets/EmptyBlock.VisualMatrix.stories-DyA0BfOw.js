@@ -1,0 +1,25 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{bn as n,gn as r,i,nt as a,t as o}from"./iframe-DQTa2Tvz.js";import{U as s,t as c}from"./system-BeZ0nvWx.js";import{r as l,t as u}from"./src-BSWo-EXU.js";import{i as d,t as f}from"./src-BHvx8umz.js";var p,m,h,g,_=e((()=>{p=`_grid_846sy_2`,m=`_cellDesktop_846sy_8`,h=`_cellMobile_846sy_12`,g={grid:p,cellDesktop:m,cellMobile:h}})),v,y,b,x,S,C;e((()=>{a(),u(),c(),o(),f(),_(),v=t(),y={title:`Uikit Product/Layout & containers/Layout/Layout/EmptyBlock`,id:`uikit-product-layout-layout-emptyblock`,id:`uikit-product-layout-emptyblock`,component:d,parameters:{layout:`fullscreen`}},b=(0,v.jsx)(l,{primaryAction:{label:`Label text`},secondaryAction:{label:`Label text`}}),x=[{layoutType:n.Desktop,label:`desktop (horizontal)`,cellClass:g.cellDesktop},{layoutType:n.Mobile,label:`mobile (vertical)`,cellClass:g.cellMobile}],S={tags:[`test`,`dev`],parameters:{controls:{disable:!0}},render:()=>(0,v.jsx)(`div`,{className:g.grid,children:(0,v.jsx)(i,{sectionTitle:`Layout × Footer`,firstColumnHeader:`layoutType`,columnHeaders:[`without footer`,`with footer`],rows:x.map(({layoutType:e,label:t,cellClass:n})=>({variantLabel:t,cells:[!1,!0].map(i=>(0,v.jsx)(r,{layoutType:e,children:(0,v.jsx)(`div`,{className:n,children:(0,v.jsx)(d,{title:`Title text`,content:`Body text`,icon:{icon:s},footer:i?b:void 0})})},`${t}-${i}`))}))})})},S.parameters={...S.parameters,docs:{...S.parameters?.docs,source:{originalSource:`{
+  tags: ['test', 'dev'],
+  parameters: {
+    controls: {
+      disable: true
+    }
+  },
+  render: () => <div className={styles.grid}>
+      <StoryTable sectionTitle='Layout × Footer' firstColumnHeader='layoutType' columnHeaders={['without footer', 'with footer']} rows={adaptiveLayouts.map(({
+      layoutType,
+      label,
+      cellClass
+    }) => ({
+      variantLabel: label,
+      cells: [false, true].map(withFooter => <AdaptiveProvider key={\`\${label}-\${withFooter}\`} layoutType={layoutType}>
+              <div className={cellClass}>
+                <EmptyBlock title='Title text' content='Body text' icon={{
+            icon: PlaceholderSVG
+          }} footer={withFooter ? footer : undefined} />
+              </div>
+            </AdaptiveProvider>)
+    }))} />
+    </div>
+}`,...S.parameters?.docs?.source}}},C=[`VisualMatrix`]}))();export{S as VisualMatrix,C as __namedExportsOrder,y as default};
+//# sourceMappingURL=EmptyBlock.VisualMatrix.stories-DyA0BfOw.js.map
