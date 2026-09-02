@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-BZrQU-Ux.js","names":[],"sources":["../../../../packages/rating/stories/Rating/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"uGAAyB"}

@@ -1,0 +1,9 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-n9OCAA8q.js";import{O as u,m as d,t as f}from"./src-Lpv0lgCB.js";function p(){let[e,t]=(0,m.useState)(`m`);return(0,h.jsx)(l,{children:(0,h.jsxs)(a,{width:`narrow`,children:[(0,h.jsx)(s,{children:`Single selection`}),(0,h.jsx)(o,{children:"Один выбор: значение — `ItemId | undefined`. Клик по пункту заменяет значение, кнопка очистки сбрасывает в `undefined`."}),(0,h.jsx)(i,{block:!0,children:(0,h.jsx)(d,{"data-test-id":u.fieldSelect,label:`Instance size`,placeholder:`Choose…`,items:v,selection:`single`,value:e,onChange:t})})]})})}var m,h,g,_,v,y,b,x;t((()=>{f(),m=e(n(),1),c(),h=r(),{expect:g,within:_}=__STORYBOOK_MODULE_TEST__,v=[{id:`s`,content:{label:`Small (1 vCPU, 2 GB)`}},{id:`m`,content:{label:`Medium (2 vCPU, 4 GB)`}},{id:`l`,content:{label:`Large (4 vCPU, 8 GB)`}},{id:`xl`,content:{label:`X-Large (8 vCPU, 16 GB)`}}],y={title:`Snack/Inputs & Forms/Fields/FieldSelect/Examples/Single`,id:`components-fields-fieldselect-examples-single`,component:d,parameters:{layout:`fullscreen`},render:()=>(0,h.jsx)(p,{})},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(_(e).getByTestId(u.fieldSelect)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldSelect)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Single`]}))();export{b as Single,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=FieldSelect.Single.stories-DTKigJBC.js.map

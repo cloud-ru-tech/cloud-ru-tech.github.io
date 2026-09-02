@@ -10,6 +10,17 @@ Docs: /snack-v2/components/uikit-product-header/
 pnpm add @cloud-ru/ds-uikit-product-header
 ```
 
+## Когда использовать
+
+- Новая навигация консоли с сегментами сервисов, избранным и настройками отображения карточек.
+- Полная замена header на Snack V2 без legacy-контрактов Figma `headerOld` / `navigationOldDrawer`.
+- Поэтапная миграция: `MenuMobile` (bottom sheet) подключается к legacy [`MainMenu`](/components/uikit-product-header-legacy/main-menu) через `customMobileMenu`.
+
+Когда **не** нужен:
+
+- Обратная совместимость со старым drawer и API `serviceGroups` / `LinksGroup`:
+  - используйте [`@cloud-ru/ds-uikit-product-header-legacy`](/components/uikit-product-header-legacy).
+
 ## API
 
 ### Container
@@ -319,6 +330,25 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `setOpen` | `((open: boolean) => void)` | — | no |  |
 | `settingItems` | `MainMenuSettingsItem[]` | — | no | Пункты левой колонки (desktop) / нижней части списка (mobile).  Плоский список (`dividerBefore` для разделителей). Не связан с сегментами правой панели и не меняется при сортировке групп в сегментах. |
 
+#### Related types
+- `BaseItemProps` (interface)
+- `CardServiceLightProps` (interface)
+- `FavoriteProps` (interface)
+- `FavoritesSegment` = `favorites | recent`
+- `InnerLink` (interface)
+- `LinksGroup` (interface)
+- `LinksGroupBlockColor` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `LinksGroupTitle` (alias)
+- `MainMenuPreferencesProps` (interface)
+- `MainMenuSegment` (interface)
+- `MainMenuSegmentPrefs` (interface)
+- `MainMenuSettingsItem` (interface)
+- `MainMenuToggleProps` (interface)
+- `PromoTagPredefinedBaseProps` (alias)
+- `SearchProps` (interface)
+- `TitleClickable` (interface)
+- `TitleStatic` (interface)
+
 ### MountAnimation
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
@@ -387,6 +417,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `blockColor` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no |  |
 | `enableServiceDrag` | `boolean` | — | no |  |
 | `favorite` | `FavoriteProps` | — | no |  |
+| `groupFavoritesEnabled` | `boolean` | `true` | no |  |
 | `highlight` | `boolean` | — | no |  |
 | `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no |  |
 | `id` | `string` | — | yes |  |
@@ -402,6 +433,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 |------|------|---------|----------|-------------|
 | `enableServiceDrag` | `boolean` | — | no |  |
 | `favorite` | `FavoriteProps` | — | no |  |
+| `groupFavoritesEnabled` | `boolean` | — | no |  |
 | `groupId` | `string` | — | yes |  |
 | `isMobile` | `boolean` | — | no |  |
 | `items` | `InnerLink[]` | — | yes |  |
@@ -419,6 +451,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 |------|------|---------|----------|-------------|
 | `blockColor` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no |  |
 | `favorite` | `FavoriteProps` | — | no |  |
+| `groupFavoritesEnabled` | `boolean` | — | no |  |
 | `highlight` | `boolean` | — | no |  |
 | `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no |  |
 | `id` | `string` | — | yes |  |
@@ -450,6 +483,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 |------|------|---------|----------|-------------|
 | `dragDisabled` | `boolean` | — | no |  |
 | `favorite` | `FavoriteProps` | — | no |  |
+| `groupFavoritesEnabled` | `boolean` | — | no |  |
 | `groupId` | `string` | — | yes |  |
 | `isMobile` | `boolean` | — | no |  |
 | `onServiceClick` | `((service: InnerLink, event: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |

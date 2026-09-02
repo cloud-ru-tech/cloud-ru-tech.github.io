@@ -13,12 +13,12 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 ## Когда использовать
 
 - Нужна обратимо совместимая шапка и меню навигации старого кабинета на стеке `@ds/*`.
-- Собирается MainMenu с селектором платформ и категориями сервисов: desktop — двухколоночный drawer; mobile — левый одноколоночный drawer.
+- Собирается MainMenu с селектором платформ и категориями сервисов: desktop — двухколоночный drawer; mobile — левый одноколоночный drawer (или новое bottom-sheet-меню через `customMobileMenu`).
 
 Когда **не** нужен пакет:
 
 - Новая продуктовая шапка без legacy-контрактов:
-  - используйте актуальные layout/header-пакеты Product UI Kit.
+  - используйте [`@cloud-ru/ds-uikit-product-header`](/components/uikit-product-header).
 - Отдельная карточка сервиса вне меню:
   - используйте [`@cloud-ru/ds-uikit-product-card-predefined`](/components/uikit-product-card-predefined).
 
@@ -65,6 +65,7 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 ### MainMenu
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `customMobileMenu` | `ReactNode` | — | no | Только mobile: заменяет legacy `MenuMobile` (левый drawer). Например, `MenuMobile` из `@cloud-ru/ds-uikit-product-header` (bottom sheet).  Передавайте те же `open` / `setOpen`, что и в `MainMenu` (controlled), иначе триггер и кастомное меню разойдутся. |
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | — | no |  |
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
@@ -76,12 +77,13 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | `search` | `SearchProps` | — | no |  |
 | `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
 | `setOpen` | `((open: boolean) => void)` | — | no |  |
-| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`.  Mobile: `CardServiceLight` + `Divider` внизу scroll-body. |
 | `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
 
 ### MenuDesktop
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `customMobileMenu` | `ReactNode` | — | no | Только mobile: заменяет legacy `MenuMobile` (левый drawer). Например, `MenuMobile` из `@cloud-ru/ds-uikit-product-header` (bottom sheet).  Передавайте те же `open` / `setOpen`, что и в `MainMenu` (controlled), иначе триггер и кастомное меню разойдутся. |
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
 | `leftTop` | `ReactNode` | — | no |  |
 | `onLinkChange` | `((value: string) => void)` | — | no |  |
@@ -91,12 +93,13 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | `search` | `SearchProps` | — | no |  |
 | `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
 | `setOpen` | `((open: boolean) => void)` | — | no |  |
-| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`.  Mobile: `CardServiceLight` + `Divider` внизу scroll-body. |
 | `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
 
 ### MenuMobile
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `customMobileMenu` | `ReactNode` | — | no | Только mobile: заменяет legacy `MenuMobile` (левый drawer). Например, `MenuMobile` из `@cloud-ru/ds-uikit-product-header` (bottom sheet).  Передавайте те же `open` / `setOpen`, что и в `MainMenu` (controlled), иначе триггер и кастомное меню разойдутся. |
 | `favorite` | `{ value: string[]; onChange: (productId: string) => (addingValue: boolean) => void; }` | — | no |  |
 | `leftTop` | `ReactNode` | — | no |  |
 | `onLinkChange` | `((value: string) => void)` | — | no |  |
@@ -106,7 +109,7 @@ pnpm add @cloud-ru/ds-uikit-product-header-legacy
 | `search` | `SearchProps` | — | no |  |
 | `serviceGroups` | `LinksGroup[]` | — | yes | Основные группы облачных сервисов (инфраструктура, сеть, хранилище и т.п.).  Всегда видны в сетке карточек при пустом поиске; участвуют в избранном и боковой навигации. При поиске фильтруются вместе с остальными группами и показываются **первыми** в выдаче. |
 | `setOpen` | `((open: boolean) => void)` | — | no |  |
-| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`. |
+| `settingItems` | `LinksGroup` | — | no | Административные сервисы (одна группа, например «Административные сервисы»).  Без поиска: пункты в нижней части левой колонки (desktop), не в сетке карточек. С поиском: группа попадает в результаты только при совпадении; отображается **последней** (ниже `serviceGroups` и `platformGroups`). Обычно `favoritesEnabled: false`.  Mobile: `CardServiceLight` + `Divider` внизу scroll-body. |
 | `sidebarBottomSlot` | `ReactNode` | — | no | Нижний слот левой колонки sidebar (Figma `bottom > items`). |
 
 ### NavigationSearch
