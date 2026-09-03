@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{l as t,s as n}from"./src-bYJM2vH_.js";var r,i,a=e((()=>{t(),r={modal:{...n,root:`modal`,triggerOpen:`modal-trigger`,firstButton:`modal__first-button`,secondButton:`modal__second-button`,image:`modal__image`,tooltip:`modal__title-tooltip`},modalCustom:{root:`modal-custom`,triggerOpen:`modal-custom-trigger`}},i=e=>`modal-vm-${e}`}));export{i as n,a as r,r as t};
+//# sourceMappingURL=testIds-BiAXwUDU.js.map

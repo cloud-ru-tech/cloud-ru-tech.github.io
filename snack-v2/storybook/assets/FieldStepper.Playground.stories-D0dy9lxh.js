@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,f as i,l as a,m as o,t as s,u as c}from"./iframe-Bl-uTAel.js";import{c as l,l as u}from"./src-Cc8YYHyl.js";import{O as d,t as f,u as p}from"./src-DSHe4L1C.js";var m,h,g,_,v,y;e((()=>{f(),s(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Inputs & Forms/Fields/FieldStepper`,id:`components-fields-fieldstepper`,component:p,parameters:{layout:`fullscreen`},args:{label:`Quantity`,hint:`Hint text`,size:l.M,validationState:u.Default,showHintIcon:!0,required:!1,background:!0,disabled:!1,readonly:!1,defaultValue:1,min:0,max:99,step:1,allowMoreThanLimits:!1,prefix:`₽`,postfix:`шт`,minusButtonTooltip:{tip:`Уменьшить`},plusButtonTooltip:{tip:`Увеличить`},"data-test-id":d.fieldStepper},argTypes:{size:{control:`radio`,options:Object.values(l)},validationState:{control:`select`,options:Object.values(u)},step:{control:{type:`number`,min:.1}},value:{table:{disable:!0}},onChange:{table:{disable:!0}},clampTooltipText:{table:{disable:!0}}},render:function(e){return(0,m.jsx)(c,{children:(0,m.jsxs)(r,{width:`narrow`,children:[(0,m.jsx)(o,{children:`Playground`}),(0,m.jsx)(a,{children:`Числовое поле с кнопками +/− и опциональным клампом значения к границам min/max.`}),(0,m.jsx)(n,{block:!0,children:(0,m.jsx)(i,{width:`narrow`,children:(0,m.jsx)(p,{...e})})})]})})}},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(d.fieldStepper)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldStepper)).toBeVisible();
-  }
-}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
-//# sourceMappingURL=FieldStepper.Playground.stories-D0dy9lxh.js.map

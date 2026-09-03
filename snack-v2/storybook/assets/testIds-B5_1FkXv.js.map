@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-B5_1FkXv.js","names":[],"sources":["../../../../packages/truncate-string/stories/TruncateString/testIds.ts"],"sourcesContent":["import { TEST_IDS } from '../../src/constants';\n\nexport { TEST_IDS };\n"],"mappings":"uGAAyB"}

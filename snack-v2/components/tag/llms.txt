@@ -91,7 +91,7 @@ pnpm add @cloud-ru/ds-tag
 | `className` | `string` | — | no |  |
 | `items` | `TagRowItemInner[]` | — | yes |  |
 | `onItemRemove` | `((item: string) => void)` | — | no |  |
-| `setTagRef` | `((item: TagRowItemInner, index: number) => Ref<HTMLDivElement>)` | — | no |  |
+| `setTagRef` | `((item: TagRowItemInner) => Ref<HTMLDivElement>)` | — | no |  |
 | `size` | `m \| s \| xs` | — | yes |  |
 
 ### TagRowTruncated

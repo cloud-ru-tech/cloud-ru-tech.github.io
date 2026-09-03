@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{d as t}from"./src-BJq-CCGl.js";var n,r,i,a=e((()=>{t(),n=e=>`quota-widget-cell-${e}`,r=e=>`trigger-${n(e)}`,i=[`data`,`loading`,`error`].map(e=>{let t=n(e);return{state:e,cellTestId:t,triggerTestId:r(e),contentTestId:`content-${t}`}})}));export{a as n,i as t};
-//# sourceMappingURL=testIds-CgckiWez.js.map
