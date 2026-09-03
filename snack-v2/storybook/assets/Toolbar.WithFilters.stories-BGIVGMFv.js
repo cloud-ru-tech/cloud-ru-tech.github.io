@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-Bb1kR6xz.js";import{c as u,n as d,t as f}from"./src-CQWJHtKp.js";import{n as p,t as m}from"./styles.module-CBAnneDZ.js";import{n as h,t as g}from"./testIds-D8lxVjtt.js";function _(){let[e,t]=(0,v.useState)(``),[n,r]=(0,v.useState)(!0),[c,u]=(0,v.useState)({});return(0,y.jsx)(l,{children:(0,y.jsxs)(a,{width:`wide`,children:[(0,y.jsx)(s,{children:`With filters`}),(0,y.jsx)(o,{children:`Кнопка фильтров и строка ChipChoiceRow.`}),(0,y.jsx)(i,{block:!0,children:(0,y.jsx)(`div`,{className:p.containerPlayground,children:(0,y.jsx)(d,{"data-test-id":g.root,search:{value:e,onChange:t},filterRow:{open:n,onOpenChange:r,value:c,onChange:u,filters:[{id:`status`,type:`single`,label:`Статус`,options:[{value:`active`,label:`Активные`},{value:`archived`,label:`Архив`}]}],defaultValue:{}}})})})]})})}var v,y,b,x,S,C,w;t((()=>{f(),v=e(n(),1),c(),m(),h(),y=r(),{expect:b,within:x}=__STORYBOOK_MODULE_TEST__,S={title:`Snack/Actions/Toolbar/Examples/WithFilters`,id:`components-toolbar-examples-withfilters`,component:_,parameters:{layout:`fullscreen`}},C={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await b(x(e).getByTestId(u.filterButton)).toBeVisible(),await b(x(e).getByTestId(u.filterRow)).toBeVisible()}},C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TOOLBAR_TEST_IDS.filterButton)).toBeVisible();
+    await expect(within(canvasElement).getByTestId(TOOLBAR_TEST_IDS.filterRow)).toBeVisible();
+  }
+}`,...C.parameters?.docs?.source}}},w=[`WithFilters`]}))();export{C as WithFilters,w as __namedExportsOrder,S as default};
+//# sourceMappingURL=Toolbar.WithFilters.stories-BGIVGMFv.js.map
