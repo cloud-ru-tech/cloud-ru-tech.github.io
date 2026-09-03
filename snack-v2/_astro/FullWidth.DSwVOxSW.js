@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SegmentControl.M1XbRbui.js";var n=e();function r(){return(0,n.jsx)(`div`,{style:{width:480,maxWidth:`100%`},children:(0,n.jsx)(t,{width:`full`,outline:!0,defaultValue:`day`,items:[{value:`day`,label:`Day`},{value:`week`,label:`Week`},{value:`month`,label:`Month`},{value:`year`,label:`Year`}]})})}export{r as FullWidth};

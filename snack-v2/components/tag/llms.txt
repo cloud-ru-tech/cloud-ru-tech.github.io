@@ -24,10 +24,12 @@ pnpm add @cloud-ru/ds-tag
 | `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
 | `size` | `m \| s \| xs` | — | no |  |
 | `tabIndex` | `number` | — | no |  |
+| `truncateVariant` | `end \| middle` | — | no | Вариант обрезания подписи, не поместившейся в тег. |
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `Size` = `m | s | xs`
+- `TruncateStringProps` (alias)
 
 ### TagBase
 | Prop | Type | Default | Required | Description |
@@ -40,6 +42,7 @@ pnpm add @cloud-ru/ds-tag
 | `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
 | `size` | `m \| s \| xs` | `s` | no |  |
 | `tabIndex` | `number` | — | no |  |
+| `truncateVariant` | `end \| middle` | — | no | Вариант обрезания подписи, не поместившейся в тег. |
 
 ### TagLink
 | Prop | Type | Default | Required | Description |
@@ -52,6 +55,7 @@ pnpm add @cloud-ru/ds-tag
 | `label` | `string` | — | yes |  |
 | `size` | `m \| s \| xs` | `s` | no |  |
 | `tabIndex` | `number` | — | no |  |
+| `truncateVariant` | `end \| middle` | — | no | Вариант обрезания подписи, не поместившейся в тег. |
 
 ### TagList
 | Prop | Type | Default | Required | Description |

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Status.hTWJ1p5h.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Error`,appearance:`red`,background:!0})}export{r as WithBackground};

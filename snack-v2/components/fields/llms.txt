@@ -352,7 +352,7 @@ pnpm add @cloud-ru/ds-fields
 | `iconBefore` | `ReactNode` | — | no | Иконка перед текстом |
 | `id` | `string` | — | no | HTML-атрибут `id` для input (и `for` у label) |
 | `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
-| `items` | `Item[]` | — | yes | Список айтемов дроплиста (формат `@cloud-ru/ds-list`) |
+| `items` | `FieldSelectItem[]` | — | yes | Список айтемов дроплиста (формат `@cloud-ru/ds-list`) |
 | `label` | `string` | — | no | Заголовок |
 | `labelFor` | `string` | — | no | HTML-атрибут `for` для `<label>` |
 | `labelTooltip` | `QuestionTooltipProps` | — | no | Подсказка (question-tooltip) у заголовка |
@@ -370,8 +370,8 @@ pnpm add @cloud-ru/ds-fields
 | `onKeyDown` | `((event: KeyboardEvent<HTMLInputElement>) => void)` | — | no | Колбек нажатия клавиши на input (вызывается после внутренней обработки навигации) |
 | `onOpenChange` | `((isOpen: boolean) => void)` | — | no | Колбек смены открытия |
 | `open` | `boolean` | — | no | Управляемое открытие дроплиста |
-| `pinBottom` | `Item[]` | — | no | Пресет-айтемы снизу (формат `@cloud-ru/ds-list`) |
-| `pinTop` | `Item[]` | — | no | Пресет-айтемы сверху (формат `@cloud-ru/ds-list`) |
+| `pinBottom` | `FieldSelectItem[]` | — | no | Пресет-айтемы снизу (формат `@cloud-ru/ds-list`) |
+| `pinTop` | `FieldSelectItem[]` | — | no | Пресет-айтемы сверху (формат `@cloud-ru/ds-list`) |
 | `placeholder` | `string` | — | no | Placeholder в триггере, когда нет выбранного значения |
 | `placement` | `bottom \| bottom-end \| bottom-start \| left \| left-end \| left-start \| right \| right-end \| right-start \| top \| top-end \| top-start` | — | no | Placement дроплиста |
 | `postfix` | `ReactNode` | — | no | Постфикс — текст или нода после значения (Figma `postfix`) |
@@ -404,9 +404,9 @@ pnpm add @cloud-ru/ds-fields
 - `FieldDecoratorProps` (interface)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
+- `FieldSelectItem` (alias)
 - `IconPredefinedProps` (interface)
 - `ItemId` (alias)
-- `ItemProps` (alias)
 - `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`

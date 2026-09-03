@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,t as n}from"./src-BYsxINJY.js";function r(e,t){return`${i.root}--${e}-${t}`}var i,a=e((()=>{n(),i={root:t.root,trigger:t.trigger,summary:t.summary,content:t.content,step:t.step}}));export{a as n,r,i as t};
+//# sourceMappingURL=testIds-UUROEVFQ.js.map

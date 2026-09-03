@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,r as n,t as r}from"./ErrorPage.CCcI1ZvX.js";var i=e();function a(){return(0,i.jsx)(r,{errorType:t.Offline,logoVariant:n.Cloud})}export{a as Offline};

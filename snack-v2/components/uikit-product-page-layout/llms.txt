@@ -605,3 +605,4 @@ _Нет публичных пропсов._
 - `TreeNavigationMode` = `aside | fixed | popover`
 - `TreeNodeId` (alias)
 - `TreeNodeProps` (alias)
+- `TruncateStringProps` (alias)

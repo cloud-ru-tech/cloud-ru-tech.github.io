@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-BD-xNwtm.js","names":[],"sources":["../../../../packages/site-card-vacancy/stories/CardVacancy/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"uGAAyB"}
