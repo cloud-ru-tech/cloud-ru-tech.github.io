@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AiToolDetails.D9U47-qp.js";import{t as n}from"./AiToolText.Bc4-BLVz.js";var r=e();function i(){return(0,r.jsx)(t,{label:`create_instance`,state:`default`,children:(0,r.jsx)(n,{mono:!0,children:`{ "region": "ru-central1", "status": "ok" }`})})}export{i as DetailsCard};

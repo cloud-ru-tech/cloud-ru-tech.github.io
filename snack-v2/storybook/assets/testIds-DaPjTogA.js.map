@@ -1,1 +1,0 @@
-{"version":3,"file":"testIds-DaPjTogA.js","names":[],"sources":["../../../../packages/uikit-product-widget/stories/Widget/testIds.ts"],"sourcesContent":["export { TEST_IDS } from '../../src/constants';\n"],"mappings":"uGAAyB"}

@@ -80,25 +80,33 @@ pnpm add @cloud-ru/ds-ai-tool
 |------|------|---------|----------|-------------|
 | `children` | `ReactNode` | — | no | Контент блока деталей (текст, key-value, дерево). |
 | `className` | `string` | — | no | Доп. класс корня. |
+| `copyValue` | `string` | — | no | Сериализованное содержимое `ToolDetails` для копирования. |
 | `data-test-id` | `string` | `ai-tool-details` | no |  |
+| `height` | `large \| small` | `small` | no | Максимальная высота прокручиваемого контента. По умолчанию `small`. |
 | `label` | `ReactNode` | — | no | Текст заголовка-лейбла. |
+| `onCopyClick` | `((value: string) => void)` | — | no | Вызывается после копирования содержимого. |
 | `onToggleSecret` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Клик по кнопке-«глаз» заголовка. |
 | `scroll` | `boolean` | `true` | no | Ограничить высоту контента и включить вертикальный скролл. По умолчанию `true`. |
 | `secretRevealed` | `boolean` | `false` | no | Секрет раскрыт. Источник истины — родитель. |
+| `showCopyButton` | `boolean` | `true` | no | Показать кнопку копирования. По умолчанию `true`; требуется непустой `copyValue`. |
 | `showEyeButton` | `boolean` | `false` | no | Показать кнопку-«глаз» в заголовке для раскрытия секрета. |
 | `state` | `default \| error` | `default` | no | Состояние: `default` — нейтральный, `error` — красная рамка и лейбл. |
 
 #### Related types
+- `AiToolDetailsHeight` = `large | small`
 - `AiToolDetailsState` = `default | error`
 
 ### AiToolDetailsLabel
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | Доп. класс корня. |
+| `copyValue` | `string` | — | no | Содержимое связанного `ToolDetails` для копирования. |
 | `data-test-id` | `string` | `ai-tool-details-label` | no |  |
 | `label` | `ReactNode` | — | no | Текст лейбла (заголовок блока деталей). |
+| `onCopyClick` | `((value: string) => void)` | — | no | Вызывается после копирования содержимого. |
 | `onToggleSecret` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Клик по кнопке-«глаз». Не вызывается, если `showEyeButton` не задан. |
 | `secretRevealed` | `boolean` | `false` | no | Секрет раскрыт: глаз открыт (секреты видны). Зачёркнутый глаз — секреты скрыты. Источник истины — родитель. |
+| `showCopyButton` | `boolean` | `true` | no | Показать кнопку копирования. По умолчанию `true`; требуется непустой `copyValue`. |
 | `showEyeButton` | `boolean` | `false` | no | Показать кнопку-«глаз» для раскрытия секретного значения. |
 | `state` | `default \| error` | `default` | no | Состояние: `default` — нейтральный, `error` — красный. |
 
@@ -233,10 +241,12 @@ export function Badges() {
 ```tsx
 import { AiToolDetails, AiToolText } from '@cloud-ru/ds-ai-tool';
 
+const DETAILS_CONTENT = '{ "region": "ru-central1", "status": "ok" }';
+
 export function DetailsCard() {
   return (
-    <AiToolDetails label='create_instance' state='default'>
-      <AiToolText mono>{`{ "region": "ru-central1", "status": "ok" }`}</AiToolText>
+    <AiToolDetails label='create_instance' state='default' height='large' copyValue={DETAILS_CONTENT}>
+      <AiToolText mono>{DETAILS_CONTENT}</AiToolText>
     </AiToolDetails>
   );
 }
@@ -255,6 +265,7 @@ export function DetailsLabelSecret() {
     <div style={{ width: 280 }}>
       <AiToolDetailsLabel
         label='Ответ'
+        copyValue='TextBlock Text'
         showEyeButton
         secretRevealed={revealed}
         onToggleSecret={() => setRevealed(prev => !prev)}

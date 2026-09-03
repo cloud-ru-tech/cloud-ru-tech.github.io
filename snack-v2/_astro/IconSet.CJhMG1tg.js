@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{i as t}from"./constants.DJD4Bhqn.js";import{t as n}from"./AiToolIcon.DQlj-lha.js";var r=e();function i(){return(0,r.jsx)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:Object.values(t).map(e=>(0,r.jsx)(n,{variant:e},e))})}export{i as IconSet};
