@@ -1,0 +1,29 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{i as n,t as r}from"./iframe-Coxm4alt.js";import{o as i,t as a}from"./src-DdKhUQ0C.js";import{d as o,i as s,l as c,n as l,r as u,s as d,t as f}from"./visualMatrix.helpers-hBJ1ljYD.js";import{n as p,t as m}from"./styles.module-B5TQqo6I.js";var h,g,_,v;e((()=>{a(),r(),o(),m(),h=t(),g={title:`Snack/Inputs & Forms/Chips/ChipChoice/Date`,id:`components-chips-chipchoice-date`,component:i.Date,parameters:{layout:`padded`}},_={tags:[`test`,`dev`],parameters:{controls:{disable:!0}},render:()=>(0,h.jsxs)(`div`,{className:p.matrix,children:[(0,h.jsx)(n,{sectionTitle:`Value × Size`,firstColumnHeader:`Value`,columnHeaders:s,rows:[{variantLabel:`no value`,cells:c.map(e=>(0,h.jsx)(i.Date,{label:`Date`,size:e},e))},{variantLabel:`no value + icon`,cells:c.map(e=>(0,h.jsx)(i.Date,{label:`Date`,size:e,icon:f},e))},{variantLabel:`value set + icon + clear`,cells:c.map(e=>(0,h.jsx)(i.Date,{label:`Date`,size:e,defaultValue:d,icon:f,...u},e))}]}),(0,h.jsx)(n,{sectionTitle:`State × Size`,firstColumnHeader:`State`,columnHeaders:s,rows:l.map(({key:e,extra:t})=>({variantLabel:e,cells:c.map(e=>(0,h.jsx)(i.Date,{label:`Date`,size:e,...t},e))}))})]})},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+  tags: ['test', 'dev'],
+  parameters: {
+    controls: {
+      disable: true
+    }
+  },
+  render: () => <div className={styles.matrix}>
+      <StoryTable sectionTitle='Value × Size' firstColumnHeader='Value' columnHeaders={COLUMN_HEADERS} rows={[{
+      variantLabel: 'no value',
+      cells: SIZES.map(size => <ChipChoice.Date key={size} label='Date' size={size} />)
+    }, {
+      variantLabel: 'no value + icon',
+      cells: SIZES.map(size => <ChipChoice.Date key={size} label='Date' size={size} icon={CHIP_CHOICE_ICON} />)
+    }, {
+      variantLabel: 'value set + icon + clear',
+      cells: SIZES.map(size => <ChipChoice.Date key={size} label='Date' size={size} defaultValue={DATE_VALUE} icon={CHIP_CHOICE_ICON} {...CLEAR_BUTTON_PROPS} />)
+    }]} />
+
+      <StoryTable sectionTitle='State × Size' firstColumnHeader='State' columnHeaders={COLUMN_HEADERS} rows={CHIP_CHOICE_STATE_ROWS.map(({
+      key,
+      extra
+    }) => ({
+      variantLabel: key,
+      cells: SIZES.map(size => <ChipChoice.Date key={size} label='Date' size={size} {...extra} />)
+    }))} />
+    </div>
+}`,..._.parameters?.docs?.source}}},v=[`VisualMatrix`]}))();export{_ as VisualMatrix,v as __namedExportsOrder,g as default};
+//# sourceMappingURL=ChipChoiceDate.VisualMatrix.stories-BzYxhM9O.js.map
