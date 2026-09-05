@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-C2bZDhP2.js";import{M as u,j as d,k as f,t as p}from"./src-Ct1sQlu6.js";import{n as m,t as h}from"./styles.module-Ce2xHgbH.js";function g(){let[e,t]=(0,_.useState)(`Прикладываю материалы по задаче`),[n,r]=(0,_.useState)(()=>[new File([`report`],`report.pdf`,{type:`application/pdf`}),new File([`data`],`data.csv`,{type:`text/csv`}),new File([`notes`],`notes.txt`,{type:`text/plain`})]);return(0,v.jsx)(l,{children:(0,v.jsxs)(a,{children:[(0,v.jsx)(s,{children:`With attachments`}),(0,v.jsx)(o,{children:`Файлы уже прикреплены: удаление по крестику, добавление через скрепку, отправка очищает поле.`}),(0,v.jsx)(i,{block:!0,children:(0,v.jsx)(`div`,{className:m.panel,children:(0,v.jsx)(f,{"data-test-id":d.fieldChat,value:e,onChange:t,handleSubmit:()=>{t(``),r([])},attachment:{files:n,accept:`image/*,.pdf`,onFilesUpload:e=>r(t=>[...t,...e]),onFileDelete:e=>r(t=>t.filter(t=>t!==e))}})})})]})})}var _,v,y,b,x,S,C;t((()=>{p(),_=e(n(),1),c(),u(),h(),v=r(),{expect:y,within:b}=__STORYBOOK_MODULE_TEST__,x={title:`Uikit Product/Inputs & Forms/FieldsPredefined/FieldChat/Examples/WithAttachments`,id:`uikit-product-fieldspredefined-fieldchat-examples-withattachments`,component:f,parameters:{layout:`fullscreen`}},S={tags:[`dev`,`test`],render:()=>(0,v.jsx)(g,{}),play:async({canvasElement:e})=>{await y(b(e).getByTestId(d.fieldChat)).toBeVisible()}},S.parameters={...S.parameters,docs:{...S.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <WithAttachmentsScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldChat)).toBeVisible();
+  }
+}`,...S.parameters?.docs?.source}}},C=[`WithAttachments`]}))();export{S as WithAttachments,C as __namedExportsOrder,x as default};
+//# sourceMappingURL=FieldChat.WithAttachments.stories-C_enUuZO.js.map

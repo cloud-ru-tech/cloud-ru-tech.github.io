@@ -1,0 +1,9 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{c as i,d as a,l as o,m as s,t as c,u as l}from"./iframe-C2bZDhP2.js";import{E as u,M as d,j as f,t as p}from"./src-Ct1sQlu6.js";function m(e){let{showResendCode:t,resendCode:n,...r}=e,[c,d]=(0,h.useState)(y);(0,h.useEffect)(()=>{if(!t||c<=0)return;let e=window.setTimeout(()=>d(e=>e-1),1e3);return()=>window.clearTimeout(e)},[t,c]);let f=()=>d(y);return(0,g.jsx)(l,{children:(0,g.jsxs)(a,{width:`narrow`,children:[(0,g.jsx)(s,{children:`Playground`}),(0,g.jsx)(o,{children:`OTP-поле: ввод кода по ячейкам, автопереход фокуса, вставка кода целиком.`}),(0,g.jsx)(i,{block:!0,children:(0,g.jsx)(u,{...r,resendCode:t?{onResend:f,secondsToNextResend:c}:void 0})})]})})}var h,g,_,v,y,b,x,S;t((()=>{p(),h=e(n(),1),c(),d(),g=r(),{expect:_,within:v}=__STORYBOOK_MODULE_TEST__,y=8,b={title:`Uikit Product/Inputs & Forms/FieldsPredefined/FieldCode`,id:`uikit-product-fieldspredefined-fieldcode`,component:u,parameters:{layout:`fullscreen`},args:{codeLength:6,label:`Код подтверждения`,size:`m`,stretchCells:!1,showResendCode:!1,"data-test-id":f.fieldCode},argTypes:{showResendCode:{name:`[Stories]: showResendCode`,control:`boolean`},stretchCells:{control:`boolean`},size:{control:`radio`,options:[`s`,`m`,`l`]},value:{table:{disable:!0}},resendCode:{table:{disable:!0}}},render:m},x={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await _(v(e).getByTestId(f.fieldCode)).toBeVisible()}},x.parameters={...x.parameters,docs:{...x.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldCode)).toBeVisible();
+  }
+}`,...x.parameters?.docs?.source}}},S=[`Playground`]}))();export{x as Playground,S as __namedExportsOrder,b as default};
+//# sourceMappingURL=FieldCode.Playground.stories-DX-dkMK1.js.map
