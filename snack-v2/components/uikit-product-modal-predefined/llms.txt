@@ -48,6 +48,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
 | `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+| `snapPoint` | `SnapPoint` | `0.85` | no | Только mobile: фиксированная позиция bottom sheet по высоте (на desktop игнорируется). Доля вьюпорта, пиксели или viewport-единицы — см. `SnapPoint` из `@cloud-ru/ds-bottom-sheet`. |
 
 ### InputConfirm
 | Prop | Type | Default | Required | Description |
@@ -78,6 +79,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
 | `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+| `snapPoint` | `SnapPoint` | `1` | no | Только mobile: фиксированная позиция bottom sheet по высоте (на desktop игнорируется). Доля вьюпорта, пиксели или viewport-единицы — см. `SnapPoint` из `@cloud-ru/ds-bottom-sheet`. |
 
 ### NoteItem
 | Prop | Type | Default | Required | Description |
@@ -87,6 +89,11 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `surface` | `bottomSheet \| modal` | `modal` | no |  |
 | `title` | `string` | — | yes | Заголовок новости |
 | `video` | `string` | — | no | Видео вместо статичной иллюстрации |
+
+### NoteItemSkeleton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `surface` | `bottomSheet \| modal` | `modal` | no | Поверхность отображения |
 
 ### RecallModal
 | Prop | Type | Default | Required | Description |
@@ -121,6 +128,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `onSlideChange` | `((slide: number) => void)` | — | no | Действие при смене слайда |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
 | `readLaterButtonProps` | `Partial<ButtonProps>` | — | no | Только mobile: дополнительные пропсы action-кнопки "Ознакомиться позже" (на desktop игнорируется). |
+| `snapPoint` | `SnapPoint` | `0.85` | no | Только mobile: фиксированная позиция bottom sheet по высоте (на desktop игнорируется). Доля вьюпорта, пиксели или viewport-единицы — см. `SnapPoint` из `@cloud-ru/ds-bottom-sheet`. |
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`
@@ -131,6 +139,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 - `PolymorphicRef` (alias)
 - `ReleaseNotesContentState` = `data | error | noData`
 - `Size` = `l | m | s`
+- `SnapPoint` (alias)
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### ReleaseNotesContent
@@ -152,8 +161,9 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 ### ReleaseNotesFooter
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `counterLabel` | `string` | — | yes | Текст счётчика «1 из N» (используется на bottomSheet) |
+| `loading` | `boolean` | — | no | Состояние загрузки: количество страниц ещё неизвестно |
 | `onNextPageClick` | `() => void` | — | yes | Следующая страница |
+| `onPageChange` | `(pageIndex: number) => void` | — | yes | Переход на страницу по клику в слайдере (используется на modal) |
 | `onPrevPageClick` | `() => void` | — | yes | Предыдущая страница |
 | `onReadLaterClick` | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes | Действие «Ознакомиться позже» |
 | `pageIndex` | `number` | — | yes | Текущая страница, zero-based |
