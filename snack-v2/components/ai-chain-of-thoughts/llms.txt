@@ -33,11 +33,13 @@ pnpm add @cloud-ru/ds-ai-chain-of-thoughts
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-chain-of-thoughts` | no |  |
 | `defaultOpen` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). По умолчанию `false`. |
-| `duration` | `number` | — | no | Длительность рассуждения в секундах. Форматируется в д/ч/м/с. Скрыта в состоянии `broken`. |
+| `duration` | `number` | — | no | Длительность рассуждения в секундах. Форматируется в д/ч/м/с. |
+| `icon` | `ReactNode` | — | no | Иконка слева от подписи в активном состоянии. По умолчанию — GigaChat, `null` скрывает. Ожидается SVG-иконка: из `@cloud-ru/ds-icons`, `AiIconGiga` или `Sun`; при включённом `shimmer` она заливается волной вместе с подписью. |
 | `inProgress` | `boolean` | `true` | no | Идёт ли рассуждение прямо сейчас. `true` — иконка GigaChat и подпись «Размышляю»; `false` — без иконки и «Размышлял». По умолчанию `true`. |
 | `label` | `ReactNode` | — | no | Подпись заголовка. По умолчанию «Размышляю» / «Размышлял» — по `inProgress`. |
 | `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
 | `open` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpen`. |
+| `shimmer` | `boolean` | `true` | no | Shimmer на подписи «Размышляю» в активном состоянии. По умолчанию `true`. |
 
 ### AiChainOfThoughtsHeadline
 | Prop | Type | Default | Required | Description |
@@ -47,11 +49,16 @@ pnpm add @cloud-ru/ds-ai-chain-of-thoughts
 | `className` | `string` | — | no | Доп. класс корня. |
 | `collapsible` | `boolean` | `false` | no | Рендерить ли chevron-кнопку раскрытия. Управляется родителем (`AiChainOfThoughts` ставит `true`, когда есть раскрываемый контент). В состоянии `broken` chevron не рендерится. По умолчанию `false`. |
 | `data-test-id` | `string` | `ai-chain-of-thoughts-headline` | no |  |
-| `duration` | `number` | — | no | Длительность рассуждения в секундах. Форматируется в д/ч/м/с (ведущие нулевые единицы опускаются, секунды показываются всегда). Скрыта в состоянии `broken`. |
+| `duration` | `number` | — | no | Длительность рассуждения в секундах. Форматируется в д/ч/м/с (ведущие нулевые единицы опускаются, секунды показываются всегда). |
+| `icon` | `ReactNode` | — | no | Иконка слева от подписи в активном состоянии. По умолчанию — GigaChat, `null` скрывает. Ожидается SVG-иконка: из `@cloud-ru/ds-icons`, `AiIconGiga` или `Sun`; при включённом `shimmer` она заливается волной вместе с подписью. |
 | `inProgress` | `boolean` | `true` | no | Идёт ли рассуждение прямо сейчас. `true` — слева иконка GigaChat и подпись «Размышляю» (настоящее время); `false` — без иконки и «Размышлял» (прошедшее время). По умолчанию `true`. |
 | `label` | `ReactNode` | — | no | Подпись заголовка. По умолчанию «Размышляю» / «Размышлял» — по `inProgress`. |
 | `onOpenChange` | `((open: boolean) => void)` | — | no | Клик по chevron'у. Получает новое значение `open`. |
 | `open` | `boolean` | `false` | no | Раскрытое состояние — задаёт направление chevron'а. По умолчанию `false`. |
+| `shimmer` | `boolean` | `true` | no | Shimmer на подписи «Размышляю» в активном состоянии. По умолчанию `true`. |
+
+### HEADLINE_ICON_SIZE
+_Нет публичных пропсов._
 
 ## Примеры
 
