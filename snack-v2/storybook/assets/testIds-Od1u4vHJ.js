@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t}from"./src-D8KTm3tt.js";var n,r=e((()=>{t(),n={customChildren:`custom-children`}}));export{r as n,n as t};
-//# sourceMappingURL=testIds-Od1u4vHJ.js.map
