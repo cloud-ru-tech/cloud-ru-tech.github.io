@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-DyMJH5nk.js";import{a as c,i as l,o as u,r as d,s as f,t as p}from"./presets-D3qej5Rj.js";import{n as m,t as h}from"./testIds-OOPycx5f.js";var g,_,v,y,b,x;e((()=>{u(),o(),m(),c(),g=t(),{expect:_,within:v}=__STORYBOOK_MODULE_TEST__,y={title:`AI/Process & motion/AiChainOfThoughts/AiChainOfThoughts`,id:`ai-aichainofthoughts-aichainofthoughts`,component:f,parameters:{layout:`fullscreen`},args:{inProgress:!0,broken:!1,duration:p,defaultOpen:!0,shimmer:!0,children:`content`,"data-test-id":h.root},argTypes:{open:{table:{disable:!0}},onOpenChange:{table:{disable:!0}},icon:{control:`select`,options:Object.keys(d),mapping:d},label:{control:`text`},brokenMessage:{control:`text`},children:{control:`select`,options:[`none`,`content`],mapping:{none:void 0,content:l}}},render:e=>(0,g.jsx)(s,{children:(0,g.jsxs)(r,{width:`narrow`,children:[(0,g.jsx)(a,{children:`Playground`}),(0,g.jsx)(i,{children:`Цепочка рассуждений агента: сворачиваемый заголовок «Размышляю» с длительностью и список строк-инструментов под ним.`}),(0,g.jsx)(n,{block:!0,children:(0,g.jsx)(f,{...e})})]})})},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await _(v(e).getByTestId(h.root)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Playground`]}))();export{b as Playground,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=AiChainOfThoughts.Playground.stories-CXmzQM6P.js.map
