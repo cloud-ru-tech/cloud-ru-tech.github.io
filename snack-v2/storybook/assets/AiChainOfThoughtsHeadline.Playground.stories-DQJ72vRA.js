@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{c as n,d as r,l as i,m as a,t as o,u as s}from"./iframe-C9_hbJyc.js";import{a as c,l,o as u,r as d,t as f}from"./presets-B3-DvYfH.js";import{n as p,t as m}from"./testIds-4S-a5GbB.js";var h,g,_,v,y,b,x;e((()=>{u(),o(),c(),p(),h=t(),{expect:g,fn:_,within:v}=__STORYBOOK_MODULE_TEST__,y={title:`AI/Process & motion/AiChainOfThoughts/AiChainOfThoughtsHeadline`,id:`ai-aichainofthoughts-aichainofthoughtsheadline`,component:l,parameters:{layout:`fullscreen`},args:{inProgress:!0,broken:!1,duration:f,collapsible:!0,open:!1,shimmer:!0,onOpenChange:_(),"data-test-id":m.headline},argTypes:{onOpenChange:{table:{disable:!0}},icon:{control:`select`,options:Object.keys(d),mapping:d},label:{control:`text`},brokenMessage:{control:`text`}},render:e=>(0,h.jsx)(s,{children:(0,h.jsxs)(r,{width:`narrow`,children:[(0,h.jsx)(a,{children:`Playground`}),(0,h.jsx)(i,{children:"Заголовок цепочки рассуждений: иконка GigaChat (или `icon`), подпись «Размышляю» / «Размышлял» с опциональным shimmer, длительность и chevron."}),(0,h.jsx)(n,{block:!0,children:(0,h.jsx)(l,{...e})})]})})},b={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await g(v(e).getByTestId(m.headline)).toBeVisible()}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.headline)).toBeVisible();
+  }
+}`,...b.parameters?.docs?.source}}},x=[`Playground`]}))();export{b as Playground,x as __namedExportsOrder,y as default};
+//# sourceMappingURL=AiChainOfThoughtsHeadline.Playground.stories-DQJ72vRA.js.map
