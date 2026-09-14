@@ -101,9 +101,9 @@ _Нет публичных пропсов._
 | `aria-label` | `string` | — | no |  |
 | `checked` | `boolean` | `false` | no | Будет ли ячейка попадать в выбранный диапазон. |
 | `data-test-id` | `string` | — | no |  |
-| `hovered` | `boolean` | `false` | no | Hover-состояние (управляется родителем по mouseEnter). |
+| `hovered` | `boolean` | `false` | no | Hover-состояние (управляется родителем по pointerEnter). |
 | `onClick` | `(() => void)` | — | no |  |
-| `onMouseEnter` | `(() => void)` | — | no |  |
+| `onPointerEnter` | `((event: PointerEvent<HTMLButtonElement>) => void)` | — | no |  |
 
 ### TableSelectSettingsGrid
 | Prop | Type | Default | Required | Description |
