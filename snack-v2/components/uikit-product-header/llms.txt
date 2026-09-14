@@ -39,7 +39,6 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `isMobile` | `boolean` | — | no |  |
 | `loading` | `boolean` | — | no | Флаг загрузки данных |
 | `onActiveSegmentChange` | `((segmentId: string) => void)` | — | no | Колбэк смены активного сегмента правой панели. |
-| `onClose` | `(() => void)` | — | no |  |
 | `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
 | `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
 | `onSegmentServiceClick` | `((service: InnerLink, e?: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбэк клика по карточке сервиса в сегменте. |
