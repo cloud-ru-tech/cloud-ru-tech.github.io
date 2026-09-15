@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiFieldRequest.BPKVPdmG.js";var r=e();function i(){return(0,r.jsx)(n,{title:`Удалить виртуальную машину?`,content:`Диски будут удалены вместе с машиной.`,hint:`Подсказка под панелью`,appearance:t.Primary,primaryAction:{label:`Подтвердить`,loading:!0},secondaryAction:{label:`Отмена`}})}export{i as Loading};

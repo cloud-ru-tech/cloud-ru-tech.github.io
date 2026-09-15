@@ -1,0 +1,132 @@
+﻿# @cloud-ru/ds-ai-field-request
+
+> Панель запроса ответа человека вместо AI-поля ввода: заголовок, слот контента, раскрытие и кнопки действий.
+
+Docs: /snack-v2/components/ai-field-request/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-field-request
+```
+
+## Когда использовать
+
+- Нужна панель подтверждения / опросника на месте AI-поля ввода.
+- Контент приходит снаружи (текст сейчас, форма или шаги опросника позже).
+
+### Когда не нужен
+
+- Инлайн-баннер подсказки у поля — `@cloud-ru/ds-ai-field-banner` / `@cloud-ru/ds-ai-field-notice`.
+- Модалка или drawer с произвольным футером — `@cloud-ru/ds-modal` / `@cloud-ru/ds-drawer`.
+
+## API
+
+### AiFieldRequest
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `destructive \| primary` | `primary` | no | Цвет основной кнопки: `primary` или `destructive`. По умолчанию `primary`. |
+| `className` | `string` | — | no | Доп. класс корня. |
+| `content` | `ReactNode` | — | no | Слот тела панели (текст, форма, опросник). |
+| `data-test-id` | `string` | `ai-field-request` | no |  |
+| `hint` | `ReactNode` | — | no | Подпись под карточкой. Не рендерится, если не задана. |
+| `maxHeight` | `number` | `88` | no | Максимальная высота свёрнутого содержимого в px. По умолчанию `88`. Слот принимает любой ReactNode, поэтому предел задаётся высотой, а не числом строк. Для строкового `content` высота округляется вниз до целого числа строк, чтобы не резать глифы; для любого другого содержимого это обычный предел по высоте. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Колбэк смены раскрытия. |
+| `open` | `boolean` | — | no | Controlled — раскрыто содержимое. Без `open` компонент uncontrolled, стартует свёрнутым. |
+| `primaryAction` | `AiFieldRequestPrimaryAction` | — | yes | Основная кнопка действий: подпись, клик и состояние отправки. Обязательный пропс. |
+| `secondaryAction` | `AiFieldRequestAction` | — | yes | Вторичная кнопка действий: подпись и клик. Обязательный пропс. |
+| `title` | `ReactNode` | — | yes | Заголовок панели. Максимум две строки с обрезкой. Обязательный пропс. |
+
+#### Related types
+- `AiFieldRequestAction` (interface)
+- `AiFieldRequestPrimaryAction` (interface)
+- `Appearance` = `destructive | primary`
+
+## Примеры
+
+### Default
+
+```tsx
+import { AiFieldRequest, APPEARANCE } from '@cloud-ru/ds-ai-field-request';
+
+const CONTENT =
+  'Виртуальная машина будет остановлена и удалена вместе с дисками. Снимки и резервные копии останутся доступны в хранилище, восстановить машину из них можно в любой момент.';
+
+export function Default() {
+  return (
+    <AiFieldRequest
+      title='Удалить виртуальную машину?'
+      content={CONTENT}
+      hint='Подсказка под панелью'
+      appearance={APPEARANCE.Primary}
+      primaryAction={{ label: 'Подтвердить' }}
+      secondaryAction={{ label: 'Отмена' }}
+    />
+  );
+}
+```
+
+### Destructive
+
+```tsx
+import { AiFieldRequest, APPEARANCE } from '@cloud-ru/ds-ai-field-request';
+
+export function Destructive() {
+  return (
+    <AiFieldRequest
+      title='Удалить виртуальную машину?'
+      content='Диски будут удалены вместе с машиной. Операция необратима.'
+      hint='Подсказка под панелью'
+      appearance={APPEARANCE.Destructive}
+      primaryAction={{ label: 'Удалить' }}
+      secondaryAction={{ label: 'Отмена' }}
+    />
+  );
+}
+```
+
+### Expanded
+
+```tsx
+import { AiFieldRequest, APPEARANCE } from '@cloud-ru/ds-ai-field-request';
+import { useState } from 'react';
+
+const CONTENT =
+  'Виртуальная машина будет остановлена и удалена вместе с дисками. Снимки и резервные копии останутся доступны в хранилище, восстановить машину из них можно в любой момент. Сетевые интерфейсы и публичные адреса освободятся сразу после удаления.';
+
+export function Expanded() {
+  const [open, setOpen] = useState(true);
+
+  return (
+    <AiFieldRequest
+      title='Удалить виртуальную машину?'
+      content={CONTENT}
+      hint='Подсказка под панелью'
+      appearance={APPEARANCE.Primary}
+      open={open}
+      onOpenChange={setOpen}
+      primaryAction={{ label: 'Подтвердить' }}
+      secondaryAction={{ label: 'Отмена' }}
+    />
+  );
+}
+```
+
+### Loading
+
+```tsx
+import { AiFieldRequest, APPEARANCE } from '@cloud-ru/ds-ai-field-request';
+
+export function Loading() {
+  return (
+    <AiFieldRequest
+      title='Удалить виртуальную машину?'
+      content='Диски будут удалены вместе с машиной.'
+      hint='Подсказка под панелью'
+      appearance={APPEARANCE.Primary}
+      primaryAction={{ label: 'Подтвердить', loading: true }}
+      secondaryAction={{ label: 'Отмена' }}
+    />
+  );
+}
+```
