@@ -34,6 +34,7 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 | `className` | `string` | — | no | CSS-класс корневого элемента |
 | `expandable` | `{ value: boolean; onClick(): void; buttonRef?: RefObject<HTMLButtonElement>; }` | — | no | Кнопка раскрытия |
 | `favorite` | `(FavoriteProps & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка «Избранное» |
+| `onTooltipOpenChange` | `((isOpen: boolean) => void)` | — | no | Callback, вызываемый при открытии тултипа |
 | `tooltip` | `(Omit<TooltipProps, "children"> & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка info с тултипом |
 
 #### Related types

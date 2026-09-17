@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{d as t,f as n}from"./src-mxi72oQQ.js";var r,i=e((()=>{n(),r={...t,drawer:{triggerOpen:`notification-panel-drawer__trigger`}}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-BaeLg_fH.js.map
