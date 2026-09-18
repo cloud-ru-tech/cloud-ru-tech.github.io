@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={root:`stepper`,next:`stepper-next`,prev:`stepper-prev`,example:`stepper-example`,step:`stepper_element-step`}}));export{n,t};
+//# sourceMappingURL=testIds-CX4qu5K12.js.map
