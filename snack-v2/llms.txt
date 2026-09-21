@@ -85,7 +85,7 @@
 - [@cloud-ru/ds-adaptive](/snack-v2/components/adaptive/llms.txt): React Context текущей раскладки (layoutType) — переключает компоненты дизайн-системы между mobile и desktop поверхностями.
 - [@cloud-ru/ds-context-kit](/snack-v2/components/context-kit/llms.txt): Основа всех сквозных провайдеров дизайн-системы — версионно-устойчивый React-контекст-синглтон поверх useSyncExternalStore, безопасный для SSR и микрофронтов.
 - [@cloud-ru/ds-drag-and-drop](/snack-v2/components/drag-and-drop/llms.txt): Визуальные примитивы перетаскивания — поверхность копии, линия вставки и зона приёма.
-- [@cloud-ru/ds-fonts](/snack-v2/components/fonts/llms.txt): Подключение фирменных шрифтов SB Sans Interface, Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
+- [@cloud-ru/ds-fonts](/snack-v2/components/fonts/llms.txt): Подключение фирменных шрифтов SB Sans (Interface, Text, Display, Text Mono), Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
 - [@cloud-ru/ds-icon-predefined](/snack-v2/components/icon-predefined/llms.txt): SVG-иконка с предустановленным оформлением — цветной подложкой, размером и формой контейнера.
 - [@cloud-ru/ds-icons](/snack-v2/components/icons/llms.txt): Наборы интерфейсных иконок React и компонент Sprite для SVG-спрайтов.
 - [@cloud-ru/ds-input-private](/snack-v2/components/input-private/llms.txt): Базовая обёртка `<input>` с состояниями, иконками, кнопкой очистки и счётчиком — фундамент для публичных полей ввода (Search, FieldText и пр.).
