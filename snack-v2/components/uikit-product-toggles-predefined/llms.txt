@@ -32,7 +32,7 @@ pnpm add @cloud-ru/ds-uikit-product-toggles-predefined
 | `data-test-id` | `string` | — | no |  |
 | `description` | `string` | — | no | Основной текст под заголовком |
 | `disabled` | `boolean` | `false` | no | Заблокированное состояние: интерактив отключён |
-| `emblem` | `Emblem` | — | no | Ведущая эмблема. Передаются только параметры — сам `IconPredefined` встроен в компонент; `size` эмблемы выводится из `size` карточки. |
+| `emblem` | `Emblem` | — | no | Ведущая эмблема. Передаются только параметры — сам `IconPredefined` встроен в компонент; `size` эмблемы выводится из `size` карточки. По умолчанию `background: true` и `shape: 'squared'`, как в макете. |
 | `promoBadge` | `string \| Pick<PromoTagProps, "label" \| "appearance">` | — | no | Промо-бейдж в правом верхнем углу карточки |
 | `size` | `l \| m \| s` | `m` | no | Размер карточки — масштабирует padding, gap, типографику и `radius` контейнера `@cloud-ru/ds-card` |
 | `title` | `string` | — | yes | Заголовок карточки |

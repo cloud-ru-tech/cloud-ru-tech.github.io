@@ -34,8 +34,10 @@ pnpm add @cloud-ru/ds-pagination
 |------|------|---------|----------|-------------|
 | `activated` | `boolean` | — | no |  |
 | `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
 | `href` | `string` | — | no |  |
-| `label` | `string \| number` | — | yes |  |
+| `icon` | `ReactNode` | — | no | Иконка вместо текста — кнопки «назад» / «вперёд» (Figma `buttonPaginationS/M`). |
+| `label` | `string \| number` | — | no |  |
 | `onClick` | `(event: MouseEvent<HTMLButtonElement \| HTMLAnchorElement, MouseEvent>) => void` | — | yes |  |
 | `setButtonRef` | `Ref<HTMLButtonElement \| HTMLAnchorElement>` | — | no |  |
 

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiFieldNotice.zqjH0pid.js";import{n as r}from"./AiFieldBanner.2odNQBP3.js";var i=e();function a(){return(0,i.jsx)(n,{size:r.S,variant:t.Support,onActionClick:()=>void 0})}export{a as Support};

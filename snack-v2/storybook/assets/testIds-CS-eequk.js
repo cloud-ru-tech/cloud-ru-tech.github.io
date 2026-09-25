@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{d as t}from"./src-Bo1rmC5T.js";var n,r,i,a,o,s,c,l,u,d=e((()=>{n=`_wrapper_d3fmg_4`,r=`_contentCard_d3fmg_10`,i=`_avatarPlaceholder_d3fmg_22`,a=`_textAlignLeft_d3fmg_29`,o=`_textAlignRight_d3fmg_33`,s=`_textContainer_d3fmg_37`,c=`_textContent_d3fmg_49`,l=`_skeletonOverlay_d3fmg_53`,u={wrapper:n,contentCard:r,avatarPlaceholder:i,textAlignLeft:a,textAlignRight:o,textContainer:s,textContent:c,skeletonOverlay:l}})),f=e((()=>{t()}));export{d as n,u as r,f as t};
+//# sourceMappingURL=testIds-CS-eequk.js.map

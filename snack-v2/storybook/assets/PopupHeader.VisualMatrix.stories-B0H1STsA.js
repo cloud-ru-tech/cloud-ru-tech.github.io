@@ -1,0 +1,13 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o}from"./iframe-qs8RgOhH.js";import{a as s,t as c}from"./src-CHNzQsqP.js";import{f as l,t as u}from"./src-DItGAddj.js";import{n as d,t as f}from"./frame.module-YVPw5X00.js";var p,m,h,g,_,v;e((()=>{c(),u(),o(),d(),p=t(),m=[{label:`title only`,props:{title:`Заголовок окна`}},{label:`title + subtitle`,props:{title:`Заголовок окна`,subtitle:`Пояснение под заголовком в одну–две строки`}},{label:`title + slotSecondTitle`,props:{title:`Заголовок окна`,slotSecondTitle:(0,p.jsx)(s,{size:`m`,fullWidth:!0,view:`outline`,appearance:`neutral`,label:`Поиск / SegmentControl`})}},{label:`back button + action`,props:{title:`Заголовок окна`,onBackButtonClick:()=>{},actionButton:(0,p.jsx)(s,{size:`s`,view:`outline`,appearance:`neutral`,label:`Действие`})}},{label:`title + slotAfterTitle`,props:{title:`Заголовок окна`,slotAfterTitle:(0,p.jsx)(s,{size:`s`,view:`function`,label:`Beta`})}}],h=(e,t)=>(0,p.jsxs)(`figure`,{className:f.item,children:[(0,p.jsx)(`figcaption`,{className:f.caption,children:e}),(0,p.jsxs)(`div`,{className:f.frame,children:[(0,p.jsx)(l,{title:`Заголовок окна`,...t}),(0,p.jsxs)(`div`,{className:f.bodyStub,children:[(0,p.jsx)(`span`,{className:f.bodyLine}),(0,p.jsx)(`span`,{className:f.bodyLine})]})]})]},e),g={title:`Snack/Foundation & utilities/PopupPrivate/PopupHeader`,id:`components-popupprivate-popupheader`,component:l,parameters:{layout:`fullscreen`,controls:{disable:!0},figma:{disable:!0}}},_={tags:[`test`,`dev`],render:()=>(0,p.jsx)(r,{children:(0,p.jsxs)(a,{width:`wide`,children:[(0,p.jsx)(i,{children:`PopupHeader`}),(0,p.jsx)(n,{children:`Шапка overlay-слоя внутри рамки окна: заголовок, подзаголовок, кнопка «назад» и action-слот.`}),(0,p.jsx)(`div`,{className:f.grid,children:m.map(e=>h(e.label,e.props))})]})})},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+  tags: ['test', 'dev'],
+  render: () => <DemoPage>
+      <DemoPanel width='wide'>
+        <DemoTitle>PopupHeader</DemoTitle>
+        <DemoHint>
+          Шапка overlay-слоя внутри рамки окна: заголовок, подзаголовок, кнопка «назад» и action-слот.
+        </DemoHint>
+        <div className={frame.grid}>{CONFIGS.map(c => preview(c.label, c.props))}</div>
+      </DemoPanel>
+    </DemoPage>
+}`,..._.parameters?.docs?.source}}},v=[`VisualMatrix`]}))();export{_ as VisualMatrix,v as __namedExportsOrder,g as default};
+//# sourceMappingURL=PopupHeader.VisualMatrix.stories-B0H1STsA.js.map

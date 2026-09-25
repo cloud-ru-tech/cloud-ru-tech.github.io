@@ -596,6 +596,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `canCreate` | `boolean` | — | yes |  |
 | `createButtonLabel` | `string` | — | yes |  |
 | `onClick` | `() => void` | — | yes |  |
+| `size` | `l \| m \| s` | — | yes |  |
 
 ### TextAreaActionsFooter
 | Prop | Type | Default | Required | Description |

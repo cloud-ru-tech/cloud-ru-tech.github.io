@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./CardVacancy.BirWfPPv.js";var r=e();function i(){return(0,r.jsx)(n,{href:`#lead`,appearance:t.Primary,title:`Lead Product Designer`,content:`Hybrid · Full-time`})}export{i as Primary};

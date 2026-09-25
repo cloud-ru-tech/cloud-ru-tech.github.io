@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o,u as s}from"./iframe-qs8RgOhH.js";import{i as c,n as l,t as u}from"./src-D5eQgzMO.js";var d,f=e((()=>{d={root:`search-private`}})),p,m,h,g,_,v,y,b;e((()=>{u(),o(),f(),p=t(),{useArgs:m}=__STORYBOOK_MODULE_PREVIEW_API__,{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_=e=>{let[{value:t},o]=m();return(0,p.jsx)(r,{children:(0,p.jsxs)(a,{children:[(0,p.jsx)(i,{children:`Playground`}),(0,p.jsx)(n,{children:`Приватная база поискового инпута без декора.`}),(0,p.jsx)(s,{align:`center`,children:(0,p.jsx)(l,{...e,value:t??``,onChange:e=>o({value:e})})})]})})},v={title:`Snack/Foundation & utilities/SearchPrivate`,id:`components-searchprivate`,component:l,parameters:{layout:`fullscreen`,figma:{disable:!0}},render:_,args:{size:c.S,value:``,placeholder:`Поиск`,disabled:!1,loading:!1,showClearButton:!0,"data-test-id":d.root},argTypes:{size:{control:`radio`,options:Object.values(c)},placeholder:{control:`text`},disabled:{control:`boolean`},loading:{control:`boolean`},showClearButton:{control:`boolean`},afterContent:{table:{disable:!0}},onChange:{table:{disable:!0}},onKeyDown:{table:{disable:!0}},onSubmit:{table:{disable:!0}}}},y={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(d.root)).toBeVisible()}},y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.root)).toBeVisible();
+  }
+}`,...y.parameters?.docs?.source}}},b=[`Playground`]}))();export{y as Playground,b as __namedExportsOrder,v as default};
+//# sourceMappingURL=SearchPrivate.Playground.stories-WHE0GuMt.js.map

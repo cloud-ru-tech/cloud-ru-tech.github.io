@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.CQclQj-0.js";import{n,t as r}from"./Dropdown.CaUwUrCU.js";var i=e();function a(){return(0,i.jsx)(r,{state:{type:n.Loading},content:null,children:(0,i.jsx)(t,{label:`Загрузка`})})}export{a as Loading};

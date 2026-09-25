@@ -23,7 +23,7 @@ pnpm add @cloud-ru/ds-carousel
 ### Carousel
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `arrows` | `boolean` | `true` | no | Использовать стрелки для переключения страниц |
+| `arrows` | `boolean` | `true` | no | Использовать стрелки для переключения страниц. На mobile по умолчанию скрыты (`CAROUSEL_LAYOUT_PRESETS`), вернуть — через `layoutPresets`. |
 | `autoSwipe` | `number` | — | no | Автоматическое переключение слайдов в секундах |
 | `children` | `ReactElement<any, string \| JSXElementConstructor<any>>[]` | — | yes | Массив айтемов |
 | `className` | `string` | — | no | CSS - класснейм |
@@ -31,6 +31,7 @@ pnpm add @cloud-ru/ds-carousel
 | `data-test-id` | `string` | — | no |  |
 | `gap` | `string` | `var(--dimension-2m)` | no | Расстояние между айтемами |
 | `infiniteScroll` | `boolean` | `false` | no | Цикличная прокрутка |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<CarouselLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива для этого инстанса (deep-merge поверх `CAROUSEL_LAYOUT_PRESETS`). Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
 | `pagination` | `boolean` | `true` | no | Использовать пагинацию для переключения страниц |
 | `scrollBy` | `number` | `Math.trunc(show)` | no | Сдвиг айтемов при смене 1 страницы |
 | `showItems` | `number` | `1` | no | Кол-во отображаемых единовременно айтемов |
@@ -40,7 +41,12 @@ pnpm add @cloud-ru/ds-carousel
 | `transition` | `number` | `0.4` | no | Время переключения 1 страницы (в s) |
 
 #### Related types
+- `CarouselLayoutDefaults` (interface)
 - `ControlsVisibility` = `always | hover`
+- `LayoutPresets` (interface)
+
+### CAROUSEL_LAYOUT_PRESETS
+_Нет публичных пропсов._
 
 ### Control
 | Prop | Type | Default | Required | Description |

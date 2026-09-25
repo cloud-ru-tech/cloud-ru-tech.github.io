@@ -31,10 +31,10 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `Partial<ThemeAppearance>` | — | yes | Оси, переопределяемые в поддереве. Остальные наследуются от ближайшего родителя (слияние). |
 
 #### Related types
-- `Brand` = `brandA | brandB | brandC | brandD | brandE | brandF`
-- `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
+- `Brand` = `cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`
+- `Platform` = `webDesktop | webMobile`
 - `ThemeAppearance` (interface)
 
 ### RootThemeProvider
@@ -49,10 +49,10 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `ThemeAppearance` | — | no | Оформление приложения. Используется в static-режиме (один React-корень: SSR — одно значение на запрос, либо CSR с собственным state, напр. `colorScheme` из `useColorScheme`). Для multi-root (single-spa) — см. `store`. |
 
 #### Related types
-- `Brand` = `brandA | brandB | brandC | brandD | brandE | brandF`
-- `BrandRole` = `alter | alter2 | alter3 | alter4 | main`
+- `Brand` = `cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`
+- `Platform` = `webDesktop | webMobile`
 - `ThemeAppearance` (interface)
 - `ThemeAppearanceStore` (interface)
 
@@ -90,10 +90,13 @@ import { BRAND, Brand, ChildThemeProvider } from '@cloud-ru/ds-theme';
 import { Flex } from '@cloud-ru/ds-uikit-product-flex';
 import { useState } from 'react';
 
-const BRAND_ITEMS = Object.values(BRAND).map(value => ({ value, label: value }));
+const BRAND_ITEMS = [BRAND.CloudConsole, BRAND.SnackUI, BRAND.Gitverse, BRAND.HrGreen, BRAND.SiteBlue].map(value => ({
+  value,
+  label: value,
+}));
 
 export function BrandSwitch() {
-  const [brand, setBrand] = useState<Brand>(BRAND.A);
+  const [brand, setBrand] = useState<Brand>(BRAND.CloudConsole);
 
   return (
     <Flex direction='column' gap='2m' align='flex-start'>
@@ -187,7 +190,7 @@ export function CustomBrandColor() {
 
       {/* brandColor генерирует палитру `--sn-brand-color-primary-*` из одного seed-цвета — акцент
           компонентов ниже перекрашивается вслед за выбором. */}
-      <RootThemeProvider value={{ colorScheme: 'light', brand: 'brandA', brandRole: 'main' }} brandColor={color}>
+      <RootThemeProvider value={{ colorScheme: 'light', brand: 'cloudConsole' }} brandColor={color}>
         <Block>
           <Flex gap='2m' align='center' wrap>
             <Button appearance='primary' label='Действие' />
@@ -234,7 +237,7 @@ export function CustomBrandColorHook() {
       <SegmentControl items={COLOR_ITEMS} value={color} onChange={value => setColor(String(value))} />
 
       <div id={SCOPE_ID}>
-        <RootThemeProvider value={{ colorScheme: 'light', brand: 'brandA', brandRole: 'main' }}>
+        <RootThemeProvider value={{ colorScheme: 'light', brand: 'cloudConsole' }}>
           <Block>
             <Flex gap='2m' align='center' wrap>
               <Button appearance='primary' label='Внутри scope' />

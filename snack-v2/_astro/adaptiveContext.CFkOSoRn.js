@@ -1,0 +1,1 @@
+import{t as e}from"./sharedStoreContext.C-kspYMP.js";import{n as t,t as n}from"./globalStore.CtPQf6kZ.js";var{StoreProvider:r,useStoreValue:i}=e(t.context,n().store);function a(){return i()}export{a as n,r as t};

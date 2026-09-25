@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o,u as s}from"./iframe-qs8RgOhH.js";import{A as c,D as l,f as u,t as d}from"./src-DzOi7lSR.js";import{n as f,t as p}from"./testIds-5JvS1Uqq.js";import{i as m,n as h,r as g,t as _}from"./presets-CD5qU_ab.js";var v,y,b,x,S,C;e((()=>{d(),o(),f(),m(),v=t(),{expect:y,within:b}=__STORYBOOK_MODULE_TEST__,x={title:`AI/Primitives/AiTool/AiToolSimple`,id:`ai-aitool-aitoolsimple`,component:u,parameters:{layout:`fullscreen`},args:{name:h,icon:l.Search,state:c.Pending,description:_,defaultOpen:!1,connector:!1,children:`badges`,"data-test-id":p.simple},argTypes:{open:{table:{disable:!0}},onOpenChange:{table:{disable:!0}},name:{control:`text`},icon:{control:`select`,options:Object.values(l)},description:{control:`text`},children:{control:`select`,options:[`none`,`badges`],mapping:{none:void 0,badges:g}}},render:e=>(0,v.jsx)(r,{children:(0,v.jsxs)(a,{width:`narrow`,children:[(0,v.jsx)(i,{children:`Playground`}),(0,v.jsx)(n,{children:`Компактный инструмент стриминга: иконка типа, имя и chevron; раскрытие показывает описание и бейджи ресурсов.`}),(0,v.jsx)(s,{block:!0,children:(0,v.jsx)(u,{...e})})]})})},S={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await y(b(e).getByTestId(p.simple)).toBeVisible()}},S.parameters={...S.parameters,docs:{...S.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.simple)).toBeVisible();
+  }
+}`,...S.parameters?.docs?.source}}},C=[`Playground`]}))();export{S as Playground,C as __namedExportsOrder,x as default};
+//# sourceMappingURL=AiToolSimple.Playground.stories-m2hqavY4.js.map

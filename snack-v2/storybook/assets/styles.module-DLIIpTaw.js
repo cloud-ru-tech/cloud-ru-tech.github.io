@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s,c,l=e((()=>{t=`_story_cvxe6_4`,n=`_matrix_cvxe6_16`,r=`_cell_cvxe6_23`,i=`_scrollS_cvxe6_28`,a=`_scrollM_cvxe6_39`,o=`_scrollL_cvxe6_50`,s=`_valueHolder_cvxe6_61`,c={story:t,matrix:n,cell:r,scrollS:i,scrollM:a,scrollL:o,valueHolder:s}}));export{c as n,l as t};
+//# sourceMappingURL=styles.module-DLIIpTaw.js.map

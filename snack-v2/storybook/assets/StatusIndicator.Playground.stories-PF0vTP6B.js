@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o,u as s}from"./iframe-qs8RgOhH.js";import{i as c,l,o as u,s as d,t as f}from"./src-CiSoRuzB.js";import{t as p}from"./testIds-BGhYYWo2.js";var m,h,g,_,v,y;e((()=>{o(),f(),p(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`Snack/Data display/Status/StatusIndicator`,id:`components-status-statusindicator`,component:c,parameters:{layout:`fullscreen`},render:e=>(0,m.jsx)(r,{children:(0,m.jsxs)(a,{children:[(0,m.jsx)(i,{children:`Playground`}),(0,m.jsx)(n,{children:`Точечный индикатор статуса без подписи, варианты по size и appearance.`}),(0,m.jsx)(s,{align:`center`,children:(0,m.jsx)(c,{...e})})]})}),args:{size:d.S,appearance:u.Neutral,"data-test-id":l.statusIndicator.root},argTypes:{size:{control:`select`,options:Object.values(d),description:`Размер индикатора`},appearance:{control:`select`,options:Object.values(u),description:`Внешний вид (цветовая схема)`},className:{table:{disable:!0}},"data-test-id":{table:{disable:!0}}}},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(l.statusIndicator.root)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.statusIndicator.root)).toBeVisible();
+  }
+}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
+//# sourceMappingURL=StatusIndicator.Playground.stories-PF0vTP6B.js.map

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Sun.DDhR9N17.js";var n=e();function r(){return(0,n.jsx)(t,{size:`m`})}export{r as SunMedium};

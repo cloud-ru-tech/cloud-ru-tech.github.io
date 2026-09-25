@@ -1,1 +1,0 @@
-var e={Comfort:`comfort`,Compact:`compact`,Spacious:`spacious`},t={A:`brandA`,B:`brandB`,C:`brandC`,D:`brandD`,E:`brandE`,F:`brandF`};export{e as n,t};

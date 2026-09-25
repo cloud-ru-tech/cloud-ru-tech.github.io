@@ -1,1 +1,0 @@
-import{n as e,t}from"./useLayoutDefaults.BZm9uECH.js";var n={mobile:{autoFocus:!1}};function r(r=!1,i){return t({autoFocus:!1},e(n,i),{autoFocus:r}).autoFocus}export{r as t};

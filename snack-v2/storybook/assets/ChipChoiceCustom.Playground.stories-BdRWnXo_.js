@@ -1,0 +1,9 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,m as a,p as o,t as s,u as c}from"./iframe-qs8RgOhH.js";import{o as l,t as u}from"./src-6bXoMmzW.js";import{n as d,t as f}from"./testIds-rYjH_ezV.js";import{a as p,i as m,n as h,t as g}from"./playground.helpers-CRpaFzcy.js";import{n as _,t as v}from"./styles.module-1GYeUiBr.js";var y,b,x,S,C,w,T,E;e((()=>{u(),s(),d(),m(),v(),y=t(),{expect:b,within:x}=__STORYBOOK_MODULE_TEST__,S=[`Alpha`,`Beta`,`Gamma`],C=e=>{let t=p({defaultValue:void 0});return(0,y.jsx)(r,{children:(0,y.jsxs)(o,{children:[(0,y.jsx)(i,{children:`Playground (Custom)`}),(0,y.jsx)(n,{children:`Чип-фильтр с произвольным содержимым выпадающего меню.`}),(0,y.jsx)(c,{align:`center`,children:(0,y.jsx)(a,{width:`fit`,children:(0,y.jsx)(l.Custom,{...e,...t,content:({closeDroplist:e,value:t,onChange:n})=>(0,y.jsx)(`div`,{className:_.customContent,children:S.map(r=>(0,y.jsx)(`button`,{type:`button`,className:t===r?`${_.customOption} ${_.customOptionSelected}`:_.customOption,onClick:()=>{n?.(r),e()},children:r},r))}),valueRender:e=>e??null})})})]})})},w={title:`Snack/Inputs & Forms/Chips/ChipChoice/Custom`,id:`components-chips-chipchoice-custom`,component:l.Custom,parameters:{layout:`fullscreen`},render:C,args:{...g,label:`Custom`,"data-test-id":f.chipChoice.root},argTypes:{...h}},T={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await b(x(e).getByTestId(f.chipChoice.root)).toBeVisible()}},T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.chipChoice.root)).toBeVisible();
+  }
+}`,...T.parameters?.docs?.source}}},E=[`Playground`]}))();export{T as Playground,E as __namedExportsOrder,w as default};
+//# sourceMappingURL=ChipChoiceCustom.Playground.stories-BdRWnXo_.js.map

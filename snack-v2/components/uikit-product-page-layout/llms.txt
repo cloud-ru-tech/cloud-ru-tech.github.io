@@ -64,6 +64,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
 | `size` | `l \| m \| s \| xs` | — | no | Размер Размер триггера; для `xs` применяется кнопка `s`. |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 | `target` | `HTMLAttributeAnchorTarget` | — | no |  |
 | `tooltip` | `TooltipProps` | — | no |  |
 | `triggerClassName` | `string` | — | no | CSS-класс триггера |
@@ -143,6 +144,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`

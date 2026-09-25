@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Logo.7gvD_Piu.js";var n=e();function r(){return(0,n.jsx)(t,{href:`#`,loading:!0})}export{r as Loading};

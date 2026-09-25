@@ -1,0 +1,1 @@
+import{n as e}from"./appearanceContext.31xKCmTp.js";import{n as t}from"./getThemeClassnames.B-H1OSye.js";function n(n){let{appearance:r}=e();return t({...r,...n})}export{n as t};

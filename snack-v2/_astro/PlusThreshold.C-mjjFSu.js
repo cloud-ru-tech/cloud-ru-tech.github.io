@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Counter.BrFeREKd.js";var n=e();function r(){return(0,n.jsx)(t,{value:42,variant:`count-plus`,plusLimit:10})}export{r as PlusThreshold};

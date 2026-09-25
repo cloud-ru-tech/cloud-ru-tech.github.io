@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Spinner.Cdn5WFsR.js";import{t as n}from"./Canvas.DX0PjbC6.js";import{t as r}from"./props.DZgaNSvN.js";var i=e();function a(){return(0,i.jsx)(n,{component:t,componentDoc:r.Spinner,defaultProps:{size:`s`}})}export{a as SpinnerDemo};

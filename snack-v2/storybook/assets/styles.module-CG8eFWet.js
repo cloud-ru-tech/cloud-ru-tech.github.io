@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s=e((()=>{t=`_matrix_61wnr_4`,n=`_narrow_61wnr_9`,r=`_wide_61wnr_13`,i=`_variantList_61wnr_17`,a=`_bodyBlock_61wnr_23`,o={matrix:t,narrow:n,wide:r,variantList:i,bodyBlock:a}}));export{o as n,s as t};
+//# sourceMappingURL=styles.module-CG8eFWet.js.map

@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s,c,l=e((()=>{t=`_externalWrapper_1a52y_7`,n=`_matrix_1a52y_22`,r=`_wrapper_1a52y_27`,i=`_column_1a52y_35`,a=`_cell_1a52y_41`,o=`_sampleContent_1a52y_46`,s=`_draggable_1a52y_56`,c={externalWrapper:t,matrix:n,wrapper:r,column:i,cell:a,sampleContent:o,draggable:s}}));export{c as n,l as t};
+//# sourceMappingURL=styles.module-B1Krb7wR.js.map

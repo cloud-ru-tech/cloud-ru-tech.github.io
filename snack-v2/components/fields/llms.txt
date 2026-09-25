@@ -347,6 +347,7 @@ pnpm add @cloud-ru/ds-fields
 | `fieldClassName` | `string` | — | no | CSS-класс оболочки поля |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
 | `formatSelected` | `((selected: { id: ItemId; label: string; }[]) => string)` | `— список лейблов через `, `` | no | Форматтер строки выбранных значений (используется, если `chips=false`). |
 | `hint` | `string` | — | no | Подсказка |
 | `iconBefore` | `ReactNode` | — | no | Иконка перед текстом |
@@ -432,6 +433,7 @@ pnpm add @cloud-ru/ds-fields
 | `onMouseEnter` | `(() => void)` | — | no | Колбек входа курсора в поле |
 | `onMouseLeave` | `(() => void)` | — | no | Колбек выхода курсора из поля |
 | `readonly` | `boolean` | — | no | Только для чтения |
+| `resizable` | `boolean` | — | no | Многострочное поле с ручным изменением высоты — поднимает минимальную высоту контейнера |
 | `size` | `l \| m \| s` | `m` | no | Размер поля |
 | `style` | `CSSProperties` | — | no | Inline-стиль оболочки (например, CSS-переменные высоты) |
 | `validationState` | `default \| error \| success \| warning` | `default` | no | Состояние валидации — тонирует acrylic-фон |

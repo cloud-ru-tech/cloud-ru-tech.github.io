@@ -969,6 +969,13 @@ _Нет публичных пропсов._
 | `showBulkCheckbox` | `boolean` | `true` | no | Показывать чекбокс слева (Figma: showBulkCheckbox) |
 | `totalCount` | `number` | — | no | Общее количество элементов (для подписи Selected: N of M) |
 
+### TreeChevronButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no |  |
+| `expanded` | `boolean` | — | yes | Раскрыта ли ветка: шеврон повёрнут вниз |
+| `onClick` | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes |  |
+
 ### TreeLine
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|

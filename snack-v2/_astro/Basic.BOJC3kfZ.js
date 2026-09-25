@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Block.Cx8kCIed.js";var n=e();function r(){return(0,n.jsx)(t,{children:(0,n.jsx)(`span`,{children:`Your content here`})})}export{r as Basic};

@@ -19,6 +19,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | `isAccordion` | `boolean` | `false` | no |  |
 | `loading` | `boolean` | — | yes | Флаг загрузки квот |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 ### ProjectHeader
 | Prop | Type | Default | Required | Description |
@@ -40,6 +41,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | `loading` | `boolean` | — | yes | Флаг загрузки квот |
 | `onRefresh` | `() => void` | — | yes | Колбек на обновление списка квот при ошибке |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 ### QuotaError
 | Prop | Type | Default | Required | Description |
@@ -78,6 +80,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`
@@ -105,6 +108,8 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `loading` | `boolean` | — | yes |  |
+| `rowCount` | `number` | `4` | no | Количество строк сетки, заполняемых заглушками. |
+| `singleColumn` | `boolean` | `false` | no | Сетка в одну колонку: строка = одна карточка вместо двух. |
 
 ### QuotaWidgetContent
 | Prop | Type | Default | Required | Description |
@@ -124,6 +129,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 #### Related types
 - `QuotaItem` (interface)
@@ -143,6 +149,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 | `onWidgetOpen` | `(() => void)` | — | no | Колбек открытия виджета квот |
 | `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
+| `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 
 #### Related types
 - `QuotaItem` (interface)

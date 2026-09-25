@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Link.LF0F5Hb6.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Документация API`,href:`https://example.com/docs`})}export{r as Basic};
