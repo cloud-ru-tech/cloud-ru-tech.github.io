@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./constants.zKjdY0rF.js";import{t as n}from"./demoSurface.module.CN6I0XjR.js";import{t as r}from"./PriceSummaryControlled.M_yULN8x.js";var i=e();function a(){return(0,i.jsx)(`div`,{className:n.surface,children:(0,i.jsx)(r,{...t,periodOptions:[...t.periodOptions]})})}export{a as PriceSummaryDemo};

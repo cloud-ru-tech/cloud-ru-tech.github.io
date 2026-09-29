@@ -29,7 +29,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ### CardActionsSurface
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actionsSize` | `m \| s` | `m` | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
 | `actionsVisibility` | `always \| hover` | `hover` | no | Формат отображения действий: всегда или при наведении и фокусе |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
 | `expandable` | `{ value: boolean; onClick(): void; buttonRef?: RefObject<HTMLButtonElement>; }` | — | no | Кнопка раскрытия |
@@ -38,7 +37,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 | `tooltip` | `(Omit<TooltipProps, "children"> & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка info с тултипом |
 
 #### Related types
-- `CardSize` = `m | s`
 - `ChildrenFunction` (alias)
 - `FavoriteProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
@@ -62,6 +60,35 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 
 #### Related types
 - `PolymorphicRef` (alias)
+
+### CardNavigation
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `description` | `string` | — | no | Описание сервиса. Передано (в том числе пустой строкой) — карточка в подробном виде: с рамкой и описанием под заголовком. Не передано — компактный вид в одну строку.  Вид меняется без пересоздания DOM: переключение описания — обновление пропа, а не перемонтирование. |
+| `disabled` | `boolean` | `false` | no | Неактивное состояние |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → promo tag → tooltip (если есть) → Favorite → expand; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `tooltip` | `Omit<TooltipProps, "size" \| "trigger">` | — | no | Подсказка с иконкой «?» рядом с заголовком. Показывается только в компактном виде |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки текста заголовка. В подробном виде заголовок всегда в одну строку |
+
+#### Related types
+- `CardPromoTagProps` (alias)
+- `ChildrenFunction` (alias)
+- `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `PromoTagPredefinedBaseProps` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `VisibilityStrategy` = `always | hover`
 
 ### CardPromoTag
 | Prop | Type | Default | Required | Description |
@@ -91,7 +118,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ### CardServiceInfo
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actionsSize` | `m \| s` | `m` | no | Размер кнопок действий, для мобильного вида предполагается использовать `s` |
 | `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
 | `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
 | `className` | `string` | — | no | CSS-класс корневого элемента |
@@ -107,7 +133,6 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 
 #### Related types
 - `CardPromoTagProps` (alias)
-- `CardSize` = `m | s`
 - `FavoriteProps` (interface)
 - `PolymorphicRef` (alias)
 - `PromoTagPredefinedBaseProps` (alias)

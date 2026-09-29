@@ -444,6 +444,7 @@ _Нет публичных пропсов._
 | `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
 | `itemWrapRender` | `((item: ReactNode) => ReactNode)` | — | no | Рендер-обёртка вокруг айтема (например, для проксирования в `Tooltip`/`Link`) |
 | `items` | `ItemId[]` | — | yes |  |
+| `listClassName` | `string` | — | no | Только desktop: CSS-класс всплывающего окна вложенного списка. Окно рендерится в портале и не наследует классы родительского списка — например, класс плотности темы. |
 | `loading` | `boolean` | `false` | no | Состояние загрузки вложенного списка — показывается спиннер вместо элементов |
 | `onBlur` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки блюра |
 | `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |

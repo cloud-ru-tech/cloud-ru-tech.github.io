@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Checkbox.CkCg7loX.js";var n=e();function r(){return(0,n.jsx)(t,{indeterminateDefault:!0})}export{r as CheckboxIndeterminate};
