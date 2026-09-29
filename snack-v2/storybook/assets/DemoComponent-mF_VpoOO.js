@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{n,t as r}from"./src-C30DSNV0.js";import{n as i,t as a}from"./styles.module-BU6uB1IZ.js";function o({title:e,description:t}){return(0,s.jsxs)(`div`,{className:i.demoComponent,children:[e&&(0,s.jsx)(n,{variant:`title`,size:`m`,className:i.title,children:e}),t&&(0,s.jsx)(n,{variant:`body`,size:`m`,children:t})]})}var s,c=e((()=>{r(),a(),s=t()}));export{c as n,o as t};
-//# sourceMappingURL=DemoComponent-mF_VpoOO.js.map
