@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{D as t,T as n}from"./src-SAkjoGOE.js";var r,i=e((()=>{t(),r={cardBanner:n.cardBanner,cardService:n.cardService,cardServiceSmall:n.cardServiceSmall,cardServiceLight:n.cardServiceLight,cardServiceInfo:n.cardServiceInfo,cardNavigation:n.cardNavigation,cardNavigationFavorite:n.cardNavigationFavorite,cardSuggest:n.cardSuggest}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-CTYQhty9.js.map
