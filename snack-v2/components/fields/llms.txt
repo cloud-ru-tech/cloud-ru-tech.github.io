@@ -690,6 +690,7 @@ pnpm add @cloud-ru/ds-fields
 | `disabled` | `boolean` | — | no | Поле выключено Отключено |
 | `error` | `string` | — | no | Ошибка (приоритетнее `hint`; форсит `validationState=error`) |
 | `fieldClassName` | `string` | — | no | CSS-класс оболочки поля |
+| `footerMode` | `apply-only \| current-time-and-apply` | — | no | Режим футера. По умолчанию — current-time-and-apply |
 | `hint` | `string` | — | no | Подсказка |
 | `id` | `string` | — | no | HTML id |
 | `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент |
@@ -725,6 +726,7 @@ pnpm add @cloud-ru/ds-fields
 - `QuestionTooltipProps` (interface)
 - `Size` = `l | m | s`
 - `Size (@cloud-ru/ds-tooltip)` = `s | xs`
+- `TimePickerFooterMode` = `apply-only | current-time-and-apply`
 - `TimeValue` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`

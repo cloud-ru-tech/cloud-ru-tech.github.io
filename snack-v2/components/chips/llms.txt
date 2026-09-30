@@ -265,6 +265,7 @@ pnpm add @cloud-ru/ds-chips
 | `defaultValue` | `TimeValue` | — | no | Значение по-умолчанию для uncontrolled. |
 | `disabled` | `boolean` | — | no | Отключён |
 | `dropDownClassName` | `string` | — | no |  |
+| `footerMode` | `apply-only \| current-time-and-apply` | — | no | Режим футера. По умолчанию — current-time-and-apply |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `label` | `string` | — | no | Текст чипа |
 | `loading` | `boolean` | — | no | Состояние загрузки |
@@ -319,6 +320,7 @@ pnpm add @cloud-ru/ds-chips
 | `filterFn` | `((option: { label: ItemId; value?: ItemId; contentRenderProps?: ContentRenderProps; }) => boolean) \| undefined` | — | no | Функция фильтрации опций |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `footerMode` | `apply-only \| current-time-and-apply` | — | no | Режим футера. По умолчанию — current-time-and-apply |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `id` | `string` | — | yes |  |
 | `label` | `string` | — | no | Текст чипа |

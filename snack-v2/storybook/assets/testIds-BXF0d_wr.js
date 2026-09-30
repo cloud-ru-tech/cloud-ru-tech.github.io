@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{c as t,l as n}from"./src-DDoe5od-.js";var r,i=e((()=>{n(),r={tag:{root:`tag`,docs:`tag-docs`,frontend:`tag-frontend`,removableNeutral:`tag-removable-neutral`,removablePrimary:`tag-removable-primary`,removeButton:t.tag.removeButton},tagRow:{root:`tag-row`,moreButton:t.tagRow.moreButton,visibleTagsWrapper:t.tagRow.visibleTagsWrapper,droplistTagsWrapper:t.tagRow.droplistTagsWrapper}}}));export{i as n,r as t};
-//# sourceMappingURL=testIds-BXF0d_wr.js.map
