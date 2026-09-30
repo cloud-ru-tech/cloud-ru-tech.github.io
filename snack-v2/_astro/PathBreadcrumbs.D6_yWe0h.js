@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Breadcrumbs.CDASVh49.js";import{n}from"./constants.9NMiCFP3.js";var r={breadcrumbs:`_breadcrumbs_4dq9q_4`},i=e();function a({items:e}){return(0,i.jsx)(t,{items:e,className:r.breadcrumbs,inactiveLastItem:e.length>1,separator:`/`,size:`xs`,"data-test-id":n.breadcrumbs.root})}export{a as t};
