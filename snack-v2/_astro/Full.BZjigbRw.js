@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AvatarDetail.CreO8A3_.js";var n=e();function r(){return(0,n.jsx)(t,{name:`Новиков Дмитрий`,contactData:`novikov@example.com`,description:`DevOps-инженер, Cloud Platform`,avatar:{appearance:`green`,status:`green`}})}export{r as Full};

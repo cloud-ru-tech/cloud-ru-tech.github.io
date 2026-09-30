@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Button.Ddjsde1P.js";import{t as n}from"./HotSpot.C6w40Z8L.js";var r=e();function i(){return(0,r.jsx)(n,{placement:`right-top`,children:(0,r.jsx)(t,{label:`Уведомления`,view:`outline`})})}export{i as OnButton};

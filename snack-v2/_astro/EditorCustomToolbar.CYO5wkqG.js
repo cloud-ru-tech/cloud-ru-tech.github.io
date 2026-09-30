@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./MarkdownEditor.i-MBR1CE.js";import{i as n}from"./locale.BxicCa7p.js";var r=e(),i="Оставьте в тулбаре только нужные кнопки через `toolbar`.\n";function a(){return(0,r.jsx)(t,{defaultValue:i,label:`Комментарий`,toolbar:[n.Bold,n.Italic,n.Link,n.BulletList]})}export{a as EditorCustomToolbar};

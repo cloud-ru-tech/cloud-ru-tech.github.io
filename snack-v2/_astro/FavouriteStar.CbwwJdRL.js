@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Favourite.DM6YtP8M.js";var n=e();function r(){return(0,n.jsx)(t,{icon:`star`,defaultChecked:!0})}export{r as FavouriteStar};

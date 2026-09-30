@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s=e((()=>{t=`_listM_1nfld_4`,n=`_listS_1nfld_10`,r=`_story_1nfld_16`,i=`_paragraph_1nfld_25`,a=`_content_1nfld_35`,o={listM:t,listS:n,story:r,paragraph:i,content:a}}));export{o as n,s as t};
+//# sourceMappingURL=styles.module-BhPHY5zU.js.map
