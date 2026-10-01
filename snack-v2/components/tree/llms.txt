@@ -110,7 +110,7 @@ pnpm add @cloud-ru/ds-tree
 | `isDroplistOpen` | `boolean` | — | yes |  |
 | `isDroplistTriggerFocused` | `boolean` | — | yes |  |
 | `node` | `Omit<TreeNodeProps, "href">` | — | yes |  |
-| `onBlurActions` | `() => void` | — | yes |  |
+| `onBlurActions` | `(event: FocusEvent<HTMLElement, Element>) => void` | — | yes |  |
 | `setDroplistOpen` | `Dispatch<SetStateAction<boolean>>` | — | yes |  |
 | `size` | `l \| m \| s` | — | yes |  |
 
