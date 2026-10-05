@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{o as t,t as n}from"./src-BdX6WhUp.js";var r,i,a,o=e((()=>{n(),{fn:r}=__STORYBOOK_MODULE_TEST__,i={...Object.fromEntries(Object.values(t).map(e=>[e,{variant:e}])),[t.Connecting]:{variant:t.Connecting,tooltip:{onSupportClick:r()}}},a={control:`select`,options:Object.keys(i),mapping:i}}));export{o as n,a as t};
-//# sourceMappingURL=promoTagArgType-CgLqR6Pd.js.map

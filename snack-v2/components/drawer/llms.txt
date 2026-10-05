@@ -36,7 +36,8 @@ pnpm add @cloud-ru/ds-drawer
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
 | `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
 | `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
-| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `safeAreaBottom` | `boolean` | `true` | no | Нижний safe-area отступ под iOS home-indicator и Android nav-bar. Размер — токен `safeArea.bottom.minHeight`, на устройстве с большим `env(safe-area-inset-bottom)` — значение inset. |
+| `safeAreaTop` | `boolean` | `true` | no | Верхний safe-area отступ под iOS notch / status-bar. Размер — токен `safeArea.top.minHeight`, на устройстве с большим `env(safe-area-inset-top)` — значение inset. Применяется, только когда sheet раскрыт на полный вьюпорт: у неполного sheet'а верх и так не заходит под notch. |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
@@ -109,7 +110,8 @@ pnpm add @cloud-ru/ds-drawer
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
 | `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
 | `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
-| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `safeAreaBottom` | `boolean` | `true` | no | Нижний safe-area отступ под iOS home-indicator и Android nav-bar. Размер — токен `safeArea.bottom.minHeight`, на устройстве с большим `env(safe-area-inset-bottom)` — значение inset. |
+| `safeAreaTop` | `boolean` | `true` | no | Верхний safe-area отступ под iOS notch / status-bar. Размер — токен `safeArea.top.minHeight`, на устройстве с большим `env(safe-area-inset-top)` — значение inset. Применяется, только когда sheet раскрыт на полный вьюпорт: у неполного sheet'а верх и так не заходит под notch. |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |
@@ -158,7 +160,8 @@ pnpm add @cloud-ru/ds-drawer
 | `push` | `boolean \| PushConfig` | — | no | Смещение при открытии "вложенного" компонента |
 | `resizable` | `{ min: number; max?: number; default?: number; onResize?: ((width: number) => void) \| undefined; onResizeEnd?: ((width: number) => void) \| undefined; draggerTooltip?: string \| undefined; } \| undefined` | `'s'` | no | Ширина (только при position: "left" \| "right") |
 | `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
-| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `safeAreaBottom` | `boolean` | `true` | no | Нижний safe-area отступ под iOS home-indicator и Android nav-bar. Размер — токен `safeArea.bottom.minHeight`, на устройстве с большим `env(safe-area-inset-bottom)` — значение inset. |
+| `safeAreaTop` | `boolean` | `true` | no | Верхний safe-area отступ под iOS notch / status-bar. Размер — токен `safeArea.top.minHeight`, на устройстве с большим `env(safe-area-inset-top)` — значение inset. Применяется, только когда sheet раскрыт на полный вьюпорт: у неполного sheet'а верх и так не заходит под notch. |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
@@ -195,7 +198,8 @@ pnpm add @cloud-ru/ds-drawer
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
 | `position` | `bottom \| left \| right \| top` | — | yes | Расположение |
 | `rootClassName` | `string` | — | no | CSS-класс для корневого элемента |
-| `safeArea` | `boolean` | `true` | no | Резервировать ли место под iOS notch / home-indicator и Android nav-bar. Реализовано паддингом на `.content` через `env(safe-area-inset-*)`: на устройстве без выреза/индикатора (и на desktop) inset = 0, поэтому никакого «лишнего» отступа не появляется; на notched-устройстве — ровно нужный. Верхний отступ добавляется только когда sheet раскрыт на полный вьюпорт (его верх под notch). |
+| `safeAreaBottom` | `boolean` | `true` | no | Нижний safe-area отступ под iOS home-indicator и Android nav-bar. Размер — токен `safeArea.bottom.minHeight`, на устройстве с большим `env(safe-area-inset-bottom)` — значение inset. |
+| `safeAreaTop` | `boolean` | `true` | no | Верхний safe-area отступ под iOS notch / status-bar. Размер — токен `safeArea.top.minHeight`, на устройстве с большим `env(safe-area-inset-top)` — значение inset. Применяется, только когда sheet раскрыт на полный вьюпорт: у неполного sheet'а верх и так не заходит под notch. |
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `slotAfterTitle` | `ReactNode` | — | no | Slot справа от title (например, `QuestionTooltip` из `@cloud-ru/ds-tooltip`). |

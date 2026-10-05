@@ -23,10 +23,11 @@ pnpm add @cloud-ru/ds-timeline
 | `items` | `TimelineItem[]` | — | yes | Пункты таймлайна |
 
 #### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `ContentPosition` = `left | right`
+- `Style` = `dashed | solid`
 - `TimelineItem` (interface)
-- `TrackItemProps` (interface)
-- `TrackProps` (interface)
+- `Variant` = `default | subEvent`
 
 ### Track
 | Prop | Type | Default | Required | Description |
@@ -41,8 +42,6 @@ pnpm add @cloud-ru/ds-timeline
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `Position` = `center | end | start`
 - `Style` = `dashed | solid`
-- `TrackDotProps` (interface)
-- `TrackLineProps` (interface)
 - `Variant` = `default | subEvent`
 
 ### TrackDot
@@ -67,11 +66,11 @@ pnpm add @cloud-ru/ds-timeline
 | `showLines` | `boolean` | — | no | Показывать вертикальные сегменты |
 
 #### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `ContentPosition` = `left | right`
 - `Position` = `center | end | start`
-- `TrackDotProps` (interface)
-- `TrackLineProps` (interface)
-- `TrackProps` (interface)
+- `Style` = `dashed | solid`
+- `Variant` = `default | subEvent`
 
 ### TrackLine
 | Prop | Type | Default | Required | Description |

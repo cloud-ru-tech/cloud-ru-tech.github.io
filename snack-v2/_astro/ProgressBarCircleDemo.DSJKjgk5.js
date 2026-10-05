@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ProgressBarCircle.BLalpYA-.js";import{t as n}from"./Canvas.D9yfAf-Y.js";import{t as r}from"./props.SOrOs2D2.js";var i=e();function a(){return(0,i.jsx)(n,{component:t,componentDoc:r.ProgressBarCircle,defaultProps:{progress:50},controls:{}})}export{a as ProgressBarCircleDemo};

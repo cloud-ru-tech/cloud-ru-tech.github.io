@@ -202,26 +202,26 @@ _Нет публичных пропсов._
 | `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
 - `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
+- `CollapseToggleOn` = `expandIcon | item`
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
+- `IconPredefinedProps` (interface)
 - `Item` (alias)
-- `OriginalScrollProps` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `OnChangeHandler` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
-- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
-- `Size (@cloud-ru/ds-scroll)` = `m | s`
 - `SnapPoint` (alias)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `TruncateStringProps` (alias)
 
 ### GroupSelectItem
 | Prop | Type | Default | Required | Description |
@@ -257,7 +257,6 @@ _Нет публичных пропсов._
 
 #### Related types
 - `TruncateProps` (interface)
-- `TruncateStringProps` (alias)
 
 ### List
 | Prop | Type | Default | Required | Description |
@@ -310,16 +309,8 @@ _Нет публичных пропсов._
 | `size` | `l \| m \| s \| undefined` | — | yes |  |
 
 #### Related types
-- `CollapseState` (interface)
 - `EmptyStateProps` (interface)
-- `FlattenBaseItem` (interface)
 - `IconPredefinedProps` (interface)
-- `ItemId` (alias)
-- `ListPrivateProps` (interface)
-- `OriginalScrollProps` (interface)
-- `SearchState` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
 
 ### ListPrivate
@@ -527,26 +518,26 @@ _Нет публичных пропсов._
 | `widthStrategy` | `auto \| eq \| gte` | `auto` | no | Стратегия управления шириной контейнера поповера <br/> - `auto` - соответствует ширине контента, <br/> - `gte` - Great Than or Equal, равен ширине таргета или больше ее, если контент в поповере шире, <br/> - `eq` - Equal, строго равен ширине таргета. |
 
 #### Related types
-- `AutoscrollTo` = `bottom | right`
 - `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
+- `CollapseToggleOn` = `expandIcon | item`
 - `CommonGroupItem` (interface)
 - `EmptyStateProps` (interface)
+- `IconPredefinedProps` (interface)
 - `Item` (alias)
-- `OriginalScrollProps` (interface)
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `OnChangeHandler` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `ReorderItem` (alias)
-- `Resize` = `both | horizontal | none | vertical`
 - `ScrollProps` (interface)
 - `SearchState` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `Size` = `l | m | s`
-- `Size (@cloud-ru/ds-scroll)` = `m | s`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `TruncateStringProps` (alias)
 
 ### ReorderableList
 | Prop | Type | Default | Required | Description |
@@ -617,9 +608,6 @@ _Нет публичных пропсов._
 | `label` | `string` | — | no |  |
 | `selectButton` | `{ onClick?(e: MouseEvent<HTMLElement, MouseEvent>): void; indeterminate?: boolean; checked?: boolean; itemRef?: ForwardedRef<...> \| undefined; label?: string \| undefined; } \| undefined` | — | no |  |
 | `truncate` | `{ variant?: "end" \| "middle"; }` | — | no |  |
-
-#### Related types
-- `TruncateStringProps` (alias)
 
 ### SimpleGroupBlock
 | Prop | Type | Default | Required | Description |

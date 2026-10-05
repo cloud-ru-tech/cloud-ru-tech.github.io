@@ -85,6 +85,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `AdminTableSearchConfig` (interface)
 - `AdminTableSelectionConfig` (interface)
 - `ColumnVirtualizer` (alias)
@@ -102,7 +103,6 @@ pnpm add @cloud-ru/ds-table
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarCheckBoxMode` = `allRows | pageRows`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -308,6 +308,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
 - `ColumnVirtualizer` (alias)
@@ -325,7 +326,6 @@ pnpm add @cloud-ru/ds-table
 - `TableLayoutDefaults` (interface)
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -442,6 +442,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `AdminTableSelectionConfig` (interface)
 - `ColumnVirtualizer` (alias)
 - `EmptyStateProps` (interface)
@@ -449,9 +450,9 @@ pnpm add @cloud-ru/ds-table
 - `LayoutPresets` (interface)
 - `RenderCardContext` (interface)
 - `RowActionsConfig` (interface)
+- `RowAppearance` = `disabled | hide-toggler`
 - `RowClickHandler` (alias)
 - `RowVirtualizer` (alias)
-- `ServerTableProps` (interface)
 - `SimpleColumnDef` (interface)
 - `StatusColumnConfig` (interface)
 - `StickyControls` (interface)
@@ -459,7 +460,6 @@ pnpm add @cloud-ru/ds-table
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarCheckBoxMode` = `allRows | pageRows`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -538,6 +538,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
 - `ColumnVirtualizer` (alias)
@@ -555,7 +556,6 @@ pnpm add @cloud-ru/ds-table
 - `TableLayoutDefaults` (interface)
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -633,6 +633,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BaseChipProps` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
@@ -650,7 +651,6 @@ pnpm add @cloud-ru/ds-table
 - `TableLayoutDefaults` (interface)
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -727,6 +727,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
 - `ColumnVirtualizer` (alias)
@@ -744,7 +745,6 @@ pnpm add @cloud-ru/ds-table
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarCheckBoxMode` = `allRows | pageRows`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -821,6 +821,7 @@ pnpm add @cloud-ru/ds-table
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BaseChipProps` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
@@ -838,7 +839,6 @@ pnpm add @cloud-ru/ds-table
 - `TableLayoutDefaults` (interface)
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeColumnDefinitionProps` (alias)
 - `View` = `cards | table`
 
@@ -1060,6 +1060,7 @@ _Нет публичных пропсов._
 | `view` | `cards \| table` | `'table' (на mobile — `cards`)` | no | Управляемый режим отображения Режим отображения таблицы (controlled). `table` — классическая сетка; `cards` — карточки (заголовок берётся из колонки `headlineId`). Переключатель вида в тулбаре включается отдельным пропом `showDataView`. |
 
 #### Related types
+- `Action` (interface)
 - `BulkAction` (interface)
 - `ColumnDefinition` (alias)
 - `ColumnVirtualizer` (alias)
@@ -1076,7 +1077,6 @@ _Нет публичных пропсов._
 - `TableRowColor` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `ToolbarCheckBoxMode` = `allRows | pageRows`
 - `ToolbarPersistConfig` (interface)
-- `ToolbarProps` (alias)
 - `TreeTablePrimaryColumn` (interface)
 - `TreeTableSelectionConfig` (interface)
 - `View` = `cards | table`

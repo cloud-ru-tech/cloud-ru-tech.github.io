@@ -1,1 +1,0 @@
-import{a as e,i as t,r as n}from"./getThemeClassnames.B-H1OSye.js";var r={brand:n.CloudConsole,density:t.Compact,platform:e.WebDesktop},i=`docs-chrome-portal-root`;export{i as n,r as t};

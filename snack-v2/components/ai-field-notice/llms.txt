@@ -37,9 +37,7 @@ pnpm add @cloud-ru/ds-ai-field-notice
 | `vmName` | `string` | — | yes | Имя виртуальной машины для второго кадра описания. Только при `variant='vmAgent'`. |
 
 #### Related types
-- `AiFieldBannerProps` (interface)
 - `Size` = `m | s`
-- `Variant` = `agentic | critical | help | information | security | warning`
 
 ### AiFieldNoticeAnimatedDescription
 | Prop | Type | Default | Required | Description |

@@ -70,19 +70,15 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 
 #### Related types
 - `AcceptInput` (alias)
-- `AttachmentSquareProps` (interface)
 - `ChildrenFunction` (alias)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
 - `FileUploadProps` (interface)
-- `IconPredefinedProps` (interface)
 - `NativeInputProps` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `QuestionTooltipProps` (interface)
 - `Size` = `s | xs`
-- `Size (@cloud-ru/ds-attachment)` = `m | s`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `TruncateStringProps` (alias)
 - `UploadMode` = `multiple | single`
 - `ValidationState` = `default | error | success | warning`
 

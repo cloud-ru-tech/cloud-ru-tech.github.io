@@ -31,7 +31,7 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `Partial<ThemeAppearance>` | — | yes | Оси, переопределяемые в поддереве. Остальные наследуются от ближайшего родителя (слияние). |
 
 #### Related types
-- `Brand` = `cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
+- `Brand` = `agents-space | cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`
 - `Platform` = `webDesktop | webMobile`
@@ -49,7 +49,7 @@ pnpm add @cloud-ru/ds-theme
 | `value` | `ThemeAppearance` | — | no | Оформление приложения. Используется в static-режиме (один React-корень: SSR — одно значение на запрос, либо CSR с собственным state, напр. `colorScheme` из `useColorScheme`). Для multi-root (single-spa) — см. `store`. |
 
 #### Related types
-- `Brand` = `cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
+- `Brand` = `agents-space | cloudConsole | giga-id | gitverse | hrBlue | hrGraphite | hrGreen | hrPurple | hrYellow | siteBlue | siteGraphite | siteGreen | sitePurple | siteYellow | snackUI`
 - `ColorScheme` = `dark | light`
 - `Density` = `comfort | compact | spacious`
 - `Platform` = `webDesktop | webMobile`

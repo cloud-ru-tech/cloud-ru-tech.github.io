@@ -103,7 +103,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 
 #### Related types
 - `BaseItemProps` (interface)
-- `CardServiceLightProps` (interface)
+- `CardPromoTagProps` (alias)
 - `FavoriteProps` (interface)
 - `FavoritesSegment` = `favorites | recent`
 - `InnerLink` (interface)
@@ -232,7 +232,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 
 #### Related types
 - `BaseItemProps` (interface)
-- `CardServiceLightProps` (interface)
+- `CardPromoTagProps` (alias)
 - `FavoriteProps` (interface)
 - `FavoritesSegment` = `favorites | recent`
 - `InnerLink` (interface)
@@ -352,7 +352,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 
 #### Related types
 - `BaseItemProps` (interface)
-- `CardServiceLightProps` (interface)
+- `CardPromoTagProps` (alias)
 - `FavoriteProps` (interface)
 - `FavoritesSegment` = `favorites | recent`
 - `InnerLink` (interface)
@@ -383,9 +383,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `items` | `Item[]` | — | yes | Пункты хлебных крошек. |
 
 #### Related types
-- `BreadcrumbsProps` (interface)
 - `Item` (interface)
-- `Size` = `s | xs`
 
 ### RecentList
 | Prop | Type | Default | Required | Description |
@@ -524,7 +522,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `onClick` | `(() => void)` | — | no | Колбэк клика по кнопке-триггеру. |
 | `onLogout` | `(() => void)` | — | no | Колбэк клика по пункту «Выйти». |
 | `open` | `boolean` | — | no | Открыто ли меню.  Не передано — состояние открытия неуправляемое (меню само переключает себя по клику на кнопку). |
-| `organizationItems` | `Item[]` | — | no | Список организаций. На desktop — единственная прокручиваемая часть меню |
+| `organizationItems` | `Item[]` | — | no | Список организаций. На desktop — единственная прокручиваемая часть меню.  Не передан или пуст — меню отображается единым списком без закреплённых частей. |
 | `profile` | `UserProfileProps` | `{}` | no | Профиль пользователя (имя, email, счётчик приглашений). |
 | `setOpen` | `((open: boolean) => void)` | — | no | Колбэк открытия/закрытия меню. |
 | `settingItems` | `BaseItem[]` | — | no | Пункты настроек в нижней части меню. |
@@ -533,23 +531,14 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `triggerTooltip` | `string` | — | no | Текст подсказки для кнопки-триггера. |
 
 #### Related types
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemProps` (interface)
 - `BaseItemWithoutNonGroup` (interface)
-- `CollapseState` (interface)
 - `CommonGroupItem` (interface)
-- `DroplistProps` (interface)
 - `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
-- `OriginalScrollProps` (interface)
-- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `PopoverWidthStrategy` = `auto | eq | gte`
 - `ScrollProps` (interface)
-- `SearchState` (interface)
-- `SelectionMultipleState` (interface)
-- `Size` = `l | m | s`
 - `ThemeMode` = `dark | light | system`
 - `ThemeProps` (interface)
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `TruncateStringProps` (alias)
 - `UserProfileProps` (interface)

@@ -24,13 +24,7 @@ pnpm add @cloud-ru/ds-uikit-product-copy
 | `valueToCopy` | `string \| number` | — | yes | Значение для копирования в буфер. |
 
 #### Related types
-- `Appearance` = `critical | neutral | primary`
-- `ButtonProps` (interface)
-- `CounterProps` (interface)
-- `IconPosition` = `after | before`
-- `PolymorphicRef` (alias)
 - `Size` = `l | m | s`
-- `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### CopyLine
 | Prop | Type | Default | Required | Description |

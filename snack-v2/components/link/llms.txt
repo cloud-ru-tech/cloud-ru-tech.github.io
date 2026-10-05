@@ -37,7 +37,6 @@ pnpm add @cloud-ru/ds-link
 - `Appearance` = `blue | green | invertNeutral | neutral | orange | pink | primary | red | violet | yellow`
 - `PolymorphicRef` (alias)
 - `RoleAppearance` = `onAccent | regular`
-- `TruncateStringProps` (alias)
 
 ## Примеры
 

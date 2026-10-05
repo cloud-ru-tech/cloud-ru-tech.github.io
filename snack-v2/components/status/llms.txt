@@ -29,7 +29,6 @@ pnpm add @cloud-ru/ds-status
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
 - `StatusSize` = `s | xs`
-- `TruncateStringProps` (alias)
 
 ### StatusIndicator
 | Prop | Type | Default | Required | Description |

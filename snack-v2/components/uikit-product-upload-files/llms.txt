@@ -55,7 +55,6 @@ pnpm add @cloud-ru/ds-uikit-product-upload-files
 | `value` | `UploadFileItem<unknown>[]` | — | no | Контролируемое значение |
 
 #### Related types
-- `IconPredefinedProps` (interface)
 - `UploadFileItem` (interface)
 - `UploadFilesAcceptItem` (interface)
 - `UploadFn` (alias)

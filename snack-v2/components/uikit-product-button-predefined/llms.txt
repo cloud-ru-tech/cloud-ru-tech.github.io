@@ -48,6 +48,7 @@ pnpm add @cloud-ru/ds-uikit-product-button-predefined
 #### Related types
 - `Appearance` = `critical | neutral | primary`
 - `Appearance (@cloud-ru/ds-counter)` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownSize` = `l | m | s | xs`
 - `CommonGroupItem` (interface)
@@ -55,13 +56,11 @@ pnpm add @cloud-ru/ds-uikit-product-button-predefined
 - `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
-- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
 - `RoleAppearance` = `accent | decor`
 - `ScrollProps` (interface)
 - `Size` = `s | xs`
-- `TruncateStringProps` (alias)
 - `Variant` = `count | count-k | count-plus`
 
 ## Примеры

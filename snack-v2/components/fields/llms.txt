@@ -397,24 +397,23 @@ pnpm add @cloud-ru/ds-fields
 | `widthStrategy` | `auto \| eq \| gte` | `'eq' — равна ширине триггера` | no | Стратегия ширины дроплиста. |
 
 #### Related types
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseItemWithoutNonGroup` (interface)
 - `ChildrenFunction` (alias)
 - `CommonGroupItem` (interface)
-- `DroplistProps` (interface)
 - `EmptyStateProps` (interface)
-- `FieldDecoratorProps` (interface)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
 - `FieldSelectItem` (alias)
 - `IconPredefinedProps` (interface)
+- `ItemContent` (interface)
 - `ItemId` (alias)
-- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
-- `SearchState` (interface)
-- `Size` = `s | xs`
+- `Size` = `l | m | s`
+- `Size (@cloud-ru/ds-tooltip)` = `s | xs`
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `ValidationState` = `default | error | success | warning`
 

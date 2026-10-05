@@ -79,6 +79,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
 - `CounterProps` (interface)
 - `DroplistListProps` (alias)
@@ -87,8 +88,8 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `EmptyState` (interface)
 - `EmptyStateProps` (interface)
 - `IconPosition` = `after | before`
-- `OriginalScrollProps` (interface)
 - `PolymorphicRef` (alias)
+- `PopoverWidthStrategy` = `auto | eq | gte`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
@@ -96,7 +97,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `SelectionState` (interface)
 - `Size` = `l | m | s`
 - `Size (@cloud-ru/ds-list)` = `l | m | s`
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### ButtonKebab
@@ -107,6 +107,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 
 #### Related types
 - `Appearance` = `critical | neutral | primary`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
 - `CounterProps` (interface)
 - `DroplistListProps` (alias)
@@ -115,8 +116,8 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `EmptyState` (interface)
 - `EmptyStateProps` (interface)
 - `IconPosition` = `after | before`
-- `OriginalScrollProps` (interface)
 - `PolymorphicRef` (alias)
+- `PopoverWidthStrategy` = `auto | eq | gte`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
@@ -124,7 +125,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `SelectionState` (interface)
 - `Size` = `l | m | s`
 - `Size (@cloud-ru/ds-list)` = `l | m | s`
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 - `View` = `elevated | filled | function | outline | simple | tonal`
 
 ### ButtonQuota
@@ -212,10 +212,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ChildrenFunction` (alias)
 - `CounterProps` (interface)
 - `IconPosition` = `after | before`
-- `ModalContainer` (alias)
-- `ModalCustomProps` (interface)
-- `ModalMode` = `aggressive | forced | regular`
-- `ModalWidth` = `l | m | s`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
 - `Size` = `l | m | s`
@@ -244,7 +240,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `CollapseState` (interface)
 - `Documentation` (interface)
 - `HeaderProps` (alias)
-- `ListProps` (interface)
 - `PageSidebarProps` (interface)
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
@@ -309,7 +304,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 
 #### Related types
 - `Action` (alias)
-- `ActionsProps` (interface)
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownDroplistConfig` (interface)
 - `ButtonDroplistProps` (interface)
@@ -350,10 +344,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ChildrenFunction` (alias)
 - `CounterProps` (interface)
 - `IconPosition` = `after | before`
-- `ModalContainer` (alias)
-- `ModalCustomProps` (interface)
-- `ModalMode` = `aggressive | forced | regular`
-- `ModalWidth` = `l | m | s`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
 - `Size` = `l | m | s`
@@ -377,7 +367,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `title` | `string` | — | yes | Заголовок страницы |
 
 #### Related types
-- `ActionsProps` (interface)
+- `Action` (alias)
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownDroplistConfig` (interface)
 - `ButtonDroplistProps` (interface)
@@ -386,7 +376,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
 - `DroplistListProps` (alias)
-- `DroplistProps` (interface)
+- `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `Item` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
@@ -410,7 +400,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 
 #### Related types
 - `Action` (alias)
-- `ActionsProps` (interface)
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownDroplistConfig` (interface)
 - `ButtonDroplistProps` (interface)
@@ -451,10 +440,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ChildrenFunction` (alias)
 - `CounterProps` (interface)
 - `IconPosition` = `after | before`
-- `ModalContainer` (alias)
-- `ModalCustomProps` (interface)
-- `ModalMode` = `aggressive | forced | regular`
-- `ModalWidth` = `l | m | s`
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PolymorphicRef` (alias)
 - `Size` = `l | m | s`
@@ -487,7 +472,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `truncateTitle` | `boolean` | — | no | Обрезать заголовок в одну строку с многоточием |
 
 #### Related types
-- `ActionsProps` (interface)
+- `Action` (alias)
 - `BaseItemWithoutNonGroup` (interface)
 - `ButtonDropdownDroplistConfig` (interface)
 - `ButtonDroplistProps` (interface)
@@ -499,9 +484,9 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `DroplistListProps` (alias)
 - `HeaderProps` (alias)
 - `Item` (alias)
-- `ListProps` (interface)
 - `PageSidebarProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PublicListContextType` (interface)
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
@@ -527,25 +512,14 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `selected` | `string \| number` | — | no |  |
 
 #### Related types
-- `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CollapseToggleOn` = `expandIcon | item`
-- `CommonGroupItem` (interface)
 - `Documentation` (interface)
-- `EmptyStateProps` (interface)
 - `HeaderProps` (alias)
-- `Item` (alias)
 - `ItemId` (alias)
-- `ListProps` (interface)
-- `OriginalScrollProps` (interface)
-- `ScrollProps` (interface)
-- `SearchState` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
-- `Size` = `l | m | s`
-- `TooltipProps` (interface)
 
 ### SearchContextProvider
 _Нет публичных пропсов._
@@ -563,26 +537,12 @@ _Нет публичных пропсов._
 | `selected` | `string \| number` | — | no |  |
 
 #### Related types
-- `BaseItemWithoutNonGroup` (interface)
 - `CollapseState` (interface)
 - `CollapseToggleOn` = `expandIcon | item`
-- `CommonGroupItem` (interface)
-- `DroplistProps` (interface)
-- `EmptyStateProps` (interface)
-- `Item` (alias)
 - `ItemId` (alias)
-- `OriginalScrollProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `PopoverWidthStrategy` = `auto | eq | gte`
-- `ScrollProps` (interface)
-- `SearchState` (interface)
-- `SelectionMultipleState` (interface)
-- `SelectionSingleState` (interface)
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
-- `Size` = `l | m | s`
-- `TooltipProps` (interface)
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 
 ### SidebarTitle
 | Prop | Type | Default | Required | Description |
@@ -608,4 +568,3 @@ _Нет публичных пропсов._
 - `TreeNavigationMode` = `aside | fixed | popover`
 - `TreeNodeId` (alias)
 - `TreeNodeProps` (alias)
-- `TruncateStringProps` (alias)

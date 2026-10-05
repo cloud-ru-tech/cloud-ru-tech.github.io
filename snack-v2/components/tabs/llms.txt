@@ -45,10 +45,7 @@ pnpm add @cloud-ru/ds-tabs
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
-- `CounterProps` (interface)
 - `RoleAppearance` = `accent | decor`
-- `Size` = `s | xs`
-- `Variant` = `count | count-k | count-plus`
 
 ### TabBar
 | Prop | Type | Default | Required | Description |
@@ -63,9 +60,10 @@ pnpm add @cloud-ru/ds-tabs
 | `slotActionButton` | `ReactNode` | — | no | Слот действия: контент после списка табов — справа при горизонтальной ориентации, снизу при вертикальной. Разделитель под ним не продолжается. |
 
 #### Related types
-- `CounterProps` (interface)
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `MarkerPosition` = `after | before`
 - `Orientation` = `horizontal | vertical`
+- `RoleAppearance` = `accent | decor`
 - `Size` = `l | m`
 - `TabProps` (interface)
 

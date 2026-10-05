@@ -45,7 +45,6 @@ pnpm add @cloud-ru/ds-chips
 
 #### Related types
 - `Size` = `l | m | s`
-- `TruncateStringProps` (alias)
 
 ### ChipChoiceBase
 | Prop | Type | Default | Required | Description |
@@ -200,6 +199,7 @@ pnpm add @cloud-ru/ds-chips
 | `visibleFilters` | `string[]` | — | no | Состояние для видимых фильтров |
 
 #### Related types
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `BaseChipProps` (interface)
 - `ChipChoiceDateWithSeconds` (interface)
 - `ChipChoiceRowFilter` (alias)
@@ -211,7 +211,7 @@ pnpm add @cloud-ru/ds-chips
 - `EmptyStateProps` (interface)
 - `ItemId` (alias)
 - `OnChangeHandler` (alias)
-- `OriginalScrollProps` (interface)
+- `OutsideClickHandler` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
@@ -219,7 +219,6 @@ pnpm add @cloud-ru/ds-chips
 - `SelectionSingleState` (interface)
 - `SelectionState` (interface)
 - `Size` = `l | m | s`
-- `TruncateStringProps` (alias)
 
 ### ChipChoiceSingle
 | Prop | Type | Default | Required | Description |
@@ -307,7 +306,6 @@ pnpm add @cloud-ru/ds-chips
 
 #### Related types
 - `Size` = `l | m | s`
-- `TruncateStringProps` (alias)
 
 ### ForwardedChipChoice
 | Prop | Type | Default | Required | Description |

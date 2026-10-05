@@ -124,7 +124,7 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 - `ButtonDroplistProps` (interface)
 - `ButtonKebabProps` (interface)
 - `ButtonProps` (interface)
-- `InfoBlockProps` (interface)
+- `IconPredefinedProps` (interface)
 - `Segment` (interface)
 - `SegmentControlProps` (interface)
 - `Size` = `l | m | s`

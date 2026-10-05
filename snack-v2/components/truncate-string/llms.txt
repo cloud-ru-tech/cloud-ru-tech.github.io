@@ -34,9 +34,7 @@ pnpm add @cloud-ru/ds-truncate-string
 | `variant` | `end \| middle` | `end` | no | Вариант обрезания строки: `End` - с конца `Middle` - по середине |
 
 #### Related types
-- `ChildrenFunction` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `TooltipProps` (interface)
 - `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 
 ### TruncateStringEnd

@@ -49,11 +49,7 @@ pnpm add @cloud-ru/ds-attachment
 | `truncateVariant` | `end \| middle` | — | no | Вариант обрезания строки: <br> - `end` — с конца; <br> - `middle` — по середине |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
-- `IconPredefinedProps` (interface)
 - `Size` = `m | s`
-- `Size (@cloud-ru/ds-icon-predefined)` = `3xl | 5xl | l | m | s`
-- `TruncateStringProps` (alias)
 
 ### AttachmentSquare
 | Prop | Type | Default | Required | Description |
@@ -76,11 +72,7 @@ pnpm add @cloud-ru/ds-attachment
 | `truncateVariant` | `end \| middle` | — | no | Вариант обрезания строки: <br> - `end` — с конца; <br> - `middle` — по середине |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
-- `IconPredefinedProps` (interface)
 - `Size` = `m | s`
-- `Size (@cloud-ru/ds-icon-predefined)` = `3xl | 5xl | l | m | s`
-- `TruncateStringProps` (alias)
 
 ### Emblem
 | Prop | Type | Default | Required | Description |
