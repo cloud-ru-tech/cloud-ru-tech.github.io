@@ -12,6 +12,14 @@ pnpm add @cloud-ru/ds-chips
 
 ## API
 
+### AddButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `Item[]` | — | yes |  |
+| `onOpenChange` | `((isOpen: boolean) => void) \| undefined` | — | yes |  |
+| `open` | `boolean \| undefined` | — | yes |  |
+| `size` | `l \| m \| s` | — | yes |  |
+
 ### ButtonClearValue
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|

@@ -107,6 +107,7 @@ pnpm add @cloud-ru/ds-list
 | `data-test-id` | `string` | — | no |  |
 | `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
 | `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
@@ -160,6 +161,7 @@ _Нет публичных пропсов._
 | `data-test-id` | `string` | — | no |  |
 | `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
 | `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
@@ -486,6 +488,7 @@ _Нет публичных пропсов._
 | `data-test-id` | `string` | — | no |  |
 | `dataError` | `boolean` | — | no | Загрузка данных завершилась ошибкой: показывается `errorDataState` |
 | `dataFiltered` | `boolean` | — | no | Текущий пустой список — результат поиска/фильтра: показывается `noResultsState` вместо `noDataState` |
+| `disableSpanWrapper` | `boolean` | — | no | Отключает для `isValidElement` внешнюю обертку триггера <br/> Пригодится для элементов с `position: absolute` <br/> Работает для триггеров, которые умеют отдать свою DOM-ноду: нативные элементы, `forwardRef`-компоненты и компоненты, помеченные `withInnerRefSupport` из `@cloud-ru/ds-utils`. Остальные всё равно получают `<span>` — без ноды поповеру не от чего считать позицию; в dev-режиме об этом печатается предупреждение. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
