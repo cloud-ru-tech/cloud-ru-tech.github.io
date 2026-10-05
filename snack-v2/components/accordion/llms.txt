@@ -53,6 +53,7 @@ pnpm add @cloud-ru/ds-accordion
 | `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
 | `keepMounted` | `boolean` | `false` | no | Оставлять ли контент в DOM при сворачивании |
 | `showChevron` | `boolean` | `true` | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `stopSlotsClickPropagation` | `boolean` | `false` | no | Клики в слотах afterTitle и subTitle не тригерять расскрытие/закрытие блока |
 | `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
 | `title` | `string` | — | no | Заголовок блока |
 | `view` | `elevated \| outline \| simple` | `simple` | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
@@ -75,6 +76,7 @@ pnpm add @cloud-ru/ds-accordion
 | `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
 | `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
 | `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `stopSlotsClickPropagation` | `boolean` | `false` | no | Клики в слотах afterTitle и subTitle не тригерять расскрытие/закрытие блока |
 | `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
 | `title` | `string` | — | no | Заголовок блока |
 | `view` | `elevated \| outline \| simple` | — | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
@@ -96,6 +98,7 @@ pnpm add @cloud-ru/ds-accordion
 | `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
 | `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
 | `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `stopSlotsClickPropagation` | `boolean` | `false` | no | Клики в слотах afterTitle и subTitle не тригерять расскрытие/закрытие блока |
 | `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
 | `title` | `string` | — | no | Заголовок блока |
 | `view` | `elevated \| outline \| simple` | — | no | Визуальный вариант обложки (`simple`, `outline`, `elevated`) |
@@ -116,6 +119,7 @@ pnpm add @cloud-ru/ds-accordion
 | `id` | `string` | — | yes | Уникальный идентификатор блока в группе переключателей |
 | `keepMounted` | `boolean` | — | no | Оставлять ли контент в DOM при сворачивании |
 | `showChevron` | `boolean` | — | no | Показывать ли шеврон-раскрытия рядом с заголовком (по умолчанию `true`) |
+| `stopSlotsClickPropagation` | `boolean` | `false` | no | Клики в слотах afterTitle и subTitle не тригерять расскрытие/закрытие блока |
 | `subTitle` | `ReactNode` | — | no | Подзаголовок под строкой заголовка |
 | `title` | `string` | — | no | Заголовок блока |
 
