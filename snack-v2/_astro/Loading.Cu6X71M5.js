@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Search.C-yra56C.js";var n=e();function r(){return(0,n.jsx)(t,{placeholder:`Поиск`,loading:!0})}export{r as Loading};

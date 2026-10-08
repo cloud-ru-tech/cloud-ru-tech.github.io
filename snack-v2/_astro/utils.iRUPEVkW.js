@@ -1,1 +1,0 @@
-import{a as e}from"./constants2.Da7ksRsg.js";function t(e){return Object.entries(e).reduce(function(e,[t,n]){return e[`data-${t.toLowerCase()}`]=n,e},{})}function n(t){switch(t){case e.XS:return 16;case e.S:default:return 24}}export{t as n,n as t};

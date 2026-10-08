@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Canvas.DvJV01ge.js";import{n,t as r}from"./PlatformLogo.HMZwxpIv.js";import{t as i}from"./props.CgyCfFKa.js";var a=e();function o(){return(0,a.jsx)(t,{component:r,componentDoc:i.PlatformLogo,defaultProps:{variant:n.Evolution},controls:{variant:{type:`select`,options:Object.values(n)}}})}export{o as PlatformLogoDemo};

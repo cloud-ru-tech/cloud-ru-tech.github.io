@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,m as a,p as o,t as s,u as c}from"./iframe-C3AStgPu.js";import{ut as l}from"./helperComponents-BdMzrgO3.js";import{t as u}from"./src-0wDytpFb.js";import{o as d,t as f}from"./src-BpQA-uE3.js";import{n as p,t as m}from"./testIds-DWf9SOGo.js";import{a as h,i as g,n as _,t as v}from"./playground.helpers-B_1YhF7f.js";var y,b,x,S,C,w,T;e((()=>{u(),f(),s(),p(),g(),y=t(),{expect:b,within:x}=__STORYBOOK_MODULE_TEST__,S=e=>{let t=h({defaultValue:void 0});return(0,y.jsx)(r,{children:(0,y.jsxs)(o,{children:[(0,y.jsx)(i,{children:`Playground (Time)`}),(0,y.jsx)(n,{children:`Чип-фильтр с выбором времени.`}),(0,y.jsx)(c,{align:`center`,children:(0,y.jsx)(a,{width:`fit`,children:(0,y.jsx)(d.Time,{...e,...t})})})]})})},C={title:`Snack/Inputs & Forms/Chips/ChipChoice/Time`,id:`components-chips-chipchoice-time`,component:d.Time,parameters:{layout:`fullscreen`},render:S,args:{...v,label:`Time`,showSeconds:!0,footerMode:l.CurrentTimeAndApply,"data-test-id":m.chipChoice.root},argTypes:{footerMode:{control:`radio`,options:Object.values(l)},..._}},w={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await b(x(e).getByTestId(m.chipChoice.root)).toBeVisible()}},w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.chipChoice.root)).toBeVisible();
-  }
-}`,...w.parameters?.docs?.source}}},T=[`Playground`]}))();export{w as Playground,T as __namedExportsOrder,C as default};
-//# sourceMappingURL=ChipChoiceTime.Playground.stories-C2m60HCf.js.map
