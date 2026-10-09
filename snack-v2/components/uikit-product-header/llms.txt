@@ -42,6 +42,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
 | `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
 | `onSegmentServiceClick` | `((service: InnerLink, e?: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбэк клика по карточке сервиса в сегменте. |
+| `onToggleAllGroupsExpanded` | `((action: "collapseAll" \| "expandAll") => void)` | — | no | Колбэк смены всех групп раскрытых. |
 | `preferences` | `MainMenuPreferencesProps` | — | no | Настройки меню (модалка по кнопке в тулбаре): описания карточек, цвета групп.  Не передано — кнопка настроек в тулбаре не отображается. |
 | `rightTop` | `ReactNode` | — | no | Слот над тулбаром правой колонки (например, баннеры) |
 | `search` | `ReactNode` | — | no | Слот поисковой строки — рендерится над контентом. |
@@ -218,6 +219,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
 | `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
 | `onSegmentServiceClick` | `((service: InnerLink, e?: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбэк клика по карточке сервиса в сегменте. |
+| `onToggleAllGroupsExpanded` | `((action: "collapseAll" \| "expandAll") => void)` | — | no | Колбэк смены всех групп раскрытых. |
 | `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
 | `open` | `boolean` | — | no | Открыто ли меню.  Не передано — состояние открытия неуправляемое (меню само переключает себя по клику на кнопку). |
 | `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
@@ -302,6 +304,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
 | `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
 | `onSegmentServiceClick` | `((service: InnerLink, e?: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбэк клика по карточке сервиса в сегменте. |
+| `onToggleAllGroupsExpanded` | `((action: "collapseAll" \| "expandAll") => void)` | — | no | Колбэк смены всех групп раскрытых. |
 | `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
 | `open` | `boolean` | `false` | no | Открыто ли меню.  Не передано — состояние открытия неуправляемое (меню само переключает себя по клику на кнопку). |
 | `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
@@ -338,6 +341,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `onSegmentExpandedChange` | `((segmentId: string, expandedGroupIds: string[]) => void)` | — | no | Колбэк при изменении набора раскрытых групп сегмента (без id синтетической группы избранного). |
 | `onSegmentOrderChange` | `((segmentId: string, orderedGroupIds: string[]) => void)` | — | no | Колбэк после DnD групп в сегменте (без id синтетической группы избранного). |
 | `onSegmentServiceClick` | `((service: InnerLink, e?: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбэк клика по карточке сервиса в сегменте. |
+| `onToggleAllGroupsExpanded` | `((action: "collapseAll" \| "expandAll") => void)` | — | no | Колбэк смены всех групп раскрытых. |
 | `onWidthChangeEnd` | `((width: number) => void)` | — | no | Вызывается при окончании изменения ширины дровера (desktop only) |
 | `open` | `boolean` | `false` | no | Открыто ли меню.  Не передано — состояние открытия неуправляемое (меню само переключает себя по клику на кнопку). |
 | `platformGroups` | `LinksGroup[]` | — | no | Платформенные группы (например «Облачные продукты», «Другие продукты»).  Без поиска в сетке карточек **не отображаются**. С поиском: попадают в результаты при совпадении; порядок — после совпадений из сегментов без `pinBottomOnSearch`, перед сегментами с `pinBottomOnSearch`. Обычно `favoritesEnabled: false`; карточки могут быть без `icon` (Avatar по `label`). |
@@ -460,12 +464,6 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `groupFavoritesEnabled` | `boolean` | — | no | Разрешено ли добавление карточек группы в избранное. |
 | `groupId` | `string` | — | yes | Id группы-предка. |
 | `items` | `InnerLink[]` | — | yes | Карточки сервисов группы. |
-
-### SortableGroupDragHandle
-| Prop | Type | Default | Required | Description |
-|------|------|---------|----------|-------------|
-| `attributes` | `DraggableAttributes` | — | no | ARIA-атрибуты `dnd-kit` draggable-элемента. |
-| `listeners` | `DraggableSyntheticListeners` | — | no | Обработчики событий `dnd-kit` для инициации перетаскивания. |
 
 ### SortableGroupDragPreview
 | Prop | Type | Default | Required | Description |
