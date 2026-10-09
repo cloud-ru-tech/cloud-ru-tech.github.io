@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{g as t,v as n}from"./src-Drx8RFnP.js";var r,i=e((()=>{n(),r={bagelChart:{root:`bagel-chart`,...t.bagelChart},pieChart:{root:`pie-chart`,...t.pieChart},heatMapChart:{root:`heat-map-chart`,...t.heatMapChart},interactiveChart:{root:`interactive-chart`,...t.interactiveChart}}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-C-9pFCw_.js.map

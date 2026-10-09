@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{d as t}from"./src-BLt2e09J.js";var n,r,i,a,o,s,c,l,u,d=e((()=>{n=`_wrapper_1tpmu_4`,r=`_contentCard_1tpmu_10`,i=`_avatarPlaceholder_1tpmu_22`,a=`_textAlignLeft_1tpmu_29`,o=`_textAlignRight_1tpmu_33`,s=`_textContainer_1tpmu_37`,c=`_textContent_1tpmu_49`,l=`_skeletonOverlay_1tpmu_53`,u={wrapper:n,contentCard:r,avatarPlaceholder:i,textAlignLeft:a,textAlignRight:o,textContainer:s,textContent:c,skeletonOverlay:l}})),f=e((()=>{t()}));export{d as n,u as r,f as t};
+//# sourceMappingURL=testIds-CJ6ppoOS2.js.map
