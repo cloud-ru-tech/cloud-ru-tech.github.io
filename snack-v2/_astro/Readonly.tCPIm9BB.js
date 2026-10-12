@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./FieldText.CK4esCJR.js";var n=e();function r(){return(0,n.jsx)(t,{label:`Token`,readonly:!0,value:`sk-XXXXXXXXXXXXXXXXXXXXXXXX`})}export{r as Readonly};
