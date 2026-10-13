@@ -25,18 +25,18 @@ pnpm add @cloud-ru/ds-tabs
 | `direction` | `bottom \| left \| right \| top` | — | yes |  |
 | `onClick` | `() => void` | — | yes |  |
 | `orientation` | `horizontal \| vertical` | — | yes |  |
-| `size` | `l \| m` | — | yes |  |
+| `variant` | `primary \| secondary` | — | yes |  |
 
 #### Related types
 - `Direction` = `bottom | left | right | top`
 - `Orientation` = `horizontal | vertical`
-- `Size` = `l | m`
+- `Variant` = `primary | secondary`
 
 ### Tab
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | CSS-класс |
-| `counter` | `{ label: number; appearance?: Appearance; roleAppearance?: RoleAppearance; } \| undefined` | — | no | Счетчик, отображающийся внутри кнопки переключения |
+| `counter` | `{ value: number; appearance?: Appearance; roleAppearance?: RoleAppearance; } \| undefined` | — | no | Счетчик, отображающийся внутри кнопки переключения |
 | `data-test-id` | `string` | — | no |  |
 | `disabled` | `boolean` | `false` | no | Деактивирована ли вкладка |
 | `label` | `string` | — | yes | Заголовок вкладки |
@@ -50,22 +50,20 @@ pnpm add @cloud-ru/ds-tabs
 ### TabBar
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `afterContent` | `ReactNode` | — | no | Слот действия: контент после списка табов — справа при горизонтальной ориентации, снизу при вертикальной. Разделитель проходит вдоль всей панели. |
 | `children` | `ReactElement<TabProps, string \| JSXElementConstructor<any>>[]` | — | yes | Контент (элементы Tabs.Tab) |
 | `className` | `string` | — | no | CSS-класс |
 | `data-test-id` | `string` | — | no |  |
-| `disableDivider` | `boolean` | `false` | no | Скрыть разделитель под/рядом с панелью табов |
+| `divider` | `boolean` | `true` | no | Показывать разделитель под/рядом с панелью табов |
 | `markerPosition` | `after \| before` | `after` | no | Позиция маркера относительно таб-бара.  Значения ориентационно-нейтральны, в Figma та же ось названа сторонами: `before` = Figma `top` (horizontal) / `left` (vertical), `after`  = Figma `bottom` (horizontal) / `right` (vertical). |
-| `orientation` | `horizontal \| vertical` | `horizontal` | no | Ориентация |
-| `size` | `l \| m` | `l` | no | Размер панели табов: L — верхнеуровневый, M — на уровне контента |
-| `slotActionButton` | `ReactNode` | — | no | Слот действия: контент после списка табов — справа при горизонтальной ориентации, снизу при вертикальной. Разделитель под ним не продолжается. |
+| `variant` | `primary \| secondary` | `primary` | no | Вариант панели: primary — верхнеуровневый, secondary — на уровне контента |
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
 - `MarkerPosition` = `after | before`
-- `Orientation` = `horizontal | vertical`
 - `RoleAppearance` = `accent | decor`
-- `Size` = `l | m`
 - `TabProps` (interface)
+- `Variant` = `primary | secondary`
 
 ### TabContent
 | Prop | Type | Default | Required | Description |
@@ -82,7 +80,11 @@ pnpm add @cloud-ru/ds-tabs
 | `className` | `string` | — | no | Дополнительный класс на корневой контейнер |
 | `defaultValue` | `string` | — | no | Выбранная вкладка по умолчанию |
 | `onChange` | `((id: T) => void)` | — | no | Колбек выбора вкладки |
+| `orientation` | `horizontal \| vertical` | `horizontal` | no | Ориентация вкладок |
 | `value` | `string` | — | no | Текущая вкладка |
+
+#### Related types
+- `Orientation` = `horizontal | vertical`
 
 ## Примеры
 
@@ -103,15 +105,15 @@ export function Disabled() {
 }
 ```
 
-### SizeL
+### Primary
 
 ```tsx
-import { SIZE, Tabs } from '@cloud-ru/ds-tabs';
+import { Tabs, VARIANT } from '@cloud-ru/ds-tabs';
 
-export function SizeL() {
+export function Primary() {
   return (
     <Tabs defaultValue='a'>
-      <Tabs.TabBar size={SIZE.L}>
+      <Tabs.TabBar variant={VARIANT.Primary}>
         <Tabs.Tab value='a' label='Первая' />
         <Tabs.Tab value='b' label='Вторая' />
       </Tabs.TabBar>
@@ -146,8 +148,8 @@ import { ORIENTATION, Tabs } from '@cloud-ru/ds-tabs';
 
 export function Vertical() {
   return (
-    <Tabs defaultValue='a'>
-      <Tabs.TabBar orientation={ORIENTATION.Vertical}>
+    <Tabs defaultValue='a' orientation={ORIENTATION.Vertical}>
+      <Tabs.TabBar>
         <Tabs.Tab value='a' label='Профиль' />
         <Tabs.Tab value='b' label='Безопасность' />
       </Tabs.TabBar>
@@ -188,7 +190,7 @@ export function WithCounter() {
   return (
     <Tabs defaultValue='inbox'>
       <Tabs.TabBar>
-        <Tabs.Tab value='inbox' label='Входящие' counter={{ label: 12 }} />
+        <Tabs.Tab value='inbox' label='Входящие' counter={{ value: 12 }} />
         <Tabs.Tab value='archive' label='Архив' />
       </Tabs.TabBar>
     </Tabs>
