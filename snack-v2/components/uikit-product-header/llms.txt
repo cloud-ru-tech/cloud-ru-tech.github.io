@@ -63,6 +63,22 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `segment` | `string` | — | yes | Значение активного сегмента SegmentControl. |
 | `segmentItems` | `ContentToolbarSegmentItem[]` | — | no | Пункты SegmentControl. Без пунктов (или с одним) SegmentControl не отображается. |
 
+### ContentWrapperCustom
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `caption` | `string` | — | no |  |
+| `className` | `string` | — | no |  |
+| `contentNode` | `ReactNode` | — | no | Готовый узел вместо структурного текста; у группы обычно не задаётся |
+| `description` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `groupVariant` | `subtitle \| subtitleTertiary` | `subtitleTertiary` | no | Визуальный стиль заголовка группы |
+| `label` | `string \| number` | — | no |  |
+| `layout` | `group \| item` | `item` | no | Раскладка: строка списка или заголовок группы |
+| `selectButton` | `ReactNode` | — | no | Слот справа в групповом заголовке (bulk select) |
+| `truncate` | `TruncateProps` | — | no |  |
+
 ### DraggableServiceCard
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
@@ -183,6 +199,60 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | `menu` | `ReactNode` | — | no | Слот главного меню (слева, после логотипа). |
 | `select` | `ReactNode` | — | no | Слот селектора (например, выбор облака/организации), после меню. |
 | `toolbar` | `ReactNode` | — | no | Слот тулбара — правая часть хедера. |
+
+### ListItemCustom
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `afterContent` | `ReactElement` | — | no | Слот после основного контента |
+| `beforeContent` | `ReactElement` | — | no | Слот до основного контента |
+| `checked` | `boolean` | `false` | no | Управляемое состояние выбранности айтема |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode \| ItemContentProps` | — | no | Основной контент айтема |
+| `contentFromRender` | `boolean` | — | no | `true`, если `contentNode` собран через `contentRender` (или это неструктурный `content`). Тогда оболочка должна вставить `contentNode` как есть, а не пересобирать текст из полей `content`. |
+| `contentNode` | `ReactNode` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Флаг неактивности элемента |
+| `dragHandle` | `ReactNode` | — | no |  |
+| `expandIcon` | `ReactNode` | — | no | Сырая иконка шеврона — обёртку рисует оболочка |
+| `id` | `ItemId` | — | no | Уникальный идентификатор |
+| `inactive` | `boolean` | — | no | Флаг отображения отключения реакции на любое css состояние (hover/focus и тд) <br> Также элемент исключается из навигации с клавиатуры и не может быть выбран (selection) |
+| `isParentNode` | `boolean` | — | no |  |
+| `itemRef` | `RefObject<HTMLElement>` | — | no | Ссылка на DOM-элемент айтема |
+| `level` | `number` | `0` | no |  |
+| `onClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки клика |
+| `onExpandIconClick` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no |  |
+| `onFocus` | `((e: FocusEvent<HTMLElement, Element>) => void)` | — | no | Колбек обработки фокуса |
+| `onKeyDown` | `((e: KeyboardEvent<HTMLElement>) => void)` | — | no | Колбек обработки нажатия клавиши |
+| `onMouseDown` | `((e: MouseEvent<HTMLElement, MouseEvent>) => void)` | — | no | Колбек обработки нажатия кнопки мыши |
+| `open` | `boolean` | — | no |  |
+| `selectionMode` | `multiple \| none \| single` | `none` | no |  |
+| `size` | `l \| m \| s` | — | no |  |
+| `style` | `CSSProperties` | — | no | CSS-переменная `--level` и прочие инлайн-стили корня строки |
+| `switchControl` | `ReactNode` | — | no |  |
+| `tabIndex` | `number` | `-1` | no |  |
+
+#### Related types
+- `ItemContent` (interface)
+- `ItemId` (alias)
+- `Mode` = `multiple | none | single`
+- `Size` = `l | m | s`
+- `TruncateProps` (interface)
+
+### ListItemGroupCustom
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `beforeContent` | `ReactNode` | — | no | Слот иконки слева от label. |
+| `divider` | `boolean` | — | no | Показать разделитель над группой |
+| `groupVariant` | `subtitle \| subtitleTertiary` | `subtitleTertiary` | no | Визуальный стиль заголовка группы |
+| `label` | `string` | — | no | Заголовок группы |
+| `level` | `number` | — | yes |  |
+| `selectButton` | `{ onClick?(e: MouseEvent<HTMLElement, MouseEvent>): void; indeterminate?: boolean; checked?: boolean; itemRef?: ForwardedRef<...> \| undefined; label?: string \| undefined; } \| undefined` | — | no |  |
+| `selectButtonNode` | `ReactNode` | — | no | Уже собранная кнопка массового выбора (если есть). |
+| `size` | `l \| m \| s` | — | yes |  |
+| `truncate` | `{ variant?: "end" \| "middle"; }` | — | no | Настройки усечения длинного заголовка группы |
+
+#### Related types
+- `Size` = `l | m | s`
 
 ### Logo
 | Prop | Type | Default | Required | Description |

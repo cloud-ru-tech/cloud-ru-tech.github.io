@@ -152,11 +152,14 @@ pnpm add @cloud-ru/ds-chips
 | `disableFuzzySearch` | `boolean` | `false` | no | Отключает Fuzzy Search |
 | `disabled` | `boolean` | — | no | Отключён |
 | `dropDownClassName` | `string` | — | no |  |
+| `droplistSize` | `l \| m \| s` | — | no | Размер внутреннего `Droplist` с опциями. По умолчанию совпадает с `size` чипа. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `filterFn` | `((option: { label: ItemId; value?: ItemId; contentRenderProps?: T; }) => boolean) \| undefined` | — | no | Функция фильтрации опций |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `icon` | `ReactNode` | — | no | Иконка |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
@@ -233,11 +236,14 @@ pnpm add @cloud-ru/ds-chips
 | `disableFuzzySearch` | `boolean` | `false` | no | Отключает Fuzzy Search |
 | `disabled` | `boolean` | — | no | Отключён |
 | `dropDownClassName` | `string` | — | no |  |
+| `droplistSize` | `l \| m \| s` | — | no | Размер внутреннего `Droplist` с опциями. По умолчанию совпадает с `size` чипа. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `filterFn` | `((option: { label: ItemId; value?: ItemId; contentRenderProps?: T; }) => boolean) \| undefined` | — | no | Функция фильтрации опций |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `icon` | `ReactNode` | — | no | Иконка |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
@@ -322,13 +328,16 @@ pnpm add @cloud-ru/ds-chips
 | `disableFuzzySearch` | `boolean` | `false` | no | Отключает Fuzzy Search |
 | `disabled` | `boolean` | — | no | Отключён |
 | `dropDownClassName` | `string` | — | no |  |
+| `droplistSize` | `l \| m \| s` | — | no | Размер внутреннего `Droplist` с опциями. По умолчанию совпадает с `size` чипа. |
 | `errorDataState` | `EmptyStateProps` | — | no | Экран при ошибке запроса |
 | `filterFn` | `((option: { label: ItemId; value?: ItemId; contentRenderProps?: ContentRenderProps; }) => boolean) \| undefined` | — | no | Функция фильтрации опций |
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerMode` | `apply-only \| current-time-and-apply` | — | no | Режим футера. По умолчанию — current-time-and-apply |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `id` | `string` | — | yes |  |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `mode` | `date \| date-time \| month \| year` | — | no | Режим выбора даты Режим выбора даты и времени Режим выбора даты без времени |

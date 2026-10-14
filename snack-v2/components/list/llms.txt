@@ -112,8 +112,10 @@ pnpm add @cloud-ru/ds-list
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `Item[] \| ReorderItem[]` | — | yes |  |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
 | `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
@@ -166,8 +168,10 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `Item[]` | — | yes | Основные элементы списка |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
@@ -272,9 +276,11 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `hasListInFocusChain` | `boolean` | `true` | no | Флаг, отвечающий за включение самого родительского контейнера листа в цепочку фокусирующихся элементов |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `Item[]` | `[]` | no | Основные элементы списка |
 | `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
@@ -328,8 +334,10 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `ItemId[]` | — | yes |  |
 | `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
@@ -378,8 +386,10 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `Item[] \| ReorderItem[]` | — | yes |  |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
@@ -415,6 +425,8 @@ _Нет публичных пропсов._
 | `firstItemId` | `ItemId` | — | no |  |
 | `flattenItems` | `Record<string, FlattenItem>` | — | yes |  |
 | `focusFlattenItems` | `Record<string, FocusFlattenItem>` | — | yes |  |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
 | `size` | `l \| m \| s` | — | no | Размер списка |
 | `virtualized` | `boolean` | — | no |  |
@@ -484,8 +496,10 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `ReorderItem[]` | — | yes | Основные элементы списка: строки `SimpleItem` и/или группы с заголовком `SimpleGroupItem` (`type: 'group'` + `label` + сортируемые `items`). |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
@@ -553,9 +567,11 @@ _Нет публичных пропсов._
 | `footer` | `ReactNode ;` | — | no | Кастомизируемый элемент в конце списка |
 | `footerActiveElementsRefs` | `RefObject<HTMLElement>[]` | — | no | Список ссылок на кастомные элементы, помещенные в специальную секцию внизу списка |
 | `footerDivider` | `boolean` | — | no | Показывать divider между body и footer (Figma `dropdownContainer.dividerWrapper` снизу) |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `hasListInFocusChain` | `boolean` | `true` | no | Флаг, отвечающий за включение самого родительского контейнера листа в цепочку фокусирующихся элементов |
 | `header` | `ReactNode ;` | — | no | Кастомизируемый элемент в начале списка — Figma `dropdownContainer.topBar`. Подходит для заголовка / справочного блока над поиском. |
 | `headerDivider` | `boolean` | — | no | Показывать divider между header и body (Figma `dropdownContainer.dividerWrapper` сверху) |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `ReorderItem[]` | `[]` | no | Основные элементы списка: строки `SimpleItem` и/или группы с заголовком `SimpleGroupItem` (`type: 'group'` + `label` + сортируемые `items`). |
 | `keyboardNavigationRef` | `RefObject<{ focusItem(id: ItemId): void; }>` | — | no | Ссылка на управление навигацией листа с клавиатуры |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |

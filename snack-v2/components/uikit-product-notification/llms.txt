@@ -17,7 +17,9 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 |------|------|---------|----------|-------------|
 | `actions` | `Action[]` | — | yes |  |
 | `className` | `string` | — | no |  |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | yes |  |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `open` | `boolean` | — | yes |  |
 | `setDroplistOpen` | `Dispatch<SetStateAction<boolean>>` | — | yes |  |
 | `testIds` | `ActionsButtonTestIds` | — | yes |  |
@@ -32,7 +34,9 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 | `data-test-id` | `string` | — | no |  |
 | `date` | `string` | — | yes | Дата уведомления |
 | `description` | `ReactNode` | — | no | Описание уведомления — вторичный текст под заголовком |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
 | `id` | `string` | — | yes | Идентификатор уведомления |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Лейбл перед заголовком |
 | `link` | `PickLinkProps<"a", "label" \| "truncateVariant" \| "insideText">` | — | no | Ссылка (рендерится как `<a href>` через `@cloud-ru/ds-link`) |
 | `onClick` | `MouseEventHandler<HTMLDivElement>` | — | no | Колбэк клика по карточке. Делает карточку кликабельной (`role='button'`, фокус с клавиатуры). Активация по карточке срабатывает только при фокусе на самой карточке — вложенные кнопки, ссылка и меню действий активируются независимо. |
@@ -65,6 +69,8 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 | `children` | `Iterable<ReactNode>` | — | yes | Карточки в стопке, видна первая карточка, остальные схлопываются под нее. |
 | `data-test-id` | `string` | — | no |  |
 | `defaultOpen` | `boolean` | — | no | Состояние открыт/закрыт по умолчанию |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `onOpenChanged` | `((open: boolean) => void)` | — | no | Колбек смены состояния открыт/закрыт |
 | `title` | `string` | — | yes | Заголовок стопки карточек |
 | `unread` | `boolean` | — | no | Состояние непрочитанных карточек |
@@ -99,24 +105,25 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 
 #### Related types
 - `Action` (interface)
-- `Appearance` = `critical | neutral | primary`
+- `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
-- `ChildrenFunction` (alias)
-- `CounterProps` (interface)
-- `IconPosition` = `after | before`
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `EmptyStateProps` (interface)
 - `NotificationPanelSettingsProps` (interface)
-- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `PolymorphicRef` (alias)
 - `Position` = `bottom | left | right | top`
+- `PublicListContextType` (interface)
+- `ScrollProps` (interface)
 - `Segment` (interface)
 - `SegmentControlProps` (interface)
+- `SelectionMultipleState` (interface)
+- `SelectionSingleState` (interface)
+- `SelectionState` (interface)
 - `Size` = `l | m | s`
-- `Size (@cloud-ru/ds-button)` = `l | m | s`
+- `Size (@cloud-ru/ds-segment-control)` = `l | m | s`
 - `TooltipProps` (interface)
-- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
-- `View` = `elevated | filled | function | outline | simple | tonal`
 - `Width` = `l | m | s`
-- `Width (@cloud-ru/ds-segment-control)` = `auto | full`
 
 ### NotificationPanelBlank
 | Prop | Type | Default | Required | Description |
@@ -145,6 +152,8 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 |------|------|---------|----------|-------------|
 | `actions` | `Action[]` | — | no | Дополнительные действия панели |
 | `button` | `Omit<ButtonProps<ElementType>, "data-test-id" \| "view" \| "label" \| "size">` | — | no | Кнопка дополнительного действия панели |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `size` | `m \| s` | `m` | no |  |
 
 #### Related types
@@ -163,6 +172,8 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 |------|------|---------|----------|-------------|
 | `actions` | `Action[]` | — | yes |  |
 | `button` | `ButtonProps<ElementType>` | — | yes |  |
+| `groupItemRender` | `((props: GroupItemRenderProps) => ReactNode)` | — | no | Рендер-функция заголовка группы вместо дефолтной разметки `Separator`. Не задана — заголовок/разделитель рисуются как раньше. |
+| `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 
 ### StackTail
 | Prop | Type | Default | Required | Description |
