@@ -76,7 +76,7 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 ### ButtonDroplist
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `(Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps<"button">, "view" \| "icon" \| "appearance" \| "iconPosition"> & { ...; })` | — | yes |  |
+| `button` | `(Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps<"button">, "view" \| "appearance" \| "icon" \| "iconPosition"> & { ...; })` | — | yes |  |
 | `list` | `WidgetActionListProps` | — | yes |  |
 
 ### ButtonKebab

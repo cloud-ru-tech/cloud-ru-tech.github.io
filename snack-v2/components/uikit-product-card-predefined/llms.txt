@@ -239,10 +239,10 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ### FooterAction
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | yes | Параметры для основной кнопки |
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | yes | Параметры для основной кнопки |
 | `className` | `string` | — | no | CSS-класс для элемента с контентом |
 | `data-test-id` | `string` | — | no |  |
-| `secondaryButton` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | no | Параметры для вторичной кнопки |
+| `secondaryButton` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | no | Параметры для вторичной кнопки |
 
 ### FooterCallToAction
 | Prop | Type | Default | Required | Description |
@@ -255,7 +255,7 @@ pnpm add @cloud-ru/ds-uikit-product-card-predefined
 ### FooterPromo
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "icon" \| "loading">` | — | no | Параметры для основной кнопки |
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | no | Параметры для основной кнопки |
 | `className` | `string` | — | no | CSS-класс для элемента с контентом |
 | `data-test-id` | `string` | — | no |  |
 | `size` | `l \| m \| s` | — | no | Размер |

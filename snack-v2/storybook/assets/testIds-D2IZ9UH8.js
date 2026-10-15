@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{c as t,s as n}from"./src-DN84zmLK.js";var r,i=e((()=>{t(),r={...n,beforeNode:`before-node`,afterNode:`after-node`,polymorphicAnchor:`promo-tag__polymorphic-anchor`,polymorphicAnchorClick:`promo-tag__polymorphic-anchor-click`,polymorphicLink:`promo-tag__polymorphic-link`}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-D2IZ9UH8.js.map

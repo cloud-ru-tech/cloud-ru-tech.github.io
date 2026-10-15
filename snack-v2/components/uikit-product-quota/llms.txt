@@ -66,7 +66,7 @@ pnpm add @cloud-ru/ds-uikit-product-quota
 ### QuotaWidget
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "appearance" \| "size" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
 | `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
 | `data-test-id` | `string` | — | no |  |
 | `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |

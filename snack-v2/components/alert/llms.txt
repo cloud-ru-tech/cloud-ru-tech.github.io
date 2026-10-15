@@ -15,7 +15,7 @@ pnpm add @cloud-ru/ds-alert
 ### Alert
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `actions` | `{ primary: Omit<AlertButtonProps, "size" \| "variant">; secondary?: Omit<AlertButtonProps, "size" \| "variant">; }` | — | no | Кнопки в футере |
 | `align` | `horizontal \| vertical` | `vertical` | no | Выравнивание контента |
 | `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
 | `className` | `string` | — | no | CSS-класс |
@@ -51,7 +51,7 @@ _Нет публичных пропсов._
 ### AlertBase
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `actions` | `{ primary: Omit<AlertButtonProps, "size" \| "variant">; secondary?: Omit<AlertButtonProps, "size" \| "variant">; }` | — | no | Кнопки в футере |
 | `align` | `horizontal \| vertical` | — | no | Выравнивание контента |
 | `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
 | `className` | `string` | — | no | CSS-класс |
@@ -100,7 +100,7 @@ _Нет публичных пропсов._
 ### AlertTop
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `actions` | `{ primary: Omit<AlertButtonProps, "variant" \| "size">; secondary?: Omit<AlertButtonProps, "variant" \| "size">; }` | — | no | Кнопки в футере |
+| `actions` | `{ primary: Omit<AlertButtonProps, "size" \| "variant">; secondary?: Omit<AlertButtonProps, "size" \| "variant">; }` | — | no | Кнопки в футере |
 | `align` | `horizontal \| vertical` | `vertical` | no | Выравнивание контента |
 | `appearance` | `error \| info \| neutral \| primary \| success \| warning` | — | no | Внешний вид |
 | `className` | `string` | — | no | CSS-класс |

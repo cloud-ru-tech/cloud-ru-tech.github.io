@@ -30,7 +30,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `appearance` | `critical \| neutral \| primary` | — | no | Вариант оформления |
 | `as` | `a \| button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
 | `button` | `Omit<ButtonProps, "view" \| "label" \| "icon"> \| (Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled"; }) \| (Omit<...> & { ...; })` | — | no |  |
-| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "appearance" \| "size" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
 | `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
 | `className` | `string` | — | no | Дополнительный класс Класс триггерной кнопки. |
 | `closeDroplistOnItemClick` | `boolean` | `false` | no | Закрывать выпадающий список после клика на базовый айтем.  Работает в режимах selection: 'none' \| 'single' |
@@ -74,7 +74,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 ### ButtonDroplist
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `(Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps, "view" \| "icon" \| "appearance" \| "iconPosition"> & { ...; })` | — | yes |  |
+| `button` | `(Omit<ButtonProps, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps, "view" \| "appearance" \| "icon" \| "iconPosition"> & { ...; })` | — | yes |  |
 | `list` | `Pick<DroplistProps, "className" \| "open" \| "onOpenChange" \| "items" \| "closeDroplistOnItemClick">` | — | yes |  |
 
 #### Related types
@@ -130,7 +130,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 ### ButtonQuota
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "size" \| "appearance" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
+| `buttonProps` | `Pick<ButtonProps, "className" \| "view" \| "label" \| "disabled" \| "appearance" \| "size" \| "fullWidth">` | — | no | Свойства кнопки открытия виджета |
 | `canEditQuota` | `boolean` | — | yes | Флаг наличия прав на редактирование квот |
 | `data-test-id` | `string` | — | no |  |
 | `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |

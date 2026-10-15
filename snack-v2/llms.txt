@@ -162,6 +162,7 @@
 ### Primitives
 
 - [@cloud-ru/ds-ai-button-chevron](/snack-v2/components/ai-button-chevron/llms.txt): Кнопка-шеврон 16×16 для раскрытия и сворачивания в составных AI-компонентах стриминга.
+- [@cloud-ru/ds-ai-button-giga](/snack-v2/components/ai-button-giga/llms.txt): Кнопки Гига-помощника с обводкой, без обводки и увеличенная кнопка формы.
 - [@cloud-ru/ds-ai-icon-giga](/snack-v2/components/ai-icon-giga/llms.txt): Иконка-логотип GigaChat в монохроме и брендовых градиентах для тёмного и светлого фона.
 - [@cloud-ru/ds-ai-tool](/snack-v2/components/ai-tool/llms.txt): Базовые презентационные элементы для сборки AI-компонентов Tool и Tool Simple — иконки, статус, текст, key-value, дерево, бейджи и блок деталей.
 
