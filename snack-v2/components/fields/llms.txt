@@ -327,7 +327,8 @@ pnpm add @cloud-ru/ds-fields
 ### FieldSelect
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `addOptionByEnter` | `boolean` | `false` | no | Зафиксировать введённый текст как новый выбор по `Enter` (создание опции «на лету»). |
+| `addCustomOptionTriggers` | `("enter" \| "blur")[] \| ("enter" \| "blur" \| "space" \| "comma")[]` | — | no | События, по которым произвольный ввод фиксируется как выбранная опция. Учитывается только при `allowCustomOption={true}`. Если не задан — используются все триггеры режима (`single`: enter, blur; `multiple`: enter, blur, space, comma). Триггеры, недоступные в текущем `selection`, игнорируются. |
+| `allowCustomOption` | `boolean` | `false` | no | Разрешить фиксировать произвольный ввод из строки поиска как выбранную опцию (значение, которого нет в `items`). |
 | `autoFocus` | `boolean` | — | no | Автофокус input при монтировании. На mobile выключается адаптивно (см. `layoutPresets`) |
 | `autocomplete` | `boolean` | `false` | no | Не фильтровать список на клиенте — фильтрацию обеспечивает потребитель (серверный поиск). Введённый текст уходит в `search.onChange`, список берётся из `items` как есть. |
 | `background` | `boolean` | `true` | no | Фон поля (acrylic) |
@@ -1235,10 +1236,10 @@ export function SelectCreatable() {
   return (
     <FieldSelect
       label='Теги'
-      placeholder='Введите тег и нажмите Enter'
-      hint='addOptionByEnter: введённый текст по Enter становится новым выбранным значением (чипом)'
+      placeholder='Введите тег и нажмите Enter, пробел или запятую'
+      hint='allowCustomOption: введённый текст фиксируется как новое значение (по умолчанию Enter, blur, Space, Comma)'
       selection='multiple'
-      addOptionByEnter
+      allowCustomOption
       items={PRESET_TAGS}
       value={value}
       onChange={setValue}

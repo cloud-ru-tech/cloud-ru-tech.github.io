@@ -393,6 +393,7 @@ _Нет публичных пропсов._
 | `items` | `Item[] \| ReorderItem[]` | — | yes |  |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
+| `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
 | `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
 | `marker` | `boolean` | — | no | Отображать ли маркер у выбранного элемента списка |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |

@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o,u as s}from"./iframe-CvoNiqmx.js";import{c,i as l,t as u,u as d}from"./src-DW3eHvXH.js";import{n as f,t as p}from"./testIds-nWBNA-FT.js";var m,h,g,_,v,y;e((()=>{u(),o(),f(),m=t(),{expect:h,within:g}=__STORYBOOK_MODULE_TEST__,_={title:`AI/Primitives/ButtonGiga/Function`,id:`ai-buttongiga-function`,component:l,parameters:{layout:`fullscreen`},args:{label:`Создать ресурс`,appearance:c.Primary,loading:!1,disabled:!1,size:d.S,"data-test-id":p.function.root},argTypes:{innerRef:{table:{disable:!0}},onClick:{table:{disable:!0}},className:{table:{disable:!0}},"data-test-id":{table:{disable:!0}},appearance:{control:`radio`,options:Object.values(c)},size:{control:`radio`,options:Object.values(d)}},render:e=>(0,m.jsx)(r,{children:(0,m.jsxs)(a,{children:[(0,m.jsx)(i,{children:`AiButtonGigaFunction`}),(0,m.jsx)(n,{children:`Внешний вид и состояние задаются свойствами кнопки.`}),(0,m.jsx)(s,{align:`center`,children:(0,m.jsx)(l,{...e})})]})})},v={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await h(g(e).getByTestId(p.function.root)).toBeVisible()}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.function.root)).toBeVisible();
-  }
-}`,...v.parameters?.docs?.source}}},y=[`Playground`]}))();export{v as Playground,y as __namedExportsOrder,_ as default};
-//# sourceMappingURL=AiButtonGigaFunction.Playground.stories-D6rle18t.js.map

@@ -539,6 +539,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 
 #### Related types
 - `BottomSheetActionButton` (alias)
+- `CustomOptionProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
@@ -554,7 +555,6 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 - `ModalWidth` = `l | m | s`
 - `Permission` = `canCreate | canRead | none`
 - `PublicListContextType` (interface)
-- `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SelectFieldProps` (alias)
 - `SelectionState` (interface)
