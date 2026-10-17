@@ -119,7 +119,6 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 
 #### Related types
 - `Action` (alias)
-- `AvatarProps` (interface)
 - `BaseAction` (interface)
 - `ButtonDroplistProps` (interface)
 - `ButtonKebabProps` (interface)

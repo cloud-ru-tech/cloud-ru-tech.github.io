@@ -27,30 +27,30 @@ pnpm add @cloud-ru/ds-uikit-product-title-clickable
 
 ## API
 
+### SimpleTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `ReactNode` | — | no | Иконка слева, 24×24. |
+| `title` | `string` | — | yes | Текст заголовка. |
+| `titleTag` | `ElementType` | — | no | Семантический тег заголовка. |
+
 ### TitleClickable
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `as` | `ElementType` | — | no | Полиморфный тег корня — `'a'` по умолчанию, либо компонент-роутер (`Link` из react-router-dom). |
-| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | Аватар с subtitle (Figma `userTitle`). Рендерится после заголовка, если `children` не передан. |
-| `children` | `ReactNode` | — | no | Произвольная нода после заголовка. Имеет приоритет над `avatar`. |
 | `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode` | — | yes | Содержимое: TitleClickable.SimpleTitle, TitleClickable.UserTitle или произвольная React-нода. |
 | `data-test-id` | `string` | — | no |  |
 | `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
-| `icon` | `ReactNode` | — | no | Иконка слева от заголовка. |
 | `innerRef` | `any` | — | no | Ref на корневой элемент. |
 | `showArrow` | `boolean` | `true` | no | Показывать иконку-стрелку справа. Иконка автоматически меняется на `external link` при `target='_blank'`. |
-| `title` | `string` | — | no | Заголовок |
-| `titleTag` | `ElementType` | — | no | Тег заголовка для семантики (например `'h2'`, `'h3'`, `'span'`) |
 
 #### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
-- `AvatarProps` (interface)
 - `PolymorphicRef` (alias)
-- `Shape` = `rounded | squared`
-- `Size` = `3xl | 6xl | 9xl | l | m | s | xs`
-- `StatusAppearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
 
-### TitleClickableAvatar
+### UserTitle
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `appearance` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Внешний вид (цвет) |
@@ -61,32 +61,10 @@ pnpm add @cloud-ru/ds-uikit-product-title-clickable
 | `name` | `string` | — | yes | Имя пользователя для генерации аббревиатуры |
 | `shape` | `rounded \| squared` | — | no | Форма: круглая или квадратная |
 | `showTwoSymbols` | `boolean` | — | no | Отображение двух заглавных символов имени вместо одного |
-| `size` | `3xl \| 6xl \| 9xl \| l \| m \| s \| xs` | — | no | Размер |
+| `size` | `3xl \| 6xl \| 9xl \| l \| m \| s \| xs` | `m` | no | Размер |
 | `src` | `string` | — | no | URL изображения аватара |
 | `status` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Appearance дефолтного `StatusIndicator` в правом-нижнем углу. Размер индикатора подбирается из `size` аватара автоматически. Полностью настроить значок можно через слот `badge`, который перекрывает `status`. |
-| `subtitle` | `string` | — | yes | Подпись под именем (e-mail, роль и т.п.). |
-
-#### Related types
-- `Appearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
-- `Shape` = `rounded | squared`
-- `Size` = `3xl | 6xl | 9xl | l | m | s | xs`
-- `StatusAppearance` = `blue | green | neutral | orange | pink | red | violet | yellow`
-
-### TitleClickableContent
-| Prop | Type | Default | Required | Description |
-|------|------|---------|----------|-------------|
-| `avatar` | `({ 'data-test-id'?: string; } & AriaAttributes & { name: string; src?: string; appearance?: Appearance \| undefined; size?: Size \| undefined; ... 5 more ...; innerRef?: Ref<...> \| undefined; } & HTMLAttributes<...> & { ...; }) \| undefined` | — | no | Аватар с subtitle (Figma `userTitle`). Рендерится после заголовка, если `children` не передан. |
-| `children` | `ReactNode` | — | no | Произвольная нода после заголовка. Имеет приоритет над `avatar`. |
-| `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
-| `icon` | `ReactNode` | — | no | Иконка слева от заголовка. |
-| `title` | `string` | — | no | Заголовок |
-| `titleTag` | `ElementType` | — | no | Тег заголовка для семантики (например `'h2'`, `'h3'`, `'span'`) |
-
-### TitleClickableIcon
-| Prop | Type | Default | Required | Description |
-|------|------|---------|----------|-------------|
-| `className` | `string` | — | no |  |
-| `icon` | `ReactNode` | — | yes | Иконка (24×24). |
+| `subtitle` | `string` | — | no | Подпись под именем пользователя. |
 
 ## Примеры
 
@@ -96,7 +74,7 @@ pnpm add @cloud-ru/ds-uikit-product-title-clickable
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function Basic() {
-  return <TitleClickable href='#' title='Production environment' />;
+  return <TitleClickable href='#' content={<TitleClickable.SimpleTitle title='Production environment' />} />;
 }
 ```
 
@@ -106,7 +84,13 @@ export function Basic() {
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function External() {
-  return <TitleClickable href='https://example.com' target='_blank' title='Внешняя ссылка' />;
+  return (
+    <TitleClickable
+      href='https://example.com'
+      target='_blank'
+      content={<TitleClickable.SimpleTitle title='Внешняя ссылка' />}
+    />
+  );
 }
 ```
 
@@ -117,7 +101,13 @@ import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function FullWidth() {
-  return <TitleClickable href='#' title='Раздел занимает всю ширину контейнера' icon={<PlaceholderSVG />} fullWidth />;
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Раздел занимает всю ширину контейнера' icon={<PlaceholderSVG />} />}
+      fullWidth
+    />
+  );
 }
 ```
 
@@ -128,7 +118,13 @@ import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function HiddenArrow() {
-  return <TitleClickable href='#' title='Без шеврона' icon={<PlaceholderSVG />} showArrow={false} />;
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Без шеврона' icon={<PlaceholderSVG />} />}
+      showArrow={false}
+    />
+  );
 }
 ```
 
@@ -138,7 +134,13 @@ export function HiddenArrow() {
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithAvatar() {
-  return <TitleClickable href='#' fullWidth avatar={{ name: 'John Doe', subtitle: 'jdoe@example.com' }} />;
+  return (
+    <TitleClickable
+      href='#'
+      fullWidth
+      content={<TitleClickable.UserTitle name='John Doe' subtitle='jdoe@example.com' />}
+    />
+  );
 }
 ```
 
@@ -150,11 +152,14 @@ import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithCustomNode() {
   return (
-    <TitleClickable href='#' title='Section title'>
-      <Typography variant='label' size='s' as='span'>
-        Custom children
-      </Typography>
-    </TitleClickable>
+    <TitleClickable
+      href='#'
+      content={
+        <Typography variant='label' size='s' as='span'>
+          Custom content
+        </Typography>
+      }
+    />
   );
 }
 ```
@@ -166,6 +171,11 @@ import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
 import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
 
 export function WithIcon() {
-  return <TitleClickable href='#' title='Production environment' icon={<PlaceholderSVG />} />;
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Production environment' icon={<PlaceholderSVG />} />}
+    />
+  );
 }
 ```

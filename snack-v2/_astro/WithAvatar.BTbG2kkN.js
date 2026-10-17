@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TitleClickable.HEz4v2V8.js";var n=e();function r(){return(0,n.jsx)(t,{href:`#`,fullWidth:!0,content:(0,n.jsx)(t.UserTitle,{name:`John Doe`,subtitle:`jdoe@example.com`})})}export{r as WithAvatar};
