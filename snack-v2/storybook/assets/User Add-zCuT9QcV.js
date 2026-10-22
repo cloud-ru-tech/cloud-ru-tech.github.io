@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3%2020L7%2015H17M19%2021V15M16%2018H22M15.5%207.5C15.5%205.567%2013.933%204%2012%204C10.067%204%208.5%205.567%208.5%207.5C8.5%209.433%2010.067%2011%2012%2011C13.933%2011%2015.5%209.433%2015.5%207.5Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=User Add-zCuT9QcV.js.map

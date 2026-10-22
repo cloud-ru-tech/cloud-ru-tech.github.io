@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";function t(){try{return window.parent!==window&&!!window.parent.document.getElementById(`storybook-preview-iframe`)}catch{return!1}}var n,r=e((()=>{n=t()}));export{n,r as t};
+//# sourceMappingURL=sidebarGutter--9uy9WGg.js.map

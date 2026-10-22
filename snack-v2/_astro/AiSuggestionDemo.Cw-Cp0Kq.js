@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{Basic as t}from"./Basic.35wIHjE2.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as AiSuggestionDemo};

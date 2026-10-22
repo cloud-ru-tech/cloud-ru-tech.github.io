@@ -1,0 +1,1 @@
+import{a as e,i as t,n,r,t as i}from"./typeGuards.Cg5SzgKx.js";var a=e=>e?`Да`:`Нет`;function o(o){let s=o?.formatBoolean??a;return function({data:a,accessorKey:o,render:c}){if(!a)return`—`;let l=o?a[o]:void 0;return r(l)?c?c(a,`—`):`—`:n(l)?s(l):e(l)?l||`—`:i(l)?l.length?l.join(`, `):`—`:t(l)?Object.keys(l).length?JSON.stringify(l):`—`:String(l)}}export{o as t};

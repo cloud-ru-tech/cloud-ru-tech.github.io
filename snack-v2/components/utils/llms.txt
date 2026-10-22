@@ -1,0 +1,11 @@
+﻿# @cloud-ru/ds-utils
+
+> Хуки и хелперы для React-компонентов — controlled/uncontrolled, дебаунс, свайпы, модалки, персист данных, пропы и SSR.
+
+Docs: /snack-v2/components/utils/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-utils
+```

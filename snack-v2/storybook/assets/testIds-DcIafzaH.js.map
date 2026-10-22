@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-DcIafzaH.js","names":[],"sources":["../../../../packages/link/stories/Link/testIds.ts"],"sourcesContent":["export const TEST_IDS = {\n  root: 'link',\n} as const;\n"],"mappings":"iEAAa,EAAW,CACtB,KAAM,MACR"}

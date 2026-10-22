@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-C7_PwLGH.js","names":[],"sources":["../../../../packages/info-block/stories/InfoBlock/styles.module.scss"],"sourcesContent":["@use '@ds/figma-variables/build/scss/styles/styles.module' as base;\n\n.footerRow {\n  display: flex;\n  flex-wrap: wrap;\n  gap: base.$sn-primitive-dimension-8;\n}"],"mappings":""}

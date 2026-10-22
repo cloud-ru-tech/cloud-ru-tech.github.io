@@ -1,0 +1,126 @@
+﻿# @cloud-ru/ds-ai-field-banner
+
+> Инлайн-баннер для поля ввода с семантическим вариантом, иконкой, контентом и действием.
+
+Docs: /snack-v2/components/ai-field-banner/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-field-banner
+```
+
+## Когда использовать
+
+- Подсказки и валидация у AI-полей (`information`, `help`, `warning`, `critical`).
+- Контекст безопасности или агентного сценария (`security`, `agentic`).
+- Дополнительный контент под основной строкой — ссылка, чип, короткий список (`bottomContent`).
+
+### Когда не нужен
+
+- Полноразмерный inline-alert в контенте страницы — используйте `@cloud-ru/ds-alert`.
+- Системный баннер по верхней кромке — используйте `AlertTop` из `@cloud-ru/ds-alert`.
+
+## API
+
+### AiFieldBanner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | no | Подпись кнопки действия справа. Кнопка не рендерится, если не задана. |
+| `bottomContent` | `ReactNode` | — | no | Дополнительный слот под основной строкой. Не рендерится, если не задан. |
+| `className` | `string` | — | no | Доп. класс корня. |
+| `content` | `ReactNode` | — | no | Текст или контент основной строки. Не рендерится, если не задан. |
+| `data-test-id` | `string` | `ai-field-banner` | no |  |
+| `icon` | `ReactNode` | — | no | Иконка слева от текста |
+| `onActionClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Обработчик клика по кнопке действия. |
+| `size` | `m \| s` | `s` | no | Размер: без `bottomContent` — `s` 400×48, `m` 400×60; с ним — `s` 400×72, `m` 400×84. |
+| `variant` | `agentic \| critical \| help \| information \| security \| warning` | `information` | no | Семантический вариант баннера (ось `Variant` в Figma). По умолчанию `information`. |
+
+#### Related types
+- `Size` = `m | s`
+- `Variant` = `agentic | critical | help | information | security | warning`
+
+## Примеры
+
+### Default
+
+```tsx
+import { AiFieldBanner, VARIANT } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+
+export function Default() {
+  return (
+    <AiFieldBanner
+      variant={VARIANT.Information}
+      content='Description'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+      onActionClick={() => undefined}
+    />
+  );
+}
+```
+
+### Mobile
+
+```tsx
+import { AiFieldBanner, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+
+export function Mobile() {
+  return (
+    <AiFieldBanner
+      size={SIZE.M}
+      variant={VARIANT.Agentic}
+      content='Description'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+    />
+  );
+}
+```
+
+### Variants
+
+```tsx
+import { AiFieldBanner, VARIANT_ORDER } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+
+const variants = VARIANT_ORDER;
+
+export function Variants() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 400 }}>
+      {variants.map(variant => (
+        <AiFieldBanner
+          key={variant}
+          variant={variant}
+          content='Description'
+          actionLabel='Label text'
+          icon={<PlaceholderSVG />}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+### WithBottomContent
+
+```tsx
+import { AiFieldBanner, VARIANT } from '@cloud-ru/ds-ai-field-banner';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+
+export function WithBottomContent() {
+  return (
+    <AiFieldBanner
+      variant={VARIANT.Information}
+      content='Description'
+      bottomContent='Additional content'
+      actionLabel='Label text'
+      icon={<PlaceholderSVG />}
+      onActionClick={() => undefined}
+    />
+  );
+}
+```

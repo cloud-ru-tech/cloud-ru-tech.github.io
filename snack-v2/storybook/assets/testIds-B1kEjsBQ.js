@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={tooltip:{triggerOpen:`tooltip-trigger`,content:`tooltip-content`,upperTrigger:`tooltip-upper-trigger`,upperContent:`tooltip-upper-content`,vmTrigger:e=>`tooltip-vm-${e}`},questionTooltip:{triggerOpen:`question-tooltip-trigger`,content:`question-tooltip-content`}}}));export{n,t};
+//# sourceMappingURL=testIds-B1kEjsBQ.js.map

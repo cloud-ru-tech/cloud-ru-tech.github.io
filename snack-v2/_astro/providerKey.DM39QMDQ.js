@@ -1,0 +1,1 @@
+function e(e,t){return`@cloud-ru/ds:${e}:v${t}`}export{e as t};

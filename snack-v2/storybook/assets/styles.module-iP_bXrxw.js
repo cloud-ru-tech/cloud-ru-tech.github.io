@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s,c,l,u,d=e((()=>{t=`_wrapper_1d1vb_4`,n=`_filesList_1d1vb_10`,r=`_contentTitle_1d1vb_15`,i=`_contentDescription_1d1vb_26`,a=`_card_1d1vb_37`,o=`_formHeader_1d1vb_48`,s=`_form_1d1vb_48`,c=`_formArea_1d1vb_65`,l=`_dropHint_1d1vb_78`,u={wrapper:t,filesList:n,contentTitle:r,contentDescription:i,card:a,formHeader:o,form:s,formArea:c,dropHint:l}}));export{u as n,d as t};
+//# sourceMappingURL=styles.module-iP_bXrxw.js.map

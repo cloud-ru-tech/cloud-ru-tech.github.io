@@ -1,0 +1,1 @@
+var e={S:`s`,M:`m`,L:`l`},t={S:`s`,M:`m`},n={[e.S]:t.S,[e.M]:t.M,[e.L]:t.M};export{n as t};

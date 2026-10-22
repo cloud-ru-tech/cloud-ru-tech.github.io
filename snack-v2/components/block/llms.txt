@@ -1,0 +1,108 @@
+﻿# @cloud-ru/ds-block
+
+> Слот-поверхность с акриловым фоном (матовое/полупрозрачное стекло) для композиции содержимого на разных подложках.
+
+Docs: /snack-v2/components/block/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-block
+```
+
+## Когда использовать
+
+- Плавающие карточки или панели поверх фоновых изображений.
+- Модальные и всплывающие поверхности, где важна глубина.
+- Любой контент, который нужно визуально отделить от сложного фона без использования сплошного цвета.
+
+Когда **не** нужен `Block`: для обычных блоков на плоском фоне используйте свёрстанную карточку без акрилового эффекта — Block заметно дороже по отрисовке.
+
+## API
+
+### Block
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `backgroundPredefined` | `blueBackground \| decorTransparent \| greenBackground \| neutralBackground1Level \| orangeBackground \| pinkBackground \| primaryBackground \| redBackground \| transparent \| violetBackground \| yellowBackground` | `neutralBackground1Level` | no | Слой backgroundPredefined + acrylic (см. `BACKGROUND_PREDEFINED_FILL` в `@cloud-ru/ds-materials`). Задаёт палитру подложки: цвета, `transparent` и `decorTransparent`. По умолчанию `material/neutralBackground1Level`. |
+| `children` | `ReactNode` | — | no | Содержимое |
+| `contentClassName` | `string` | — | no | Класс на внутренний слот содержимого (`.content`). Block — подложка, а не layout-контейнер (`display: block`); раскладку контента задаёт потребитель. Этот проп даёт управлять слотом содержимого напрямую — напр. растянуть его по высоте блока (`flex`/`height`), когда корень блока сделан flex-контейнером через `className`. |
+| `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests |
+| `size` | `l \| m \| s` | `m` | no | Размер |
+| `view` | `elevated \| outline \| simple` | `simple` | no | Визуальный режим поверхности |
+
+#### Related types
+- `BackgroundPredefinedFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`
+- `Size` = `l | m | s`
+- `View` = `elevated | outline | simple`
+
+## Примеры
+
+### BackgroundPalette
+
+```tsx
+import { Block } from '@cloud-ru/ds-block';
+import { BACKGROUND_PREDEFINED_FILL } from '@cloud-ru/ds-materials';
+
+const FILLS = [
+  BACKGROUND_PREDEFINED_FILL.PrimaryBackground,
+  BACKGROUND_PREDEFINED_FILL.GreenBackground,
+  BACKGROUND_PREDEFINED_FILL.YellowBackground,
+  BACKGROUND_PREDEFINED_FILL.RedBackground,
+  BACKGROUND_PREDEFINED_FILL.VioletBackground,
+] as const;
+
+export function BackgroundPalette() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      {FILLS.map(fill => (
+        <Block key={fill} backgroundPredefined={fill} size='m'>
+          <span>{fill}</span>
+        </Block>
+      ))}
+    </div>
+  );
+}
+```
+
+### Basic
+
+```tsx
+import { Block } from '@cloud-ru/ds-block';
+
+export function Basic() {
+  return (
+    <Block>
+      <span>Your content here</span>
+    </Block>
+  );
+}
+```
+
+### OutlineLarge
+
+```tsx
+import { Block } from '@cloud-ru/ds-block';
+
+export function OutlineLarge() {
+  return (
+    <Block view='outline' size='l'>
+      <span>Outline size L</span>
+    </Block>
+  );
+}
+```
+
+### Transparent
+
+```tsx
+import { Block } from '@cloud-ru/ds-block';
+import { BACKGROUND_PREDEFINED_FILL } from '@cloud-ru/ds-materials';
+
+export function Transparent() {
+  return (
+    <Block backgroundPredefined={BACKGROUND_PREDEFINED_FILL.DecorTransparent} size='m'>
+      <span>Transparent</span>
+    </Block>
+  );
+}
+```

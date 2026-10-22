@@ -1,0 +1,196 @@
+﻿# @cloud-ru/ds-ai-suggestion-panel
+
+> Полоса вопросов-подсказок к ассистенту — кнопка Giga, вопросы, «+N» со скрытыми вопросами и кнопка закрытия.
+
+Docs: /snack-v2/components/ai-suggestion-panel/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-suggestion-panel
+```
+
+## Когда использовать
+
+- Рядом с контекстом, по которому ассистент может ответить: алерт, ресурс, страница сервиса.
+- Когда вопросы известны заранее и их немного — до нескольких штук в одну строку.
+
+Когда **не** нужен:
+
+- Вопрос нужно ввести свободным текстом:
+  - используйте поле запроса `@cloud-ru/ds-ai-field-request`.
+- Подсказка одна и стоит отдельно от полосы:
+  - используйте `AiSuggestionSimple` из `@cloud-ru/ds-ai-suggestion`.
+
+Компонент не решает, когда показываться и скрываться, не отправляет вопрос ассистенту и не включает загрузку сам — это делает потребитель.
+
+## API
+
+### AI_SUGGESTION_PANEL_LAYOUT_PRESETS
+_Нет публичных пропсов._
+
+### AiSuggestionPanel
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `docsUrl` | `string` | `https://cloud.ru/docs/ai_assistant_cloudia/ug/index` | no | Ссылка «Документация» в тултипе кнопки Giga. |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ссылка на корневой элемент. |
+| `items` | `AiSuggestionPanelItem[]` | — | yes | Вопросы полосы. Те, что не помещаются по ширине, компонент переносит в сегмент «+N» со списком. |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<AiSuggestionPanelLayoutDefaults>>>` | — | no | Переопределение пресетов раскладки (`mobile`, `desktop`, …) для `size`. |
+| `onClose` | `(() => void)` | — | no | Нажатие на кнопку закрытия. Без колбэка кнопка не показывается. Полосу компонент не скрывает. |
+| `onItemClick` | `((value: string) => void)` | — | no | Нажатие на вопрос — в полосе или в списке «+N». |
+| `onLogoClick` | `(() => void)` | — | no | Нажатие на кнопку Giga. |
+| `size` | `m \| s` | — | no | Размер полосы: `s` — высота 32, `m` — высота 40. По умолчанию `s`, на mobile-раскладке — `m`. Явное значение задаёт desktop; mobile переопределяется через `layoutPresets.mobile`. |
+
+#### Related types
+- `AiSuggestionPanelItem` (interface)
+- `AiSuggestionPanelLayoutDefaults` (interface)
+- `LayoutPresets` (interface)
+- `Size` = `m | s`
+
+### LogoButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `docsUrl` | `string` | — | yes |  |
+| `onClick` | `(() => void)` | — | no |  |
+| `size` | `m \| s` | — | yes |  |
+
+### LogoCell
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `size` | `m \| s` | — | yes |  |
+
+### MoreSegment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `AiSuggestionPanelItem[]` | — | yes | Вопросы, не поместившиеся в полосу. |
+| `mobile` | `boolean` | — | no |  |
+| `onItemClick` | `(value: string) => void` | — | yes |  |
+| `size` | `m \| s` | — | yes |  |
+
+### Segment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `aria-expanded` | `boolean` | — | no |  |
+| `aria-label` | `string` | — | no |  |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no |  |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no |  |
+| `label` | `string` | — | yes |  |
+| `loading` | `boolean` | — | no |  |
+| `measure` | `boolean` | — | no | Копия для замера ширины: рендерится `<span>` без обработчиков. |
+| `mobile` | `boolean` | — | no |  |
+| `onClick` | `MouseEventHandler<HTMLButtonElement>` | — | no |  |
+| `onKeyDown` | `KeyboardEventHandler<HTMLButtonElement>` | — | no |  |
+| `open` | `boolean` | — | no | «+N» с открытым списком. |
+| `size` | `m \| s` | — | yes |  |
+| `value` | `string` | — | no |  |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { AiSuggestionPanel } from '@cloud-ru/ds-ai-suggestion-panel';
+import { Typography } from '@cloud-ru/ds-typography';
+import { useState } from 'react';
+
+const ITEMS = [
+  { value: 'alert-reason', label: 'Почему сработал алерт?' },
+  { value: 'vm-monitoring', label: 'Как настроить мониторинг всех ВМ?' },
+  { value: 'vm-traffic', label: 'Где посмотреть трафик ВМ?' },
+  { value: 'alert-vm-off', label: 'Как создать алерт, если ВМ выключена?' },
+  { value: 'vm-metrics', label: 'Какие проблемы видны по метрикам ВМ?' },
+];
+
+export function Basic() {
+  const [selected, setSelected] = useState<string>();
+  const selectedLabel = ITEMS.find(item => item.value === selected)?.label;
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
+      <AiSuggestionPanel items={ITEMS} onItemClick={setSelected} />
+      <Typography variant='body' size='s'>
+        {selectedLabel ? `Выбран вопрос: ${selectedLabel}` : 'Нажмите на вопрос'}
+      </Typography>
+    </div>
+  );
+}
+```
+
+### LoadingFlow
+
+```tsx
+import { AiSuggestionPanel, AiSuggestionPanelItem } from '@cloud-ru/ds-ai-suggestion-panel';
+import { useEffect, useState } from 'react';
+
+const QUESTIONS: AiSuggestionPanelItem[] = [
+  { value: 'alert-reason', label: 'Почему сработал алерт?' },
+  { value: 'vm-monitoring', label: 'Как настроить мониторинг всех ВМ?' },
+  { value: 'vm-traffic', label: 'Где посмотреть трафик ВМ?' },
+];
+
+/** Время «ответа ассистента» в демо. */
+const ANSWER_DELAY_MS = 2000;
+
+export function LoadingFlow() {
+  const [pendingValue, setPendingValue] = useState<string>();
+
+  useEffect(() => {
+    if (!pendingValue) return;
+
+    const timer = setTimeout(() => setPendingValue(undefined), ANSWER_DELAY_MS);
+
+    return () => clearTimeout(timer);
+  }, [pendingValue]);
+
+  const items = QUESTIONS.map(question => ({ ...question, loading: question.value === pendingValue }));
+
+  return <AiSuggestionPanel items={items} onItemClick={setPendingValue} />;
+}
+```
+
+### Sizes
+
+```tsx
+import { AiSuggestionPanel, SIZE } from '@cloud-ru/ds-ai-suggestion-panel';
+
+const ITEMS = [
+  { value: 'alert-reason', label: 'Почему сработал алерт?' },
+  { value: 'vm-traffic', label: 'Где посмотреть трафик ВМ?' },
+];
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
+      <AiSuggestionPanel items={ITEMS} size={SIZE.S} />
+      <AiSuggestionPanel items={ITEMS} size={SIZE.M} />
+    </div>
+  );
+}
+```
+
+### WithClose
+
+```tsx
+import { AiSuggestionPanel } from '@cloud-ru/ds-ai-suggestion-panel';
+import { Button } from '@cloud-ru/ds-button';
+import { useState } from 'react';
+
+const ITEMS = [
+  { value: 'alert-reason', label: 'Почему сработал алерт?' },
+  { value: 'vm-traffic', label: 'Где посмотреть трафик ВМ?' },
+];
+
+export function WithClose() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) {
+    return <Button label='Показать подсказки' view='outline' appearance='neutral' onClick={() => setVisible(true)} />;
+  }
+
+  return <AiSuggestionPanel items={ITEMS} onClose={() => setVisible(false)} />;
+}
+```

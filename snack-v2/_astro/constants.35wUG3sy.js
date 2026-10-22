@@ -1,0 +1,1 @@
+var e=new Intl.Locale(`ru-RU`);export{e as t};

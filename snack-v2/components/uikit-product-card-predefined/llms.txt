@@ -1,0 +1,400 @@
+﻿# @cloud-ru/ds-uikit-product-card-predefined
+
+> Пресеты карточек Product UI Kit — CardBanner, CardService, CardServiceLight, CardServiceInfo, CardServiceSmall, CardSuggest, CardCustom.
+
+Docs: /snack-v2/components/uikit-product-card-predefined/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-uikit-product-card-predefined
+```
+
+## API
+
+### Body
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | yes | Произвольное содержимое тела карточки |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `l \| m \| s` | — | no | Размер |
+
+### CardAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+
+### CardActionsSurface
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `hover` | no | Формат отображения действий: всегда или при наведении и фокусе |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `expandable` | `{ value: boolean; onClick(): void; buttonRef?: RefObject<HTMLButtonElement>; }` | — | no | Кнопка раскрытия |
+| `favorite` | `(FavoriteProps & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка «Избранное» |
+| `onTooltipOpenChange` | `((isOpen: boolean) => void)` | — | no | Callback, вызываемый при открытии тултипа |
+| `tooltip` | `(Omit<TooltipProps, "children"> & { buttonRef?: RefObject<HTMLButtonElement>; 'data-test-id'?: string; }) \| undefined` | — | no | Кнопка info с тултипом |
+
+#### Related types
+- `ChildrenFunction` (alias)
+- `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `VisibilityStrategy` = `always | hover`
+
+### CardBanner
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `image` | `{ src: string; alt: string; }` | — | yes | Изображение |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `onClose` | `MouseEventHandler<HTMLElement>` | — | no | Колбэк закрытия. При наличии отображается кнопка «Закрыть» |
+| `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### CardNavigation
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `description` | `string` | — | no | Описание сервиса. Передано (в том числе пустой строкой) — карточка в подробном виде: с рамкой и описанием под заголовком. Не передано — компактный вид в одну строку.  Вид меняется без пересоздания DOM: переключение описания — обновление пропа, а не перемонтирование. |
+| `disabled` | `boolean` | `false` | no | Неактивное состояние |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → promo tag → tooltip (если есть) → Favorite → expand; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `tooltip` | `Omit<TooltipProps, "size" \| "trigger">` | — | no | Подсказка с иконкой «?» рядом с заголовком. Показывается только в компактном виде |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки текста заголовка. В подробном виде заголовок всегда в одну строку |
+
+#### Related types
+- `CardPromoTagProps` (alias)
+- `ChildrenFunction` (alias)
+- `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `PromoTagPredefinedBaseProps` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `VisibilityStrategy` = `always | hover`
+
+### CardPromoTag
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс промо-тега |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `innerRef` | `RefObject<HTMLElement>` | — | no | Ref на trigger тултипа — по нему карточка водит фокус стрелками |
+| `promoTag` | `CardPromoTagProps` | — | yes | Настройки promo tag, пришедшие в карточку |
+| `tooltipTrigger` | `click \| clickAndFocusVisible \| focus \| focusVisible \| hover \| hoverAndFocus \| hoverAndFocusVisible \| undefined` | — | yes | Триггер тултипа: карточка выбирает его по своему `actionsVisibility` |
+
+### CardService
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionLabel` | `string` | — | yes | Текст кнопки действия |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `emblem` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | yes | Эмблема — передавайте `<IconPredefined icon={...} />` или произвольный ReactElement |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### CardServiceInfo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `description` | `string` | — | yes | Описание сервиса |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → Favorite → expand; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+
+#### Related types
+- `CardPromoTagProps` (alias)
+- `FavoriteProps` (interface)
+- `PolymorphicRef` (alias)
+- `PromoTagPredefinedBaseProps` (alias)
+- `VisibilityStrategy` = `always | hover`
+
+### CardServiceLight
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения дополнительных действий: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'button'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | `false` | no | Неактивное состояние |
+| `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное». Keyboard: ArrowRight на карточке → tooltip (если есть) → Favorite; ArrowLeft — в обратном порядке. |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Иконка сервиса |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoTag` | `CardPromoTagProps` | — | no | Настройки promo tag. При отсутствии не отображается |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `tooltip` | `Omit<TooltipProps, "size" \| "trigger">` | — | no | Подсказка с иконкой «?» рядом с заголовком |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки текста заголовка |
+
+#### Related types
+- `CardPromoTagProps` (alias)
+- `ChildrenFunction` (alias)
+- `FavoriteProps` (interface)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `PolymorphicRef` (alias)
+- `PromoTagPredefinedBaseProps` (alias)
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
+- `VisibilityStrategy` = `always | hover`
+
+### CardServiceSmall
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `actionsVisibility` | `always \| hover` | `'hover'` | no | Формат отображения кнопки «Избранное»: всегда или при наведении и фокусе |
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `checked` | `boolean` | — | no | Выбранное состояние |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `emblem` | `ReactElement<any, string \| JSXElementConstructor<any>> \| { icon: JSXElementConstructor<{ className?: string \| undefined; size?: number \| undefined; }>; }` | — | yes | Эмблема: объект с иконкой-компонентом. Принимает `{ icon: JSXElementConstructor }` или произвольный ReactElement. |
+| `favorite` | `FavoriteProps` | — | no | Настройки кнопки «Избранное» |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `outline` | `boolean` | — | no | Рамка вокруг карточки |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег (бейдж). Тип — `PromoTagProps` из `@cloud-ru/ds-promo-tag`. |
+| `title` | `string` | — | yes | Заголовок карточки |
+| `truncate` | `{ title?: number; }` | — | no | Настройки обрезки заголовка |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `FavoriteProps` (interface)
+- `PolymorphicRef` (alias)
+- `PolymorphicRef (@cloud-ru/ds-promo-tag)` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `m | s | xs`
+- `VisibilityStrategy` = `always | hover`
+
+### CardSuggest
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный элемент: `'div'`, `'a'`, `{Link}` и т.д. |
+| `className` | `string` | — | no | CSS-класс корневого элемента |
+| `content` | `string` | — | yes | Описание |
+| `data-test-id` | `string` | — | no | Support prop для тестов |
+| `disabled` | `boolean` | — | no | Неактивное состояние |
+| `innerRef` | `any` | — | no | Ref на реальный DOM-элемент / инстанс |
+| `promoBadge` | `PromoTagProps` | — | no | Промо-тег. Используйте `PromoTagProps` из `@cloud-ru/ds-promo-tag`. |
+| `size` | `m \| s` | `m` | no | Размер: управляет типографикой и отступами. `'m'` — roleTitle/m + roleBody/m, padding 16px; `'s'` — roleTitle/s + roleBody/s, padding 8px. |
+| `title` | `string` | — | yes | Заголовок |
+| `truncate` | `{ title?: number; content?: number; } \| undefined` | — | no | Настройки обрезки текста |
+
+#### Related types
+- `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `CardSize` = `m | s`
+- `PolymorphicRef` (alias)
+- `PolymorphicRef (@cloud-ru/ds-promo-tag)` (alias)
+- `PromoTagOwnProps` (interface)
+- `PromoTagProps` (interface)
+- `RoleAppearance` = `accent | decor`
+- `Size` = `m | s | xs`
+
+### Dimension
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `currentValue` | `string` | — | yes | Текущее значение |
+| `dimension` | `string` | — | no | Единица измерения |
+| `oldValue` | `string` | — | no | Старое значение |
+| `size` | `l \| m \| s` | — | no | Размер |
+
+### Emblem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alt` | `string` | — | yes |  |
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Внешний вид |
+| `background` | `boolean` | — | no | Наличие цветной подложки |
+| `icon` | `JSXElementConstructor<{ size?: number \| undefined; className?: string \| undefined; }>` | — | yes | JSX иконки |
+| `shape` | `rounded \| squared` | — | no | Форма: круглая или квадратная |
+| `src` | `string` | — | yes |  |
+
+### FooterAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | yes | Параметры для основной кнопки |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `secondaryButton` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | no | Параметры для вторичной кнопки |
+
+### FooterCallToAction
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `label` | `string` | — | yes | Лейбл |
+
+### FooterPromo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `button` | `Pick<ButtonProps, "label" \| "onClick" \| "loading" \| "icon">` | — | no | Параметры для основной кнопки |
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `volume` | `DimensionProps` | — | no | Параметры для блока значений |
+
+### FunctionBadge
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alwaysVisible` | `boolean` | — | no | Всегда показывать FunctionBadge |
+| `icon` | `ReactNode` | — | no | Иконка |
+| `options` | `Option[]` | — | yes | Вложенные опции |
+
+### FunctionBadgeWrapper
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alwaysVisible` | `boolean` | — | no | Всегда показывать FunctionBadge |
+
+### Header
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс для элемента с контентом |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Подзаголовок |
+| `emblem` | `EmblemProps` | — | no | Эмблема иконка/картинка |
+| `metadata` | `string` | — | no | Метаинформация |
+| `size` | `l \| m \| s` | — | no | Размер |
+| `title` | `string` | — | yes | Заголовок |
+| `truncate` | `{ title?: number; description?: number; metadata?: number \| undefined; } \| undefined` | `'{ title: 1; description: 2; metadata: 1; }'` | no | Максимальное число строк - `title` — в заголовке - `description` — в описании - `metadata` — в метаинформации |
+
+### Image
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alt` | `string` | — | yes | Описание картинки |
+| `data-test-id` | `string` | — | no |  |
+| `hideFading` | `boolean` | — | no |  |
+| `mode` | `background \| little \| middle` | `little` | no |  |
+| `src` | `string` | — | yes | Путь до картинки |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function Basic() {
+  return (
+    <CardBanner
+      title='Заголовок карточки'
+      content='Краткое описание сервиса или предложения для пользователя'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+    />
+  );
+}
+```
+
+### PolymorphicLink
+
+```tsx
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function PolymorphicLink() {
+  return (
+    <CardBanner
+      as='a'
+      href='https://cloud.ru'
+      target='_blank'
+      title='Перейти на сайт'
+      content='Откроется в новой вкладке'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+    />
+  );
+}
+```
+
+### WithClose
+
+```tsx
+import { Typography } from '@cloud-ru/ds-typography';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
+import { useState } from 'react';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function WithClose() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) {
+    return (
+      <Typography variant='body' size='m'>
+        Баннер закрыт
+      </Typography>
+    );
+  }
+
+  return (
+    <CardBanner
+      title='Заголовок карточки'
+      content='Кнопка закрытия появляется при передаче onClose'
+      actionLabel='Подробнее'
+      image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+      onClose={() => setVisible(false)}
+    />
+  );
+}
+```
+
+### WithOnClick
+
+```tsx
+import { Typography } from '@cloud-ru/ds-typography';
+import { CardBanner } from '@cloud-ru/ds-uikit-product-card-predefined';
+import { useState } from 'react';
+
+import illustrationSrc from '../assets/card-banner-illustration.jpg?url';
+
+export function WithOnClick() {
+  const [clicks, setClicks] = useState(0);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <CardBanner
+        title='Заголовок карточки'
+        content='Клик по карточке обрабатывается через onClick'
+        actionLabel='Подробнее'
+        image={{ src: illustrationSrc, alt: 'Иллюстрация сервиса' }}
+        onClick={() => setClicks(c => c + 1)}
+      />
+
+      <Typography variant='body' size='m'>
+        Кликов по карточке: {clicks}
+      </Typography>
+    </div>
+  );
+}
+```

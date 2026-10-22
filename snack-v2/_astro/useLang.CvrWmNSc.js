@@ -1,0 +1,1 @@
+import{n as e}from"./localeContext.DrGH_dE7.js";function t(){return e().lang}export{t};

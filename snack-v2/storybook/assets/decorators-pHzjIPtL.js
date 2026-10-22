@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";var n,r,i=e((()=>{n=`_cardWidth_uout4_3`,r={cardWidth:n}})),a,o,s=e((()=>{i(),a=t(),o=e=>(0,a.jsx)(`div`,{className:r.cardWidth,children:(0,a.jsx)(e,{})})}));export{o as n,s as t};
+//# sourceMappingURL=decorators-pHzjIPtL.js.map

@@ -1,0 +1,1 @@
+var e={Checkbox:`checkbox`,Radio:`radio`},t={XS:`xs`,S:`s`},n={Star:`star`,Heart:`heart`},r={Single:`single`,Multiple:`multiple`},i=`-native-input`;export{t as a,r as i,e as n,i as r,n as t};

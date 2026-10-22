@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-CT-um0Ad.js","names":[],"sources":["../../../../packages/uikit-product-header-legacy/stories/Logo/testIds.ts"],"sourcesContent":["export const TEST_IDS = {\n  root: 'logo',\n  image: 'logo__image',\n  icon: 'logo__icon',\n} as const;\n"],"mappings":"iEAAa,EAAW,CACtB,KAAM,OACN,MAAO,cACP,KAAM,YACR"}

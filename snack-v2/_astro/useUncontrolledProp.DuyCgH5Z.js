@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.CNC7AqOf.js";import{t}from"./react.2WCt8-Jc.js";var n=e(t(),1);function r(e,t,r){let i=e!==void 0,a=(0,n.useRef)(i),[o,s]=(0,n.useState)(t),c=a.current;a.current=i,!i&&c&&o!==t&&s(t);let l=(0,n.useCallback)((...e)=>{let[t,...n]=e,i=r?.(t,...n);return s(t),i},[r]);return[i?e:o,l]}export{r as t};

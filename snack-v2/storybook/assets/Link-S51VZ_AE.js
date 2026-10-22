@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.125%2010.875L10.7691%208.625L3%2016.5L7.5%2021L11.4375%2017.0625M10.7691%2013.125L13.125%2015.375L21%207.5L16.5%203L12.5625%206.9375'%20stroke='black'%20stroke-width='1.5'%20stroke-linejoin='bevel'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=Link-S51VZ_AE.js.map

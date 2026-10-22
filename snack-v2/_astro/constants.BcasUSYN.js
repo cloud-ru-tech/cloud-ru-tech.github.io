@@ -1,0 +1,1 @@
+var e={"2XS":`2xs`,XS:`xs`,S:`s`,M:`m`,L:`l`},t={XS:`xs`,S:`s`,M:`m`,L:`l`};export{t as n,e as t};

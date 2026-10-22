@@ -1,0 +1,1 @@
+function e(){var e=[...arguments].filter(Boolean);return e.length<=1?e[0]||null:function(t){for(var n=0,r=e;n<r.length;n++){var i=r[n];typeof i==`function`?i(t):i&&(i.current=t)}}}export{e as t};

@@ -1,0 +1,1 @@
+var e=new File([`hello`],`invoice-2026.pdf`,{type:`application/pdf`});export{e as t};

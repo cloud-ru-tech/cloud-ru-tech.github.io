@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t;e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20%2014H17C17%2014.663%2016.4555%2016%2015%2016C13.5445%2016%2013%2014.663%2013%2014H10V11C10.663%2011%2012%2010.4555%2012%209C12%207.54448%2010.663%207%2010%207V4M4%204H20V20H4V4Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`}))();export{t as default};
+//# sourceMappingURL=Puzzle-CuXc2bar.js.map

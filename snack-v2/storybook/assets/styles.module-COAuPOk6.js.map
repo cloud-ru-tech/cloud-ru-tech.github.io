@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-COAuPOk6.js","names":[],"sources":["../../../../packages/uikit-product-charts/stories/BagelChart/styles.module.scss"],"sourcesContent":["// У кольца нет собственной ширины — оно заполняет контейнер. Ширина демо-контейнера, не дизайн-токен.\n.chart {\n  width: 160px;\n}\n"],"mappings":""}

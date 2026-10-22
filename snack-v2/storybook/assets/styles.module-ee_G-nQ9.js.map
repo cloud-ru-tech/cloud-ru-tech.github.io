@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-ee_G-nQ9.js","names":[],"sources":["../../../../packages/uikit-product-charts/stories/HeatMapChart/styles.module.scss"],"sourcesContent":["// Ширина демо-контейнера: сетка тянется на всю ширину родителя.\n.chart {\n  width: 720px;\n}\n\n.chartCompact {\n  width: 440px;\n}\n\n.customCell {\n  font-weight: 700;\n}\n"],"mappings":""}

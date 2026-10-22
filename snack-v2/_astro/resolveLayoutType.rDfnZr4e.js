@@ -1,0 +1,1 @@
+import{c as e,o as t}from"./globalStore.CtPQf6kZ.js";function n(e){return e??t}function r(t){return e.mobileOnly.includes(n(t))}export{n,r as t};

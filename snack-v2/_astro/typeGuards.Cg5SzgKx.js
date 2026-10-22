@@ -1,0 +1,1 @@
+var e=e=>e==null,t=e=>typeof e==`boolean`,n=e=>typeof e==`string`,r=e=>Array.isArray(e),i=e=>typeof e==`object`&&!r(e);export{n as a,i,t as n,e as r,r as t};

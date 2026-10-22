@@ -1,0 +1,181 @@
+﻿# @cloud-ru/ds-uikit-product-title-clickable
+
+> Кликабельный заголовок-ссылка раздела с иконкой, шевроном и опциональным аватар-блоком — для шапок продуктовых разделов.
+
+Docs: /snack-v2/components/uikit-product-title-clickable/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-uikit-product-title-clickable
+```
+
+## Когда использовать
+
+- Заголовок продуктового раздела ведёт на отдельную страницу/детальный вид.
+- В шапке карточки/секции, где навигация по клику на заголовок ожидаема пользователем.
+- Когда нужен визуальный аффорданс перехода (шеврон) поверх обычной ссылки.
+
+Когда **не** нужен:
+
+- Inline-ссылка в тексте:
+  - используйте [`@cloud-ru/ds-link`](/components/link).
+- Action-кнопка:
+  - используйте [`@cloud-ru/ds-button`](/components/button/button).
+- Строка списка с действием:
+  - используйте [`@cloud-ru/ds-uikit-product-info-row`](/components/uikit-product-info-row).
+
+## API
+
+### SimpleTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого контейнера. |
+| `data-test-id` | `string` | — | no |  |
+| `icon` | `ReactNode` | — | no | Иконка слева, 24×24. |
+| `title` | `string` | — | yes | Текст заголовка. |
+| `titleTag` | `ElementType` | — | no | Семантический тег заголовка. |
+
+### TitleClickable
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный тег корня — `'a'` по умолчанию, либо компонент-роутер (`Link` из react-router-dom). |
+| `className` | `string` | — | no | CSS-класс |
+| `content` | `ReactNode` | — | yes | Содержимое: TitleClickable.SimpleTitle, TitleClickable.UserTitle или произвольная React-нода. |
+| `data-test-id` | `string` | — | no |  |
+| `fullWidth` | `boolean` | — | no | Занимает ли всю ширину |
+| `innerRef` | `any` | — | no | Ref на корневой элемент. |
+| `showArrow` | `boolean` | `true` | no | Показывать иконку-стрелку справа. Иконка автоматически меняется на `external link` при `target='_blank'`. |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### UserTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Внешний вид (цвет) |
+| `badge` | `ReactNode` | — | no | Произвольный нод в слот значка (правый-нижний угол). Перекрывает `status`. |
+| `className` | `string` | — | no | CSS-класс |
+| `data-test-id` | `string` | — | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
+| `name` | `string` | — | yes | Имя пользователя для генерации аббревиатуры |
+| `shape` | `rounded \| squared` | — | no | Форма: круглая или квадратная |
+| `showTwoSymbols` | `boolean` | — | no | Отображение двух заглавных символов имени вместо одного |
+| `size` | `3xl \| 6xl \| 9xl \| l \| m \| s \| xs` | `m` | no | Размер |
+| `src` | `string` | — | no | URL изображения аватара |
+| `status` | `blue \| green \| neutral \| orange \| pink \| red \| violet \| yellow` | — | no | Appearance дефолтного `StatusIndicator` в правом-нижнем углу. Размер индикатора подбирается из `size` аватара автоматически. Полностью настроить значок можно через слот `badge`, который перекрывает `status`. |
+| `subtitle` | `string` | — | no | Подпись под именем пользователя. |
+
+## Примеры
+
+### Basic
+
+```tsx
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function Basic() {
+  return <TitleClickable href='#' content={<TitleClickable.SimpleTitle title='Production environment' />} />;
+}
+```
+
+### External
+
+```tsx
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function External() {
+  return (
+    <TitleClickable
+      href='https://example.com'
+      target='_blank'
+      content={<TitleClickable.SimpleTitle title='Внешняя ссылка' />}
+    />
+  );
+}
+```
+
+### FullWidth
+
+```tsx
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function FullWidth() {
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Раздел занимает всю ширину контейнера' icon={<PlaceholderSVG />} />}
+      fullWidth
+    />
+  );
+}
+```
+
+### HiddenArrow
+
+```tsx
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function HiddenArrow() {
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Без шеврона' icon={<PlaceholderSVG />} />}
+      showArrow={false}
+    />
+  );
+}
+```
+
+### WithAvatar
+
+```tsx
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function WithAvatar() {
+  return (
+    <TitleClickable
+      href='#'
+      fullWidth
+      content={<TitleClickable.UserTitle name='John Doe' subtitle='jdoe@example.com' />}
+    />
+  );
+}
+```
+
+### WithCustomNode
+
+```tsx
+import { Typography } from '@cloud-ru/ds-typography';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function WithCustomNode() {
+  return (
+    <TitleClickable
+      href='#'
+      content={
+        <Typography variant='label' size='s' as='span'>
+          Custom content
+        </Typography>
+      }
+    />
+  );
+}
+```
+
+### WithIcon
+
+```tsx
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { TitleClickable } from '@cloud-ru/ds-uikit-product-title-clickable';
+
+export function WithIcon() {
+  return (
+    <TitleClickable
+      href='#'
+      content={<TitleClickable.SimpleTitle title='Production environment' icon={<PlaceholderSVG />} />}
+    />
+  );
+}
+```

@@ -1,0 +1,4 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o=e((()=>{({fn:t}=__STORYBOOK_MODULE_TEST__),n={label:[`Category`,`Subcategory`].join(`・`),id:`card`,title:`Title truncate two line`,description:`Demo content.
+
+For replacement, use Property: ◆ProdContent. Replace this element with your local component with the original content.`,link:{label:`Link to detailed information`,href:`#`},date:`DD.MM.YYYY HH:MM`},r={primaryButton:{label:`Primary Button`,onClick:t()},secondaryButton:{label:`Secondary Button`,onClick:t()}},i=[{content:{label:`action 1`},onClick:t()},{content:{label:`action 2`},onClick:t()}],a={title:`Уведомления`,loading:!1,readAllButton:{onClick:t()},settings:{button:{as:`a`,href:`#`}}}}));export{o as a,a as i,n,r,i as t};
+//# sourceMappingURL=constants-UFxjouOX.js.map
