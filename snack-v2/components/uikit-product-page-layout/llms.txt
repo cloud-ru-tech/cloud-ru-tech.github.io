@@ -43,7 +43,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
 | `fullWidth` | `boolean` | — | no | На всю ширину |
 | `hidden` | `boolean` | `false` | no |  |
-| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
 | `href` | `string` | — | no |  |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `iconPosition` | `after \| before` | — | no | Позиция иконки относительно текста |
@@ -135,7 +134,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `data-test-id` | `string` | — | no |  |
 | `disableSorting` | `boolean` | — | no | Флаг отключения сортировки квот |
 | `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
-| `hideIncreaseQuotaButton` | `boolean` | — | no | Флаг скрытия кнопки увеличения квоты |
 | `loading` | `boolean` | — | yes | Флаг загрузки квот |
 | `onIncreaseQuotaClick` | `(() => void)` | — | no | Колбек нажатия на кнопку увеличения квот |
 | `onQuotasUrlClick` | `(() => void)` | — | no | Колбек клика по ссылке на страницу квот по проекту |
