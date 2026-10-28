@@ -146,7 +146,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | CSS-класс корневого элемента. |
-| `dragEnabled` | `boolean` | — | no | Карточку можно перетаскивать. Иначе рендерится без `useDraggable`: на mobile, при поиске и без избранного сотни карточек не регистрируются в `DndContext` впустую. |
+| `dragEnabled` | `boolean` | — | no | Карточку можно перетаскивать. Иначе рендерится без `useDraggable`: на mobile и без избранного сотни карточек не регистрируются в `DndContext` впустую. При поиске карточки по-прежнему можно перетащить в избранное. |
 | `dragPreview` | `boolean` | — | no | Карточка рендерится как превью в `DragOverlay` (без тултипа и описания). |
 | `expandable` | `{ value: boolean; onClick(): void; }` | — | no | Настройки кнопки раскрытия |
 | `favoriteChecked` | `boolean` | — | no | В избранном ли сервис. Учитывается только вместе с `onFavoriteChange`. |
@@ -519,7 +519,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 |------|------|---------|----------|-------------|
 | `appear` | `boolean` | — | no | Группа появляется с fade-in при монтировании (на desktop; на mobile анимирует контейнер). |
 | `blockColor` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | — | no | Цвет блока группы. |
-| `enableServiceDrag` | `boolean` | — | no | Группу можно перетаскивать (иначе рендерится без `useSortable`). |
+| `enableGroupDrag` | `boolean` | — | no | Группу можно перетаскивать (иначе рендерится без `useSortable`). |
 | `groupFavoritesEnabled` | `boolean` | — | no | Разрешено ли добавление карточек группы в избранное. |
 | `highlight` | `boolean` | — | no | Визуальное выделение группы. |
 | `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка группы. |
@@ -557,7 +557,7 @@ pnpm add @cloud-ru/ds-uikit-product-header
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `attributes` | `DraggableAttributes` | — | no | ARIA-атрибуты `dnd-kit` draggable-элемента. |
-| `enableServiceDrag` | `boolean` | — | no |  |
+| `enableGroupDrag` | `boolean` | — | no |  |
 | `icon` | `JSXElementConstructor<{ size?: number; className?: string; }> \| undefined` | — | no | Иконка группы. |
 | `isExpanded` | `boolean` | — | no |  |
 | `isMobile` | `boolean` | — | no |  |

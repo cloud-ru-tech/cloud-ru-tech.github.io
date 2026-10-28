@@ -1,6 +1,6 @@
 ﻿# @cloud-ru/ds-fonts
 
-> Подключение фирменных шрифтов SB Sans (Interface, Text, Display, Text Mono), Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
+> Подключение фирменных шрифтов SB Sans, а также Inter и Roboto Mono — единый CSS/SCSS-импорт для всего приложения.
 
 Docs: /snack-v2/components/fonts/
 
