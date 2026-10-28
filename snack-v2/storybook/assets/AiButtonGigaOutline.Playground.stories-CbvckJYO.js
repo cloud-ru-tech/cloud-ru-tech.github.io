@@ -1,9 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{n as t}from"./classnames-iuquYaxc.js";import{d as n,f as r,g as i,p as a,t as o,u as s}from"./iframe-CYEdIo2A.js";import{t as c,z as l}from"./system-DX78okNY.js";import{c as u,l as d,o as f,t as p,u as m}from"./src-Ct4WYB_L.js";import{n as h,t as g}from"./testIds--aqxKATn.js";var _,v,y,b,x,S;e((()=>{p(),c(),o(),h(),_=t(),{expect:v,within:y}=__STORYBOOK_MODULE_TEST__,b={title:`AI/Primitives/ButtonGiga/Outline`,id:`ai-buttongiga-outline`,component:f,parameters:{layout:`fullscreen`},args:{label:`Создать ресурс`,appearance:u.Primary,loading:!1,disabled:!1,size:m.S,iconPosition:d.Before,icon:`default`,"data-test-id":g.outline.root},argTypes:{innerRef:{table:{disable:!0}},onClick:{table:{disable:!0}},className:{table:{disable:!0}},"data-test-id":{table:{disable:!0}},appearance:{control:`radio`,options:Object.values(u)},size:{control:`radio`,options:Object.values(m)},icon:{control:`select`,options:[`default`,`none`,`plus`],mapping:{default:void 0,none:null,plus:(0,_.jsx)(l,{"data-test-id":g.outline.customIcon})}},iconPosition:{control:`radio`,options:Object.values(d)}},render:e=>(0,_.jsx)(r,{children:(0,_.jsxs)(a,{children:[(0,_.jsx)(i,{children:`AiButtonGigaOutline`}),(0,_.jsx)(n,{children:`Внешний вид и состояние задаются свойствами кнопки.`}),(0,_.jsx)(s,{align:`center`,children:(0,_.jsx)(f,{...e})})]})})},x={tags:[`dev`,`test`],play:async({canvasElement:e})=>{await v(y(e).getByTestId(g.outline.root)).toBeVisible()}},x.parameters={...x.parameters,docs:{...x.parameters?.docs,source:{originalSource:`{
-  tags: ['dev', 'test'],
-  play: async ({
-    canvasElement
-  }) => {
-    await expect(within(canvasElement).getByTestId(TEST_IDS.outline.root)).toBeVisible();
-  }
-}`,...x.parameters?.docs?.source}}},S=[`Playground`]}))();export{x as Playground,S as __namedExportsOrder,b as default};
-//# sourceMappingURL=AiButtonGigaOutline.Playground.stories-CbvckJYO.js.map
