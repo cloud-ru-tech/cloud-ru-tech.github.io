@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";import{c as t,o as n}from"./src-D9Qtr_ab.js";var r,i=e((()=>{t(),r={tabs:n.tabs,tabBar:n.tabBar,tab:{root:n.tab.root,overview:`${n.tab.root}-overview`,settings:`${n.tab.root}-settings`,billing:`${n.tab.root}-billing`},actionButton:`tabs-action-button`,tabContent:{root:n.tabContent.root,overview:`${n.tabContent.root}-overview`,settings:`${n.tabContent.root}-settings`,billing:`${n.tabContent.root}-billing`}}}));export{i as n,r as t};
+//# sourceMappingURL=testIds-BUYc1mUz.js.map
