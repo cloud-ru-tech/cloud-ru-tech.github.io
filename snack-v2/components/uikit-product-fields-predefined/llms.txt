@@ -491,7 +491,7 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 | `onKeyDown` | `KeyboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки начала нажатия клавиши клавиатуры |
 | `onMouseDown` | `MouseEventHandler<HTMLInputElement>` | — | no | Колбек обработки нажатия кнопки мыши |
 | `onPaste` | `ClipboardEventHandler<HTMLInputElement>` | — | no | Колбек обработки вставки значения |
-| `options` | `CountrySettings` | — | no | Конфигурация для изменения стандартного списка стран |
+| `options` | `CountrySettings` | — | yes | Список стран селектора: встроенные страны (`includedCountries`) или собственные элементы (`overriddenOptions`) |
 | `outline` | `boolean` | `true` | no | Разделитель между основным полем и слотами `elementBefore` / `elementAfter` |
 | `pattern` | `string` | — | no | Регулярное выражение валидного инпута |
 | `readonly` | `boolean` | `false` | no | Только для чтения Является ли поле доступным только для чтения |
@@ -859,7 +859,7 @@ export function FieldNameRHFExample() {
 
 ```tsx
 import { PortalContextProvider } from '@cloud-ru/ds-portal-context';
-import { FieldPhone } from '@cloud-ru/ds-uikit-product-fields-predefined';
+import { ALL_COUNTRY_CODES, FieldPhone } from '@cloud-ru/ds-uikit-product-fields-predefined';
 import { useRef, useState } from 'react';
 
 export function FieldPhoneBasic() {
@@ -869,7 +869,13 @@ export function FieldPhoneBasic() {
   return (
     <PortalContextProvider root={hostRef}>
       <div ref={hostRef} style={{ position: 'relative', width: 320 }}>
-        <FieldPhone label='Телефон' value={value} onChange={setValue} searchPlaceholder='Поиск страны' />
+        <FieldPhone
+          label='Телефон'
+          value={value}
+          onChange={setValue}
+          searchPlaceholder='Поиск страны'
+          options={{ includedCountries: ALL_COUNTRY_CODES }}
+        />
       </div>
     </PortalContextProvider>
   );

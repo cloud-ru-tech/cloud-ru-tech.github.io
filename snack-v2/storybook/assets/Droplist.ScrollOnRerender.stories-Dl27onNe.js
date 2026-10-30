@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{d as i,f as a,g as o,p as s,t as c,u as l}from"./iframe-D64B0jO2.js";import{a as u,t as d}from"./src-GK_zeQ6_.js";import{n as f,t as p}from"./src-CMMg7gR32.js";import{n as m,t as h}from"./testIds-DI8ubBg4.js";function g(){let[e,t]=(0,_.useState)(`item-1`),[n,r]=(0,_.useState)(0);return(0,_.useEffect)(()=>{let e=setInterval(()=>r(e=>e+1),S);return()=>clearInterval(e)},[]),(0,v.jsx)(a,{children:(0,v.jsxs)(s,{children:[(0,v.jsx)(o,{children:`Scroll on parent rerender`}),(0,v.jsxs)(i,{"data-test-id":h.droplist.rerenderCount,children:[`Перерисовок родителя: `,n]}),(0,v.jsx)(l,{align:`center`,children:(0,v.jsx)(f,{items:C,size:`m`,placement:`bottom-start`,scroll:!0,scrollToSelectedItem:!0,selection:{mode:`single`,value:e,onChange:e=>t(String(e))},children:(0,v.jsx)(u,{"data-test-id":h.droplist.scrollOnRerenderTrigger,label:`Trigger`,view:`outline`,appearance:`neutral`,size:`m`})})})]})})}var _,v,y,b,x,S,C,w,T,E;t((()=>{d(),p(),_=e(n(),1),c(),m(),v=r(),{expect:y,within:b}=__STORYBOOK_MODULE_TEST__,x=60,S=200,C=Array.from({length:x},(e,t)=>({id:`item-${t+1}`,content:{label:`Item ${t+1}`}})),w={title:`Snack/Data display/List/Droplist/Tests/ScrollOnRerender`,id:`components-list-droplist-tests-scrollonrerender`,component:f,parameters:{layout:`fullscreen`,controls:{disable:!0}}},T={tags:[`dev`,`test`],render:()=>(0,v.jsx)(g,{}),play:async({canvasElement:e})=>{await y(b(e).getByTestId(h.droplist.scrollOnRerenderTrigger)).toBeVisible()}},T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <ScrollOnRerenderScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.droplist.scrollOnRerenderTrigger)).toBeVisible();
+  }
+}`,...T.parameters?.docs?.source}}},E=[`ScrollOnRerender`]}))();export{T as ScrollOnRerender,E as __namedExportsOrder,w as default};
+//# sourceMappingURL=Droplist.ScrollOnRerender.stories-Dl27onNe.js.map

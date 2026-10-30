@@ -1,0 +1,10 @@
+import{c as e,i as t}from"./preload-helper-CCSz8wUY.js";import{t as n}from"./react-Bg-8jzDh.js";import{n as r}from"./classnames-iuquYaxc.js";import{d as i,f as a,g as o,p as s,t as c,u as l}from"./iframe-D64B0jO2.js";import{a as u,t as d}from"./src-GK_zeQ6_.js";import{C as f,M as p,N as m,S as h,b as g,t as _,w as v}from"./src-CB9THTkC.js";import{n as y,t as b}from"./styles.module-CmSQ0sfZ.js";function x(){let e=v({defaultValues:{description:``},mode:`onBlur`}),[t,n]=(0,S.useState)(null),r=e.handleSubmit(({description:e})=>n(e));return(0,C.jsx)(a,{children:(0,C.jsxs)(s,{children:[(0,C.jsx)(o,{children:`React Hook Form`}),(0,C.jsx)(i,{children:`Поле «Описание» в форме react-hook-form: ошибка валидации показывается по blur и блокирует отправку; при валидном значении «Отправить» проходит, и форма получает значение поля.`}),(0,C.jsx)(h,{...e,children:(0,C.jsxs)(`form`,{onSubmit:r,className:y.form,children:[(0,C.jsx)(g,{required:!0,controllerProps:{name:`description`},"data-test-id":p.fieldDescription}),(0,C.jsx)(l,{align:`start`,children:(0,C.jsx)(u,{type:`submit`,label:`Отправить`,"data-test-id":`field-description-submit`})}),t!==null&&(0,C.jsxs)(`span`,{"data-test-id":`field-description-submitted`,children:[`Отправлено: `,t]})]})})]})})}var S,C,w,T,E,D,O;t((()=>{d(),_(),S=e(n(),1),f(),c(),m(),b(),C=r(),{expect:w,within:T}=__STORYBOOK_MODULE_TEST__,E={title:`Uikit Product/Inputs & Forms/FieldsPredefined/FieldDescription/Examples/RHF`,id:`uikit-product-fieldspredefined-fielddescription-examples-rhf`,component:g,parameters:{layout:`fullscreen`}},D={tags:[`dev`,`test`],render:()=>(0,C.jsx)(x,{}),play:async({canvasElement:e})=>{await w(T(e).getByTestId(p.fieldDescription)).toBeVisible()}},D.parameters={...D.parameters,docs:{...D.parameters?.docs,source:{originalSource:`{
+  tags: ['dev', 'test'],
+  render: () => <RHFScenario />,
+  play: async ({
+    canvasElement
+  }) => {
+    await expect(within(canvasElement).getByTestId(TEST_IDS.fieldDescription)).toBeVisible();
+  }
+}`,...D.parameters?.docs?.source}}},O=[`RHF`]}))();export{D as RHF,O as __namedExportsOrder,E as default};
+//# sourceMappingURL=FieldDescription.RHF.stories-xlHWsTv1.js.map
