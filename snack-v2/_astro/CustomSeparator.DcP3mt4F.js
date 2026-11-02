@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AiCodeDiff.DeOz6HPD.js";var n=e();function r(){return(0,n.jsx)(t,{added:83,removed:26,separator:`·`})}export{r as CustomSeparator};

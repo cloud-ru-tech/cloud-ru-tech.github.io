@@ -1,0 +1,75 @@
+﻿# @cloud-ru/ds-ai-code-diff
+
+> Количество добавленных и удаленных строк кода
+
+Docs: /snack-v2/components/ai-code-diff/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-code-diff
+```
+
+## Когда использовать
+
+- Компактная сводка рядом с файлом, коммитом или строкой истории.
+- Нужны только два числа и разделитель, без тела diff.
+
+### Когда не нужен
+
+- Нужно показать сами строки кода:
+  - соберите просмотр отдельно, `AiCodeDiff` остаётся подписью.
+- Нужно сократить большие числа (`1.2k`) или показать дробное значение:
+  - `added` и `removed` — целые неотрицательные числа, компонент показывает их как есть.
+
+## API
+
+### AiCodeDiff
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `added` | `number` | — | yes | Количество добавленных строк. Целое неотрицательное число, знак `+` ставит компонент. |
+| `className` | `string` | — | no |  |
+| `data-test-id` | `string` | — | no |  |
+| `removed` | `number` | — | yes | Количество удалённых строк. Целое неотрицательное число, знак `-` ставит компонент. |
+| `separator` | `string` | `/` | no | Разделитель между added и removed. |
+| `size` | `m \| s` | `m` | no | Типографика. |
+
+#### Related types
+- `Size` = `m | s`
+
+## Примеры
+
+### CustomSeparator
+
+```tsx
+import { AiCodeDiff } from '@cloud-ru/ds-ai-code-diff';
+
+export function CustomSeparator() {
+  return <AiCodeDiff added={83} removed={26} separator='·' />;
+}
+```
+
+### LongCounts
+
+```tsx
+import { AiCodeDiff } from '@cloud-ru/ds-ai-code-diff';
+
+export function LongCounts() {
+  return <AiCodeDiff added={1200} removed={48} />;
+}
+```
+
+### Sizes
+
+```tsx
+import { AiCodeDiff, SIZE } from '@cloud-ru/ds-ai-code-diff';
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiCodeDiff added={83} removed={26} size={SIZE.M} />
+      <AiCodeDiff added={83} removed={26} size={SIZE.S} />
+    </div>
+  );
+}
+```

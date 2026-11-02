@@ -1,0 +1,126 @@
+﻿# @cloud-ru/ds-ai-history-line
+
+> Вертикальная лента шагов AI-диалога — запросы пользователя, ответы агента, вызовы инструментов, чекпоинты
+
+Docs: /snack-v2/components/ai-history-line/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-history-line
+```
+
+## Когда использовать
+
+Вертикальная лента событий: запрос, ответ, группа вызовов, чекпоинт. Содержимое строки передаёт потребитель. Индикатор, степпер, запрос, аккордеон и чекпоинт можно поставить и отдельно от ленты. Карточка группы раскрывается сама. Уже показанную группу раскрывают снаружи через `open` и `onOpenChange`. Кольцо в ленте одно: его `id` задают `value` или `defaultValue`. Клик по индикатору с `id` переключает это кольцо. Запись адреса и прокрутку к строке делает потребитель в `onIndicatorClick`.
+
+## API
+
+### AiHistoryLine
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный тег корня. По умолчанию `ul`. |
+| `children` | `ReactNode` | — | no | Элементы ленты. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | `id` индикатора, выбранного при первом рендере. |
+| `innerRef` | `any` | — | no | Ref на корневой элемент. |
+| `onIndicatorChange` | `((value: string) => void)` | — | no | Сообщает `id` выбранного индикатора. Повторный клик по нему передаёт `undefined`. |
+| `value` | `string` | — | no | `id` выбранного индикатора. Вместе с `onIndicatorChange` выбор управляемый. |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### AiHistoryLineAccordion
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | no | Слот содержимого. Статус каждой строки задаёт сам ребёнок. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line-accordion` | no |  |
+| `defaultOpen` | `boolean` | `false` | no | Карточка раскрыта при первом рендере. |
+| `id` | `string` | — | yes | Идентификатор карточки. |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корень карточки, не на кнопку. |
+| `onOpenChange` | `((open: boolean) => void)` | — | no | Сообщает новое раскрытие после клика или клавиши. |
+| `open` | `boolean` | — | no | Раскрытие уже показанной карточки. Вместе с `onOpenChange` состояние управляемое. |
+| `title` | `string` | — | yes | Подпись кнопки раскрытия. Число вызовов и пометку об ошибке собирает продукт. |
+
+### AiHistoryLineAgentContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | no | Блоки ответа. Расстояние задаётся между соседними блоками. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line-agent-content` | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой элемент. |
+
+### AiHistoryLineCheckpoint
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `added` | `number` | — | yes | Количество добавленных строк. Целое неотрицательное число, знак `+` ставит `AiCodeDiff`. |
+| `as` | `ElementType` | — | no | Полиморфный тег корня. По умолчанию `div`. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line-checkpoint` | no |  |
+| `hash` | `string` | — | yes | Короткий идентификатор коммита. |
+| `innerRef` | `any` | — | no | Ref на корневой элемент. |
+| `removed` | `number` | — | yes | Количество удалённых строк. Целое неотрицательное число, знак `-` ставит `AiCodeDiff`. |
+| `title` | `string` | — | yes | Текст коммита. |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### AiHistoryLineIndicator
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `active` | `boolean` | `false` | no | Кольцо выбора. Компонент его не переключает. |
+| `background` | `boolean` | `true` | no | Подложка колодца. `false` убирает заливку и внутреннюю обводку, кольцо выбора остаётся. |
+| `children` | `ReactNode` | — | no | Содержимое колодца 24×24: аватар или иконка. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line__indicator` | no |  |
+| `href` | `string` | — | no | Делает индикатор ссылкой. Переход выполняет потребитель. |
+| `indicatorLabel` | `string` | — | no | Доступное имя кнопки или ссылки. |
+| `innerRef` | `Ref<HTMLButtonElement \| HTMLAnchorElement \| HTMLSpanElement>` | — | no | Ref на корневой элемент. |
+| `onClick` | `MouseEventHandler<HTMLButtonElement \| HTMLAnchorElement>` | — | no | Клик по индикатору. Без `href` рендерит кнопку. |
+
+### AiHistoryLineItem
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный тег корня. По умолчанию `li`. |
+| `children` | `ReactNode` | — | no | Тело строки. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line__item` | no |  |
+| `firstItem` | `boolean` | — | no | Первая строка. Верхний коннектор остаётся и держит смещение, линия не видна. |
+| `href` | `string` | — | no | Делает индикатор ссылкой. Переход, запись адреса и прокрутка остаются на стороне потребителя. |
+| `id` | `string` | — | no | Значение в группе активного индикатора. С `id` индикатор становится кнопкой выбора. |
+| `indicator` | `ReactNode` | — | yes | Узел в колодце 24×24. Иконку собирает потребитель. |
+| `indicatorBackground` | `boolean` | `true` | no | Подложка индикатора. `false` для аватара: без заливки и внутренней обводки. |
+| `indicatorLabel` | `string` | — | no | Доступное имя интерактивного индикатора. Имеет смысл у кнопки выбора (`id`) и у ссылки (`href`). |
+| `innerRef` | `any` | — | no | Ref на корневой элемент. |
+| `lastItem` | `boolean` | — | no | Последняя строка. Нижний коннектор скрыт. |
+| `onIndicatorClick` | `MouseEventHandler<HTMLButtonElement \| HTMLAnchorElement>` | — | no | Дополнительный обработчик клика. Сюда потребитель ставит запись хеша и прокрутку, если они нужны. |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### AiHistoryLineRequest
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `as` | `ElementType` | — | no | Полиморфный тег корня. По умолчанию `div`. |
+| `children` | `ReactNode` | — | no | Текст запроса. Переносится по ширине, лимита строк нет. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line-request` | no |  |
+| `duration` | `string` | — | no | Уже отформатированная длительность. Нет значения — скрыты и длительность, и разделитель. |
+| `innerRef` | `any` | — | no | Ref на корневой элемент. |
+| `timestamp` | `string` | — | no | Уже отформатированные дата и время. |
+
+#### Related types
+- `PolymorphicRef` (alias)
+
+### AiHistoryLineStepper
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `ReactNode` | — | no | Индикатор между коннекторами. |
+| `className` | `string` | — | no | Дополнительный класс корня. |
+| `data-test-id` | `string` | `ai-history-line__stepper` | no |  |
+| `innerRef` | `Ref<HTMLDivElement>` | — | no | Ref на корневой элемент. |
+| `offset` | `Height<string \| number>` | — | no | Высота верхнего коннектора. Число — пиксели, строка — CSS-длина. Нет значения и `0` — коннектор не рендерится. |
+| `showClosingConnector` | `boolean` | — | no | Показать нижний коннектор. |
+| `showLeadingConnector` | `boolean` | — | no | Показать верхний коннектор. `false` — слот остаётся и держит `offset`, линия скрыта. |

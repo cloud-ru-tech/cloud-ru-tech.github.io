@@ -35,7 +35,7 @@ pnpm add @cloud-ru/ds-ai-tool
 | `data-test-id` | `string` | `ai-tool` | no |  |
 | `defaultOpen` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
 | `duration` | `number` | — | no | Длительность выполнения в секундах. Форматируется компонентом в д/ч/м/с (ведущие нулевые единицы опускаются, секунды показываются всегда). |
-| `icon` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — глиф `AiToolIcon` в заголовке. |
+| `icon` | `act \| edit \| read \| reasoning \| search \| security \| wait \| write` | — | yes | Тип инструмента — глиф `AiToolIcon` в заголовке. |
 | `name` | `ReactNode` | — | yes | Имя инструмента — моноширинная строка заголовка, обрезается ellipsis. |
 | `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
 | `open` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpen`. |
@@ -44,7 +44,7 @@ pnpm add @cloud-ru/ds-ai-tool
 | `state` | `error \| loading \| pending \| success` | `pending` | no | Состояние выполнения инструмента: `loading` — выполняется (синяя пульсирующая точка, заголовок основным цветом текста вместо приглушённого), `success` — завершён, `error` — завершён с ошибкой (блок ответа подсвечивается красным), `pending` — в очереди. |
 
 #### Related types
-- `AiToolIconType` = `act | read | reasoning | search | security | wait`
+- `AiToolIconType` = `act | edit | read | reasoning | search | security | wait | write`
 - `AiToolStatusState` = `error | loading | pending | success`
 
 ### AiToolArray
@@ -118,10 +118,10 @@ pnpm add @cloud-ru/ds-ai-tool
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | `ai-tool-icon` | no |  |
-| `variant` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — определяет глиф (reasoning / search / read / act / security / wait). |
+| `variant` | `act \| edit \| read \| reasoning \| search \| security \| wait \| write` | — | yes | Тип инструмента — определяет глиф (reasoning / search / read / act / security / wait / edit / write). |
 
 #### Related types
-- `AiToolIconType` = `act | read | reasoning | search | security | wait`
+- `AiToolIconType` = `act | edit | read | reasoning | search | security | wait | write`
 
 ### AiToolKeyValue
 | Prop | Type | Default | Required | Description |
@@ -163,14 +163,14 @@ pnpm add @cloud-ru/ds-ai-tool
 | `data-test-id` | `string` | `ai-tool-simple` | no |  |
 | `defaultOpen` | `boolean` | `false` | no | Начальное раскрытое состояние (uncontrolled). |
 | `description` | `ReactNode` | — | no | Текстовое описание под заголовком в раскрытом состоянии. |
-| `icon` | `act \| read \| reasoning \| search \| security \| wait` | — | yes | Тип инструмента — глиф `AiToolIcon` слева от заголовка. |
+| `icon` | `act \| edit \| read \| reasoning \| search \| security \| wait \| write` | — | yes | Тип инструмента — глиф `AiToolIcon` слева от заголовка. |
 | `name` | `ReactNode` | — | yes | Имя инструмента — строка заголовка; в свёрнутом состоянии обрезается ellipsis. |
 | `onOpenChange` | `((open: boolean) => void)` | — | no | Переключение раскрытия. Получает новое значение `open`. |
 | `open` | `boolean` | — | no | Раскрытое состояние (controlled). Для uncontrolled-режима — `defaultOpen`. |
 | `state` | `error \| loading \| pending \| success` | `pending` | no | Состояние выполнения. В `loading` тип инструмента ещё неизвестен, поэтому вместо иконки показывается пульсирующая точка `AiToolStatus`, а заголовок подсвечивается основным цветом текста. В остальных состояниях слева рендерится иконка типа (`icon`). |
 
 #### Related types
-- `AiToolIconType` = `act | read | reasoning | search | security | wait`
+- `AiToolIconType` = `act | edit | read | reasoning | search | security | wait | write`
 - `AiToolStatusState` = `error | loading | pending | success`
 
 ### AiToolStatus

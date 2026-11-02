@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.module-DMKpKJMI.js","names":[],"sources":["../../../../packages/ai-history-line/stories/AiHistoryLine/styles.module.scss"],"sourcesContent":[".session {\n  box-sizing: border-box;\n  width: 720px;\n  max-width: 100%;\n}\n\n.click {\n  margin: 0 0 16px;\n}\n\n"],"mappings":""}
