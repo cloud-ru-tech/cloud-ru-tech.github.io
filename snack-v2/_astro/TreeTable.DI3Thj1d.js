@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Table.BxTOlR8M.js";import{t as n}from"./useTreeTableProps.pzGl69zv.js";var r=e();function i(e){return(0,r.jsx)(t,{...n(e)})}export{i as t};

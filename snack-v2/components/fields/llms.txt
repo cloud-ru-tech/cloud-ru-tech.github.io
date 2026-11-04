@@ -384,7 +384,7 @@ pnpm add @cloud-ru/ds-fields
 | `resetSearchOnOptionSelection` | `boolean` | `true` | no | Сбрасывать строку поиска к выбранному значению после выбора. `false` нужен при асинхронной подгрузке (оставить введённый запрос как значение, пока данные не пришли). |
 | `scrollToSelectedItem` | `boolean` | — | no | Флаг, отвечающий за прокручивание до выбранного элемента |
 | `search` | `{ value?: string; defaultValue?: string; onChange?(value: string): void; } \| undefined` | — | no | Управляемое/неуправляемое состояние строки поиска (текста в поле). Позволяет потребителю читать и задавать запрос (например, для серверного поиска вместе с `autocomplete`). |
-| `searchable` | `boolean` | `true` | no | Включить поиск/ввод в поле — пользователь печатает, список фильтруется по подстроке лейбла. |
+| `searchable` | `boolean` | `true` | no | Включить поиск/ввод в поле — пользователь печатает, список фильтруется по подстроке лейбла. `autocomplete` и создание опции по Enter также включают мобильный поиск. |
 | `selectedOptionFormatter` | `((selected: { id: ItemId; label: string; }) => string)` | — | no | Кастомный форматтер лейбла выбранного значения. Применяется к каждому выбранному элементу (single — значение в поле, multiple — лейбл чипа или элемент в comma-joined). |
 | `selection` | `multiple \| single` | — | no | Режим выбора. По умолчанию `'single'`. Режим выбора |
 | `showClearButton` | `boolean` | `true` | no | Показывать кнопку очистки значения (✕). Активна, когда есть выбранное значение и поле не disabled/readonly. |
