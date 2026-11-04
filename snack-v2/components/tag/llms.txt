@@ -24,18 +24,25 @@ pnpm add @cloud-ru/ds-tag
 | `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
 | `size` | `m \| s \| xs` | — | no |  |
 | `tabIndex` | `number` | — | no |  |
+| `tooltip` | `TooltipProps` | — | no | Тултип над тегом |
 | `truncateVariant` | `end \| middle` | — | no | Вариант обрезания подписи, не поместившейся в тег. |
 
 #### Related types
 - `Appearance` = `blue | green | neutral | orange | pink | primary | red | violet | yellow`
+- `ChildrenFunction` (alias)
+- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `Size` = `m | s | xs`
+- `TooltipProps` (interface)
+- `Trigger` = `click | clickAndFocusVisible | focus | focusVisible | hover | hoverAndFocus | hoverAndFocusVisible`
 
 ### TagBase
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `appearance` | `blue \| green \| neutral \| orange \| pink \| primary \| red \| violet \| yellow` | `neutral` | no |  |
+| `changeRestrictTooltipState` | `((state: boolean) => void)` | — | no |  |
 | `className` | `string` | — | no |  |
 | `data-test-id` | `string` | — | no |  |
+| `hideTruncateTooltip` | `boolean` | — | yes |  |
 | `innerRef` | `Ref<HTMLSpanElement>` | — | no | Ref на корневой DOM-элемент. Используем явный проп, чтобы не зависеть от `forwardRef` и не тащить type-assertions на экспорт. |
 | `label` | `string` | — | yes |  |
 | `onDelete` | `MouseEventHandler<HTMLButtonElement>` | — | no | Обработчик удаления тега. Если задан — отображается крестик-remove |
