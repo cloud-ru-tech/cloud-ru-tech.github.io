@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-BjFzaAdR.js","names":[],"sources":["../../../../packages/ai-attachment/stories/AiAttachment/testIds.ts"],"sourcesContent":["import { TEST_IDS as COMPONENT_TEST_IDS } from '../../src/constants';\n\nexport const TEST_IDS = COMPONENT_TEST_IDS;\n"],"mappings":"iHAA+C,EAElC,EAAW"}

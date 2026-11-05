@@ -1,0 +1,107 @@
+﻿# @cloud-ru/ds-ai-button-close
+
+> Кнопка-крестик для закрытия блока или удаления вложения в AI-компонентах.
+
+Docs: /snack-v2/components/ai-button-close/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-button-close
+```
+
+## Когда использовать
+
+- Крестик плитки вложения в поле ввода.
+- Крестик закрытия баннера над полем ввода.
+
+### Когда не нужен
+
+- Кнопка с текстом или иконкой другого действия:
+  - используйте `@cloud-ru/ds-button`.
+- Стрелка прокрутки или листания:
+  - используйте `@cloud-ru/ds-ai-button-controls`.
+
+## API
+
+### AiButtonClose
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-button-close` | no |  |
+| `disabled` | `boolean` | `false` | no | Блокирует нажатие. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие на крестик. Что происходит после нажатия, решает потребитель. |
+| `outline` | `boolean` | `false` | no | Подложка с обводкой. У `xs` включена всегда, у `m` не применяется. По умолчанию `false`. |
+| `size` | `m \| s \| xs` | `s` | no | Размер: `xs` 16×16, `s` 24×24, `m` 32×32. По умолчанию `s`. |
+
+#### Related types
+- `Size` = `m | s | xs`
+
+## Примеры
+
+### CustomLabel
+
+```tsx
+import { AiButtonClose, SIZE } from '@cloud-ru/ds-ai-button-close';
+import { Fragment, useState } from 'react';
+
+export function CustomLabel() {
+  const [files, setFiles] = useState(['report.pdf', 'photo.png']);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      {files.map(file => (
+        <Fragment key={file}>
+          <span>{file}</span>
+          <AiButtonClose
+            size={SIZE.Xs}
+            outline
+            aria-label={`Удалить ${file}`}
+            onClick={() => setFiles(prev => prev.filter(name => name !== file))}
+          />
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+```
+
+### Dismiss
+
+```tsx
+import { AiButtonClose } from '@cloud-ru/ds-ai-button-close';
+import { Button } from '@cloud-ru/ds-button';
+import { useState } from 'react';
+
+export function Dismiss() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) {
+    return <Button label='Показать снова' onClick={() => setVisible(true)} />;
+  }
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <span>Блок можно закрыть крестиком</span>
+      <AiButtonClose onClick={() => setVisible(false)} />
+    </div>
+  );
+}
+```
+
+### Variants
+
+```tsx
+import { AiButtonClose, SIZE } from '@cloud-ru/ds-ai-button-close';
+
+export function Variants() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiButtonClose size={SIZE.Xs} outline />
+      <AiButtonClose size={SIZE.S} outline />
+      <AiButtonClose size={SIZE.S} />
+      <AiButtonClose size={SIZE.M} />
+    </div>
+  );
+}
+```

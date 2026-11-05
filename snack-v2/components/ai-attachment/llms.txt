@@ -1,0 +1,111 @@
+﻿# @cloud-ru/ds-ai-attachment
+
+> Плитка вложения 88×88 для AI-компонентов — картинка с превью или файл с именем, загрузка и ошибка.
+
+Docs: /snack-v2/components/ai-attachment/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-attachment
+```
+
+## Когда использовать
+
+- Ряд вложений в поле ввода сообщения (`@cloud-ru/ds-ai-field-input`).
+- Вложения в сообщениях ленты и других местах, где нужен единый вид файла.
+
+### Когда не нужен
+
+- Карточка файла с названием, описанием и скачиванием:
+  - используйте `@cloud-ru/ds-attachment`.
+
+## API
+
+### AiAttachment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-attachment` | no |  |
+| `fileName` | `string` | — | no | Имя файла — для `type='file'`. |
+| `icon` | `ReactNode` | — | no | Иконка типа файла. Подставляется снаружи (AT-7.3). |
+| `onClick` | `(() => void)` | — | no | Нажатие на плитку. |
+| `onRemove` | `(() => void)` | — | no | Нажатие на крестик. |
+| `onRetry` | `(() => void)` | — | no | Нажатие на кнопку повтора в состоянии `error`. |
+| `src` | `string` | — | no | Адрес превью картинки. |
+| `state` | `default \| error \| loading` | `default` | no | Состояние плитки. По умолчанию `default`. |
+| `tooltip` | `ReactNode` | — | no | Подсказка при наведении (только desktop). |
+| `type` | `file \| image` | `image` | no | Тип плитки: картинка с превью или файл с именем. По умолчанию `image`. |
+
+#### Related types
+- `AttachmentState` = `default | error | loading`
+- `AttachmentType` = `file | image`
+
+## Примеры
+
+### Clickable
+
+```tsx
+import { AiAttachment, ATTACHMENT_TYPE } from '@cloud-ru/ds-ai-attachment';
+import { useState } from 'react';
+
+export function Clickable() {
+  const [opened, setOpened] = useState(0);
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiAttachment type={ATTACHMENT_TYPE.File} fileName='contract.docx' onClick={() => setOpened(prev => prev + 1)} />
+      <span>Открыто: {opened}</span>
+    </div>
+  );
+}
+```
+
+### RemoveAndRetry
+
+```tsx
+import { AiAttachment, ATTACHMENT_STATE, ATTACHMENT_TYPE } from '@cloud-ru/ds-ai-attachment';
+import { useState } from 'react';
+
+export function RemoveAndRetry() {
+  const [files, setFiles] = useState(['report.pdf', 'budget.xlsx', 'notes.txt']);
+  const [failed, setFailed] = useState('budget.xlsx');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      {files.map(file => (
+        <AiAttachment
+          key={file}
+          type={ATTACHMENT_TYPE.File}
+          state={file === failed ? ATTACHMENT_STATE.Error : ATTACHMENT_STATE.Default}
+          fileName={file}
+          tooltip={file === failed ? 'Не удалось загрузить' : file}
+          onRemove={() => setFiles(prev => prev.filter(name => name !== file))}
+          onRetry={() => setFailed('')}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+### States
+
+```tsx
+import { AiAttachment, ATTACHMENT_STATE, ATTACHMENT_TYPE } from '@cloud-ru/ds-ai-attachment';
+
+export function States() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <AiAttachment type={ATTACHMENT_TYPE.File} fileName='quarterly-report-final.pdf' tooltip='PDF, 2 МБ' />
+      <AiAttachment type={ATTACHMENT_TYPE.File} state={ATTACHMENT_STATE.Loading} fileName='budget.xlsx' />
+      <AiAttachment
+        type={ATTACHMENT_TYPE.File}
+        state={ATTACHMENT_STATE.Error}
+        fileName='notes.txt'
+        tooltip='Файл больше 20 МБ'
+      />
+    </div>
+  );
+}
+```

@@ -54,7 +54,7 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 |------|------|---------|----------|-------------|
 | `appearance` | `critical \| neutral \| primary` | — | no | Вариант оформления |
 | `as` | `button` | — | no | Элемент или компонент для рендера: 'button' \| 'a' \| ComponentType (например Link из react-router-dom) |
-| `button` | `Omit<ButtonProps<"button">, "view" \| "label" \| "icon"> \| (Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled"; }) \| (Omit<...> & { ...; })` | — | no |  |
+| `button` | `Omit<ButtonProps<"button">, "view" \| "icon" \| "label"> \| (Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled"; }) \| (Omit<...> & { ...; })` | — | no |  |
 | `className` | `string` | — | no | Дополнительный класс |
 | `commonProps` | `{ className?: string; size?: "s" \| "m" \| "l"; fullWidth?: boolean \| undefined; } \| undefined` | — | no |  |
 | `counter` | `Omit<CounterProps, "size">` | — | no | Пропсы для counter. `appearance` можно задать явно (по умолчанию наследуется от appearance кнопки). |
@@ -76,13 +76,13 @@ pnpm add @cloud-ru/ds-uikit-product-widget
 ### ButtonDroplist
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `(Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps<"button">, "view" \| "appearance" \| "icon" \| "iconPosition"> & { ...; })` | — | yes |  |
+| `button` | `(Omit<ButtonProps<"button">, "view" \| "appearance"> & { buttonType?: "filled" \| undefined; }) \| (Omit<ButtonProps<"button">, "view" \| "icon" \| "appearance" \| "iconPosition"> & { ...; })` | — | yes |  |
 | `list` | `WidgetActionListProps` | — | yes |  |
 
 ### ButtonKebab
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `button` | `Omit<ButtonProps<"button">, "view" \| "label" \| "icon">` | — | no |  |
+| `button` | `Omit<ButtonProps<"button">, "view" \| "icon" \| "label">` | — | no |  |
 | `list` | `WidgetActionListProps` | — | yes |  |
 
 ### Content

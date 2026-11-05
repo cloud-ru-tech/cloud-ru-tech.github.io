@@ -1,0 +1,490 @@
+﻿# @cloud-ru/ds-ai-field-input
+
+> Поле ввода сообщения для чата с агентом — текст с чипами скиллов и упоминаний, вложения и футер действий.
+
+Docs: /snack-v2/components/ai-field-input/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-ai-field-input
+```
+
+## Когда использовать
+
+- Ввод сообщения в чате с агентом.
+- Ввод ответа в разговоре, где нужны вложения, вызов скиллов по `/` и упоминания по `@`.
+
+### Когда не нужен
+
+- Однострочный ввод без вложений и действий:
+  - используйте `FieldText` из `@cloud-ru/ds-fields`.
+- Многострочный текст без чипов и футера:
+  - используйте `FieldTextArea` из `@cloud-ru/ds-fields`.
+
+## API
+
+### ActionListPanel
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input-action-list` | no |  |
+| `emptyLabel` | `string` | — | no | Строка вместо пустого списка. |
+| `focusEditorOnSelect` | `boolean` | `true` | no | После выбора строки фокус возвращается в поле. По умолчанию `true`. |
+| `forwardTyping` | `boolean` | `true` | no | Набранные в списке буквы уходят в поле. По умолчанию `true`. |
+| `items` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | yes | Строки и группы строк. |
+| `onClose` | `(() => void)` | — | no | Нажатие Escape. |
+| `padding` | `boolean` | `false` | no | Отступ 8 со всех сторон; без него — только сверху и снизу. По умолчанию `false`. |
+| `registerInField` | `boolean` | `false` | no | Список поиска поля: управляется клавишами из редактора. |
+
+### AiFieldInput
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `attachments` | `ReactNode` | — | no | Плитки вложений (`AiAttachment` из `@cloud-ru/ds-ai-attachment`). Ряд не рендерится, если слот пуст. |
+| `attachmentsScrollStep` | `number` | `92` | no | Шаг сдвига ряда вложений стрелкой, px. По умолчанию — одна плитка с зазором (92). |
+| `banner` | `ReactNode` | — | no | Слот над полем: `AiFieldBanner` или `AiFieldNotice`. Пока открыт список по `/` или `@`, на месте баннера стоит список. |
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input` | no |  |
+| `defaultValue` | `AiFieldInputValue` | — | no | Начальное содержимое (uncontrolled). |
+| `disabled` | `boolean` | `false` | no | Выключенное поле: ввод недоступен, кнопки футера выключены, ряд вложений скрыт. |
+| `disclaimer` | `ReactNode` | — | no | Текст под полем. По умолчанию — дисклеймер из локали; `null` скрывает текст, отступ сохраняется. |
+| `footerLeftActions` | `ReactNode` | — | no | Слот левых действий футера. |
+| `footerRightActions` | `ReactNode` | — | no | Слот дополнительных правых действий футера (перед кнопкой отправки). |
+| `mentions` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | no | Строки списка по `@`: ресурсы и сущности. Не заданы — список по `@` не открывается. |
+| `onActionSelect` | `((item: AiFieldInputActionListItem, trigger: SearchTrigger) => void)` | — | no | Выбор строки списка по `/` или `@`: строка уже стоит в поле чипом. |
+| `onChange` | `((value: AiFieldInputValue) => void)` | — | no | Изменение содержимого. |
+| `onSubmit` | `((value: AiFieldInputValue) => void)` | — | no | Отправка: Enter без Shift, когда поиск по `/` или `@` не активен, или нажатие кнопки в состоянии `active`. Пока кнопка в `loading` или `stop`, не вызывается. |
+| `placeholder` | `string` | — | no | Подсказка в пустом поле. |
+| `scrollButton` | `AiFieldInputScrollButton` | — | no | Кнопка прокрутки к последнему сообщению над полем. Не задана — кнопки нет. |
+| `searchPlaceholder` | `AiFieldInputSearchPlaceholder` | — | no | Подсказки в поиске после `/` и `@`. Не заданный ключ — текст из локали («Введите название» / «Type a name»). |
+| `send` | `AiFieldInputSend` | — | no | Кнопка отправки: состояние и нажатие. |
+| `skills` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | no | Строки списка по `/`: команды и скиллы. Не заданы — список по `/` не открывается. |
+| `value` | `AiFieldInputValue` | — | no | Содержимое поля (controlled). |
+
+#### Related types
+- `ActionListItemType` = `back | default | drillDown`
+- `AiFieldInputActionListGroup` (interface)
+- `AiFieldInputActionListItem` (interface)
+- `AiFieldInputScrollButton` (interface)
+- `AiFieldInputSearchPlaceholder` (interface)
+- `AiFieldInputSend` (interface)
+- `AiFieldInputValue` (alias)
+- `SendState` = `active | disabled | loading | stop`
+
+### AiFieldInputActionList
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `items` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | yes | Строки и группы строк. |
+| `onClose` | `(() => void)` | — | no | Нажатие Escape. |
+| `padding` | `boolean` | — | no | Отступ 8 со всех сторон; без него — только сверху и снизу. По умолчанию `false`. |
+
+#### Related types
+- `ActionListItemType` = `back | default | drillDown`
+- `AiFieldInputActionListGroup` (interface)
+- `AiFieldInputActionListItem` (interface)
+
+### AiFieldInputContextButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__context` | no |  |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `progress` | `green \| orange \| red` | — | no | Цвет дуги. Не задан — по порогам: до 70 green, до 90 orange, выше red. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+| `value` | `number` | — | yes | Доля заполнения контекста, 0–100. Задаёт угол дуги. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+- `ContextProgress` = `green | orange | red`
+
+### AiFieldInputEffortButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__effort` | no |  |
+| `disabled` | `boolean` | — | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `label` | `string` | — | yes | Текущий уровень усилий. Длиннее 100px обрезается многоточием. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+- `AiFieldInputFooterMenuItem` (interface)
+
+### AiFieldInputModelButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__model` | no |  |
+| `disabled` | `boolean` | — | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `label` | `string` | — | yes | Имя текущей модели. Длиннее 180px обрезается многоточием. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `searchable` | `boolean` | `false` | no | Поиск по названию в списке моделей. На mobile с поиском шторка раскрывается на весь экран, без него — по высоте списка. По умолчанию `false`. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+- `AiFieldInputFooterMenuItem` (interface)
+
+### AiFieldInputPlusButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__plus` | no |  |
+| `disabled` | `boolean` | — | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+- `AiFieldInputFooterMenuItem` (interface)
+
+### AiFieldInputSendButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__send` | no |  |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `state` | `active \| disabled \| loading \| stop` | — | yes | Состояние кнопки отправки. |
+
+#### Related types
+- `SendState` = `active | disabled | loading | stop`
+
+### AiFieldInputSettingsButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__settings` | no |  |
+| `disabled` | `boolean` | — | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+- `AiFieldInputFooterMenuItem` (interface)
+
+### AiFieldInputVoiceButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | `ai-field-input__voice` | no |  |
+| `disabled` | `boolean` | — | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+#### Related types
+- `AiFieldInputFooterButtonTooltip` (interface)
+
+### Attachments
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `scrollStep` | `number` | — | yes |  |
+
+### ChipView
+_Нет публичных пропсов._
+
+### Editor
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disabled` | `boolean` | — | yes |  |
+| `handleRef` | `MutableRefObject<EditorHandle \| null>` | — | yes |  |
+| `onChange` | `(value: AiFieldInputValue) => void` | — | yes |  |
+| `onSubmit` | `(value: AiFieldInputValue) => void` | — | yes |  |
+| `placeholder` | `string` | — | no |  |
+| `searchPlaceholder` | `AiFieldInputSearchPlaceholder` | — | no |  |
+| `searchTriggers` | `SearchTrigger[]` | — | yes |  |
+| `value` | `AiFieldInputValue` | — | yes |  |
+
+### FooterIconButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `icon` | `ReactNode` | — | yes |  |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+
+### FooterMenu
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `disabled` | `boolean` | — | yes |  |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `searchable` | `boolean` | `false` | no |  |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no |  |
+| `triggerRef` | `Ref<HTMLButtonElement>` | — | no |  |
+
+### FooterTextButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | Доп. класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | `false` | no | Выключенная кнопка. Внутри выключенного поля выключается автоматически. |
+| `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
+| `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
+| `label` | `string` | — | yes |  |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
+| `searchable` | `boolean` | — | no |  |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
+| `width` | `effort \| model` | — | yes |  |
+
+### FooterTooltip
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `hidden` | `boolean` | `false` | no |  |
+| `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no |  |
+| `triggerRef` | `RefObject<HTMLButtonElement>` | — | no |  |
+
+### MobileActionListSheet
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `items` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | yes |  |
+| `onClose` | `() => void` | — | yes |  |
+| `onPick` | `(item: AiFieldInputActionListItem) => void` | — | yes |  |
+
+### ScrollButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `indicator` | `boolean` | `false` | no | Точка «внизу есть непрочитанное сообщение» (ISC-2). |
+| `onClick` | `(() => void)` | — | no | Нажатие. Прокрутку выполняет потребитель. |
+
+### SearchActionList
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `detached` | `boolean` | `false` | no | Открыт без знака в тексте: буквы в поле не уходят. |
+| `items` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | yes |  |
+| `onClose` | `(() => void)` | — | no |  |
+| `onLevelChange` | `(() => void)` | — | no | Переход на уровень или назад. |
+| `onSelect` | `(item: AiFieldInputActionListItem) => void` | — | yes |  |
+| `query` | `string` | — | yes |  |
+
+## Примеры
+
+### Attachments
+
+```tsx
+import { AiAttachment, ATTACHMENT_STATE, ATTACHMENT_TYPE } from '@cloud-ru/ds-ai-attachment';
+import { AiFieldInput } from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+const INITIAL_FILES = ['report.pdf', 'budget.xlsx', 'notes.txt', 'design.fig', 'contract.docx', 'roadmap.pdf'];
+
+export function Attachments() {
+  const [files, setFiles] = useState(INITIAL_FILES);
+  const [failed, setFailed] = useState('budget.xlsx');
+
+  return (
+    <AiFieldInput
+      placeholder='Опишите, что сделать с файлами'
+      attachments={
+        files.length > 0
+          ? files.map(file => (
+              <AiAttachment
+                key={file}
+                type={ATTACHMENT_TYPE.File}
+                state={file === failed ? ATTACHMENT_STATE.Error : ATTACHMENT_STATE.Default}
+                fileName={file}
+                tooltip={file === failed ? 'Не удалось загрузить' : file}
+                onRemove={() => setFiles(prev => prev.filter(name => name !== file))}
+                onRetry={() => setFailed('')}
+              />
+            ))
+          : undefined
+      }
+    />
+  );
+}
+```
+
+### Basic
+
+```tsx
+import { AiFieldInput, AiFieldInputValue } from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+export function Basic() {
+  const [value, setValue] = useState<AiFieldInputValue>([]);
+  const [lastSent, setLastSent] = useState('');
+
+  return (
+    <AiFieldInput
+      value={value}
+      onChange={setValue}
+      onSubmit={current => {
+        setLastSent(current.map(segment => (segment.type === 'text' ? segment.text : '')).join(''));
+        setValue([]);
+      }}
+      placeholder='Спросите что-нибудь'
+      disclaimer={lastSent ? `Отправлено: ${lastSent}` : undefined}
+    />
+  );
+}
+```
+
+### Disabled
+
+```tsx
+import { AiFieldInput } from '@cloud-ru/ds-ai-field-input';
+
+export function Disabled() {
+  return <AiFieldInput disabled placeholder='Отправка сообщений недоступна' />;
+}
+```
+
+### FooterActions
+
+```tsx
+import {
+  AiFieldInput,
+  AiFieldInputContextButton,
+  AiFieldInputEffortButton,
+  AiFieldInputModelButton,
+  AiFieldInputPlusButton,
+  AiFieldInputSettingsButton,
+  AiFieldInputVoiceButton,
+  SEND_STATE,
+  SendState,
+} from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+const PLUS_ITEMS = [
+  { id: 'files', label: 'Файлы', description: 'Загрузить с устройства' },
+  { id: 'skills', label: 'Скиллы', description: 'Добавить скилл в запрос' },
+  { id: 'connectors', label: 'Коннекторы', description: 'Внешние источники данных' },
+];
+
+const SETTINGS_ITEMS = [
+  { id: 'chat', label: 'Настройки чата', description: 'Название, папка и доступ' },
+  { id: 'memory', label: 'Память', description: 'Что агент помнит о вас' },
+];
+
+const MODELS = [
+  { id: 'gigachat-2-max', label: 'GigaChat 2 Max' },
+  { id: 'gigachat-2-pro', label: 'GigaChat 2 Pro' },
+  { id: 'gigachat-2-lite', label: 'GigaChat 2 Lite' },
+];
+
+const EFFORTS = [
+  { id: 'low', label: 'Низкий' },
+  { id: 'medium', label: 'Средний' },
+  { id: 'high', label: 'Высокий' },
+];
+
+export function FooterActions() {
+  const [state, setState] = useState<SendState | undefined>(undefined);
+  const [model, setModel] = useState(MODELS[0]);
+  const [effort, setEffort] = useState(EFFORTS[2]);
+
+  const handleModelSelect = (id: string) => setModel(MODELS.find(item => item.id === id) ?? MODELS[0]);
+  const handleEffortSelect = (id: string) => setEffort(EFFORTS.find(item => item.id === id) ?? EFFORTS[2]);
+
+  return (
+    <AiFieldInput
+      defaultValue={[{ type: 'text', text: 'Сгенерируй план релиза' }]}
+      footerLeftActions={
+        <>
+          <AiFieldInputPlusButton
+            items={PLUS_ITEMS}
+            tooltip={{ content: 'Файлы, скиллы и коннекторы', shortcut: '⌘ /' }}
+          />
+          <AiFieldInputSettingsButton items={SETTINGS_ITEMS} tooltip={{ content: 'Настройки' }} />
+          <AiFieldInputModelButton
+            label={model.label}
+            items={MODELS}
+            tooltip={{ content: 'Выбор модели' }}
+            onSelect={handleModelSelect}
+          />
+          <AiFieldInputEffortButton
+            label={effort.label}
+            items={EFFORTS}
+            tooltip={{ content: 'Уровень усилий' }}
+            onSelect={handleEffortSelect}
+          />
+        </>
+      }
+      footerRightActions={
+        <>
+          <AiFieldInputContextButton value={82} tooltip={{ content: 'Лимит: 82%' }} />
+          <AiFieldInputVoiceButton tooltip={{ content: 'Голосовой ввод' }} />
+        </>
+      }
+      send={{
+        state,
+        onClick: current => setState(current === SEND_STATE.Stop ? undefined : SEND_STATE.Stop),
+      }}
+    />
+  );
+}
+```
+
+### SlashCommands
+
+```tsx
+import { AiFieldBanner } from '@cloud-ru/ds-ai-field-banner';
+import { ACTION_LIST_ITEM_TYPE, AiFieldInput, AiFieldInputActionListItem, AiFieldInputValue } from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+const SKILLS: AiFieldInputActionListItem[] = [
+  { id: 'summarize', label: 'summarize', caption: 'Краткое содержание', shortcut: '⌘ S' },
+  { id: 'translate', label: 'translate', caption: 'Перевод текста' },
+  {
+    id: 'agents',
+    label: 'Агенты',
+    caption: '2',
+    type: ACTION_LIST_ITEM_TYPE.DrillDown,
+    backLabel: 'К списку команд',
+    items: [
+      { id: 'hermes', label: 'Гермес' },
+      { id: 'analyst', label: 'Аналитик' },
+    ],
+  },
+];
+
+const MENTIONS: AiFieldInputActionListItem[] = [
+  { id: 'team', label: 'команде', caption: 'Группа' },
+  { id: 'docs', label: 'документация', caption: 'Пространство' },
+];
+
+export function SlashCommands() {
+  const [value, setValue] = useState<AiFieldInputValue>([]);
+  const [bannerVisible, setBannerVisible] = useState(true);
+
+  return (
+    <AiFieldInput
+      value={value}
+      onChange={setValue}
+      onSubmit={() => setValue([])}
+      placeholder='Введите / для скиллов или @ для упоминаний'
+      skills={SKILLS}
+      mentions={MENTIONS}
+      banner={
+        bannerVisible ? (
+          <AiFieldBanner content='Агент работает в режиме чтения' onClose={() => setBannerVisible(false)} />
+        ) : undefined
+      }
+    />
+  );
+}
+```

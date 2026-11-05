@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiFieldNotice.B0yny-PH.js";var r=e();function i(){return(0,r.jsx)(n,{variant:t.Support,onActionClick:()=>void 0})}export{i as Support};

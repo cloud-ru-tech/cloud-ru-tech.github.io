@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{n as t,t as n}from"./AiButtonControls.CYihTrs0.js";var r=e();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(n,{direction:t.Left}),(0,r.jsx)(n,{direction:t.Right}),(0,r.jsx)(n,{direction:t.Down})]})}export{i as Directions};

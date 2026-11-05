@@ -29,14 +29,17 @@ pnpm add @cloud-ru/ds-ai-field-notice
 |------|------|---------|----------|-------------|
 | `className` | `string` | — | no | Доп. класс корня. |
 | `data-test-id` | `string` | — | no |  |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<AiFieldBannerLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива баннера для этого инстанса (deep-merge поверх `AI_FIELD_BANNER_LAYOUT_PRESETS`). |
 | `onActionClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Обработчик клика по кнопке действия. Не используется при `variant='queue'`. |
 | `queue` | `AiQueueProps` | — | yes | Пропсы `AiQueue`. Только при `variant='queue'`. |
-| `size` | `m \| s` | — | no | Размер баннера. |
+| `size` | `m \| s` | — | no | Размер баннера на desktop. На mobile — пресет `AI_FIELD_BANNER_LAYOUT_PRESETS` (`m`), изменить его — через `layoutPresets`. |
 | `variant` | `password \| queue \| ssh \| support \| vmAgent` | — | yes | Предзашитый сценарий: password, ssh, vmAgent, support или queue. Набор пропсов зависит от значения. |
 | `vmIp` | `string` | — | yes | IP-адрес виртуальной машины для второго кадра описания. Только при `variant='vmAgent'`. |
 | `vmName` | `string` | — | yes | Имя виртуальной машины для второго кадра описания. Только при `variant='vmAgent'`. |
 
 #### Related types
+- `AiFieldBannerLayoutDefaults` (interface)
+- `LayoutPresets` (interface)
 - `Size` = `m | s`
 
 ### AiFieldNoticeAnimatedDescription
@@ -76,17 +79,17 @@ pnpm add @cloud-ru/ds-ai-field-notice
 ### Password
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
+import { AiFieldNotice, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Password() {
-  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Password} onActionClick={() => undefined} />;
+  return <AiFieldNotice variant={VARIANT.Password} onActionClick={() => undefined} />;
 }
 ```
 
 ### Queue
 
 ```tsx
-import { AI_QUEUE_STEP_STATE, AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
+import { AI_QUEUE_STEP_STATE, AiFieldNotice, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 const steps = [
   { label: 'Step Description', state: AI_QUEUE_STEP_STATE.Done },
@@ -99,7 +102,6 @@ const steps = [
 export function Queue() {
   return (
     <AiFieldNotice
-      size={SIZE.S}
       variant={VARIANT.Queue}
       queue={{
         steps,
@@ -113,37 +115,31 @@ export function Queue() {
 ### Ssh
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
+import { AiFieldNotice, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Ssh() {
-  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Ssh} onActionClick={() => undefined} />;
+  return <AiFieldNotice variant={VARIANT.Ssh} onActionClick={() => undefined} />;
 }
 ```
 
 ### Support
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
+import { AiFieldNotice, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function Support() {
-  return <AiFieldNotice size={SIZE.S} variant={VARIANT.Support} onActionClick={() => undefined} />;
+  return <AiFieldNotice variant={VARIANT.Support} onActionClick={() => undefined} />;
 }
 ```
 
 ### VmAgent
 
 ```tsx
-import { AiFieldNotice, SIZE, VARIANT } from '@cloud-ru/ds-ai-field-notice';
+import { AiFieldNotice, VARIANT } from '@cloud-ru/ds-ai-field-notice';
 
 export function VmAgent() {
   return (
-    <AiFieldNotice
-      size={SIZE.S}
-      variant={VARIANT.VmAgent}
-      vmName='my-lovely-vm'
-      vmIp='93.7.94.11'
-      onActionClick={() => undefined}
-    />
+    <AiFieldNotice variant={VARIANT.VmAgent} vmName='my-lovely-vm' vmIp='93.7.94.11' onActionClick={() => undefined} />
   );
 }
 ```

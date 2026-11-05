@@ -32,11 +32,15 @@ pnpm add @cloud-ru/ds-ai-field-banner
 | `content` | `ReactNode` | — | no | Текст или контент основной строки. Не рендерится, если не задан. |
 | `data-test-id` | `string` | `ai-field-banner` | no |  |
 | `icon` | `ReactNode` | — | no | Иконка слева от текста |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<AiFieldBannerLayoutDefaults>>>` | — | no | Override mobile-дефолтов адаптива для этого инстанса (deep-merge поверх `AI_FIELD_BANNER_LAYOUT_PRESETS`). Escape-hatch: обычно не нужен — DS-пресет применяется автоматически по `AdaptiveProvider`. |
 | `onActionClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Обработчик клика по кнопке действия. |
-| `size` | `m \| s` | `s` | no | Размер: без `bottomContent` — `s` 400×48, `m` 400×60; с ним — `s` 400×72, `m` 400×84. |
+| `onClose` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие на крестик. Крестик показывается, только если обработчик передан; убрать баннер решает потребитель. |
+| `size` | `m \| s` | — | no | Размер на desktop: `s` — Field Banner, `m` — Field Banner Mobile. Высота по содержимому: при одной строке `s` 40, `m` 48. На mobile размер задаёт пресет `AI_FIELD_BANNER_LAYOUT_PRESETS` (`m`); изменить его — через `layoutPresets`. |
 | `variant` | `agentic \| critical \| help \| information \| security \| warning` | `information` | no | Семантический вариант баннера (ось `Variant` в Figma). По умолчанию `information`. |
 
 #### Related types
+- `AiFieldBannerLayoutDefaults` (interface)
+- `LayoutPresets` (interface)
 - `Size` = `m | s`
 - `Variant` = `agentic | critical | help | information | security | warning`
 
@@ -56,6 +60,32 @@ export function Default() {
       actionLabel='Label text'
       icon={<PlaceholderSVG />}
       onActionClick={() => undefined}
+    />
+  );
+}
+```
+
+### Dismiss
+
+```tsx
+import { AiFieldBanner, VARIANT } from '@cloud-ru/ds-ai-field-banner';
+import { Button } from '@cloud-ru/ds-button';
+import { PlaceholderSVG } from '@cloud-ru/ds-icons/interface/system';
+import { useState } from 'react';
+
+export function Dismiss() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) {
+    return <Button label='Показать баннер' onClick={() => setVisible(true)} />;
+  }
+
+  return (
+    <AiFieldBanner
+      variant={VARIANT.Information}
+      content='Баннер закрывается крестиком'
+      icon={<PlaceholderSVG />}
+      onClose={() => setVisible(false)}
     />
   );
 }

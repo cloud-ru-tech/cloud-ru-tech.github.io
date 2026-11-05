@@ -149,6 +149,7 @@
 
 - [@cloud-ru/ds-ai-card](/snack-v2/components/ai-card/llms.txt): Selectable AI-карточка с независимым boolean toggle, single-line заголовком и опциональным контентом.
 - [@cloud-ru/ds-ai-field-banner](/snack-v2/components/ai-field-banner/llms.txt): Инлайн-баннер для поля ввода с семантическим вариантом, иконкой, контентом и действием.
+- [@cloud-ru/ds-ai-field-input](/snack-v2/components/ai-field-input/llms.txt): Поле ввода сообщения для чата с агентом — текст с чипами скиллов и упоминаний, вложения и футер действий.
 - [@cloud-ru/ds-ai-field-notice](/snack-v2/components/ai-field-notice/llms.txt): Композиция AiFieldBanner и AiQueue для контекстных уведомлений над AI-полем.
 - [@cloud-ru/ds-ai-field-request](/snack-v2/components/ai-field-request/llms.txt): Панель запроса ответа человека вместо AI-поля ввода: заголовок, слот контента, раскрытие и кнопки действий.
 - [@cloud-ru/ds-ai-history-line](/snack-v2/components/ai-history-line/llms.txt): Вертикальная лента шагов AI-диалога — запросы пользователя, ответы агента, вызовы инструментов, чекпоинты
@@ -163,7 +164,10 @@
 
 ### Primitives
 
+- [@cloud-ru/ds-ai-attachment](/snack-v2/components/ai-attachment/llms.txt): Плитка вложения 88×88 для AI-компонентов — картинка с превью или файл с именем, загрузка и ошибка.
 - [@cloud-ru/ds-ai-button-chevron](/snack-v2/components/ai-button-chevron/llms.txt): Кнопка-шеврон 16×16 для раскрытия и сворачивания в составных AI-компонентах стриминга.
+- [@cloud-ru/ds-ai-button-close](/snack-v2/components/ai-button-close/llms.txt): Кнопка-крестик для закрытия блока или удаления вложения в AI-компонентах.
+- [@cloud-ru/ds-ai-button-controls](/snack-v2/components/ai-button-controls/llms.txt): Кнопка-стрелка для прокрутки и листания в AI-компонентах.
 - [@cloud-ru/ds-ai-button-giga](/snack-v2/components/ai-button-giga/llms.txt): Кнопки Гига-помощника с обводкой, без обводки и увеличенная кнопка формы.
 - [@cloud-ru/ds-ai-code-diff](/snack-v2/components/ai-code-diff/llms.txt): Количество добавленных и удаленных строк кода
 - [@cloud-ru/ds-ai-icon-giga](/snack-v2/components/ai-icon-giga/llms.txt): Иконка-логотип GigaChat в монохроме и брендовых градиентах для тёмного и светлого фона.
