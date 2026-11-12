@@ -26,7 +26,7 @@ pnpm add @cloud-ru/ds-drawer
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
@@ -45,7 +45,7 @@ pnpm add @cloud-ru/ds-drawer
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
@@ -68,7 +68,7 @@ pnpm add @cloud-ru/ds-drawer
 | `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены. |
 | `className` | `string` | — | no | CSS-класс контейнера footer'а. |
 | `data-test-id` | `string` | — | no |  |
-| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок при ровно двух действиях. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация двух кнопок. По умолчанию вертикальная на mobile и горизонтальная на desktop. |
 
 ### DialogHeader
 | Prop | Type | Default | Required | Description |
@@ -100,7 +100,7 @@ pnpm add @cloud-ru/ds-drawer
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
@@ -119,7 +119,7 @@ pnpm add @cloud-ru/ds-drawer
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
@@ -165,7 +165,7 @@ pnpm add @cloud-ru/ds-drawer
 | `showBlackout` | `boolean` | `true` | no | Отображение темной подложки |
 | `showButtonClosed` | `boolean` | `true` | no | Отображение кнопки закрытия в шапке дровера |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |
 
 #### Related types
@@ -189,7 +189,7 @@ pnpm add @cloud-ru/ds-drawer
 | `data-test-id` | `string` | — | no |  |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `vertical` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
@@ -208,7 +208,7 @@ pnpm add @cloud-ru/ds-drawer
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `string \| number` | `'s'` | no | Ширина (только при position: "left" \| "right") |

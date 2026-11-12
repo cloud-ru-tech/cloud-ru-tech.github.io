@@ -42,7 +42,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `disabled` | `boolean` | — | no | Отключена |
 | `error` | `boolean` | — | yes | Флаг ошибки при загрузке квот |
 | `fullWidth` | `boolean` | — | no | На всю ширину |
-| `hidden` | `boolean` | `false` | no |  |
+| `hidden` | `boolean` | — | no |  |
 | `href` | `string` | — | no |  |
 | `icon` | `ReactNode` | — | no | Иконка |
 | `iconPosition` | `after \| before` | — | no | Позиция иконки относительно текста |
@@ -62,12 +62,13 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `projectName` | `string` | — | yes | Название проекта, по которому отображаются квоты |
 | `quotas` | `QuotaItem[]` | — | yes | Список квот для отображения |
 | `quotasUrl` | `string` | — | yes | Ссылка на страницу квот по проекту |
+| `render` | `() => { default: ReactNode; asListItem: Item; }` | — | yes | Вызывается при рендеринге; React hooks следует использовать внутри компонента default. |
 | `size` | `l \| m \| s \| xs` | — | no | Размер Размер триггера; для `xs` применяется кнопка `s`. |
 | `skeletonRowCount` | `number` | `4` | no | Количество строк-заглушек, пока идёт загрузка.  Строка — это ряд сетки: в две колонки (desktop-дропдаун) она даёт две карточки, в одну (mobile, аккордеон `QuotaWidgetMini`) — одну. |
 | `target` | `HTMLAttributeAnchorTarget` | — | no |  |
 | `tooltip` | `TooltipProps` | — | no |  |
 | `triggerClassName` | `string` | — | no | CSS-класс триггера |
-| `variant` | `dropdown \| droplist \| filled \| function \| kebab \| outline \| quota \| simple \| tonal` | — | no |  |
+| `variant` | `custom \| dropdown \| droplist \| filled \| function \| kebab \| outline \| quota \| simple \| tonal` | — | no |  |
 | `view` | `elevated \| filled \| function \| outline \| simple \| tonal` | — | no | Вариант кнопки (Figma: filled, outline, function, simple, elevated) |
 
 ### ButtonDroplist
@@ -278,6 +279,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonKebabProps` (interface)
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
+- `CustomAction` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -289,6 +291,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
+- `TooltipProps` (interface)
 
 ### MobilePageCatalog
 | Prop | Type | Default | Required | Description |
@@ -308,6 +311,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonKebabProps` (interface)
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
+- `CustomAction` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -319,6 +323,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
+- `TooltipProps` (interface)
 
 ### MobilePageForm
 | Prop | Type | Default | Required | Description |
@@ -363,6 +368,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `slotBeforeTitle` | `ReactNode` | — | no | Слот перед заголовком (например, кнопка «назад») |
 | `subtitle` | `ReactNode` | — | no | Подзаголовок под заголовком |
 | `title` | `string` | — | yes | Заголовок страницы |
+| `truncateTitle` | `boolean` | — | no | Обрезать заголовок в одну строку с многоточием |
 
 #### Related types
 - `Action` (alias)
@@ -373,9 +379,8 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonProps` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
+- `CustomAction` (interface)
 - `DroplistListProps` (alias)
-- `DroplistMobileSlots` (interface)
-- `EmptyState` (interface)
 - `Item` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
@@ -385,6 +390,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
 - `SidebarSelectProps` (interface)
+- `TooltipProps` (interface)
 
 ### PageCatalog
 | Prop | Type | Default | Required | Description |
@@ -404,6 +410,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonKebabProps` (interface)
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
+- `CustomAction` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -415,6 +422,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
+- `TooltipProps` (interface)
 
 ### PageForm
 | Prop | Type | Default | Required | Description |
@@ -478,18 +486,18 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonProps` (interface)
 - `CollapseState` (interface)
 - `CommonGroupItem` (interface)
+- `CustomAction` (interface)
 - `Documentation` (interface)
 - `DroplistListProps` (alias)
 - `HeaderProps` (alias)
 - `Item` (alias)
 - `PageSidebarProps` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
-- `PublicListContextType` (interface)
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
-- `SelectionState` (interface)
 - `SidebarItem` (alias)
 - `SidebarItemBase` (interface)
+- `TooltipProps` (interface)
 
 ### PageSidebar
 | Prop | Type | Default | Required | Description |

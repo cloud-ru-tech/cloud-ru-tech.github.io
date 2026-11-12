@@ -24,12 +24,12 @@ pnpm add @cloud-ru/ds-modal
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
 | `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `true` | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
 | `media` | `ReactNode` | — | no | Медиа-контент |
-| `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
@@ -57,7 +57,7 @@ pnpm add @cloud-ru/ds-modal
 | `cancelButton` | `BottomSheetActionButton` | — | no | Кнопка отмены. |
 | `className` | `string` | — | no | CSS-класс контейнера footer'а. |
 | `data-test-id` | `string` | — | no |  |
-| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок при ровно двух действиях. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация двух кнопок. По умолчанию вертикальная на mobile и горизонтальная на desktop. |
 
 ### DialogHeader
 | Prop | Type | Default | Required | Description |
@@ -86,12 +86,12 @@ pnpm add @cloud-ru/ds-modal
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
 | `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | `vertical` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
 | `media` | `ReactNode` | — | no | Медиа-контент |
-| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | `false` | no | Управление состоянием показан/не показан |
@@ -114,12 +114,12 @@ pnpm add @cloud-ru/ds-modal
 | `content` | `ReactNode` | — | no | Содержимое body (альтернатива `children`). |
 | `data-test-id` | `string` | — | no |  |
 | `footer` | `ReactNode` | — | no | Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
-| `footerActionsOrientation` | `horizontal \| vertical` | `'horizontal'` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. |
+| `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | — | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
 | `media` | `ReactNode` | — | no | Медиа-контент |
-| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
@@ -155,7 +155,7 @@ pnpm add @cloud-ru/ds-modal
 | `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
 | `data-test-id` | `string` | — | no |  |
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
-| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |
 | `rootClassName` | `string` | — | no | CSS-класс корневого слоя портала |
@@ -163,7 +163,7 @@ pnpm add @cloud-ru/ds-modal
 | `safeAreaTop` | `boolean` | `true` | no | Верхний safe-area отступ под iOS notch / status-bar. Размер — токен `safeArea.top.minHeight`, на устройстве с большим `env(safe-area-inset-top)` — значение inset. Применяется, только когда sheet раскрыт на полный вьюпорт: у неполного sheet'а верх и так не заходит под notch. |
 | `showBackdrop` | `boolean` | `true` | no | Отображение тёмной подложки за sheet'ом. При `false` фон не затемняется и click-outside не закрывает sheet (нет backdrop-узла, по которому ловится клик). |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `width` | `l \| m \| s` | — | no | Размер окна |
 
 #### Related types

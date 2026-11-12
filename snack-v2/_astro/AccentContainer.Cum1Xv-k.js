@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SectionBasic.DL1Svm0t.js";var n=e();function r(){return(0,n.jsx)(t,{container:`new`,containerBackground:{type:`accent`},title:`Облачные сервисы`,description:`Блок по ширине container залит акцентным цветом бренда.`,children:(0,n.jsx)(`p`,{children:`Контент секции`})})}export{r as AccentContainer};

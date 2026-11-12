@@ -22,7 +22,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `data-test-id` | `string` | — | no |  |
 | `deleting` | `boolean` | — | no | Состояние загрузки кнопки удаления |
 | `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования текста подтверждения |
-| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `objectType` | `string` | — | no | Тип удаляемого объекта, отображается в заголовке |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `onDelete` | `(onClose: () => void) => void` | — | yes | Колбэк подтверждения удаления |
@@ -84,6 +84,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 ### NoteItem
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `active` | `boolean` | `true` | no |  |
 | `description` | `string` | — | yes | Описание новости в markdown |
 | `image` | `{ src: string; alt: string; }` | — | yes | Иллюстрация |
 | `surface` | `bottomSheet \| modal` | `modal` | no |  |
@@ -104,7 +105,7 @@ pnpm add @cloud-ru/ds-uikit-product-modal-predefined
 | `data-test-id` | `string` | — | no |  |
 | `hideConfirmCopyButton` | `boolean` | — | no | Скрыть кнопку копирования текста подтверждения |
 | `loading` | `boolean` | — | no | Состояние загрузки кнопки отзыва |
-| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. |
+| `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `onRecall` | `(onClose: () => void) => void` | — | yes | Колбэк подтверждения отзыва |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |

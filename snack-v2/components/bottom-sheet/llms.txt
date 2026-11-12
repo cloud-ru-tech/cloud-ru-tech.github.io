@@ -38,6 +38,7 @@ pnpm add @cloud-ru/ds-bottom-sheet
 | `footerTestIds` | `{ approve?: string; cancel?: string; additional?: string \| undefined; } \| undefined` | — | no | Переопределение `data-test-id` собранных слотов футера (approve/cancel/additional). По умолчанию — собственные id `BottomSheet`. Адаптивные `Modal`/`Drawer` передают сюда свои `TEST_IDS.footer*`, чтобы футер метился одинаково на desktop-поверхности и в mobile-sheet'е. |
 | `lockScroll` | `boolean` | `true` | no | Блокировать ли скролл фона на время открытия (`react-remove-scroll`). При `false` страница под sheet'ом остаётся прокручиваемой — для non-modal сценариев (sheet поверх контента, с которым продолжают взаимодействовать). Обычно используется вместе с `showBackdrop={false}`. |
 | `media` | `ReactNode \| PopupMediaProps` | — | no | Media-блок над шапкой: изображение / иконка либо произвольный `ReactNode`. |
+| `mode` | `aggressive \| forced \| regular` | `'regular'` | no | Режим поведения: `regular` — стандартное закрытие; `aggressive` — размытие фона и запрет закрытия кликом по подложке; `forced` — дополнительно запрещает закрытие свайпом, Escape и переходом по истории браузера. Размытие применяется только при `showBackdrop=true`. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а рендерит ArrowLeft-кнопку. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия (вызывается при click outside, Esc, swipe-down, browser-back). |
 | `onSnapIndexChange` | `((snapIndex: number) => void)` | — | no | Callback изменения активного snap'а (пересечение swipe-границы или click по UI). Не вызывается при программной смене controlled `snapIndex`. |
@@ -51,12 +52,13 @@ pnpm add @cloud-ru/ds-bottom-sheet
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
 | `subtitle` | `ReactNode` | — | no | Текстовая строка-подзаголовок под title. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок в шапке. |
 | `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
 
 #### Related types
 - `BottomSheetActionButton` (alias)
+- `BottomSheetMode` = `aggressive | forced | regular`
 - `FooterActionsOrientation` = `horizontal | vertical`
 - `MediaKind` = `icon | image`
 - `PopupMediaProps` (interface)
@@ -73,6 +75,7 @@ pnpm add @cloud-ru/ds-bottom-sheet
 | `defaultSnapIndex` | `number` | `0` | no | Индекс snap'а, на котором sheet открывается по дефолту. Игнорируется при controlled `snapIndex`. |
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации открытия / закрытия и перехода между snap-точками. |
 | `lockScroll` | `boolean` | `true` | no | Блокировать ли скролл фона на время открытия (`react-remove-scroll`). При `false` страница под sheet'ом остаётся прокручиваемой — для non-modal сценариев (sheet поверх контента, с которым продолжают взаимодействовать). Обычно используется вместе с `showBackdrop={false}`. |
+| `mode` | `aggressive \| forced \| regular` | `'regular'` | no | Режим поведения: `regular` — стандартное закрытие; `aggressive` — размытие фона и запрет закрытия кликом по подложке; `forced` — дополнительно запрещает закрытие свайпом, Escape и переходом по истории браузера. Размытие применяется только при `showBackdrop=true`. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия (вызывается при click outside, Esc, swipe-down, browser-back). |
 | `onSnapIndexChange` | `((snapIndex: number) => void)` | — | no | Callback изменения активного snap'а (пересечение swipe-границы или click по UI). Не вызывается при программной смене controlled `snapIndex`. |
 | `open` | `boolean` | — | yes | Управление состоянием показан / не показан. |
@@ -82,9 +85,10 @@ pnpm add @cloud-ru/ds-bottom-sheet
 | `showBackdrop` | `boolean` | `true` | no | Отображение тёмной подложки за sheet'ом. При `false` фон не затемняется и click-outside не закрывает sheet (нет backdrop-узла, по которому ловится клик). |
 | `snapIndex` | `number` | — | no | Controlled-индекс активного snap'а. Если задан, sheet всегда находится на этом snap'е; swipe-up/down вызывают `onSnapIndexChange`, но не меняют позицию сами — consumer должен передать новое значение. |
 | `snapPoints` | `SnapPoint[]` | — | no | Массив фиксированных позиций sheet'а от меньшей к большей. По дефолту `undefined` — sheet `height: auto` с одним snap'ом по высоте контента.  Пример: `[0.5, 1]` — sheet открывается на половину экрана, drag вверх раскрывает до full-viewport; drag вниз ниже `0.5` ведёт к закрытию.  Контракт массива (движок не сортирует и не дедуплицирует — порядок и различимость на стороне потребителя): - строго по возрастанию: индекс `0` — самая компактная позиция, последний — top / expanded; - значения должны резолвиться в различные высоты (`['50%', 0.5]` на типичном вьюпорте дадут   одну высоту → дубль-индекс будет недостижим свайпом); - `'fit-content'` имеет смысл только как ЕДИНСТВЕННЫЙ snap (без `snapPoints`); внутри массива   фиксированных позиций его «контентная» высота не определена. |
-| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
+| `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 
 #### Related types
+- `BottomSheetMode` = `aggressive | forced | regular`
 - `SnapPoint` (alias)
 
 ### Handle
