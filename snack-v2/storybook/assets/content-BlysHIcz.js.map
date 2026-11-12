@@ -1,0 +1,1 @@
+{"version":3,"file":"content-BlysHIcz.js","names":[],"sources":["../../../../packages/site-section-title/stories/SectionTitle/content.ts"],"sourcesContent":["export const TITLE = 'Облачные сервисы';\nexport const DESCRIPTION = 'Инфраструктура, данные и AI в одном облаке. Подключение за несколько минут.';\n"],"mappings":"mEAAa,EAAQ,mBACR,EAAc"}

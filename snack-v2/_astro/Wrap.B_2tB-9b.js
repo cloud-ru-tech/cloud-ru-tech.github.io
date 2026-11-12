@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./TabsSegmented.DR8mN9Jr.js";var n=e(),r=[`Инфраструктура`,`Данные`,`Искусственный интеллект`,`Безопасность`,`Сеть`,`Хранилища`,`Аналитика`,`Разработка`,`Мониторинг`,`Поддержка`].map(e=>({value:e,label:e}));function i(){return(0,n.jsx)(t,{items:r,wrap:!0})}export{i as Wrap};

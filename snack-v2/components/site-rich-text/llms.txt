@@ -1,0 +1,83 @@
+﻿# @cloud-ru/ds-site-rich-text
+
+> Блок форматированного текста для сайта — HTML-строка или ReactNode со стилями абзацев, ссылок, списков и изображений.
+
+Docs: /snack-v2/components/site-rich-text/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-site-rich-text
+```
+
+## Когда использовать
+
+- Заголовок, подзаголовок или описание секции сайта, где разметка приходит из CMS (ссылки, переносы, списки).
+- Статья или текстовый блок с вложенными изображениями.
+
+Когда **не** нужен:
+
+- Обычный текст без разметки:
+  - используйте [`@cloud-ru/ds-typography`](/components/typography).
+- Отдельная ссылка:
+  - используйте [`@cloud-ru/ds-link`](/components/link).
+
+## API
+
+### RichText
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корневого элемента. |
+| `content` | `ReactNode` | — | no | Содержимое блока.  - `string` — HTML-разметка. Перед вставкой очищается DOMPurify: удаляются скрипты, обработчики `on*`,   ссылки `javascript:`, стили, элементы форм, SVG и MathML. - `ReactNode` — рендерится как дочерние элементы. |
+| `data-test-id` | `string` | — | no |  |
+| `tag` | `div \| h1 \| h2 \| h3 \| h4 \| span` | `div` | no | Тег корневого элемента. Задаёт только семантику: стили заголовков браузера по умолчанию сброшены, типографику задаёт родитель или `className`.  В строчный элемент и заголовок передавайте только строчную разметку (`a`, `strong`, `em`, `br`): абзацы и списки внутри них недопустимы по HTML. |
+
+#### Related types
+- `RichTextTag` = `div | h1 | h2 | h3 | h4 | span`
+
+## Примеры
+
+### HtmlString
+
+```tsx
+import { RichText } from '@cloud-ru/ds-site-rich-text';
+
+const HTML = '<p>Облачная платформа для <a href="https://cloud.ru">разработки и запуска</a> приложений.</p>';
+
+export function HtmlString() {
+  return <RichText content={HTML} />;
+}
+```
+
+### Lists
+
+```tsx
+import { RichText } from '@cloud-ru/ds-site-rich-text';
+
+const HTML = [
+  '<ul><li>Виртуальные машины</li><li>Managed Kubernetes</li></ul>',
+  '<ol><li>Создайте проект</li><li>Подключите репозиторий</li></ol>',
+].join('');
+
+export function Lists() {
+  return <RichText content={HTML} />;
+}
+```
+
+### ReactNodeContent
+
+```tsx
+import { RichText } from '@cloud-ru/ds-site-rich-text';
+
+export function ReactNodeContent() {
+  return (
+    <RichText
+      content={
+        <p>
+          Облачная платформа для <a href='https://cloud.ru'>разработки и запуска</a> приложений.
+        </p>
+      }
+    />
+  );
+}
+```

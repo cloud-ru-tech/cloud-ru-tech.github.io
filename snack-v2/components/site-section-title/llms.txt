@@ -1,0 +1,100 @@
+﻿# @cloud-ru/ds-site-section-title
+
+> Заголовочный блок секции сайта — заголовок и описание в четырёх раскладках.
+
+Docs: /snack-v2/components/site-section-title/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-site-section-title
+```
+
+## Когда использовать
+
+- Заголовок секции лендинга или каталога.
+- Заголовок блока внутри страницы сайта, когда нужен единый ритм с секциями.
+
+Когда **не** нужен:
+
+- Заголовок внутри карточки или формы:
+  - используйте `Typography` из `@cloud-ru/ds-typography`.
+
+## API
+
+### SectionTitle
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Описание. Строка может содержать HTML-разметку. |
+| `title` | `string` | — | no | Заголовок. Строка может содержать строчную HTML-разметку (`a`, `strong`, `em`, `br`). |
+| `titleTag` | `h1 \| h2 \| h3 \| h4` | `h2` | no | Тег заголовка. |
+| `type` | `centered \| descriptionRight \| descriptionUnderTitle \| small` | `descriptionRight` | no | Раскладка блока. |
+
+#### Related types
+- `SectionTitleTag` = `h1 | h2 | h3 | h4`
+- `SectionTitleType` = `centered | descriptionRight | descriptionUnderTitle | small`
+
+## Примеры
+
+### Centered
+
+```tsx
+import { SectionTitle } from '@cloud-ru/ds-site-section-title';
+
+export function Centered() {
+  return (
+    <SectionTitle type='centered' title='Облачные сервисы' description='Инфраструктура, данные и AI в одном облаке.' />
+  );
+}
+```
+
+### DescriptionRight
+
+```tsx
+import { SectionTitle } from '@cloud-ru/ds-site-section-title';
+
+export function DescriptionRight() {
+  return (
+    <SectionTitle
+      type='descriptionRight'
+      title='Облачные сервисы'
+      description='Инфраструктура, данные и AI в одном облаке.'
+    />
+  );
+}
+```
+
+### HtmlTitle
+
+```tsx
+import { SectionTitle } from '@cloud-ru/ds-site-section-title';
+
+export function HtmlTitle() {
+  return (
+    <SectionTitle
+      type='descriptionUnderTitle'
+      title='Облако для <a href="#">бизнеса</a>'
+      description='Строки из CMS могут содержать <strong>HTML-разметку</strong>.'
+    />
+  );
+}
+```
+
+### Small
+
+```tsx
+import { SectionTitle } from '@cloud-ru/ds-site-section-title';
+
+export function Small() {
+  return (
+    <SectionTitle
+      type='small'
+      titleTag='h3'
+      title='Тарифы'
+      description='Оплата по факту потребления, без минимального платежа.'
+    />
+  );
+}
+```

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SectionTitle.BUMFif9j.js";var n=e();function r(){return(0,n.jsx)(t,{type:`small`,titleTag:`h3`,title:`Тарифы`,description:`Оплата по факту потребления, без минимального платежа.`})}export{r as Small};

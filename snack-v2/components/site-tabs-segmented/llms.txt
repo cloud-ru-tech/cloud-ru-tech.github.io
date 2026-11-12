@@ -1,0 +1,131 @@
+﻿# @cloud-ru/ds-site-tabs-segmented
+
+> Сегментированные вкладки для сайта — ряд подписей в общей обводке, выбранная вкладка залита.
+
+Docs: /snack-v2/components/site-tabs-segmented/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-site-tabs-segmented
+```
+
+## Когда использовать
+
+- Переключение 2–7 разделов контента на странице сайта.
+- Переключение периода или режима над списком или графиком.
+
+Когда **не** нужен:
+
+- Навигация внутри приложения консоли:
+  - используйте `Tabs` из `@cloud-ru/ds-tabs`.
+- Выбор значения в форме:
+  - используйте `SegmentControl` из `@cloud-ru/ds-segment-control`.
+
+## API
+
+### Segment
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `default \| onAccent` | — | yes |  |
+| `className` | `string` | — | no | CSS-класс вкладки. |
+| `data-test-id` | `string` | — | no |  |
+| `disabled` | `boolean` | — | no | Вкладка недоступна для выбора. |
+| `label` | `string` | — | yes | Текст вкладки. |
+| `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Колбэк клика по вкладке. |
+| `onFocusSegment` | `(value: string) => void` | — | yes |  |
+| `onSelect` | `(value: string) => void` | — | yes |  |
+| `selected` | `boolean` | — | yes |  |
+| `size` | `l \| m \| s` | — | yes |  |
+| `tabbable` | `boolean` | — | yes |  |
+| `value` | `string` | — | yes | Значение вкладки. |
+
+### TabsSegmented
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `default \| onAccent` | `default` | no | Оформление. |
+| `className` | `string` | — | no | CSS-класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultValue` | `string` | — | no | Значение вкладки, выбранной изначально (uncontrolled). По умолчанию — первая вкладка. |
+| `items` | `TabsSegmentedItem[]` | — | yes | Вкладки. |
+| `onChange` | `((value: string) => void)` | — | no | Колбэк выбора вкладки. |
+| `size` | `l \| m \| s` | `m` | no | Размер. |
+| `value` | `string` | — | no | Значение выбранной вкладки (controlled). |
+| `wrap` | `boolean` | `false` | no | Переносить вкладки на новую строку. Без переноса ряд прокручивается по горизонтали. |
+
+#### Related types
+- `Appearance` = `default | onAccent`
+- `Size` = `l | m | s`
+- `TabsSegmentedItem` (interface)
+
+## Примеры
+
+### Controlled
+
+```tsx
+import { TabsSegmented } from '@cloud-ru/ds-site-tabs-segmented';
+import { useState } from 'react';
+
+const ITEMS = [
+  { value: 'month', label: 'Месяц' },
+  { value: 'quarter', label: 'Квартал' },
+  { value: 'year', label: 'Год' },
+  { value: 'archive', label: 'Архив', disabled: true },
+];
+
+export function Controlled() {
+  const [period, setPeriod] = useState('quarter');
+
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <TabsSegmented items={ITEMS} value={period} onChange={setPeriod} />
+      <span>Период: {period}</span>
+    </div>
+  );
+}
+```
+
+### Sizes
+
+```tsx
+import { TabsSegmented } from '@cloud-ru/ds-site-tabs-segmented';
+
+const ITEMS = [
+  { value: 'infrastructure', label: 'Инфраструктура' },
+  { value: 'data', label: 'Данные' },
+  { value: 'ai', label: 'AI' },
+];
+
+export function Sizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <TabsSegmented items={ITEMS} size='s' />
+      <TabsSegmented items={ITEMS} size='m' />
+      <TabsSegmented items={ITEMS} size='l' />
+    </div>
+  );
+}
+```
+
+### Wrap
+
+```tsx
+import { TabsSegmented } from '@cloud-ru/ds-site-tabs-segmented';
+
+const ITEMS = [
+  'Инфраструктура',
+  'Данные',
+  'Искусственный интеллект',
+  'Безопасность',
+  'Сеть',
+  'Хранилища',
+  'Аналитика',
+  'Разработка',
+  'Мониторинг',
+  'Поддержка',
+].map(label => ({ value: label, label }));
+
+export function Wrap() {
+  return <TabsSegmented items={ITEMS} wrap />;
+}
+```

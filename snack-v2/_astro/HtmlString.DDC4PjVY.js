@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./RichText.XtkAtTGs.js";var n=e(),r=`<p>Облачная платформа для <a href="https://cloud.ru">разработки и запуска</a> приложений.</p>`;function i(){return(0,n.jsx)(t,{content:r})}export{i as HtmlString};
