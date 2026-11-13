@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SectionBasic.DdxO6ASw.js";var n=e();function r(){return(0,n.jsx)(t,{container:`new`,title:`Облачные сервисы`,description:`Инфраструктура, данные и AI в одном облаке.`,children:(0,n.jsx)(`p`,{children:`Произвольный контент секции: карточки, сетка, карусель.`})})}export{r as TitleAndContent};
