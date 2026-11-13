@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SectionTitle.BUMFif9j.js";var n=e();function r(){return(0,n.jsx)(t,{type:`descriptionUnderTitle`,title:`Облако для <a href="#">бизнеса</a>`,description:`Строки из CMS могут содержать <strong>HTML-разметку</strong>.`})}export{r as HtmlTitle};

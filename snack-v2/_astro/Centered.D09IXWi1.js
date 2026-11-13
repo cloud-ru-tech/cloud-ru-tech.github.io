@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./SectionTitle.BUMFif9j.js";var n=e();function r(){return(0,n.jsx)(t,{type:`centered`,title:`Облачные сервисы`,description:`Инфраструктура, данные и AI в одном облаке.`})}export{r as Centered};
