@@ -48,8 +48,10 @@ pnpm add @cloud-ru/ds-ai-field-input
 | `defaultValue` | `AiFieldInputValue` | — | no | Начальное содержимое (uncontrolled). |
 | `disabled` | `boolean` | `false` | no | Выключенное поле: ввод недоступен, кнопки футера выключены, ряд вложений скрыт. |
 | `disclaimer` | `ReactNode` | — | no | Текст под полем. По умолчанию — дисклеймер из локали; `null` скрывает текст, отступ сохраняется. |
+| `error` | `string` | — | no | Текст ошибки. Непустой — поле в состоянии ошибки: красная заливка рамки, в фокусе красная обводка, под рамкой строка ошибки. Ввод и отправку не блокирует: доступностью отправки управляет `send`. На выключенном поле (`disabled`) ошибка не показывается. В режиме `secure` текст не должен повторять значение. |
 | `footerLeftActions` | `ReactNode` | — | no | Слот левых действий футера. |
 | `footerRightActions` | `ReactNode` | — | no | Слот дополнительных правых действий футера (перед кнопкой отправки). |
+| `length` | `FieldLength` | — | no | Счётчик `current/max` в строке ошибки, например `3002/3000`. Показывается только вместе с `error`, когда ошибка связана с длиной значения. |
 | `mentions` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | no | Строки списка по `@`: ресурсы и сущности. Не заданы — список по `@` не открывается. |
 | `onActionSelect` | `((item: AiFieldInputActionListItem, trigger: SearchTrigger) => void)` | — | no | Выбор строки списка по `/` или `@`: строка уже стоит в поле чипом. |
 | `onChange` | `((value: AiFieldInputValue) => void)` | — | no | Изменение содержимого. |
@@ -57,6 +59,7 @@ pnpm add @cloud-ru/ds-ai-field-input
 | `placeholder` | `string` | — | no | Подсказка в пустом поле. |
 | `scrollButton` | `AiFieldInputScrollButton` | — | no | Кнопка прокрутки к последнему сообщению над полем. Не задана — кнопки нет. |
 | `searchPlaceholder` | `AiFieldInputSearchPlaceholder` | — | no | Подсказки в поиске после `/` и `@`. Не заданный ключ — текст из локали («Введите название» / «Type a name»). |
+| `secure` | `boolean` | `false` | no | Ввод чувствительных данных: пароля, API-ключа, токена. Вместо редактора — однострочное поле `type="password"`: значение скрыто, не копируется и не вырезается. В футере слева — кнопка «глаз», которая показывает и снова скрывает значение; после отправки значение снова скрыто. Чипов, проверки орфографии, автозамены и списков по `/` и `@` нет: эти знаки вводятся как обычный текст. При включении `secure` из значения убираются чипы, остаётся текст. При выключении значение очищается: пока родитель не пришлёт новое значение, редактор секрет не показывает. По умолчанию `false`. |
 | `send` | `AiFieldInputSend` | — | no | Кнопка отправки: состояние и нажатие. |
 | `skills` | `(AiFieldInputActionListItem \| AiFieldInputActionListGroup)[]` | — | no | Строки списка по `/`: команды и скиллы. Не заданы — список по `/` не открывается. |
 | `value` | `AiFieldInputValue` | — | no | Содержимое поля (controlled). |
@@ -69,6 +72,7 @@ pnpm add @cloud-ru/ds-ai-field-input
 - `AiFieldInputSearchPlaceholder` (interface)
 - `AiFieldInputSend` (interface)
 - `AiFieldInputValue` (alias)
+- `FieldLength` (interface)
 - `SendState` = `active | disabled | loading | stop`
 
 ### AiFieldInputActionList
@@ -203,8 +207,10 @@ _Нет публичных пропсов._
 ### Editor
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `describedBy` | `string` | — | no | `id` строки ошибки для `aria-describedby`. |
 | `disabled` | `boolean` | — | yes |  |
 | `handleRef` | `MutableRefObject<EditorHandle \| null>` | — | yes |  |
+| `invalid` | `boolean` | — | yes | Поле в состоянии ошибки: `aria-invalid`. |
 | `onChange` | `(value: AiFieldInputValue) => void` | — | yes |  |
 | `onSubmit` | `(value: AiFieldInputValue) => void` | — | yes |  |
 | `placeholder` | `string` | — | no |  |
@@ -222,6 +228,7 @@ _Нет публичных пропсов._
 | `innerRef` | `Ref<HTMLButtonElement>` | — | no | Ref на кнопку. |
 | `items` | `AiFieldInputFooterMenuItem[]` | — | no | Пункты выпадающего списка: на desktop — над кнопкой, на mobile — в шторке снизу. Без пунктов кнопка только сообщает о нажатии через `onClick`. |
 | `onClick` | `((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` | — | no | Нажатие. |
+| `onMouseDown` | `MouseEventHandler<HTMLButtonElement>` | — | no |  |
 | `onSelect` | `((id: string) => void)` | — | no | Выбор пункта выпадающего списка. |
 | `tooltip` | `AiFieldInputFooterButtonTooltip` | — | no | Подсказка при наведении. |
 
@@ -279,6 +286,24 @@ _Нет публичных пропсов._
 | `onLevelChange` | `(() => void)` | — | no | Переход на уровень или назад. |
 | `onSelect` | `(item: AiFieldInputActionListItem) => void` | — | yes |  |
 | `query` | `string` | — | yes |  |
+
+### SecureInput
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `describedBy` | `string` | — | no | `id` строки ошибки для `aria-describedby`. |
+| `disabled` | `boolean` | — | yes |  |
+| `invalid` | `boolean` | — | yes | Поле в состоянии ошибки: `aria-invalid`. |
+| `masked` | `boolean` | — | yes | Значение скрыто: `type="password"`. |
+| `onChange` | `(value: AiFieldInputValue) => void` | — | yes |  |
+| `onSubmit` | `(value: AiFieldInputValue) => void` | — | yes |  |
+| `placeholder` | `string` | — | no |  |
+| `value` | `AiFieldInputValue` | — | yes |  |
+
+### SecureToggleButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onToggle` | `() => void` | — | yes |  |
+| `revealed` | `boolean` | — | yes | Значение показано. |
 
 ## Примеры
 
@@ -350,6 +375,38 @@ import { AiFieldInput } from '@cloud-ru/ds-ai-field-input';
 
 export function Disabled() {
   return <AiFieldInput disabled placeholder='Отправка сообщений недоступна' />;
+}
+```
+
+### ErrorState
+
+```tsx
+import { AiFieldInput, AiFieldInputValue } from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+const MAX_LENGTH = 40;
+
+function getLength(value: AiFieldInputValue) {
+  return value.reduce((sum, segment) => sum + ('text' in segment ? segment.text.length : 0), 0);
+}
+
+export function ErrorState() {
+  const [value, setValue] = useState<AiFieldInputValue>([
+    { type: 'text', text: 'Сообщение длиннее допустимого лимита символов' },
+  ]);
+  const length = getLength(value);
+  const tooLong = length > MAX_LENGTH;
+
+  return (
+    <AiFieldInput
+      value={value}
+      onChange={setValue}
+      onSubmit={() => setValue([])}
+      error={tooLong ? 'Сообщение слишком длинное' : undefined}
+      length={{ current: length, max: MAX_LENGTH }}
+      send={tooLong ? { state: 'disabled' } : undefined}
+    />
+  );
 }
 ```
 
@@ -434,6 +491,32 @@ export function FooterActions() {
         state,
         onClick: current => setState(current === SEND_STATE.Stop ? undefined : SEND_STATE.Stop),
       }}
+    />
+  );
+}
+```
+
+### Secure
+
+```tsx
+import { AiFieldInput, AiFieldInputValue } from '@cloud-ru/ds-ai-field-input';
+import { useState } from 'react';
+
+export function Secure() {
+  const [value, setValue] = useState<AiFieldInputValue>([]);
+  const [saved, setSaved] = useState(false);
+
+  return (
+    <AiFieldInput
+      secure
+      value={value}
+      onChange={setValue}
+      onSubmit={() => {
+        setSaved(true);
+        setValue([]);
+      }}
+      placeholder='Вставьте API-ключ'
+      disclaimer={saved ? 'Ключ отправлен' : undefined}
     />
   );
 }
