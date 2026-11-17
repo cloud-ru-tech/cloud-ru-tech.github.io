@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={root:`input-private`,registrationSubmit:`input-private-registration-submit`,registrationError:`input-private-registration-error`}}));export{n,t};
+//# sourceMappingURL=testIds-BB1mL30l.js.map

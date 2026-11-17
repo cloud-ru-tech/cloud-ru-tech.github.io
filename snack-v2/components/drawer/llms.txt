@@ -28,6 +28,7 @@ pnpm add @cloud-ru/ds-drawer
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
 | `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `lockScroll` | `boolean` | — | no | Блокировать прокрутку вне дровера. `false` позволяет передать управление внешнему оверлею. По умолчанию блокировка включена при наличии подложки или внешней блокировки прокрутки. На mobile по умолчанию включена. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
@@ -102,6 +103,7 @@ pnpm add @cloud-ru/ds-drawer
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
 | `footerActionsOrientation` | `horizontal \| vertical` | — | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `lockScroll` | `boolean` | — | no | Блокировать прокрутку вне дровера. `false` позволяет передать управление внешнему оверлею. По умолчанию блокировка включена при наличии подложки или внешней блокировки прокрутки. На mobile по умолчанию включена. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
@@ -153,6 +155,7 @@ pnpm add @cloud-ru/ds-drawer
 | `disableMotions` | `boolean` | `false` | no | Отключить анимации |
 | `footer` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | no | Футер |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `lockScroll` | `boolean` | — | no | Блокировать прокрутку вне дровера. `false` позволяет передать управление внешнему оверлею. По умолчанию блокировка включена при наличии подложки или внешней блокировки прокрутки. На mobile по умолчанию включена. |
 | `nestedDrawer` | `ReactElement<Omit<DrawerCustomProps, "resizable">, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан. |
@@ -191,6 +194,7 @@ pnpm add @cloud-ru/ds-drawer
 | `footer` | `(ReactElement<any, string \| JSXElementConstructor<any>> & (string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<...> \| ReactPortal \| null))` | — | no | Футер Произвольный футер. Приоритетнее `approveButton` / `cancelButton` / `additionalButton`. |
 | `footerActionsOrientation` | `horizontal \| vertical` | `vertical` | no | Ориентация кнопок футера. Применяется только при двух кнопках; игнорируется при заданном `footer`. По умолчанию 'vertical' на mobile, 'horizontal' на desktop. |
 | `heightAuto` | `boolean` | `false` | no | Высота панели по контенту (только при `position: "top" \| "bottom"`). |
+| `lockScroll` | `boolean` | — | no | Блокировать прокрутку вне дровера. `false` позволяет передать управление внешнему оверлею. По умолчанию блокировка включена при наличии подложки или внешней блокировки прокрутки. На mobile по умолчанию включена. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `nestedDrawer` | `ReactElement<DrawerProps, string \| JSXElementConstructor<any>>` | — | no | Вложенный Drawer |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |

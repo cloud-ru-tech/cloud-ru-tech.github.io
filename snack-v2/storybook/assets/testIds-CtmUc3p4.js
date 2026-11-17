@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{a as t,o as n}from"./src-PNLrBO6s.js";var r,i=e((()=>{n(),r={root:t.root,triggerOpen:t.trigger,content:`dropdown-content`,item:`dropdown-item`}}));export{i as n,r as t};
-//# sourceMappingURL=testIds-CtmUc3p4.js.map

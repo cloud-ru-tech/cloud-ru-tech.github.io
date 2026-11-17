@@ -28,6 +28,7 @@ pnpm add @cloud-ru/ds-modal
 | `heightAuto` | `boolean` | `true` | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `lockScroll` | `boolean` | `true` | no | Блокировать прокрутку вне модального окна. `false` позволяет передать управление внешнему оверлею. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
@@ -39,6 +40,8 @@ pnpm add @cloud-ru/ds-modal
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `l \| m \| s` | `s` | no | Размер окна |
+| `withFooterDivider` | `boolean` | `false` | no | Только mobile: разделитель над футером. |
+| `withHeaderDivider` | `boolean` | `false` | no | Только mobile: разделитель под шапкой. |
 
 ### DialogBody
 | Prop | Type | Default | Required | Description |
@@ -90,6 +93,7 @@ pnpm add @cloud-ru/ds-modal
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | `false` | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `lockScroll` | `boolean` | `true` | no | Блокировать прокрутку вне модального окна. `false` позволяет передать управление внешнему оверлею. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `mode` | `aggressive \| forced \| regular` | `regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
@@ -101,6 +105,8 @@ pnpm add @cloud-ru/ds-modal
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `l \| m \| s` | — | no | Размер окна |
+| `withFooterDivider` | `boolean` | `false` | no | Только mobile: разделитель над футером. |
+| `withHeaderDivider` | `boolean` | `false` | no | Только mobile: разделитель под шапкой. |
 
 ### Modal
 | Prop | Type | Default | Required | Description |
@@ -118,6 +124,7 @@ pnpm add @cloud-ru/ds-modal
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
 | `loading` | `boolean` | — | no | Состояние загрузки: в теле показывается спиннер или `loadingState`, футер скрыт |
 | `loadingState` | `ReactNode` | — | no | Контент тела вместо спиннера при `loading` |
+| `lockScroll` | `boolean` | `true` | no | Блокировать прокрутку вне модального окна. `false` позволяет передать управление внешнему оверлею. |
 | `media` | `ReactNode` | — | no | Медиа-контент |
 | `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onBackButtonClick` | `(() => void)` | — | no | Callback клика на back-кнопку (слева в шапке). Наличие callback'а авто-рендерит `Button view='function' icon={<ArrowLeftSVG />}`. |
@@ -129,6 +136,8 @@ pnpm add @cloud-ru/ds-modal
 | `title` | `ReactNode` | — | no | Заголовок. Типографика зависит от поверхности: `title-l` на sheet, `headline-s` на window (modal/drawer). |
 | `truncate` | `{ title?: number; subtitle?: number; } \| undefined` | — | no | Усечение строковых `title`/`subtitle` через `TruncateString` (число строк). Применяется только когда задано — по умолчанию текст не усекается. Актуально для window-поверхности (modal/drawer), где длинный заголовок иначе переносится на несколько строк. |
 | `width` | `l \| m \| s` | — | no | Размер окна |
+| `withFooterDivider` | `boolean` | `false` | no | Только mobile: разделитель над футером. |
+| `withHeaderDivider` | `boolean` | `false` | no | Только mobile: разделитель под шапкой. |
 
 #### Related types
 - `BottomSheetActionButton` (alias)
@@ -155,6 +164,7 @@ pnpm add @cloud-ru/ds-modal
 | `container` | `ModalContainer` | — | no | Явный DOM-контейнер для `createPortal`; иначе `usePortalContext()` или `document.body`. |
 | `data-test-id` | `string` | — | no |  |
 | `heightAuto` | `boolean` | — | no | Растягивать по высоте в пределах контейнера |
+| `lockScroll` | `boolean` | `true` | no | Блокировать прокрутку вне модального окна. `false` позволяет передать управление внешнему оверлею. |
 | `mode` | `aggressive \| forced \| regular` | `MODE.Regular` | no | Режим закрытия: Regular — overlay/Esc/кнопка; Aggressive — только кнопка; Forced — без кнопки и overlay/Esc. Aggressive и Forced размывают фон под подложкой. На mobile Aggressive запрещает закрытие кликом по подложке, Forced также отключает свайп. |
 | `onClose` | `() => void` | — | yes | Колбэк закрытия |
 | `open` | `boolean` | — | yes | Управление состоянием показан/не показан |

@@ -55,6 +55,8 @@ pnpm add @cloud-ru/ds-bottom-sheet
 | `swipeEnabled` | `boolean` | `true` | no | Включает swipe-down для закрытия / swipe-up для раскрытия на следующий snap-point. В режиме `forced` свайп отключён независимо от значения свойства. При `swipeEnabled=false` snap-point по-прежнему можно переключить через controlled `snapIndex` prop'ом. |
 | `title` | `ReactNode` | — | no | Заголовок в шапке. |
 | `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
+| `withFooterDivider` | `boolean` | `true` | no | Разделитель над футером. По умолчанию используется `withDividers`. |
+| `withHeaderDivider` | `boolean` | `true` | no | Разделитель под шапкой. По умолчанию используется `withDividers`. |
 
 #### Related types
 - `BottomSheetActionButton` (alias)
