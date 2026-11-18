@@ -27,6 +27,7 @@ pnpm add @cloud-ru/ds-block
 | `children` | `ReactNode` | — | no | Содержимое |
 | `contentClassName` | `string` | — | no | Класс на внутренний слот содержимого (`.content`). Block — подложка, а не layout-контейнер (`display: block`); раскладку контента задаёт потребитель. Этот проп даёт управлять слотом содержимого напрямую — напр. растянуть его по высоте блока (`flex`/`height`), когда корень блока сделан flex-контейнером через `className`. |
 | `data-test-id` | `string` | — | no | Стабильный идентификатор для e2e/tests |
+| `header` | `ReactNode` | — | no | Содержимое шапки. Растягивается на всю доступную ширину блока. |
 | `size` | `l \| m \| s` | `m` | no | Размер |
 | `view` | `elevated \| outline \| simple` | `simple` | no | Визуальный режим поверхности |
 
@@ -85,7 +86,7 @@ import { Block } from '@cloud-ru/ds-block';
 
 export function OutlineLarge() {
   return (
-    <Block view='outline' size='l'>
+    <Block view='outline' size='l' header='Заголовок блока'>
       <span>Outline size L</span>
     </Block>
   );

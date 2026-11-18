@@ -1,0 +1,2 @@
+import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r,i,a,o,s,c=e((()=>{t=`_matrix_8zrzv_4`,n=`_desktopCell_8zrzv_9`,r=`_tabletCell_8zrzv_13`,i=`_mobileCell_8zrzv_17`,a=`_wideCell_8zrzv_21`,o=`_contentPlaceholder_8zrzv_25`,s={matrix:t,desktopCell:n,tabletCell:r,mobileCell:i,wideCell:a,contentPlaceholder:o}}));export{s as n,c as t};
+//# sourceMappingURL=styles.module-DovJ8_fR.js.map

@@ -33,6 +33,22 @@ pnpm add @cloud-ru/ds-site-section
 |------|------|---------|----------|-------------|
 | `background` | `SectionContainerBackground` | — | yes | Фон блока. |
 
+### SectionAccordion
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс корня. |
+| `data-test-id` | `string` | — | no |  |
+| `description` | `string` | — | no | Описание секции под заголовком. |
+| `expandedDefault` | `string \| string[]` | — | no |  |
+| `id` | `string` | — | no | HTML-атрибут `id` секции — якорь для навигации по странице. |
+| `items` | `SectionAccordionItem[]` | — | yes | Пункты аккордеона. |
+| `onExpandedChange` | `((value: string[]) => void) \| ((value: string) => void) \| undefined` | — | no |  |
+| `selectionMode` | `multiple \| single` | `multiple` | no |  |
+| `title` | `string` | — | yes | Заголовок секции. |
+
+#### Related types
+- `SectionAccordionItem` (interface)
+
 ### SectionBasic
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|

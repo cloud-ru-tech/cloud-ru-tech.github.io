@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./Block.B40aV9Kt.js";var n=e();function r(){return(0,n.jsx)(t,{view:`outline`,size:`l`,header:`Заголовок блока`,children:(0,n.jsx)(`span`,{children:`Outline size L`})})}export{r as OutlineLarge};
