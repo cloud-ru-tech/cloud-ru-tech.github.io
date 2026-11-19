@@ -355,11 +355,11 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 #### Related types
 - `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `FieldElementButtonProps` (interface)
-- `FieldElementDroplistProps` (interface)
 - `FieldElementSlot` (interface)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
@@ -434,11 +434,11 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 #### Related types
 - `ButtonSize` = `l | m | s`
 - `ChildrenFunction` (alias)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `FieldElementButtonProps` (interface)
-- `FieldElementDroplistProps` (interface)
 - `FieldElementSlot` (interface)
 - `FieldLayoutPresets` (interface)
 - `FieldLength` (interface)
@@ -540,12 +540,12 @@ pnpm add @cloud-ru/ds-uikit-product-fields-predefined
 #### Related types
 - `BottomSheetActionButton` (alias)
 - `CustomOptionProps` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `EntityIcon` (alias)
 - `EntityName` (interface)
-- `FieldLength` (interface)
 - `FieldSelectDecoratorProps` (interface)
 - `FooterActionsOrientation` = `horizontal | vertical`
 - `ManagedLayoutKeys` = `approveButton | cancelButton | onClose | open`

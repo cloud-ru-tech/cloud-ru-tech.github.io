@@ -1,0 +1,1 @@
+function e(e){if(e)return t=>e(t)}export{e as t};

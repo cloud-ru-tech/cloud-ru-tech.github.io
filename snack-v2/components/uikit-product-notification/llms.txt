@@ -104,24 +104,24 @@ pnpm add @cloud-ru/ds-uikit-product-notification
 | `width` | `string \| number` | `s` | no | Ширина (только при position: "left" \| "right") |
 
 #### Related types
-- `Action` (interface)
 - `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
+- `DroplistAdaptiveProps` (interface)
+- `DroplistLayoutDefaults` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `EmptyStateProps` (interface)
+- `LayoutPresets` (interface)
 - `NotificationPanelSettingsProps` (interface)
 - `Position` = `bottom | left | right | top`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
-- `Segment` (interface)
 - `SegmentControlProps` (interface)
 - `SelectionMultipleState` (interface)
 - `SelectionSingleState` (interface)
 - `SelectionState` (interface)
 - `Size` = `l | m | s`
-- `Size (@cloud-ru/ds-segment-control)` = `l | m | s`
 - `TooltipProps` (interface)
 - `Width` = `l | m | s`
 

@@ -161,6 +161,7 @@ pnpm add @cloud-ru/ds-chips
 | `icon` | `ReactNode` | — | no | Иконка |
 | `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<DroplistLayoutDefaults>>>` | — | no | Переопределение размера списка и видимости поиска по раскладке. На mobile по умолчанию `l`. |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
 | `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
@@ -185,6 +186,7 @@ pnpm add @cloud-ru/ds-chips
 | `valueRender` | `((option?: BaseOption<T>[]) => ReactNode)` | — | no | Колбек формирующий отображение выбранного значения |
 | `virtualized` | `boolean` | — | no | Включить виртуализацию элементов списка. Рекомендуется при количестве элементов от 1000. |
 | `widthStrategy` | `auto \| eq \| gte` | `gte` | no | Стратегия управления шириной контейнера поповера |
+| `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
 
 ### ChipChoiceRow
 | Prop | Type | Default | Required | Description |
@@ -208,14 +210,14 @@ pnpm add @cloud-ru/ds-chips
 - `ChipChoiceRowFilter` (alias)
 - `ChipChoiceRowSize` = `l | m | s`
 - `DropdownBridgeProps` (interface)
+- `DroplistAdaptiveProps` (interface)
+- `DroplistLayoutDefaults` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
 - `EmptyStateProps` (interface)
 - `ItemId` (alias)
-- `OnChangeHandler` (alias)
-- `OutsideClickHandler` (alias)
-- `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
+- `LayoutPresets` (interface)
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
@@ -245,6 +247,7 @@ pnpm add @cloud-ru/ds-chips
 | `icon` | `ReactNode` | — | no | Иконка |
 | `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<DroplistLayoutDefaults>>>` | — | no | Переопределение размера списка и видимости поиска по раскладке. На mobile по умолчанию `l`. |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
 | `noResultsState` | `EmptyStateProps` | — | no | Экран при отсутствии результатов поиска или фильтров |
@@ -269,6 +272,7 @@ pnpm add @cloud-ru/ds-chips
 | `valueRender` | `((option?: BaseOption<T>) => ReactNode)` | — | no | Колбек формирующий отображение выбранного значения |
 | `virtualized` | `boolean` | — | no | Включить виртуализацию элементов списка. Рекомендуется при количестве элементов от 1000. |
 | `widthStrategy` | `auto \| eq \| gte` | `gte` | no | Стратегия управления шириной контейнера поповера |
+| `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
 
 ### ChipChoiceTime
 | Prop | Type | Default | Required | Description |
@@ -339,6 +343,7 @@ pnpm add @cloud-ru/ds-chips
 | `id` | `string` | — | yes |  |
 | `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `label` | `string` | — | no | Текст чипа |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<DroplistLayoutDefaults>>>` | — | no | Переопределение размера списка и видимости поиска по раскладке. На mobile по умолчанию `l`. |
 | `loading` | `boolean` | — | no | Состояние загрузки Флаг, отвечающий за состояние загрузки списка |
 | `mode` | `date \| date-time \| month \| year` | — | no | Режим выбора даты Режим выбора даты и времени Режим выбора даты без времени |
 | `noDataState` | `EmptyStateProps` | — | no | Экран при отсутствии данных |
@@ -366,6 +371,7 @@ pnpm add @cloud-ru/ds-chips
 | `valueRender` | `((value: any) => ReactNode) \| ((value?: Date) => ReactNode) \| ((value?: Range) => ReactNode) \| ((value?: TimeValue \| undefined) => ReactNode) \| ((option?: BaseOption<...>[] \| undefined) => ReactNode) \| ((option?: BaseOption<...> \| undefined) => ReactNode) \| undefined` | — | no | Колбек формирующий отображение выбранного значения Колбек формирующий строковое представление выбранного значения Отображаемое значение |
 | `virtualized` | `boolean` | — | no | Включить виртуализацию элементов списка. Рекомендуется при количестве элементов от 1000. |
 | `widthStrategy` | `auto \| eq \| gte` | `gte` | no | Стратегия управления шириной контейнера поповера |
+| `withDividers` | `boolean` | `true` | no | Тонкие линии между topBar↔body и body↔footer: разграничивают закреплённые шапку и подвал от прокручиваемого под ними содержимого. Передайте `false`, чтобы убрать обе линии. |
 
 ## Примеры
 

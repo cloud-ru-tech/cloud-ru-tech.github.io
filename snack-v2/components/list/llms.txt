@@ -96,6 +96,7 @@ pnpm add @cloud-ru/ds-list
 ### DesktopDroplist
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
+| `alwaysShowSearch` | `boolean` | — | no | Показывать включённый поиск при любом количестве пунктов. |
 | `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
 | `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
 | `className` | `string` | — | no | CSS-класс |
@@ -152,6 +153,7 @@ _Нет публичных пропсов._
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `alwaysShowSearch` | `boolean` | — | no | Показывать включённый поиск при любом количестве пунктов. |
 | `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
 | `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
 | `className` | `string` | — | no | CSS-класс |
@@ -174,6 +176,7 @@ _Нет публичных пропсов._
 | `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `Item[]` | — | yes | Основные элементы списка |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<DroplistLayoutDefaults>>>` | — | no | Переопределение размера списка и видимости поиска по раскладке. На mobile по умолчанию `l`. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
 | `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
 | `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
@@ -211,12 +214,12 @@ _Нет публичных пропсов._
 - `CollapseState` (interface)
 - `CollapseToggleOn` = `expandIcon | item`
 - `CommonGroupItem` (interface)
+- `DroplistLayoutDefaults` (interface)
 - `EmptyStateProps` (interface)
-- `IconPredefinedProps` (interface)
 - `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
-- `OnChangeHandler` (alias)
+- `LayoutPresets` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `ScrollProps` (interface)
@@ -371,6 +374,7 @@ _Нет публичных пропсов._
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `alwaysShowSearch` | `boolean` | — | no | Показывать включённый поиск при любом количестве пунктов. |
 | `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
 | `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
 | `className` | `string` | — | no | CSS-класс |
@@ -481,6 +485,7 @@ _Нет публичных пропсов._
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `actionButton` | `ReactNode` | — | no | Только mobile (`BottomSheet`): action-кнопка справа в шапке. |
+| `alwaysShowSearch` | `boolean` | — | no | Показывать включённый поиск при любом количестве пунктов. |
 | `barHideStrategy` | `leave \| move \| never \| scroll` | — | no | Управление скрытием скролл баров: <br> - `Never` - показывать всегда <br> - `Leave` - скрывать когда курсор покидает компонент <br> - `Scroll` - показывать только когда происходит скроллинг <br> - `Move` - показывать при движении курсора над компонентом |
 | `children` | `ReactNode \| ({onKeyDown}) => ReactNode * Рендер функция принимает аргументы `onKeyDown` - хендлер ввода, для поддержки управления с клавиатуры` | — | yes | Триггер для дроплиста |
 | `className` | `string` | — | no | CSS-класс |
@@ -503,6 +508,7 @@ _Нет публичных пропсов._
 | `itemRender` | `((props: ItemRenderProps) => ReactNode)` | — | no | Рендер-функция оболочки строки вместо дефолтной разметки `BaseItem`. Не задана — строка рисуется как раньше. `itemWrapRender` по-прежнему оборачивает результат. |
 | `items` | `ReorderItem[]` | — | yes | Основные элементы списка: строки `SimpleItem` и/или группы с заголовком `SimpleGroupItem` (`type: 'group'` + `label` + сортируемые `items`). |
 | `label` | `string` | — | no | Только mobile (`BottomSheet`): заголовок шапки. |
+| `layoutPresets` | `Partial<Record<LayoutType, Partial<DroplistLayoutDefaults>>>` | — | no | Переопределение размера списка и видимости поиска по раскладке. На mobile по умолчанию `l`. |
 | `limitedScrollHeight` | `boolean` | — | no | Ограничить максимальную высоту скролл-контейнера в зависимости от `size` |
 | `listRef` | `RefObject<HTMLElement>` | — | no | Ссылка на элемент выпадающего списка |
 | `loading` | `boolean` | — | no | Флаг, отвечающий за состояние загрузки списка |
@@ -538,12 +544,12 @@ _Нет публичных пропсов._
 - `CollapseState` (interface)
 - `CollapseToggleOn` = `expandIcon | item`
 - `CommonGroupItem` (interface)
+- `DroplistLayoutDefaults` (interface)
 - `EmptyStateProps` (interface)
-- `IconPredefinedProps` (interface)
 - `Item` (alias)
 - `ItemContent` (interface)
 - `ItemId` (alias)
-- `OnChangeHandler` (alias)
+- `LayoutPresets` (interface)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PopoverWidthStrategy` = `auto | eq | gte`
 - `ReorderItem` (alias)

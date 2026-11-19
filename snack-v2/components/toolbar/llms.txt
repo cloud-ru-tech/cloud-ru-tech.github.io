@@ -150,9 +150,9 @@ pnpm add @cloud-ru/ds-toolbar
 - `Action` (interface)
 - `BaseChipProps` (interface)
 - `BulkAction` (interface)
-- `ChipChoiceDateWithSeconds` (interface)
 - `DataViewBaseProps` (interface)
 - `DataViewValue` = `compact | list`
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)

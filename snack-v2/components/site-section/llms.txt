@@ -72,6 +72,7 @@ pnpm add @cloud-ru/ds-site-section
 
 #### Related types
 - `CustomOptionProps` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `EmptyState` (interface)
@@ -80,7 +81,6 @@ pnpm add @cloud-ru/ds-site-section
 - `FieldSelectProps` (alias)
 - `PaginationProps` (interface)
 - `PublicListContextType` (interface)
-- `QuestionTooltipProps` (interface)
 - `ScrollProps` (interface)
 - `SectionBackground` (interface)
 - `SectionBackgroundFill` = `blueBackground | decorTransparent | greenBackground | neutralBackground | neutralBackground1Level | orangeBackground | pinkBackground | primaryBackground | redBackground | transparent | violetBackground | yellowBackground`

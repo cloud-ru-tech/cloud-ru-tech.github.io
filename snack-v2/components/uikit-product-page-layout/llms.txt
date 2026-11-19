@@ -82,6 +82,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
 - `CounterProps` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -89,7 +90,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `EmptyStateProps` (interface)
 - `IconPosition` = `after | before`
 - `PolymorphicRef` (alias)
-- `PopoverWidthStrategy` = `auto | eq | gte`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
@@ -110,6 +110,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `BarHideStrategy` = `leave | move | never | scroll`
 - `ButtonProps` (interface)
 - `CounterProps` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -117,7 +118,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `EmptyStateProps` (interface)
 - `IconPosition` = `after | before`
 - `PolymorphicRef` (alias)
-- `PopoverWidthStrategy` = `auto | eq | gte`
 - `PublicListContextType` (interface)
 - `ScrollProps` (interface)
 - `SelectionMultipleState` (interface)
@@ -280,6 +280,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
 - `CustomAction` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -287,7 +288,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `Item` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
-- `QuotaItem` (interface)
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
@@ -312,6 +312,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
 - `CustomAction` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -319,7 +320,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `Item` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
-- `QuotaItem` (interface)
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
@@ -411,6 +411,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `ButtonProps` (interface)
 - `CommonGroupItem` (interface)
 - `CustomAction` (interface)
+- `DroplistAdaptiveProps` (interface)
 - `DroplistListProps` (alias)
 - `DroplistMobileSlots` (interface)
 - `DroplistProps` (interface)
@@ -418,7 +419,6 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 - `Item` (alias)
 - `Placement` = `bottom | bottom-end | bottom-start | left | left-end | left-start | right | right-end | right-start | top | top-end | top-start`
 - `PublicListContextType` (interface)
-- `QuotaItem` (interface)
 - `QuotaWidgetPropsBase` (interface)
 - `ScrollProps` (interface)
 - `SelectionState` (interface)
