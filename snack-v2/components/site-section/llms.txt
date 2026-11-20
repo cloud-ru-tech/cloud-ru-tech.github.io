@@ -103,6 +103,51 @@ pnpm add @cloud-ru/ds-site-section
 | `moreButton` | `SectionMoreButton` | — | no | Кнопка «Показать еще». |
 | `pagination` | `PaginationProps` | — | no | Настройки пагинации. |
 
+### SectionMedia
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `background` | `SectionBackground` | — | no | Внешний слой фона во всю ширину экрана (Figma `sectionBackground`): тема и заливка. |
+| `className` | `string` | — | no | CSS-класс корня. |
+| `container` | `new \| old` | — | yes | Ширина и отступы секции: `new` — целевой вид, `old` — совместимость со страницами до редизайна. Временная настройка на период редизайна, задаётся явно. |
+| `containerBackground` | `SectionContainerBackground` | — | no | Блок по ширине `container` (Figma `contentWrapper` + `bgLocal`): тема блока и всего содержимого и заливка — подложка, картинка или акцентный цвет. Тема не задана — тема внешнего слоя. |
+| `data-test-id` | `string` | — | no |  |
+| `defaultTabBarValue` | `string` | — | no | Изначально выбранная вкладка (uncontrolled). |
+| `description` | `string` | — | no | Описание. Строка может содержать HTML-разметку. |
+| `filterItems` | `FieldSelectProps[]` | — | no | Поля-фильтры под вкладками. Рендерятся как `FieldSelect` размера `l`. |
+| `id` | `string` | — | no | HTML-атрибут `id` секции — якорь для навигации по странице. |
+| `media` | `SectionMediaContent` | — | yes | Изображение или видео. Медиа занимает ширину содержимого секции с пропорцией 16:9. |
+| `moreButton` | `SectionMoreButton` | — | no | Кнопка «Показать еще» в футере. |
+| `onError` | `(() => void)` | — | no | Вызывается при ошибке загрузки или воспроизведения видео. |
+| `onPlay` | `(() => void)` | — | no | Вызывается один раз при начале воспроизведения. При смене src может вызваться снова. |
+| `onTabBarChange` | `((value: string) => void)` | — | no | Колбэк выбора вкладки: значение `value` выбранного элемента `tabBarItems`. |
+| `pagination` | `PaginationProps` | — | no | Пагинация в футере. |
+| `tabBarItems` | `TabsSegmentedItem[]` | — | no | Вкладки под заголовком. Без `tabBarValue` / `defaultTabBarValue` изначально выбрана первая доступная. |
+| `tabBarValue` | `string` | — | no | Выбранная вкладка (controlled), например из параметра URL `?tab=ai`. |
+| `title` | `string` | — | no | Заголовок. Строка может содержать строчную HTML-разметку (`a`, `strong`, `em`, `br`). |
+| `titleTag` | `h1 \| h2 \| h3 \| h4` | — | no | Тег заголовка. |
+
+#### Related types
+- `CustomOptionProps` (interface)
+- `DroplistAdaptiveProps` (interface)
+- `DroplistListProps` (alias)
+- `DroplistMobileSlots` (interface)
+- `EmptyState` (interface)
+- `FieldSelectDecoratorProps` (interface)
+- `FieldSelectProps` (alias)
+- `PaginationProps` (interface)
+- `PublicListContextType` (interface)
+- `ScrollProps` (interface)
+- `SectionBackground` (interface)
+- `SectionContainer` = `new | old`
+- `SectionContainerBackground` (alias)
+- `SectionMediaContent` (alias)
+- `SectionMoreButton` (interface)
+- `SectionTitleTag` = `h1 | h2 | h3 | h4`
+- `SelectionState` (interface)
+- `TabsSegmentedItem` (interface)
+- `ThemeAppearance` (interface)
+- `VideoPlayerProps` (interface)
+
 ### SectionWrapper
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
@@ -227,6 +272,24 @@ export function Footer() {
 }
 ```
 
+### ImageSection
+
+```tsx
+import { SectionMedia } from '@cloud-ru/ds-site-section';
+
+import { POSTER } from '../mediaFixtures';
+
+export function ImageSection() {
+  return (
+    <SectionMedia
+      container='new'
+      title='Изображение'
+      media={{ type: 'image', src: POSTER, alt: 'Иллюстрация к разделу' }}
+    />
+  );
+}
+```
+
 ### OldContainer
 
 ```tsx
@@ -294,5 +357,17 @@ export function TitleAndContent() {
       <p>Произвольный контент секции: карточки, сетка, карусель.</p>
     </SectionBasic>
   );
+}
+```
+
+### VideoSection
+
+```tsx
+import { SectionMedia } from '@cloud-ru/ds-site-section';
+
+import { VIDEO } from '../mediaFixtures';
+
+export function VideoSection() {
+  return <SectionMedia container='new' title='Видеопрезентация' media={{ type: 'video', ...VIDEO }} />;
 }
 ```

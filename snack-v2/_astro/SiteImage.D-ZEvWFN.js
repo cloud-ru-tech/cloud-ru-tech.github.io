@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C852uKRQ.js";var t=e();function n({src:e,alt:n,...r}){return(0,t.jsx)(`img`,{src:e,alt:n,...r})}export{n as t};

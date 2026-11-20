@@ -1,0 +1,153 @@
+﻿# @cloud-ru/ds-site-media
+
+> Видеоплеер и изображение для страниц сайта.
+
+Docs: /snack-v2/components/site-media/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-site-media
+```
+
+## Когда использовать
+
+| Рекомендуется                                    | Не рекомендуется                                     |
+| ------------------------------------------------ | ---------------------------------------------------- |
+| `SiteVideo` для плеера в собственной композиции  | Повторять каркас готового `SectionMedia`             |
+| `SiteImage` для изображения с обязательным `alt` | Использовать имя файла вместо альтернативного текста |
+
+## API
+
+### EmbedPlayer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onError` | `(() => void)` | — | no |  |
+| `onFirstPlay` | `(() => void)` | — | no |  |
+| `source` | `EmbedSource` | — | yes |  |
+| `video` | `VideoPlayerProps` | — | yes |  |
+
+### NativePlayer
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onError` | `(() => void)` | — | no |  |
+| `onFirstPlay` | `(() => void)` | — | no |  |
+| `video` | `VideoPlayerProps` | — | yes |  |
+
+### PlaybackControls
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `compact` | `boolean` | — | yes |  |
+| `fullscreen` | `boolean` | — | yes |  |
+| `onPlaybackError` | `(error: unknown) => void` | — | yes |  |
+| `onToggleFullscreen` | `() => void` | — | yes |  |
+| `onTogglePlay` | `() => void` | — | yes |  |
+| `player` | `Player` | — | yes |  |
+| `state` | `PlayerState` | — | yes |  |
+
+### PlayerError
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onRetry` | `(() => void)` | — | no |  |
+
+### SiteImage
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `alt` | `string` | — | yes | Альтернативный текст; пустая строка — для декоративного изображения. |
+| `data-test-id` | `string` | — | no |  |
+| `src` | `string` | — | yes | URL изображения. |
+
+### SiteVideo
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `className` | `string` | — | no | CSS-класс обёртки плеера. |
+| `data-test-id` | `string` | — | no |  |
+| `onError` | `(() => void)` | — | no | Вызывается при ошибке загрузки или воспроизведения видео. |
+| `onPlay` | `(() => void)` | — | no | Вызывается один раз при начале воспроизведения. При смене src может вызваться снова. |
+| `video` | `ReactNode \| VideoPlayerProps` | — | yes | Параметры видео (src, обложка, управление) или React-элемент собственного плеера. |
+
+#### Related types
+- `VideoPlayerProps` (interface)
+
+### SpeedSelect
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `player` | `Player` | — | yes |  |
+| `rate` | `number` | — | yes |  |
+
+### Timeline
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `frames` | `SpriteFrame[]` | — | yes |  |
+| `player` | `Player` | — | yes |  |
+| `state` | `PlayerState` | — | yes |  |
+
+### TimelinePreview
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `frame` | `SpriteFrame` | — | no |  |
+| `position` | `TimelinePosition` | — | yes |  |
+
+### Toolbar
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `frames` | `SpriteFrame[]` | — | yes |  |
+| `fullscreen` | `boolean` | — | yes |  |
+| `onPlaybackError` | `(error: unknown) => void` | — | yes |  |
+| `onToggleFullscreen` | `() => void` | — | yes |  |
+| `onTogglePlay` | `() => void` | — | yes |  |
+| `player` | `Player` | — | yes |  |
+| `state` | `PlayerState` | — | yes |  |
+| `visible` | `boolean` | — | yes |  |
+
+### ToolbarButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `appearance` | `critical \| neutral \| primary` | `neutral` | no |  |
+| `icon` | `ReactElement<any, string \| JSXElementConstructor<any>>` | — | yes |  |
+| `label` | `string` | — | yes |  |
+| `onClick` | `() => void` | — | yes |  |
+| `showTooltip` | `boolean` | `false` | no |  |
+| `testId` | `string` | — | yes |  |
+
+### VideoContent
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `onError` | `(() => void)` | — | no | Вызывается при ошибке загрузки или воспроизведения видео. |
+| `onPlay` | `(() => void)` | — | no | Вызывается один раз при начале воспроизведения. При смене src может вызваться снова. |
+| `video` | `ReactNode \| VideoPlayerProps` | — | yes | Параметры видео (src, обложка, управление) или React-элемент собственного плеера. |
+
+### VideoPlayButton
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `compact` | `boolean` | `false` | no |  |
+| `onClick` | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void` | — | yes |  |
+| `onKeyDown` | `((event: KeyboardEvent<HTMLButtonElement>) => void)` | — | no |  |
+| `playing` | `boolean` | — | yes |  |
+| `visible` | `boolean` | — | yes |  |
+
+## Примеры
+
+### SiteImage
+
+```tsx
+import { SiteImage } from '@cloud-ru/ds-site-media';
+
+import { POSTER } from '../fixtures';
+
+export function ImageExample() {
+  return <SiteImage src={POSTER} alt='Интерфейс сервиса' loading='lazy' width={720} height={405} />;
+}
+```
+
+### SiteVideo
+
+```tsx
+import { SiteVideo } from '@cloud-ru/ds-site-media';
+
+import { VIDEO } from '../fixtures';
+
+export function VideoExample() {
+  return <SiteVideo video={VIDEO} />;
+}
+```

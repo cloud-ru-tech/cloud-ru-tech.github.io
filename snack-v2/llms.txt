@@ -179,4 +179,5 @@
 - [@cloud-ru/ds-site-rich-text](/snack-v2/components/site-rich-text/llms.txt): Блок форматированного текста для сайта — HTML-строка или ReactNode со стилями абзацев, ссылок, списков и изображений.
 - [@cloud-ru/ds-site-section](/snack-v2/components/site-section/llms.txt): Базовая секция сайта — заголовок, вкладки, фильтры, произвольный контент и футер с пагинацией и кнопкой «Показать еще».
 - [@cloud-ru/ds-site-section-title](/snack-v2/components/site-section-title/llms.txt): Заголовочный блок секции сайта — заголовок и описание в четырёх раскладках.
+- [@cloud-ru/ds-site-media](/snack-v2/components/site-media/llms.txt): Видеоплеер и изображение для страниц сайта.
 - [@cloud-ru/ds-site-tabs-segmented](/snack-v2/components/site-tabs-segmented/llms.txt): Сегментированные вкладки для сайта — ряд подписей в общей обводке, выбранная вкладка залита.
