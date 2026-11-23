@@ -119,6 +119,7 @@ pnpm add @cloud-ru/ds-table
 | `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
 | `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
 | `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressRowHover` | `boolean` | — | no | Отключает подсветку строк при наведении в табличном виде. |
 | `suppressSearch` | `boolean` | — | no | Отключение поиска |
 | `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
 | `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
@@ -208,6 +209,7 @@ pnpm add @cloud-ru/ds-table
 | `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
 | `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
 | `suppressPagination` | `undefined` | — | no |  |
+| `suppressRowHover` | `boolean` | — | no | Отключает подсветку строк при наведении в табличном виде. |
 | `suppressSearch` | `boolean` | — | no | Отключение поиска |
 | `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
 | `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
@@ -335,6 +337,7 @@ pnpm add @cloud-ru/ds-table
 | `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
 | `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
 | `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressRowHover` | `boolean` | — | no | Отключает подсветку строк при наведении в табличном виде. |
 | `suppressSearch` | `boolean` | — | no | Отключение поиска |
 | `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
 | `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
@@ -460,6 +463,7 @@ pnpm add @cloud-ru/ds-table
 | `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
 | `suppressHeader` | `boolean` | `false` | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
 | `suppressPagination` | `boolean` | `false` | no | Отключение пагинации |
+| `suppressRowHover` | `boolean` | — | no | Отключает подсветку строк при наведении в табличном виде. |
 | `suppressSearch` | `boolean` | `false` | no | Отключение поиска |
 | `suppressToolbar` | `boolean` | `false` | no | Отключение тулбара |
 | `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |
@@ -696,6 +700,7 @@ _Нет публичных пропсов._
 | `stickyControls` | `StickyControls` | — | no | Sticky-хром при скролле страницы: при `enabled: true` тулбар и пагинация липнут к верху/низу viewport, в table-view заголовок колонок — под тулбаром; тело растёт по контенту. При `enabled: false` все блоки идут сплошным потоком без sticky.  Дефолты: desktop — `enabled: false` (offsets не применяются); mobile — `{ enabled: true, offsetTop: 0, offsetBottom: 0 }` (`TABLE_LAYOUT_PRESETS`); `backgroundPredefined` — `neutralBackground1Level` на всех раскладках.  Явный проп = desktop-значение; mobile-override — `layoutPresets.mobile`. @example `stickyControls={{ enabled: true, offsetTop: 64 }}` — sticky на desktop, app header 64px. |
 | `suppressHeader` | `boolean` | — | no | Отключение хедера таблицы; в режиме `view='cards'` скрывает подписи-заголовки полей карточки |
 | `suppressPagination` | `boolean` | — | no | Отключение пагинации |
+| `suppressRowHover` | `boolean` | — | no | Отключает подсветку строк при наведении в табличном виде. |
 | `suppressSearch` | `boolean` | — | no | Отключение поиска |
 | `suppressToolbar` | `boolean` | — | no | Отключение тулбара |
 | `toolbarAfter` | `ReactNode` | — | no | Дополнительный слот в `Toolbar` после строки поиска |

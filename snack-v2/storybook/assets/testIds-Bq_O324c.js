@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";import{m as t,p as n}from"./src-BZWxOq1Q.js";var r,i=e((()=>{t(),r={root:`section-accordion`,item0:`${n.item}-0`,item1:`${n.item}-1`}}));export{i as n,r as t};
-//# sourceMappingURL=testIds-Bq_O324c.js.map
