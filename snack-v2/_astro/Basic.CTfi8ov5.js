@@ -1,0 +1,1 @@
+import{t as e}from"./Popover.cPDG9cnK.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{content:`Подсказка для пользователя`,placement:`top`,trigger:`click`,children:(0,n.jsx)(`button`,{type:`button`,children:`Открыть поповер`})})}export{r as Basic};

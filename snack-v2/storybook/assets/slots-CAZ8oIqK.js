@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{n,t as r}from"./useUncontrolledProp-bpORtrGA.js";function i({open:e,defaultOpen:t,onOpenChange:r,hasDetails:i}){let[o,s]=n(e,t,r),c=(0,a.useId)(),l=!!o&&i;return{open:!!o,toggle:()=>s(!o),detailsId:c,ariaControls:l?c:void 0,showDetails:l}}var a;function o(){return(o=e((()=>{r(),a=t()})))()}function s(e){return e!=null&&typeof e!=`boolean`&&e!==``}function c(){return(c=e((()=>{})))()}export{i,s as n,o as r,c as t};
+//# sourceMappingURL=slots-CAZ8oIqK.js.map

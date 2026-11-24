@@ -1,0 +1,1 @@
+import{t as e}from"./AiChainOfThoughtsHeadline.C5xWrvvh.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,flexDirection:`column`,gap:12},children:[(0,n.jsx)(e,{inProgress:!0,duration:31568949}),(0,n.jsx)(e,{inProgress:!1,duration:31568949})]})}export{r as HeadlineStates};

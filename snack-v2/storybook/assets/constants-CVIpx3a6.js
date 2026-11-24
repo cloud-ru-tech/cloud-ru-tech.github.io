@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a;function o(){return(o=e((()=>{t={Checkbox:`checkbox`,Radio:`radio`},n={XS:`xs`,S:`s`},r={Star:`star`,Heart:`heart`},i={Single:`single`,Multiple:`multiple`},a=`-native-input`})))()}export{n as a,i,t as n,o,a as r,r as t};
+//# sourceMappingURL=constants-CVIpx3a6.js.map

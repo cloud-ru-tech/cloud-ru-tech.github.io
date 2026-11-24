@@ -1,0 +1,1 @@
+import{t as e}from"./FieldStepper.CvIZBkYW.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Количество`,postfix:`шт`,defaultValue:3,min:0,max:10})}export{r as StepperUncontrolled};

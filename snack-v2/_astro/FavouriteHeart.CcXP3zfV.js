@@ -1,0 +1,1 @@
+import{t as e}from"./Favourite.Bn13pTLv.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{icon:`heart`,defaultChecked:!0})}export{r as FavouriteHeart};

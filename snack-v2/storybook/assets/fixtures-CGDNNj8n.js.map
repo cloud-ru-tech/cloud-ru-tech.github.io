@@ -1,1 +1,0 @@
-{"version":3,"file":"fixtures-CGDNNj8n.js","names":[],"sources":["../../../../packages/site-section/stories/SectionMedia/fixtures.ts"],"sourcesContent":["export { POSTER, SOURCES, VIDEO } from '../../../site-media/stories/fixtures';\nexport { DESCRIPTION, FILTERS, TABS, TITLE } from '../SectionBasic/fixtures';\n"],"mappings":"uJAAuC,IACW"}

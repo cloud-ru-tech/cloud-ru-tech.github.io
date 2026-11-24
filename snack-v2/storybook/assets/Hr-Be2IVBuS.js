@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=new URL(`Hr-VAiGI5cN.svg`,import.meta.url).href})))()}n();export{t as default};
+//# sourceMappingURL=Hr-Be2IVBuS.js.map

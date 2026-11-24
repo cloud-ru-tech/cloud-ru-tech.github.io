@@ -1,0 +1,1 @@
+import{t as e}from"./CopyLine.MZs5s8U0.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{content:`persistent-token-9000`,copyButtonHideStrategy:`never`})}export{r as CopyLineAlwaysVisible};

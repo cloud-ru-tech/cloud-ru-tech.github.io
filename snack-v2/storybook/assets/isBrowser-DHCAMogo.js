@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(){return!!(typeof window<`u`&&window.document&&window.document.createElement)}function n(){return(n=e((()=>{})))()}export{t as n,n as t};
+//# sourceMappingURL=isBrowser-DHCAMogo.js.map

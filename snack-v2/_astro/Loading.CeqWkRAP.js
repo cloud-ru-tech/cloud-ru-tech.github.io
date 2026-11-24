@@ -1,0 +1,1 @@
+import{t as e}from"./SwitchRow.DZXPd4Hf.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{title:`Синхронизация данных`,description:`Применяем изменение на сервере`,defaultChecked:!0,loading:!0})}export{r as Loading};

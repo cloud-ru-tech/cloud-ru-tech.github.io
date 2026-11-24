@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r;function i(){return(i=e((()=>{t=e=>`quota-widget-cell-${e}`,n=e=>`trigger-${t(e)}`,r=[`data`,`loading`,`error`].map(e=>{let r=t(e);return{state:e,cellTestId:r,triggerTestId:n(e),contentTestId:`content-${r}`}})})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-M4Oc-9Rp.js.map

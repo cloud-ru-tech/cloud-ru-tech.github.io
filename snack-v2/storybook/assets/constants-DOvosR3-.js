@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={skeleton:{root:`skeleton`},skeletonText:{root:`skeleton-text`,line:`skeleton-text__line`},withSkeleton:{wrapper:`with-skeleton-wrapper`}}})))()}export{n,t};
+//# sourceMappingURL=constants-DOvosR3-.js.map

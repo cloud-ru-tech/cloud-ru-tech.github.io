@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{n as t,r as n}from"./localeContext-BxdkVUsO.js";function r(){return n().lang}function i(){return(i=e((()=>{t()})))()}export{r as n,i as t};
+//# sourceMappingURL=useLang-BOywi6PA.js.map

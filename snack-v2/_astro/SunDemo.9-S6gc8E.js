@@ -1,0 +1,1 @@
+import{t as e}from"./Sun.DtiE0JV2.js";import{t}from"./Canvas.BwPtjh77.js";import{t as n}from"./props.DZgaNSvN.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=r();function a(){return(0,i.jsx)(t,{component:e,componentDoc:n.Sun,defaultProps:{size:`s`}})}export{a as SunDemo};

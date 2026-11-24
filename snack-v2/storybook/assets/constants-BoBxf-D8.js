@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i;function a(){return(a=e((()=>{t={Static:`static`,Dynamic:`dynamic`},n={Horizontal:`horizontal`,Vertical:`vertical`},r={Before:`before`,After:`after`},i={dragGhost:`drag-ghost`,dragPreview:`drag-preview`,dropIndicator:`drop-indicator`,dropTarget:`drop-target`}})))()}export{a,i,n,r,t};
+//# sourceMappingURL=constants-BoBxf-D8.js.map

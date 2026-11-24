@@ -1,0 +1,1 @@
+import{t as e}from"./Divider.Juq5Znj1.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{variant:`thin`})}export{r as Thin};

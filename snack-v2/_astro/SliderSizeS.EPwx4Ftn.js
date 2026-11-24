@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./PaginationSlider.C6GFzPz6.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a=r();function o(){let[e,n]=(0,i.useState)(2);return(0,a.jsx)(t,{total:5,page:e,size:`s`,onChange:n})}export{o as SliderSizeS};

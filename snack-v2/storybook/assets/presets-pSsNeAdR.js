@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./jsx-runtime-DKU1u6-r.js";import{n,t as r}from"./AiToolText-D8y7q_dL.js";import{n as i,t as a}from"./AiToolKeyValue-CZj8yZAG.js";var o,s,c,l,u;function d(){return(d=e((()=>{i(),n(),o=t(),s=`status_for_users`,c=31568949,l=(0,o.jsx)(r,{mono:!0,children:`{ "user_id": 42 }`}),u=(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(a,{label:`status`,value:`active`}),(0,o.jsx)(a,{label:`last_seen`,value:`2026-06-10T12:00:00Z`})]})})))()}export{u as a,d as i,s as n,l as r,c as t};
+//# sourceMappingURL=presets-pSsNeAdR.js.map

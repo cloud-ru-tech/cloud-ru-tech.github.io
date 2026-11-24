@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%207.07692V13.2308M12%2015V16.5M4%204H20V20H4V4Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=AlertSquare-DV_s04O-.js.map

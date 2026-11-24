@@ -1,0 +1,1 @@
+import{t as e}from"./StatusIndicator.wNT9RlrM.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{size:`xs`,appearance:`green`})}export{r as BasicIndicator};

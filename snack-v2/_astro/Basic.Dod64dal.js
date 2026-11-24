@@ -1,0 +1,1 @@
+import{t as e}from"./AiShimmer.DO18gmqx.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{text:`Generating AI response...`})}export{r as Basic};

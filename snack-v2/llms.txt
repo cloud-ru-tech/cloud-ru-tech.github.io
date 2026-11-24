@@ -177,6 +177,7 @@
 ## Site
 
 - [@cloud-ru/ds-site-card-vacancy](/snack-v2/components/site-card-vacancy/llms.txt): Карточка-ссылка вакансии с заголовком и описанием, нейтральным или акцентным фоном, hover/pressed-состояниями и фокусом.
+- [@cloud-ru/ds-site-reveal-section](/snack-v2/components/site-reveal-section/llms.txt): Однократное появление секций сайта при прокрутке: отдельная секция и группа секций.
 - [@cloud-ru/ds-site-rich-text](/snack-v2/components/site-rich-text/llms.txt): Блок форматированного текста для сайта — HTML-строка или ReactNode со стилями абзацев, ссылок, списков и изображений.
 - [@cloud-ru/ds-site-section](/snack-v2/components/site-section/llms.txt): Базовая секция сайта — заголовок, вкладки, фильтры, произвольный контент и футер с пагинацией и кнопкой «Показать еще».
 - [@cloud-ru/ds-site-section-title](/snack-v2/components/site-section-title/llms.txt): Заголовочный блок секции сайта — заголовок и описание в четырёх раскладках.

@@ -1,0 +1,1 @@
+import{n as e,r as t,t as n}from"./AiSuggestionSimple.BZmWYHBz.js";import{t as r}from"./Placeholder.CQeT7fqH.js";import{t as i}from"./jsx-runtime.C6pM4YaU.js";var a=i();function o(){return(0,a.jsx)(n,{label:`Label text`,icon:(0,a.jsx)(r,{}),appearance:e.Primary,size:t.M})}export{o as Basic};

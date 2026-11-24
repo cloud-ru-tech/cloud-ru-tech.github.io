@@ -1,0 +1,1 @@
+import{t as e}from"./Slider.XvUoriXF.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{min:0,max:100,defaultValue:40,disabled:!0})}export{r as Disabled};

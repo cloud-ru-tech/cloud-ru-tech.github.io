@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{n,t as r}from"./useUncontrolledProp-bpORtrGA.js";function i({value:e,onChange:t,defaultValue:r}){let i=(0,a.useRef)(e);i.current=e;let o=(0,a.useCallback)(e=>{let n=typeof e==`function`?e(i.current):e;t?.(n)},[t]);return n(e,r,o)}var a;function o(){return(o=e((()=>{a=t(),r()})))()}export{i as n,o as t};
+//# sourceMappingURL=useValueControl-BVxUuK_S.js.map

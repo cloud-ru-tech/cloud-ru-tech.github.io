@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={tooltip:{triggerOpen:`tooltip-trigger`,content:`tooltip-content`,upperTrigger:`tooltip-upper-trigger`,upperContent:`tooltip-upper-content`,vmTrigger:e=>`tooltip-vm-${e}`},questionTooltip:{triggerOpen:`question-tooltip-trigger`,content:`question-tooltip-content`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DAlAA1Od.js.map

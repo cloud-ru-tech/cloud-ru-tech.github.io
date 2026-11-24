@@ -1,0 +1,1 @@
+import{n as e}from"./hooks.y3uFA2zQ.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){let t=e([`mod`,`C`]);return(0,n.jsxs)(`span`,{title:`Копировать (${t})`,children:[`Копировать — `,t]})}export{r as ShortcutText};

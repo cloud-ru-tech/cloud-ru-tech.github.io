@@ -1,0 +1,1 @@
+import{t as e}from"./Link.DkiVvu1n.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{as:`button`,type:`button`,label:`Открыть диалог`,onClick:()=>alert(`clicked`)})}export{r as Polymorphic};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(e,t){return Object.keys(e).filter(e=>!e.match(t)).reduce((t,n)=>({...t,[n]:e[n]}),{})}function n(e,t){return Object.keys(e).reduce((n,r)=>(r.match(t)&&(n[r]=e[r]),n),{})}function r(e){return t(e,s)}function i(e){return n(e,o)}function a(e){return n(e,s)}var o,s;function c(){return(c=e((()=>{o=/^data-test-/,s=/^(data|aria)-/})))()}export{c as i,i as n,a as r,r as t};
+//# sourceMappingURL=componentPropsProcessors-X-aA1Asd.js.map

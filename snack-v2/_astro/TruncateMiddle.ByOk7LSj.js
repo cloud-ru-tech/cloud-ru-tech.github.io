@@ -1,0 +1,1 @@
+import{t as e}from"./TruncateString.CvEOPAql.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(`div`,{style:{width:220},children:(0,n.jsx)(e,{variant:`middle`,text:`2024-quarterly-report-final-v3.pdf`})})}export{r as TruncateMiddle};

@@ -1,0 +1,1 @@
+import{t as e}from"./ButtonGroup.D7MNArpM.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{primaryAction:{label:`Сохранить`,appearance:`primary`,view:`filled`},secondaryAction:{label:`Отмена`,appearance:`neutral`,view:`outline`}})}export{r as ButtonGroupPrimarySecondary};

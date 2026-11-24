@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(e){return Object.defineProperty(e,r,{value:!0}),e}function n(e){return(typeof e==`function`||typeof e==`object`&&!!e)&&!!e[r]}var r;function i(){return(i=e((()=>{r=Symbol.for(`@ds/supports-inner-ref`)})))()}export{n,t as r,i as t};
+//# sourceMappingURL=innerRef-CjFt_j0Z.js.map

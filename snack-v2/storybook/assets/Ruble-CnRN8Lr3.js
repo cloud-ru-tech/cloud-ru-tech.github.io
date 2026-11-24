@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10%2012H13.0832C14.2788%2012%2015%2011.1955%2015%2010C15%208.80447%2014.2788%208%2013.0832%208H10V10V12ZM10%2012H8M10%2012V15M10%2015V17M10%2015H14M10%2015H8M4%2018V6L6%204H18L20%206V18L18%2020H6L4%2018Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=Ruble-CnRN8Lr3.js.map

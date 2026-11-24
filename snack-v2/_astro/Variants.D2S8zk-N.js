@@ -1,0 +1,1 @@
+import{n as e,t}from"./PlatformLogo.DzbwVFJR.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:Object.values(e).map(e=>(0,r.jsx)(t,{variant:e},e))})}export{i as Variants};

@@ -1,0 +1,1 @@
+import{r as e,t}from"./PromoTagPredefined.CwNWpniC.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(e){e.preventDefault()}function a(){return(0,r.jsx)(t,{variant:e.Connecting,tooltip:{onSupportClick:i}})}export{a as Connecting};

@@ -1,0 +1,1 @@
+import{t as e}from"./Scroll.B67aseN-.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(`div`,{style:{height:200,width:320},children:(0,n.jsx)(e,{autoscrollTo:`bottom`,children:(0,n.jsx)(`div`,{style:{padding:8},children:Array.from({length:40},(e,t)=>(0,n.jsxs)(`div`,{children:[`Сообщение `,t+1]},t))})})})}export{r as AutoscrollBottom};

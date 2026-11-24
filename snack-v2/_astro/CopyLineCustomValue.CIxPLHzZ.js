@@ -1,0 +1,1 @@
+import{t as e}from"./CopyLine.MZs5s8U0.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{content:`IP: 192.168.0.1 (production)`,valueToCopy:`192.168.0.1`})}export{r as CopyLineCustomValue};

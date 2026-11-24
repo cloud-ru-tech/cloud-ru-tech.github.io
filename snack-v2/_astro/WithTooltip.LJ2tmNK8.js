@@ -1,0 +1,1 @@
+import{t as e}from"./Tooltip.108wx1Ts.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r({tooltip:t,children:r}){return t?.tip?(0,n.jsx)(e,{...t,children:r}):(0,n.jsx)(n.Fragment,{children:r})}export{r as t};

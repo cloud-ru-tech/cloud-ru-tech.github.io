@@ -1,0 +1,1 @@
+import{t as e}from"./InfoBlock.Bdgf46ym.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{title:`Заголовок`,content:`Короткое описание под заголовком.`})}export{r as Basic};

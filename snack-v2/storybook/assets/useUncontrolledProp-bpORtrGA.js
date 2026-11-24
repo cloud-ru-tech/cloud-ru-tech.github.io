@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";function n(e,t,n){let i=e!==void 0,a=(0,r.useRef)(i),[o,s]=(0,r.useState)(t),c=a.current;a.current=i,!i&&c&&o!==t&&s(t);let l=(0,r.useCallback)((...e)=>{let[t,...r]=e,i=n?.(t,...r);return s(t),i},[n]);return[i?e:o,l]}var r;function i(){return(i=e((()=>{r=t()})))()}export{n,i as t};
+//# sourceMappingURL=useUncontrolledProp-bpORtrGA.js.map

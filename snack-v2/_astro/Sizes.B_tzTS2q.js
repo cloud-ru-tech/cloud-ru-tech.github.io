@@ -1,0 +1,1 @@
+import{t as e}from"./IconPredefined.CYMlo6H4.js";import{t}from"./Placeholder.CQeT7fqH.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(e,{icon:t,size:`m`}),(0,r.jsx)(e,{icon:t,size:`l`}),(0,r.jsx)(e,{icon:t,size:`5xl`})]})}export{i as Sizes};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={fieldSecure:{editableRoot:`field-secure-editable`,readonlyRoot:`field-secure-readonly`,controlledHiddenRoot:`field-secure-controlled-hidden`,asyncRevealRoot:`field-secure-async-reveal`,asyncLoadedOnceRoot:`field-secure-async-loaded-once`,asyncRejectRoot:`field-secure-async-reject`,asyncReadonlyRoot:`field-secure-async-readonly`,asyncPendingRoot:`field-secure-async-pending`,asyncResolveButton:`field-secure-async-resolve`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DAL9zwMP.js.map

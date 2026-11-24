@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,s as n}from"./Tabs-D0b9jluk.js";var r;function i(){return(i=e((()=>{n(),r={tabs:t.tabs,tabBar:t.tabBar,tab:{root:t.tab.root,overview:`${t.tab.root}-overview`,settings:`${t.tab.root}-settings`,billing:`${t.tab.root}-billing`},actionButton:`tabs-action-button`,tabContent:{root:t.tabContent.root,overview:`${t.tabContent.root}-overview`,settings:`${t.tabContent.root}-settings`,billing:`${t.tabContent.root}-billing`}}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CVHnYUKg.js.map

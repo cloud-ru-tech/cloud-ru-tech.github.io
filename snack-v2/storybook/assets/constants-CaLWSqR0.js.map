@@ -1,0 +1,1 @@
+{"version":3,"file":"constants-CaLWSqR0.js","names":["__esmMin","HIDDEN_ROOT_MARGIN","init_constants"],"sources":["../../../../packages/site-reveal-section/stories/constants.ts"],"sourcesContent":["// Исключаем пересечение с областью наблюдения, чтобы проверять начальное скрытое состояние.\nexport const HIDDEN_ROOT_MARGIN = '-1000000px';\n"],"mappings":"A,uFACa,EAAqB,Y"}

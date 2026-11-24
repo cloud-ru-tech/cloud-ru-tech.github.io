@@ -1,0 +1,1 @@
+import{t as e}from"./AiIconGiga.Cp5sG6BH.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(e,{size:24}),(0,n.jsx)(e,{size:48}),(0,n.jsx)(e,{size:80})]})}export{r as Sizes};

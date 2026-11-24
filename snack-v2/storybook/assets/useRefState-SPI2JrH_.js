@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";function n(e){let[,t]=(0,r.useReducer)(e=>e+1,0),n=(0,r.useRef)(e);return(0,r.useMemo)(()=>({get current(){return n.current},set current(e){n.current=e,t()}}),[])}var r;function i(){return(i=e((()=>{r=t()})))()}export{n,i as t};
+//# sourceMappingURL=useRefState-SPI2JrH_.js.map

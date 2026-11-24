@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={button:{root:`button`},buttonGroup:{root:`button-group`,primary:`button-group-primary`,secondary:`button-group-secondary`,tertiary:`button-group-tertiary`}}}));export{n,t};
-//# sourceMappingURL=testIds-BnmztHjg.js.map

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={customChildren:`custom-children`,standaloneSimple:`standalone-simple`,standaloneUser:`standalone-user`}})))()}export{n,t};
+//# sourceMappingURL=testIds-DrBmSjfA.js.map

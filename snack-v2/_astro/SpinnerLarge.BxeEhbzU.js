@@ -1,0 +1,1 @@
+import{t as e}from"./Spinner.oMi-a4Ai.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{size:`l`})}export{r as SpinnerLarge};

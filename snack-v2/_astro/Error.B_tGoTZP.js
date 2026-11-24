@@ -1,0 +1,1 @@
+import{i as e}from"./src.BGglQweY.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{appearance:`error`,title:`Не удалось сохранить`,content:`Проверьте подключение к сети и повторите попытку.`,onClose:()=>void 0})}export{r as Error};

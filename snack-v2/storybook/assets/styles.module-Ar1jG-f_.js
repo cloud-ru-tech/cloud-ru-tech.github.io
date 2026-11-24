@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a,o,s,c;function l(){return(l=e((()=>{t=`_col_1jy0w_4`,n=`_wide_1jy0w_11`,r=`_matrix_1jy0w_15`,i=`_panel_1jy0w_20`,a=`_verticalTabs_1jy0w_24`,o=`_verticalTabBar_1jy0w_28`,s=`_verticalContainer_1jy0w_32`,c={col:t,wide:n,matrix:r,panel:i,verticalTabs:a,verticalTabBar:o,verticalContainer:s}})))()}export{c as n,l as t};
+//# sourceMappingURL=styles.module-Ar1jG-f_.js.map

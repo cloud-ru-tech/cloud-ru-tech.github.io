@@ -1,0 +1,3 @@
+import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./CodeEditor.kT-umsAN.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a={surface:`_surface_1sut6_4`},o=r(),s=`// transparent background, embedded into a card
+const config = { mode: 'inline' }
+`;function c(){let[e,n]=(0,i.useState)(s);return(0,o.jsx)(`div`,{className:a.surface,children:(0,o.jsx)(t,{language:`javascript`,value:e,background:!1,height:220,onChange:e=>n(e??``)})})}export{c as NoBackground};

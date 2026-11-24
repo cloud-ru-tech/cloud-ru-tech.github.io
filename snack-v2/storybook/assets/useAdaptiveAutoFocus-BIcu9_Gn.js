@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{i as t,n,r,t as i}from"./useLayoutDefaults-BSN2nCJ_.js";function a(e=!1,r){return n({autoFocus:!1},t(o,r),{autoFocus:e}).autoFocus}var o;function s(){return(s=e((()=>{r(),i(),o={mobile:{autoFocus:!1}}})))()}export{a as n,s as t};
+//# sourceMappingURL=useAdaptiveAutoFocus-BIcu9_Gn.js.map

@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./ColorPicker.Do86ksBB.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a=r();function o(){let[e,n]=(0,i.useState)(`#389f74`);return(0,a.jsx)(t,{value:e,onChange:e=>n(e.hex)})}export{o as Basic};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=new URL(`Habr-CMRo5hZn.svg`,import.meta.url).href})))()}n();export{t as default};
+//# sourceMappingURL=Habr-DcFKWgbR.js.map

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a;function o(){return(o=e((()=>{t=`_scene_1k9p0_4`,n=`_sceneCompact_1k9p0_12`,r=`_bannersRow_1k9p0_20`,i=`_bannerItem_1k9p0_26`,a={scene:t,sceneCompact:n,bannersRow:r,bannerItem:i}})))()}export{a as n,o as t};
+//# sourceMappingURL=styles.module-BwOtpQjb.js.map

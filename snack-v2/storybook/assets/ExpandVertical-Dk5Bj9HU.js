@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7%2014L12%2019L17%2014M7%2010L12%205L17%2010'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=ExpandVertical-Dk5Bj9HU.js.map

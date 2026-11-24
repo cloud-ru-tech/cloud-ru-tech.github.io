@@ -1,0 +1,1 @@
+import{i as e}from"./src.BGglQweY.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{appearance:`info`,collapsible:!0,title:`Совет по настройке`,content:`Полное описание того, как правильно настроить функцию. Текст длинный и сворачивается до раскрытия.`})}export{r as Collapsible};

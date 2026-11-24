@@ -1,0 +1,1 @@
+import{t as e}from"./FieldSecure.CF5eZgKe.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`API Token`,readonly:!0,defaultValue:`sk-XXXXXXXXXXXXXXXXXXXXXXXX`})}export{r as SecureReadonly};

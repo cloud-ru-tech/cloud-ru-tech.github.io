@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./jsx-runtime-DKU1u6-r.js";var n,r;function i(){return(i=e((()=>{n=`_cardWidth_uout4_3`,r={cardWidth:n}})))()}var a,o;function s(){return(s=e((()=>{i(),a=t(),o=e=>(0,a.jsx)(`div`,{className:r.cardWidth,children:(0,a.jsx)(e,{})})})))()}export{o as n,s as t};
+//# sourceMappingURL=decorators-BWG-1MAt.js.map

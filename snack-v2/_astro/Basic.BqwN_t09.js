@@ -1,0 +1,1 @@
+import{t as e}from"./PathBreadcrumbs.Bil6Xxqf.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t(),r=[{id:`1`,label:`Главная`,href:`#`},{id:`2`,label:`Проект`,href:`#`},{id:`3`,label:`Сервис`}];function i(){return(0,n.jsx)(e,{items:r})}export{i as Basic};

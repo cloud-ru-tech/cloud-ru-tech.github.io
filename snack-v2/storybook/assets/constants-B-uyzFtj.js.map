@@ -1,0 +1,1 @@
+{"version":3,"file":"constants-B-uyzFtj.js","names":["__esmMin","DEFAULT_LOCALE","init_constants"],"sources":["../../../../packages/calendar/src/components/TimePicker/constants.ts"],"sourcesContent":["export const DEFAULT_LOCALE = new Intl.Locale('ru-RU');\n"],"mappings":"A,uFAAa,EAAiB,IAAI,KAAK,OAAO,OAAO,C"}

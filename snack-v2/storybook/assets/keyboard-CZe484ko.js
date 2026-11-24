@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(e){return o.includes(e)}function n(e){return s.includes(e)}function r(e){return t(e.key)?(e.preventDefault(),!0):!1}function i(e){return n(e.key)?(e.preventDefault(),!0):!1}function a(e){e?.focus({preventScroll:!0})}var o,s;function c(){return(c=e((()=>{o=[`ArrowUp`,`ArrowDown`,`ArrowLeft`,`ArrowRight`],s=[`ArrowUp`,`ArrowDown`]})))()}export{i,c as n,r,a as t};
+//# sourceMappingURL=keyboard-CZe484ko.js.map

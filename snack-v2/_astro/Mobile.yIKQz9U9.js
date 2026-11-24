@@ -1,0 +1,1 @@
+import{i as e,r as t,t as n}from"./AiFieldBanner.cH4riDze.js";import{t as r}from"./Placeholder.CQeT7fqH.js";import{t as i}from"./jsx-runtime.C6pM4YaU.js";var a=i();function o(){return(0,a.jsx)(n,{size:t.M,variant:e.Agentic,content:`Description`,actionLabel:`Label text`,icon:(0,a.jsx)(r,{})})}export{o as Mobile};

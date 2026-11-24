@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={timeline:{root:`timeline`},timelineItem:{root:`timeline-track-item`,opposite:`timeline-track-item-opposite`},track:{root:`timeline-track`,dot:`timeline-track-dot`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DH7Voe3t.js.map

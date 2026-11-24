@@ -1,0 +1,1 @@
+import{t as e}from"./Counter.CS_gost-.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{value:3,appearance:`red`})}export{r as Red};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6%206H21V18H10M6%2018H10M6%2021V4H3M10%2018V15M17.0855%209.04838H14V12H17.0855V9.04838Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=NetworkCard-Dpcq6ita.js.map

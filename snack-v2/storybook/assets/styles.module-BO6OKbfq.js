@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i;function a(){return(a=e((()=>{t=`_matrix_mzd8c_4`,n=`_column_mzd8c_9`,r=`_fullWidth_mzd8c_16`,i={matrix:t,column:n,fullWidth:r}})))()}export{i as n,a as t};
+//# sourceMappingURL=styles.module-BO6OKbfq.js.map

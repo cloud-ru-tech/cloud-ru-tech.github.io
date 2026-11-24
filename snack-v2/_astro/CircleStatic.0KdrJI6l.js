@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./ProgressBarCircle.BLalpYA-.js";var n=e();function r(){return(0,n.jsx)(t,{progress:75})}export{r as CircleStatic};

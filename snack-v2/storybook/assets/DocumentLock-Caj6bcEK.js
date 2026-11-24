@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M16.5%2018.2365V16.7365M7.5%209H15.5553M10.5%2018.9513H4V5H19V9.5M13%2015H20V20H13V15ZM18.5%2015V13.5C18.5%2012.5883%2017.9307%2012%2017%2012H16C15.0693%2012%2014.5%2012.5883%2014.5%2013.5V15H18.5Z'%20stroke='black'%20stroke-width='1.5'/%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=DocumentLock-Caj6bcEK.js.map

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={copyButton:{root:`copy-button`},copyLine:{root:`copy-line`,copyButton:`copy-line__copy-button`}}})))()}export{n,t};
+//# sourceMappingURL=constants-CLkzkN_8.js.map

@@ -1,0 +1,1 @@
+import{t as e}from"./Placeholder.CQeT7fqH.js";import{t}from"./CardServiceLight.B3TCQONT.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{title:`Мой сервис`,icon:(0,r.jsx)(e,{size:24})})}export{i as Basic};

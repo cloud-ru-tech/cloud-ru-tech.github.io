@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r=e((()=>{t=`Облачные сервисы`,n=`Инфраструктура, данные и AI в одном облаке. Подключение за несколько минут.`}));export{t as n,r,n as t};
-//# sourceMappingURL=content-BlysHIcz.js.map

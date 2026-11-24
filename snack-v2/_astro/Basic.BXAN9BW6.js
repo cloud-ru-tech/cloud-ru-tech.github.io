@@ -1,0 +1,1 @@
+import{t as e}from"./Tooltip.108wx1Ts.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{tip:`Сохранить изменения`,children:(0,n.jsx)(`button`,{type:`button`,children:`Сохранить`})})}export{r as Basic};

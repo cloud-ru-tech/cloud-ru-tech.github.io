@@ -1,0 +1,1 @@
+import{t as e}from"./PromoTag.1GDaRpY_.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`NEW`,appearance:`primary`,roleAppearance:`accent`})}export{r as Basic};

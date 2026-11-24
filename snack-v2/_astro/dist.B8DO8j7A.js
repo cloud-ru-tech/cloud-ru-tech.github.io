@@ -1,0 +1,1 @@
+function e(...e){let t=e.filter(Boolean);return t.length<=1?t[0]||null:function(e){let n=!1,r=t.map(t=>{if(typeof t==`function`){let r=t(e);return typeof r==`function`?(n=!0,r):()=>{t(null)}}return t.current=e,()=>{t.current=null}});if(n)return function(){for(let e of r)e()}}}export{e as t};

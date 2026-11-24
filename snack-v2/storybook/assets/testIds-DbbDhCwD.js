@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={label:{root:`label`},hint:{root:`hint`},fieldDecorator:{root:`field-decorator`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DbbDhCwD.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-C2qco9GX.js","names":["__esmMin","TEST_IDS","init_testIds"],"sources":["../../../../packages/loader/stories/testIds.ts"],"sourcesContent":["export const TEST_IDS = {\n  spinner: { root: 'spinner' },\n  sun: { root: 'sun' },\n} as const;\n"],"mappings":"A,uFAAa,EAAW,CACtB,QAAS,CAAE,KAAM,SAAU,EAC3B,IAAK,CAAE,KAAM,KAAM,CACrB,C"}

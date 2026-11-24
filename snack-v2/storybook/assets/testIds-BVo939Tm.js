@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={kbd:{root:`kbd`,searchHints:`kbd-search-hints`},kbdShortcut:{root:`kbd-shortcut`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-BVo939Tm.js.map

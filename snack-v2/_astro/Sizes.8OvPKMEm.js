@@ -1,0 +1,1 @@
+import{a as e}from"./utils.CxREtkS2.js";import{t}from"./ProgressBar.BRCjFf9j.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(t,{progress:40,size:e.XS}),(0,r.jsx)(t,{progress:40,size:e.S})]})}export{i as Sizes};

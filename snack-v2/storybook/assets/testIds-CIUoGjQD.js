@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,i as n}from"./Search-Un5L5KUy.js";var r;function i(){return(i=e((()=>{t(),r={...n,afterContentButton:`search__after-content-button`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CIUoGjQD.js.map

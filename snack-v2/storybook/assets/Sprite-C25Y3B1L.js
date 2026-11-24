@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{t as n}from"./jsx-runtime-DKU1u6-r.js";import{i as r,r as i}from"./createSpriteIcon-BZ44_q8G.js";var a,o,s;function c(){return(c=e((()=>{a=t(),i(),o=n(),s=(0,a.memo)(function(e){return(0,a.useEffect)(()=>{r()},[]),(0,o.jsx)(`div`,{"data-test-id":e[`data-test-id`],style:{display:`none`},dangerouslySetInnerHTML:{__html:e.content}})})})))()}export{c as n,s as t};
+//# sourceMappingURL=Sprite-C25Y3B1L.js.map

@@ -1,0 +1,1 @@
+import{n as e,t}from"./PrivateDropZone.9C6bVBr5.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i({disabled:n=!1,children:i,...a}){let{events:o,isOver:s}=e(n);return(0,r.jsx)(t,{...o,...a,isOver:s,disabled:n,children:i})}export{i as t};

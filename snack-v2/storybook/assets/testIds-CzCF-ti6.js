@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{o as t,s as n}from"./PromoTag-P-YOvb3B.js";var r;function i(){return(i=e((()=>{n(),r={...t,beforeNode:`before-node`,afterNode:`after-node`,polymorphicAnchor:`promo-tag__polymorphic-anchor`,polymorphicAnchorClick:`promo-tag__polymorphic-anchor-click`,polymorphicLink:`promo-tag__polymorphic-link`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CzCF-ti6.js.map

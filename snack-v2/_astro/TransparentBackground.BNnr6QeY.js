@@ -1,0 +1,1 @@
+import{t as e}from"./Search.CnKphSPr.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{placeholder:`Прозрачный фон`,background:!1})}export{r as TransparentBackground};

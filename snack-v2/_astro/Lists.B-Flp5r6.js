@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./RichText.C3VoHDRo.js";var n=e(),r=[`<ul><li>Виртуальные машины</li><li>Managed Kubernetes</li></ul>`,`<ol><li>Создайте проект</li><li>Подключите репозиторий</li></ol>`].join(``);function i(){return(0,n.jsx)(t,{content:r})}export{i as Lists};

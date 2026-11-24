@@ -1,0 +1,1 @@
+import{t as e}from"./portalContext.bZ3a-wNV.js";import{t}from"./globalStore.BoHsxCI0.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i({root:n,children:i}){return(0,r.jsx)(e,{value:n??t(),children:i})}export{i as t};

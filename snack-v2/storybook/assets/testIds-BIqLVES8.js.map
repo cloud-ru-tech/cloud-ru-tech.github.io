@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-BIqLVES8.js","names":["PACKAGE_TEST_IDS","__esmMin","init_constants","TEST_IDS$1","TEST_IDS","init_testIds"],"sources":["../../../../packages/uikit-product-copy/stories/testIds.ts"],"sourcesContent":["import { TEST_IDS as PACKAGE_TEST_IDS } from '../src/constants';\n\nexport const TEST_IDS = PACKAGE_TEST_IDS;\n"],"mappings":"A,8IAEa,EAAWA,C"}

@@ -1,0 +1,1 @@
+import{t as e}from"./TruncateString.CvEOPAql.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(`div`,{style:{width:220},children:(0,n.jsx)(e,{variant:`end`,text:`Очень длинный заголовок, который не помещается`,maxLines:1})})}export{r as TruncateEnd};

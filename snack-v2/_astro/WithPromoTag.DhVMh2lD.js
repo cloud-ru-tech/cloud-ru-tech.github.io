@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n}from"./PromoTag.1GDaRpY_.js";import{t as r}from"./CardSuggest.MLZRE6Rc.js";import{t as i}from"./jsx-runtime.C6pM4YaU.js";var a=i();function o(){return(0,a.jsx)(r,{title:`Подсказка для пользователя`,content:`Краткое описание действия или функциональности`,promoBadge:{label:`New`,appearance:t.Primary,role:n.Accent,size:e.Xs}})}export{o as WithPromoTag};

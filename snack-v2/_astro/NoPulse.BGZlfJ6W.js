@@ -1,0 +1,1 @@
+import{t as e}from"./Button.DqDDA251.js";import{t}from"./HotSpot.DgkxVRus.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{placement:`right`,pulse:!1,children:(0,r.jsx)(e,{label:`Settings`,view:`outline`})})}export{i as NoPulse};

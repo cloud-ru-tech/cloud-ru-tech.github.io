@@ -1,0 +1,1 @@
+import{t as e}from"./Skeleton.CQgOxBi7.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{loading:!0,width:48,height:48,borderRadius:`50%`})}export{r as Circle};

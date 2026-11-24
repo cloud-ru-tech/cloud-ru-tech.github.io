@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{n,t as r}from"./useIsomorphicLayoutEffect-kDkOty6E.js";function i(e){let t=(0,a.useRef)(null);return n(()=>{t.current=e}),(0,a.useCallback)((...e)=>{let n=t.current;return n===null&&console.warn(`The event handler cannot be called during render`),n?.(...e)},[])}var a;function o(){return(o=e((()=>{a=t(),r()})))()}export{i as n,o as t};
+//# sourceMappingURL=useEventHandler-Bcl_FRQy.js.map

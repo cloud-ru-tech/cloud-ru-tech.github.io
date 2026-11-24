@@ -1,0 +1,1 @@
+import{t as e}from"./AvatarDetail.Dy4zjxL2.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{name:`Петрова Мария`,contactData:`petrova@example.com`})}export{r as WithContactData};

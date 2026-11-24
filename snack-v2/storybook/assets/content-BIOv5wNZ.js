@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n;function r(){return(r=e((()=>{t=`Облачные сервисы`,n=`Инфраструктура, данные и AI в одном облаке. Подключение за несколько минут.`})))()}export{t as n,r,n as t};
+//# sourceMappingURL=content-BIOv5wNZ.js.map

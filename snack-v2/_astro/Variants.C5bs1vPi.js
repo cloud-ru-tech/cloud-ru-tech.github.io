@@ -1,0 +1,1 @@
+import{n as e,t}from"./AiButtonClose.om6zb6bG.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(t,{size:e.Xs,outline:!0}),(0,r.jsx)(t,{size:e.S,outline:!0}),(0,r.jsx)(t,{size:e.S}),(0,r.jsx)(t,{size:e.M})]})}export{i as Variants};

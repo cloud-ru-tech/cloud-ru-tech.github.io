@@ -1,0 +1,1 @@
+import{t as e}from"./Popover.cPDG9cnK.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{content:`Снизу справа`,placement:`bottom-end`,trigger:`click`,children:(0,n.jsx)(`button`,{type:`button`,children:`bottom-end`})})}export{r as Placement};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={button:{root:`button`},buttonGroup:{root:`button-group`,primary:`button-group-primary`,secondary:`button-group-secondary`,tertiary:`button-group-tertiary`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DsoatVhq.js.map

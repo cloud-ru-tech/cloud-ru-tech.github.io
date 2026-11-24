@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={checkbox:{root:`checkbox`,nativeInput:`checkbox-native-input`},radio:{root:`radio`,nativeInput:`radio-native-input`},switch:{root:`switch`,nativeInput:`switch-native-input`},favourite:{root:`favourite`,nativeInput:`favourite-native-input`},toggleGroup:{root:`toggle-group`},radioGroup:{a:`radio-a`,b:`radio-b`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-DoYx_sys.js.map

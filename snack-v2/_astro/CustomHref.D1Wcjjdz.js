@@ -1,0 +1,1 @@
+import{n as e,t}from"./Logo.CVQu9enl.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{href:`https://cloud.ru`,mode:e.Prod})}export{i as CustomHref};

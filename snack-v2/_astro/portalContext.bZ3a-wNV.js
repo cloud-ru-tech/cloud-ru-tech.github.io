@@ -1,0 +1,1 @@
+import{t as e}from"./createSharedContext.DUIPr-iq.js";import{n as t,t as n}from"./globalStore.BoHsxCI0.js";var{Provider:r,useValue:i}=e({key:t.context,defaultValue:n()});export{i as n,r as t};

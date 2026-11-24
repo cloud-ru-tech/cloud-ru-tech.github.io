@@ -1,0 +1,135 @@
+﻿# @cloud-ru/ds-site-reveal-section
+
+> Однократное появление секций сайта при прокрутке: отдельная секция и группа секций.
+
+Docs: /snack-v2/components/site-reveal-section/
+
+## Установка
+
+```sh
+pnpm add @cloud-ru/ds-site-reveal-section
+```
+
+## Когда использовать
+
+- Появление содержимого при прокрутке лендинга.
+- Единые параметры анимации для нескольких секций страницы.
+
+Для постоянно видимых элементов, основного содержимого первого экрана и блоков, которые должны работать без JavaScript, анимацию следует отключить или не добавлять обёртку.
+
+## API
+
+### RevealSection
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data-test-id` | `string` | — | no | Тестовый идентификатор обёртки. |
+| `delay` | `number` | `0` | no | Задержка анимации в миллисекундах. |
+| `disabled` | `boolean` | `false` | no | Отображать содержимое сразу, без анимации. |
+| `duration` | `number` | `650` | no | Длительность анимации в миллисекундах. |
+| `easing` | `TransitionTimingFunction` | `ease` | no | CSS-функция плавности перехода. |
+| `offset` | `number` | `28` | no | Начальное смещение по вертикали в пикселях. |
+| `rootMargin` | `string` | `0px 0px -40px 0px` | no | Отступы области наблюдения IntersectionObserver. |
+| `skipInitialViewport` | `boolean` | `false` | no | Не использовать анимацию появления при инициализации компонента |
+| `threshold` | `number \| number[]` | `0` | no | Порог пересечения или массив порогов для IntersectionObserver. |
+
+### RevealSections
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `children` | `string \| number \| boolean \| ReactElement<any, string \| JSXElementConstructor<any>> \| Iterable<ReactNode> \| ReactPortal \| null \| undefined` | — | no |  |
+| `delay` | `number` | — | no | Задержка анимации в миллисекундах. |
+| `disabled` | `boolean` | — | no | Отображать содержимое сразу, без анимации. |
+| `duration` | `number` | — | no | Длительность анимации в миллисекундах. |
+| `easing` | `TransitionTimingFunction` | — | no | CSS-функция плавности перехода. |
+| `offset` | `number` | — | no | Начальное смещение по вертикали в пикселях. |
+| `rootMargin` | `string` | — | no | Отступы области наблюдения IntersectionObserver. |
+| `shouldSkip` | `((child: ReactNode, index: number) => boolean)` | — | no | Отображать подходящие под условие элементы без обёртки для анимации. |
+| `skipFirst` | `boolean` | `true` | no | Отображать первый дочерний элемент без обёртки для анимации. |
+| `skipInitialViewport` | `boolean` | — | no | Не использовать анимацию появления при инициализации компонента |
+| `threshold` | `number \| number[]` | — | no | Порог пересечения или массив порогов для IntersectionObserver. |
+
+## Примеры
+
+### Group
+
+```tsx
+import { RevealSections } from '@cloud-ru/ds-site-reveal-section';
+
+import styles from '../styles.module.scss';
+
+export function Group() {
+  return (
+    <div className={styles.viewport}>
+      <div className={styles.sections}>
+        <RevealSections>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Облачная платформа</h2>
+            <p className={styles.description}>Первая секция отображается сразу: skipFirst=true по умолчанию.</p>
+          </section>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Возможности</h2>
+            <p className={styles.description}>Каждая следующая секция появляется независимо от остальных.</p>
+          </section>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Тарифы</h2>
+            <p className={styles.description}>Повторная прокрутка не запускает анимацию заново.</p>
+          </section>
+        </RevealSections>
+      </div>
+    </div>
+  );
+}
+```
+
+### Single
+
+```tsx
+import { RevealSection } from '@cloud-ru/ds-site-reveal-section';
+
+import styles from '../styles.module.scss';
+
+export function Single() {
+  return (
+    <div className={styles.viewport}>
+      <div className={styles.spacer}>Прокрутите вниз</div>
+      <RevealSection>
+        <section className={styles.section}>
+          <h2 className={styles.title}>Возможности платформы</h2>
+          <p className={styles.description}>Секция появляется при прокрутке и остаётся видимой.</p>
+        </section>
+      </RevealSection>
+      <div className={styles.spacer} />
+    </div>
+  );
+}
+```
+
+### SkipSelected
+
+```tsx
+import { RevealSections } from '@cloud-ru/ds-site-reveal-section';
+
+import styles from '../styles.module.scss';
+
+export function SkipSelected() {
+  return (
+    <div className={styles.viewport}>
+      <div className={styles.sections}>
+        <RevealSections skipFirst={false} shouldSkip={(_child, index) => index === 1} duration={400} offset={16}>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Возможности</h2>
+            <p className={styles.description}>Первая секция тоже получает анимацию.</p>
+          </section>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Специальное предложение</h2>
+            <p className={styles.description}>Вторая секция исключена по индексу и отображается без обёртки.</p>
+          </section>
+          <section className={styles.section}>
+            <h2 className={styles.title}>Тарифы</h2>
+            <p className={styles.description}>Общие параметры анимации применяются к оставшимся секциям.</p>
+          </section>
+        </RevealSections>
+      </div>
+    </div>
+  );
+}
+```

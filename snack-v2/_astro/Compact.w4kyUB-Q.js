@@ -1,0 +1,1 @@
+import{n as e,t}from"./PlatformLogo.DzbwVFJR.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(t,{variant:e.Evolution,compact:!0}),(0,r.jsx)(t,{variant:e.Partner,compact:!0})]})}export{i as Compact};

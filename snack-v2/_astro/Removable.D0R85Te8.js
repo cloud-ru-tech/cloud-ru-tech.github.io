@@ -1,0 +1,1 @@
+import{t as e}from"./Tag.DOq1myTM.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`React`,appearance:`blue`,onDelete:()=>alert(`remove`)})}export{r as Removable};

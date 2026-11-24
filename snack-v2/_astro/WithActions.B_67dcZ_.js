@@ -1,0 +1,1 @@
+import{i as e}from"./src.BGglQweY.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{appearance:`warning`,title:`Требуется подтверждение`,content:`Операция необратима. Продолжить?`,actions:{primary:{label:`Продолжить`,onClick:()=>void 0},secondary:{label:`Отмена`,onClick:()=>void 0}}})}export{r as WithActions};

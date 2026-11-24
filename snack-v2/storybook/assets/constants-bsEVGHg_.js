@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n;function r(){return(r=e((()=>{t={"2XS":`2xs`,XS:`xs`,S:`s`,M:`m`,L:`l`},n={XS:`xs`,S:`s`,M:`m`,L:`l`}})))()}export{n,r,t};
+//# sourceMappingURL=constants-bsEVGHg_.js.map

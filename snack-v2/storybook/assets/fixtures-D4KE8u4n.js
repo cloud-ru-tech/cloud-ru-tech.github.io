@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n,r=e((()=>{t=`Ответы на вопросы`,n=[{title:`Title`,description:`Ответ на первый вопрос.`},{title:`Title`,description:`Ответ на второй вопрос.`},{title:`Title`,description:`Ответ на третий вопрос.`}]}));export{t as n,r,n as t};
-//# sourceMappingURL=fixtures-D4KE8u4n.js.map

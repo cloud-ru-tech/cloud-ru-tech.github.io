@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,o as n}from"./constants-CVIpx3a6.js";function r(e){return Object.entries(e).reduce(function(e,[t,n]){return e[`data-${t.toLowerCase()}`]=n,e},{})}function i(e){switch(e){case t.XS:return 16;case t.S:default:return 24}}function a(){return(a=e((()=>{n()})))()}export{r as n,a as r,i as t};
+//# sourceMappingURL=utils-CX5LfniI.js.map

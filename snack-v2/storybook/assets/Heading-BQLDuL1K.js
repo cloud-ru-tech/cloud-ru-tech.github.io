@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t=`data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20transform='translate(7.2486%204.9992)'%3e%3cpath%20id='ToneAlpha1'%20d='M0.75%200V7M0.75%207V14M0.75%207H8.75M8.75%207V0M8.75%207V14'%20stroke='black'%20stroke-width='1.5'/%3e%3c/g%3e%3c/svg%3e`})))()}n();export{t as default};
+//# sourceMappingURL=Heading-BQLDuL1K.js.map

@@ -1,0 +1,1 @@
+import{t as e}from"./Avatar.ClqC13LY.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(e,{size:`s`,name:`АС`}),(0,n.jsx)(e,{size:`m`,name:`АС`}),(0,n.jsx)(e,{size:`l`,name:`АС`})]})}export{r as Sizes};

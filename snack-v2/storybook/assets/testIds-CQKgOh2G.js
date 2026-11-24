@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={fieldSlider:{numericRoot:`field-slider-numeric`,rangeRoot:`field-slider-range`,marksRoot:`field-slider-marks`,unboundRoot:`field-slider-unbound`,rangeExampleRoot:`field-slider-range-example`,marksExampleRoot:`field-slider-marks-example`,equalSpacingExampleRoot:`field-slider-equal-spacing-example`,formatterExampleRoot:`field-slider-formatter-example`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-CQKgOh2G.js.map

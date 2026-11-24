@@ -1,0 +1,1 @@
+import{t as e}from"./AiToolDetails.B1P9m-_e.js";import{t}from"./AiToolText.DS0RbMHp.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n(),i=`{ "region": "ru-central1", "status": "ok" }`;function a(){return(0,r.jsx)(e,{label:`create_instance`,state:`default`,height:`large`,copyValue:i,children:(0,r.jsx)(t,{mono:!0,children:i})})}export{a as DetailsCard};

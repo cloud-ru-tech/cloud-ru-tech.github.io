@@ -1,0 +1,1 @@
+import{t as e}from"./Placeholder.CQeT7fqH.js";import{i as t,n,r}from"./PromoTag.1GDaRpY_.js";import{t as i}from"./CardServiceSmall.S--VhJvW.js";import{t as a}from"./jsx-runtime.C6pM4YaU.js";var o=a();function s(){return(0,o.jsx)(i,{title:`Название сервиса`,emblem:{icon:e},promoBadge:{label:`Promo Tag`,appearance:n.Primary,role:r.Accent,size:t.Xs}})}export{s as WithPromoTag};

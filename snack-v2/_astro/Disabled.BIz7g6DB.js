@@ -1,0 +1,1 @@
+import{t as e}from"./SwitchRow.DZXPd4Hf.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{title:`Push-уведомления`,description:`Доступно после подтверждения email`,disabled:!0,disabledToggleTip:`Подтвердите email, чтобы включить`})}export{r as Disabled};

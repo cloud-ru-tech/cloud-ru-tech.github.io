@@ -1,0 +1,1 @@
+import{t as e}from"./InteractiveChart.DC4hggzh.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t(),r=[[1,2,3,4,5,6],[10,14,8,20,12,16],[22,28,18,34,25,30],[30,36,26,42,33,38],[40,46,35,52,44,49],[55,62,50,70,58,64]],i={width:640,height:320};function a(){return(0,n.jsx)(e,{type:`boxPlot`,data:r,options:i})}export{a as BoxPlot};

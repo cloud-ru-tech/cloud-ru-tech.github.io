@@ -1,0 +1,1 @@
+import{n as e}from"./localeContext.DptN5cLL.js";function t(){return e().lang}export{t};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{l as t,o as n}from"./AiFieldBanner-ws7EdtIj.js";var r,i,a;function o(){return(o=e((()=>{r=`_matrix_1jb0h_4`,i=`_bannerCell_1jb0h_9`,a={matrix:r,bannerCell:i}})))()}var s;function c(){return(c=e((()=>{t(),s={root:n.root,icon:n.icon,content:n.content,action:n.action,close:n.close,bottomContent:n.bottomContent}})))()}export{a as i,c as n,o as r,s as t};
+//# sourceMappingURL=testIds-BZdRteuP.js.map

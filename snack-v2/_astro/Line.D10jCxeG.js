@@ -1,0 +1,1 @@
+import{n as e,t}from"./SwitchRow.DZXPd4Hf.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{type:e.Line,title:`Тёмная тема`,description:`Применяется ко всему интерфейсу`,defaultChecked:!0})}export{i as Line};

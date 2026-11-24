@@ -1,0 +1,1 @@
+import{i as e,t}from"./AiFieldBanner.cH4riDze.js";import{t as n}from"./Placeholder.CQeT7fqH.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=r();function a(){return(0,i.jsx)(t,{variant:e.Information,content:`Description`,actionLabel:`Label text`,icon:(0,i.jsx)(n,{}),onActionClick:()=>void 0})}export{a as Default};

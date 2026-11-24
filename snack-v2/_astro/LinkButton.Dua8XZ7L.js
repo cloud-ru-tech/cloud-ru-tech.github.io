@@ -1,0 +1,1 @@
+import{t as e}from"./Button.DqDDA251.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{as:`a`,href:`https://example.com`,target:`_blank`,label:`Документация`})}export{r as LinkButton};

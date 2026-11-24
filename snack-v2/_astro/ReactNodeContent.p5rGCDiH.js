@@ -1,0 +1,1 @@
+import{t as e}from"./RichText.yPIdeaL9.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{content:(0,n.jsxs)(`p`,{children:[`Облачная платформа для `,(0,n.jsx)(`a`,{href:`https://cloud.ru`,children:`разработки и запуска`}),` приложений.`]})})}export{r as ReactNodeContent};

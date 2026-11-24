@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,u as n}from"./getRange-DCdTmq93.js";var r;function i(){return(i=e((()=>{n(),r={pagination:{root:t.root,prev:t.prev,next:t.next,pageNumberPrefix:t.pageNumberPrefix,pageMorePrefix:t.pageMorePrefix},paginationSlider:{root:t.sliderRoot,itemPrefix:t.sliderItemPrefix}}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-DUlawYje.js.map

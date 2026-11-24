@@ -1,0 +1,1 @@
+import{t as e}from"./CopyButton.bS6AIYQC.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(e,{size:`s`,valueToCopy:`small`}),(0,n.jsx)(e,{size:`m`,valueToCopy:`medium`}),(0,n.jsx)(e,{size:`l`,valueToCopy:`large`})]})}export{r as CopyButtonSizes};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,r as n}from"./constants-JcyNXHrG.js";var r;function i(){return(i=e((()=>{t(),r={cardBanner:n.cardBanner,cardService:n.cardService,cardServiceSmall:n.cardServiceSmall,cardServiceLight:n.cardServiceLight,cardServiceInfo:n.cardServiceInfo,cardNavigation:n.cardNavigation,cardNavigationFavorite:n.cardNavigationFavorite,cardSuggest:n.cardSuggest}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CrrSIMAX.js.map

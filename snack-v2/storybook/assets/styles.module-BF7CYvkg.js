@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a,o,s,c;function l(){return(l=e((()=>{t=`_story_mbw0w_4`,n=`_matrix_mbw0w_16`,r=`_cell_mbw0w_23`,i=`_scrollS_mbw0w_28`,a=`_scrollM_mbw0w_39`,o=`_scrollL_mbw0w_50`,s=`_valueHolder_mbw0w_61`,c={story:t,matrix:n,cell:r,scrollS:i,scrollM:a,scrollL:o,valueHolder:s}})))()}export{c as n,l as t};
+//# sourceMappingURL=styles.module-BF7CYvkg.js.map

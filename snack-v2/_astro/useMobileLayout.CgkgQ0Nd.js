@@ -1,0 +1,1 @@
+import{u as e}from"./globalStore.CUUVhT4m.js";import{n as t}from"./adaptiveContext.D9428d9P.js";function n(){let{layoutType:n}=t();return n!==e.Desktop}export{n as t};

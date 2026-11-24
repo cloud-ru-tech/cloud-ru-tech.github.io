@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./AiCodeDiff.DeOz6HPD.js";var n=e();function r(){return(0,n.jsx)(t,{added:1200,removed:48})}export{r as LongCounts};

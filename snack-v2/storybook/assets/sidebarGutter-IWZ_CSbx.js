@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(){try{return window.parent!==window&&!!window.parent.document.getElementById(`storybook-preview-iframe`)}catch{return!1}}var n;function r(){return(r=e((()=>{n=t()})))()}export{n,r as t};
+//# sourceMappingURL=sidebarGutter-IWZ_CSbx.js.map

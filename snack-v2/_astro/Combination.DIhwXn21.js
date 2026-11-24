@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.C852uKRQ.js";import{t}from"./KbdShortcut.CyEd7S61.js";var n=e();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(t,{keys:[`mod`,`K`]}),(0,n.jsx)(t,{keys:[`mod`,`shift`,`P`]}),(0,n.jsx)(t,{keys:[`ctrl`,`alt`,`Delete`]})]})}export{r as Combination};

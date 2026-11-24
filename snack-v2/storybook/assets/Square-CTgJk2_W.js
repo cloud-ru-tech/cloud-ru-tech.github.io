@@ -1,0 +1,2 @@
+import{n as e,o as t}from"./rolldown-runtime-BCiCTKAo.js";import{t as n}from"./jsx-runtime-DKU1u6-r.js";import{t as r}from"./classnames-DDqKSqV6.js";var i,a;function o(){return(o=e((()=>{i=`_square_1sio1_4`,a={square:i}})))()}function s({children:e,className:t,...n}){return(0,l.jsx)(`div`,{className:(0,c.default)(a.square,t),...n,children:e})}var c,l;function u(){return(u=e((()=>{c=t(r(),1),o(),l=n()})))()}export{u as n,s as t};
+//# sourceMappingURL=Square-CTgJk2_W.js.map

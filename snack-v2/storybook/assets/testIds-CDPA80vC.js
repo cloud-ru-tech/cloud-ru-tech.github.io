@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={root:`logo`,image:`logo__image`,icon:`logo__icon`}})))()}export{n,t};
+//# sourceMappingURL=testIds-CDPA80vC.js.map

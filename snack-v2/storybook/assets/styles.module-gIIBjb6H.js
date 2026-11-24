@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a,o,s;function c(){return(c=e((()=>{t=`_scrollArea_15srg_1`,n=`_pageScrollDemo_15srg_11`,r=`_mockAppHeader_15srg_16`,i=`_mockTabBar_15srg_17`,a=`_fullWidthDemo_15srg_41`,o=`_fullWidthDemoRow_15srg_49`,s={scrollArea:t,pageScrollDemo:n,mockAppHeader:r,mockTabBar:i,fullWidthDemo:a,fullWidthDemoRow:o}})))()}export{s as n,c as t};
+//# sourceMappingURL=styles.module-gIIBjb6H.js.map

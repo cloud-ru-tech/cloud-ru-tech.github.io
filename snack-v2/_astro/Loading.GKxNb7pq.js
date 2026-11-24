@@ -1,0 +1,1 @@
+import{t as e}from"./Button.DqDDA251.js";import{t}from"./Download.CuZ-nqce.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(e,{appearance:`primary`,view:`filled`,icon:(0,r.jsx)(t,{}),label:`Скачать отчёт`,loading:!0})}export{i as Loading};

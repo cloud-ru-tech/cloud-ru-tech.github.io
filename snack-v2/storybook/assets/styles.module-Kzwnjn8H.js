@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t,n,r,i,a,o,s,c,l;function u(){return(u=e((()=>{t=`_wrapper_1tpmu_4`,n=`_contentCard_1tpmu_10`,r=`_avatarPlaceholder_1tpmu_22`,i=`_textAlignLeft_1tpmu_29`,a=`_textAlignRight_1tpmu_33`,o=`_textContainer_1tpmu_37`,s=`_textContent_1tpmu_49`,c=`_skeletonOverlay_1tpmu_53`,l={wrapper:t,contentCard:n,avatarPlaceholder:r,textAlignLeft:i,textAlignRight:a,textContainer:o,textContent:s,skeletonOverlay:c}})))()}export{l as n,u as t};
+//# sourceMappingURL=styles.module-Kzwnjn8H.js.map

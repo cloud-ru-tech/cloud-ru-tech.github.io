@@ -1,0 +1,2 @@
+import{t as e}from"./FieldTextArea.CdhzQF-H.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Заметка`,hint:`Uncontrolled: начальное значение через defaultValue`,defaultValue:`Первая строка
+Вторая строка`,minRows:3,maxRows:8})}export{r as TextAreaUncontrolled};

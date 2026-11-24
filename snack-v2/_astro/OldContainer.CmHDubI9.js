@@ -1,0 +1,1 @@
+import{t as e}from"./SectionBasic.CGUWHZ40.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{container:`old`,title:`Облачные сервисы`,description:`Отступы и ширина страниц до редизайна.`,children:(0,n.jsx)(`p`,{children:`Контент секции`})})}export{r as OldContainer};

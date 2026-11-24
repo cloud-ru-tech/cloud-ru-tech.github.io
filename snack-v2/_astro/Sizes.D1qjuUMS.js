@@ -1,0 +1,1 @@
+import{n as e,t}from"./AiCodeDiff.QlVUC1Aw.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,r.jsx)(t,{added:83,removed:26,size:e.M}),(0,r.jsx)(t,{added:83,removed:26,size:e.S})]})}export{i as Sizes};

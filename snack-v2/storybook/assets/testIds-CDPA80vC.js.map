@@ -1,0 +1,1 @@
+{"version":3,"file":"testIds-CDPA80vC.js","names":["__esmMin","TEST_IDS","init_testIds"],"sources":["../../../../packages/uikit-product-header-legacy/stories/Logo/testIds.ts"],"sourcesContent":["export const TEST_IDS = {\n  root: 'logo',\n  image: 'logo__image',\n  icon: 'logo__icon',\n} as const;\n"],"mappings":"A,uFAAa,EAAW,CACtB,KAAM,OACN,MAAO,cACP,KAAM,YACR,C"}

@@ -1,0 +1,1 @@
+import{t as e}from"./Status.Cg4s-zU1.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Active`,appearance:`green`})}export{r as Active};

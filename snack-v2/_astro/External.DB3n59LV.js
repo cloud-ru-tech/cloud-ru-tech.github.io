@@ -1,0 +1,1 @@
+import{t as e}from"./Link.DkiVvu1n.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Открыть в новой вкладке`,href:`https://example.com`,target:`_blank`})}export{r as External};

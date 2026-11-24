@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{n}from"./isBrowser-DHCAMogo.js";var r,i;function a(){return(a=e((()=>{r=t(),i=n()?r.useLayoutEffect:r.useEffect})))()}export{i as n,a as t};
+//# sourceMappingURL=useIsomorphicLayoutEffect-kDkOty6E.js.map

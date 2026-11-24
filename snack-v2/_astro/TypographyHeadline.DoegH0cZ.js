@@ -1,0 +1,1 @@
+import{t as e}from"./Typography.B-r5-YfQ.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{variant:`headline`,size:`l`,children:`Заголовок страницы`})}export{r as TypographyHeadline};

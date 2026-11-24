@@ -1,0 +1,1 @@
+import{t as e}from"./Tooltip.108wx1Ts.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{tip:`Открывается по клику и остаётся видимой`,trigger:`click`,children:(0,n.jsx)(`button`,{type:`button`,children:`Подробнее`})})}export{r as ClickTrigger};

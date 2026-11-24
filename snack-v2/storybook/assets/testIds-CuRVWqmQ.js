@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={emptyBlock:{root:`empty-block`},noAccess:{root:`no-access`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-CuRVWqmQ.js.map

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={root:`popover`}})))()}var r,i,a;function o(){return(o=e((()=>{r=`_pageWrapper_1g0j1_4`,i=`_popoverContent_1g0j1_13`,a={pageWrapper:r,popoverContent:i}})))()}var s,c;function l(){return(l=e((()=>{n(),s={root:t.root,triggerOpen:`popover-trigger`,content:`popover-content`},c=e=>`popover-vm-${e}`})))()}export{a,o as i,c as n,l as r,s as t};
+//# sourceMappingURL=testIds-BhJw7arF.js.map

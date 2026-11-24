@@ -1,0 +1,1 @@
+import{t as e}from"./Avatar.ClqC13LY.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{src:`https://i.pravatar.cc/80?img=12`,name:`Анна Смирнова`})}export{r as WithImage};

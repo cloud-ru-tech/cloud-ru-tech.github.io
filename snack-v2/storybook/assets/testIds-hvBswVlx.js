@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";var t;function n(){return(n=e((()=>{t={headline:{root:`headline`},pageLoading:{root:`page-loading`},defaultSubtitle:{root:`default-sub-header`},pageCatalog:{root:`page-catalog`},pageSidebar:{root:`page-sidebar`},treeNavigation:{root:`tree-navigation`},pageForm:{root:`page-form`},pageServices:{root:`page-services`,primaryAction:`page-services-primary-action`,linkAction:`page-services-link-action`}}})))()}export{n,t};
+//# sourceMappingURL=testIds-hvBswVlx.js.map

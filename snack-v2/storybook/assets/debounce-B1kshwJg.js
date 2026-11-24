@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";function t(e,t=0){let n,r=()=>{n!==void 0&&(clearTimeout(n),n=void 0)};return Object.assign((...i)=>{r(),n=setTimeout(()=>{n=void 0,e(...i)},t)},{cancel:r})}function n(){return(n=e((()=>{})))()}export{n,t};
+//# sourceMappingURL=debounce-B1kshwJg.js.map

@@ -1,0 +1,1 @@
+import{t as e}from"./FieldDescription.Cobz1SIP.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{addButton:!0})}export{r as FieldDescriptionWithAddButton};

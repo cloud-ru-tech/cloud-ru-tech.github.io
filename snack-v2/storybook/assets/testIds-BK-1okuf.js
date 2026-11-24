@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,s as n}from"./constants-DU1MxYU8.js";var r;function i(){return(i=e((()=>{n(),r={bagelChart:{root:`bagel-chart`,...t.bagelChart},pieChart:{root:`pie-chart`,...t.pieChart},heatMapChart:{root:`heat-map-chart`,...t.heatMapChart},interactiveChart:{root:`interactive-chart`,...t.interactiveChart}}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-BK-1okuf.js.map

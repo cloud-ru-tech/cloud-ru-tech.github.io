@@ -1,0 +1,1 @@
+import{t as e}from"./Tabs.BvPkCMao.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{defaultValue:`inbox`,children:(0,n.jsxs)(e.TabBar,{children:[(0,n.jsx)(e.Tab,{value:`inbox`,label:`Входящие`,counter:{value:12}}),(0,n.jsx)(e.Tab,{value:`archive`,label:`Архив`})]})})}export{r as WithCounter};

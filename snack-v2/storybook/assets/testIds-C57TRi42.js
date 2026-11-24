@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{i as t,o as n}from"./AiIconGiga-oBhySBSl.js";var r;function i(){return(i=e((()=>{n(),r={root:t.root}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-C57TRi42.js.map

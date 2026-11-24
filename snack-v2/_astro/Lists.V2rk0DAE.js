@@ -1,0 +1,1 @@
+import{t as e}from"./RichText.yPIdeaL9.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t(),r=`<ul><li>Виртуальные машины</li><li>Managed Kubernetes</li></ul><ol><li>Создайте проект</li><li>Подключите репозиторий</li></ol>`;function i(){return(0,n.jsx)(e,{content:r})}export{i as Lists};

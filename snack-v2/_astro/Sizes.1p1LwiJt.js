@@ -1,0 +1,1 @@
+import{t as e}from"./Button.DqDDA251.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`center`},children:[(0,n.jsx)(e,{size:`s`,label:`Small`}),(0,n.jsx)(e,{size:`m`,label:`Medium`}),(0,n.jsx)(e,{size:`l`,label:`Large`})]})}export{r as Sizes};

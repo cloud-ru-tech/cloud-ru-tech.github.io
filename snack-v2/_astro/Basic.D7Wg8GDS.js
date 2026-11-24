@@ -1,0 +1,1 @@
+import{t as e}from"./Tag.DOq1myTM.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Frontend`,appearance:`blue`})}export{r as Basic};

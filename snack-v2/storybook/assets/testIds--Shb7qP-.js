@@ -1,2 +1,0 @@
-import{i as e}from"./preload-helper-CCSz8wUY.js";var t,n=e((()=>{t={kbd:{root:`kbd`,searchHints:`kbd-search-hints`},kbdShortcut:{root:`kbd-shortcut`}}}));export{n,t};
-//# sourceMappingURL=testIds--Shb7qP-.js.map

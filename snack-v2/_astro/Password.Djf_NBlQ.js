@@ -1,0 +1,1 @@
+import{n as e,t}from"./AiFieldNotice.CQ14ROEm.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{variant:e.Password,onActionClick:()=>void 0})}export{i as Password};

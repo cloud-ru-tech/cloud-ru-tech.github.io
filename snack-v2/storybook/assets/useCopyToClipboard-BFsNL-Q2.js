@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{t}from"./react-BcdEFcws.js";import{n,t as r}from"./copyToClipboard-BXB9OC34.js";function i(e=o){let[t,n]=(0,a.useState)(!1),i=(0,a.useRef)(),s=(0,a.useCallback)(t=>{t&&(r(t).catch(()=>void 0),n(!0),clearTimeout(i.current),i.current=setTimeout(()=>n(!1),e))},[e]);return(0,a.useEffect)(()=>()=>{clearTimeout(i.current)},[]),{isChecked:t,copy:s}}var a,o;function s(){return(s=e((()=>{a=t(),n(),o=1e3})))()}export{i as n,s as t};
+//# sourceMappingURL=useCopyToClipboard-BFsNL-Q2.js.map
