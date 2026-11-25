@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{I as t,L as n}from"./iframe-BQRA6mKN.js";function r(){return n()}function i(){return(i=e((()=>{t()})))()}export{r as n,i as t};
+//# sourceMappingURL=usePortalContext-CsQD2zml.js.map

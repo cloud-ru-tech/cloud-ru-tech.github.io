@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,o as n}from"./AiSuggestionSimple-JLGnpqEs.js";function r(e,n){return`${t.root}-${e}-${n}`}function i(){return(i=e((()=>{n()})))()}export{r as n,i as t};
-//# sourceMappingURL=testIds-D7zdhKD5.js.map

@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{c as t,l as n}from"./NotificationCard-4lWMhZdn.js";var r;function i(){return(i=e((()=>{n(),r={...t,drawer:{triggerOpen:`notification-panel-drawer__trigger`,triggerLoading:`notification-panel-drawer__trigger-loading`}}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-D5ni-DVN.js.map

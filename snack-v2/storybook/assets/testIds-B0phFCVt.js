@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{i as t,r as n}from"./ConfigSelector-BYZOnliN.js";var r;function i(){return(i=e((()=>{t(),r={...n,availableRoot:`config-selector-available`,availableTip:`config-selector-available__tip`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-B0phFCVt.js.map
