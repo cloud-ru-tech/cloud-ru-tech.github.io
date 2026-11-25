@@ -1,1 +1,0 @@
-import{t as e}from"./Timeline.Den7UR6D.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t(),r=[{content:`Заявка создана`},{content:`Передана в работу`},{content:`В обработке`},{content:`Выполнено`}];function i(){return(0,n.jsx)(e,{items:r})}export{i as Basic};

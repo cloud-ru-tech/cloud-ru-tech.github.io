@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{n as t,r as n}from"./appearanceContext-fU2G5Lp7.js";import{T as r,w as i}from"./iframe-D6E1L_qC.js";function a(e){let{appearance:t}=n();return i({...t,...e})}function o(){return(o=e((()=>{t(),r()})))()}export{a as n,o as t};
-//# sourceMappingURL=useThemeClassnames-DmaGN9Gy.js.map

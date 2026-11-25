@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,i as n}from"./AiQueue-B0ZnX8yt.js";function r(e,t){return`${i.root}--${e}-${t}`}var i;function a(){return(a=e((()=>{t(),i={root:n.root,trigger:n.trigger,summary:n.summary,content:n.content,step:n.step}})))()}export{a as n,r,i as t};
-//# sourceMappingURL=testIds-BlcTOTM6.js.map

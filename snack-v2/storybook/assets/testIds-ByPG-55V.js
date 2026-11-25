@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{f as t,p as n}from"./hooks-yIqms9zL.js";var r;function i(){return(i=e((()=>{n(),r={attachment:{root:t.root,title:t.title,description:t.description,error:t.error,icon:t.icon,image:t.image,loading:t.loading,downloadAction:t.downloadAction,deleteAction:t.deleteAction,retryAction:t.retryAction},attachmentSquare:{root:t.rootSquare,loading:t.loadingSquare,downloadAction:t.downloadAction,deleteAction:t.deleteAction,retryAction:t.retryAction}}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-ByPG-55V.js.map
