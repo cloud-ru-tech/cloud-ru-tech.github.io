@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./FieldCombo.DHJu8-yr.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a=r();function o(){let[e,n]=(0,i.useState)(`100`);return(0,a.jsx)(t,{label:`Сумма`,prefix:`$`,postfix:`USD`,value:e,onChange:n})}export{o as Affixes};

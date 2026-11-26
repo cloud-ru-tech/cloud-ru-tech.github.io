@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{c as t,l as n}from"./presets-CT1f-C2X.js";var r;function i(){return(i=e((()=>{n(),r=t})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-5rWcrtuT.js.map

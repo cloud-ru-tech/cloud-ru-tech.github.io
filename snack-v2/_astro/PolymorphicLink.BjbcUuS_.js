@@ -1,1 +1,0 @@
-import{t as e}from"./Placeholder.CQeT7fqH.js";import{t}from"./CardServiceInfo.xInLkGE7.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{as:`a`,href:`https://cloud.ru`,target:`_blank`,title:`Ссылка-сервис`,description:`Карточка рендерится как якорь через as и href.`,icon:(0,r.jsx)(e,{size:24})})}export{i as PolymorphicLink};

@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{i as t,o as n}from"./PromoTagPredefined-ZCa08PMT.js";var r;function i(){return(i=e((()=>{n(),r={...t,promoTagHover:`promo-tag-predefined__promo-tag-hover`,promoTagClickTrigger:`promo-tag-predefined__promo-tag-click-trigger`,promoTagSupport:`promo-tag-predefined__promo-tag-support`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CQQsOKit.js.map

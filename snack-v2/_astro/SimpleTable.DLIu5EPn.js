@@ -1,0 +1,1 @@
+import{t as e}from"./Table.DDsXm5XM.js";import{t}from"./useSimpleTableProps.C-Te1FWE.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(n){let i=t(n);return(0,r.jsx)(e,{...i})}export{i as t};

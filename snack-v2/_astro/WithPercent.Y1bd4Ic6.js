@@ -1,0 +1,1 @@
+import{t as e}from"./LoadStatus.BkB7y5NX.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Загрузка`,progress:72,valueType:`percent`})}export{r as WithPercent};

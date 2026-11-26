@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{n as t,t as n}from"./Table-zlt-Nsel.js";import{n as r,t as i}from"./withTableStorySurface-CX475xAk.js";var a;function o(){return(o=e((()=>{t(),i(),a={component:n,parameters:{layout:`fullscreen`},decorators:[r]}})))()}export{a as n,o as t};
-//# sourceMappingURL=sharedMeta-BSWnXdbF.js.map

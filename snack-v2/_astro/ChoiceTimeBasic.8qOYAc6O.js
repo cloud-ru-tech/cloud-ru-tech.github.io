@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./ChipChoice.D7Np2Qit.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a=r();function o(){let[e,n]=(0,i.useState)({hours:9,minutes:30});return(0,a.jsx)(t.Time,{label:`Время`,value:e,onChange:n})}export{o as ChoiceTimeBasic};

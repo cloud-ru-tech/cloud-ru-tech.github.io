@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{O as t,k as n}from"./fixtures-CMhbLNtQ.js";var r;function i(){return(i=e((()=>{n(),r=t})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-BvNb9wmD.js.map

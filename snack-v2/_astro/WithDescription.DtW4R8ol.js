@@ -1,1 +1,0 @@
-import{t as e}from"./AvatarDetail.Dy4zjxL2.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{name:`Сидоров Алексей`,description:`Тимлид платформенной команды`})}export{r as WithDescription};

@@ -1,0 +1,1 @@
+import{n as e,t}from"./FieldMask.BRGY6iSi.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsxs)(`div`,{style:{display:`flex`,gap:12,flexWrap:`wrap`,alignItems:`flex-start`},children:[(0,r.jsx)(t,{label:`UUID`,mask:e.Uuid}),(0,r.jsx)(t,{label:`СНИЛС`,mask:e.Snils}),(0,r.jsx)(t,{label:`IPv4`,mask:e.IpV4Address})]})}export{i as FieldMaskMasks};

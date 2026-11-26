@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{c as t,s as n}from"./Toolbar-CvZlbHV2.js";var r;function i(){return(i=e((()=>{t(),r={root:n.main,mobile:`toolbar-mobile`,adaptiveDesktop:`toolbar-adaptive-desktop`,adaptiveMobile:`toolbar-adaptive-mobile`,example:`toolbar-example`,mobileSelectionToggle:`toolbar-mobile-selection-toggle`,pinnedAfter:`toolbar-pinned-after`}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-REp1aEf3.js.map

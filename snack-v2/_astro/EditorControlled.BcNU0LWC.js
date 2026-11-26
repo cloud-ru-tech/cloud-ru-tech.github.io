@@ -1,3 +1,0 @@
-import{a as e}from"./rolldown-runtime.BWaJ3C7D.js";import{t}from"./MarkdownEditor.-4sh3fHV.js";import{t as n}from"./react.QlMpxN7r.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=e(n(),1),a=r();function o(){let[e,n]=(0,i.useState)(`# Controlled
-
-Значение хранится во внешнем \`useState\`.`),[r,o]=(0,i.useState)(!1);return(0,a.jsx)(t,{value:e,onChange:n,preview:r,onPreviewChange:o,label:`Описание`})}export{o as EditorControlled};

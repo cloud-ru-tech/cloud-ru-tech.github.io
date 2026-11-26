@@ -1,1 +1,0 @@
-import{t as e}from"./Button.DqDDA251.js";import{t}from"./Dropdown.B3ID7SMc.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{content:(0,r.jsx)(`div`,{style:{padding:12},children:`Видимое содержимое`}),children:(0,r.jsx)(e,{label:`Триггер`})})}export{i as OpenForReview};

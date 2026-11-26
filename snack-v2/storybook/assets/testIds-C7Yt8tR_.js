@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{i as t,r as n}from"./AvatarDetail-DcqYa-EU.js";var r;function i(){return(i=e((()=>{t(),r=n})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-C7Yt8tR_.js.map

@@ -1,1 +1,0 @@
-import{t as e}from"./Placeholder.CQeT7fqH.js";import{t}from"./CardServiceInfo.xInLkGE7.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{title:`Мой сервис`,description:`Краткое описание сервиса для подробного режима карточки.`,icon:(0,r.jsx)(e,{size:24}),promoTag:{variant:`preview`}})}export{i as WithPromoTag};

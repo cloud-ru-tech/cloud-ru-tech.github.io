@@ -1,0 +1,1 @@
+import{t as e}from"./Widget.DtjZf7Gg.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{header:{title:`Billing`,href:`#`},state:`loading`,loadingState:{showSkeleton:!0},actions:[{label:`Refresh`}],children:`Billing summary`})}export{r as LoadingState};

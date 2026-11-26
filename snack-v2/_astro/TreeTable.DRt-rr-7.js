@@ -1,1 +1,0 @@
-import{t as e}from"./Table.DvpV6BRM.js";import{t}from"./useTreeTableProps.CveOEr1u.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(n){let i=t(n);return(0,r.jsx)(e,{...i})}export{i as t};

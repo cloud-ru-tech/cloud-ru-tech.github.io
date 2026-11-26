@@ -1,0 +1,1 @@
+import{t as e}from"./LoadStatus.BkB7y5NX.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{label:`Загрузка`,value:`Ошибка`,progress:35,valueType:`percent`,hint:`Не удалось завершить операцию`,showError:!0,showErrorIcon:!0})}export{r as WithHintError};

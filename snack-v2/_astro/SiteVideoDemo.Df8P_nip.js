@@ -1,1 +1,0 @@
-import{t as e}from"./SiteVideo.BBGOAMBG.js";import{t}from"./Canvas.BwPtjh77.js";import{n,r}from"./fixtures.BDtOjD0X.js";import{t as i}from"./jsx-runtime.C6pM4YaU.js";var a=i();function o(){return(0,a.jsx)(t,{component:e,componentName:`SiteVideo`,componentDoc:r.SiteVideo,defaultProps:{video:n},excludeProps:[`video`,`className`,`onPlay`,`onError`]})}export{o as SiteVideoDemo};

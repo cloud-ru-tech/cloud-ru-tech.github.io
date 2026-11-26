@@ -1,0 +1,1 @@
+import{t as e}from"./TitleClickable.BULVLqbr.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{href:`#`,content:(0,n.jsx)(e.SimpleTitle,{title:`Production environment`})})}export{r as Basic};

@@ -1,0 +1,1 @@
+import{t as e}from"./Typography.CDX1ZNEm.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{variant:`body`,weight:`mono`,children:`const answer = 42`})}export{r as TypographyMono};

@@ -1,0 +1,1 @@
+import{t as e}from"./AiFieldInput.BxzHa4AJ.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{disabled:!0,placeholder:`Отправка сообщений недоступна`})}export{r as Disabled};

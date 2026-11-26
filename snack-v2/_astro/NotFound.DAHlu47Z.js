@@ -1,0 +1,1 @@
+import{t as e}from"./Button.DqDDA251.js";import{n as t,t as n}from"./Dropdown.DPspGe2l.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=r();function a(){return(0,i.jsx)(n,{state:{type:t.NotFound,content:`Ничего не нашли`,actionLabel:`Сбросить фильтры`,onActionClick:()=>{}},content:null,children:(0,i.jsx)(e,{label:`Поиск`})})}export{a as NotFound};

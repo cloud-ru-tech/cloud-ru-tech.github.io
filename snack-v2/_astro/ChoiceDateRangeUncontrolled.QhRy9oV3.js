@@ -1,1 +1,0 @@
-import{t as e}from"./ChipChoice.D7Np2Qit.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e.DateRange,{label:`Период`,defaultValue:[new Date(2024,0,15),new Date(2024,0,22)]})}export{r as ChoiceDateRangeUncontrolled};

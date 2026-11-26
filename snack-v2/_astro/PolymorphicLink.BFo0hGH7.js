@@ -1,1 +1,0 @@
-import{t as e}from"./CardSuggest.MLZRE6Rc.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{as:`a`,href:`https://cloud.ru`,target:`_blank`,title:`Подсказка-ссылка`,content:`Это якорный элемент`})}export{r as PolymorphicLink};

@@ -1,0 +1,1 @@
+import{n as e,t}from"./card-banner-illustration.B-jpFsVA.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(e,{title:`Заголовок карточки`,content:`Краткое описание сервиса или предложения для пользователя`,actionLabel:`Подробнее`,image:{src:t,alt:`Иллюстрация сервиса`}})}export{i as Basic};

@@ -1,1 +1,0 @@
-import{t as e}from"./Typography.B-r5-YfQ.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{children:`Обычный body-текст по умолчанию`})}export{r as TypographyBasic};

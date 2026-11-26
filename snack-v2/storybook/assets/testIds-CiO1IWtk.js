@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{c as t,o as n}from"./ModalCustom-DZn7s51T.js";var r,i;function a(){return(a=e((()=>{t(),r={modal:{...n,root:`modal`,triggerOpen:`modal-trigger`,firstButton:`modal__first-button`,secondButton:`modal__second-button`,image:`modal__image`,tooltip:`modal__title-tooltip`},modalCustom:{root:`modal-custom`,triggerOpen:`modal-custom-trigger`}},i=e=>`modal-vm-${e}`})))()}export{i as n,a as r,r as t};
+//# sourceMappingURL=testIds-CiO1IWtk.js.map

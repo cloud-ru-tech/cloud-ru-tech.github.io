@@ -1,0 +1,1 @@
+import{t as e}from"./Placeholder.CQeT7fqH.js";import{t}from"./CardServiceSmall.W4HzSCQ9.js";import{i as n}from"./constants.DLjmogTL.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=r();function a(){return(0,i.jsx)(t,{title:`Название сервиса`,emblem:{icon:e},actionsVisibility:n.hover,favorite:{enabled:!0}})}export{a as WithFavoriteHover};

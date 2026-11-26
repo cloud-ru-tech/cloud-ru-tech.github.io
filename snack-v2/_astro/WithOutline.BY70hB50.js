@@ -1,0 +1,1 @@
+import{t as e}from"./Placeholder.CQeT7fqH.js";import{t}from"./CardServiceSmall.W4HzSCQ9.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{title:`Название сервиса`,emblem:{icon:e},outline:!0})}export{i as WithOutline};

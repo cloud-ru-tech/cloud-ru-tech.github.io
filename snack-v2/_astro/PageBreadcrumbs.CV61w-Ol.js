@@ -1,1 +1,0 @@
-import{t as e}from"./Breadcrumbs.D39DUOtg.js";import{r as t}from"./DocsChromeScope.Ct0Pero0.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i({items:t}){return(0,r.jsx)(e,{items:t,size:`s`,inactiveLastItem:!0})}var a=t(i);export{a as PageBreadcrumbs};

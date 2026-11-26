@@ -263,6 +263,7 @@ pnpm add @cloud-ru/ds-uikit-product-page-layout
 | `menuTitle` | `string` | — | no |  |
 | `onSelect` | `((selectedKey: string, node: TreeNodeProps) => void)` | — | no |  |
 | `selected` | `string` | — | no |  |
+| `subtitle` | `ReactNode` | — | no |  |
 | `withDefaultOpenedMenuList` | `boolean` | — | no |  |
 
 ### MobileActions
@@ -564,7 +565,7 @@ _Нет публичных пропсов._
 | `content` | `ReactNode` | — | yes | Контентная часть страницы |
 | `contentClassName` | `string` | — | no | Класс для контейнера контентной части |
 | `header` | `{ title: string; icon?: ReactNode; description?: string \| undefined; status?: StatusProps \| undefined; actions?: ReactNode; }` | — | yes |  |
-| `menu` | `{ menuTitle?: string \| undefined; items: TreeNodeProps[]; isMenuOpen?: boolean \| undefined; onMenuToggle?(open: boolean): void; defaultMenuOpened?: boolean \| undefined; enableShrinkMenuButton?: boolean \| undefined; withDefaultOpenedMenuList?: boolean \| undefined; selected?: string \| undefined; onSelect?(selectedKey:...` | — | yes |  |
+| `menu` | `{ menuTitle?: string \| undefined; subtitle?: ReactNode; items: TreeNodeProps[]; isMenuOpen?: boolean \| undefined; onMenuToggle?(open: boolean): void; defaultMenuOpened?: boolean \| undefined; enableShrinkMenuButton?: boolean \| undefined; withDefaultOpenedMenuList?: boolean \| undefined; selected?: string \| undefined; ...` | — | yes |  |
 | `mode` | `aside \| fixed \| popover` | — | yes | Вариант отображения |
 
 #### Related types

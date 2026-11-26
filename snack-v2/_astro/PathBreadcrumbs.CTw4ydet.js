@@ -1,0 +1,1 @@
+import{t as e}from"./Breadcrumbs.Dl-yg7Si.js";import{t}from"./constants.CxBa7hAA.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i({items:n}){return(0,r.jsx)(e,{items:n,inactiveLastItem:n.length>1,separator:`/`,size:`xs`,"data-test-id":t.breadcrumbs.root})}export{i as t};

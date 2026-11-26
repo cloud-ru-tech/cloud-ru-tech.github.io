@@ -1,0 +1,1 @@
+import{t as e}from"./constants.DLjmogTL.js";import{t}from"./CardSuggest.DyuRbIqA.js";import{t as n}from"./jsx-runtime.C6pM4YaU.js";var r=n();function i(){return(0,r.jsx)(t,{title:`Подсказка для пользователя`,content:`Краткое описание действия или функциональности`,size:e.S})}export{i as SizeSmall};
