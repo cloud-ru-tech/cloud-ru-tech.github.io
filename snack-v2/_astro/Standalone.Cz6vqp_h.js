@@ -1,0 +1,1 @@
+import{t as e}from"./HotSpot.bLcwsyK9.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{appearance:`green`})}export{r as Standalone};

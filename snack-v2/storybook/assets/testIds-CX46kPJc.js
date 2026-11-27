@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,i as n}from"./AiButtonControls-wLzKT-2p.js";var r;function i(){return(i=e((()=>{t(),r={root:n.root,disabled:`${n.root}-disabled`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-CX46kPJc.js.map
