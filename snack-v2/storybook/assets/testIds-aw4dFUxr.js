@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,o as n}from"./Tag-BL12wP1k.js";var r;function i(){return(i=e((()=>{n(),r={tag:{root:`tag`,docs:`tag-docs`,frontend:`tag-frontend`,removableNeutral:`tag-removable-neutral`,removablePrimary:`tag-removable-primary`,removeButton:t.tag.removeButton},tagRow:{root:`tag-row`,moreButton:t.tagRow.moreButton,visibleTagsWrapper:t.tagRow.visibleTagsWrapper,droplistTagsWrapper:t.tagRow.droplistTagsWrapper}}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-aw4dFUxr.js.map

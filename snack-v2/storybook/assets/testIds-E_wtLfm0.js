@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,s as n}from"./Accordion-Do2GcINu.js";var r;function i(){return(i=e((()=>{n(),r={accordion:{root:`accordion`,block1:`accordion-block-1`,block2:`accordion-block-2`},collapseBlock:t}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-E_wtLfm0.js.map

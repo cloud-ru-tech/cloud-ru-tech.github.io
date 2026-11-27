@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,o as n}from"./PromoTagPredefined-CY7LUnrR.js";var r,i,a;function o(){return(o=e((()=>{n(),{fn:r}=__STORYBOOK_MODULE_TEST__,i={...Object.fromEntries(Object.values(t).map(e=>[e,{variant:e}])),[t.Connecting]:{variant:t.Connecting,tooltip:{onSupportClick:r()}}},a={control:`select`,options:Object.keys(i),mapping:i}})))()}export{o as n,a as t};
+//# sourceMappingURL=promoTagArgType-B_dmX0E8.js.map

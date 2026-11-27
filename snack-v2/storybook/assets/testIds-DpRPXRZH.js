@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{o as t,s as n}from"./SectionBasic-ByW_rj_j.js";var r;function i(){return(i=e((()=>{n(),r={root:`section-accordion`,item0:`${t.item}-0`,item1:`${t.item}-1`}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-DpRPXRZH.js.map

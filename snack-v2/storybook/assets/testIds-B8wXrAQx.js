@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,o as n}from"./AiAttachment-DrKLs5bN.js";var r;function i(){return(i=e((()=>{n(),r=t})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-B8wXrAQx.js.map
