@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,i as n}from"./Dropdown-PKbCSOnv.js";var r;function i(){return(i=e((()=>{t(),r={root:n.root,triggerOpen:n.trigger,content:`dropdown-content`,item:`dropdown-item`}})))()}export{i as n,r as t};
+//# sourceMappingURL=testIds-BC60-jXs.js.map

@@ -1,0 +1,1 @@
+import{n as e,t}from"./MainMenu.B8rC98du.js";import{t as n}from"./demoData.DyspZFWm.js";import{t as r}from"./jsx-runtime.C6pM4YaU.js";var i=r();function a(){return(0,i.jsx)(t,{segments:[{id:`allServices`,label:`Все сервисы`,icon:(0,i.jsx)(e,{size:24}),items:n.slice(0,2)}],"data-test-id":`header-main-menu-basic`})}export{a as Basic};

@@ -30,7 +30,7 @@ pnpm add @cloud-ru/ds-segment-control
 ### Segment
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `counter` | `string \| number` | — | no | Счётчик в сегменте (отображается после лейбла). |
+| `counter` | `SegmentCounterProps` | — | no | Счётчик в сегменте (отображается после лейбла). |
 | `disabled` | `boolean` | — | no | Состояние активности сегмента. |
 | `focusable` | `boolean` | — | no |  |
 | `icon` | `ReactNode` | — | no | Иконка сегмента. |
@@ -62,6 +62,7 @@ pnpm add @cloud-ru/ds-segment-control
 #### Related types
 - `IconPosition` = `after | before`
 - `Segment` (interface)
+- `SegmentCounterProps` (interface)
 - `Size` = `l | m | s`
 - `Width` = `auto | full`
 
@@ -187,8 +188,8 @@ export function WithCounter() {
     <SegmentControl
       defaultValue='inbox'
       items={[
-        { value: 'inbox', label: 'Inbox', counter: 12 },
-        { value: 'drafts', label: 'Drafts', counter: 3 },
+        { value: 'inbox', label: 'Inbox', counter: { value: 12 } },
+        { value: 'drafts', label: 'Drafts', counter: { value: 3 } },
         { value: 'archive', label: 'Archive' },
       ]}
     />

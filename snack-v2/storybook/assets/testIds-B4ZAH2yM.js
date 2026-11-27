@@ -1,2 +1,0 @@
-import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{a as t,i as n}from"./AiButtonClose-DnEYZ8Tr.js";var r;function i(){return(i=e((()=>{t(),r={root:n.root,disabled:`${n.root}-disabled`}})))()}export{i as n,r as t};
-//# sourceMappingURL=testIds-B4ZAH2yM.js.map

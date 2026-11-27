@@ -1,1 +1,0 @@
-import{t as e}from"./SegmentControl.2PHz2ueS.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{defaultValue:`one`,items:[{value:`one`,label:`One`},{value:`two`,label:`Two`,disabled:!0},{value:`three`,label:`Three`}]})}export{r as DisabledSegment};

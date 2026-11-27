@@ -1,0 +1,1 @@
+import{t as e}from"./SegmentControl.B286az_U.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{defaultValue:`overview`,items:[{value:`overview`,label:`Overview`},{value:`analytics`,label:`Analytics`},{value:`reports`,label:`Reports`}]})}export{r as Basic};

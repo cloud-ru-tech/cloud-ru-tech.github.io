@@ -1,1 +1,0 @@
-import{t as e}from"./SegmentControl.2PHz2ueS.js";import{t}from"./jsx-runtime.C6pM4YaU.js";var n=t();function r(){return(0,n.jsx)(e,{defaultValue:`inbox`,items:[{value:`inbox`,label:`Inbox`,counter:12},{value:`drafts`,label:`Drafts`,counter:3},{value:`archive`,label:`Archive`}]})}export{r as WithCounter};
